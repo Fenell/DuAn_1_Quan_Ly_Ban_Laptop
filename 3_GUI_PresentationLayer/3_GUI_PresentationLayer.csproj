@@ -13,4 +13,10 @@
     <ProjectReference Include="..\2_BUS_BusinessLayer\2_BUS_BusinessLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Utilities\" />
+    <Folder Include="Resouces\" />
+    <Folder Include="View\" />
+  </ItemGroup>
+
 </Project>
