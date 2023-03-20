@@ -13,5 +13,9 @@ namespace _1_DAL_DataAccessLayer.Repositories
         {
 
         }
+        public void Update()
+        {
+
+        }
     }
 }
