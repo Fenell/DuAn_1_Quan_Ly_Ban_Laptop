@@ -1,3 +1,5 @@
+using _3_GUI_PresentationLayer.View;
+
 namespace _3_GUI_PresentationLayer
 {
     internal static class Program
