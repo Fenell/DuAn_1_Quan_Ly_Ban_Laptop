@@ -240,7 +240,7 @@
             label12.Name = "label12";
             label12.Size = new Size(79, 21);
             label12.TabIndex = 26;
-            label12.Text = "Giời Tính";
+            label12.Text = "Giới Tính";
             label12.Click += label12_Click;
             // 
             // iconButton4
