@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace _3_GUI_PresentationLayer.View
 {
-    public partial class Form1 : Form
+    public partial class FrmSanPham : Form
     {
-        public Form1()
+        public FrmSanPham()
         {
             InitializeComponent();
         }
-
-
     }
 }
