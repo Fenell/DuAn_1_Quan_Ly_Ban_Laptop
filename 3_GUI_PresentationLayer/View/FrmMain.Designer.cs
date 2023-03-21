@@ -53,7 +53,7 @@
             // 
             // panelMenu
             // 
-            panelMenu.BackColor = Color.FromArgb(31, 30, 68);
+            panelMenu.BackColor = Color.FromArgb(31, 32, 69);
             panelMenu.Controls.Add(btnDangXuat);
             panelMenu.Controls.Add(btnThongKe);
             panelMenu.Controls.Add(btnKhuyenMai);
@@ -247,7 +247,7 @@
             // 
             // panelLogo
             // 
-            panelLogo.BackColor = Color.FromArgb(31, 30, 68);
+            panelLogo.BackColor = Color.FromArgb(31, 32, 69);
             panelLogo.Controls.Add(pictrueBoxCustom1);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
@@ -272,7 +272,7 @@
             // 
             // panelTitleBar
             // 
-            panelTitleBar.BackColor = Color.FromArgb(26, 25, 62);
+            panelTitleBar.BackColor = Color.FromArgb(26, 27, 61);
             panelTitleBar.Controls.Add(lblTitleChildFrm);
             panelTitleBar.Controls.Add(iconCurrentChildFrm);
             panelTitleBar.Dock = DockStyle.Top;
@@ -317,12 +317,13 @@
             // 
             // panelDesktop
             // 
-            panelDesktop.BackColor = Color.FromArgb(34, 33, 74);
+            panelDesktop.BackColor = Color.FromArgb(26, 29, 65);
             panelDesktop.Dock = DockStyle.Fill;
             panelDesktop.Location = new Point(247, 82);
             panelDesktop.Name = "panelDesktop";
             panelDesktop.Size = new Size(1537, 729);
             panelDesktop.TabIndex = 3;
+            panelDesktop.Paint += panelDesktop_Paint;
             // 
             // FrmMain
             // 

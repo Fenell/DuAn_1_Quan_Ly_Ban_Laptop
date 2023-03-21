@@ -26,6 +26,7 @@ namespace _3_GUI_PresentationLayer.View
             leftBorderBtn.Size = new Size(10, 70);
             panelMenu.Controls.Add(leftBorderBtn);
         }
+
         //Structs RGB
         private struct RGBColors
         {
@@ -78,8 +79,8 @@ namespace _3_GUI_PresentationLayer.View
             {
                 currentChildForm.Close();
             }
-
             currentChildForm = childForm;
+
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
@@ -89,7 +90,6 @@ namespace _3_GUI_PresentationLayer.View
             childForm.Show();
             lblTitleChildFrm.Text = childForm.Text;
         }
-
         private void btnSanPham_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.color1);
@@ -137,6 +137,9 @@ namespace _3_GUI_PresentationLayer.View
 
         }
 
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

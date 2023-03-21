@@ -84,11 +84,12 @@
             // 
             // textBoxCustom2_01
             // 
+            textBoxCustom2_01.BackColor = SystemColors.Control;
             textBoxCustom2_01.BorderColor = Color.MediumSlateBlue;
             textBoxCustom2_01.BorderFocusColor = Color.HotPink;
             textBoxCustom2_01.BorderRadius = 10;
             textBoxCustom2_01.BorderSize = 2;
-            textBoxCustom2_01.Location = new Point(385, 100);
+            textBoxCustom2_01.Location = new Point(382, 124);
             textBoxCustom2_01.Multiline = false;
             textBoxCustom2_01.Name = "textBoxCustom2_01";
             textBoxCustom2_01.Padding = new Padding(7);

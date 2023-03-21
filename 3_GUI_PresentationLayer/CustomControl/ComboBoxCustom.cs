@@ -62,8 +62,8 @@ namespace _3_GUI_PresentationLayer.CustomControl
             this.Controls.Add(lblText);//2
             this.Controls.Add(btnIcon);//1
             this.Controls.Add(cmbList);//0
-            this.MinimumSize = new Size(200, 30);
-            this.Size = new Size(200, 30);
+            this.MinimumSize = new Size(150, 30);
+            this.Size = new Size(150, 30);
             this.ForeColor = Color.DimGray;
             this.Padding = new Padding(borderSize);//Border Size
             this.Font = new Font(this.Font.Name, 10F);
