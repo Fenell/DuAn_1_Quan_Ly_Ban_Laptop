@@ -66,7 +66,7 @@
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(247, 722);
+            panelMenu.Size = new Size(247, 811);
             panelMenu.TabIndex = 0;
             // 
             // btnDangXuat
@@ -321,14 +321,14 @@
             panelDesktop.Dock = DockStyle.Fill;
             panelDesktop.Location = new Point(247, 82);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(1537, 640);
+            panelDesktop.Size = new Size(1537, 729);
             panelDesktop.TabIndex = 3;
             // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1784, 722);
+            ClientSize = new Size(1784, 811);
             Controls.Add(panelDesktop);
             Controls.Add(panelShadow);
             Controls.Add(panelTitleBar);
