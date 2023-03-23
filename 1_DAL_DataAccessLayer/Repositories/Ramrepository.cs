@@ -9,21 +9,21 @@ using System.Threading.Tasks;
 
 namespace _1_DAL_DataAccessLayer.Repositories
 {
-    public class VGARepositories : IVgaRepositories
+    public class Ramrepository : IRamRepository
     {
         QlBanLaptopContext _lapTopContext;
-        public VGARepositories()
+        public Ramrepository()
         {
             _lapTopContext = new QlBanLaptopContext();
         }
-        public bool AddVga(Vga vga)
+        public bool AddRam(Ram ram)
         {
             try
             {
-                if (vga != null)
+                if (ram != null)
                 {
-                    vga.Id = Guid.NewGuid();
-                    _lapTopContext.Add(vga);
+                    ram.Id = Guid.NewGuid();
+                    _lapTopContext.Add(ram);
                     _lapTopContext.SaveChanges();
                     return true;
                 }
@@ -36,9 +36,9 @@ namespace _1_DAL_DataAccessLayer.Repositories
             }
         }
 
-        public bool DeleteVga(Guid idVga)
+        public bool Delete(Guid idRam)
         {
-            var ketqua = _lapTopContext.Vgas.Find(idVga);
+            var ketqua = _lapTopContext.Rams.Find(idRam);
             if (ketqua != null)
             {
                 _lapTopContext.Remove(ketqua);
@@ -48,24 +48,24 @@ namespace _1_DAL_DataAccessLayer.Repositories
             return false;
         }
 
-        public List<Vga> GetAllVga()
+        public List<Ram> GetAllRam()
         {
-            return _lapTopContext.Vgas.ToList();
+            return _lapTopContext.Rams.ToList();
         }
 
-        public Vga GetVgaById(Guid idVga)
+        public Ram GetRamById(Guid idRam)
         {
-            var ketqua = _lapTopContext.Vgas.Find(idVga);
+            var ketqua = _lapTopContext.Rams.Find(idRam);
             return ketqua;
         }
 
-        public bool UpdateVga(Vga vga)
+        public bool Update(Ram ram)
         {
-            var ketqua = _lapTopContext.Vgas.FirstOrDefault(c => c.Id == vga.Id);
+            var ketqua = _lapTopContext.Rams.FirstOrDefault(c => c.Id == ram.Id);
             if (ketqua != null)
             {
-                ketqua.Ma = vga.Ma;
-                ketqua.Ten = vga.Ten;
+                ketqua.Ma = ram.Ma;
+                ketqua.Ten = ram.Ten;
                 _lapTopContext.Update(ketqua);
                 _lapTopContext.SaveChanges();
                 return true;

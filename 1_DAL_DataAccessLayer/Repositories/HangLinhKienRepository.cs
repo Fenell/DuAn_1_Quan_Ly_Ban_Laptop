@@ -9,21 +9,21 @@ using System.Threading.Tasks;
 
 namespace _1_DAL_DataAccessLayer.Repositories
 {
-    public class VGARepositories : IVgaRepositories
+    public class HangLinhKienRepository : IHangLinhKienRepository
     {
         QlBanLaptopContext _lapTopContext;
-        public VGARepositories()
+        public HangLinhKienRepository()
         {
             _lapTopContext = new QlBanLaptopContext();
         }
-        public bool AddVga(Vga vga)
+        public bool AddHangLinhKien(HangLinhKien hangLinhKien)
         {
             try
             {
-                if (vga != null)
+                if (hangLinhKien != null)
                 {
-                    vga.Id = Guid.NewGuid();
-                    _lapTopContext.Add(vga);
+                    hangLinhKien.Id = Guid.NewGuid();
+                    _lapTopContext.Add(hangLinhKien);
                     _lapTopContext.SaveChanges();
                     return true;
                 }
@@ -36,9 +36,9 @@ namespace _1_DAL_DataAccessLayer.Repositories
             }
         }
 
-        public bool DeleteVga(Guid idVga)
+        public bool DeleteHangLinhKien(Guid idHangLinhKien)
         {
-            var ketqua = _lapTopContext.Vgas.Find(idVga);
+            var ketqua = _lapTopContext.HangLinhKiens.Find(idHangLinhKien);
             if (ketqua != null)
             {
                 _lapTopContext.Remove(ketqua);
@@ -48,24 +48,24 @@ namespace _1_DAL_DataAccessLayer.Repositories
             return false;
         }
 
-        public List<Vga> GetAllVga()
+        public List<HangLinhKien> GetAllHangLinhKien()
         {
-            return _lapTopContext.Vgas.ToList();
+            return _lapTopContext.HangLinhKiens.ToList();
         }
 
-        public Vga GetVgaById(Guid idVga)
+        public HangLinhKien GetHangLinhKienById(Guid idHangLinhKien)
         {
-            var ketqua = _lapTopContext.Vgas.Find(idVga);
+            var ketqua = _lapTopContext.HangLinhKiens.Find(idHangLinhKien);
             return ketqua;
         }
 
-        public bool UpdateVga(Vga vga)
+        public bool UpdateHangLinhKien(HangLinhKien hangLinhKien)
         {
-            var ketqua = _lapTopContext.Vgas.FirstOrDefault(c => c.Id == vga.Id);
+            var ketqua = _lapTopContext.HangLinhKiens.FirstOrDefault(c => c.Id == hangLinhKien.Id);
             if (ketqua != null)
             {
-                ketqua.Ma = vga.Ma;
-                ketqua.Ten = vga.Ten;
+                ketqua.Ma = hangLinhKien.Ma;
+                ketqua.Ten = hangLinhKien.Ten;
                 _lapTopContext.Update(ketqua);
                 _lapTopContext.SaveChanges();
                 return true;

@@ -10,6 +10,7 @@ namespace _1_DAL_DataAccessLayer.IRepositories
     public interface IHoaDonRepository
     {
         bool AddHoaDon(HoaDon hoaDon);
+        bool UpdateHoaDon(HoaDon hoaDon);
         HoaDon GetHoaDonById(Guid idHoaDon);
         List<HoaDon> GetAllHoaDon();
     }

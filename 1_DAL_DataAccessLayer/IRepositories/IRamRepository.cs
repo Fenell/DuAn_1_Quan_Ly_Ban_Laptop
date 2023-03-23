@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace _1_DAL_DataAccessLayer.IRepositories
 {
-    public interface ILapTopRepository
+    public interface IRamRepository
     {
-        bool AddLapTop(Laptop lapTop);
-        bool UpdateLapTop(Laptop lapTop);
-        Laptop GetLapTopById(Guid idLapTop);
-        List<Laptop> GetAllLapTop();
+        bool AddRam(Ram ram);
+        bool Update(Ram ram);
+        bool Delete(Guid idRam);
+        Ram GetRamById(Guid idRam);
+        List<Ram> GetAllRam();
     }
 }

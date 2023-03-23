@@ -46,9 +46,9 @@ namespace _1_DAL_DataAccessLayer.Repositories
             return ketqua;
         }
 
-        public bool UpdateLapTop(Guid idLapTop, Laptop lapTop)
+        public bool UpdateLapTop(Laptop lapTop)
         {
-            var ketqua = _lapTopContext.Laptops.Find(idLapTop);
+            var ketqua = _lapTopContext.Laptops.FirstOrDefault(c=>c.Id == lapTop.Id);
             if (ketqua != null)
             {
                 ketqua.ManHinh = lapTop.ManHinh;

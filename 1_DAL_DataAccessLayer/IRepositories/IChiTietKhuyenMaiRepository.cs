@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace _1_DAL_DataAccessLayer.IRepositories
 {
-    public interface ILapTopRepository
+    public interface IChiTietKhuyenMaiRepository
     {
-        bool AddLapTop(Laptop lapTop);
-        bool UpdateLapTop(Laptop lapTop);
-        Laptop GetLapTopById(Guid idLapTop);
-        List<Laptop> GetAllLapTop();
+        List<ChiTietKhuyenMai> GetAllChiTietKhuyenMai();
     }
 }

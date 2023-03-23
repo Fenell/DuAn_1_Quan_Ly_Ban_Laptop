@@ -10,7 +10,7 @@ namespace _1_DAL_DataAccessLayer.IRepositories
     public interface IKhachHangRepository
     {
         bool AddKhachHang(KhachHang khachHang);
-        bool UpdateKhachHang(Guid idKhachHang, KhachHang khachHang);
+        bool UpdateKhachHang(KhachHang khachHang);
         KhachHang GetKhachHangById(Guid idKhachHang);
         List<KhachHang> GetAllKhachHang();
     }

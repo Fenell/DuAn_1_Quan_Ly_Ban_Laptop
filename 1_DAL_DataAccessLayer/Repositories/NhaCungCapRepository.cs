@@ -9,21 +9,21 @@ using System.Threading.Tasks;
 
 namespace _1_DAL_DataAccessLayer.Repositories
 {
-    public class VGARepositories : IVgaRepositories
+    public class NhaCungCapRepository : INhaCungCapRepository
     {
         QlBanLaptopContext _lapTopContext;
-        public VGARepositories()
+        public NhaCungCapRepository()
         {
             _lapTopContext = new QlBanLaptopContext();
         }
-        public bool AddVga(Vga vga)
+        public bool AddNhaCungCap(NhaCungCap nhaCungCap)
         {
             try
             {
-                if (vga != null)
+                if (nhaCungCap != null)
                 {
-                    vga.Id = Guid.NewGuid();
-                    _lapTopContext.Add(vga);
+                    nhaCungCap.Id = Guid.NewGuid();
+                    _lapTopContext.Add(nhaCungCap);
                     _lapTopContext.SaveChanges();
                     return true;
                 }
@@ -36,9 +36,9 @@ namespace _1_DAL_DataAccessLayer.Repositories
             }
         }
 
-        public bool DeleteVga(Guid idVga)
+        public bool Delete(Guid idNhaCungCap)
         {
-            var ketqua = _lapTopContext.Vgas.Find(idVga);
+            var ketqua = _lapTopContext.NhaCungCaps.Find(idNhaCungCap);
             if (ketqua != null)
             {
                 _lapTopContext.Remove(ketqua);
@@ -48,24 +48,24 @@ namespace _1_DAL_DataAccessLayer.Repositories
             return false;
         }
 
-        public List<Vga> GetAllVga()
+        public List<NhaCungCap> GetAllNhaCungCap()
         {
-            return _lapTopContext.Vgas.ToList();
+            return _lapTopContext.NhaCungCaps.ToList();
         }
 
-        public Vga GetVgaById(Guid idVga)
+        public NhaCungCap GetNhaCungCapById(Guid idNhaCungCap)
         {
-            var ketqua = _lapTopContext.Vgas.Find(idVga);
+            var ketqua = _lapTopContext.NhaCungCaps.Find(idNhaCungCap);
             return ketqua;
         }
 
-        public bool UpdateVga(Vga vga)
+        public bool Update(NhaCungCap nhaCungCap)
         {
-            var ketqua = _lapTopContext.Vgas.FirstOrDefault(c => c.Id == vga.Id);
+            var ketqua = _lapTopContext.NhaCungCaps.FirstOrDefault(c => c.Id == nhaCungCap.Id);
             if (ketqua != null)
             {
-                ketqua.Ma = vga.Ma;
-                ketqua.Ten = vga.Ten;
+                ketqua.Ma = nhaCungCap.Ma;
+                ketqua.Ten = nhaCungCap.Ten;
                 _lapTopContext.Update(ketqua);
                 _lapTopContext.SaveChanges();
                 return true;

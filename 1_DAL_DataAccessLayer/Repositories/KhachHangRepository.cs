@@ -46,9 +46,9 @@ namespace _1_DAL_DataAccessLayer.Repositories
             return ketqua;
         }
 
-        public bool UpdateKhachHang(Guid idKhachHang, KhachHang khachHang)
+        public bool UpdateKhachHang(KhachHang khachHang)
         {
-            var ketqua = _laptopContext.KhachHangs.Find(idKhachHang);
+            var ketqua = _laptopContext.KhachHangs.FirstOrDefault(c=>c.Id == khachHang.Id);
             if(ketqua != null)
             {
                 ketqua.Hoten = khachHang.Hoten;

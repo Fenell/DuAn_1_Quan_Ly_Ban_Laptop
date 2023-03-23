@@ -9,9 +9,10 @@ namespace _1_DAL_DataAccessLayer.IRepositories
 {
     public interface IChiTietHoaDonRepository
     {
-        List<ChiTietHoaDon> GetChiTietHĐ();
-        bool AddHĐ(ChiTietHoaDon chiTietHĐ);
-        bool RemoveHĐ(ChiTietHoaDon chiTietHĐ);
-        bool UpdateHĐ(ChiTietHoaDon chiTietHĐ);
+        bool AddChiTietHoaDon(ChiTietHoaDon chiTietHoaDon);
+        bool UpdateChiTietHoaDon(ChiTietHoaDon chiTietHoaDon);
+        bool DeleteChiTietHoaDon(Guid idChiTietHoaDon);
+        ChiTietHoaDon GetChiTietHoaDonById(Guid idChiTietHoaDon);
+        List<ChiTietHoaDon> GetAllChiTietHoaDon();
     }
 }

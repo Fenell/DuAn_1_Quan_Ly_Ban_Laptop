@@ -45,5 +45,25 @@ namespace _1_DAL_DataAccessLayer.Repositories
             var ketqua = _lapTopContext.HoaDons.Find(idHoaDon);
             return ketqua;
         }
+
+        public bool UpdateHoaDon(HoaDon hoaDon)
+        {
+            var ketqua = _lapTopContext.HoaDons.FirstOrDefault(c=>c.Id == hoaDon.Id);
+            if (ketqua != null)
+            {
+                ketqua.Ma = hoaDon.Ma;
+                ketqua.HinhThucTT = hoaDon.HinhThucTT;
+                ketqua.NgayTao = hoaDon.NgayTao;
+                ketqua.NgayThanhToan = hoaDon.NgayThanhToan;
+                ketqua.TrangThai = hoaDon.TrangThai;
+                ketqua.DiaChiNhanHang = hoaDon.DiaChiNhanHang;
+                ketqua.GhiChu = hoaDon.GhiChu;
+                ketqua.TongTien = hoaDon.TongTien;
+                _lapTopContext.Update(ketqua);
+                _lapTopContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }

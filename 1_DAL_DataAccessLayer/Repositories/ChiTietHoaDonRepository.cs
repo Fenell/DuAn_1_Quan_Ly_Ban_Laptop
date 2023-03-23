@@ -1,4 +1,5 @@
-﻿using _1_DAL_DataAccessLayer.IRepositories;
+﻿using _1_DAL_DataAccessLayer.Context;
+using _1_DAL_DataAccessLayer.IRepositories;
 using _1_DAL_DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
@@ -10,25 +11,68 @@ namespace _1_DAL_DataAccessLayer.Repositories
 {
     public class ChiTietHoaDonRepository : IChiTietHoaDonRepository
     {
-        
-
-        public bool AddHĐ(ChiTietHoaDon chiTietHĐ)
+        QlBanLaptopContext _lapTopContext;
+        public ChiTietHoaDonRepository()
         {
-            throw new NotImplementedException();
+            _lapTopContext = new QlBanLaptopContext();
+        }
+        public bool AddChiTietHoaDon(ChiTietHoaDon chiTietHoaDon)
+        {
+            try
+            {
+                if (chiTietHoaDon != null)
+                {
+                    chiTietHoaDon.Id = Guid.NewGuid();
+                    _lapTopContext.Add(chiTietHoaDon);
+                    _lapTopContext.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
         }
 
-        public List<ChiTietHoaDon> GetChiTietHĐ()
+        public bool DeleteChiTietHoaDon(Guid idChiTietHoaDon)
         {
-            throw new NotImplementedException();
+            var ketqua = _lapTopContext.ChiTietHoaDons.Find(idChiTietHoaDon);
+            if (ketqua != null)
+            {
+                _lapTopContext.Remove(ketqua);
+                _lapTopContext.SaveChanges();
+
+                return true;
+            }
+            return false;
         }
 
-        public bool RemoveHĐ(ChiTietHoaDon chiTietHĐ)
+        public List<ChiTietHoaDon> GetAllChiTietHoaDon()
         {
-            throw new NotImplementedException();
+            return _lapTopContext.ChiTietHoaDons.ToList();
         }
-        public bool UpdateHĐ(ChiTietHoaDon chiTietHĐ)
+
+        public ChiTietHoaDon GetChiTietHoaDonById(Guid idChiTietHoaDon)
         {
-            throw new NotImplementedException();
+            var ketqua = _lapTopContext.ChiTietHoaDons.Find(idChiTietHoaDon);
+            return ketqua;
+        }
+
+        public bool UpdateChiTietHoaDon(ChiTietHoaDon chiTietHoaDon)
+        {
+            var ketqua = _lapTopContext.ChiTietHoaDons.FirstOrDefault(c => c.Id == chiTietHoaDon.Id);
+            if (ketqua != null)
+            {
+                ketqua.SoLuong = chiTietHoaDon.SoLuong;
+                ketqua.DonGia = chiTietHoaDon.DonGia;
+                ketqua.ThanhTien = chiTietHoaDon.ThanhTien;
+                _lapTopContext.Update(ketqua);
+                _lapTopContext.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }
