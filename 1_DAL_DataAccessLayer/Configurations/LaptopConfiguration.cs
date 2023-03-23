@@ -22,6 +22,7 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.Property(x => x.TonKho).HasDefaultValue(0);
             builder.Property(x => x.TrangThai).HasDefaultValue(true);
             builder.Property(x => x.TrongLuong).HasColumnType("decimal(18,4)").IsRequired();
+            builder.Property(x => x.Imei).HasMaxLength(15).IsRequired();
 
             //builder.Property(x => x.NhaCungCap).IsRequired();
             //builder.Property(x => x.DongLaptop).IsRequired();
@@ -43,7 +44,6 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.HasOne<MauSac>(x => x.MauSac).WithMany(a => a.Laptops).HasForeignKey(x => x.IdMauSac);
             builder.HasOne<OCung>(x => x.OCung).WithMany(a => a.Laptops).HasForeignKey(x => x.IdOCung);
 
-            builder.HasMany<ChiTietLaptop>(x => x.ChiTietLaptops).WithOne(a => a.Laptop).HasForeignKey(a => a.IdLaptop);
         }
     }
 }

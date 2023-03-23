@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _1_DAL_DataAccessLayer.Context;
 
@@ -11,9 +12,10 @@ using _1_DAL_DataAccessLayer.Context;
 namespace _1_DAL_DataAccessLayer.Migrations
 {
     [DbContext(typeof(QlBanLaptopContext))]
-    partial class QlBanLaptopContextModelSnapshot : ModelSnapshot
+    [Migration("20230323013629_update_Db1")]
+    partial class update_Db1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -343,11 +345,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Property<Guid?>("IdVga")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Imei")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
-
                     b.Property<string>("Mota")
                         .HasColumnType("nvarchar(max)");
 
@@ -419,11 +416,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.Property<int>("NamBH")
                         .HasColumnType("int");
-
-                    b.Property<string>("Seri")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("Ten")
                         .IsRequired()

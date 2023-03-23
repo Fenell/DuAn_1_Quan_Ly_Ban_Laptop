@@ -1,6 +1,6 @@
 ﻿namespace _3_GUI_PresentationLayer.View
 {
-    partial class FrmHangLaptop
+    partial class FrmHangLinhKien
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
             dataGridView1 = new DataGridView();
             panel2 = new Panel();
             iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -39,28 +38,18 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(dataGridView1);
-            panel1.Location = new Point(12, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(265, 238);
-            panel1.TabIndex = 0;
-            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 3);
+            dataGridView1.Location = new Point(12, 12);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(259, 232);
-            dataGridView1.TabIndex = 0;
+            dataGridView1.Size = new Size(265, 232);
+            dataGridView1.TabIndex = 4;
             // 
             // panel2
             // 
@@ -73,10 +62,10 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
-            panel2.Location = new Point(294, 15);
+            panel2.Location = new Point(299, 12);
             panel2.Name = "panel2";
-            panel2.Size = new Size(244, 235);
-            panel2.TabIndex = 1;
+            panel2.Size = new Size(244, 232);
+            panel2.TabIndex = 5;
             // 
             // iconButton1
             // 
@@ -140,14 +129,14 @@
             textBoxCustom2_01.BorderFocusColor = Color.HotPink;
             textBoxCustom2_01.BorderRadius = 10;
             textBoxCustom2_01.BorderSize = 1;
-            textBoxCustom2_01.Location = new Point(13, 113);
+            textBoxCustom2_01.Location = new Point(13, 112);
             textBoxCustom2_01.Multiline = false;
             textBoxCustom2_01.Name = "textBoxCustom2_01";
             textBoxCustom2_01.Padding = new Padding(7);
             textBoxCustom2_01.PasswordChar = false;
             textBoxCustom2_01.PlaceholderColor = Color.DarkGray;
             textBoxCustom2_01.PlaceholderText = "";
-            textBoxCustom2_01.Size = new Size(200, 30);
+            textBoxCustom2_01.Size = new Size(211, 30);
             textBoxCustom2_01.TabIndex = 1;
             textBoxCustom2_01.Texts = "";
             textBoxCustom2_01.UnderlinedStyle = false;
@@ -157,7 +146,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.White;
             label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(66, 35);
+            label3.Location = new Point(66, 13);
             label3.Name = "label3";
             label3.Size = new Size(40, 20);
             label3.TabIndex = 0;
@@ -168,7 +157,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.White;
             label2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(13, 35);
+            label2.Location = new Point(13, 13);
             label2.Name = "label2";
             label2.Size = new Size(31, 20);
             label2.TabIndex = 0;
@@ -178,23 +167,21 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(13, 90);
+            label1.Location = new Point(13, 72);
             label1.Name = "label1";
             label1.Size = new Size(72, 20);
             label1.TabIndex = 0;
             label1.Text = "Tên hãng";
             // 
-            // FrmHangLaptop
+            // FrmHangLinhKien
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(244, 245, 255);
-            ClientSize = new Size(550, 262);
+            ClientSize = new Size(800, 450);
+            Controls.Add(dataGridView1);
             Controls.Add(panel2);
-            Controls.Add(panel1);
-            Name = "FrmHangLaptop";
-            Text = "FrmHangLaptop";
-            panel1.ResumeLayout(false);
+            Name = "FrmHangLinhKien";
+            Text = "FrmHangLinhKien";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -203,16 +190,15 @@
 
         #endregion
 
-        private Panel panel1;
         private DataGridView dataGridView1;
         private Panel panel2;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButton5;
+        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton iconButton2;
         private CustomControl.TextBoxCustom2_0 textBoxCustom2_01;
         private Label label3;
         private Label label2;
         private Label label1;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton5;
     }
 }

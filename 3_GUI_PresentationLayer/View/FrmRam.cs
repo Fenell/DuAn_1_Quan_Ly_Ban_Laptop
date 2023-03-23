@@ -10,15 +10,11 @@ using System.Windows.Forms;
 
 namespace _3_GUI_PresentationLayer.View
 {
-    public partial class FrmLaptop : Form
+    public partial class FrmRam : Form
     {
-        public FrmLaptop()
+        public FrmRam()
         {
             InitializeComponent();
-
-        }
-        void loaddata()
-        {
         }
     }
 }

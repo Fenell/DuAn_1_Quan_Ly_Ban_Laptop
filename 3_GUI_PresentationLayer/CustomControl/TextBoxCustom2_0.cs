@@ -321,6 +321,7 @@ namespace _3_GUI_PresentationLayer.CustomControl
             this.Invalidate();
             RemovePlaceholder();
         }
+
         private void textBox1_Leave(object sender, EventArgs e)
         {
             isFocused = false;
@@ -332,14 +333,17 @@ namespace _3_GUI_PresentationLayer.CustomControl
         {
             this.OnClick(e);
         }
+
         private void textBox1_MouseEnter(object sender, EventArgs e)
         {
             this.OnMouseEnter(e);
         }
+
         private void textBox1_MouseLeave(object sender, EventArgs e)
         {
             this.OnMouseLeave(e);
         }
+
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             this.OnKeyPress(e);

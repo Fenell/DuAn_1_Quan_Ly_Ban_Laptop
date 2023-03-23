@@ -28,8 +28,6 @@ namespace _1_DAL_DataAccessLayer.Context
         {
             modelBuilder.ApplyConfiguration(new ChiTietHoaDonConfiguration());
             modelBuilder.ApplyConfiguration(new ChiTietKhuyenMaiConfiguration());
-            modelBuilder.ApplyConfiguration(new ChiTietLaptopConfiguration());
-            modelBuilder.ApplyConfiguration(new ChiTietLinhKienConfiguration());
             modelBuilder.ApplyConfiguration(new CpuConfiguration());
             modelBuilder.ApplyConfiguration(new DongLaptopConfiguration());
             modelBuilder.ApplyConfiguration(new HangLaptopConfiguration());
@@ -47,7 +45,6 @@ namespace _1_DAL_DataAccessLayer.Context
             modelBuilder.ApplyConfiguration(new VgaConfiguration());
             modelBuilder.ApplyConfiguration(new RamConfiguration());
             modelBuilder.ApplyConfiguration(new KhuyenMaiConfiguration());
-            modelBuilder.ApplyConfiguration(new NhaCungCapLinhKienConfiguration());
 
 
         }
@@ -57,14 +54,12 @@ namespace _1_DAL_DataAccessLayer.Context
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(
-                    @"Data Source=DESKTOP-51CTS9F\SQLEXPRESS;Initial Catalog=QlBanLaptop;Integrated Security=True");
+                    @"Data Source=DESKTOP-CFK23F4\SQLEXPRESS;Initial Catalog=QlBanLaptop;User ID=tuandat;Password=123");
             }
         }
 
         public DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
         public DbSet<ChiTietKhuyenMai> ChiTietKhuyenMais { get; set; }
-        public DbSet<ChiTietLaptop> ChiTietLaptops { get; set; }
-        public DbSet<ChiTietLinhKien> ChiTietLinhKiens { get; set; }
         public DbSet<Cpu> Cpus { get; set; }
         public DbSet<DongLaptop> DongLaptops { get; set; }
         public DbSet<HangLaptop> HangLaptops { get; set; }
@@ -78,7 +73,6 @@ namespace _1_DAL_DataAccessLayer.Context
         public DbSet<ManHinh> ManHinhs { get; set; }
         public DbSet<MauSac> MauSacs { get; set; }
         public DbSet<NhaCungCap> NhaCungCaps { get; set; }
-        public DbSet<NhaCungCapLk> NhaCungCapLks { get; set; }
         public DbSet<NhanVien> NhanViens { get; set; }
         public DbSet<OCung> OCungs { get; set; }
         public DbSet<Ram> Rams { get; set; }

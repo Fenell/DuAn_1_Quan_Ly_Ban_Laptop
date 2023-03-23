@@ -41,11 +41,12 @@ namespace _3_GUI_PresentationLayer.View
             label19 = new Label();
             label9 = new Label();
             panel2 = new Panel();
+            textBoxCustom2_04 = new CustomControl.TextBoxCustom2_0();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             iconButton5 = new FontAwesome.Sharp.IconButton();
             iconButton4 = new FontAwesome.Sharp.IconButton();
             iconButton3 = new FontAwesome.Sharp.IconButton();
             iconButton2 = new FontAwesome.Sharp.IconButton();
-            textBoxCustom2_04 = new CustomControl.TextBoxCustom2_0();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -53,13 +54,11 @@ namespace _3_GUI_PresentationLayer.View
             label4 = new Label();
             textBoxCustom2_03 = new CustomControl.TextBoxCustom2_0();
             textBoxCustom2_02 = new CustomControl.TextBoxCustom2_0();
-            textBoxCustom2_01 = new CustomControl.TextBoxCustom2_0();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            comboBoxCustom1 = new CustomControl.ComboBoxCustom();
+            textBoxCustom2_06 = new CustomControl.TextBoxCustom2_0();
             label3 = new Label();
-            label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
+            textBox1 = new TextBox();
             panel3 = new Panel();
             dataGridView1 = new DataGridView();
             panel4 = new Panel();
@@ -77,7 +76,6 @@ namespace _3_GUI_PresentationLayer.View
             comboBoxCustom5 = new CustomControl.ComboBoxCustom();
             comboBoxCustom4 = new CustomControl.ComboBoxCustom();
             comboBoxCustom3 = new CustomControl.ComboBoxCustom();
-            comboBoxCustom11 = new CustomControl.ComboBoxCustom();
             comboBoxCustom10 = new CustomControl.ComboBoxCustom();
             comboBoxCustom9 = new CustomControl.ComboBoxCustom();
             comboBoxCustom8 = new CustomControl.ComboBoxCustom();
@@ -106,7 +104,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(42, 47, 85);
+            panel1.BackColor = Color.White;
             panel1.Controls.Add(iconButton18);
             panel1.Controls.Add(iconButton17);
             panel1.Controls.Add(radioButtonCustom2);
@@ -116,7 +114,7 @@ namespace _3_GUI_PresentationLayer.View
             panel1.Controls.Add(label19);
             panel1.Location = new Point(12, 14);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1087, 69);
+            panel1.Size = new Size(1078, 69);
             panel1.TabIndex = 0;
             // 
             // iconButton18
@@ -151,7 +149,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             radioButtonCustom2.AutoSize = true;
             radioButtonCustom2.CheckedColor = Color.MediumSlateBlue;
-            radioButtonCustom2.ForeColor = Color.White;
+            radioButtonCustom2.ForeColor = Color.FromArgb(3, 22, 73);
             radioButtonCustom2.Location = new Point(436, 29);
             radioButtonCustom2.MinimumSize = new Size(0, 21);
             radioButtonCustom2.Name = "radioButtonCustom2";
@@ -167,7 +165,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             radioButtonCustom1.AutoSize = true;
             radioButtonCustom1.CheckedColor = Color.MediumSlateBlue;
-            radioButtonCustom1.ForeColor = Color.White;
+            radioButtonCustom1.ForeColor = Color.FromArgb(3, 22, 73);
             radioButtonCustom1.Location = new Point(326, 29);
             radioButtonCustom1.MinimumSize = new Size(0, 21);
             radioButtonCustom1.Name = "radioButtonCustom1";
@@ -195,7 +193,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // textBoxCustom2_05
             // 
-            textBoxCustom2_05.BackColor = Color.FromArgb(42, 47, 85);
+            textBoxCustom2_05.BackColor = Color.White;
             textBoxCustom2_05.BorderColor = Color.MediumSlateBlue;
             textBoxCustom2_05.BorderFocusColor = Color.FromArgb(255, 128, 0);
             textBoxCustom2_05.BorderRadius = 10;
@@ -205,7 +203,7 @@ namespace _3_GUI_PresentationLayer.View
             textBoxCustom2_05.Name = "textBoxCustom2_05";
             textBoxCustom2_05.Padding = new Padding(40, 7, 7, 7);
             textBoxCustom2_05.PasswordChar = false;
-            textBoxCustom2_05.PlaceholderColor = Color.White;
+            textBoxCustom2_05.PlaceholderColor = Color.FromArgb(3, 22, 73);
             textBoxCustom2_05.PlaceholderText = "Tìm kiếm...";
             textBoxCustom2_05.Size = new Size(254, 30);
             textBoxCustom2_05.TabIndex = 18;
@@ -216,8 +214,8 @@ namespace _3_GUI_PresentationLayer.View
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label19.ForeColor = Color.White;
-            label19.Location = new Point(3, 4);
+            label19.ForeColor = Color.FromArgb(3, 22, 73);
+            label19.Location = new Point(3, 2);
             label19.Name = "label19";
             label19.Size = new Size(71, 20);
             label19.TabIndex = 17;
@@ -227,7 +225,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.ForeColor = Color.White;
+            label9.ForeColor = Color.FromArgb(3, 22, 73);
             label9.Location = new Point(17, 6);
             label9.Name = "label9";
             label9.Size = new Size(107, 20);
@@ -236,12 +234,13 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(42, 47, 85);
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(textBoxCustom2_04);
+            panel2.Controls.Add(iconButton1);
             panel2.Controls.Add(iconButton5);
             panel2.Controls.Add(iconButton4);
             panel2.Controls.Add(iconButton3);
             panel2.Controls.Add(iconButton2);
-            panel2.Controls.Add(textBoxCustom2_04);
             panel2.Controls.Add(label8);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label6);
@@ -249,99 +248,114 @@ namespace _3_GUI_PresentationLayer.View
             panel2.Controls.Add(label4);
             panel2.Controls.Add(textBoxCustom2_03);
             panel2.Controls.Add(textBoxCustom2_02);
-            panel2.Controls.Add(textBoxCustom2_01);
-            panel2.Controls.Add(iconButton1);
-            panel2.Controls.Add(comboBoxCustom1);
+            panel2.Controls.Add(textBoxCustom2_06);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(pictureBox1);
-            panel2.Location = new Point(1110, 12);
+            panel2.Location = new Point(1110, 14);
             panel2.Name = "panel2";
-            panel2.Size = new Size(406, 632);
+            panel2.Size = new Size(399, 630);
             panel2.TabIndex = 1;
-            // 
-            // iconButton5
-            // 
-            iconButton5.FlatAppearance.BorderSize = 0;
-            iconButton5.FlatStyle = FlatStyle.Flat;
-            iconButton5.IconChar = FontAwesome.Sharp.IconChar.Rotate;
-            iconButton5.IconColor = Color.FromArgb(188, 254, 252);
-            iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton5.IconSize = 45;
-            iconButton5.Location = new Point(298, 580);
-            iconButton5.Name = "iconButton5";
-            iconButton5.Size = new Size(53, 37);
-            iconButton5.TabIndex = 16;
-            iconButton5.UseVisualStyleBackColor = true;
-            // 
-            // iconButton4
-            // 
-            iconButton4.FlatAppearance.BorderSize = 0;
-            iconButton4.FlatStyle = FlatStyle.Flat;
-            iconButton4.IconChar = FontAwesome.Sharp.IconChar.Cancel;
-            iconButton4.IconColor = Color.FromArgb(188, 254, 252);
-            iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton4.IconSize = 45;
-            iconButton4.Location = new Point(219, 580);
-            iconButton4.Name = "iconButton4";
-            iconButton4.Size = new Size(53, 37);
-            iconButton4.TabIndex = 15;
-            iconButton4.UseVisualStyleBackColor = true;
-            // 
-            // iconButton3
-            // 
-            iconButton3.FlatAppearance.BorderSize = 0;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            iconButton3.IconColor = Color.FromArgb(188, 254, 252);
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.IconSize = 45;
-            iconButton3.Location = new Point(138, 580);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(53, 37);
-            iconButton3.TabIndex = 14;
-            iconButton3.UseVisualStyleBackColor = true;
-            // 
-            // iconButton2
-            // 
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.Add;
-            iconButton2.IconColor = Color.FromArgb(188, 254, 252);
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 45;
-            iconButton2.Location = new Point(49, 580);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(53, 37);
-            iconButton2.TabIndex = 13;
-            iconButton2.UseVisualStyleBackColor = true;
             // 
             // textBoxCustom2_04
             // 
-            textBoxCustom2_04.BackColor = Color.FromArgb(42, 47, 85);
             textBoxCustom2_04.BorderColor = Color.MediumSlateBlue;
             textBoxCustom2_04.BorderFocusColor = Color.HotPink;
-            textBoxCustom2_04.BorderRadius = 0;
+            textBoxCustom2_04.BorderRadius = 10;
             textBoxCustom2_04.BorderSize = 1;
-            textBoxCustom2_04.Location = new Point(20, 478);
+            textBoxCustom2_04.Location = new Point(25, 463);
             textBoxCustom2_04.Multiline = true;
             textBoxCustom2_04.Name = "textBoxCustom2_04";
             textBoxCustom2_04.Padding = new Padding(7);
             textBoxCustom2_04.PasswordChar = false;
             textBoxCustom2_04.PlaceholderColor = Color.DarkGray;
             textBoxCustom2_04.PlaceholderText = "";
-            textBoxCustom2_04.Size = new Size(371, 96);
-            textBoxCustom2_04.TabIndex = 12;
+            textBoxCustom2_04.Size = new Size(319, 89);
+            textBoxCustom2_04.TabIndex = 17;
             textBoxCustom2_04.Texts = "";
             textBoxCustom2_04.UnderlinedStyle = false;
+            // 
+            // iconButton1
+            // 
+            iconButton1.BackColor = Color.White;
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.RotateBackward;
+            iconButton1.IconColor = Color.FromArgb(61, 39, 76);
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 45;
+            iconButton1.Location = new Point(291, 572);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(53, 37);
+            iconButton1.TabIndex = 16;
+            iconButton1.UseVisualStyleBackColor = false;
+            // 
+            // iconButton5
+            // 
+            iconButton5.BackColor = Color.White;
+            iconButton5.FlatAppearance.BorderSize = 0;
+            iconButton5.FlatStyle = FlatStyle.Flat;
+            iconButton5.IconChar = FontAwesome.Sharp.IconChar.Rotate;
+            iconButton5.IconColor = Color.FromArgb(61, 39, 76);
+            iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton5.IconSize = 45;
+            iconButton5.Location = new Point(227, 572);
+            iconButton5.Name = "iconButton5";
+            iconButton5.Size = new Size(53, 37);
+            iconButton5.TabIndex = 16;
+            iconButton5.UseVisualStyleBackColor = false;
+            // 
+            // iconButton4
+            // 
+            iconButton4.BackColor = Color.White;
+            iconButton4.FlatAppearance.BorderSize = 0;
+            iconButton4.FlatStyle = FlatStyle.Flat;
+            iconButton4.IconChar = FontAwesome.Sharp.IconChar.Cancel;
+            iconButton4.IconColor = Color.FromArgb(61, 39, 76);
+            iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton4.IconSize = 45;
+            iconButton4.Location = new Point(158, 572);
+            iconButton4.Name = "iconButton4";
+            iconButton4.Size = new Size(53, 37);
+            iconButton4.TabIndex = 15;
+            iconButton4.UseVisualStyleBackColor = false;
+            // 
+            // iconButton3
+            // 
+            iconButton3.BackColor = Color.White;
+            iconButton3.FlatAppearance.BorderSize = 0;
+            iconButton3.FlatStyle = FlatStyle.Flat;
+            iconButton3.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            iconButton3.IconColor = Color.FromArgb(61, 39, 76);
+            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton3.IconSize = 45;
+            iconButton3.Location = new Point(92, 572);
+            iconButton3.Name = "iconButton3";
+            iconButton3.Size = new Size(53, 37);
+            iconButton3.TabIndex = 14;
+            iconButton3.UseVisualStyleBackColor = false;
+            // 
+            // iconButton2
+            // 
+            iconButton2.BackColor = Color.White;
+            iconButton2.FlatAppearance.BorderSize = 0;
+            iconButton2.FlatStyle = FlatStyle.Flat;
+            iconButton2.IconChar = FontAwesome.Sharp.IconChar.Add;
+            iconButton2.IconColor = Color.FromArgb(61, 39, 76);
+            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton2.IconSize = 45;
+            iconButton2.Location = new Point(36, 572);
+            iconButton2.Name = "iconButton2";
+            iconButton2.Size = new Size(53, 37);
+            iconButton2.TabIndex = 13;
+            iconButton2.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(19, 441);
+            label8.ForeColor = Color.FromArgb(3, 22, 73);
+            label8.Location = new Point(19, 436);
             label8.Name = "label8";
             label8.Size = new Size(107, 21);
             label8.TabIndex = 11;
@@ -352,7 +366,7 @@ namespace _3_GUI_PresentationLayer.View
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(22, 24, 63);
-            label7.Location = new Point(192, 404);
+            label7.Location = new Point(192, 403);
             label7.Name = "label7";
             label7.Size = new Size(16, 21);
             label7.TabIndex = 10;
@@ -362,8 +376,8 @@ namespace _3_GUI_PresentationLayer.View
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(219, 368);
+            label6.ForeColor = Color.FromArgb(3, 22, 73);
+            label6.Location = new Point(219, 367);
             label6.Name = "label6";
             label6.Size = new Size(64, 21);
             label6.TabIndex = 9;
@@ -373,8 +387,8 @@ namespace _3_GUI_PresentationLayer.View
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(20, 368);
+            label5.ForeColor = Color.FromArgb(3, 22, 73);
+            label5.Location = new Point(20, 367);
             label5.Name = "label5";
             label5.Size = new Size(73, 21);
             label5.TabIndex = 8;
@@ -384,8 +398,8 @@ namespace _3_GUI_PresentationLayer.View
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(347, 404);
+            label4.ForeColor = Color.FromArgb(3, 22, 73);
+            label4.Location = new Point(347, 403);
             label4.Name = "label4";
             label4.Size = new Size(43, 21);
             label4.TabIndex = 7;
@@ -393,12 +407,12 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // textBoxCustom2_03
             // 
-            textBoxCustom2_03.BackColor = Color.FromArgb(42, 47, 85);
+            textBoxCustom2_03.BackColor = Color.White;
             textBoxCustom2_03.BorderColor = Color.MediumSlateBlue;
             textBoxCustom2_03.BorderFocusColor = Color.HotPink;
             textBoxCustom2_03.BorderRadius = 5;
             textBoxCustom2_03.BorderSize = 2;
-            textBoxCustom2_03.Location = new Point(219, 395);
+            textBoxCustom2_03.Location = new Point(219, 394);
             textBoxCustom2_03.Multiline = false;
             textBoxCustom2_03.Name = "textBoxCustom2_03";
             textBoxCustom2_03.Padding = new Padding(7);
@@ -412,12 +426,12 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // textBoxCustom2_02
             // 
-            textBoxCustom2_02.BackColor = Color.FromArgb(42, 47, 85);
+            textBoxCustom2_02.BackColor = Color.White;
             textBoxCustom2_02.BorderColor = Color.MediumSlateBlue;
             textBoxCustom2_02.BorderFocusColor = Color.HotPink;
             textBoxCustom2_02.BorderRadius = 5;
             textBoxCustom2_02.BorderSize = 2;
-            textBoxCustom2_02.Location = new Point(20, 395);
+            textBoxCustom2_02.Location = new Point(20, 394);
             textBoxCustom2_02.Multiline = false;
             textBoxCustom2_02.Name = "textBoxCustom2_02";
             textBoxCustom2_02.Padding = new Padding(7);
@@ -429,107 +443,70 @@ namespace _3_GUI_PresentationLayer.View
             textBoxCustom2_02.Texts = "";
             textBoxCustom2_02.UnderlinedStyle = true;
             // 
-            // textBoxCustom2_01
+            // textBoxCustom2_06
             // 
-            textBoxCustom2_01.BackColor = Color.FromArgb(42, 47, 85);
-            textBoxCustom2_01.BorderColor = Color.CornflowerBlue;
-            textBoxCustom2_01.BorderFocusColor = Color.HotPink;
-            textBoxCustom2_01.BorderRadius = 5;
-            textBoxCustom2_01.BorderSize = 2;
-            textBoxCustom2_01.Location = new Point(99, 324);
-            textBoxCustom2_01.Multiline = false;
-            textBoxCustom2_01.Name = "textBoxCustom2_01";
-            textBoxCustom2_01.Padding = new Padding(7);
-            textBoxCustom2_01.PasswordChar = false;
-            textBoxCustom2_01.PlaceholderColor = Color.DarkGray;
-            textBoxCustom2_01.PlaceholderText = "";
-            textBoxCustom2_01.Size = new Size(208, 30);
-            textBoxCustom2_01.TabIndex = 4;
-            textBoxCustom2_01.Texts = "";
-            textBoxCustom2_01.UnderlinedStyle = true;
-            // 
-            // iconButton1
-            // 
-            iconButton1.BackColor = Color.White;
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.FileImport;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 37;
-            iconButton1.Location = new Point(296, 278);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(45, 33);
-            iconButton1.TabIndex = 3;
-            iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // comboBoxCustom1
-            // 
-            comboBoxCustom1.BackColor = Color.FromArgb(42, 47, 85);
-            comboBoxCustom1.BorderColor = Color.MediumSlateBlue;
-            comboBoxCustom1.BorderSize = 1;
-            comboBoxCustom1.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxCustom1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom1.ForeColor = Color.DimGray;
-            comboBoxCustom1.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom1.ListBackColor = Color.FromArgb(230, 228, 245);
-            comboBoxCustom1.ListTextColor = Color.DimGray;
-            comboBoxCustom1.Location = new Point(49, 278);
-            comboBoxCustom1.MinimumSize = new Size(200, 30);
-            comboBoxCustom1.Name = "comboBoxCustom1";
-            comboBoxCustom1.Padding = new Padding(1);
-            comboBoxCustom1.Size = new Size(243, 30);
-            comboBoxCustom1.TabIndex = 2;
-            comboBoxCustom1.Texts = "";
+            textBoxCustom2_06.BackColor = Color.White;
+            textBoxCustom2_06.BorderColor = Color.CornflowerBlue;
+            textBoxCustom2_06.BorderFocusColor = Color.HotPink;
+            textBoxCustom2_06.BorderRadius = 5;
+            textBoxCustom2_06.BorderSize = 2;
+            textBoxCustom2_06.Location = new Point(112, 302);
+            textBoxCustom2_06.Multiline = false;
+            textBoxCustom2_06.Name = "textBoxCustom2_06";
+            textBoxCustom2_06.Padding = new Padding(7);
+            textBoxCustom2_06.PasswordChar = false;
+            textBoxCustom2_06.PlaceholderColor = Color.DarkGray;
+            textBoxCustom2_06.PlaceholderText = "";
+            textBoxCustom2_06.Size = new Size(208, 30);
+            textBoxCustom2_06.TabIndex = 4;
+            textBoxCustom2_06.Texts = "";
+            textBoxCustom2_06.UnderlinedStyle = true;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(148, 404);
+            label3.ForeColor = Color.FromArgb(3, 22, 73);
+            label3.Location = new Point(148, 403);
             label3.Name = "label3";
             label3.Size = new Size(43, 21);
             label3.TabIndex = 1;
             label3.Text = "VND";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(20, 326);
-            label2.Name = "label2";
-            label2.Size = new Size(69, 21);
-            label2.TabIndex = 1;
-            label2.Text = "Tồn kho";
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(19, 245);
+            label1.ForeColor = Color.FromArgb(3, 22, 73);
+            label1.Location = new Point(36, 311);
             label1.Name = "label1";
-            label1.Size = new Size(119, 21);
+            label1.Size = new Size(42, 21);
             label1.TabIndex = 1;
-            label1.Text = "Danh sách Imei";
+            label1.Text = "Imei";
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(98, 12);
+            pictureBox1.Location = new Point(112, 24);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(195, 198);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // textBox1
+            // 
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.Location = new Point(915, 153);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(150, 23);
+            textBox1.TabIndex = 17;
+            // 
             // panel3
             // 
             panel3.BackColor = Color.White;
             panel3.Controls.Add(dataGridView1);
-            panel3.Location = new Point(12, 95);
+            panel3.Location = new Point(12, 103);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1087, 315);
+            panel3.Size = new Size(1078, 286);
             panel3.TabIndex = 2;
             // 
             // dataGridView1
@@ -539,12 +516,13 @@ namespace _3_GUI_PresentationLayer.View
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1087, 315);
+            dataGridView1.Size = new Size(1078, 286);
             dataGridView1.TabIndex = 0;
             // 
             // panel4
             // 
-            panel4.BackColor = Color.FromArgb(42, 47, 85);
+            panel4.BackColor = Color.White;
+            panel4.Controls.Add(textBox1);
             panel4.Controls.Add(iconButton16);
             panel4.Controls.Add(iconButton15);
             panel4.Controls.Add(iconButton14);
@@ -559,7 +537,6 @@ namespace _3_GUI_PresentationLayer.View
             panel4.Controls.Add(comboBoxCustom5);
             panel4.Controls.Add(comboBoxCustom4);
             panel4.Controls.Add(comboBoxCustom3);
-            panel4.Controls.Add(comboBoxCustom11);
             panel4.Controls.Add(comboBoxCustom10);
             panel4.Controls.Add(comboBoxCustom9);
             panel4.Controls.Add(comboBoxCustom8);
@@ -575,14 +552,14 @@ namespace _3_GUI_PresentationLayer.View
             panel4.Controls.Add(label15);
             panel4.Controls.Add(label14);
             panel4.Controls.Add(label9);
-            panel4.Location = new Point(12, 423);
+            panel4.Location = new Point(12, 408);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1087, 221);
+            panel4.Size = new Size(1078, 236);
             panel4.TabIndex = 3;
             // 
             // iconButton16
             // 
-            iconButton16.BackColor = Color.White;
+            iconButton16.BackColor = Color.FromArgb(86, 103, 204);
             iconButton16.FlatStyle = FlatStyle.Flat;
             iconButton16.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             iconButton16.IconColor = Color.Black;
@@ -597,7 +574,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // iconButton15
             // 
-            iconButton15.BackColor = Color.White;
+            iconButton15.BackColor = Color.FromArgb(86, 103, 204);
             iconButton15.FlatStyle = FlatStyle.Flat;
             iconButton15.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             iconButton15.IconColor = Color.Black;
@@ -612,7 +589,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // iconButton14
             // 
-            iconButton14.BackColor = Color.White;
+            iconButton14.BackColor = Color.FromArgb(86, 103, 204);
             iconButton14.FlatStyle = FlatStyle.Flat;
             iconButton14.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             iconButton14.IconColor = Color.Black;
@@ -627,7 +604,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // iconButton13
             // 
-            iconButton13.BackColor = Color.White;
+            iconButton13.BackColor = Color.FromArgb(86, 103, 204);
             iconButton13.FlatStyle = FlatStyle.Flat;
             iconButton13.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             iconButton13.IconColor = Color.Black;
@@ -642,7 +619,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // iconButton12
             // 
-            iconButton12.BackColor = Color.White;
+            iconButton12.BackColor = Color.FromArgb(86, 103, 204);
             iconButton12.FlatStyle = FlatStyle.Flat;
             iconButton12.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             iconButton12.IconColor = Color.Black;
@@ -657,7 +634,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // iconButton11
             // 
-            iconButton11.BackColor = Color.White;
+            iconButton11.BackColor = Color.FromArgb(86, 103, 204);
             iconButton11.FlatStyle = FlatStyle.Flat;
             iconButton11.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             iconButton11.IconColor = Color.Black;
@@ -672,7 +649,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // iconButton10
             // 
-            iconButton10.BackColor = Color.White;
+            iconButton10.BackColor = Color.FromArgb(86, 103, 204);
             iconButton10.FlatStyle = FlatStyle.Flat;
             iconButton10.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             iconButton10.IconColor = Color.Black;
@@ -687,7 +664,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // iconButton9
             // 
-            iconButton9.BackColor = Color.White;
+            iconButton9.BackColor = Color.FromArgb(86, 103, 204);
             iconButton9.FlatStyle = FlatStyle.Flat;
             iconButton9.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             iconButton9.IconColor = Color.Black;
@@ -702,7 +679,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // iconButton8
             // 
-            iconButton8.BackColor = Color.White;
+            iconButton8.BackColor = Color.FromArgb(86, 103, 204);
             iconButton8.FlatStyle = FlatStyle.Flat;
             iconButton8.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             iconButton8.IconColor = Color.Black;
@@ -717,7 +694,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // iconButton7
             // 
-            iconButton7.BackColor = Color.White;
+            iconButton7.BackColor = Color.FromArgb(86, 103, 204);
             iconButton7.FlatStyle = FlatStyle.Flat;
             iconButton7.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             iconButton7.IconColor = Color.Black;
@@ -732,7 +709,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // comboBoxCustom6
             // 
-            comboBoxCustom6.BackColor = Color.FromArgb(42, 47, 85);
+            comboBoxCustom6.BackColor = Color.White;
             comboBoxCustom6.BorderColor = Color.MediumSlateBlue;
             comboBoxCustom6.BorderSize = 1;
             comboBoxCustom6.DropDownStyle = ComboBoxStyle.DropDown;
@@ -751,7 +728,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // comboBoxCustom5
             // 
-            comboBoxCustom5.BackColor = Color.FromArgb(42, 47, 85);
+            comboBoxCustom5.BackColor = Color.White;
             comboBoxCustom5.BorderColor = Color.MediumSlateBlue;
             comboBoxCustom5.BorderSize = 1;
             comboBoxCustom5.DropDownStyle = ComboBoxStyle.DropDown;
@@ -770,7 +747,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // comboBoxCustom4
             // 
-            comboBoxCustom4.BackColor = Color.FromArgb(42, 47, 85);
+            comboBoxCustom4.BackColor = Color.White;
             comboBoxCustom4.BorderColor = Color.MediumSlateBlue;
             comboBoxCustom4.BorderSize = 1;
             comboBoxCustom4.DropDownStyle = ComboBoxStyle.DropDown;
@@ -789,7 +766,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // comboBoxCustom3
             // 
-            comboBoxCustom3.BackColor = Color.FromArgb(42, 47, 85);
+            comboBoxCustom3.BackColor = Color.White;
             comboBoxCustom3.BorderColor = Color.MediumSlateBlue;
             comboBoxCustom3.BorderSize = 1;
             comboBoxCustom3.DropDownStyle = ComboBoxStyle.DropDown;
@@ -806,28 +783,9 @@ namespace _3_GUI_PresentationLayer.View
             comboBoxCustom3.TabIndex = 19;
             comboBoxCustom3.Texts = "";
             // 
-            // comboBoxCustom11
-            // 
-            comboBoxCustom11.BackColor = Color.FromArgb(42, 47, 85);
-            comboBoxCustom11.BorderColor = Color.MediumSlateBlue;
-            comboBoxCustom11.BorderSize = 1;
-            comboBoxCustom11.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxCustom11.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom11.ForeColor = Color.White;
-            comboBoxCustom11.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom11.ListBackColor = Color.FromArgb(230, 228, 245);
-            comboBoxCustom11.ListTextColor = Color.White;
-            comboBoxCustom11.Location = new Point(915, 150);
-            comboBoxCustom11.MinimumSize = new Size(150, 30);
-            comboBoxCustom11.Name = "comboBoxCustom11";
-            comboBoxCustom11.Padding = new Padding(1);
-            comboBoxCustom11.Size = new Size(150, 30);
-            comboBoxCustom11.TabIndex = 18;
-            comboBoxCustom11.Texts = "";
-            // 
             // comboBoxCustom10
             // 
-            comboBoxCustom10.BackColor = Color.FromArgb(42, 47, 85);
+            comboBoxCustom10.BackColor = Color.White;
             comboBoxCustom10.BorderColor = Color.MediumSlateBlue;
             comboBoxCustom10.BorderSize = 1;
             comboBoxCustom10.DropDownStyle = ComboBoxStyle.DropDown;
@@ -846,7 +804,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // comboBoxCustom9
             // 
-            comboBoxCustom9.BackColor = Color.FromArgb(42, 47, 85);
+            comboBoxCustom9.BackColor = Color.White;
             comboBoxCustom9.BorderColor = Color.MediumSlateBlue;
             comboBoxCustom9.BorderSize = 1;
             comboBoxCustom9.DropDownStyle = ComboBoxStyle.DropDown;
@@ -865,7 +823,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // comboBoxCustom8
             // 
-            comboBoxCustom8.BackColor = Color.FromArgb(42, 47, 85);
+            comboBoxCustom8.BackColor = Color.White;
             comboBoxCustom8.BorderColor = Color.MediumSlateBlue;
             comboBoxCustom8.BorderSize = 1;
             comboBoxCustom8.DropDownStyle = ComboBoxStyle.DropDown;
@@ -884,7 +842,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // comboBoxCustom7
             // 
-            comboBoxCustom7.BackColor = Color.FromArgb(42, 47, 85);
+            comboBoxCustom7.BackColor = Color.White;
             comboBoxCustom7.BorderColor = Color.MediumSlateBlue;
             comboBoxCustom7.BorderSize = 1;
             comboBoxCustom7.DropDownStyle = ComboBoxStyle.DropDown;
@@ -903,7 +861,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // comboBoxCustom2
             // 
-            comboBoxCustom2.BackColor = Color.FromArgb(42, 47, 85);
+            comboBoxCustom2.BackColor = Color.White;
             comboBoxCustom2.BorderColor = Color.MediumSlateBlue;
             comboBoxCustom2.BorderSize = 1;
             comboBoxCustom2.DropDownStyle = ComboBoxStyle.DropDown;
@@ -925,7 +883,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.ForeColor = Color.White;
+            label13.ForeColor = Color.FromArgb(3, 22, 73);
             label13.Location = new Point(915, 6);
             label13.Name = "label13";
             label13.Size = new Size(39, 20);
@@ -936,7 +894,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label12.ForeColor = Color.White;
+            label12.ForeColor = Color.FromArgb(3, 22, 73);
             label12.Location = new Point(699, 6);
             label12.Name = "label12";
             label12.Size = new Size(38, 20);
@@ -947,7 +905,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.ForeColor = Color.White;
+            label11.ForeColor = Color.FromArgb(3, 22, 73);
             label11.Location = new Point(456, 6);
             label11.Name = "label11";
             label11.Size = new Size(104, 20);
@@ -958,7 +916,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.ForeColor = Color.White;
+            label10.ForeColor = Color.FromArgb(3, 22, 73);
             label10.Location = new Point(235, 6);
             label10.Name = "label10";
             label10.Size = new Size(95, 20);
@@ -969,7 +927,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label18.ForeColor = Color.White;
+            label18.ForeColor = Color.FromArgb(3, 22, 73);
             label18.Location = new Point(915, 121);
             label18.Name = "label18";
             label18.Size = new Size(81, 20);
@@ -980,7 +938,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label17.ForeColor = Color.White;
+            label17.ForeColor = Color.FromArgb(3, 22, 73);
             label17.Location = new Point(699, 121);
             label17.Name = "label17";
             label17.Size = new Size(65, 20);
@@ -991,7 +949,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label16.ForeColor = Color.White;
+            label16.ForeColor = Color.FromArgb(3, 22, 73);
             label16.Location = new Point(456, 121);
             label16.Name = "label16";
             label16.Size = new Size(75, 20);
@@ -1002,7 +960,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label15.ForeColor = Color.White;
+            label15.ForeColor = Color.FromArgb(3, 22, 73);
             label15.Location = new Point(235, 121);
             label15.Name = "label15";
             label15.Size = new Size(142, 20);
@@ -1013,7 +971,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.ForeColor = Color.White;
+            label14.ForeColor = Color.FromArgb(3, 22, 73);
             label14.Location = new Point(17, 121);
             label14.Name = "label14";
             label14.Size = new Size(39, 20);
@@ -1031,7 +989,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // panel6
             // 
-            panel6.BackColor = Color.FromArgb(26, 29, 65);
+            panel6.BackColor = Color.FromArgb(244, 245, 255);
             panel6.Controls.Add(panel3);
             panel6.Controls.Add(panel2);
             panel6.Controls.Add(panel1);
@@ -1075,13 +1033,10 @@ namespace _3_GUI_PresentationLayer.View
         private Panel panel4;
         private Label label1;
         private PictureBox pictureBox1;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private CustomControl.ComboBoxCustom comboBoxCustom1;
         private FontAwesome.Sharp.IconButton iconButton5;
         private FontAwesome.Sharp.IconButton iconButton4;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton2;
-        private CustomControl.TextBoxCustom2_0 textBoxCustom2_04;
         private Label label8;
         private Label label7;
         private Label label6;
@@ -1089,9 +1044,7 @@ namespace _3_GUI_PresentationLayer.View
         private Label label4;
         private CustomControl.TextBoxCustom2_0 textBoxCustom2_03;
         private CustomControl.TextBoxCustom2_0 textBoxCustom2_02;
-        private CustomControl.TextBoxCustom2_0 textBoxCustom2_01;
         private Label label3;
-        private Label label2;
         private Label label9;
         private Panel panel5;
         private Panel panel6;
@@ -1121,7 +1074,6 @@ namespace _3_GUI_PresentationLayer.View
         private FontAwesome.Sharp.IconButton iconButton10;
         private FontAwesome.Sharp.IconButton iconButton9;
         private FontAwesome.Sharp.IconButton iconButton8;
-        private CustomControl.ComboBoxCustom comboBoxCustom11;
         private CustomControl.ComboBoxCustom comboBoxCustom10;
         private CustomControl.ComboBoxCustom comboBoxCustom9;
         private CustomControl.ComboBoxCustom comboBoxCustom8;
@@ -1132,5 +1084,9 @@ namespace _3_GUI_PresentationLayer.View
         private FontAwesome.Sharp.IconButton iconButton17;
         private Label label19;
         private FontAwesome.Sharp.IconButton iconButton18;
+        private CustomControl.TextBoxCustom2_0 textBoxCustom2_06;
+        private TextBox textBox1;
+        private CustomControl.TextBoxCustom2_0 textBoxCustom2_04;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

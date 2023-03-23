@@ -20,7 +20,7 @@ namespace _1_DAL_DataAccessLayer.Models
         public Guid IdManHinh { get; set; }
         public Guid IdMauSac { get; set; }
         public Guid IdOCung { get; set; }
-
+        public string Imei { get; set; }
         public decimal GiaNhap { get; set; }
         public decimal GiaBan { get; set; }
         public int TonKho { get; set; }
@@ -40,7 +40,6 @@ namespace _1_DAL_DataAccessLayer.Models
         public MauSac MauSac { get; set; }
         public OCung OCung { get; set; }
 
-        public ICollection<ChiTietLaptop> ChiTietLaptops { get; set; }
         public ICollection<ChiTietKhuyenMai> ChiTietKhuyenMais { get; set; }
         public ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
 
