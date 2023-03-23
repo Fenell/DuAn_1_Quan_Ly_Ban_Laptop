@@ -1,4 +1,5 @@
-﻿using _1_DAL_DataAccessLayer.Models;
+﻿using _1_DAL_DataAccessLayer.IRepositories;
+using _1_DAL_DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,15 +8,27 @@ using System.Threading.Tasks;
 
 namespace _1_DAL_DataAccessLayer.Repositories
 {
-    public class ChiTietHoaDonRepository
+    public class ChiTietHoaDonRepository : IChiTietHoaDonRepository
     {
-        public void Add()
-        {
+        
 
+        public bool AddHĐ(ChiTietHoaDon chiTietHĐ)
+        {
+            throw new NotImplementedException();
         }
-        public void Update()
-        {
 
+        public List<ChiTietHoaDon> GetChiTietHĐ()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool RemoveHĐ(ChiTietHoaDon chiTietHĐ)
+        {
+            throw new NotImplementedException();
+        }
+        public bool UpdateHĐ(ChiTietHoaDon chiTietHĐ)
+        {
+            throw new NotImplementedException();
         }
     }
 }
