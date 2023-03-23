@@ -31,14 +31,14 @@
             panel1 = new Panel();
             dataGridView1 = new DataGridView();
             panel2 = new Panel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            iconButton5 = new FontAwesome.Sharp.IconButton();
             iconButton3 = new FontAwesome.Sharp.IconButton();
             iconButton2 = new FontAwesome.Sharp.IconButton();
             textBoxCustom2_01 = new CustomControl.TextBoxCustom2_0();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            iconButton5 = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -75,8 +75,36 @@
             panel2.Controls.Add(label1);
             panel2.Location = new Point(294, 15);
             panel2.Name = "panel2";
-            panel2.Size = new Size(244, 237);
+            panel2.Size = new Size(244, 235);
             panel2.TabIndex = 1;
+            // 
+            // iconButton1
+            // 
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            iconButton1.IconColor = Color.FromArgb(61, 39, 76);
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 45;
+            iconButton1.Location = new Point(121, 177);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(53, 37);
+            iconButton1.TabIndex = 19;
+            iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // iconButton5
+            // 
+            iconButton5.FlatAppearance.BorderSize = 0;
+            iconButton5.FlatStyle = FlatStyle.Flat;
+            iconButton5.IconChar = FontAwesome.Sharp.IconChar.Rotate;
+            iconButton5.IconColor = Color.FromArgb(61, 39, 76);
+            iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton5.IconSize = 45;
+            iconButton5.Location = new Point(171, 177);
+            iconButton5.Name = "iconButton5";
+            iconButton5.Size = new Size(53, 37);
+            iconButton5.TabIndex = 19;
+            iconButton5.UseVisualStyleBackColor = true;
             // 
             // iconButton3
             // 
@@ -155,34 +183,6 @@
             label1.Size = new Size(72, 20);
             label1.TabIndex = 0;
             label1.Text = "Tên hãng";
-            // 
-            // iconButton5
-            // 
-            iconButton5.FlatAppearance.BorderSize = 0;
-            iconButton5.FlatStyle = FlatStyle.Flat;
-            iconButton5.IconChar = FontAwesome.Sharp.IconChar.Rotate;
-            iconButton5.IconColor = Color.FromArgb(61, 39, 76);
-            iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton5.IconSize = 45;
-            iconButton5.Location = new Point(171, 177);
-            iconButton5.Name = "iconButton5";
-            iconButton5.Size = new Size(53, 37);
-            iconButton5.TabIndex = 19;
-            iconButton5.UseVisualStyleBackColor = true;
-            // 
-            // iconButton1
-            // 
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            iconButton1.IconColor = Color.FromArgb(61, 39, 76);
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 45;
-            iconButton1.Location = new Point(121, 177);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(53, 37);
-            iconButton1.TabIndex = 19;
-            iconButton1.UseVisualStyleBackColor = true;
             // 
             // FrmHangLaptop
             // 
