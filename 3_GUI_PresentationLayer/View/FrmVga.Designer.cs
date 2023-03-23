@@ -37,15 +37,9 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-
             panel1 = new Panel();
             dataGridView1 = new DataGridView();
             panel2.SuspendLayout();
-
-            panel1 = new Panel();
-            dataGridView1 = new DataGridView();
-            panel2.SuspendLayout();
-
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -63,42 +57,8 @@
             panel2.Controls.Add(label1);
             panel2.Location = new Point(294, 15);
             panel2.Name = "panel2";
-
-            panel2.Size = new Size(244, 237);
-            panel2.TabIndex = 3;
-            // 
-            // iconButton1
-            // 
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            iconButton1.IconColor = Color.FromArgb(61, 39, 76);
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 45;
-            iconButton1.Location = new Point(121, 177);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(53, 37);
-            iconButton1.TabIndex = 19;
-            iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // iconButton5
-            // 
-            iconButton5.FlatAppearance.BorderSize = 0;
-            iconButton5.FlatStyle = FlatStyle.Flat;
-            iconButton5.IconChar = FontAwesome.Sharp.IconChar.Rotate;
-            iconButton5.IconColor = Color.FromArgb(61, 39, 76);
-            iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton5.IconSize = 45;
-            iconButton5.Location = new Point(171, 177);
-            iconButton5.Name = "iconButton5";
-            iconButton5.Size = new Size(53, 37);
-            iconButton5.TabIndex = 19;
-            iconButton5.UseVisualStyleBackColor = true;
-<<<<<<< HEAD
-========
             panel2.Size = new Size(244, 235);
             panel2.TabIndex = 1;
->>>>>>>> 284f56d (Update giao dien + Db):3_GUI_PresentationLayer/View/FrmHangLaptop.Designer.cs
             // 
             // iconButton1
             // 
@@ -127,39 +87,6 @@
             iconButton5.Size = new Size(53, 37);
             iconButton5.TabIndex = 19;
             iconButton5.UseVisualStyleBackColor = true;
-
-            panel2.Size = new Size(244, 235);
-            panel2.TabIndex = 1;
-
-            // 
-            // iconButton1
-            // 
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            iconButton1.IconColor = Color.FromArgb(61, 39, 76);
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 45;
-            iconButton1.Location = new Point(121, 177);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(53, 37);
-            iconButton1.TabIndex = 19;
-            iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // iconButton5
-            // 
-            iconButton5.FlatAppearance.BorderSize = 0;
-            iconButton5.FlatStyle = FlatStyle.Flat;
-            iconButton5.IconChar = FontAwesome.Sharp.IconChar.Rotate;
-            iconButton5.IconColor = Color.FromArgb(61, 39, 76);
-            iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton5.IconSize = 45;
-            iconButton5.Location = new Point(171, 177);
-            iconButton5.Name = "iconButton5";
-            iconButton5.Size = new Size(53, 37);
-            iconButton5.TabIndex = 19;
-            iconButton5.UseVisualStyleBackColor = true;
-
             // 
             // iconButton3
             // 
@@ -206,6 +133,7 @@
             textBoxCustom2_01.TabIndex = 1;
             textBoxCustom2_01.Texts = "";
             textBoxCustom2_01.UnderlinedStyle = false;
+            textBoxCustom2_01.Load += textBoxCustom2_01_Load;
             // 
             // label3
             // 
@@ -239,10 +167,6 @@
             label1.TabIndex = 0;
             label1.Text = "Tên card màn hình";
             // 
-<<<<<<< HEAD
-<<<<<<<< HEAD:3_GUI_PresentationLayer/View/FrmVga.Designer.cs
-=======
->>>>>>> 284f56d (Update giao dien + Db)
             // panel1
             // 
             panel1.BackColor = Color.White;
@@ -262,12 +186,6 @@
             dataGridView1.TabIndex = 0;
             // 
             // FrmVga
-<<<<<<< HEAD
-========
-            // FrmHangLaptop
->>>>>>>> 284f56d (Update giao dien + Db):3_GUI_PresentationLayer/View/FrmHangLaptop.Designer.cs
-=======
->>>>>>> 284f56d (Update giao dien + Db)
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;

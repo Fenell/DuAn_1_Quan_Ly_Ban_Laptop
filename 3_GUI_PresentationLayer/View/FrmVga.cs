@@ -16,5 +16,10 @@ namespace _3_GUI_PresentationLayer.View
         {
             InitializeComponent();
         }
+
+        private void textBoxCustom2_01_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
