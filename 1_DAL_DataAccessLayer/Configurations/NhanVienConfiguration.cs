@@ -22,7 +22,6 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.Property(x => x.CCCD).HasMaxLength(12);
             builder.Property(x => x.ChucVu).IsRequired();
 
-            builder.HasMany<NhanVien>(x => x.NhanViens);
         }
     }
 }

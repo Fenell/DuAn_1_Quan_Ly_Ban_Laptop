@@ -14,6 +14,8 @@ namespace _1_DAL_DataAccessLayer.Models
         public string Hoten { get; set; }
         public string Email { get; set; }
         public string DiaChi { get; set; }
+        public bool GioiTinh { get; set; }
+        public bool TrangThai { get; set; }
         public string SoDienThoai { get; set; }
         public string MatKhau { get; set; }
         public string ChucVu { get; set; }

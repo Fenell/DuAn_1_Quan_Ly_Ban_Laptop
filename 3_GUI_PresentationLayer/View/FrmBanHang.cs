@@ -31,5 +31,18 @@ namespace _3_GUI_PresentationLayer.View
         {
 
         }
+
+        private void radioButtonCustom6_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonCustom3_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

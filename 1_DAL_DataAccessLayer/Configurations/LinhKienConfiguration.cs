@@ -21,6 +21,7 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.Property(x => x.GiaNhap).HasColumnType("decimal(18,4)").IsRequired();
             builder.Property(x=>x.NamBH).IsRequired();
             builder.Property(x => x.TrangThai).HasDefaultValue(true);
+            builder.Property(x => x.Seri).HasMaxLength(15).IsRequired();
 
             //builder.Property(x => x.IdHangLinhKien).IsRequired();
             //builder.Property(x => x.IdLoaiLinhKien).IsRequired();
@@ -30,10 +31,8 @@ namespace _1_DAL_DataAccessLayer.Configurations
                 .HasForeignKey(x => x.IdHangLinhKien);
             builder.HasOne<LoaiLinhKien>(x => x.LoaiLinhKien).WithMany(a => a.LinhKiens)
                 .HasForeignKey(x => x.IdLoaiLinhKien).OnDelete(DeleteBehavior.Restrict);
-            builder.HasOne<NhaCungCapLk>(x => x.NhaCungCapLk).WithMany(a => a.LinhKiens)
+            builder.HasOne<NhaCungCap>(x => x.NhaCungCap).WithMany(a => a.LinhKiens)
                 .HasForeignKey(x => x.IdNhaCungCap);
-            builder.HasMany<ChiTietLinhKien>(x => x.ChiTietLinhKiens).WithOne(a => a.LinhKien)
-                .HasForeignKey(a => a.IdLinhKien);
         }
     }
 }

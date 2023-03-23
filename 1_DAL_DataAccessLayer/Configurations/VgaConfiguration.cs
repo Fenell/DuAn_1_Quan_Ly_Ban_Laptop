@@ -16,7 +16,7 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.ToTable("VGA");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Ma).HasMaxLength(10).IsRequired();
-            builder.Property(x=>x.Ten).HasMaxLength(50).IsRequired();
+            builder.Property(x=>x.Ten).HasMaxLength(100).IsRequired();
         }
     }
 }
