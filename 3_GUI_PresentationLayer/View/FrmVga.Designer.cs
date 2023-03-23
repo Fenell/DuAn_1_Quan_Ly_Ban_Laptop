@@ -37,12 +37,18 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+<<<<<<< HEAD
 <<<<<<<< HEAD:3_GUI_PresentationLayer/View/FrmVga.Designer.cs
             panel1 = new Panel();
             dataGridView1 = new DataGridView();
             panel2.SuspendLayout();
 ========
 >>>>>>>> 284f56d (Update giao dien + Db):3_GUI_PresentationLayer/View/FrmHangLaptop.Designer.cs
+=======
+            panel1 = new Panel();
+            dataGridView1 = new DataGridView();
+            panel2.SuspendLayout();
+>>>>>>> 284f56d (Update giao dien + Db)
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -60,7 +66,10 @@
             panel2.Controls.Add(label1);
             panel2.Location = new Point(294, 15);
             panel2.Name = "panel2";
+<<<<<<< HEAD
 <<<<<<<< HEAD:3_GUI_PresentationLayer/View/FrmVga.Designer.cs
+=======
+>>>>>>> 284f56d (Update giao dien + Db)
             panel2.Size = new Size(244, 237);
             panel2.TabIndex = 3;
             // 
@@ -91,6 +100,7 @@
             iconButton5.Size = new Size(53, 37);
             iconButton5.TabIndex = 19;
             iconButton5.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
 ========
             panel2.Size = new Size(244, 235);
             panel2.TabIndex = 1;
@@ -123,6 +133,8 @@
             iconButton5.Size = new Size(53, 37);
             iconButton5.TabIndex = 19;
             iconButton5.UseVisualStyleBackColor = true;
+=======
+>>>>>>> 284f56d (Update giao dien + Db)
             // 
             // iconButton3
             // 
@@ -202,7 +214,10 @@
             label1.TabIndex = 0;
             label1.Text = "Tên card màn hình";
             // 
+<<<<<<< HEAD
 <<<<<<<< HEAD:3_GUI_PresentationLayer/View/FrmVga.Designer.cs
+=======
+>>>>>>> 284f56d (Update giao dien + Db)
             // panel1
             // 
             panel1.BackColor = Color.White;
@@ -222,9 +237,12 @@
             dataGridView1.TabIndex = 0;
             // 
             // FrmVga
+<<<<<<< HEAD
 ========
             // FrmHangLaptop
 >>>>>>>> 284f56d (Update giao dien + Db):3_GUI_PresentationLayer/View/FrmHangLaptop.Designer.cs
+=======
+>>>>>>> 284f56d (Update giao dien + Db)
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
