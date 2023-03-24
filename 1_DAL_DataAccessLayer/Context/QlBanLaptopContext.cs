@@ -46,7 +46,6 @@ namespace _1_DAL_DataAccessLayer.Context
             modelBuilder.ApplyConfiguration(new RamConfiguration());
             modelBuilder.ApplyConfiguration(new KhuyenMaiConfiguration());
 
-
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -77,7 +76,6 @@ namespace _1_DAL_DataAccessLayer.Context
         public DbSet<OCung> OCungs { get; set; }
         public DbSet<Ram> Rams { get; set; }
         public DbSet<Vga> Vgas { get; set; }
-
         
     }
 }
