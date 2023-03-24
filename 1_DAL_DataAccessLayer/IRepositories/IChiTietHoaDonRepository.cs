@@ -11,7 +11,7 @@ namespace _1_DAL_DataAccessLayer.IRepositories
     {
         bool AddChiTietHoaDon(ChiTietHoaDon chiTietHoaDon);
         bool UpdateChiTietHoaDon(ChiTietHoaDon chiTietHoaDon);
-        bool DeleteChiTietHoaDon(Guid idChiTietHoaDon);
+        //bool DeleteChiTietHoaDon(Guid idChiTietHoaDon);
         ChiTietHoaDon GetChiTietHoaDonById(Guid idChiTietHoaDon);
         List<ChiTietHoaDon> GetAllChiTietHoaDon();
     }
