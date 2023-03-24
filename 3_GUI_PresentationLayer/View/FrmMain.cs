@@ -25,6 +25,8 @@ namespace _3_GUI_PresentationLayer.View
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(10, 70);
             panelMenu.Controls.Add(leftBorderBtn);
+
+            OpenChildForm(new FrmHome());
         }
 
         //Structs RGB
@@ -137,9 +139,22 @@ namespace _3_GUI_PresentationLayer.View
 
         }
 
-        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Bạn có muốn thoát chương trình không?", "Hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
 
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Minimized;
+            }
+            else 
+                WindowState = FormWindowState.Normal;
         }
     }
 }

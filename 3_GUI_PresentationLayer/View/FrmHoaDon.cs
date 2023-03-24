@@ -17,9 +17,6 @@ namespace _3_GUI_PresentationLayer.View
             InitializeComponent();
         }
 
-        private void FrmHoaDon_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

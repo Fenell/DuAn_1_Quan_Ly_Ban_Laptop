@@ -58,10 +58,10 @@ namespace _3_GUI_PresentationLayer.View
             label3 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
             panel3 = new Panel();
             dataGridView1 = new DataGridView();
             panel4 = new Panel();
+            comboBoxCustom1 = new CustomControl.ComboBoxCustom();
             iconButton16 = new FontAwesome.Sharp.IconButton();
             iconButton15 = new FontAwesome.Sharp.IconButton();
             iconButton14 = new FontAwesome.Sharp.IconButton();
@@ -270,7 +270,7 @@ namespace _3_GUI_PresentationLayer.View
             textBoxCustom2_04.PasswordChar = false;
             textBoxCustom2_04.PlaceholderColor = Color.DarkGray;
             textBoxCustom2_04.PlaceholderText = "";
-            textBoxCustom2_04.Size = new Size(319, 89);
+            textBoxCustom2_04.Size = new Size(319, 103);
             textBoxCustom2_04.TabIndex = 17;
             textBoxCustom2_04.Texts = "";
             textBoxCustom2_04.UnderlinedStyle = false;
@@ -284,7 +284,7 @@ namespace _3_GUI_PresentationLayer.View
             iconButton1.IconColor = Color.FromArgb(61, 39, 76);
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 45;
-            iconButton1.Location = new Point(291, 572);
+            iconButton1.Location = new Point(291, 577);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(53, 37);
             iconButton1.TabIndex = 16;
@@ -299,7 +299,7 @@ namespace _3_GUI_PresentationLayer.View
             iconButton5.IconColor = Color.FromArgb(61, 39, 76);
             iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton5.IconSize = 45;
-            iconButton5.Location = new Point(227, 572);
+            iconButton5.Location = new Point(227, 577);
             iconButton5.Name = "iconButton5";
             iconButton5.Size = new Size(53, 37);
             iconButton5.TabIndex = 16;
@@ -314,7 +314,7 @@ namespace _3_GUI_PresentationLayer.View
             iconButton4.IconColor = Color.FromArgb(61, 39, 76);
             iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton4.IconSize = 45;
-            iconButton4.Location = new Point(158, 572);
+            iconButton4.Location = new Point(158, 577);
             iconButton4.Name = "iconButton4";
             iconButton4.Size = new Size(53, 37);
             iconButton4.TabIndex = 15;
@@ -329,7 +329,7 @@ namespace _3_GUI_PresentationLayer.View
             iconButton3.IconColor = Color.FromArgb(61, 39, 76);
             iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton3.IconSize = 45;
-            iconButton3.Location = new Point(92, 572);
+            iconButton3.Location = new Point(92, 577);
             iconButton3.Name = "iconButton3";
             iconButton3.Size = new Size(53, 37);
             iconButton3.TabIndex = 14;
@@ -344,7 +344,7 @@ namespace _3_GUI_PresentationLayer.View
             iconButton2.IconColor = Color.FromArgb(61, 39, 76);
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton2.IconSize = 45;
-            iconButton2.Location = new Point(36, 572);
+            iconButton2.Location = new Point(36, 577);
             iconButton2.Name = "iconButton2";
             iconButton2.Size = new Size(53, 37);
             iconButton2.TabIndex = 13;
@@ -492,14 +492,6 @@ namespace _3_GUI_PresentationLayer.View
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
-            // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Location = new Point(915, 153);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 23);
-            textBox1.TabIndex = 17;
-            // 
             // panel3
             // 
             panel3.BackColor = Color.White;
@@ -522,7 +514,7 @@ namespace _3_GUI_PresentationLayer.View
             // panel4
             // 
             panel4.BackColor = Color.White;
-            panel4.Controls.Add(textBox1);
+            panel4.Controls.Add(comboBoxCustom1);
             panel4.Controls.Add(iconButton16);
             panel4.Controls.Add(iconButton15);
             panel4.Controls.Add(iconButton14);
@@ -556,6 +548,28 @@ namespace _3_GUI_PresentationLayer.View
             panel4.Name = "panel4";
             panel4.Size = new Size(1078, 236);
             panel4.TabIndex = 3;
+            // 
+            // comboBoxCustom1
+            // 
+            comboBoxCustom1.AutoCompleteMode = AutoCompleteMode.Suggest;
+            comboBoxCustom1.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBoxCustom1.BackColor = Color.White;
+            comboBoxCustom1.BorderColor = Color.MediumSlateBlue;
+            comboBoxCustom1.BorderSize = 1;
+            comboBoxCustom1.DropDownStyle = ComboBoxStyle.DropDown;
+            comboBoxCustom1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxCustom1.ForeColor = Color.Black;
+            comboBoxCustom1.IconColor = Color.MediumSlateBlue;
+            comboBoxCustom1.Items.AddRange(new object[] { "dad", "qweqw", "asda", "dqwe", "12312", "123123" });
+            comboBoxCustom1.ListBackColor = Color.White;
+            comboBoxCustom1.ListTextColor = Color.Black;
+            comboBoxCustom1.Location = new Point(915, 146);
+            comboBoxCustom1.MinimumSize = new Size(150, 30);
+            comboBoxCustom1.Name = "comboBoxCustom1";
+            comboBoxCustom1.Padding = new Padding(1);
+            comboBoxCustom1.Size = new Size(150, 30);
+            comboBoxCustom1.TabIndex = 21;
+            comboBoxCustom1.Texts = "";
             // 
             // iconButton16
             // 
@@ -714,10 +728,10 @@ namespace _3_GUI_PresentationLayer.View
             comboBoxCustom6.BorderSize = 1;
             comboBoxCustom6.DropDownStyle = ComboBoxStyle.DropDown;
             comboBoxCustom6.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom6.ForeColor = Color.White;
+            comboBoxCustom6.ForeColor = Color.Black;
             comboBoxCustom6.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom6.ListBackColor = Color.FromArgb(230, 228, 245);
-            comboBoxCustom6.ListTextColor = Color.White;
+            comboBoxCustom6.ListBackColor = Color.White;
+            comboBoxCustom6.ListTextColor = Color.Black;
             comboBoxCustom6.Location = new Point(915, 35);
             comboBoxCustom6.MinimumSize = new Size(150, 30);
             comboBoxCustom6.Name = "comboBoxCustom6";
@@ -735,8 +749,8 @@ namespace _3_GUI_PresentationLayer.View
             comboBoxCustom5.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxCustom5.ForeColor = Color.Black;
             comboBoxCustom5.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom5.ListBackColor = Color.FromArgb(230, 228, 245);
-            comboBoxCustom5.ListTextColor = Color.White;
+            comboBoxCustom5.ListBackColor = Color.White;
+            comboBoxCustom5.ListTextColor = Color.Black;
             comboBoxCustom5.Location = new Point(699, 35);
             comboBoxCustom5.MinimumSize = new Size(150, 30);
             comboBoxCustom5.Name = "comboBoxCustom5";
@@ -752,10 +766,10 @@ namespace _3_GUI_PresentationLayer.View
             comboBoxCustom4.BorderSize = 1;
             comboBoxCustom4.DropDownStyle = ComboBoxStyle.DropDown;
             comboBoxCustom4.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom4.ForeColor = Color.White;
+            comboBoxCustom4.ForeColor = Color.Black;
             comboBoxCustom4.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom4.ListBackColor = Color.FromArgb(230, 228, 245);
-            comboBoxCustom4.ListTextColor = Color.White;
+            comboBoxCustom4.ListBackColor = Color.White;
+            comboBoxCustom4.ListTextColor = Color.Black;
             comboBoxCustom4.Location = new Point(456, 35);
             comboBoxCustom4.MinimumSize = new Size(150, 30);
             comboBoxCustom4.Name = "comboBoxCustom4";
@@ -771,10 +785,10 @@ namespace _3_GUI_PresentationLayer.View
             comboBoxCustom3.BorderSize = 1;
             comboBoxCustom3.DropDownStyle = ComboBoxStyle.DropDown;
             comboBoxCustom3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom3.ForeColor = Color.White;
+            comboBoxCustom3.ForeColor = Color.Black;
             comboBoxCustom3.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom3.ListBackColor = Color.FromArgb(230, 228, 245);
-            comboBoxCustom3.ListTextColor = Color.White;
+            comboBoxCustom3.ListBackColor = Color.White;
+            comboBoxCustom3.ListTextColor = Color.Black;
             comboBoxCustom3.Location = new Point(235, 34);
             comboBoxCustom3.MinimumSize = new Size(150, 30);
             comboBoxCustom3.Name = "comboBoxCustom3";
@@ -790,10 +804,10 @@ namespace _3_GUI_PresentationLayer.View
             comboBoxCustom10.BorderSize = 1;
             comboBoxCustom10.DropDownStyle = ComboBoxStyle.DropDown;
             comboBoxCustom10.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom10.ForeColor = Color.White;
+            comboBoxCustom10.ForeColor = Color.Black;
             comboBoxCustom10.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom10.ListBackColor = Color.FromArgb(230, 228, 245);
-            comboBoxCustom10.ListTextColor = Color.White;
+            comboBoxCustom10.ListBackColor = Color.White;
+            comboBoxCustom10.ListTextColor = Color.Black;
             comboBoxCustom10.Location = new Point(699, 150);
             comboBoxCustom10.MinimumSize = new Size(150, 30);
             comboBoxCustom10.Name = "comboBoxCustom10";
@@ -809,10 +823,10 @@ namespace _3_GUI_PresentationLayer.View
             comboBoxCustom9.BorderSize = 1;
             comboBoxCustom9.DropDownStyle = ComboBoxStyle.DropDown;
             comboBoxCustom9.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom9.ForeColor = Color.White;
+            comboBoxCustom9.ForeColor = Color.Black;
             comboBoxCustom9.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom9.ListBackColor = Color.FromArgb(230, 228, 245);
-            comboBoxCustom9.ListTextColor = Color.White;
+            comboBoxCustom9.ListBackColor = Color.White;
+            comboBoxCustom9.ListTextColor = Color.Black;
             comboBoxCustom9.Location = new Point(456, 150);
             comboBoxCustom9.MinimumSize = new Size(150, 30);
             comboBoxCustom9.Name = "comboBoxCustom9";
@@ -828,10 +842,10 @@ namespace _3_GUI_PresentationLayer.View
             comboBoxCustom8.BorderSize = 1;
             comboBoxCustom8.DropDownStyle = ComboBoxStyle.DropDown;
             comboBoxCustom8.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom8.ForeColor = Color.White;
+            comboBoxCustom8.ForeColor = Color.Black;
             comboBoxCustom8.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom8.ListBackColor = Color.FromArgb(230, 228, 245);
-            comboBoxCustom8.ListTextColor = Color.White;
+            comboBoxCustom8.ListBackColor = Color.White;
+            comboBoxCustom8.ListTextColor = Color.Black;
             comboBoxCustom8.Location = new Point(235, 150);
             comboBoxCustom8.MinimumSize = new Size(150, 30);
             comboBoxCustom8.Name = "comboBoxCustom8";
@@ -847,10 +861,10 @@ namespace _3_GUI_PresentationLayer.View
             comboBoxCustom7.BorderSize = 1;
             comboBoxCustom7.DropDownStyle = ComboBoxStyle.DropDown;
             comboBoxCustom7.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom7.ForeColor = Color.White;
+            comboBoxCustom7.ForeColor = Color.Black;
             comboBoxCustom7.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom7.ListBackColor = Color.FromArgb(230, 228, 245);
-            comboBoxCustom7.ListTextColor = Color.White;
+            comboBoxCustom7.ListBackColor = Color.White;
+            comboBoxCustom7.ListTextColor = Color.Black;
             comboBoxCustom7.Location = new Point(17, 150);
             comboBoxCustom7.MinimumSize = new Size(150, 30);
             comboBoxCustom7.Name = "comboBoxCustom7";
@@ -864,13 +878,13 @@ namespace _3_GUI_PresentationLayer.View
             comboBoxCustom2.BackColor = Color.White;
             comboBoxCustom2.BorderColor = Color.MediumSlateBlue;
             comboBoxCustom2.BorderSize = 1;
-            comboBoxCustom2.DropDownStyle = ComboBoxStyle.DropDown;
+            comboBoxCustom2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxCustom2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom2.ForeColor = Color.White;
+            comboBoxCustom2.ForeColor = Color.Black;
             comboBoxCustom2.IconColor = Color.MediumSlateBlue;
             comboBoxCustom2.Items.AddRange(new object[] { "adad", "qưeqwe", "adqwe", "qưeqw" });
-            comboBoxCustom2.ListBackColor = Color.FromArgb(42, 47, 85);
-            comboBoxCustom2.ListTextColor = Color.White;
+            comboBoxCustom2.ListBackColor = Color.White;
+            comboBoxCustom2.ListTextColor = Color.Black;
             comboBoxCustom2.Location = new Point(17, 33);
             comboBoxCustom2.MinimumSize = new Size(150, 30);
             comboBoxCustom2.Name = "comboBoxCustom2";
@@ -1085,8 +1099,8 @@ namespace _3_GUI_PresentationLayer.View
         private Label label19;
         private FontAwesome.Sharp.IconButton iconButton18;
         private CustomControl.TextBoxCustom2_0 textBoxCustom2_06;
-        private TextBox textBox1;
         private CustomControl.TextBoxCustom2_0 textBoxCustom2_04;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private CustomControl.ComboBoxCustom comboBoxCustom1;
     }
 }

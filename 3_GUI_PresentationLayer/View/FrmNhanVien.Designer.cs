@@ -328,7 +328,6 @@
             radioButtonCustom4.Text = "Quản lý";
             radioButtonCustom4.UnCheckedColor = Color.Gray;
             radioButtonCustom4.UseVisualStyleBackColor = true;
-            radioButtonCustom4.CheckedChanged += radioButtonCustom1_CheckedChanged;
             // 
             // radioButtonCustom3
             // 
@@ -346,7 +345,6 @@
             radioButtonCustom3.Text = "Nhân viên";
             radioButtonCustom3.UnCheckedColor = Color.Gray;
             radioButtonCustom3.UseVisualStyleBackColor = true;
-            radioButtonCustom3.CheckedChanged += radioButtonCustom1_CheckedChanged;
             // 
             // radioButtonCustom1
             // 
@@ -364,7 +362,6 @@
             radioButtonCustom1.Text = "Nam";
             radioButtonCustom1.UnCheckedColor = Color.Gray;
             radioButtonCustom1.UseVisualStyleBackColor = true;
-            radioButtonCustom1.CheckedChanged += radioButtonCustom1_CheckedChanged;
             // 
             // label5
             // 
@@ -402,7 +399,6 @@
             label12.Size = new Size(62, 17);
             label12.TabIndex = 26;
             label12.Text = "Giới tính";
-            label12.Click += label12_Click;
             // 
             // comboBoxCustom3
             // 
@@ -604,6 +600,7 @@
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmNhanVien";
             Text = "Nhân viên";
             Load += FrmNhanVien_Load;

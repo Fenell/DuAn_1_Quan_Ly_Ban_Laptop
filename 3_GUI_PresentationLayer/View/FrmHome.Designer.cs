@@ -33,21 +33,21 @@
             pictureBox1 = new PictureBox();
             label3 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
-            lblSecond = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblClock
             // 
             lblClock.AutoSize = true;
-            lblClock.BackColor = Color.FromArgb(244, 245, 255);
-            lblClock.Font = new Font("Segoe Print", 54F, FontStyle.Regular, GraphicsUnit.Point);
+            lblClock.FlatStyle = FlatStyle.Flat;
+            lblClock.Font = new Font("Adidas 2018 font . King sport (", 80.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblClock.ForeColor = Color.FromArgb(186, 197, 216);
-            lblClock.Location = new Point(664, 462);
+            lblClock.Location = new Point(605, 544);
+            lblClock.Margin = new Padding(3, 0, 0, 0);
             lblClock.Name = "lblClock";
-            lblClock.Size = new Size(286, 126);
+            lblClock.Size = new Size(77, 120);
             lblClock.TabIndex = 0;
-            lblClock.Text = "23:59";
+            lblClock.Text = " ";
             // 
             // pictureBox1
             // 
@@ -73,20 +73,8 @@
             // timer1
             // 
             timer1.Enabled = true;
-            timer1.Interval = 500;
+            timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
-            // 
-            // lblSecond
-            // 
-            lblSecond.AutoSize = true;
-            lblSecond.BackColor = Color.FromArgb(244, 245, 255);
-            lblSecond.Font = new Font("Segoe Print", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSecond.ForeColor = Color.FromArgb(186, 197, 216);
-            lblSecond.Location = new Point(914, 508);
-            lblSecond.Name = "lblSecond";
-            lblSecond.Size = new Size(79, 61);
-            lblSecond.TabIndex = 4;
-            lblSecond.Text = "59";
             // 
             // FrmHome
             // 
@@ -94,10 +82,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(244, 245, 255);
             ClientSize = new Size(1537, 729);
-            Controls.Add(lblSecond);
+            Controls.Add(lblClock);
             Controls.Add(label3);
             Controls.Add(pictureBox1);
-            Controls.Add(lblClock);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmHome";
             Text = "Home";
@@ -112,6 +99,5 @@
         private PictureBox pictureBox1;
         private Label label3;
         private System.Windows.Forms.Timer timer1;
-        private Label lblSecond;
     }
 }

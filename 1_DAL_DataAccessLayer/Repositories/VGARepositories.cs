@@ -32,7 +32,6 @@ namespace _1_DAL_DataAccessLayer.Repositories
             catch (Exception)
             {
                 return false;
-                throw;
             }
         }
 

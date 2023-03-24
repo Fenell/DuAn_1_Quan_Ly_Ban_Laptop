@@ -21,15 +21,15 @@ namespace _3_GUI_PresentationLayer.View
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            this.lblClock.Text = DateTime.Now.ToString("HH:mm");
-            this.lblSecond.Text = ":" + DateTime.Now.ToString("ss");
+            lblClock.Text = DateTime.Now.ToString("HH:mm:ss");
             int r = randomNum.Next(0, 255);
             int g = randomNum.Next(0, 255);
             int b = randomNum.Next(0, 255);
 
             Color color = Color.FromArgb(r, g, b);
-            this.lblClock.ForeColor = color;
-            this.lblSecond.ForeColor = color;
+            lblClock.ForeColor = color;
         }
+
+        
     }
 }

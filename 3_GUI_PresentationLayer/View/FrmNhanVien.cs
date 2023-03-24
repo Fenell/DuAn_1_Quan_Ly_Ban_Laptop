@@ -22,14 +22,6 @@ namespace _3_GUI_PresentationLayer.View
 
         }
 
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButtonCustom1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

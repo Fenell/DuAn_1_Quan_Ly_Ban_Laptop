@@ -122,7 +122,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(393, 661);
             panel1.TabIndex = 19;
-            panel1.Paint += panel1_Paint;
             // 
             // iconButton7
             // 
@@ -302,7 +301,6 @@
             radioButtonCustom3.Text = "Tiền mặt";
             radioButtonCustom3.UnCheckedColor = Color.Black;
             radioButtonCustom3.UseVisualStyleBackColor = false;
-            radioButtonCustom3.CheckedChanged += radioButtonCustom3_CheckedChanged;
             // 
             // radioButtonCustom6
             // 
@@ -320,7 +318,6 @@
             radioButtonCustom6.Text = "Card";
             radioButtonCustom6.UnCheckedColor = Color.Black;
             radioButtonCustom6.UseVisualStyleBackColor = false;
-            radioButtonCustom6.CheckedChanged += radioButtonCustom6_CheckedChanged;
             // 
             // label3
             // 
@@ -332,7 +329,6 @@
             label3.Size = new Size(110, 20);
             label3.TabIndex = 41;
             label3.Text = "HT thanh toán";
-            label3.Click += label3_Click;
             // 
             // label7
             // 
@@ -771,6 +767,7 @@
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmBanHang";
             Text = "Bán hàng";
             panel1.ResumeLayout(false);

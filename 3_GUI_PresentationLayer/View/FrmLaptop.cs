@@ -17,8 +17,5 @@ namespace _3_GUI_PresentationLayer.View
             InitializeComponent();
 
         }
-        void loaddata()
-        {
-        }
     }
 }

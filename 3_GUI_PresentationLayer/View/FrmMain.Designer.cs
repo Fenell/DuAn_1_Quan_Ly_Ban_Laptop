@@ -40,6 +40,8 @@
             panelLogo = new Panel();
             pictrueBoxCustom1 = new CustomControl.PictrueBoxCustom();
             panelTitleBar = new Panel();
+            btnMinimize = new FontAwesome.Sharp.IconButton();
+            btnExit = new FontAwesome.Sharp.IconButton();
             lblTitleChildFrm = new Label();
             iconCurrentChildFrm = new FontAwesome.Sharp.IconPictureBox();
             panelShadow = new Panel();
@@ -273,6 +275,8 @@
             // panelTitleBar
             // 
             panelTitleBar.BackColor = Color.FromArgb(26, 27, 61);
+            panelTitleBar.Controls.Add(btnMinimize);
+            panelTitleBar.Controls.Add(btnExit);
             panelTitleBar.Controls.Add(lblTitleChildFrm);
             panelTitleBar.Controls.Add(iconCurrentChildFrm);
             panelTitleBar.Dock = DockStyle.Top;
@@ -280,6 +284,38 @@
             panelTitleBar.Name = "panelTitleBar";
             panelTitleBar.Size = new Size(1537, 73);
             panelTitleBar.TabIndex = 1;
+            // 
+            // btnMinimize
+            // 
+            btnMinimize.BackColor = Color.FromArgb(26, 27, 61);
+            btnMinimize.FlatAppearance.BorderSize = 0;
+            btnMinimize.FlatStyle = FlatStyle.Flat;
+            btnMinimize.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            btnMinimize.IconColor = Color.FromArgb(0, 192, 192);
+            btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnMinimize.IconSize = 27;
+            btnMinimize.Location = new Point(1479, 3);
+            btnMinimize.Name = "btnMinimize";
+            btnMinimize.Size = new Size(31, 26);
+            btnMinimize.TabIndex = 2;
+            btnMinimize.UseVisualStyleBackColor = false;
+            btnMinimize.Click += btnMinimize_Click;
+            // 
+            // btnExit
+            // 
+            btnExit.BackColor = Color.FromArgb(26, 27, 61);
+            btnExit.FlatAppearance.BorderSize = 0;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            btnExit.IconColor = Color.FromArgb(0, 192, 192);
+            btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnExit.IconSize = 27;
+            btnExit.Location = new Point(1505, 3);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(31, 26);
+            btnExit.TabIndex = 2;
+            btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // lblTitleChildFrm
             // 
@@ -323,7 +359,6 @@
             panelDesktop.Name = "panelDesktop";
             panelDesktop.Size = new Size(1537, 729);
             panelDesktop.TabIndex = 3;
-            panelDesktop.Paint += panelDesktop_Paint;
             // 
             // FrmMain
             // 
@@ -334,6 +369,7 @@
             Controls.Add(panelShadow);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMain";
             Text = "Form2";
             panelMenu.ResumeLayout(false);
@@ -363,5 +399,7 @@
         private Label lblTitleChildFrm;
         private Panel panelShadow;
         private Panel panelDesktop;
+        private FontAwesome.Sharp.IconButton btnMinimize;
+        private FontAwesome.Sharp.IconButton btnExit;
     }
 }

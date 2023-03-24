@@ -321,9 +321,9 @@
             Controls.Add(panel2);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmHoaDon";
             Text = "Hóa  đơn";
-            Load += FrmHoaDon_Load;
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox2.ResumeLayout(false);
