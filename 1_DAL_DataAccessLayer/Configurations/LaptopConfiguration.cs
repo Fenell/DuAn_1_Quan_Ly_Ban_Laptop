@@ -23,6 +23,7 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.Property(x => x.TrangThai).HasDefaultValue(true);
             builder.Property(x => x.TrongLuong).HasColumnType("decimal(18,4)").IsRequired();
             builder.Property(x => x.Imei).HasMaxLength(15).IsRequired();
+            builder.Property(x => x.Ten).HasMaxLength(50);
 
             //builder.Property(x => x.NhaCungCap).IsRequired();
             //builder.Property(x => x.DongLaptop).IsRequired();

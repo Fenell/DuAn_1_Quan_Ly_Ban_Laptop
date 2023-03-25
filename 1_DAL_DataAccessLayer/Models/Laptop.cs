@@ -20,6 +20,7 @@ namespace _1_DAL_DataAccessLayer.Models
         public Guid IdManHinh { get; set; }
         public Guid IdMauSac { get; set; }
         public Guid IdOCung { get; set; }
+        public string? Ten { get; set; }
         public string Imei { get; set; }
         public decimal GiaNhap { get; set; }
         public decimal GiaBan { get; set; }
