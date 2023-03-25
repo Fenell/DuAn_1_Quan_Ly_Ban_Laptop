@@ -49,7 +49,7 @@ namespace _1_DAL_DataAccessLayer.Context
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(
-                    @"Data Source=DESKTOP-CFK23F4\SQLEXPRESS;Initial Catalog=QlBanLaptop;User ID=tuandat;Password=123");
+                    @"Data Source=DESKTOP-HVLFK5F\SQLEXPRESS;Initial Catalog=QlBanLaptop;Integrated Security=True");
             }
         }
 

@@ -28,182 +28,187 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtEmail = new CustomControl.TextBoxCustom2_0();
-            textBoxCustom2_02 = new CustomControl.TextBoxCustom2_0();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            checkBox1 = new CheckBox();
-            linkLabel1 = new LinkLabel();
-            buttonCustom1 = new CustomControl.ButtonCustom();
-            btnExit = new FontAwesome.Sharp.IconButton();
-            pictureBox3 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            SuspendLayout();
+            this.txtEmail = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom2_0();
+            this.txtMatKhau = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom2_0();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.nhoMatKhau = new System.Windows.Forms.CheckBox();
+            this.LbQuenMatKhau = new System.Windows.Forms.LinkLabel();
+            this.buttonCustom1 = new _3_GUI_PresentationLayer.CustomControl.ButtonCustom();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.SuspendLayout();
             // 
             // txtEmail
             // 
-            txtEmail.BackColor = Color.FromArgb(204, 204, 204);
-            txtEmail.BorderColor = Color.FromArgb(79, 175, 156);
-            txtEmail.BorderFocusColor = Color.HotPink;
-            txtEmail.BorderRadius = 0;
-            txtEmail.BorderSize = 2;
-            txtEmail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtEmail.Location = new Point(77, 195);
-            txtEmail.Multiline = false;
-            txtEmail.Name = "txtEmail";
-            txtEmail.Padding = new Padding(42, 7, 7, 7);
-            txtEmail.PasswordChar = false;
-            txtEmail.PlaceholderColor = Color.DarkGray;
-            txtEmail.PlaceholderText = "Email";
-            txtEmail.Size = new Size(245, 36);
-            txtEmail.TabIndex = 0;
-            txtEmail.Texts = "";
-            txtEmail.UnderlinedStyle = true;
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(175)))), ((int)(((byte)(156)))));
+            this.txtEmail.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtEmail.BorderRadius = 0;
+            this.txtEmail.BorderSize = 2;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEmail.Location = new System.Drawing.Point(77, 195);
+            this.txtEmail.Multiline = false;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Padding = new System.Windows.Forms.Padding(42, 7, 7, 7);
+            this.txtEmail.PasswordChar = false;
+            this.txtEmail.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtEmail.PlaceholderText = "Email";
+            this.txtEmail.Size = new System.Drawing.Size(245, 36);
+            this.txtEmail.TabIndex = 0;
+            this.txtEmail.Texts = "";
+            this.txtEmail.UnderlinedStyle = true;
             // 
-            // textBoxCustom2_02
+            // txtMatKhau
             // 
-            textBoxCustom2_02.BackColor = Color.FromArgb(204, 204, 204);
-            textBoxCustom2_02.BorderColor = Color.FromArgb(79, 175, 156);
-            textBoxCustom2_02.BorderFocusColor = Color.SlateBlue;
-            textBoxCustom2_02.BorderRadius = 0;
-            textBoxCustom2_02.BorderSize = 2;
-            textBoxCustom2_02.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxCustom2_02.Location = new Point(76, 263);
-            textBoxCustom2_02.Multiline = false;
-            textBoxCustom2_02.Name = "textBoxCustom2_02";
-            textBoxCustom2_02.Padding = new Padding(42, 7, 7, 7);
-            textBoxCustom2_02.PasswordChar = false;
-            textBoxCustom2_02.PlaceholderColor = Color.DarkGray;
-            textBoxCustom2_02.PlaceholderText = "Mật khẩu";
-            textBoxCustom2_02.Size = new Size(246, 36);
-            textBoxCustom2_02.TabIndex = 0;
-            textBoxCustom2_02.Texts = "";
-            textBoxCustom2_02.UnderlinedStyle = true;
+            this.txtMatKhau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtMatKhau.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(175)))), ((int)(((byte)(156)))));
+            this.txtMatKhau.BorderFocusColor = System.Drawing.Color.SlateBlue;
+            this.txtMatKhau.BorderRadius = 0;
+            this.txtMatKhau.BorderSize = 2;
+            this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMatKhau.Location = new System.Drawing.Point(76, 263);
+            this.txtMatKhau.Multiline = false;
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.Padding = new System.Windows.Forms.Padding(42, 7, 7, 7);
+            this.txtMatKhau.PasswordChar = false;
+            this.txtMatKhau.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtMatKhau.PlaceholderText = "Mật khẩu";
+            this.txtMatKhau.Size = new System.Drawing.Size(246, 36);
+            this.txtMatKhau.TabIndex = 0;
+            this.txtMatKhau.Texts = "";
+            this.txtMatKhau.UnderlinedStyle = true;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.user;
-            pictureBox1.Location = new Point(75, 192);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(35, 35);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.Image = global::_3_GUI_PresentationLayer.Properties.Resources.user;
+            this.pictureBox1.Location = new System.Drawing.Point(75, 192);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.pasword;
-            pictureBox2.Location = new Point(74, 261);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(35, 35);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
+            this.pictureBox2.Image = global::_3_GUI_PresentationLayer.Properties.Resources.pasword;
+            this.pictureBox2.Location = new System.Drawing.Point(74, 261);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
-            // checkBox1
+            // nhoMatKhau
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBox1.Location = new Point(61, 325);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(109, 21);
-            checkBox1.TabIndex = 3;
-            checkBox1.Text = "Nhớ mật khẩu";
-            checkBox1.UseVisualStyleBackColor = true;
+            this.nhoMatKhau.AutoSize = true;
+            this.nhoMatKhau.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nhoMatKhau.Location = new System.Drawing.Point(61, 325);
+            this.nhoMatKhau.Name = "nhoMatKhau";
+            this.nhoMatKhau.Size = new System.Drawing.Size(109, 21);
+            this.nhoMatKhau.TabIndex = 3;
+            this.nhoMatKhau.Text = "Nhớ mật khẩu";
+            this.nhoMatKhau.UseVisualStyleBackColor = true;
+            this.nhoMatKhau.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // linkLabel1
+            // LbQuenMatKhau
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.DisabledLinkColor = Color.Black;
-            linkLabel1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            linkLabel1.LinkColor = Color.Crimson;
-            linkLabel1.Location = new Point(243, 329);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(96, 17);
-            linkLabel1.TabIndex = 4;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Quên mật khẩu";
+            this.LbQuenMatKhau.AutoSize = true;
+            this.LbQuenMatKhau.DisabledLinkColor = System.Drawing.Color.Black;
+            this.LbQuenMatKhau.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LbQuenMatKhau.ForeColor = System.Drawing.Color.Coral;
+            this.LbQuenMatKhau.LinkColor = System.Drawing.Color.Crimson;
+            this.LbQuenMatKhau.Location = new System.Drawing.Point(243, 329);
+            this.LbQuenMatKhau.Name = "LbQuenMatKhau";
+            this.LbQuenMatKhau.Size = new System.Drawing.Size(96, 17);
+            this.LbQuenMatKhau.TabIndex = 4;
+            this.LbQuenMatKhau.TabStop = true;
+            this.LbQuenMatKhau.Text = "Quên mật khẩu";
+            this.LbQuenMatKhau.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // buttonCustom1
             // 
-            buttonCustom1.BackColor = Color.FromArgb(255, 192, 128);
-            buttonCustom1.BackgroundColor = Color.FromArgb(255, 192, 128);
-            buttonCustom1.BorderColor = Color.PaleVioletRed;
-            buttonCustom1.BorderRadius = 10;
-            buttonCustom1.BorderSize = 0;
-            buttonCustom1.FlatAppearance.BorderSize = 0;
-            buttonCustom1.FlatStyle = FlatStyle.Flat;
-            buttonCustom1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCustom1.ForeColor = Color.FromArgb(64, 0, 0);
-            buttonCustom1.Location = new Point(122, 369);
-            buttonCustom1.Name = "buttonCustom1";
-            buttonCustom1.Size = new Size(150, 40);
-            buttonCustom1.TabIndex = 5;
-            buttonCustom1.Text = "Đăng nhập";
-            buttonCustom1.TextColor = Color.FromArgb(64, 0, 0);
-            buttonCustom1.UseVisualStyleBackColor = false;
+            this.buttonCustom1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.buttonCustom1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.buttonCustom1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonCustom1.BorderRadius = 10;
+            this.buttonCustom1.BorderSize = 0;
+            this.buttonCustom1.FlatAppearance.BorderSize = 0;
+            this.buttonCustom1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCustom1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCustom1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonCustom1.Location = new System.Drawing.Point(122, 369);
+            this.buttonCustom1.Name = "buttonCustom1";
+            this.buttonCustom1.Size = new System.Drawing.Size(150, 40);
+            this.buttonCustom1.TabIndex = 5;
+            this.buttonCustom1.Text = "Đăng nhập";
+            this.buttonCustom1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonCustom1.UseVisualStyleBackColor = false;
+            this.buttonCustom1.Click += new System.EventHandler(this.buttonCustom1_Click);
             // 
             // btnExit
             // 
-            btnExit.BackColor = Color.FromArgb(204, 204, 204);
-            btnExit.FlatAppearance.BorderSize = 0;
-            btnExit.FlatStyle = FlatStyle.Flat;
-            btnExit.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            btnExit.IconColor = SystemColors.InfoText;
-            btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnExit.IconSize = 30;
-            btnExit.Location = new Point(347, 1);
-            btnExit.Name = "btnExit";
-            btnExit.Size = new Size(35, 26);
-            btnExit.TabIndex = 6;
-            btnExit.UseVisualStyleBackColor = false;
-            btnExit.Click += btnExit_Click;
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            this.btnExit.IconColor = System.Drawing.SystemColors.InfoText;
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 30;
+            this.btnExit.Location = new System.Drawing.Point(347, 1);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(35, 26);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.airplane;
-            pictureBox3.Location = new Point(142, 25);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(120, 119);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 7;
-            pictureBox3.TabStop = false;
+            this.pictureBox3.Image = global::_3_GUI_PresentationLayer.Properties.Resources.airplane;
+            this.pictureBox3.Location = new System.Drawing.Point(142, 25);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(120, 119);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
             // 
             // FrmDangNhap
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(204, 204, 204);
-            ClientSize = new Size(378, 432);
-            Controls.Add(pictureBox3);
-            Controls.Add(btnExit);
-            Controls.Add(buttonCustom1);
-            Controls.Add(linkLabel1);
-            Controls.Add(checkBox1);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
-            Controls.Add(textBoxCustom2_02);
-            Controls.Add(txtEmail);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "FrmDangNhap";
-            Text = "FrmDangNhap";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.ClientSize = new System.Drawing.Size(378, 432);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.buttonCustom1);
+            this.Controls.Add(this.LbQuenMatKhau);
+            this.Controls.Add(this.nhoMatKhau);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.txtMatKhau);
+            this.Controls.Add(this.txtEmail);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FrmDangNhap";
+            this.Text = "FrmDangNhap";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
         private CustomControl.TextBoxCustom2_0 txtEmail;
-        private CustomControl.TextBoxCustom2_0 textBoxCustom2_02;
+        private CustomControl.TextBoxCustom2_0 txtMatKhau;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private CheckBox checkBox1;
-        private LinkLabel linkLabel1;
+        private CheckBox nhoMatKhau;
+        private LinkLabel LbQuenMatKhau;
         private CustomControl.ButtonCustom buttonCustom1;
         private FontAwesome.Sharp.IconButton btnExit;
         private PictureBox pictureBox3;
