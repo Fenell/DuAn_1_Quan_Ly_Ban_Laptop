@@ -28,310 +28,311 @@
         /// </summary>
         private void InitializeComponent()
         {
-            comboBoxCustom1 = new CustomControl.ComboBoxCustom();
-            dateTimePickerCustom2 = new CustomControl.DateTimePickerCustom();
-            label5 = new Label();
-            dateTimePickerCustom1 = new CustomControl.DateTimePickerCustom();
-            label4 = new Label();
-            groupBox1 = new GroupBox();
-            dataGridView1 = new DataGridView();
-            groupBox2 = new GroupBox();
-            dataGridView2 = new DataGridView();
-            panel2 = new Panel();
-            radioButtonCustom3 = new CustomControl.RadioButtonCustom();
-            radioButtonCustom2 = new CustomControl.RadioButtonCustom();
-            radioButtonCustom1 = new CustomControl.RadioButtonCustom();
-            iconButton8 = new FontAwesome.Sharp.IconButton();
-            textBoxCustom2_04 = new CustomControl.TextBoxCustom2_0();
-            label2 = new Label();
-            label1 = new Label();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            pictureBox1 = new PictureBox();
-            groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            SuspendLayout();
+            this.comboBoxCustom1 = new _3_GUI_PresentationLayer.CustomControl.ComboBoxCustom();
+            this.dateTimePickerCustom2 = new _3_GUI_PresentationLayer.CustomControl.DateTimePickerCustom();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dateTimePickerCustom1 = new _3_GUI_PresentationLayer.CustomControl.DateTimePickerCustom();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgv_hoaDon = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.radioButtonCustom3 = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
+            this.radioButtonCustom2 = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
+            this.radioButtonCustom1 = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
+            this.iconButton8 = new FontAwesome.Sharp.IconButton();
+            this.textBoxCustom2_04 = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom2_0();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_hoaDon)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
             // 
             // comboBoxCustom1
             // 
-            comboBoxCustom1.BackColor = Color.WhiteSmoke;
-            comboBoxCustom1.BorderColor = Color.Black;
-            comboBoxCustom1.BorderSize = 1;
-            comboBoxCustom1.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxCustom1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom1.ForeColor = Color.DimGray;
-            comboBoxCustom1.IconColor = Color.Black;
-            comboBoxCustom1.ListBackColor = Color.FromArgb(230, 228, 245);
-            comboBoxCustom1.ListTextColor = Color.DimGray;
-            comboBoxCustom1.Location = new Point(709, 23);
-            comboBoxCustom1.MinimumSize = new Size(200, 30);
-            comboBoxCustom1.Name = "comboBoxCustom1";
-            comboBoxCustom1.Padding = new Padding(1);
-            comboBoxCustom1.Size = new Size(200, 30);
-            comboBoxCustom1.TabIndex = 3;
-            comboBoxCustom1.Texts = "";
+            this.comboBoxCustom1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.comboBoxCustom1.BorderColor = System.Drawing.Color.Black;
+            this.comboBoxCustom1.BorderSize = 1;
+            this.comboBoxCustom1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.comboBoxCustom1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxCustom1.ForeColor = System.Drawing.Color.DimGray;
+            this.comboBoxCustom1.IconColor = System.Drawing.Color.Black;
+            this.comboBoxCustom1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.comboBoxCustom1.ListTextColor = System.Drawing.Color.DimGray;
+            this.comboBoxCustom1.Location = new System.Drawing.Point(709, 23);
+            this.comboBoxCustom1.MinimumSize = new System.Drawing.Size(200, 30);
+            this.comboBoxCustom1.Name = "comboBoxCustom1";
+            this.comboBoxCustom1.Padding = new System.Windows.Forms.Padding(1);
+            this.comboBoxCustom1.Size = new System.Drawing.Size(200, 30);
+            this.comboBoxCustom1.TabIndex = 3;
+            this.comboBoxCustom1.Texts = "";
             // 
             // dateTimePickerCustom2
             // 
-            dateTimePickerCustom2.BorderColor = Color.PaleVioletRed;
-            dateTimePickerCustom2.BorderSize = 0;
-            dateTimePickerCustom2.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerCustom2.Format = DateTimePickerFormat.Short;
-            dateTimePickerCustom2.Location = new Point(497, 18);
-            dateTimePickerCustom2.MinimumSize = new Size(0, 35);
-            dateTimePickerCustom2.Name = "dateTimePickerCustom2";
-            dateTimePickerCustom2.Size = new Size(141, 35);
-            dateTimePickerCustom2.SkinColor = Color.MediumSlateBlue;
-            dateTimePickerCustom2.TabIndex = 8;
-            dateTimePickerCustom2.TextColor = Color.White;
+            this.dateTimePickerCustom2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.dateTimePickerCustom2.BorderSize = 0;
+            this.dateTimePickerCustom2.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePickerCustom2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerCustom2.Location = new System.Drawing.Point(497, 18);
+            this.dateTimePickerCustom2.MinimumSize = new System.Drawing.Size(0, 35);
+            this.dateTimePickerCustom2.Name = "dateTimePickerCustom2";
+            this.dateTimePickerCustom2.Size = new System.Drawing.Size(141, 35);
+            this.dateTimePickerCustom2.SkinColor = System.Drawing.Color.MediumSlateBlue;
+            this.dateTimePickerCustom2.TabIndex = 8;
+            this.dateTimePickerCustom2.TextColor = System.Drawing.Color.White;
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = SystemColors.MenuHighlight;
-            label5.Location = new Point(454, 27);
-            label5.Name = "label5";
-            label5.Size = new Size(37, 20);
-            label5.TabIndex = 7;
-            label5.Text = "Đến";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label5.Location = new System.Drawing.Point(454, 27);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 20);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Đến";
             // 
             // dateTimePickerCustom1
             // 
-            dateTimePickerCustom1.BorderColor = Color.PaleVioletRed;
-            dateTimePickerCustom1.BorderSize = 0;
-            dateTimePickerCustom1.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerCustom1.Format = DateTimePickerFormat.Short;
-            dateTimePickerCustom1.Location = new Point(317, 17);
-            dateTimePickerCustom1.MinimumSize = new Size(0, 35);
-            dateTimePickerCustom1.Name = "dateTimePickerCustom1";
-            dateTimePickerCustom1.Size = new Size(131, 35);
-            dateTimePickerCustom1.SkinColor = Color.MediumSlateBlue;
-            dateTimePickerCustom1.TabIndex = 5;
-            dateTimePickerCustom1.TextColor = Color.White;
+            this.dateTimePickerCustom1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.dateTimePickerCustom1.BorderSize = 0;
+            this.dateTimePickerCustom1.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePickerCustom1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerCustom1.Location = new System.Drawing.Point(317, 17);
+            this.dateTimePickerCustom1.MinimumSize = new System.Drawing.Size(0, 35);
+            this.dateTimePickerCustom1.Name = "dateTimePickerCustom1";
+            this.dateTimePickerCustom1.Size = new System.Drawing.Size(131, 35);
+            this.dateTimePickerCustom1.SkinColor = System.Drawing.Color.MediumSlateBlue;
+            this.dateTimePickerCustom1.TabIndex = 5;
+            this.dateTimePickerCustom1.TextColor = System.Drawing.Color.White;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = SystemColors.MenuHighlight;
-            label4.Location = new Point(285, 27);
-            label4.Name = "label4";
-            label4.Size = new Size(26, 20);
-            label4.TabIndex = 6;
-            label4.Text = "Từ";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label4.Location = new System.Drawing.Point(285, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 20);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Từ";
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(27, 106);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1472, 300);
-            groupBox1.TabIndex = 5;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Hóa Đơn";
+            this.groupBox1.Controls.Add(this.dgv_hoaDon);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.Location = new System.Drawing.Point(27, 106);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1472, 300);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Hóa Đơn";
             // 
-            // dataGridView1
+            // dgv_hoaDon
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(3, 25);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1466, 272);
-            dataGridView1.TabIndex = 0;
+            this.dgv_hoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_hoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_hoaDon.Location = new System.Drawing.Point(3, 25);
+            this.dgv_hoaDon.Name = "dgv_hoaDon";
+            this.dgv_hoaDon.RowTemplate.Height = 25;
+            this.dgv_hoaDon.Size = new System.Drawing.Size(1466, 272);
+            this.dgv_hoaDon.TabIndex = 0;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(dataGridView2);
-            groupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox2.Location = new Point(24, 433);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1478, 243);
-            groupBox2.TabIndex = 6;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Hóa Đơn Chi Tiết";
+            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox2.Location = new System.Drawing.Point(24, 433);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1478, 243);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Hóa Đơn Chi Tiết";
             // 
             // dataGridView2
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Dock = DockStyle.Fill;
-            dataGridView2.Location = new Point(3, 25);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(1472, 215);
-            dataGridView2.TabIndex = 0;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 25);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.Size = new System.Drawing.Size(1472, 215);
+            this.dataGridView2.TabIndex = 0;
             // 
             // panel2
             // 
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(radioButtonCustom3);
-            panel2.Controls.Add(radioButtonCustom2);
-            panel2.Controls.Add(radioButtonCustom1);
-            panel2.Controls.Add(iconButton8);
-            panel2.Controls.Add(textBoxCustom2_04);
-            panel2.Controls.Add(comboBoxCustom1);
-            panel2.Controls.Add(dateTimePickerCustom2);
-            panel2.Controls.Add(label5);
-            panel2.Controls.Add(dateTimePickerCustom1);
-            panel2.Controls.Add(label2);
-            panel2.Controls.Add(label1);
-            panel2.Controls.Add(label4);
-            panel2.Location = new Point(30, 26);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1306, 70);
-            panel2.TabIndex = 1;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.radioButtonCustom3);
+            this.panel2.Controls.Add(this.radioButtonCustom2);
+            this.panel2.Controls.Add(this.radioButtonCustom1);
+            this.panel2.Controls.Add(this.iconButton8);
+            this.panel2.Controls.Add(this.textBoxCustom2_04);
+            this.panel2.Controls.Add(this.comboBoxCustom1);
+            this.panel2.Controls.Add(this.dateTimePickerCustom2);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.dateTimePickerCustom1);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Location = new System.Drawing.Point(30, 26);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1306, 70);
+            this.panel2.TabIndex = 1;
             // 
             // radioButtonCustom3
             // 
-            radioButtonCustom3.AutoSize = true;
-            radioButtonCustom3.CheckedColor = Color.MediumSlateBlue;
-            radioButtonCustom3.Location = new Point(1207, 28);
-            radioButtonCustom3.MinimumSize = new Size(0, 21);
-            radioButtonCustom3.Name = "radioButtonCustom3";
-            radioButtonCustom3.Padding = new Padding(10, 0, 0, 0);
-            radioButtonCustom3.Size = new Size(57, 21);
-            radioButtonCustom3.TabIndex = 50;
-            radioButtonCustom3.TabStop = true;
-            radioButtonCustom3.Text = "Hủy";
-            radioButtonCustom3.UnCheckedColor = Color.Gray;
-            radioButtonCustom3.UseVisualStyleBackColor = true;
+            this.radioButtonCustom3.AutoSize = true;
+            this.radioButtonCustom3.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.radioButtonCustom3.Location = new System.Drawing.Point(1207, 28);
+            this.radioButtonCustom3.MinimumSize = new System.Drawing.Size(0, 21);
+            this.radioButtonCustom3.Name = "radioButtonCustom3";
+            this.radioButtonCustom3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.radioButtonCustom3.Size = new System.Drawing.Size(57, 21);
+            this.radioButtonCustom3.TabIndex = 50;
+            this.radioButtonCustom3.TabStop = true;
+            this.radioButtonCustom3.Text = "Hủy";
+            this.radioButtonCustom3.UnCheckedColor = System.Drawing.Color.Gray;
+            this.radioButtonCustom3.UseVisualStyleBackColor = true;
             // 
             // radioButtonCustom2
             // 
-            radioButtonCustom2.AutoSize = true;
-            radioButtonCustom2.CheckedColor = Color.MediumSlateBlue;
-            radioButtonCustom2.Location = new Point(1077, 27);
-            radioButtonCustom2.MinimumSize = new Size(0, 21);
-            radioButtonCustom2.Name = "radioButtonCustom2";
-            radioButtonCustom2.Padding = new Padding(10, 0, 0, 0);
-            radioButtonCustom2.Size = new Size(124, 21);
-            radioButtonCustom2.TabIndex = 50;
-            radioButtonCustom2.TabStop = true;
-            radioButtonCustom2.Text = "Chưa thanh toán";
-            radioButtonCustom2.UnCheckedColor = Color.Gray;
-            radioButtonCustom2.UseVisualStyleBackColor = true;
+            this.radioButtonCustom2.AutoSize = true;
+            this.radioButtonCustom2.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.radioButtonCustom2.Location = new System.Drawing.Point(1077, 27);
+            this.radioButtonCustom2.MinimumSize = new System.Drawing.Size(0, 21);
+            this.radioButtonCustom2.Name = "radioButtonCustom2";
+            this.radioButtonCustom2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.radioButtonCustom2.Size = new System.Drawing.Size(124, 21);
+            this.radioButtonCustom2.TabIndex = 50;
+            this.radioButtonCustom2.TabStop = true;
+            this.radioButtonCustom2.Text = "Chưa thanh toán";
+            this.radioButtonCustom2.UnCheckedColor = System.Drawing.Color.Gray;
+            this.radioButtonCustom2.UseVisualStyleBackColor = true;
             // 
             // radioButtonCustom1
             // 
-            radioButtonCustom1.AutoSize = true;
-            radioButtonCustom1.CheckedColor = Color.MediumSlateBlue;
-            radioButtonCustom1.Location = new Point(961, 28);
-            radioButtonCustom1.MinimumSize = new Size(0, 21);
-            radioButtonCustom1.Name = "radioButtonCustom1";
-            radioButtonCustom1.Padding = new Padding(10, 0, 0, 0);
-            radioButtonCustom1.Size = new Size(110, 21);
-            radioButtonCustom1.TabIndex = 50;
-            radioButtonCustom1.TabStop = true;
-            radioButtonCustom1.Text = "Đã thanh toán";
-            radioButtonCustom1.UnCheckedColor = Color.Gray;
-            radioButtonCustom1.UseVisualStyleBackColor = true;
+            this.radioButtonCustom1.AutoSize = true;
+            this.radioButtonCustom1.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.radioButtonCustom1.Location = new System.Drawing.Point(961, 28);
+            this.radioButtonCustom1.MinimumSize = new System.Drawing.Size(0, 21);
+            this.radioButtonCustom1.Name = "radioButtonCustom1";
+            this.radioButtonCustom1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.radioButtonCustom1.Size = new System.Drawing.Size(110, 21);
+            this.radioButtonCustom1.TabIndex = 50;
+            this.radioButtonCustom1.TabStop = true;
+            this.radioButtonCustom1.Text = "Đã thanh toán";
+            this.radioButtonCustom1.UnCheckedColor = System.Drawing.Color.Gray;
+            this.radioButtonCustom1.UseVisualStyleBackColor = true;
             // 
             // iconButton8
             // 
-            iconButton8.FlatAppearance.BorderSize = 0;
-            iconButton8.FlatStyle = FlatStyle.Flat;
-            iconButton8.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            iconButton8.IconColor = Color.Black;
-            iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton8.IconSize = 23;
-            iconButton8.Location = new Point(17, 23);
-            iconButton8.Name = "iconButton8";
-            iconButton8.Size = new Size(32, 25);
-            iconButton8.TabIndex = 49;
-            iconButton8.UseVisualStyleBackColor = true;
+            this.iconButton8.FlatAppearance.BorderSize = 0;
+            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.iconButton8.IconColor = System.Drawing.Color.Black;
+            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton8.IconSize = 23;
+            this.iconButton8.Location = new System.Drawing.Point(17, 23);
+            this.iconButton8.Name = "iconButton8";
+            this.iconButton8.Size = new System.Drawing.Size(32, 25);
+            this.iconButton8.TabIndex = 49;
+            this.iconButton8.UseVisualStyleBackColor = true;
             // 
             // textBoxCustom2_04
             // 
-            textBoxCustom2_04.BorderColor = Color.MediumSlateBlue;
-            textBoxCustom2_04.BorderFocusColor = Color.HotPink;
-            textBoxCustom2_04.BorderRadius = 10;
-            textBoxCustom2_04.BorderSize = 1;
-            textBoxCustom2_04.Location = new Point(11, 19);
-            textBoxCustom2_04.Multiline = false;
-            textBoxCustom2_04.Name = "textBoxCustom2_04";
-            textBoxCustom2_04.Padding = new Padding(42, 7, 7, 7);
-            textBoxCustom2_04.PasswordChar = false;
-            textBoxCustom2_04.PlaceholderColor = Color.DarkGray;
-            textBoxCustom2_04.PlaceholderText = "Tìm kiếm";
-            textBoxCustom2_04.Size = new Size(250, 30);
-            textBoxCustom2_04.TabIndex = 48;
-            textBoxCustom2_04.Texts = "";
-            textBoxCustom2_04.UnderlinedStyle = false;
+            this.textBoxCustom2_04.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.textBoxCustom2_04.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textBoxCustom2_04.BorderRadius = 10;
+            this.textBoxCustom2_04.BorderSize = 1;
+            this.textBoxCustom2_04.Location = new System.Drawing.Point(11, 19);
+            this.textBoxCustom2_04.Multiline = false;
+            this.textBoxCustom2_04.Name = "textBoxCustom2_04";
+            this.textBoxCustom2_04.Padding = new System.Windows.Forms.Padding(42, 7, 7, 7);
+            this.textBoxCustom2_04.PasswordChar = false;
+            this.textBoxCustom2_04.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.textBoxCustom2_04.PlaceholderText = "Tìm kiếm";
+            this.textBoxCustom2_04.Size = new System.Drawing.Size(250, 30);
+            this.textBoxCustom2_04.TabIndex = 48;
+            this.textBoxCustom2_04.Texts = "";
+            this.textBoxCustom2_04.UnderlinedStyle = false;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.MenuHighlight;
-            label2.Location = new Point(975, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(124, 17);
-            label2.TabIndex = 6;
-            label2.Text = "Trạng thái hóa đơn";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label2.Location = new System.Drawing.Point(975, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(124, 17);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Trạng thái hóa đơn";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.MenuHighlight;
-            label1.Location = new Point(709, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(96, 17);
-            label1.TabIndex = 6;
-            label1.Text = "Loại sản phẩm";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label1.Location = new System.Drawing.Point(709, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Loại sản phẩm";
             // 
             // iconButton2
             // 
-            iconButton2.BackColor = Color.FromArgb(2, 135, 127);
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.Print;
-            iconButton2.IconColor = Color.Black;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.Location = new Point(1421, 26);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(75, 70);
-            iconButton2.TabIndex = 7;
-            iconButton2.UseVisualStyleBackColor = false;
+            this.iconButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(135)))), ((int)(((byte)(127)))));
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.Location = new System.Drawing.Point(1421, 26);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(75, 70);
+            this.iconButton2.TabIndex = 7;
+            this.iconButton2.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.FromArgb(2, 135, 127);
-            pictureBox1.Image = Properties.Resources.icons8_microsoft_excel_80;
-            pictureBox1.Location = new Point(1342, 30);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(66, 66);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 8;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(135)))), ((int)(((byte)(127)))));
+            this.pictureBox1.Image = global::_3_GUI_PresentationLayer.Properties.Resources.icons8_microsoft_excel_80;
+            this.pictureBox1.Location = new System.Drawing.Point(1342, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(66, 66);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmHoaDon
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(244, 245, 255);
-            ClientSize = new Size(1521, 690);
-            Controls.Add(pictureBox1);
-            Controls.Add(iconButton2);
-            Controls.Add(panel2);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "FrmHoaDon";
-            Text = "Hóa  đơn";
-            groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(1386, 690);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.iconButton2);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FrmHoaDon";
+            this.Text = "Hóa  đơn";
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_hoaDon)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -341,7 +342,7 @@
         private Label label5;
         private CustomControl.DateTimePickerCustom dateTimePickerCustom1;
         private GroupBox groupBox1;
-        private DataGridView dataGridView1;
+        private DataGridView dgv_hoaDon;
         private GroupBox groupBox2;
         private DataGridView dataGridView2;
         private Panel panel2;
