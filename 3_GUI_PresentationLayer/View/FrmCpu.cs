@@ -92,7 +92,7 @@ namespace _3_GUI_PresentationLayer.View
         {
             txtFalse();
             Cpu cpu1 = new Cpu();
-            if (!checkNhap() || txtTenCpu.Texts != cpu1.Ten || lbMa.Text != cpu1.Ma)
+            if (!checkNhap() && txtTenCpu.Texts != cpu1.Ten)
             {
                 MessageBox.Show("Không được để trống hoặc trùng với dữ liệu cũ");
             }
@@ -101,7 +101,7 @@ namespace _3_GUI_PresentationLayer.View
                 Cpu cpu = new Cpu()
                 {
                     Id = _idCpu,
-                    //Ma = lbMa.Text,
+                    Ma = lbMa.Text,
                     Ten = txtTenCpu.Texts
                 };
                 if (MessageBox.Show("Bạn có chắc chắn", "Sửa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
