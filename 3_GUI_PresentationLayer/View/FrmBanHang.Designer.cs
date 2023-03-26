@@ -53,7 +53,6 @@
             radioButtonCustom2 = new CustomControl.RadioButtonCustom();
             radioButtonCustom1 = new CustomControl.RadioButtonCustom();
             label5 = new Label();
-            comboBoxCustom2 = new CustomControl.ComboBoxCustom();
             comboBoxCustom1 = new CustomControl.ComboBoxCustom();
             label6 = new Label();
             iconButton3 = new FontAwesome.Sharp.IconButton();
@@ -73,18 +72,21 @@
             Column4 = new DataGridViewTextBoxColumn();
             groupBox2 = new GroupBox();
             dataGridView2 = new DataGridView();
+            groupBox1 = new GroupBox();
+            pictureBox1 = new PictureBox();
+            buttonCustom1 = new CustomControl.ButtonCustom();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            groupBox1 = new GroupBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -114,7 +116,6 @@
             panel1.Controls.Add(radioButtonCustom2);
             panel1.Controls.Add(radioButtonCustom1);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(comboBoxCustom2);
             panel1.Controls.Add(comboBoxCustom1);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(iconButton3);
@@ -471,25 +472,6 @@
             label5.TabIndex = 19;
             label5.Text = "Nhận hàng";
             // 
-            // comboBoxCustom2
-            // 
-            comboBoxCustom2.BackColor = Color.White;
-            comboBoxCustom2.BorderColor = Color.Black;
-            comboBoxCustom2.BorderSize = 1;
-            comboBoxCustom2.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxCustom2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom2.ForeColor = Color.DimGray;
-            comboBoxCustom2.IconColor = Color.Black;
-            comboBoxCustom2.ListBackColor = Color.FromArgb(230, 228, 245);
-            comboBoxCustom2.ListTextColor = Color.DimGray;
-            comboBoxCustom2.Location = new Point(129, 418);
-            comboBoxCustom2.MinimumSize = new Size(200, 30);
-            comboBoxCustom2.Name = "comboBoxCustom2";
-            comboBoxCustom2.Padding = new Padding(1);
-            comboBoxCustom2.Size = new Size(237, 30);
-            comboBoxCustom2.TabIndex = 14;
-            comboBoxCustom2.Texts = "";
-            // 
             // comboBoxCustom1
             // 
             comboBoxCustom1.BackColor = Color.White;
@@ -538,6 +520,8 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(buttonCustom1);
+            panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(comboBoxCustom3);
             panel2.Controls.Add(iconButton8);
             panel2.Controls.Add(textBoxCustom2_04);
@@ -547,7 +531,7 @@
             panel2.Controls.Add(label2);
             panel2.Location = new Point(18, 17);
             panel2.Name = "panel2";
-            panel2.Size = new Size(975, 60);
+            panel2.Size = new Size(972, 140);
             panel2.TabIndex = 42;
             // 
             // comboBoxCustom3
@@ -561,11 +545,11 @@
             comboBoxCustom3.IconColor = Color.MediumSlateBlue;
             comboBoxCustom3.ListBackColor = Color.FromArgb(230, 228, 245);
             comboBoxCustom3.ListTextColor = Color.DimGray;
-            comboBoxCustom3.Location = new Point(355, 19);
+            comboBoxCustom3.Location = new Point(10, 88);
             comboBoxCustom3.MinimumSize = new Size(150, 30);
             comboBoxCustom3.Name = "comboBoxCustom3";
             comboBoxCustom3.Padding = new Padding(1);
-            comboBoxCustom3.Size = new Size(212, 30);
+            comboBoxCustom3.Size = new Size(244, 30);
             comboBoxCustom3.TabIndex = 48;
             comboBoxCustom3.Texts = "";
             // 
@@ -609,7 +593,7 @@
             iconButton2.IconChar = FontAwesome.Sharp.IconChar.SortAmountDown;
             iconButton2.IconColor = Color.FromArgb(187, 92, 119);
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.Location = new Point(899, 8);
+            iconButton2.Location = new Point(471, 38);
             iconButton2.Name = "iconButton2";
             iconButton2.Size = new Size(56, 46);
             iconButton2.TabIndex = 45;
@@ -623,7 +607,7 @@
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowUpShortWide;
             iconButton1.IconColor = Color.FromArgb(187, 92, 119);
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(834, 6);
+            iconButton1.Location = new Point(406, 38);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(59, 47);
             iconButton1.TabIndex = 44;
@@ -634,7 +618,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Highlight;
-            label1.Location = new Point(355, -2);
+            label1.Location = new Point(10, 67);
             label1.Name = "label1";
             label1.Size = new Size(98, 17);
             label1.TabIndex = 43;
@@ -654,9 +638,9 @@
             // panel3
             // 
             panel3.Controls.Add(dataGridView1);
-            panel3.Location = new Point(18, 86);
+            panel3.Location = new Point(18, 163);
             panel3.Name = "panel3";
-            panel3.Size = new Size(978, 345);
+            panel3.Size = new Size(975, 268);
             panel3.TabIndex = 43;
             // 
             // dataGridView1
@@ -664,10 +648,10 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridView1.Location = new Point(1, 4);
+            dataGridView1.Location = new Point(1, 3);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(979, 338);
+            dataGridView1.Size = new Size(971, 262);
             dataGridView1.TabIndex = 23;
             // 
             // Column1
@@ -700,7 +684,7 @@
             groupBox2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(18, 437);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(981, 238);
+            groupBox2.Size = new Size(975, 238);
             groupBox2.TabIndex = 24;
             groupBox2.TabStop = false;
             groupBox2.Text = "Giỏ Hàng";
@@ -709,13 +693,49 @@
             // 
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, Column6, dataGridViewTextBoxColumn4 });
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, Column5, Column6, dataGridViewTextBoxColumn4 });
             dataGridView2.Dock = DockStyle.Fill;
             dataGridView2.Location = new Point(3, 23);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(975, 212);
+            dataGridView2.Size = new Size(969, 212);
             dataGridView2.TabIndex = 12;
+            // 
+            // groupBox1
+            // 
+            groupBox1.BackColor = Color.White;
+            groupBox1.Location = new Point(1422, 11);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(87, 667);
+            groupBox1.TabIndex = 44;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "groupBox1";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(774, 7);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(195, 126);
+            pictureBox1.TabIndex = 45;
+            pictureBox1.TabStop = false;
+            // 
+            // buttonCustom1
+            // 
+            buttonCustom1.BackColor = Color.MediumSlateBlue;
+            buttonCustom1.BackgroundColor = Color.MediumSlateBlue;
+            buttonCustom1.BorderColor = Color.PaleVioletRed;
+            buttonCustom1.BorderRadius = 10;
+            buttonCustom1.BorderSize = 0;
+            buttonCustom1.FlatAppearance.BorderSize = 0;
+            buttonCustom1.FlatStyle = FlatStyle.Flat;
+            buttonCustom1.ForeColor = Color.White;
+            buttonCustom1.Location = new Point(663, 11);
+            buttonCustom1.Name = "buttonCustom1";
+            buttonCustom1.Size = new Size(105, 40);
+            buttonCustom1.TabIndex = 49;
+            buttonCustom1.Text = "Bật camera";
+            buttonCustom1.TextColor = Color.White;
+            buttonCustom1.UseVisualStyleBackColor = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -729,11 +749,10 @@
             dataGridViewTextBoxColumn2.HeaderText = "Giá Bán";
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // dataGridViewTextBoxColumn3
+            // Column5
             // 
-            dataGridViewTextBoxColumn3.FillWeight = 60.9137039F;
-            dataGridViewTextBoxColumn3.HeaderText = "Tồn Kho";
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            Column5.HeaderText = "Số lượng";
+            Column5.Name = "Column5";
             // 
             // Column6
             // 
@@ -745,16 +764,6 @@
             dataGridViewTextBoxColumn4.FillWeight = 39.11956F;
             dataGridViewTextBoxColumn4.HeaderText = "  ";
             dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // groupBox1
-            // 
-            groupBox1.BackColor = Color.White;
-            groupBox1.Location = new Point(1422, 11);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(87, 667);
-            groupBox1.TabIndex = 44;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
             // 
             // FrmBanHang
             // 
@@ -778,6 +787,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -806,11 +816,6 @@
         private Panel panel3;
         private GroupBox groupBox2;
         private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
@@ -824,7 +829,6 @@
         private FontAwesome.Sharp.IconButton iconButton4;
         private Label label13;
         private Label label12;
-        private CustomControl.ComboBoxCustom comboBoxCustom2;
         private FontAwesome.Sharp.IconButton iconButton7;
         private FontAwesome.Sharp.IconButton iconButton6;
         private FontAwesome.Sharp.IconButton iconButton5;
@@ -833,5 +837,12 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private CustomControl.ComboBoxCustom comboBoxCustom3;
         private Label label1;
+        private CustomControl.ButtonCustom buttonCustom1;
+        private PictureBox pictureBox1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
