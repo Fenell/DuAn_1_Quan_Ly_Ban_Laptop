@@ -10,8 +10,8 @@ namespace _1_DAL_DataAccessLayer.IRepositories
     public interface INhaCungCapRepository
     {
         bool AddNhaCungCap(NhaCungCap nhaCungCap);
-        bool Update(NhaCungCap nhaCungCap);
-        bool Delete(Guid idNhaCungCap);
+        bool UpdateNhaCungCap(NhaCungCap nhaCungCap);
+        bool DeleteNhaCungCap(Guid idNhaCungCap);
         NhaCungCap GetNhaCungCapById(Guid idNhaCungCap);
         List<NhaCungCap> GetAllNhaCungCap();
     }
