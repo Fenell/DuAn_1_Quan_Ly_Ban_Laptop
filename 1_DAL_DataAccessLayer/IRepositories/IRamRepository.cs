@@ -10,8 +10,8 @@ namespace _1_DAL_DataAccessLayer.IRepositories
     public interface IRamRepository
     {
         bool AddRam(Ram ram);
-        bool Update(Ram ram);
-        bool Delete(Guid idRam);
+        bool UpdateRam(Ram ram);
+        bool DeleteRam(Guid idRam);
         Ram GetRamById(Guid idRam);
         List<Ram> GetAllRam();
     }

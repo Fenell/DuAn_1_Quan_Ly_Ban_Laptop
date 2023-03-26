@@ -61,16 +61,17 @@ namespace _3_GUI_PresentationLayer.View
             panel3 = new Panel();
             dataGridView1 = new DataGridView();
             panel4 = new Panel();
-            iconButton16 = new FontAwesome.Sharp.IconButton();
-            iconButton15 = new FontAwesome.Sharp.IconButton();
-            iconButton14 = new FontAwesome.Sharp.IconButton();
-            iconButton13 = new FontAwesome.Sharp.IconButton();
-            iconButton12 = new FontAwesome.Sharp.IconButton();
-            iconButton11 = new FontAwesome.Sharp.IconButton();
-            iconButton10 = new FontAwesome.Sharp.IconButton();
-            iconButton9 = new FontAwesome.Sharp.IconButton();
-            iconButton8 = new FontAwesome.Sharp.IconButton();
-            iconButton7 = new FontAwesome.Sharp.IconButton();
+            textBox1 = new TextBox();
+            btnTenLaptop = new FontAwesome.Sharp.IconButton();
+            btnMauSac = new FontAwesome.Sharp.IconButton();
+            btnManHinh = new FontAwesome.Sharp.IconButton();
+            btnOCung = new FontAwesome.Sharp.IconButton();
+            btnRam = new FontAwesome.Sharp.IconButton();
+            btnVga = new FontAwesome.Sharp.IconButton();
+            btnCpu = new FontAwesome.Sharp.IconButton();
+            btnNhaCungCap = new FontAwesome.Sharp.IconButton();
+            btnDongLaptop = new FontAwesome.Sharp.IconButton();
+            btnHangSanXuat = new FontAwesome.Sharp.IconButton();
             comboBoxCustom6 = new CustomControl.ComboBoxCustom();
             comboBoxCustom5 = new CustomControl.ComboBoxCustom();
             comboBoxCustom4 = new CustomControl.ComboBoxCustom();
@@ -91,7 +92,6 @@ namespace _3_GUI_PresentationLayer.View
             label14 = new Label();
             panel5 = new Panel();
             panel6 = new Panel();
-            textBox1 = new TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -515,16 +515,16 @@ namespace _3_GUI_PresentationLayer.View
             // 
             panel4.BackColor = Color.White;
             panel4.Controls.Add(textBox1);
-            panel4.Controls.Add(iconButton16);
-            panel4.Controls.Add(iconButton15);
-            panel4.Controls.Add(iconButton14);
-            panel4.Controls.Add(iconButton13);
-            panel4.Controls.Add(iconButton12);
-            panel4.Controls.Add(iconButton11);
-            panel4.Controls.Add(iconButton10);
-            panel4.Controls.Add(iconButton9);
-            panel4.Controls.Add(iconButton8);
-            panel4.Controls.Add(iconButton7);
+            panel4.Controls.Add(btnTenLaptop);
+            panel4.Controls.Add(btnMauSac);
+            panel4.Controls.Add(btnManHinh);
+            panel4.Controls.Add(btnOCung);
+            panel4.Controls.Add(btnRam);
+            panel4.Controls.Add(btnVga);
+            panel4.Controls.Add(btnCpu);
+            panel4.Controls.Add(btnNhaCungCap);
+            panel4.Controls.Add(btnDongLaptop);
+            panel4.Controls.Add(btnHangSanXuat);
             panel4.Controls.Add(comboBoxCustom6);
             panel4.Controls.Add(comboBoxCustom5);
             panel4.Controls.Add(comboBoxCustom4);
@@ -549,155 +549,171 @@ namespace _3_GUI_PresentationLayer.View
             panel4.Size = new Size(1078, 236);
             panel4.TabIndex = 3;
             // 
-            // iconButton16
+            // textBox1
             // 
-            iconButton16.BackColor = Color.FromArgb(86, 103, 204);
-            iconButton16.FlatStyle = FlatStyle.Flat;
-            iconButton16.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            iconButton16.IconColor = Color.Black;
-            iconButton16.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton16.IconSize = 28;
-            iconButton16.Location = new Point(915, 182);
-            iconButton16.Name = "iconButton16";
-            iconButton16.Padding = new Padding(0, 4, 0, 0);
-            iconButton16.Size = new Size(150, 36);
-            iconButton16.TabIndex = 20;
-            iconButton16.UseVisualStyleBackColor = false;
+            textBox1.Location = new Point(915, 153);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(146, 23);
+            textBox1.TabIndex = 21;
             // 
-            // iconButton15
+            // btnTenLaptop
             // 
-            iconButton15.BackColor = Color.FromArgb(86, 103, 204);
-            iconButton15.FlatStyle = FlatStyle.Flat;
-            iconButton15.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            iconButton15.IconColor = Color.Black;
-            iconButton15.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton15.IconSize = 28;
-            iconButton15.Location = new Point(699, 182);
-            iconButton15.Name = "iconButton15";
-            iconButton15.Padding = new Padding(0, 4, 0, 0);
-            iconButton15.Size = new Size(150, 36);
-            iconButton15.TabIndex = 20;
-            iconButton15.UseVisualStyleBackColor = false;
+            btnTenLaptop.BackColor = Color.FromArgb(86, 103, 204);
+            btnTenLaptop.FlatStyle = FlatStyle.Flat;
+            btnTenLaptop.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            btnTenLaptop.IconColor = Color.Black;
+            btnTenLaptop.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnTenLaptop.IconSize = 28;
+            btnTenLaptop.Location = new Point(915, 182);
+            btnTenLaptop.Name = "btnTenLaptop";
+            btnTenLaptop.Padding = new Padding(0, 4, 0, 0);
+            btnTenLaptop.Size = new Size(150, 36);
+            btnTenLaptop.TabIndex = 20;
+            btnTenLaptop.UseVisualStyleBackColor = false;
             // 
-            // iconButton14
+            // btnMauSac
             // 
-            iconButton14.BackColor = Color.FromArgb(86, 103, 204);
-            iconButton14.FlatStyle = FlatStyle.Flat;
-            iconButton14.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            iconButton14.IconColor = Color.Black;
-            iconButton14.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton14.IconSize = 28;
-            iconButton14.Location = new Point(456, 182);
-            iconButton14.Name = "iconButton14";
-            iconButton14.Padding = new Padding(0, 4, 0, 0);
-            iconButton14.Size = new Size(150, 36);
-            iconButton14.TabIndex = 20;
-            iconButton14.UseVisualStyleBackColor = false;
+            btnMauSac.BackColor = Color.FromArgb(86, 103, 204);
+            btnMauSac.FlatStyle = FlatStyle.Flat;
+            btnMauSac.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            btnMauSac.IconColor = Color.Black;
+            btnMauSac.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnMauSac.IconSize = 28;
+            btnMauSac.Location = new Point(699, 182);
+            btnMauSac.Name = "btnMauSac";
+            btnMauSac.Padding = new Padding(0, 4, 0, 0);
+            btnMauSac.Size = new Size(150, 36);
+            btnMauSac.TabIndex = 20;
+            btnMauSac.UseVisualStyleBackColor = false;
+            btnMauSac.Click += btnMauSac_Click;
             // 
-            // iconButton13
+            // btnManHinh
             // 
-            iconButton13.BackColor = Color.FromArgb(86, 103, 204);
-            iconButton13.FlatStyle = FlatStyle.Flat;
-            iconButton13.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            iconButton13.IconColor = Color.Black;
-            iconButton13.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton13.IconSize = 28;
-            iconButton13.Location = new Point(235, 182);
-            iconButton13.Name = "iconButton13";
-            iconButton13.Padding = new Padding(0, 4, 0, 0);
-            iconButton13.Size = new Size(150, 36);
-            iconButton13.TabIndex = 20;
-            iconButton13.UseVisualStyleBackColor = false;
+            btnManHinh.BackColor = Color.FromArgb(86, 103, 204);
+            btnManHinh.FlatStyle = FlatStyle.Flat;
+            btnManHinh.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            btnManHinh.IconColor = Color.Black;
+            btnManHinh.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnManHinh.IconSize = 28;
+            btnManHinh.Location = new Point(456, 182);
+            btnManHinh.Name = "btnManHinh";
+            btnManHinh.Padding = new Padding(0, 4, 0, 0);
+            btnManHinh.Size = new Size(150, 36);
+            btnManHinh.TabIndex = 20;
+            btnManHinh.UseVisualStyleBackColor = false;
+            btnManHinh.Click += btnManHinh_Click;
             // 
-            // iconButton12
+            // btnOCung
             // 
-            iconButton12.BackColor = Color.FromArgb(86, 103, 204);
-            iconButton12.FlatStyle = FlatStyle.Flat;
-            iconButton12.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            iconButton12.IconColor = Color.Black;
-            iconButton12.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton12.IconSize = 28;
-            iconButton12.Location = new Point(17, 182);
-            iconButton12.Name = "iconButton12";
-            iconButton12.Padding = new Padding(0, 4, 0, 0);
-            iconButton12.Size = new Size(150, 36);
-            iconButton12.TabIndex = 20;
-            iconButton12.UseVisualStyleBackColor = false;
+            btnOCung.BackColor = Color.FromArgb(86, 103, 204);
+            btnOCung.FlatStyle = FlatStyle.Flat;
+            btnOCung.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            btnOCung.IconColor = Color.Black;
+            btnOCung.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnOCung.IconSize = 28;
+            btnOCung.Location = new Point(235, 182);
+            btnOCung.Name = "btnOCung";
+            btnOCung.Padding = new Padding(0, 4, 0, 0);
+            btnOCung.Size = new Size(150, 36);
+            btnOCung.TabIndex = 20;
+            btnOCung.UseVisualStyleBackColor = false;
+            btnOCung.Click += btnOCung_Click;
             // 
-            // iconButton11
+            // btnRam
             // 
-            iconButton11.BackColor = Color.FromArgb(86, 103, 204);
-            iconButton11.FlatStyle = FlatStyle.Flat;
-            iconButton11.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            iconButton11.IconColor = Color.Black;
-            iconButton11.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton11.IconSize = 28;
-            iconButton11.Location = new Point(915, 67);
-            iconButton11.Name = "iconButton11";
-            iconButton11.Padding = new Padding(0, 4, 0, 0);
-            iconButton11.Size = new Size(150, 36);
-            iconButton11.TabIndex = 20;
-            iconButton11.UseVisualStyleBackColor = false;
+            btnRam.BackColor = Color.FromArgb(86, 103, 204);
+            btnRam.FlatStyle = FlatStyle.Flat;
+            btnRam.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            btnRam.IconColor = Color.Black;
+            btnRam.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnRam.IconSize = 28;
+            btnRam.Location = new Point(17, 182);
+            btnRam.Name = "btnRam";
+            btnRam.Padding = new Padding(0, 4, 0, 0);
+            btnRam.Size = new Size(150, 36);
+            btnRam.TabIndex = 20;
+            btnRam.UseVisualStyleBackColor = false;
+            btnRam.Click += btnRam_Click;
             // 
-            // iconButton10
+            // btnVga
             // 
-            iconButton10.BackColor = Color.FromArgb(86, 103, 204);
-            iconButton10.FlatStyle = FlatStyle.Flat;
-            iconButton10.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            iconButton10.IconColor = Color.Black;
-            iconButton10.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton10.IconSize = 28;
-            iconButton10.Location = new Point(699, 67);
-            iconButton10.Name = "iconButton10";
-            iconButton10.Padding = new Padding(0, 4, 0, 0);
-            iconButton10.Size = new Size(150, 36);
-            iconButton10.TabIndex = 20;
-            iconButton10.UseVisualStyleBackColor = false;
+            btnVga.BackColor = Color.FromArgb(86, 103, 204);
+            btnVga.FlatStyle = FlatStyle.Flat;
+            btnVga.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            btnVga.IconColor = Color.Black;
+            btnVga.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnVga.IconSize = 28;
+            btnVga.Location = new Point(915, 67);
+            btnVga.Name = "btnVga";
+            btnVga.Padding = new Padding(0, 4, 0, 0);
+            btnVga.Size = new Size(150, 36);
+            btnVga.TabIndex = 20;
+            btnVga.UseVisualStyleBackColor = false;
+            btnVga.Click += btnVga_Click;
             // 
-            // iconButton9
+            // btnCpu
             // 
-            iconButton9.BackColor = Color.FromArgb(86, 103, 204);
-            iconButton9.FlatStyle = FlatStyle.Flat;
-            iconButton9.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            iconButton9.IconColor = Color.Black;
-            iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton9.IconSize = 28;
-            iconButton9.Location = new Point(456, 67);
-            iconButton9.Name = "iconButton9";
-            iconButton9.Padding = new Padding(0, 4, 0, 0);
-            iconButton9.Size = new Size(150, 36);
-            iconButton9.TabIndex = 20;
-            iconButton9.UseVisualStyleBackColor = false;
+            btnCpu.BackColor = Color.FromArgb(86, 103, 204);
+            btnCpu.FlatStyle = FlatStyle.Flat;
+            btnCpu.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            btnCpu.IconColor = Color.Black;
+            btnCpu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnCpu.IconSize = 28;
+            btnCpu.Location = new Point(699, 67);
+            btnCpu.Name = "btnCpu";
+            btnCpu.Padding = new Padding(0, 4, 0, 0);
+            btnCpu.Size = new Size(150, 36);
+            btnCpu.TabIndex = 20;
+            btnCpu.UseVisualStyleBackColor = false;
+            btnCpu.Click += btnCpu_Click;
             // 
-            // iconButton8
+            // btnNhaCungCap
             // 
-            iconButton8.BackColor = Color.FromArgb(86, 103, 204);
-            iconButton8.FlatStyle = FlatStyle.Flat;
-            iconButton8.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            iconButton8.IconColor = Color.Black;
-            iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton8.IconSize = 28;
-            iconButton8.Location = new Point(235, 67);
-            iconButton8.Name = "iconButton8";
-            iconButton8.Padding = new Padding(0, 4, 0, 0);
-            iconButton8.Size = new Size(150, 36);
-            iconButton8.TabIndex = 20;
-            iconButton8.UseVisualStyleBackColor = false;
+            btnNhaCungCap.BackColor = Color.FromArgb(86, 103, 204);
+            btnNhaCungCap.FlatStyle = FlatStyle.Flat;
+            btnNhaCungCap.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            btnNhaCungCap.IconColor = Color.Black;
+            btnNhaCungCap.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnNhaCungCap.IconSize = 28;
+            btnNhaCungCap.Location = new Point(456, 67);
+            btnNhaCungCap.Name = "btnNhaCungCap";
+            btnNhaCungCap.Padding = new Padding(0, 4, 0, 0);
+            btnNhaCungCap.Size = new Size(150, 36);
+            btnNhaCungCap.TabIndex = 20;
+            btnNhaCungCap.UseVisualStyleBackColor = false;
+            btnNhaCungCap.Click += btnNhaCungCap_Click;
             // 
-            // iconButton7
+            // btnDongLaptop
             // 
-            iconButton7.BackColor = Color.FromArgb(86, 103, 204);
-            iconButton7.FlatStyle = FlatStyle.Flat;
-            iconButton7.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            iconButton7.IconColor = Color.Black;
-            iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton7.IconSize = 28;
-            iconButton7.Location = new Point(17, 67);
-            iconButton7.Name = "iconButton7";
-            iconButton7.Padding = new Padding(0, 4, 0, 0);
-            iconButton7.Size = new Size(150, 36);
-            iconButton7.TabIndex = 20;
-            iconButton7.UseVisualStyleBackColor = false;
+            btnDongLaptop.BackColor = Color.FromArgb(86, 103, 204);
+            btnDongLaptop.FlatStyle = FlatStyle.Flat;
+            btnDongLaptop.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            btnDongLaptop.IconColor = Color.Black;
+            btnDongLaptop.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDongLaptop.IconSize = 28;
+            btnDongLaptop.Location = new Point(235, 67);
+            btnDongLaptop.Name = "btnDongLaptop";
+            btnDongLaptop.Padding = new Padding(0, 4, 0, 0);
+            btnDongLaptop.Size = new Size(150, 36);
+            btnDongLaptop.TabIndex = 20;
+            btnDongLaptop.UseVisualStyleBackColor = false;
+            btnDongLaptop.Click += btnDongLaptop_Click;
+            // 
+            // btnHangSanXuat
+            // 
+            btnHangSanXuat.BackColor = Color.FromArgb(86, 103, 204);
+            btnHangSanXuat.FlatStyle = FlatStyle.Flat;
+            btnHangSanXuat.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            btnHangSanXuat.IconColor = Color.Black;
+            btnHangSanXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnHangSanXuat.IconSize = 28;
+            btnHangSanXuat.Location = new Point(17, 67);
+            btnHangSanXuat.Name = "btnHangSanXuat";
+            btnHangSanXuat.Padding = new Padding(0, 4, 0, 0);
+            btnHangSanXuat.Size = new Size(150, 36);
+            btnHangSanXuat.TabIndex = 20;
+            btnHangSanXuat.UseVisualStyleBackColor = false;
+            btnHangSanXuat.Click += btnHangSanXuat_Click;
             // 
             // comboBoxCustom6
             // 
@@ -992,13 +1008,6 @@ namespace _3_GUI_PresentationLayer.View
             panel6.Size = new Size(1521, 647);
             panel6.TabIndex = 0;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(915, 153);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(146, 23);
-            textBox1.TabIndex = 21;
-            // 
             // FrmLaptop
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1057,22 +1066,22 @@ namespace _3_GUI_PresentationLayer.View
         private Label label11;
         private Label label10;
         private CustomControl.ComboBoxCustom comboBoxCustom2;
-        private FontAwesome.Sharp.IconButton iconButton7;
+        private FontAwesome.Sharp.IconButton btnHangSanXuat;
         private CustomControl.ComboBoxCustom comboBoxCustom6;
         private CustomControl.ComboBoxCustom comboBoxCustom5;
         private CustomControl.ComboBoxCustom comboBoxCustom4;
         private CustomControl.ComboBoxCustom comboBoxCustom3;
         private CustomControl.ComboBoxCustom comboBoxCustom7;
         private Label label14;
-        private FontAwesome.Sharp.IconButton iconButton16;
-        private FontAwesome.Sharp.IconButton iconButton15;
-        private FontAwesome.Sharp.IconButton iconButton14;
-        private FontAwesome.Sharp.IconButton iconButton13;
-        private FontAwesome.Sharp.IconButton iconButton12;
-        private FontAwesome.Sharp.IconButton iconButton11;
-        private FontAwesome.Sharp.IconButton iconButton10;
-        private FontAwesome.Sharp.IconButton iconButton9;
-        private FontAwesome.Sharp.IconButton iconButton8;
+        private FontAwesome.Sharp.IconButton btnTenLaptop;
+        private FontAwesome.Sharp.IconButton btnMauSac;
+        private FontAwesome.Sharp.IconButton btnManHinh;
+        private FontAwesome.Sharp.IconButton btnOCung;
+        private FontAwesome.Sharp.IconButton btnRam;
+        private FontAwesome.Sharp.IconButton btnVga;
+        private FontAwesome.Sharp.IconButton btnCpu;
+        private FontAwesome.Sharp.IconButton btnNhaCungCap;
+        private FontAwesome.Sharp.IconButton btnDongLaptop;
         private CustomControl.ComboBoxCustom comboBoxCustom10;
         private CustomControl.ComboBoxCustom comboBoxCustom9;
         private CustomControl.ComboBoxCustom comboBoxCustom8;

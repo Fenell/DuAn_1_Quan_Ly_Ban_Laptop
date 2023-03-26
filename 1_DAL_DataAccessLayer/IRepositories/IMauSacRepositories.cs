@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _1_DAL_DataAccessLayer.IRepositories
 {
-    public interface IMauSac
+    public interface IMauSacRepository
     {
         bool AddMauSac(MauSac mauSac);
         bool UpdateMauSac(MauSac mauSac);

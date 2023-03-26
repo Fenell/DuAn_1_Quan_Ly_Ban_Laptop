@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            iconButton5 = new FontAwesome.Sharp.IconButton();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            textBoxCustom2_01 = new CustomControl.TextBoxCustom2_0();
-            label3 = new Label();
+            btnXoa = new FontAwesome.Sharp.IconButton();
+            btnLamMoi = new FontAwesome.Sharp.IconButton();
+            btnSua = new FontAwesome.Sharp.IconButton();
+            btnThem = new FontAwesome.Sharp.IconButton();
+            txtCard = new CustomControl.TextBoxCustom2_0();
+            lbMa = new Label();
             label2 = new Label();
             label1 = new Label();
             panel1 = new Panel();
-            dataGridView1 = new DataGridView();
+            dtgVga = new DataGridView();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtgVga).BeginInit();
             SuspendLayout();
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(iconButton1);
-            panel2.Controls.Add(iconButton5);
-            panel2.Controls.Add(iconButton3);
-            panel2.Controls.Add(iconButton2);
-            panel2.Controls.Add(textBoxCustom2_01);
-            panel2.Controls.Add(label3);
+            panel2.Controls.Add(btnXoa);
+            panel2.Controls.Add(btnLamMoi);
+            panel2.Controls.Add(btnSua);
+            panel2.Controls.Add(btnThem);
+            panel2.Controls.Add(txtCard);
+            panel2.Controls.Add(lbMa);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
             panel2.Location = new Point(294, 15);
@@ -60,91 +60,94 @@
             panel2.Size = new Size(244, 235);
             panel2.TabIndex = 1;
             // 
-            // iconButton1
+            // btnXoa
             // 
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            iconButton1.IconColor = Color.FromArgb(61, 39, 76);
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 45;
-            iconButton1.Location = new Point(121, 177);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(53, 37);
-            iconButton1.TabIndex = 19;
-            iconButton1.UseVisualStyleBackColor = true;
+            btnXoa.FlatAppearance.BorderSize = 0;
+            btnXoa.FlatStyle = FlatStyle.Flat;
+            btnXoa.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            btnXoa.IconColor = Color.FromArgb(61, 39, 76);
+            btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnXoa.IconSize = 45;
+            btnXoa.Location = new Point(121, 177);
+            btnXoa.Name = "btnXoa";
+            btnXoa.Size = new Size(53, 37);
+            btnXoa.TabIndex = 19;
+            btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.Click += btnXoa_Click;
             // 
-            // iconButton5
+            // btnLamMoi
             // 
-            iconButton5.FlatAppearance.BorderSize = 0;
-            iconButton5.FlatStyle = FlatStyle.Flat;
-            iconButton5.IconChar = FontAwesome.Sharp.IconChar.Rotate;
-            iconButton5.IconColor = Color.FromArgb(61, 39, 76);
-            iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton5.IconSize = 45;
-            iconButton5.Location = new Point(171, 177);
-            iconButton5.Name = "iconButton5";
-            iconButton5.Size = new Size(53, 37);
-            iconButton5.TabIndex = 19;
-            iconButton5.UseVisualStyleBackColor = true;
+            btnLamMoi.FlatAppearance.BorderSize = 0;
+            btnLamMoi.FlatStyle = FlatStyle.Flat;
+            btnLamMoi.IconChar = FontAwesome.Sharp.IconChar.Rotate;
+            btnLamMoi.IconColor = Color.FromArgb(61, 39, 76);
+            btnLamMoi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnLamMoi.IconSize = 45;
+            btnLamMoi.Location = new Point(171, 177);
+            btnLamMoi.Name = "btnLamMoi";
+            btnLamMoi.Size = new Size(53, 37);
+            btnLamMoi.TabIndex = 19;
+            btnLamMoi.UseVisualStyleBackColor = true;
+            btnLamMoi.Click += btnLamMoi_Click;
             // 
-            // iconButton3
+            // btnSua
             // 
-            iconButton3.FlatAppearance.BorderSize = 0;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            iconButton3.IconColor = Color.FromArgb(61, 39, 76);
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.IconSize = 45;
-            iconButton3.Location = new Point(62, 177);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(53, 37);
-            iconButton3.TabIndex = 18;
-            iconButton3.UseVisualStyleBackColor = true;
+            btnSua.FlatAppearance.BorderSize = 0;
+            btnSua.FlatStyle = FlatStyle.Flat;
+            btnSua.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            btnSua.IconColor = Color.FromArgb(61, 39, 76);
+            btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSua.IconSize = 45;
+            btnSua.Location = new Point(62, 177);
+            btnSua.Name = "btnSua";
+            btnSua.Size = new Size(53, 37);
+            btnSua.TabIndex = 18;
+            btnSua.UseVisualStyleBackColor = true;
+            btnSua.Click += btnSua_Click;
             // 
-            // iconButton2
+            // btnThem
             // 
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.Add;
-            iconButton2.IconColor = Color.FromArgb(61, 39, 76);
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 45;
-            iconButton2.Location = new Point(7, 177);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(53, 37);
-            iconButton2.TabIndex = 17;
-            iconButton2.UseVisualStyleBackColor = true;
+            btnThem.FlatAppearance.BorderSize = 0;
+            btnThem.FlatStyle = FlatStyle.Flat;
+            btnThem.IconChar = FontAwesome.Sharp.IconChar.Add;
+            btnThem.IconColor = Color.FromArgb(61, 39, 76);
+            btnThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnThem.IconSize = 45;
+            btnThem.Location = new Point(7, 177);
+            btnThem.Name = "btnThem";
+            btnThem.Size = new Size(53, 37);
+            btnThem.TabIndex = 17;
+            btnThem.UseVisualStyleBackColor = true;
+            btnThem.Click += btnThem_Click;
             // 
-            // textBoxCustom2_01
+            // txtCard
             // 
-            textBoxCustom2_01.BorderColor = Color.MediumSlateBlue;
-            textBoxCustom2_01.BorderFocusColor = Color.HotPink;
-            textBoxCustom2_01.BorderRadius = 10;
-            textBoxCustom2_01.BorderSize = 1;
-            textBoxCustom2_01.Location = new Point(13, 112);
-            textBoxCustom2_01.Multiline = false;
-            textBoxCustom2_01.Name = "textBoxCustom2_01";
-            textBoxCustom2_01.Padding = new Padding(7);
-            textBoxCustom2_01.PasswordChar = false;
-            textBoxCustom2_01.PlaceholderColor = Color.DarkGray;
-            textBoxCustom2_01.PlaceholderText = "";
-            textBoxCustom2_01.Size = new Size(211, 30);
-            textBoxCustom2_01.TabIndex = 1;
-            textBoxCustom2_01.Texts = "";
-            textBoxCustom2_01.UnderlinedStyle = false;
-            textBoxCustom2_01.Load += textBoxCustom2_01_Load;
+            txtCard.BorderColor = Color.MediumSlateBlue;
+            txtCard.BorderFocusColor = Color.HotPink;
+            txtCard.BorderRadius = 10;
+            txtCard.BorderSize = 1;
+            txtCard.Location = new Point(13, 112);
+            txtCard.Multiline = false;
+            txtCard.Name = "txtCard";
+            txtCard.Padding = new Padding(7);
+            txtCard.PasswordChar = false;
+            txtCard.PlaceholderColor = Color.DarkGray;
+            txtCard.PlaceholderText = "";
+            txtCard.Size = new Size(211, 30);
+            txtCard.TabIndex = 1;
+            txtCard.Texts = "";
+            txtCard.UnderlinedStyle = false;
             // 
-            // label3
+            // lbMa
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.White;
-            label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(66, 13);
-            label3.Name = "label3";
-            label3.Size = new Size(40, 20);
-            label3.TabIndex = 0;
-            label3.Text = "1234";
+            lbMa.AutoSize = true;
+            lbMa.BackColor = Color.White;
+            lbMa.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lbMa.Location = new Point(66, 13);
+            lbMa.Name = "lbMa";
+            lbMa.Size = new Size(40, 20);
+            lbMa.TabIndex = 0;
+            lbMa.Text = "1234";
             // 
             // label2
             // 
@@ -170,26 +173,28 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(dataGridView1);
+            panel1.Controls.Add(dtgVga);
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(265, 238);
             panel1.TabIndex = 2;
             // 
-            // dataGridView1
+            // dtgVga
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 3);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(265, 232);
-            dataGridView1.TabIndex = 0;
+            dtgVga.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgVga.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgVga.Location = new Point(0, 3);
+            dtgVga.Name = "dtgVga";
+            dtgVga.RowTemplate.Height = 25;
+            dtgVga.Size = new Size(265, 232);
+            dtgVga.TabIndex = 0;
+            dtgVga.CellClick += dtgVga_CellClick;
             // 
             // FrmVga
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(785, 439);
+            ClientSize = new Size(545, 257);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "FrmVga";
@@ -197,22 +202,22 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgVga).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel2;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private CustomControl.TextBoxCustom2_0 textBoxCustom2_01;
-        private Label label3;
+        private FontAwesome.Sharp.IconButton btnXoa;
+        private FontAwesome.Sharp.IconButton btnLamMoi;
+        private FontAwesome.Sharp.IconButton btnSua;
+        private FontAwesome.Sharp.IconButton btnThem;
+        private CustomControl.TextBoxCustom2_0 txtCard;
+        private Label lbMa;
         private Label label2;
         private Label label1;
         private Panel panel1;
-        private DataGridView dataGridView1;
+        private DataGridView dtgVga;
     }
 }

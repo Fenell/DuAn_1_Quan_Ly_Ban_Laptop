@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace _2_BUS_BusinessLayer.IServices
 {
-    public interface ILaptopService
+    public interface ICpuServices
     {
-        string AddLapTop(Laptop lapTop);
-        string UpdateLapTop(Laptop lapTop);
-        Laptop GetLapTopById(Guid idLapTop);
-        List<Laptop> GetAllLapTop();
+        string AddCpu(Cpu cpu);
+        string UpdateCpu(Cpu cpu);
+        string DeleteCpu(Guid idCpu);
+        //Cpu GetCpuById(Guid idCpu);
+        List<Cpu> GetAllCpu();
     }
 }

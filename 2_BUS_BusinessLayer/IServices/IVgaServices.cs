@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace _2_BUS_BusinessLayer.IServices
 {
-    public interface ILaptopService
+    public interface IVgaServices
     {
-        string AddLapTop(Laptop lapTop);
-        string UpdateLapTop(Laptop lapTop);
-        Laptop GetLapTopById(Guid idLapTop);
-        List<Laptop> GetAllLapTop();
+        string AddVga(Vga vga);
+        string UpdateVga(Vga vga);
+        string DeleteVga(Guid idVga);
+        //Vga GetVgaById(Guid idVga);
+        List<Vga> GetAllVga();
     }
 }

@@ -9,9 +9,9 @@ namespace _1_DAL_DataAccessLayer.IRepositories
 {
     public interface ICpuRepositories
     {
-        bool AddCpu(Cpu cPu);
-        bool Update(Cpu cPu);
-        bool Delete(Guid idCpu);
+        bool AddCpu(Cpu cpu);
+        bool UpdateCpu(Cpu cpu);
+        bool DeleteCpu(Guid idCpu);
         Cpu GetCpuById(Guid idCpu);
         List<Cpu> GetAllCpu();
     }

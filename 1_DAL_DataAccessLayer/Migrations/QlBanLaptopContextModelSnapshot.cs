@@ -354,6 +354,10 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Property<int>("NamBh")
                         .HasColumnType("int");
 
+                    b.Property<string>("Ten")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
                     b.Property<int>("TonKho")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")

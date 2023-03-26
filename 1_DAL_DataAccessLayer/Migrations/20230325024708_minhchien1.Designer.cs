@@ -12,8 +12,8 @@ using _1_DAL_DataAccessLayer.Context;
 namespace _1_DAL_DataAccessLayer.Migrations
 {
     [DbContext(typeof(QlBanLaptopContext))]
-    [Migration("20230323125603_minhchien")]
-    partial class minhchien
+    [Migration("20230325024708_minhchien1")]
+    partial class minhchien1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -355,6 +355,10 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.Property<int>("NamBh")
                         .HasColumnType("int");
+
+                    b.Property<string>("Ten")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("TonKho")
                         .ValueGeneratedOnAdd()

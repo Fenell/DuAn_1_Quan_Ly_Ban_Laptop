@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace _2_BUS_BusinessLayer.IServices
 {
-    public interface ILaptopService
+    public interface IRamServices
     {
-        string AddLapTop(Laptop lapTop);
-        string UpdateLapTop(Laptop lapTop);
-        Laptop GetLapTopById(Guid idLapTop);
-        List<Laptop> GetAllLapTop();
+        string AddRam(Ram ram);
+        string UpdateRam(Ram ram);
+        string DeleteRam(Guid idRam);
+        //Ram GetRamById(Guid idRam);
+        List<Ram> GetAllRam();
     }
 }

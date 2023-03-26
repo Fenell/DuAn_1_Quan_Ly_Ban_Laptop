@@ -16,14 +16,14 @@ namespace _1_DAL_DataAccessLayer.Repositories
         {
             _lapTopContext = new QlBanLaptopContext();
         }
-        public bool AddCpu(Cpu cPu)
+        public bool AddCpu(Cpu cpu)
         {
             try
             {
-                if (cPu != null)
+                if (cpu != null)
                 {
-                    cPu.Id = Guid.NewGuid();
-                    _lapTopContext.Add(cPu);
+                    cpu.Id = Guid.NewGuid();
+                    _lapTopContext.Add(cpu);
                     _lapTopContext.SaveChanges();
                     return true;
                 }
@@ -36,7 +36,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
             }
         }
 
-        public bool Delete(Guid idCpu)
+        public bool DeleteCpu(Guid idCpu)
         {
             var ketqua = _lapTopContext.Cpus.Find(idCpu);
             if (ketqua != null)
@@ -59,13 +59,13 @@ namespace _1_DAL_DataAccessLayer.Repositories
             return ketqua;
         }
 
-        public bool Update(Cpu cPu)
+        public bool UpdateCpu(Cpu cpu)
         {
-            var ketqua = _lapTopContext.Cpus.FirstOrDefault(c=>c.Id == cPu.Id);
-            if(ketqua != null)
+            var ketqua = _lapTopContext.Cpus.FirstOrDefault(c => c.Id == cpu.Id);
+            if (ketqua != null)
             {
-                ketqua.Ma = cPu.Ma;
-                ketqua.Ten = cPu.Ten;
+                //ketqua.Ma = cpu.Ma;
+                ketqua.Ten = cpu.Ten;
                 _lapTopContext.Update(ketqua);
                 _lapTopContext.SaveChanges();
                 return true;

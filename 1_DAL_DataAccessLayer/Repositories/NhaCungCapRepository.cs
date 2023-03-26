@@ -36,7 +36,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
             }
         }
 
-        public bool Delete(Guid idNhaCungCap)
+        public bool DeleteNhaCungCap(Guid idNhaCungCap)
         {
             var ketqua = _lapTopContext.NhaCungCaps.Find(idNhaCungCap);
             if (ketqua != null)
@@ -59,7 +59,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
             return ketqua;
         }
 
-        public bool Update(NhaCungCap nhaCungCap)
+        public bool UpdateNhaCungCap(NhaCungCap nhaCungCap)
         {
             var ketqua = _lapTopContext.NhaCungCaps.FirstOrDefault(c => c.Id == nhaCungCap.Id);
             if (ketqua != null)
