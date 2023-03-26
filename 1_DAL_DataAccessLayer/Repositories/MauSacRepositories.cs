@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace _1_DAL_DataAccessLayer.Repositories
 {
-    public class MauSacRepositories : IMauSac
+    public class MauSacRepositories : IMauSacRepository
     {
         QlBanLaptopContext _lapTopContext;
         public MauSacRepositories()
