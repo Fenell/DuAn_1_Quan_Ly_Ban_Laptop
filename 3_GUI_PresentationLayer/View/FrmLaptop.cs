@@ -15,7 +15,6 @@ namespace _3_GUI_PresentationLayer.View
         public FrmLaptop()
         {
             InitializeComponent();
-
         }
 
         private void btnCpu_Click(object sender, EventArgs e)

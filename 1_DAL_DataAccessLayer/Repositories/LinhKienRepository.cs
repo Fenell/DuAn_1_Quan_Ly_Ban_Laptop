@@ -16,7 +16,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
         {
             _lapTopContext = new QlBanLaptopContext();
         }
-        public bool AddLinhKien(LinhKien linhKien)
+        public bool AddLinhKien(SanPhamLinhKien linhKien)
         {
             try
             {
@@ -36,18 +36,18 @@ namespace _1_DAL_DataAccessLayer.Repositories
             }
         }
 
-        public List<LinhKien> GetAllLinhKien()
+        public List<SanPhamLinhKien> GetAllLinhKien()
         {
             return _lapTopContext.LinhKiens.ToList();
         }
 
-        public LinhKien GetLinhKienById(Guid idLinhKien)
+        public SanPhamLinhKien GetLinhKienById(Guid idLinhKien)
         {
             var ketqua = _lapTopContext.LinhKiens.Find(idLinhKien);
             return ketqua;
         }
 
-        public bool UpdateLinhKien(LinhKien linhKien)
+        public bool UpdateLinhKien(SanPhamLinhKien linhKien)
         {
             var ketqua = _lapTopContext.LinhKiens.FirstOrDefault(c => c.Id == linhKien.Id);
             if (ketqua != null)
@@ -60,7 +60,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
                 ketqua.TrangThai = linhKien.TrangThai;
                 ketqua.NamBH = linhKien.NamBH;
                 ketqua.HinhAnh = linhKien.HinhAnh;
-                ketqua.Seri = linhKien.Seri;
+               // ketqua.Seri = linhKien.Seri;
                 _lapTopContext.Update(ketqua);
                 _lapTopContext.SaveChanges();
                 return true;

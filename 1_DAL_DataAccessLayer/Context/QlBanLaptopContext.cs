@@ -34,8 +34,8 @@ namespace _1_DAL_DataAccessLayer.Context
             modelBuilder.ApplyConfiguration(new HangLinhKienConfiguration());
             modelBuilder.ApplyConfiguration(new HoaDonConfiguration());
             modelBuilder.ApplyConfiguration(new KhachHangConfiguration());
-            modelBuilder.ApplyConfiguration(new LaptopConfiguration());
-            modelBuilder.ApplyConfiguration(new LinhKienConfiguration());
+            modelBuilder.ApplyConfiguration(new SanPhamLaptopConfiguration());
+            modelBuilder.ApplyConfiguration(new SanPhamLinhKienConfiguration());
             modelBuilder.ApplyConfiguration(new LoaiLinhKienConfiguration());
             modelBuilder.ApplyConfiguration(new ManHinhConfiguration());
             modelBuilder.ApplyConfiguration(new MauSacConfiguration());
@@ -45,6 +45,8 @@ namespace _1_DAL_DataAccessLayer.Context
             modelBuilder.ApplyConfiguration(new VgaConfiguration());
             modelBuilder.ApplyConfiguration(new RamConfiguration());
             modelBuilder.ApplyConfiguration(new KhuyenMaiConfiguration());
+            modelBuilder.ApplyConfiguration(new SerialLaptopConfiguration());
+            modelBuilder.ApplyConfiguration(new SerialLinhKienConfiguration());
 
         }
 
@@ -66,8 +68,8 @@ namespace _1_DAL_DataAccessLayer.Context
         public DbSet<HoaDon> HoaDons { get; set; }
         public DbSet<KhachHang> KhachHangs { get; set; }
         public DbSet<KhuyenMai> KhuyenMais { get; set; }
-        public DbSet<Laptop> Laptops { get; set; }
-        public DbSet<LinhKien> LinhKiens { get; set; }
+        public DbSet<SanPhamLaptop> Laptops { get; set; }
+        public DbSet<SanPhamLinhKien> LinhKiens { get; set; }
         public DbSet<LoaiLinhKien> LoaiLinhKiens { get; set; }
         public DbSet<ManHinh> ManHinhs { get; set; }
         public DbSet<MauSac> MauSacs { get; set; }
@@ -76,6 +78,8 @@ namespace _1_DAL_DataAccessLayer.Context
         public DbSet<OCung> OCungs { get; set; }
         public DbSet<Ram> Rams { get; set; }
         public DbSet<Vga> Vgas { get; set; }
-        
+        public DbSet<SerialLaptop> SerialLaptop { get; set; }
+        public DbSet<SerialLinhKien> SerialLinhKien { get; set;}
+
     }
 }

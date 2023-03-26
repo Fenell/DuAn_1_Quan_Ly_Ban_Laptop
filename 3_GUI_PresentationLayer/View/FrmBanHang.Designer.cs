@@ -120,7 +120,7 @@
             panel1.Controls.Add(iconButton3);
             panel1.Location = new Point(1016, 17);
             panel1.Name = "panel1";
-            panel1.Size = new Size(393, 661);
+            panel1.Size = new Size(393, 655);
             panel1.TabIndex = 19;
             // 
             // iconButton7
@@ -133,7 +133,7 @@
             iconButton7.IconColor = Color.FromArgb(148, 105, 215);
             iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton7.IconSize = 38;
-            iconButton7.Location = new Point(289, 603);
+            iconButton7.Location = new Point(289, 599);
             iconButton7.Name = "iconButton7";
             iconButton7.Size = new Size(66, 55);
             iconButton7.TabIndex = 49;
@@ -149,7 +149,7 @@
             iconButton6.IconColor = Color.FromArgb(148, 105, 215);
             iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton6.IconSize = 38;
-            iconButton6.Location = new Point(208, 603);
+            iconButton6.Location = new Point(208, 599);
             iconButton6.Name = "iconButton6";
             iconButton6.Size = new Size(66, 55);
             iconButton6.TabIndex = 49;
@@ -165,7 +165,7 @@
             iconButton5.IconColor = Color.FromArgb(148, 105, 215);
             iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton5.IconSize = 38;
-            iconButton5.Location = new Point(127, 603);
+            iconButton5.Location = new Point(127, 599);
             iconButton5.Name = "iconButton5";
             iconButton5.Size = new Size(66, 55);
             iconButton5.TabIndex = 49;
@@ -181,7 +181,7 @@
             iconButton4.IconColor = Color.FromArgb(148, 105, 215);
             iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton4.IconSize = 38;
-            iconButton4.Location = new Point(34, 603);
+            iconButton4.Location = new Point(34, 599);
             iconButton4.Name = "iconButton4";
             iconButton4.Size = new Size(66, 55);
             iconButton4.TabIndex = 49;
