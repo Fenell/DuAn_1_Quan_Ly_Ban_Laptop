@@ -64,7 +64,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
             var ketqua = _lapTopContext.Cpus.FirstOrDefault(c => c.Id == cpu.Id);
             if (ketqua != null)
             {
-                //ketqua.Ma = cpu.Ma;
+                ketqua.Ma = cpu.Ma;
                 ketqua.Ten = cpu.Ten;
                 _lapTopContext.Update(ketqua);
                 _lapTopContext.SaveChanges();

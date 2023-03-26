@@ -31,7 +31,6 @@
             dgvMauSac = new DataGridView();
             panel2 = new Panel();
             lbMa = new Label();
-            btnXoa = new FontAwesome.Sharp.IconButton();
             btnLamMoi = new FontAwesome.Sharp.IconButton();
             btnSua = new FontAwesome.Sharp.IconButton();
             btnThem = new FontAwesome.Sharp.IconButton();
@@ -51,12 +50,12 @@
             dgvMauSac.RowTemplate.Height = 25;
             dgvMauSac.Size = new Size(265, 232);
             dgvMauSac.TabIndex = 8;
+            dgvMauSac.CellClick += dgvMauSac_CellClick;
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
             panel2.Controls.Add(lbMa);
-            panel2.Controls.Add(btnXoa);
             panel2.Controls.Add(btnLamMoi);
             panel2.Controls.Add(btnSua);
             panel2.Controls.Add(btnThem);
@@ -79,20 +78,6 @@
             lbMa.TabIndex = 20;
             lbMa.Text = "1234";
             // 
-            // btnXoa
-            // 
-            btnXoa.FlatAppearance.BorderSize = 0;
-            btnXoa.FlatStyle = FlatStyle.Flat;
-            btnXoa.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            btnXoa.IconColor = Color.FromArgb(61, 39, 76);
-            btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnXoa.IconSize = 45;
-            btnXoa.Location = new Point(121, 177);
-            btnXoa.Name = "btnXoa";
-            btnXoa.Size = new Size(53, 37);
-            btnXoa.TabIndex = 19;
-            btnXoa.UseVisualStyleBackColor = true;
-            // 
             // btnLamMoi
             // 
             btnLamMoi.FlatAppearance.BorderSize = 0;
@@ -106,6 +91,7 @@
             btnLamMoi.Size = new Size(53, 37);
             btnLamMoi.TabIndex = 19;
             btnLamMoi.UseVisualStyleBackColor = true;
+            btnLamMoi.Click += btnLamMoi_Click;
             // 
             // btnSua
             // 
@@ -115,11 +101,12 @@
             btnSua.IconColor = Color.FromArgb(61, 39, 76);
             btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnSua.IconSize = 45;
-            btnSua.Location = new Point(62, 177);
+            btnSua.Location = new Point(87, 177);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(53, 37);
             btnSua.TabIndex = 18;
             btnSua.UseVisualStyleBackColor = true;
+            btnSua.Click += btnSua_Click;
             // 
             // btnThem
             // 
@@ -129,11 +116,12 @@
             btnThem.IconColor = Color.FromArgb(61, 39, 76);
             btnThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnThem.IconSize = 45;
-            btnThem.Location = new Point(7, 177);
+            btnThem.Location = new Point(11, 177);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(53, 37);
             btnThem.TabIndex = 17;
             btnThem.UseVisualStyleBackColor = true;
+            btnThem.Click += btnThem_Click;
             // 
             // txtTenMauSac
             // 
@@ -194,7 +182,6 @@
         private DataGridView dgvMauSac;
         private Panel panel2;
         private Label lbMa;
-        private FontAwesome.Sharp.IconButton btnXoa;
         private FontAwesome.Sharp.IconButton btnLamMoi;
         private FontAwesome.Sharp.IconButton btnSua;
         private FontAwesome.Sharp.IconButton btnThem;

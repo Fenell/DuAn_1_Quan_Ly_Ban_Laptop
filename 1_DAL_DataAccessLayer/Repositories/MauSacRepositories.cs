@@ -61,7 +61,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
 
         public bool UpdateMauSac(MauSac mauSac)
         {
-            var ketqua = _lapTopContext.MauSacs.FirstOrDefault(mauSac);
+            var ketqua = _lapTopContext.MauSacs.FirstOrDefault(c=>c.Id == mauSac.Id);
             if (ketqua != null)
             {
                 ketqua.Ma = mauSac.Ma;
