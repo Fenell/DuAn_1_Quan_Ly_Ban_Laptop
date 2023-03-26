@@ -32,13 +32,28 @@ namespace _1_DAL_DataAccessLayer.Repositories
             catch (Exception)
             {
                 return false;
-                throw;
             }
         }
 
         public List<SanPhamLinhKien> GetAllLinhKien()
         {
             return _lapTopContext.LinhKiens.ToList();
+        }
+
+        public bool UpdateStatusLinhKien(Guid id)
+        {
+            var linhkien = _lapTopContext.LinhKiens.FirstOrDefault(x => x.Id == id);
+            if (linhkien != null)
+            {
+                if (linhkien.TrangThai == true)
+                {
+                    linhkien .TrangThai = false;
+                    return true;
+                }
+                linhkien.TrangThai = true;
+                return true;
+            }
+            return false;
         }
 
         public SanPhamLinhKien GetLinhKienById(Guid idLinhKien)

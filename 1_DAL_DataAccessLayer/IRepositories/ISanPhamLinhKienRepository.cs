@@ -11,6 +11,7 @@ namespace _1_DAL_DataAccessLayer.IRepositories
     {
         bool AddLinhKien(SanPhamLinhKien linhKien);
         bool UpdateLinhKien(SanPhamLinhKien linhKien);
+        bool UpdateStatusLinhKien(Guid id);
         SanPhamLinhKien GetLinhKienById(Guid idLinhKien);
         List<SanPhamLinhKien> GetAllLinhKien();
     }
