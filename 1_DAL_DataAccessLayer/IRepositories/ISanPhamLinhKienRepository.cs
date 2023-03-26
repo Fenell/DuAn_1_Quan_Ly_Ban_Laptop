@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _1_DAL_DataAccessLayer.IRepositories
 {
-    public interface ILinhKienRepository
+    public interface ISanPhamLinhKienRepository
     {
         bool AddLinhKien(SanPhamLinhKien linhKien);
         bool UpdateLinhKien(SanPhamLinhKien linhKien);

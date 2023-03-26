@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _1_DAL_DataAccessLayer.IRepositories
 {
-    public interface ILapTopRepository
+    public interface ISanPhamLaptopRepository
     {
         bool AddLapTop(SanPhamLaptop lapTop);
         bool UpdateLapTop(SanPhamLaptop lapTop);
