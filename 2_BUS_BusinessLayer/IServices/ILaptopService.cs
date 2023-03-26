@@ -9,9 +9,9 @@ namespace _2_BUS_BusinessLayer.IServices
 {
     public interface ILaptopService
     {
-        string AddLapTop(Laptop lapTop);
-        string UpdateLapTop(Laptop lapTop);
-        Laptop GetLapTopById(Guid idLapTop);
-        List<Laptop> GetAllLapTop();
+        string AddLapTop(SanPhamLaptop lapTop);
+        string UpdateLapTop(SanPhamLaptop lapTop);
+        SanPhamLaptop GetLapTopById(Guid idLapTop);
+        List<SanPhamLaptop> GetAllLapTop();
     }
 }

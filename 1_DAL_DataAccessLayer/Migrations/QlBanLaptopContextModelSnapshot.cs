@@ -693,7 +693,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.HasIndex("IdSanPhamLinhKien");
 
-                    b.ToTable("SerialLinhKien");
+                    b.ToTable("SerialLinhKien", (string)null);
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.Vga", b =>

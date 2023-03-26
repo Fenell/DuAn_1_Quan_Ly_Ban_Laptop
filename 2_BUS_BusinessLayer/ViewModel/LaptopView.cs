@@ -10,22 +10,22 @@ namespace _2_BUS_BusinessLayer.ViewModel
 {
     public class LaptopView : ILaptopService
     {
-        public string AddLapTop(Laptop lapTop)
+        public string AddLapTop(SanPhamLaptop lapTop)
         {
             throw new NotImplementedException();
         }
 
-        public List<Laptop> GetAllLapTop()
+        public List<SanPhamLaptop> GetAllLapTop()
         {
             throw new NotImplementedException();
         }
 
-        public Laptop GetLapTopById(Guid idLapTop)
+        public SanPhamLaptop GetLapTopById(Guid idLapTop)
         {
             throw new NotImplementedException();
         }
 
-        public string UpdateLapTop(Laptop lapTop)
+        public string UpdateLapTop(SanPhamLaptop lapTop)
         {
             throw new NotImplementedException();
         }
