@@ -12,8 +12,8 @@ namespace _1_DAL_DataAccessLayer.Models
         public string Ma { get; set; }
         public string Ten { get; set; }
 
-        public ICollection<Laptop> Laptops { get; set; }
-        public ICollection<LinhKien> LinhKiens { get; set; }
+        public ICollection<SanPhamLaptop> Laptops { get; set; }
+        public ICollection<SanPhamLinhKien> LinhKiens { get; set; }
 
     }
 }

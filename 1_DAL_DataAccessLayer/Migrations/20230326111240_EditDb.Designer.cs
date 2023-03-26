@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _1_DAL_DataAccessLayer.Context;
 
@@ -11,9 +12,10 @@ using _1_DAL_DataAccessLayer.Context;
 namespace _1_DAL_DataAccessLayer.Migrations
 {
     [DbContext(typeof(QlBanLaptopContext))]
-    partial class QlBanLaptopContextModelSnapshot : ModelSnapshot
+    [Migration("20230326111240_EditDb")]
+    partial class EditDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -659,8 +661,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.Property<string>("Serial")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TrangThai")
                         .HasColumnType("bit");
@@ -669,7 +670,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.HasIndex("IdSanPhamLaptop");
 
-                    b.ToTable("SerialLaptop", (string)null);
+                    b.ToTable("SerialLaptop");
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.SerialLinhKien", b =>
@@ -683,8 +684,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.Property<string>("Serial")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TrangThai")
                         .HasColumnType("bit");

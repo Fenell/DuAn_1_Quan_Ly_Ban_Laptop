@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace _1_DAL_DataAccessLayer.Models
 {
-    public class LinhKien
+    public class SanPhamLinhKien
     {
         public Guid Id { get; set; }
         public Guid IdLoaiLinhKien { get; set; }
         public Guid IdHangLinhKien { get; set; }
         public Guid IdNhaCungCap { get; set; }
-        public string Seri { get; set; }
         public string Ten { get; set; }
         public string? MoTaChiTiet { get; set; }
         public int TonKho { get; set; }
@@ -27,5 +26,6 @@ namespace _1_DAL_DataAccessLayer.Models
         public LoaiLinhKien LoaiLinhKien { get; set; }
         public ICollection<ChiTietKhuyenMai> ChiTietKhuyenMais { get; set; }
         public ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
+        public ICollection<SerialLinhKien> SerialLinhKiens { get; set; }
     }
 }

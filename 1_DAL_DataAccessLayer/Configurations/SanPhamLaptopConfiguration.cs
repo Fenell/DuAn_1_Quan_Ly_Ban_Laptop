@@ -10,9 +10,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace _1_DAL_DataAccessLayer.Configurations
 {
-    public class LaptopConfiguration : IEntityTypeConfiguration<Laptop>
+    public class SanPhamLaptopConfiguration : IEntityTypeConfiguration<SanPhamLaptop>
     {
-        public void Configure(EntityTypeBuilder<Laptop> builder)
+        public void Configure(EntityTypeBuilder<SanPhamLaptop> builder)
         {
             builder.ToTable("Laptop");
             builder.HasKey(x => x.Id);
@@ -22,7 +22,6 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.Property(x => x.TonKho).HasDefaultValue(0);
             builder.Property(x => x.TrangThai).HasDefaultValue(true);
             builder.Property(x => x.TrongLuong).HasColumnType("decimal(18,4)").IsRequired();
-            builder.Property(x => x.Imei).HasMaxLength(15).IsRequired();
             builder.Property(x => x.Ten).HasMaxLength(50);
 
             //builder.Property(x => x.NhaCungCap).IsRequired();
@@ -45,6 +44,8 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.HasOne<MauSac>(x => x.MauSac).WithMany(a => a.Laptops).HasForeignKey(x => x.IdMauSac);
             builder.HasOne<OCung>(x => x.OCung).WithMany(a => a.Laptops).HasForeignKey(x => x.IdOCung);
 
+            builder.HasMany<SerialLaptop>(x => x.SerialLaptops).WithOne(a => a.SanPhamLaptop)
+                .HasForeignKey(a => a.IdSanPhamLaptop);
         }
     }
 }

@@ -9,9 +9,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace _1_DAL_DataAccessLayer.Configurations
 {
-    public class LinhKienConfiguration:IEntityTypeConfiguration<LinhKien>
+    public class SanPhamLinhKienConfiguration:IEntityTypeConfiguration<SanPhamLinhKien>
     {
-        public void Configure(EntityTypeBuilder<LinhKien> builder)
+        public void Configure(EntityTypeBuilder<SanPhamLinhKien> builder)
         {
             builder.ToTable("LinhKien");
             builder.HasKey(x => x.Id);
@@ -21,7 +21,6 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.Property(x => x.GiaNhap).HasColumnType("decimal(18,4)").IsRequired();
             builder.Property(x=>x.NamBH).IsRequired();
             builder.Property(x => x.TrangThai).HasDefaultValue(true);
-            builder.Property(x => x.Seri).HasMaxLength(15).IsRequired();
 
             //builder.Property(x => x.IdHangLinhKien).IsRequired();
             //builder.Property(x => x.IdLoaiLinhKien).IsRequired();
@@ -33,6 +32,9 @@ namespace _1_DAL_DataAccessLayer.Configurations
                 .HasForeignKey(x => x.IdLoaiLinhKien).OnDelete(DeleteBehavior.Restrict);
             builder.HasOne<NhaCungCap>(x => x.NhaCungCap).WithMany(a => a.LinhKiens)
                 .HasForeignKey(x => x.IdNhaCungCap);
+
+            builder.HasMany<SerialLinhKien>(x => x.SerialLinhKiens).WithOne(a => a.SanPhamLinhKien)
+                .HasForeignKey(a => a.IdSanPhamLinhKien);
         }
     }
 }
