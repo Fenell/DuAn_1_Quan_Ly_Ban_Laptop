@@ -36,7 +36,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
             }
         }
 
-        public bool Delete(Guid idRam)
+        public bool DeleteRam(Guid idRam)
         {
             var ketqua = _lapTopContext.Rams.Find(idRam);
             if (ketqua != null)
@@ -59,7 +59,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
             return ketqua;
         }
 
-        public bool Update(Ram ram)
+        public bool UpdateRam(Ram ram)
         {
             var ketqua = _lapTopContext.Rams.FirstOrDefault(c => c.Id == ram.Id);
             if (ketqua != null)

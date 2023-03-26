@@ -310,6 +310,14 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Property<string>("Ten")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+<<<<<<< HEAD
+=======
+
+                    b.Property<int>("TonKho")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
+>>>>>>> Chien Commit
 
                     b.Property<bool?>("TrangThai")
                         .ValueGeneratedOnAdd()
