@@ -119,6 +119,7 @@
             btnThem.Size = new Size(53, 37);
             btnThem.TabIndex = 17;
             btnThem.UseVisualStyleBackColor = true;
+            btnThem.Click += btnThem_Click;
             // 
             // txtTenNhaCungCap
             // 
