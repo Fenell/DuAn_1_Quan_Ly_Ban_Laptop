@@ -102,6 +102,7 @@ namespace _2_BUS_BusinessLayer.Services
                     Dong = f.Ten,
                     SoLuong = a.SoLuong,
                     DonGia = a.DonGia,
+                    ThanhTien = a.SoLuong * a.DonGia,
                 }).ToList();
 
             return lst;
