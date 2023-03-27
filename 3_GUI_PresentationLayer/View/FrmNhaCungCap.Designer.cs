@@ -51,6 +51,7 @@
             dgvNhaCungCap.RowTemplate.Height = 25;
             dgvNhaCungCap.Size = new Size(265, 232);
             dgvNhaCungCap.TabIndex = 10;
+            dgvNhaCungCap.CellClick += dgvNhaCungCap_CellClick;
             // 
             // panel2
             // 
@@ -91,6 +92,7 @@
             btnLamMoi.Size = new Size(53, 37);
             btnLamMoi.TabIndex = 19;
             btnLamMoi.UseVisualStyleBackColor = true;
+            btnLamMoi.Click += btnLamMoi_Click;
             // 
             // btnSua
             // 
@@ -105,6 +107,7 @@
             btnSua.Size = new Size(53, 37);
             btnSua.TabIndex = 18;
             btnSua.UseVisualStyleBackColor = true;
+            btnSua.Click += btnSua_Click;
             // 
             // btnThem
             // 

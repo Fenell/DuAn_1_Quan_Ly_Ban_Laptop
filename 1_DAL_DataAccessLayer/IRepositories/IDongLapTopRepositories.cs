@@ -11,7 +11,6 @@ namespace _1_DAL_DataAccessLayer.IRepositories
     {
         bool AddDongLapTop(DongLaptop dongLaptop);
         bool UpdateDongLapTop(DongLaptop dongLaptop);
-        bool DeleteDongLapTop(Guid idDongLaptop);
         DongLaptop GetDongLapTopById(Guid idDongLaptop);
         List<DongLaptop> GetAllDongLaptop();
     }

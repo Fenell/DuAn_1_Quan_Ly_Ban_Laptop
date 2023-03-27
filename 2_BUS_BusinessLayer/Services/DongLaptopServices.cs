@@ -26,14 +26,6 @@ namespace _2_BUS_BusinessLayer.Services
             return "Thêm thất bại";
         }
 
-        public string DeleteDongLapTop(Guid idDongLaptop)
-        {
-            if (_dongLapTopRepositories.DeleteDongLapTop(idDongLaptop))
-            {
-                return "Xoá thành công";
-            }
-            return "Xoá thất bại";
-        }
 
         public List<DongLaptop> GetAllDongLaptop()
         {
