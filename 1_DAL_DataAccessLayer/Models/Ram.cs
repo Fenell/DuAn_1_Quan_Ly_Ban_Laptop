@@ -11,6 +11,7 @@ namespace _1_DAL_DataAccessLayer.Models
         public Guid Id { get; set; }
         public string Ma { get; set; }
         public string Ten { get; set; }
+        public int DungLuong { get; set; }
 
         public ICollection<Laptop> Laptops { get; set; }
     }

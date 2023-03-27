@@ -23,7 +23,6 @@ namespace _1_DAL_DataAccessLayer.Models
         public string? Ten { get; set; }
         public decimal GiaNhap { get; set; }
         public decimal GiaBan { get; set; }
-        public int TonKho { get; set; }
         public string? Mota { get; set; }
         public decimal TrongLuong { get; set; }
         public int NamBh { get; set; }

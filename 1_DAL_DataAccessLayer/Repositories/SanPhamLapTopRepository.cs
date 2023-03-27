@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace _1_DAL_DataAccessLayer.Repositories
 {
-    public class SanPhamLapTopRepository : ISanPhamLapTopRepository
+    public class LapTopRepository : ILapTopRepository
     {
         QlBanLaptopContext _lapTopContext;
-        public SanPhamLapTopRepository()
+        public LapTopRepository()
         {
             _lapTopContext = new QlBanLaptopContext();
         }
