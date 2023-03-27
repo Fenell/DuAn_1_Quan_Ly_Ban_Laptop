@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace _1_DAL_DataAccessLayer.Repositories
 {
-    public class SanPhamLinhKienRepository : ISanPhamLinhKienRepository
+    public class LinhKienRepository : ILinhKienRepository
     {
         QlBanLaptopContext _lapTopContext;
-        public SanPhamLinhKienRepository()
+        public LinhKienRepository()
         {
             _lapTopContext = new QlBanLaptopContext();
         }
@@ -40,6 +40,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
             return _lapTopContext.LinhKiens.ToList();
         }
 
+
         public bool UpdateStatusLinhKien(Guid id)
         {
             var linhkien = _lapTopContext.LinhKiens.FirstOrDefault(x => x.Id == id);
@@ -56,7 +57,9 @@ namespace _1_DAL_DataAccessLayer.Repositories
             return false;
         }
 
-        public SanPhamLinhKien GetLinhKienById(Guid idLinhKien)
+
+
+        public LinhKien GetLinhKienById(Guid idLinhKien)
         {
             var ketqua = _lapTopContext.LinhKiens.Find(idLinhKien);
             return ketqua;
