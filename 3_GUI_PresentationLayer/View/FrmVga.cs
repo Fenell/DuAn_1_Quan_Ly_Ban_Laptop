@@ -43,14 +43,12 @@ namespace _3_GUI_PresentationLayer.View
             txtCard.Enabled = false;
             btnThem.Enabled = false;
             btnSua.Enabled = false;
-            btnXoa.Enabled = false;
         }
         void txtTrue()
         {
             txtCard.Enabled = true;
             lbMa.Enabled = true;
             btnSua.Enabled = true;
-            btnXoa.Enabled = true;
         }
         private string RandomMa()
         {
@@ -58,10 +56,20 @@ namespace _3_GUI_PresentationLayer.View
             int randomNumber = random.Next(10000, 100000); // Sinh ra một số nguyên ngẫu nhiên từ 10000 đến 99999
             return randomNumber.ToString(); // Chuyển đổi giá trị số nguyên thành chuỗi và trả về chuỗi đó
         }
+        private bool checkNhap()
+        {
+            if (txtCard.Texts == "") return true;
+            return false;
+        }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             lbMa.Text = RandomMa();
+            if (checkNhap())
+            {
+                MessageBox.Show("Không được để rỗng");
+                return;
+            }
             Vga vga = new Vga()
             {
                 Ma = lbMa.Text,
@@ -77,6 +85,11 @@ namespace _3_GUI_PresentationLayer.View
         private void btnSua_Click(object sender, EventArgs e)
         {
             txtFalse();
+            if (checkNhap())
+            {
+                MessageBox.Show("Không được để rỗng");
+                return;
+            }
             Vga vga = new Vga()
             {
                 Id = _idVga,
@@ -86,16 +99,6 @@ namespace _3_GUI_PresentationLayer.View
             if (MessageBox.Show("Bạn có chắc chắn", "Sửa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 MessageBox.Show(_vgaServices.UpdateVga(vga));
-            }
-            LoadDgv();
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            txtFalse();
-            if (MessageBox.Show("Bạn có chắc chắn", "Xoá", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                MessageBox.Show(_vgaServices.DeleteVga(_idVga));
             }
             LoadDgv();
         }

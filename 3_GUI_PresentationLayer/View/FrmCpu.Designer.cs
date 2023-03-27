@@ -31,7 +31,6 @@
             dgvCpu = new DataGridView();
             panel2 = new Panel();
             lbMa = new Label();
-            btnXoa = new FontAwesome.Sharp.IconButton();
             btnLamMoi = new FontAwesome.Sharp.IconButton();
             btnSua = new FontAwesome.Sharp.IconButton();
             btnThem = new FontAwesome.Sharp.IconButton();
@@ -58,7 +57,6 @@
             // 
             panel2.BackColor = Color.White;
             panel2.Controls.Add(lbMa);
-            panel2.Controls.Add(btnXoa);
             panel2.Controls.Add(btnLamMoi);
             panel2.Controls.Add(btnSua);
             panel2.Controls.Add(btnThem);
@@ -80,21 +78,6 @@
             lbMa.Size = new Size(40, 20);
             lbMa.TabIndex = 20;
             lbMa.Text = "1234";
-            // 
-            // btnXoa
-            // 
-            btnXoa.FlatAppearance.BorderSize = 0;
-            btnXoa.FlatStyle = FlatStyle.Flat;
-            btnXoa.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            btnXoa.IconColor = Color.FromArgb(61, 39, 76);
-            btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnXoa.IconSize = 45;
-            btnXoa.Location = new Point(121, 177);
-            btnXoa.Name = "btnXoa";
-            btnXoa.Size = new Size(53, 37);
-            btnXoa.TabIndex = 19;
-            btnXoa.UseVisualStyleBackColor = true;
-            btnXoa.Click += btnXoa_Click;
             // 
             // btnLamMoi
             // 
@@ -119,7 +102,7 @@
             btnSua.IconColor = Color.FromArgb(61, 39, 76);
             btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnSua.IconSize = 45;
-            btnSua.Location = new Point(62, 177);
+            btnSua.Location = new Point(87, 177);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(53, 37);
             btnSua.TabIndex = 18;
@@ -200,7 +183,6 @@
 
         private DataGridView dgvCpu;
         private Panel panel2;
-        private FontAwesome.Sharp.IconButton btnXoa;
         private FontAwesome.Sharp.IconButton btnLamMoi;
         private FontAwesome.Sharp.IconButton btnSua;
         private FontAwesome.Sharp.IconButton btnThem;

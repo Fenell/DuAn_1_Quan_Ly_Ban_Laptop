@@ -258,6 +258,7 @@
             dgvOCung.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvOCung.Location = new Point(6, 3);
             dgvOCung.Name = "dgvOCung";
+            dgvOCung.RowHeadersVisible = false;
             dgvOCung.RowTemplate.Height = 25;
             dgvOCung.Size = new Size(259, 232);
             dgvOCung.TabIndex = 0;

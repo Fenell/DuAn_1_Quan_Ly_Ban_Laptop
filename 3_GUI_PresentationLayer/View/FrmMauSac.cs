@@ -24,7 +24,6 @@ namespace _3_GUI_PresentationLayer.View
             _mauSacServices = new MauSacServices();
             Loaddgv();
             txtFalse();
-            this.CenterToScreen();
         }
         private void Loaddgv()
         {
@@ -59,14 +58,14 @@ namespace _3_GUI_PresentationLayer.View
         }
         private bool checkNhap()
         {
-            if (txtTenMauSac.Texts == "") return false;
-            return true;
+            if (txtTenMauSac.Texts == "") return true;
+            return false;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             lbMa.Text = RandomMa();
-            if (!checkNhap())
+            if (checkNhap())
             {
                 MessageBox.Show("Không được để trống");
             }
@@ -88,26 +87,23 @@ namespace _3_GUI_PresentationLayer.View
         private void btnSua_Click(object sender, EventArgs e)
         {
             txtFalse();
-            MauSac mauSac1 = new MauSac();
-            //mauSac1.Id = Guid.Empty;
-            if (!checkNhap() && txtTenMauSac.Texts != mauSac1.Ten)
+            if (checkNhap())
             {
-                MessageBox.Show("Không được để trống hoặc trùng dữ liệu");
+                MessageBox.Show("Không được để trống");
+                return;
             }
-            else
+            MauSac mauSac = new MauSac()
             {
-                MauSac mauSac = new MauSac()
-                {
-                    Id = _idMauSac,
-                    Ma = lbMa.Text,
-                    Ten = txtTenMauSac.Texts
-                };
-                if (MessageBox.Show("Bạn có chắc chắn", "Sửa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    MessageBox.Show(_mauSacServices.UpdateMauSac(mauSac));
-                }
-                Loaddgv();
+                Id = _idMauSac,
+                Ma = lbMa.Text,
+                Ten = txtTenMauSac.Texts
+            };
+            if (MessageBox.Show("Bạn có chắc chắn", "Sửa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                MessageBox.Show(_mauSacServices.UpdateMauSac(mauSac));
             }
+            Loaddgv();
+
         }
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
