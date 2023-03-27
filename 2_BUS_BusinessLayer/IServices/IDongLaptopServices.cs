@@ -11,7 +11,7 @@ namespace _2_BUS_BusinessLayer.IServices
     {
         string AddDongLapTop(DongLaptop dongLaptop);
         string UpdateDongLapTop(DongLaptop dongLaptop);
-        string DeleteDongLapTop(Guid idDongLaptop);
+
         //DongLaptop GetDongLapTopById(Guid idDongLaptop);
         List<DongLaptop> GetAllDongLaptop();
     }

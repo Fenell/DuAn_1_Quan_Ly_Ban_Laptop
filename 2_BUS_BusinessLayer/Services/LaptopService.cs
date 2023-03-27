@@ -297,5 +297,10 @@ namespace _2_BUS_BusinessLayer.Services
 
             return list;
         }
+
+        public string UpdateStatusLaptop(Guid id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
