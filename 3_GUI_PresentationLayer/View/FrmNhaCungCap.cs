@@ -1,4 +1,5 @@
-﻿using _2_BUS_BusinessLayer.IServices;
+﻿using _1_DAL_DataAccessLayer.Models;
+using _2_BUS_BusinessLayer.IServices;
 using _2_BUS_BusinessLayer.Services;
 using System;
 using System.Collections.Generic;
@@ -56,6 +57,21 @@ namespace _3_GUI_PresentationLayer.View
         {
             if (txtTenNhaCungCap.Texts == "") return true;
             return false;
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            lbMa.Text = RandomMa();
+            if (checkNhap())
+            {
+                MessageBox.Show("Không được để rỗng");
+            }
+            NhaCungCap nhaCungCap = new NhaCungCap()
+            {
+                Ma = lbMa.Text,
+                Ten = txtTenNhaCungCap.Texts,
+            };
+
         }
     }
 }
