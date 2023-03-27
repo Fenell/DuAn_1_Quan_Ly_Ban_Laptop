@@ -9,10 +9,9 @@ namespace _1_DAL_DataAccessLayer.IRepositories
 {
     public interface ISanPhamLinhKienRepository
     {
-        bool AddLinhKien(SanPhamLinhKien linhKien);
-        bool UpdateLinhKien(SanPhamLinhKien linhKien);
-        bool UpdateStatusLinhKien(Guid id);
-        SanPhamLinhKien GetLinhKienById(Guid idLinhKien);
-        List<SanPhamLinhKien> GetAllLinhKien();
+        bool AddLinhKien(LinhKien linhKien);
+        bool UpdateLinhKien(LinhKien linhKien);
+        LinhKien GetLinhKienById(Guid idLinhKien);
+        List<LinhKien> GetAllLinhKien();
     }
 }

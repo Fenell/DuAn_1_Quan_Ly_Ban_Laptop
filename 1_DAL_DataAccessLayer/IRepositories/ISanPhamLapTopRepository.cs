@@ -13,10 +13,9 @@ namespace _1_DAL_DataAccessLayer.IRepositories
     public interface ISanPhamLapTopRepository
 >>>>>>>> Dat:1_DAL_DataAccessLayer/IRepositories/ISanPhamLapTopRepository.cs
     {
-        bool AddLapTop(SanPhamLaptop lapTop);
-        bool UpdateLapTop(SanPhamLaptop lapTop);
-        bool UpdateStatusLaptop(Guid id);
-        SanPhamLaptop GetLapTopById(Guid idLapTop);
-        List<SanPhamLaptop> GetAllLapTop();
+        bool AddLapTop(Laptop lapTop);
+        bool UpdateLapTop(Laptop lapTop);
+        Laptop GetLapTopById(Guid idLapTop);
+        List<Laptop> GetAllLapTop();
     }
 }

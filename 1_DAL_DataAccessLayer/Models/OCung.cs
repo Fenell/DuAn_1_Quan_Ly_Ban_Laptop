@@ -14,7 +14,7 @@ namespace _1_DAL_DataAccessLayer.Models
         public string Loai { get; set; }
         public int DungLuong { get; set; }
 
-        public ICollection<SanPhamLaptop> Laptops { get; set; }
+        public ICollection<Laptop> Laptops { get; set; }
 
     }
 }
