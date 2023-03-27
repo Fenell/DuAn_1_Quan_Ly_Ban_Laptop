@@ -44,19 +44,17 @@ namespace _3_GUI_PresentationLayer.View
             lbMa.Enabled = false;
             btnThem.Enabled = false;
             btnSua.Enabled = false;
-            btnXoa.Enabled = false;
         }
         public void txtTrue()
         {
             txtTenCpu.Enabled = true;
             lbMa.Enabled = true;
             btnSua.Enabled = true;
-            btnXoa.Enabled = true;
         }
         public bool checkNhap()
         {
-            if (txtTenCpu.Texts == "") return false;
-            return true;
+            if (txtTenCpu.Texts == "") return true;
+            return false;
         }
         private string RandomMa()
         {
@@ -67,7 +65,7 @@ namespace _3_GUI_PresentationLayer.View
         private void btnThem_Click(object sender, EventArgs e)
         {
             lbMa.Text = RandomMa();
-            if (!checkNhap())
+            if (checkNhap())
             {
                 MessageBox.Show("Không được để trống");
             }
@@ -91,33 +89,21 @@ namespace _3_GUI_PresentationLayer.View
         private void btnSua_Click(object sender, EventArgs e)
         {
             txtFalse();
-            Cpu cpu1 = new Cpu();
-            if (!checkNhap() && txtTenCpu.Texts != cpu1.Ten)
+            if (checkNhap())
             {
-                MessageBox.Show("Không được để trống hoặc trùng với dữ liệu cũ");
+                MessageBox.Show("Không được để trống");
+                return;
             }
-            else
+            Cpu cpu = new Cpu()
             {
-                Cpu cpu = new Cpu()
-                {
-                    Id = _idCpu,
-                    Ma = lbMa.Text,
-                    Ten = txtTenCpu.Texts
-                };
-                if (MessageBox.Show("Bạn có chắc chắn", "Sửa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    MessageBox.Show(_cpuServices.UpdateCpu(cpu));
-                }
-                LoadDgv();
-            }
-        }
+                Id = _idCpu,
+                Ma = lbMa.Text,
+                Ten = txtTenCpu.Texts
+            };
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            txtFalse();
-            if (MessageBox.Show("Bạn có chắc chắn", "Xoá", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có chắc chắn", "Sửa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                MessageBox.Show(_cpuServices.DeleteCpu(_idCpu));
+                MessageBox.Show(_cpuServices.UpdateCpu(cpu));
             }
             LoadDgv();
         }

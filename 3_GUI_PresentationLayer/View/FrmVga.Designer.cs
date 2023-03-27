@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
-            btnXoa = new FontAwesome.Sharp.IconButton();
             btnLamMoi = new FontAwesome.Sharp.IconButton();
             btnSua = new FontAwesome.Sharp.IconButton();
             btnThem = new FontAwesome.Sharp.IconButton();
@@ -47,7 +46,6 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(btnXoa);
             panel2.Controls.Add(btnLamMoi);
             panel2.Controls.Add(btnSua);
             panel2.Controls.Add(btnThem);
@@ -59,21 +57,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(244, 235);
             panel2.TabIndex = 1;
-            // 
-            // btnXoa
-            // 
-            btnXoa.FlatAppearance.BorderSize = 0;
-            btnXoa.FlatStyle = FlatStyle.Flat;
-            btnXoa.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            btnXoa.IconColor = Color.FromArgb(61, 39, 76);
-            btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnXoa.IconSize = 45;
-            btnXoa.Location = new Point(121, 177);
-            btnXoa.Name = "btnXoa";
-            btnXoa.Size = new Size(53, 37);
-            btnXoa.TabIndex = 19;
-            btnXoa.UseVisualStyleBackColor = true;
-            btnXoa.Click += btnXoa_Click;
             // 
             // btnLamMoi
             // 
@@ -98,7 +81,7 @@
             btnSua.IconColor = Color.FromArgb(61, 39, 76);
             btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnSua.IconSize = 45;
-            btnSua.Location = new Point(62, 177);
+            btnSua.Location = new Point(85, 177);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(53, 37);
             btnSua.TabIndex = 18;
@@ -185,6 +168,7 @@
             dtgVga.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgVga.Location = new Point(0, 3);
             dtgVga.Name = "dtgVga";
+            dtgVga.RowHeadersVisible = false;
             dtgVga.RowTemplate.Height = 25;
             dtgVga.Size = new Size(265, 232);
             dtgVga.TabIndex = 0;
@@ -209,7 +193,6 @@
         #endregion
 
         private Panel panel2;
-        private FontAwesome.Sharp.IconButton btnXoa;
         private FontAwesome.Sharp.IconButton btnLamMoi;
         private FontAwesome.Sharp.IconButton btnSua;
         private FontAwesome.Sharp.IconButton btnThem;
