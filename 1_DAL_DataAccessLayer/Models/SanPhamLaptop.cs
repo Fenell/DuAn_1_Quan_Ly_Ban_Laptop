@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _1_DAL_DataAccessLayer.Models
 {
-    public class Laptop
+    public class SanPhamLaptop
     {
         public Guid Id { get; set; }
         public Guid IdHangLaptop { get; set; }
@@ -21,7 +21,6 @@ namespace _1_DAL_DataAccessLayer.Models
         public Guid IdMauSac { get; set; }
         public Guid IdOCung { get; set; }
         public string? Ten { get; set; }
-        public string Imei { get; set; }
         public decimal GiaNhap { get; set; }
         public decimal GiaBan { get; set; }
         public int TonKho { get; set; }
@@ -43,6 +42,6 @@ namespace _1_DAL_DataAccessLayer.Models
 
         public ICollection<ChiTietKhuyenMai> ChiTietKhuyenMais { get; set; }
         public ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
-
+        public ICollection<SerialLaptop> SerialLaptops { get; set; }
     }
 }

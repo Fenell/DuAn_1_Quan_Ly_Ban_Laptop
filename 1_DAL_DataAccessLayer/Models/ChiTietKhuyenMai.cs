@@ -15,7 +15,7 @@ namespace _1_DAL_DataAccessLayer.Models
         public Guid? IdLaptop { get; set; }
 
         public KhuyenMai KhuyenMai { get; set; }
-        public LinhKien LinhKien { get; set; }
-        public Laptop Laptop{ get; set; }
+        public SanPhamLinhKien LinhKien { get; set; }
+        public SanPhamLaptop Laptop{ get; set; }
     }
 }
