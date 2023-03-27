@@ -59,8 +59,8 @@ namespace _3_GUI_PresentationLayer.View
         }
         private bool checkNhap()
         {
-            if (txtTenOCung.Texts == "" || txtDungLuong.Texts == ""||rbtnSdd.Checked == false&&rbtnHdd.Checked==false) return false;
-            return true;
+            if (txtTenOCung.Texts == "" || txtDungLuong.Texts == "" || rbtnSdd.Checked == false && rbtnHdd.Checked == false) return true;
+            return false;
         }
         private string RandomMa()
         {
@@ -72,7 +72,7 @@ namespace _3_GUI_PresentationLayer.View
         private void btnThem_Click(object sender, EventArgs e)
         {
             lbMa.Text = RandomMa();
-            if (!checkNhap())
+            if (checkNhap())
             {
                 MessageBox.Show("Không được để rỗng");
                 return;
@@ -93,8 +93,7 @@ namespace _3_GUI_PresentationLayer.View
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            OCung oCung1 = new OCung();
-            if (!checkNhap() && (txtTenOCung.Texts != oCung1.Ten || int.Parse(txtDungLuong.Texts) != oCung1.DungLuong))
+            if (checkNhap())
             {
                 MessageBox.Show("Không được để rỗng hoặc trùng dữ liệu");
                 return;
@@ -132,16 +131,16 @@ namespace _3_GUI_PresentationLayer.View
         private void dgvOCung_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowindex = e.RowIndex;
-            if (rowindex == -1||rowindex == _oCungServices.GetAllOCungs().Count) 
+            if (rowindex == -1 || rowindex == _oCungServices.GetAllOCungs().Count)
             {
                 return;
             }
             _idOCung = Guid.Parse(dgvOCung.Rows[rowindex].Cells[0].Value.ToString());
-            var oCung = _oCungServices.GetAllOCungs().FirstOrDefault(c=>c.Id == _idOCung);
+            var oCung = _oCungServices.GetAllOCungs().FirstOrDefault(c => c.Id == _idOCung);
             lbMa.Text = oCung.Ma;
             txtTenOCung.Texts = oCung.Ten;
             txtDungLuong.Texts = oCung.DungLuong.ToString();
-            if(oCung.Loai == "Sdd")
+            if (oCung.Loai == "Sdd")
             {
                 rbtnSdd.Checked = true;
             }
@@ -150,7 +149,7 @@ namespace _3_GUI_PresentationLayer.View
                 rbtnHdd.Checked = true;
             }
             btnThem.Enabled = false;
-            txtTrue();  
+            txtTrue();
         }
     }
 }

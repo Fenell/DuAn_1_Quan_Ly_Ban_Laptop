@@ -47,6 +47,7 @@
             dgvMauSac.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMauSac.Location = new Point(12, 12);
             dgvMauSac.Name = "dgvMauSac";
+            dgvMauSac.RowHeadersVisible = false;
             dgvMauSac.RowTemplate.Height = 25;
             dgvMauSac.Size = new Size(265, 232);
             dgvMauSac.TabIndex = 8;
