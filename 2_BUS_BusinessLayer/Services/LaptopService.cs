@@ -42,7 +42,7 @@ namespace _2_BUS_BusinessLayer.Services
         }
         public string AddLaptop(SanPhamLaptopView obj)
         {
-            SanPhamLaptop laptop = new SanPhamLaptop()
+            Laptop laptop = new Laptop()
             {
                 Id = obj.Id,
                 IdHangLaptop = obj.IdHangLaptop,
@@ -59,7 +59,6 @@ namespace _2_BUS_BusinessLayer.Services
                 GiaNhap = obj.GiaNhap,
                 GiaBan = obj.GiaBan,
                 NamBh = obj.NamBh,
-                TonKho = obj.SoLuongTon,
                 TrangThai = obj.TrangThai,
                 HinhAnh = obj.Anh
             };
@@ -90,7 +89,6 @@ namespace _2_BUS_BusinessLayer.Services
             laptop.GiaBan = obj.GiaBan;
             laptop.GiaNhap = obj.GiaNhap;
             laptop.NamBh = obj.NamBh;
-            laptop.TonKho = obj.SoLuongTon;
             laptop.HinhAnh = obj.Anh;
 
             if (_sanPhamLapTopRepository.UpdateLapTop(laptop))
@@ -99,17 +97,6 @@ namespace _2_BUS_BusinessLayer.Services
             }
 
             return "Sửa thất bại";
-        }
-
-        public string UpdateStatusLaptop(Guid id)
-        {
-            
-            if (_sanPhamLapTopRepository.UpdateStatusLaptop(id))
-            {
-                return "Chuyển thành công";
-            }
-
-            return "Chuyển thất bại";
         }
 
         public string DeleteLaptop(Guid id)
@@ -129,7 +116,6 @@ namespace _2_BUS_BusinessLayer.Services
                 join h in _mauSacRepository.GetAllMauSac() on a.IdMauSac equals h.Id
                 join i in _manHinhRepositories.GetAllManHinh() on a.IdManHinh equals i.Id
                 join k in _nhaCungCapRepository.GetAllNhaCungCap() on a.IdNhaCungCap equals k.Id
-                join l in _serialLaptopRepository.GetLstSerialLaptopFromDb() on a.Id equals l.IdSanPhamLaptop
                 select new SanPhamLaptopView()
                 {
                     Id = a.Id,
@@ -158,12 +144,15 @@ namespace _2_BUS_BusinessLayer.Services
                     GiaBan = a.GiaBan,
                     GiaNhap = a.GiaNhap,
                     NamBh = a.NamBh,
-                    SoLuongTon = _serialLaptopRepository.GetLstSerialLaptopFromDb()
-                        .Count(y => y.IdSanPhamLaptop == a.Id),
                     TrangThai = a.TrangThai,
                     Anh = a.HinhAnh
                 }).ToList();
             return lst;
+        }
+
+        public string UpdateStatusLaptop(Guid id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

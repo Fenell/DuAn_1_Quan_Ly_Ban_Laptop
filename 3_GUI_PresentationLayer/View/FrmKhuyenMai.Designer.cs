@@ -45,10 +45,7 @@
             iconButton3 = new FontAwesome.Sharp.IconButton();
             iconButton2 = new FontAwesome.Sharp.IconButton();
             dataGridView2 = new DataGridView();
-            comboBoxCustom4 = new CustomControl.ComboBoxCustom();
             label3 = new Label();
-            comboBoxCustom2 = new CustomControl.ComboBoxCustom();
-            comboBoxCustom3 = new CustomControl.ComboBoxCustom();
             dateTimePickerCustom2 = new CustomControl.DateTimePickerCustom();
             dateTimePickerCustom1 = new CustomControl.DateTimePickerCustom();
             label10 = new Label();
@@ -62,6 +59,9 @@
             label5 = new Label();
             label4 = new Label();
             panel3 = new Panel();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
+            comboBox3 = new ComboBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -182,6 +182,9 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(comboBox3);
+            panel2.Controls.Add(comboBox2);
+            panel2.Controls.Add(comboBox1);
             panel2.Controls.Add(iconButton5);
             panel2.Controls.Add(buttonCustom2);
             panel2.Controls.Add(iconButton8);
@@ -190,10 +193,7 @@
             panel2.Controls.Add(iconButton3);
             panel2.Controls.Add(iconButton2);
             panel2.Controls.Add(dataGridView2);
-            panel2.Controls.Add(comboBoxCustom4);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(comboBoxCustom2);
-            panel2.Controls.Add(comboBoxCustom3);
             panel2.Controls.Add(dateTimePickerCustom2);
             panel2.Controls.Add(dateTimePickerCustom1);
             panel2.Controls.Add(label10);
@@ -306,7 +306,7 @@
             iconButton3.IconColor = Color.Black;
             iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton3.IconSize = 37;
-            iconButton3.Location = new Point(226, 589);
+            iconButton3.Location = new Point(200, 589);
             iconButton3.Name = "iconButton3";
             iconButton3.Size = new Size(89, 36);
             iconButton3.TabIndex = 22;
@@ -321,7 +321,7 @@
             iconButton2.IconColor = Color.Black;
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton2.IconSize = 37;
-            iconButton2.Location = new Point(104, 589);
+            iconButton2.Location = new Point(59, 589);
             iconButton2.Name = "iconButton2";
             iconButton2.Size = new Size(82, 36);
             iconButton2.TabIndex = 21;
@@ -336,25 +336,6 @@
             dataGridView2.Size = new Size(454, 159);
             dataGridView2.TabIndex = 20;
             // 
-            // comboBoxCustom4
-            // 
-            comboBoxCustom4.BackColor = Color.White;
-            comboBoxCustom4.BorderColor = Color.MediumSlateBlue;
-            comboBoxCustom4.BorderSize = 1;
-            comboBoxCustom4.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxCustom4.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom4.ForeColor = Color.DimGray;
-            comboBoxCustom4.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom4.ListBackColor = Color.FromArgb(230, 228, 245);
-            comboBoxCustom4.ListTextColor = Color.DimGray;
-            comboBoxCustom4.Location = new Point(183, 330);
-            comboBoxCustom4.MinimumSize = new Size(200, 30);
-            comboBoxCustom4.Name = "comboBoxCustom4";
-            comboBoxCustom4.Padding = new Padding(1);
-            comboBoxCustom4.Size = new Size(280, 30);
-            comboBoxCustom4.TabIndex = 18;
-            comboBoxCustom4.Texts = "";
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -366,44 +347,6 @@
             label3.TabIndex = 5;
             label3.Text = "Loại Khuyến Mãi";
             label3.Click += label3_Click;
-            // 
-            // comboBoxCustom2
-            // 
-            comboBoxCustom2.BackColor = Color.White;
-            comboBoxCustom2.BorderColor = Color.MediumSlateBlue;
-            comboBoxCustom2.BorderSize = 1;
-            comboBoxCustom2.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxCustom2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom2.ForeColor = Color.DimGray;
-            comboBoxCustom2.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom2.ListBackColor = Color.FromArgb(230, 228, 245);
-            comboBoxCustom2.ListTextColor = Color.DimGray;
-            comboBoxCustom2.Location = new Point(183, 108);
-            comboBoxCustom2.MinimumSize = new Size(200, 30);
-            comboBoxCustom2.Name = "comboBoxCustom2";
-            comboBoxCustom2.Padding = new Padding(1);
-            comboBoxCustom2.Size = new Size(280, 30);
-            comboBoxCustom2.TabIndex = 5;
-            comboBoxCustom2.Texts = "";
-            // 
-            // comboBoxCustom3
-            // 
-            comboBoxCustom3.BackColor = Color.White;
-            comboBoxCustom3.BorderColor = Color.MediumSlateBlue;
-            comboBoxCustom3.BorderSize = 1;
-            comboBoxCustom3.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxCustom3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom3.ForeColor = Color.DimGray;
-            comboBoxCustom3.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom3.ListBackColor = Color.FromArgb(230, 228, 245);
-            comboBoxCustom3.ListTextColor = Color.DimGray;
-            comboBoxCustom3.Location = new Point(183, 289);
-            comboBoxCustom3.MinimumSize = new Size(200, 30);
-            comboBoxCustom3.Name = "comboBoxCustom3";
-            comboBoxCustom3.Padding = new Padding(1);
-            comboBoxCustom3.Size = new Size(280, 30);
-            comboBoxCustom3.TabIndex = 17;
-            comboBoxCustom3.Texts = "";
             // 
             // dateTimePickerCustom2
             // 
@@ -567,6 +510,30 @@
             panel3.Size = new Size(963, 521);
             panel3.TabIndex = 6;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(183, 119);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(280, 23);
+            comboBox1.TabIndex = 53;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(183, 300);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(280, 23);
+            comboBox2.TabIndex = 54;
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(183, 342);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(280, 23);
+            comboBox3.TabIndex = 55;
+            // 
             // FrmKhuyenMai
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -595,7 +562,6 @@
         private Label label1;
         private DataGridView dataGridView1;
         private Panel panel2;
-        private CustomControl.ComboBoxCustom comboBoxCustom2;
         private Label label3;
         private CustomControl.TextBoxCustom textBoxCustom3;
         private CustomControl.TextBoxCustom textBoxCustom2;
@@ -606,8 +572,6 @@
         private Label label5;
         private Label label4;
         private DataGridView dataGridView2;
-        private CustomControl.ComboBoxCustom comboBoxCustom4;
-        private CustomControl.ComboBoxCustom comboBoxCustom3;
         private CustomControl.DateTimePickerCustom dateTimePickerCustom2;
         private CustomControl.DateTimePickerCustom dateTimePickerCustom1;
         private Label label10;
@@ -624,5 +588,8 @@
         private CustomControl.TextBoxCustom2_0 textBoxCustom2_01;
         private CustomControl.RadioButtonCustom radioButtonCustom2;
         private FontAwesome.Sharp.IconButton iconButton5;
+        private ComboBox comboBox3;
+        private ComboBox comboBox2;
+        private ComboBox comboBox1;
     }
 }

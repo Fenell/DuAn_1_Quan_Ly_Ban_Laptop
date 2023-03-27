@@ -16,7 +16,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
         {
             _lapTopContext = new QlBanLaptopContext();
         }
-        public bool AddLapTop(SanPhamLaptop lapTop)
+        public bool AddLapTop(Laptop lapTop)
         {
             try
             {
@@ -35,7 +35,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
             }
         }
 
-        public List<SanPhamLaptop> GetAllLapTop()
+        public List<Laptop> GetAllLapTop()
         {
             return _lapTopContext.Laptops.ToList();
         }
@@ -56,13 +56,13 @@ namespace _1_DAL_DataAccessLayer.Repositories
             return false;
         }
 
-        public SanPhamLaptop GetLapTopById(Guid idLapTop)
+        public Laptop GetLapTopById(Guid idLapTop)
         {
             var ketqua = _lapTopContext.Laptops.Find(idLapTop);
             return ketqua;
         }
 
-        public bool UpdateLapTop(SanPhamLaptop lapTop)
+        public bool UpdateLapTop(Laptop lapTop)
         {
             var ketqua = _lapTopContext.Laptops.FirstOrDefault(c=>c.Id == lapTop.Id);
             if (ketqua != null)

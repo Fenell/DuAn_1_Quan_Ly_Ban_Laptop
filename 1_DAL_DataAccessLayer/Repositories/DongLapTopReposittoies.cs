@@ -36,18 +36,6 @@ namespace _1_DAL_DataAccessLayer.Repositories
             }
         }
 
-        public bool DeleteDongLapTop(Guid idDongLaptop)
-        {
-            var ketqua = _lapTopContext.DongLaptops.Find(idDongLaptop);
-            if (ketqua != null)
-            {
-                _lapTopContext.Remove(ketqua);
-                _lapTopContext.SaveChanges();
-                return true;
-            }
-            return false;
-        }
-
         public List<DongLaptop> GetAllDongLaptop()
         {
             return _lapTopContext.DongLaptops.ToList();
