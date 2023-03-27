@@ -16,7 +16,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
         {
             _lapTopContext = new QlBanLaptopContext();
         }
-        public bool AddLinhKien(SanPhamLinhKien linhKien)
+        public bool AddLinhKien(LinhKien linhKien)
         {
             try
             {
@@ -36,25 +36,24 @@ namespace _1_DAL_DataAccessLayer.Repositories
             }
         }
 
-        public List<SanPhamLinhKien> GetAllLinhKien()
+        public List<LinhKien> GetAllLinhKien()
         {
             return _lapTopContext.LinhKiens.ToList();
         }
 
-        public SanPhamLinhKien GetLinhKienById(Guid idLinhKien)
+        public LinhKien GetLinhKienById(Guid idLinhKien)
         {
             var ketqua = _lapTopContext.LinhKiens.Find(idLinhKien);
             return ketqua;
         }
 
-        public bool UpdateLinhKien(SanPhamLinhKien linhKien)
+        public bool UpdateLinhKien(LinhKien linhKien)
         {
             var ketqua = _lapTopContext.LinhKiens.FirstOrDefault(c => c.Id == linhKien.Id);
             if (ketqua != null)
             {
                 ketqua.Ten = linhKien.Ten;
                 ketqua.MoTaChiTiet = linhKien.MoTaChiTiet;
-                ketqua.TonKho = linhKien.TonKho;
                 ketqua.GiaBan = linhKien.GiaBan;
                 ketqua.GiaNhap = linhKien.GiaNhap;
                 ketqua.TrangThai = linhKien.TrangThai;

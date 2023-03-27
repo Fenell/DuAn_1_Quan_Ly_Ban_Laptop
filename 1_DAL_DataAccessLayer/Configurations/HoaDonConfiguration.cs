@@ -22,10 +22,9 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.Property(x => x.TongTien).HasDefaultValue(0).HasColumnType("decimal(18,4)");
             builder.Property(x => x.GhiChu).HasMaxLength(200);
             builder.Property(x => x.DiaChiNhanHang).HasMaxLength(200);
-            builder.Property(x => x.IdNhanVien).IsRequired();
 
             builder.HasOne<NhanVien>(x => x.NhanVien).WithMany(a => a.HoaDons).HasForeignKey(a => a.IdNhanVien);
-            builder.HasOne<KhachHang>(X => X.KhachHang).WithMany(a => a.HoaDons).HasForeignKey(a => a.IdKhachHang);
+            builder.HasOne<KhachHang>(x => x.KhachHang).WithMany(a => a.HoaDons).HasForeignKey(a => a.IdKhachHang);
         }
     }
 }

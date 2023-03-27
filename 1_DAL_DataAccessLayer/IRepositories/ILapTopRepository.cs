@@ -9,9 +9,9 @@ namespace _1_DAL_DataAccessLayer.IRepositories
 {
     public interface ILapTopRepository
     {
-        bool AddLapTop(SanPhamLaptop lapTop);
-        bool UpdateLapTop(SanPhamLaptop lapTop);
-        SanPhamLaptop GetLapTopById(Guid idLapTop);
-        List<SanPhamLaptop> GetAllLapTop();
+        bool AddLapTop(Laptop lapTop);
+        bool UpdateLapTop(Laptop lapTop);
+        Laptop GetLapTopById(Guid idLapTop);
+        List<Laptop> GetAllLapTop();
     }
 }

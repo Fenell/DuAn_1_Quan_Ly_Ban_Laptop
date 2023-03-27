@@ -10,10 +10,10 @@ namespace _1_DAL_DataAccessLayer.Models
     public class SerialLinhKien
     {
         public Guid Id { get; set; }
-        public Guid IdSanPhamLinhKien{ get; set; }
+        public Guid IdLinhKien{ get; set; }
         public string Serial { get; set; }
         public bool TrangThai{ get; set; }
 
-        public SanPhamLinhKien SanPhamLinhKien { get; set; }
+        public LinhKien LinhKien { get; set; }
     }
 }
