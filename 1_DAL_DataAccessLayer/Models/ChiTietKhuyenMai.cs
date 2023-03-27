@@ -16,6 +16,6 @@ namespace _1_DAL_DataAccessLayer.Models
 
         public KhuyenMai KhuyenMai { get; set; }
         public SanPhamLinhKien LinhKien { get; set; }
-        public SanPhamLaptop Laptop{ get; set; }
+        public Laptop Laptop{ get; set; }
     }
 }

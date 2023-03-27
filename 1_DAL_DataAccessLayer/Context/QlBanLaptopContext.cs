@@ -68,7 +68,7 @@ namespace _1_DAL_DataAccessLayer.Context
         public DbSet<HoaDon> HoaDons { get; set; }
         public DbSet<KhachHang> KhachHangs { get; set; }
         public DbSet<KhuyenMai> KhuyenMais { get; set; }
-        public DbSet<SanPhamLaptop> Laptops { get; set; }
+        public DbSet<Laptop> Laptops { get; set; }
         public DbSet<SanPhamLinhKien> LinhKiens { get; set; }
         public DbSet<LoaiLinhKien> LoaiLinhKiens { get; set; }
         public DbSet<ManHinh> ManHinhs { get; set; }

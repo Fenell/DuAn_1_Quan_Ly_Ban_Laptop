@@ -10,9 +10,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace _1_DAL_DataAccessLayer.Configurations
 {
-    public class SanPhamLaptopConfiguration : IEntityTypeConfiguration<SanPhamLaptop>
+    public class SanPhamLaptopConfiguration : IEntityTypeConfiguration<Laptop>
     {
-        public void Configure(EntityTypeBuilder<SanPhamLaptop> builder)
+        public void Configure(EntityTypeBuilder<Laptop> builder)
         {
             builder.ToTable("Laptop");
             builder.HasKey(x => x.Id);
@@ -44,8 +44,8 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.HasOne<MauSac>(x => x.MauSac).WithMany(a => a.Laptops).HasForeignKey(x => x.IdMauSac);
             builder.HasOne<OCung>(x => x.OCung).WithMany(a => a.Laptops).HasForeignKey(x => x.IdOCung);
 
-            builder.HasMany<SerialLaptop>(x => x.SerialLaptops).WithOne(a => a.SanPhamLaptop)
-                .HasForeignKey(a => a.IdSanPhamLaptop);
+            builder.HasOne<SerialLaptop>(x => x.SerialLaptop).WithOne(a => a.SanPhamLaptop)
+                .HasForeignKey<SerialLaptop>(a => a.IdSanPhamLaptop);
         }
     }
 }

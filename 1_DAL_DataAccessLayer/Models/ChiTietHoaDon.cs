@@ -19,7 +19,7 @@ namespace _1_DAL_DataAccessLayer.Models
         public decimal DonGia { get; set; }
         public decimal ThanhTien { get; set; }
         public SanPhamLinhKien LinhKien { get; set; }
-        public SanPhamLaptop Laptop { get; set; }
+        public Laptop Laptop { get; set; }
         public HoaDon HoaDon { get; set; }
 
 

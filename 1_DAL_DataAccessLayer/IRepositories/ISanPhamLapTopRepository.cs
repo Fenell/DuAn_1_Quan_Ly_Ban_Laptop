@@ -9,10 +9,10 @@ namespace _1_DAL_DataAccessLayer.IRepositories
 {
     public interface ISanPhamLapTopRepository
     {
-        bool AddLapTop(SanPhamLaptop lapTop);
-        bool UpdateLapTop(SanPhamLaptop lapTop);
+        bool AddLapTop(Laptop lapTop);
+        bool UpdateLapTop(Laptop lapTop);
         bool UpdateStatusLaptop(Guid id);
-        SanPhamLaptop GetLapTopById(Guid idLapTop);
-        List<SanPhamLaptop> GetAllLapTop();
+        Laptop GetLapTopById(Guid idLapTop);
+        List<Laptop> GetAllLapTop();
     }
 }

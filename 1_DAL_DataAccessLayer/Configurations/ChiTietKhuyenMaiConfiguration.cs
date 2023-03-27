@@ -18,7 +18,7 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.HasKey(t => t.Id);
             builder.HasOne<KhuyenMai>(x => x.KhuyenMai).WithMany(a => a.ChiTietKhuyenMais)
                 .HasForeignKey(a => a.IdKhuyenMai);
-            builder.HasOne<SanPhamLaptop>(x => x.Laptop).WithMany(a => a.ChiTietKhuyenMais).HasForeignKey(a => a.IdLaptop);
+            builder.HasOne<Laptop>(x => x.Laptop).WithMany(a => a.ChiTietKhuyenMais).HasForeignKey(a => a.IdLaptop);
             builder.HasOne<SanPhamLinhKien>(x => x.LinhKien).WithMany(a => a.ChiTietKhuyenMais)
                 .HasForeignKey(a => a.IdLinhKien);
         }

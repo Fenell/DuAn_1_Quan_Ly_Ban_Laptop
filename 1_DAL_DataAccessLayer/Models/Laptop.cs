@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _1_DAL_DataAccessLayer.Models
 {
-    public class SanPhamLaptop
+    public class Laptop
     {
         public Guid Id { get; set; }
         public Guid IdHangLaptop { get; set; }
@@ -30,18 +30,18 @@ namespace _1_DAL_DataAccessLayer.Models
         public bool? TrangThai { get; set; }
         public byte[]? HinhAnh { get; set; }
 
-        public HangLaptop HangLaptop { get; set; }
-        public DongLaptop DongLaptop { get; set; }
-        public NhaCungCap NhaCungCap { get; set; }
-        public Cpu Cpu { get; set; }
+        public HangLaptop? HangLaptop { get; set; }
+        public DongLaptop? DongLaptop { get; set; }
+        public NhaCungCap? NhaCungCap { get; set; }
+        public Cpu? Cpu { get; set; }
         public Vga? Vga { get; set; }
-        public Ram Ram { get; set; }
-        public ManHinh ManHinh { get; set; }
-        public MauSac MauSac { get; set; }
-        public OCung OCung { get; set; }
+        public Ram? Ram { get; set; }
+        public ManHinh? ManHinh { get; set; }
+        public MauSac? MauSac { get; set; }
+        public OCung? OCung { get; set; }
+        public SerialLaptop? SerialLaptop { get; set; }
 
         public ICollection<ChiTietKhuyenMai> ChiTietKhuyenMais { get; set; }
         public ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
-        public ICollection<SerialLaptop> SerialLaptops { get; set; }
     }
 }

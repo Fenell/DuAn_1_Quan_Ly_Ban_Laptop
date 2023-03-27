@@ -19,7 +19,7 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.Property(x=>x.SoLuong).HasDefaultValue(0);
             builder.Property(x=>x.ThanhTien).HasDefaultValue(0).HasColumnType("decimal(18,4)");
             builder.HasOne<SanPhamLinhKien>(x => x.LinhKien).WithMany(a => a.ChiTietHoaDons).HasForeignKey(a => a.IdLinhKien);
-            builder.HasOne<SanPhamLaptop>(x => x.Laptop).WithMany(a => a.ChiTietHoaDons).HasForeignKey(a => a.IdLaptop);
+            builder.HasOne<Laptop>(x => x.Laptop).WithMany(a => a.ChiTietHoaDons).HasForeignKey(a => a.IdLaptop);
             builder.HasOne<HoaDon>(x => x.HoaDon).WithMany(a => a.ChiTietHoaDons).HasForeignKey(a => a.IdHoaDon);
         }
     }

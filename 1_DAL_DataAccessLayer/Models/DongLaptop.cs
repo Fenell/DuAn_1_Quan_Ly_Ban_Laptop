@@ -15,7 +15,7 @@ namespace _1_DAL_DataAccessLayer.Models
         public Guid IdHangLaptop { get; set; }
         public HangLaptop HangLaptop { get; set; }
 
-        public ICollection<SanPhamLaptop> Laptops { get; set; }
+        public ICollection<Laptop> Laptops { get; set; }
 
     }
 }

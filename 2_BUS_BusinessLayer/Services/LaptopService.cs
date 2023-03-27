@@ -42,7 +42,7 @@ namespace _2_BUS_BusinessLayer.Services
         }
         public string AddLaptop(SanPhamLaptopView obj)
         {
-            SanPhamLaptop laptop = new SanPhamLaptop()
+            Laptop laptop = new Laptop()
             {
                 Id = obj.Id,
                 IdHangLaptop = obj.IdHangLaptop,

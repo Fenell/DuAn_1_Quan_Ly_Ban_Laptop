@@ -141,12 +141,12 @@
             iconButton12.TabIndex = 54;
             iconButton12.UseVisualStyleBackColor = false;
             // 
-            // FrmImei
+            // FrmSerial
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(244, 245, 255);
-            ClientSize = new Size(527, 282);
+            ClientSize = new Size(527, 450);
             Controls.Add(iconButton12);
             Controls.Add(textBoxCustom2_01);
             Controls.Add(buttonCustom1);
@@ -154,7 +154,7 @@
             Controls.Add(panel1);
             Controls.Add(iconButton8);
             Controls.Add(textBoxCustom2_04);
-            Name = "FrmImei";
+            Name = "FrmSerial";
             Text = "Nhập Imei";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
