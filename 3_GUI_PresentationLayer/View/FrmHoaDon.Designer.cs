@@ -38,6 +38,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_CTHD = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bt_theongay = new System.Windows.Forms.Button();
             this.radioButtonCustom3 = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
             this.radioButtonCustom2 = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
             this.radioButtonCustom1 = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
@@ -87,6 +88,7 @@
             this.dateTimePickerCustom2.SkinColor = System.Drawing.Color.MediumSlateBlue;
             this.dateTimePickerCustom2.TabIndex = 8;
             this.dateTimePickerCustom2.TextColor = System.Drawing.Color.White;
+            this.dateTimePickerCustom2.ValueChanged += new System.EventHandler(this.dateTimePickerCustom2_ValueChanged);
             // 
             // label5
             // 
@@ -171,6 +173,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.bt_theongay);
             this.panel2.Controls.Add(this.radioButtonCustom3);
             this.panel2.Controls.Add(this.radioButtonCustom2);
             this.panel2.Controls.Add(this.radioButtonCustom1);
@@ -185,8 +188,17 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(30, 26);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1306, 70);
+            this.panel2.Size = new System.Drawing.Size(1306, 87);
             this.panel2.TabIndex = 1;
+            // 
+            // bt_theongay
+            // 
+            this.bt_theongay.Location = new System.Drawing.Point(434, 59);
+            this.bt_theongay.Name = "bt_theongay";
+            this.bt_theongay.Size = new System.Drawing.Size(75, 23);
+            this.bt_theongay.TabIndex = 51;
+            this.bt_theongay.Text = "Search";
+            this.bt_theongay.UseVisualStyleBackColor = true;
             // 
             // radioButtonCustom3
             // 
@@ -232,6 +244,7 @@
             this.radioButtonCustom1.Text = "Đã thanh toán";
             this.radioButtonCustom1.UnCheckedColor = System.Drawing.Color.Gray;
             this.radioButtonCustom1.UseVisualStyleBackColor = true;
+            this.radioButtonCustom1.CheckedChanged += new System.EventHandler(this.radioButtonCustom1_CheckedChanged);
             // 
             // iconButton8
             // 
@@ -357,5 +370,6 @@
         private Label label1;
         private FontAwesome.Sharp.IconButton iconButton2;
         private PictureBox pictureBox1;
+        private Button bt_theongay;
     }
 }

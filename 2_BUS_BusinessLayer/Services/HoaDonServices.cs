@@ -49,7 +49,7 @@ namespace _2_BUS_BusinessLayer.Services
                          GhiChu=  x.GhiChu,
                          TongTien =  x.TongTien
                      }).ToList();
-            return _lstHD;
+            return _lstHoaDon;
         }
 
         public bool Sua(HoaDon hoaDon)
