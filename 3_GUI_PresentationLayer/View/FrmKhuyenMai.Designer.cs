@@ -35,8 +35,11 @@
             radioButtonCustom1 = new CustomControl.RadioButtonCustom();
             label2 = new Label();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvKhuyenMai = new DataGridView();
             panel2 = new Panel();
+            comboBox3 = new ComboBox();
+            comboBox2 = new ComboBox();
+            cbbLoaiKhuyenMai = new ComboBox();
             iconButton5 = new FontAwesome.Sharp.IconButton();
             buttonCustom2 = new CustomControl.ButtonCustom();
             iconButton8 = new FontAwesome.Sharp.IconButton();
@@ -46,12 +49,12 @@
             iconButton2 = new FontAwesome.Sharp.IconButton();
             dataGridView2 = new DataGridView();
             label3 = new Label();
-            dateTimePickerCustom2 = new CustomControl.DateTimePickerCustom();
-            dateTimePickerCustom1 = new CustomControl.DateTimePickerCustom();
+            stKetThuc = new CustomControl.DateTimePickerCustom();
+            dtBatDau = new CustomControl.DateTimePickerCustom();
             label10 = new Label();
-            textBoxCustom3 = new CustomControl.TextBoxCustom();
-            textBoxCustom1 = new CustomControl.TextBoxCustom();
-            textBoxCustom2 = new CustomControl.TextBoxCustom();
+            txtMa = new CustomControl.TextBoxCustom();
+            txtMucGia = new CustomControl.TextBoxCustom();
+            txtTenCT = new CustomControl.TextBoxCustom();
             label9 = new Label();
             label6 = new Label();
             label7 = new Label();
@@ -59,11 +62,8 @@
             label5 = new Label();
             label4 = new Label();
             panel3 = new Panel();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvKhuyenMai).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             panel3.SuspendLayout();
@@ -169,22 +169,21 @@
             label1.TabIndex = 2;
             label1.Text = "Tìm Kiếm";
             // 
-            // dataGridView1
+            // dgvKhuyenMai
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 3);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(957, 291);
-            dataGridView1.TabIndex = 4;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dgvKhuyenMai.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvKhuyenMai.Location = new Point(3, 3);
+            dgvKhuyenMai.Name = "dgvKhuyenMai";
+            dgvKhuyenMai.RowTemplate.Height = 25;
+            dgvKhuyenMai.Size = new Size(957, 291);
+            dgvKhuyenMai.TabIndex = 4;
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
             panel2.Controls.Add(comboBox3);
             panel2.Controls.Add(comboBox2);
-            panel2.Controls.Add(comboBox1);
+            panel2.Controls.Add(cbbLoaiKhuyenMai);
             panel2.Controls.Add(iconButton5);
             panel2.Controls.Add(buttonCustom2);
             panel2.Controls.Add(iconButton8);
@@ -194,12 +193,12 @@
             panel2.Controls.Add(iconButton2);
             panel2.Controls.Add(dataGridView2);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(dateTimePickerCustom2);
-            panel2.Controls.Add(dateTimePickerCustom1);
+            panel2.Controls.Add(stKetThuc);
+            panel2.Controls.Add(dtBatDau);
             panel2.Controls.Add(label10);
-            panel2.Controls.Add(textBoxCustom3);
-            panel2.Controls.Add(textBoxCustom1);
-            panel2.Controls.Add(textBoxCustom2);
+            panel2.Controls.Add(txtMa);
+            panel2.Controls.Add(txtMucGia);
+            panel2.Controls.Add(txtTenCT);
             panel2.Controls.Add(label9);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label7);
@@ -210,7 +209,30 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(490, 639);
             panel2.TabIndex = 5;
-            panel2.Paint += panel2_Paint;
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(183, 342);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(280, 23);
+            comboBox3.TabIndex = 55;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(183, 300);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(280, 23);
+            comboBox2.TabIndex = 54;
+            // 
+            // cbbLoaiKhuyenMai
+            // 
+            cbbLoaiKhuyenMai.FormattingEnabled = true;
+            cbbLoaiKhuyenMai.Location = new Point(183, 119);
+            cbbLoaiKhuyenMai.Name = "cbbLoaiKhuyenMai";
+            cbbLoaiKhuyenMai.Size = new Size(280, 23);
+            cbbLoaiKhuyenMai.TabIndex = 53;
             // 
             // iconButton5
             // 
@@ -346,33 +368,32 @@
             label3.Size = new Size(125, 20);
             label3.TabIndex = 5;
             label3.Text = "Loại Khuyến Mãi";
-            label3.Click += label3_Click;
             // 
-            // dateTimePickerCustom2
+            // stKetThuc
             // 
-            dateTimePickerCustom2.BorderColor = Color.PaleVioletRed;
-            dateTimePickerCustom2.BorderSize = 0;
-            dateTimePickerCustom2.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerCustom2.Location = new Point(183, 244);
-            dateTimePickerCustom2.MinimumSize = new Size(0, 35);
-            dateTimePickerCustom2.Name = "dateTimePickerCustom2";
-            dateTimePickerCustom2.Size = new Size(280, 35);
-            dateTimePickerCustom2.SkinColor = Color.MediumSlateBlue;
-            dateTimePickerCustom2.TabIndex = 16;
-            dateTimePickerCustom2.TextColor = Color.White;
+            stKetThuc.BorderColor = Color.PaleVioletRed;
+            stKetThuc.BorderSize = 0;
+            stKetThuc.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            stKetThuc.Location = new Point(183, 244);
+            stKetThuc.MinimumSize = new Size(0, 35);
+            stKetThuc.Name = "stKetThuc";
+            stKetThuc.Size = new Size(280, 35);
+            stKetThuc.SkinColor = Color.MediumSlateBlue;
+            stKetThuc.TabIndex = 16;
+            stKetThuc.TextColor = Color.White;
             // 
-            // dateTimePickerCustom1
+            // dtBatDau
             // 
-            dateTimePickerCustom1.BorderColor = Color.PaleVioletRed;
-            dateTimePickerCustom1.BorderSize = 0;
-            dateTimePickerCustom1.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerCustom1.Location = new Point(183, 199);
-            dateTimePickerCustom1.MinimumSize = new Size(0, 35);
-            dateTimePickerCustom1.Name = "dateTimePickerCustom1";
-            dateTimePickerCustom1.Size = new Size(280, 35);
-            dateTimePickerCustom1.SkinColor = Color.MediumSlateBlue;
-            dateTimePickerCustom1.TabIndex = 15;
-            dateTimePickerCustom1.TextColor = Color.White;
+            dtBatDau.BorderColor = Color.PaleVioletRed;
+            dtBatDau.BorderSize = 0;
+            dtBatDau.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            dtBatDau.Location = new Point(183, 199);
+            dtBatDau.MinimumSize = new Size(0, 35);
+            dtBatDau.Name = "dtBatDau";
+            dtBatDau.Size = new Size(280, 35);
+            dtBatDau.SkinColor = Color.MediumSlateBlue;
+            dtBatDau.TabIndex = 15;
+            dtBatDau.TextColor = Color.White;
             // 
             // label10
             // 
@@ -385,55 +406,53 @@
             label10.TabIndex = 14;
             label10.Text = "Hãng";
             // 
-            // textBoxCustom3
+            // txtMa
             // 
-            textBoxCustom3.BackColor = Color.White;
-            textBoxCustom3.BorderColor = Color.MediumSlateBlue;
-            textBoxCustom3.BorderFocusColor = Color.HotPink;
-            textBoxCustom3.BorderSize = 2;
-            textBoxCustom3.Location = new Point(183, 11);
-            textBoxCustom3.Multiline = false;
-            textBoxCustom3.Name = "textBoxCustom3";
-            textBoxCustom3.Padding = new Padding(7);
-            textBoxCustom3.PasswordChar = false;
-            textBoxCustom3.Size = new Size(280, 30);
-            textBoxCustom3.TabIndex = 12;
-            textBoxCustom3.Texts = "";
-            textBoxCustom3.UnderlinedStyle = true;
+            txtMa.BackColor = Color.White;
+            txtMa.BorderColor = Color.MediumSlateBlue;
+            txtMa.BorderFocusColor = Color.HotPink;
+            txtMa.BorderSize = 2;
+            txtMa.Location = new Point(183, 11);
+            txtMa.Multiline = false;
+            txtMa.Name = "txtMa";
+            txtMa.Padding = new Padding(7);
+            txtMa.PasswordChar = false;
+            txtMa.Size = new Size(280, 30);
+            txtMa.TabIndex = 12;
+            txtMa.Texts = "";
+            txtMa.UnderlinedStyle = true;
             // 
-            // textBoxCustom1
+            // txtMucGia
             // 
-            textBoxCustom1.BackColor = Color.White;
-            textBoxCustom1.BorderColor = Color.MediumSlateBlue;
-            textBoxCustom1.BorderFocusColor = Color.HotPink;
-            textBoxCustom1.BorderSize = 2;
-            textBoxCustom1.Location = new Point(183, 154);
-            textBoxCustom1.Multiline = false;
-            textBoxCustom1.Name = "textBoxCustom1";
-            textBoxCustom1.Padding = new Padding(7);
-            textBoxCustom1.PasswordChar = false;
-            textBoxCustom1.Size = new Size(280, 30);
-            textBoxCustom1.TabIndex = 5;
-            textBoxCustom1.Texts = "";
-            textBoxCustom1.UnderlinedStyle = true;
-            textBoxCustom1.Load += textBoxCustom2_Load;
+            txtMucGia.BackColor = Color.White;
+            txtMucGia.BorderColor = Color.MediumSlateBlue;
+            txtMucGia.BorderFocusColor = Color.HotPink;
+            txtMucGia.BorderSize = 2;
+            txtMucGia.Location = new Point(183, 154);
+            txtMucGia.Multiline = false;
+            txtMucGia.Name = "txtMucGia";
+            txtMucGia.Padding = new Padding(7);
+            txtMucGia.PasswordChar = false;
+            txtMucGia.Size = new Size(280, 30);
+            txtMucGia.TabIndex = 5;
+            txtMucGia.Texts = "";
+            txtMucGia.UnderlinedStyle = true;
             // 
-            // textBoxCustom2
+            // txtTenCT
             // 
-            textBoxCustom2.BackColor = Color.White;
-            textBoxCustom2.BorderColor = Color.MediumSlateBlue;
-            textBoxCustom2.BorderFocusColor = Color.HotPink;
-            textBoxCustom2.BorderSize = 2;
-            textBoxCustom2.Location = new Point(183, 57);
-            textBoxCustom2.Multiline = false;
-            textBoxCustom2.Name = "textBoxCustom2";
-            textBoxCustom2.Padding = new Padding(7);
-            textBoxCustom2.PasswordChar = false;
-            textBoxCustom2.Size = new Size(280, 30);
-            textBoxCustom2.TabIndex = 5;
-            textBoxCustom2.Texts = "";
-            textBoxCustom2.UnderlinedStyle = true;
-            textBoxCustom2.Load += textBoxCustom2_Load;
+            txtTenCT.BackColor = Color.White;
+            txtTenCT.BorderColor = Color.MediumSlateBlue;
+            txtTenCT.BorderFocusColor = Color.HotPink;
+            txtTenCT.BorderSize = 2;
+            txtTenCT.Location = new Point(183, 57);
+            txtTenCT.Multiline = false;
+            txtTenCT.Name = "txtTenCT";
+            txtTenCT.Padding = new Padding(7);
+            txtTenCT.PasswordChar = false;
+            txtTenCT.Size = new Size(280, 30);
+            txtTenCT.TabIndex = 5;
+            txtTenCT.Texts = "";
+            txtTenCT.UnderlinedStyle = true;
             // 
             // label9
             // 
@@ -504,35 +523,11 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
-            panel3.Controls.Add(dataGridView1);
+            panel3.Controls.Add(dgvKhuyenMai);
             panel3.Location = new Point(12, 143);
             panel3.Name = "panel3";
             panel3.Size = new Size(963, 521);
             panel3.TabIndex = 6;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(183, 119);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(280, 23);
-            comboBox1.TabIndex = 53;
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(183, 300);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(280, 23);
-            comboBox2.TabIndex = 54;
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(183, 342);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(280, 23);
-            comboBox3.TabIndex = 55;
             // 
             // FrmKhuyenMai
             // 
@@ -547,7 +542,7 @@
             Text = "Khuyến mại";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvKhuyenMai).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
@@ -560,11 +555,11 @@
         private Panel panel1;
         private Label label2;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvKhuyenMai;
         private Panel panel2;
         private Label label3;
-        private CustomControl.TextBoxCustom textBoxCustom3;
-        private CustomControl.TextBoxCustom textBoxCustom2;
+        private CustomControl.TextBoxCustom txtMa;
+        private CustomControl.TextBoxCustom txtTenCT;
         private Label label9;
         private Label label6;
         private Label label7;
@@ -572,8 +567,8 @@
         private Label label5;
         private Label label4;
         private DataGridView dataGridView2;
-        private CustomControl.DateTimePickerCustom dateTimePickerCustom2;
-        private CustomControl.DateTimePickerCustom dateTimePickerCustom1;
+        private CustomControl.DateTimePickerCustom stKetThuc;
+        private CustomControl.DateTimePickerCustom dtBatDau;
         private Label label10;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton2;
@@ -583,13 +578,13 @@
         private Panel panel3;
         private CustomControl.ButtonCustom buttonCustom2;
         private CustomControl.ButtonCustom buttonCustom1;
-        private CustomControl.TextBoxCustom textBoxCustom1;
+        private CustomControl.TextBoxCustom txtMucGia;
         private FontAwesome.Sharp.IconButton iconButton1;
         private CustomControl.TextBoxCustom2_0 textBoxCustom2_01;
         private CustomControl.RadioButtonCustom radioButtonCustom2;
         private FontAwesome.Sharp.IconButton iconButton5;
         private ComboBox comboBox3;
         private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private ComboBox cbbLoaiKhuyenMai;
     }
 }

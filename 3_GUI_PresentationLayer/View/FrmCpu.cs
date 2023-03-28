@@ -17,16 +17,23 @@ namespace _3_GUI_PresentationLayer.View
     {
         ICpuServices _cpuServices;
         Guid _idCpu;
+        private List<Cpu> _lstCpu;
         public FrmCpu()
         {
             InitializeComponent();
             _cpuServices = new CpuServices();
             txtFalse();
+            _lstCpu = new List<Cpu>();
             LoadDgv();
             this.CenterToScreen();
         }
+        public FrmCpu(List<Cpu> lst):this()
+        {
+            _lstCpu = lst;
+        }
         private void LoadDgv()
         {
+            _lstCpu = _cpuServices.GetAllCpu();
             dgvCpu.ColumnCount = 3;
             dgvCpu.Columns[0].Visible = false;
             dgvCpu.Columns[1].Name = "Mã Vga";
