@@ -697,6 +697,16 @@
             toolStripMenuItem1.Size = new Size(172, 22);
             toolStripMenuItem1.Text = "Chọn mã giảm giá";
             // 
+            // groupBox1
+            // 
+            groupBox1.BackColor = Color.White;
+            groupBox1.Location = new Point(1422, 11);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(87, 667);
+            groupBox1.TabIndex = 44;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "groupBox1";
+            // 
             // FrmBanHang
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
