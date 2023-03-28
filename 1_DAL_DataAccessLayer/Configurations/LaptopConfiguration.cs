@@ -45,6 +45,8 @@ namespace _1_DAL_DataAccessLayer.Configurations
 
             builder.HasOne<SerialLaptop>(x => x.SerialLaptop).WithOne(a => a.Laptop)
                 .HasForeignKey<SerialLaptop>(a => a.IdLaptop);
+
+            builder.HasOne<KhuyenMai>(c => c.KhuyenMai).WithMany(a => a.Laptops).HasForeignKey(c => c.IdKhuyenMai);
         }
     }
 }

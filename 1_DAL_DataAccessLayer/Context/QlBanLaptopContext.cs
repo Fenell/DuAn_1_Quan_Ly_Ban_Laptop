@@ -27,7 +27,6 @@ namespace _1_DAL_DataAccessLayer.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ChiTietHoaDonConfiguration());
-            modelBuilder.ApplyConfiguration(new ChiTietKhuyenMaiConfiguration());
             modelBuilder.ApplyConfiguration(new CpuConfiguration());
             modelBuilder.ApplyConfiguration(new DongLaptopConfiguration());
             modelBuilder.ApplyConfiguration(new HangLaptopConfiguration());
@@ -60,7 +59,6 @@ namespace _1_DAL_DataAccessLayer.Context
         }
 
         public DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
-        public DbSet<ChiTietKhuyenMai> ChiTietKhuyenMais { get; set; }
         public DbSet<Cpu> Cpus { get; set; }
         public DbSet<DongLaptop> DongLaptops { get; set; }
         public DbSet<HangLaptop> HangLaptops { get; set; }

@@ -22,8 +22,8 @@ namespace _1_DAL_DataAccessLayer.Models
         public decimal TongTien { get; set; }
 
         public ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
-        public KhachHang KhachHang { get; set; }
-        public NhanVien NhanVien { get; set; }
+        public KhachHang? KhachHang { get; set; }
+        public NhanVien? NhanVien { get; set; }
 
     }
 }

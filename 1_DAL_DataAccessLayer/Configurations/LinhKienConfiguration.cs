@@ -34,6 +34,8 @@ namespace _1_DAL_DataAccessLayer.Configurations
 
             builder.HasOne<SerialLinhKien>(x => x.SerialLinhKien).WithOne(a => a.LinhKien)
                 .HasForeignKey<SerialLinhKien>(a => a.IdLinhKien);
+
+            builder.HasOne<KhuyenMai>(c => c.KhuyenMai).WithMany(a => a.LinhKiens).HasForeignKey(c => c.IdKhuyenMai);
         }
     }
 }
