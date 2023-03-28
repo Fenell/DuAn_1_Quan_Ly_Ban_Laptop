@@ -146,7 +146,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(244, 245, 255);
-            ClientSize = new Size(527, 450);
+            ClientSize = new Size(527, 304);
             Controls.Add(iconButton12);
             Controls.Add(textBoxCustom2_01);
             Controls.Add(buttonCustom1);
