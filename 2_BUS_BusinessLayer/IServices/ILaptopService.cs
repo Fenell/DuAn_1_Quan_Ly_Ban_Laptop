@@ -10,12 +10,12 @@ namespace _2_BUS_BusinessLayer.IServices
 {
     public interface ILaptopService
     {
-        public string AddLaptop( SanPhamLaptopView obj);
-        public string UpdateLaptop(SanPhamLaptopView obj);
+        public string AddLaptop( LaptopView obj);
+        public string UpdateLaptop(LaptopView obj);
         public string UpdateStatusLaptop(Guid id);
         public string DeleteLaptop(Guid id);
         public List<Laptop> GetLaptopFromDb();
-        public List<SanPhamLaptopView> GetAllLaptop();
+        public List<LaptopView> GetAllLaptop();
 
     }
 }

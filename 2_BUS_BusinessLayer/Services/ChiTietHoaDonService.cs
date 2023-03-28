@@ -95,7 +95,6 @@ namespace _2_BUS_BusinessLayer.Services
                     TenSanPham = sanPhamLaptop.Ten ?? sanPhamLk.Ten,
                     SoLuong = a.SoLuong,
                     DonGia = a.DonGia,
-                    ThanhTien = a.SoLuong * a.DonGia,
                 }).ToList();
 
             return lst;

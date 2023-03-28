@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2_BUS_BusinessLayer.ViewModel
 {
-    public class SanPhamLaptopView
+    public class LaptopView
     {
         public Guid Id { get; set; }
         public Guid IdHangLaptop { get; set; }
