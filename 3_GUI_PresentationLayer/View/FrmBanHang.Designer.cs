@@ -57,6 +57,8 @@
             label6 = new Label();
             iconButton3 = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
+            buttonCustom1 = new CustomControl.ButtonCustom();
+            pictureBox1 = new PictureBox();
             comboBoxCustom3 = new CustomControl.ComboBoxCustom();
             iconButton8 = new FontAwesome.Sharp.IconButton();
             textBoxCustom2_04 = new CustomControl.TextBoxCustom2_0();
@@ -65,28 +67,22 @@
             label1 = new Label();
             label2 = new Label();
             panel3 = new Panel();
-            dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
+            dgvSanPham = new DataGridView();
             groupBox2 = new GroupBox();
             dataGridView2 = new DataGridView();
-            groupBox1 = new GroupBox();
-            pictureBox1 = new PictureBox();
-            buttonCustom1 = new CustomControl.ButtonCustom();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            groupBox1 = new GroupBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSanPham).BeginInit();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -534,6 +530,32 @@
             panel2.Size = new Size(972, 140);
             panel2.TabIndex = 42;
             // 
+            // buttonCustom1
+            // 
+            buttonCustom1.BackColor = Color.MediumSlateBlue;
+            buttonCustom1.BackgroundColor = Color.MediumSlateBlue;
+            buttonCustom1.BorderColor = Color.PaleVioletRed;
+            buttonCustom1.BorderRadius = 10;
+            buttonCustom1.BorderSize = 0;
+            buttonCustom1.FlatAppearance.BorderSize = 0;
+            buttonCustom1.FlatStyle = FlatStyle.Flat;
+            buttonCustom1.ForeColor = Color.White;
+            buttonCustom1.Location = new Point(663, 11);
+            buttonCustom1.Name = "buttonCustom1";
+            buttonCustom1.Size = new Size(105, 40);
+            buttonCustom1.TabIndex = 49;
+            buttonCustom1.Text = "Bật camera";
+            buttonCustom1.TextColor = Color.White;
+            buttonCustom1.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(774, 7);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(195, 126);
+            pictureBox1.TabIndex = 45;
+            pictureBox1.TabStop = false;
+            // 
             // comboBoxCustom3
             // 
             comboBoxCustom3.BackColor = Color.White;
@@ -637,46 +659,21 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(dataGridView1);
+            panel3.Controls.Add(dgvSanPham);
             panel3.Location = new Point(18, 163);
             panel3.Name = "panel3";
             panel3.Size = new Size(975, 268);
             panel3.TabIndex = 43;
             // 
-            // dataGridView1
+            // dgvSanPham
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridView1.Location = new Point(1, 3);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(971, 262);
-            dataGridView1.TabIndex = 23;
-            // 
-            // Column1
-            // 
-            Column1.FillWeight = 184.564072F;
-            Column1.HeaderText = "Tên Sản Phẩm";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.FillWeight = 115.402687F;
-            Column2.HeaderText = "Giá Bán";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.FillWeight = 60.9137039F;
-            Column3.HeaderText = "Tồn Kho";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.FillWeight = 39.11956F;
-            Column4.HeaderText = "  ";
-            Column4.Name = "Column4";
+            dgvSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvSanPham.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSanPham.Location = new Point(1, 3);
+            dgvSanPham.Name = "dgvSanPham";
+            dgvSanPham.RowTemplate.Height = 25;
+            dgvSanPham.Size = new Size(971, 262);
+            dgvSanPham.TabIndex = 23;
             // 
             // groupBox2
             // 
@@ -700,42 +697,6 @@
             dataGridView2.RowTemplate.Height = 25;
             dataGridView2.Size = new Size(969, 212);
             dataGridView2.TabIndex = 12;
-            // 
-            // groupBox1
-            // 
-            groupBox1.BackColor = Color.White;
-            groupBox1.Location = new Point(1422, 11);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(87, 667);
-            groupBox1.TabIndex = 44;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(774, 7);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(195, 126);
-            pictureBox1.TabIndex = 45;
-            pictureBox1.TabStop = false;
-            // 
-            // buttonCustom1
-            // 
-            buttonCustom1.BackColor = Color.MediumSlateBlue;
-            buttonCustom1.BackgroundColor = Color.MediumSlateBlue;
-            buttonCustom1.BorderColor = Color.PaleVioletRed;
-            buttonCustom1.BorderRadius = 10;
-            buttonCustom1.BorderSize = 0;
-            buttonCustom1.FlatAppearance.BorderSize = 0;
-            buttonCustom1.FlatStyle = FlatStyle.Flat;
-            buttonCustom1.ForeColor = Color.White;
-            buttonCustom1.Location = new Point(663, 11);
-            buttonCustom1.Name = "buttonCustom1";
-            buttonCustom1.Size = new Size(105, 40);
-            buttonCustom1.TabIndex = 49;
-            buttonCustom1.Text = "Bật camera";
-            buttonCustom1.TextColor = Color.White;
-            buttonCustom1.UseVisualStyleBackColor = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -765,6 +726,16 @@
             dataGridViewTextBoxColumn4.HeaderText = "  ";
             dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
+            // groupBox1
+            // 
+            groupBox1.BackColor = Color.White;
+            groupBox1.Location = new Point(1422, 11);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(87, 667);
+            groupBox1.TabIndex = 44;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "groupBox1";
+            // 
             // FrmBanHang
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -783,11 +754,11 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSanPham).EndInit();
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -816,11 +787,7 @@
         private Panel panel3;
         private GroupBox groupBox2;
         private DataGridView dataGridView2;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
+        private DataGridView dgvSanPham;
         private CustomControl.TextBoxCustom2_0 textBoxCustom2_03;
         private CustomControl.TextBoxCustom2_0 textBoxCustom2_02;
         private CustomControl.TextBoxCustom2_0 textBoxCustom2_01;
