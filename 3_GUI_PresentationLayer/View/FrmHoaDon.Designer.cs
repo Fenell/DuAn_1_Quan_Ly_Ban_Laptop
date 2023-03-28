@@ -36,7 +36,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_hoaDon = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgv_CTHD = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.radioButtonCustom3 = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
             this.radioButtonCustom2 = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
@@ -50,7 +50,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_hoaDon)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_CTHD)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -137,6 +137,7 @@
             // 
             // dgv_hoaDon
             // 
+            this.dgv_hoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_hoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_hoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_hoaDon.Location = new System.Drawing.Point(3, 25);
@@ -147,7 +148,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Controls.Add(this.dgv_CTHD);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(24, 433);
             this.groupBox2.Name = "groupBox2";
@@ -156,15 +157,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hóa Đơn Chi Tiết";
             // 
-            // dataGridView2
+            // dgv_CTHD
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 25);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(1472, 215);
-            this.dataGridView2.TabIndex = 0;
+            this.dgv_CTHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_CTHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_CTHD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_CTHD.Location = new System.Drawing.Point(3, 25);
+            this.dgv_CTHD.Name = "dgv_CTHD";
+            this.dgv_CTHD.RowTemplate.Height = 25;
+            this.dgv_CTHD.Size = new System.Drawing.Size(1472, 215);
+            this.dgv_CTHD.TabIndex = 0;
             // 
             // panel2
             // 
@@ -327,7 +329,7 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_hoaDon)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_CTHD)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -344,7 +346,7 @@
         private GroupBox groupBox1;
         private DataGridView dgv_hoaDon;
         private GroupBox groupBox2;
-        private DataGridView dataGridView2;
+        private DataGridView dgv_CTHD;
         private Panel panel2;
         private CustomControl.RadioButtonCustom radioButtonCustom3;
         private CustomControl.RadioButtonCustom radioButtonCustom2;

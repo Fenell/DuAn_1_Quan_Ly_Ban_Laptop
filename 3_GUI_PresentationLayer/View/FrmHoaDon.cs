@@ -19,6 +19,8 @@ namespace _3_GUI_PresentationLayer.View
         List<HoaDon> _lst_hoaDon;
         public FrmHoaDon()
         {
+            _Bus_hoaDon = new HoaDonServices();
+            _lst_hoaDon = new List<HoaDon>();
             InitializeComponent();
             ShowHĐ();
         }
