@@ -232,10 +232,5 @@ namespace _2_BUS_BusinessLayer.Services
 
             return result;
         }
-
-        public string UpdateStatusLaptop(Guid id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

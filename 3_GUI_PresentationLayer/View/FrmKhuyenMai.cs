@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _1_DAL_DataAccessLayer.IRepositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace _3_GUI_PresentationLayer.View
 {
     public partial class FrmKhuyenMai : Form
     {
+        //private IKhuyenMaiSer _khuyenMaiRepository;
         public FrmKhuyenMai()
         {
             InitializeComponent();
+            _khuyenMaiRepository = new 
         }
+        
     }
 }
