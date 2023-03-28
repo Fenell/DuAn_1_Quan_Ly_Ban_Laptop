@@ -13,7 +13,7 @@ namespace _1_DAL_DataAccessLayer.Models
         public string Ten { get; set; }
         public string Ma { get; set; }
 
-        public HangLinhKien HangLinhKien { get; set; }
+        public HangLinhKien? HangLinhKien { get; set; }
         public ICollection<LinhKien> LinhKiens { get; set; }
     }
 }

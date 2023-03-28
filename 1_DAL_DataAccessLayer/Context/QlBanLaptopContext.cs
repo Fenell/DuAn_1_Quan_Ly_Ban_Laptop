@@ -59,7 +59,6 @@ namespace _1_DAL_DataAccessLayer.Context
         }
 
         public DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
-        public DbSet<ChiTietKhuyenMai> ChiTietKhuyenMais { get; set; }
         public DbSet<Cpu> Cpus { get; set; }
         public DbSet<DongLaptop> DongLaptops { get; set; }
         public DbSet<HangLaptop> HangLaptops { get; set; }
