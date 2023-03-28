@@ -30,6 +30,7 @@
         {
             dgvDong = new DataGridView();
             panel2 = new Panel();
+            cbbHang = new ComboBox();
             btnLamMoi = new FontAwesome.Sharp.IconButton();
             btnSua = new FontAwesome.Sharp.IconButton();
             btnThem = new FontAwesome.Sharp.IconButton();
@@ -37,7 +38,7 @@
             lbMa = new Label();
             label2 = new Label();
             label1 = new Label();
-            cbbHang = new ComboBox();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvDong).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -57,6 +58,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(label3);
             panel2.Controls.Add(cbbHang);
             panel2.Controls.Add(btnLamMoi);
             panel2.Controls.Add(btnSua);
@@ -69,6 +71,14 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(244, 232);
             panel2.TabIndex = 5;
+            // 
+            // cbbHang
+            // 
+            cbbHang.FormattingEnabled = true;
+            cbbHang.Location = new Point(18, 77);
+            cbbHang.Name = "cbbHang";
+            cbbHang.Size = new Size(203, 23);
+            cbbHang.TabIndex = 20;
             // 
             // btnLamMoi
             // 
@@ -121,7 +131,7 @@
             txtDong.BorderFocusColor = Color.HotPink;
             txtDong.BorderRadius = 10;
             txtDong.BorderSize = 1;
-            txtDong.Location = new Point(13, 112);
+            txtDong.Location = new Point(13, 131);
             txtDong.Multiline = false;
             txtDong.Name = "txtDong";
             txtDong.Padding = new Padding(7);
@@ -159,19 +169,21 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(13, 72);
+            label1.Location = new Point(13, 104);
             label1.Name = "label1";
             label1.Size = new Size(126, 20);
             label1.TabIndex = 0;
             label1.Text = "Tên Dòng Laptop";
             // 
-            // cbbHang
+            // label3
             // 
-            cbbHang.FormattingEnabled = true;
-            cbbHang.Location = new Point(66, 46);
-            cbbHang.Name = "cbbHang";
-            cbbHang.Size = new Size(121, 23);
-            cbbHang.TabIndex = 20;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(13, 47);
+            label3.Name = "label3";
+            label3.Size = new Size(125, 20);
+            label3.TabIndex = 21;
+            label3.Text = "Tên Hãng Laptop";
             // 
             // FrmDongLaptop
             // 
@@ -200,5 +212,6 @@
         private Label label2;
         private Label label1;
         private ComboBox cbbHang;
+        private Label label3;
     }
 }
