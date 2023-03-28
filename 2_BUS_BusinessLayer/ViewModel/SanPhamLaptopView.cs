@@ -36,6 +36,7 @@ namespace _2_BUS_BusinessLayer.ViewModel
         public int SoLuongTon { get; set; }
         public bool? TrangThai { get; set; }
         public byte[]? Anh { get; set; }
+        public List<string> ListSerial { get; set; }
 
     }
 }
