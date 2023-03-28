@@ -14,10 +14,11 @@ namespace _1_DAL_DataAccessLayer.Models
         public string Ten { get; set; }
         public string LoaiKhuyenMai { get; set; }
         public decimal GiaTri { get; set; }
-        public bool TrangThai { get; set; }
+        public int TrangThai { get; set; }
         public DateTime NgayBatDau { get; set; }
         public DateTime NgayKetThuc { get; set; }
 
-        public ICollection<ChiTietKhuyenMai> ChiTietKhuyenMais { get; set; }
+        public ICollection<Laptop> Laptops { get; set; }
+        public ICollection<LinhKien> LinhKiens { get; set; }
     }
 }

@@ -13,6 +13,6 @@ namespace _1_DAL_DataAccessLayer.Models
         public string Serial { get; set; }
         public bool TrangThai{ get; set; }
 
-        public Laptop Laptop { get; set; }
+        public Laptop? Laptop { get; set; }
     }
 }

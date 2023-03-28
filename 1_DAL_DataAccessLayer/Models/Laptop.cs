@@ -20,6 +20,7 @@ namespace _1_DAL_DataAccessLayer.Models
         public Guid IdManHinh { get; set; }
         public Guid IdMauSac { get; set; }
         public Guid IdOCung { get; set; }
+        public Guid? IdKhuyenMai { get; set; }
         public string? Ten { get; set; }
         public decimal GiaNhap { get; set; }
         public decimal GiaBan { get; set; }
@@ -29,18 +30,18 @@ namespace _1_DAL_DataAccessLayer.Models
         public bool? TrangThai { get; set; }
         public byte[]? HinhAnh { get; set; }
 
-        public HangLaptop HangLaptop { get; set; }
-        public DongLaptop DongLaptop { get; set; }
-        public NhaCungCap NhaCungCap { get; set; }
-        public Cpu Cpu { get; set; }
+        public HangLaptop? HangLaptop { get; set; }
+        public DongLaptop? DongLaptop { get; set; }
+        public NhaCungCap? NhaCungCap { get; set; }
+        public Cpu? Cpu { get; set; }
         public Vga? Vga { get; set; }
-        public Ram Ram { get; set; }
-        public ManHinh ManHinh { get; set; }
-        public MauSac MauSac { get; set; }
-        public OCung OCung { get; set; }
-        public SerialLaptop SerialLaptop { get; set; }
+        public Ram? Ram { get; set; }
+        public ManHinh? ManHinh { get; set; }
+        public MauSac? MauSac { get; set; }
+        public OCung? OCung { get; set; }
+        public SerialLaptop? SerialLaptop { get; set; }
+        public KhuyenMai? KhuyenMai{ get; set; }
 
-        public ICollection<ChiTietKhuyenMai> ChiTietKhuyenMais { get; set; }
         public ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
     }
 }
