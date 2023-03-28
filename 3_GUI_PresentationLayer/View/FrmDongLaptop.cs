@@ -124,7 +124,7 @@ namespace _3_GUI_PresentationLayer.View
             }
             _idDong = Guid.Parse(dgvDong.Rows[rowindex].Cells[0].Value.ToString());
             var dong = _dongLaptopServices.GetAllDongLaptop().FirstOrDefault(c => c.Id == _idDong);
-            var hang = _hangLaptopServices.GetAllHangLaptops().FirstOrDefault(c=>c.Id == dong.IdHangLaptop);
+            var hang = _hangLaptopServices.GetAllHangLaptops().FirstOrDefault(c => c.Id == dong.IdHangLaptop);
             txtDong.Texts = dong.Ten;
             lbMa.Text = dong.Ma;
             cbbHang.Text = hang.Ten;

@@ -61,7 +61,6 @@ namespace _3_GUI_PresentationLayer.View
             panel3 = new Panel();
             dataGridView1 = new DataGridView();
             panel4 = new Panel();
-            textBox1 = new TextBox();
             btnTenLaptop = new FontAwesome.Sharp.IconButton();
             btnMauSac = new FontAwesome.Sharp.IconButton();
             btnManHinh = new FontAwesome.Sharp.IconButton();
@@ -72,15 +71,6 @@ namespace _3_GUI_PresentationLayer.View
             btnNhaCungCap = new FontAwesome.Sharp.IconButton();
             btnDongLaptop = new FontAwesome.Sharp.IconButton();
             btnHangSanXuat = new FontAwesome.Sharp.IconButton();
-            comboBoxCustom6 = new CustomControl.ComboBoxCustom();
-            comboBoxCustom5 = new CustomControl.ComboBoxCustom();
-            comboBoxCustom4 = new CustomControl.ComboBoxCustom();
-            comboBoxCustom3 = new CustomControl.ComboBoxCustom();
-            comboBoxCustom10 = new CustomControl.ComboBoxCustom();
-            comboBoxCustom9 = new CustomControl.ComboBoxCustom();
-            comboBoxCustom8 = new CustomControl.ComboBoxCustom();
-            comboBoxCustom7 = new CustomControl.ComboBoxCustom();
-            comboBoxCustom2 = new CustomControl.ComboBoxCustom();
             label13 = new Label();
             label12 = new Label();
             label11 = new Label();
@@ -92,6 +82,16 @@ namespace _3_GUI_PresentationLayer.View
             label14 = new Label();
             panel5 = new Panel();
             panel6 = new Panel();
+            cbbHangSanXuat = new ComboBox();
+            cbbDong = new ComboBox();
+            cbbNhaCungCap = new ComboBox();
+            cbbCpu = new ComboBox();
+            cbbVga = new ComboBox();
+            cbbRam = new ComboBox();
+            cbbOCung = new ComboBox();
+            cbbManHinh = new ComboBox();
+            cbbMauSac = new ComboBox();
+            textBox1 = new TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -515,6 +515,15 @@ namespace _3_GUI_PresentationLayer.View
             // 
             panel4.BackColor = Color.White;
             panel4.Controls.Add(textBox1);
+            panel4.Controls.Add(cbbMauSac);
+            panel4.Controls.Add(cbbManHinh);
+            panel4.Controls.Add(cbbOCung);
+            panel4.Controls.Add(cbbRam);
+            panel4.Controls.Add(cbbVga);
+            panel4.Controls.Add(cbbCpu);
+            panel4.Controls.Add(cbbNhaCungCap);
+            panel4.Controls.Add(cbbDong);
+            panel4.Controls.Add(cbbHangSanXuat);
             panel4.Controls.Add(btnTenLaptop);
             panel4.Controls.Add(btnMauSac);
             panel4.Controls.Add(btnManHinh);
@@ -525,15 +534,6 @@ namespace _3_GUI_PresentationLayer.View
             panel4.Controls.Add(btnNhaCungCap);
             panel4.Controls.Add(btnDongLaptop);
             panel4.Controls.Add(btnHangSanXuat);
-            panel4.Controls.Add(comboBoxCustom6);
-            panel4.Controls.Add(comboBoxCustom5);
-            panel4.Controls.Add(comboBoxCustom4);
-            panel4.Controls.Add(comboBoxCustom3);
-            panel4.Controls.Add(comboBoxCustom10);
-            panel4.Controls.Add(comboBoxCustom9);
-            panel4.Controls.Add(comboBoxCustom8);
-            panel4.Controls.Add(comboBoxCustom7);
-            panel4.Controls.Add(comboBoxCustom2);
             panel4.Controls.Add(label13);
             panel4.Controls.Add(label12);
             panel4.Controls.Add(label11);
@@ -548,13 +548,6 @@ namespace _3_GUI_PresentationLayer.View
             panel4.Name = "panel4";
             panel4.Size = new Size(1078, 236);
             panel4.TabIndex = 3;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(915, 153);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(146, 23);
-            textBox1.TabIndex = 21;
             // 
             // btnTenLaptop
             // 
@@ -715,178 +708,6 @@ namespace _3_GUI_PresentationLayer.View
             btnHangSanXuat.UseVisualStyleBackColor = false;
             btnHangSanXuat.Click += btnHangSanXuat_Click;
             // 
-            // comboBoxCustom6
-            // 
-            comboBoxCustom6.BackColor = Color.White;
-            comboBoxCustom6.BorderColor = Color.MediumSlateBlue;
-            comboBoxCustom6.BorderSize = 1;
-            comboBoxCustom6.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxCustom6.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom6.ForeColor = Color.Black;
-            comboBoxCustom6.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom6.ListBackColor = Color.White;
-            comboBoxCustom6.ListTextColor = Color.Black;
-            comboBoxCustom6.Location = new Point(915, 35);
-            comboBoxCustom6.MinimumSize = new Size(150, 30);
-            comboBoxCustom6.Name = "comboBoxCustom6";
-            comboBoxCustom6.Padding = new Padding(1);
-            comboBoxCustom6.Size = new Size(150, 30);
-            comboBoxCustom6.TabIndex = 19;
-            comboBoxCustom6.Texts = "";
-            // 
-            // comboBoxCustom5
-            // 
-            comboBoxCustom5.BackColor = Color.White;
-            comboBoxCustom5.BorderColor = Color.MediumSlateBlue;
-            comboBoxCustom5.BorderSize = 1;
-            comboBoxCustom5.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxCustom5.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom5.ForeColor = Color.Black;
-            comboBoxCustom5.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom5.ListBackColor = Color.White;
-            comboBoxCustom5.ListTextColor = Color.Black;
-            comboBoxCustom5.Location = new Point(699, 35);
-            comboBoxCustom5.MinimumSize = new Size(150, 30);
-            comboBoxCustom5.Name = "comboBoxCustom5";
-            comboBoxCustom5.Padding = new Padding(1);
-            comboBoxCustom5.Size = new Size(150, 30);
-            comboBoxCustom5.TabIndex = 19;
-            comboBoxCustom5.Texts = "";
-            // 
-            // comboBoxCustom4
-            // 
-            comboBoxCustom4.BackColor = Color.White;
-            comboBoxCustom4.BorderColor = Color.MediumSlateBlue;
-            comboBoxCustom4.BorderSize = 1;
-            comboBoxCustom4.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxCustom4.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom4.ForeColor = Color.Black;
-            comboBoxCustom4.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom4.ListBackColor = Color.White;
-            comboBoxCustom4.ListTextColor = Color.Black;
-            comboBoxCustom4.Location = new Point(456, 35);
-            comboBoxCustom4.MinimumSize = new Size(150, 30);
-            comboBoxCustom4.Name = "comboBoxCustom4";
-            comboBoxCustom4.Padding = new Padding(1);
-            comboBoxCustom4.Size = new Size(150, 30);
-            comboBoxCustom4.TabIndex = 19;
-            comboBoxCustom4.Texts = "";
-            // 
-            // comboBoxCustom3
-            // 
-            comboBoxCustom3.BackColor = Color.White;
-            comboBoxCustom3.BorderColor = Color.MediumSlateBlue;
-            comboBoxCustom3.BorderSize = 1;
-            comboBoxCustom3.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxCustom3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom3.ForeColor = Color.Black;
-            comboBoxCustom3.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom3.ListBackColor = Color.White;
-            comboBoxCustom3.ListTextColor = Color.Black;
-            comboBoxCustom3.Location = new Point(235, 34);
-            comboBoxCustom3.MinimumSize = new Size(150, 30);
-            comboBoxCustom3.Name = "comboBoxCustom3";
-            comboBoxCustom3.Padding = new Padding(1);
-            comboBoxCustom3.Size = new Size(150, 30);
-            comboBoxCustom3.TabIndex = 19;
-            comboBoxCustom3.Texts = "";
-            // 
-            // comboBoxCustom10
-            // 
-            comboBoxCustom10.BackColor = Color.White;
-            comboBoxCustom10.BorderColor = Color.MediumSlateBlue;
-            comboBoxCustom10.BorderSize = 1;
-            comboBoxCustom10.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxCustom10.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom10.ForeColor = Color.Black;
-            comboBoxCustom10.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom10.ListBackColor = Color.White;
-            comboBoxCustom10.ListTextColor = Color.Black;
-            comboBoxCustom10.Location = new Point(699, 150);
-            comboBoxCustom10.MinimumSize = new Size(150, 30);
-            comboBoxCustom10.Name = "comboBoxCustom10";
-            comboBoxCustom10.Padding = new Padding(1);
-            comboBoxCustom10.Size = new Size(150, 30);
-            comboBoxCustom10.TabIndex = 18;
-            comboBoxCustom10.Texts = "";
-            // 
-            // comboBoxCustom9
-            // 
-            comboBoxCustom9.BackColor = Color.White;
-            comboBoxCustom9.BorderColor = Color.MediumSlateBlue;
-            comboBoxCustom9.BorderSize = 1;
-            comboBoxCustom9.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxCustom9.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom9.ForeColor = Color.Black;
-            comboBoxCustom9.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom9.ListBackColor = Color.White;
-            comboBoxCustom9.ListTextColor = Color.Black;
-            comboBoxCustom9.Location = new Point(456, 150);
-            comboBoxCustom9.MinimumSize = new Size(150, 30);
-            comboBoxCustom9.Name = "comboBoxCustom9";
-            comboBoxCustom9.Padding = new Padding(1);
-            comboBoxCustom9.Size = new Size(150, 30);
-            comboBoxCustom9.TabIndex = 18;
-            comboBoxCustom9.Texts = "";
-            // 
-            // comboBoxCustom8
-            // 
-            comboBoxCustom8.BackColor = Color.White;
-            comboBoxCustom8.BorderColor = Color.MediumSlateBlue;
-            comboBoxCustom8.BorderSize = 1;
-            comboBoxCustom8.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxCustom8.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom8.ForeColor = Color.Black;
-            comboBoxCustom8.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom8.ListBackColor = Color.White;
-            comboBoxCustom8.ListTextColor = Color.Black;
-            comboBoxCustom8.Location = new Point(235, 150);
-            comboBoxCustom8.MinimumSize = new Size(150, 30);
-            comboBoxCustom8.Name = "comboBoxCustom8";
-            comboBoxCustom8.Padding = new Padding(1);
-            comboBoxCustom8.Size = new Size(150, 30);
-            comboBoxCustom8.TabIndex = 18;
-            comboBoxCustom8.Texts = "";
-            // 
-            // comboBoxCustom7
-            // 
-            comboBoxCustom7.BackColor = Color.White;
-            comboBoxCustom7.BorderColor = Color.MediumSlateBlue;
-            comboBoxCustom7.BorderSize = 1;
-            comboBoxCustom7.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxCustom7.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom7.ForeColor = Color.Black;
-            comboBoxCustom7.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom7.ListBackColor = Color.White;
-            comboBoxCustom7.ListTextColor = Color.Black;
-            comboBoxCustom7.Location = new Point(17, 150);
-            comboBoxCustom7.MinimumSize = new Size(150, 30);
-            comboBoxCustom7.Name = "comboBoxCustom7";
-            comboBoxCustom7.Padding = new Padding(1);
-            comboBoxCustom7.Size = new Size(150, 30);
-            comboBoxCustom7.TabIndex = 18;
-            comboBoxCustom7.Texts = "";
-            // 
-            // comboBoxCustom2
-            // 
-            comboBoxCustom2.BackColor = Color.White;
-            comboBoxCustom2.BorderColor = Color.MediumSlateBlue;
-            comboBoxCustom2.BorderSize = 1;
-            comboBoxCustom2.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxCustom2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom2.ForeColor = Color.Black;
-            comboBoxCustom2.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom2.Items.AddRange(new object[] { "adad", "qưeqwe", "adqwe", "qưeqw" });
-            comboBoxCustom2.ListBackColor = Color.White;
-            comboBoxCustom2.ListTextColor = Color.Black;
-            comboBoxCustom2.Location = new Point(17, 33);
-            comboBoxCustom2.MinimumSize = new Size(150, 30);
-            comboBoxCustom2.Name = "comboBoxCustom2";
-            comboBoxCustom2.Padding = new Padding(1);
-            comboBoxCustom2.Size = new Size(150, 30);
-            comboBoxCustom2.TabIndex = 18;
-            comboBoxCustom2.Texts = "";
-            // 
             // label13
             // 
             label13.AutoSize = true;
@@ -1008,6 +829,85 @@ namespace _3_GUI_PresentationLayer.View
             panel6.Size = new Size(1521, 647);
             panel6.TabIndex = 0;
             // 
+            // cbbHangSanXuat
+            // 
+            cbbHangSanXuat.FormattingEnabled = true;
+            cbbHangSanXuat.Location = new Point(17, 35);
+            cbbHangSanXuat.Name = "cbbHangSanXuat";
+            cbbHangSanXuat.Size = new Size(150, 23);
+            cbbHangSanXuat.TabIndex = 22;
+            // 
+            // cbbDong
+            // 
+            cbbDong.FormattingEnabled = true;
+            cbbDong.Location = new Point(235, 35);
+            cbbDong.Name = "cbbDong";
+            cbbDong.Size = new Size(150, 23);
+            cbbDong.TabIndex = 23;
+            // 
+            // cbbNhaCungCap
+            // 
+            cbbNhaCungCap.FormattingEnabled = true;
+            cbbNhaCungCap.Location = new Point(456, 35);
+            cbbNhaCungCap.Name = "cbbNhaCungCap";
+            cbbNhaCungCap.Size = new Size(150, 23);
+            cbbNhaCungCap.TabIndex = 24;
+            // 
+            // cbbCpu
+            // 
+            cbbCpu.FormattingEnabled = true;
+            cbbCpu.Location = new Point(699, 35);
+            cbbCpu.Name = "cbbCpu";
+            cbbCpu.Size = new Size(150, 23);
+            cbbCpu.TabIndex = 25;
+            // 
+            // cbbVga
+            // 
+            cbbVga.FormattingEnabled = true;
+            cbbVga.Location = new Point(915, 35);
+            cbbVga.Name = "cbbVga";
+            cbbVga.Size = new Size(150, 23);
+            cbbVga.TabIndex = 26;
+            // 
+            // cbbRam
+            // 
+            cbbRam.FormattingEnabled = true;
+            cbbRam.Location = new Point(17, 149);
+            cbbRam.Name = "cbbRam";
+            cbbRam.Size = new Size(150, 23);
+            cbbRam.TabIndex = 27;
+            // 
+            // cbbOCung
+            // 
+            cbbOCung.FormattingEnabled = true;
+            cbbOCung.Location = new Point(235, 149);
+            cbbOCung.Name = "cbbOCung";
+            cbbOCung.Size = new Size(150, 23);
+            cbbOCung.TabIndex = 28;
+            // 
+            // cbbManHinh
+            // 
+            cbbManHinh.FormattingEnabled = true;
+            cbbManHinh.Location = new Point(456, 149);
+            cbbManHinh.Name = "cbbManHinh";
+            cbbManHinh.Size = new Size(150, 23);
+            cbbManHinh.TabIndex = 29;
+            // 
+            // cbbMauSac
+            // 
+            cbbMauSac.FormattingEnabled = true;
+            cbbMauSac.Location = new Point(699, 149);
+            cbbMauSac.Name = "cbbMauSac";
+            cbbMauSac.Size = new Size(150, 23);
+            cbbMauSac.TabIndex = 30;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(915, 149);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(150, 23);
+            textBox1.TabIndex = 31;
+            // 
             // FrmLaptop
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1065,13 +965,7 @@ namespace _3_GUI_PresentationLayer.View
         private Label label12;
         private Label label11;
         private Label label10;
-        private CustomControl.ComboBoxCustom comboBoxCustom2;
         private FontAwesome.Sharp.IconButton btnHangSanXuat;
-        private CustomControl.ComboBoxCustom comboBoxCustom6;
-        private CustomControl.ComboBoxCustom comboBoxCustom5;
-        private CustomControl.ComboBoxCustom comboBoxCustom4;
-        private CustomControl.ComboBoxCustom comboBoxCustom3;
-        private CustomControl.ComboBoxCustom comboBoxCustom7;
         private Label label14;
         private FontAwesome.Sharp.IconButton btnTenLaptop;
         private FontAwesome.Sharp.IconButton btnMauSac;
@@ -1082,9 +976,6 @@ namespace _3_GUI_PresentationLayer.View
         private FontAwesome.Sharp.IconButton btnCpu;
         private FontAwesome.Sharp.IconButton btnNhaCungCap;
         private FontAwesome.Sharp.IconButton btnDongLaptop;
-        private CustomControl.ComboBoxCustom comboBoxCustom10;
-        private CustomControl.ComboBoxCustom comboBoxCustom9;
-        private CustomControl.ComboBoxCustom comboBoxCustom8;
         private Label label18;
         private Label label17;
         private Label label16;
@@ -1096,5 +987,14 @@ namespace _3_GUI_PresentationLayer.View
         private CustomControl.TextBoxCustom2_0 textBoxCustom2_04;
         private FontAwesome.Sharp.IconButton iconButton1;
         private TextBox textBox1;
+        private ComboBox cbbMauSac;
+        private ComboBox cbbManHinh;
+        private ComboBox cbbOCung;
+        private ComboBox cbbRam;
+        private ComboBox cbbVga;
+        private ComboBox cbbCpu;
+        private ComboBox cbbNhaCungCap;
+        private ComboBox cbbDong;
+        private ComboBox cbbHangSanXuat;
     }
 }
