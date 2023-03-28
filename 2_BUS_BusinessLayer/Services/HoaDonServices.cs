@@ -37,7 +37,9 @@ namespace _2_BUS_BusinessLayer.Services
             _lstHoaDon = (from x in _DALhoaDon.GetAllHoaDon()
                      select new HoaDon
                      {
-                         Id= x. Id ,
+                          Id= x. Id ,
+                         IdNhanVien=  x. IdNhanVien,
+                         IdKhachHang=  x.IdKhachHang,
                          Ma= x.Ma,
                          HinhThucTT=  x.HinhThucTT,
                          NgayTao =  x.NgayTao,
@@ -47,7 +49,7 @@ namespace _2_BUS_BusinessLayer.Services
                          GhiChu=  x.GhiChu,
                          TongTien =  x.TongTien
                      }).ToList();
-            return _lstHoaDon;
+            return _lstHD;
         }
 
         public bool Sua(HoaDon hoaDon)
