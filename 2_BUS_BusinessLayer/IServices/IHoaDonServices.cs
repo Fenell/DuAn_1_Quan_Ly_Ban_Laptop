@@ -11,6 +11,9 @@ namespace _2_BUS_BusinessLayer.IServices
     {
         bool Add(HoaDon hoaDon);
         bool Sua(HoaDon hoaDon);
-        List<HoaDon> GetAll();
+        List<HoaDon> GetAll(); 
+        
+
+
     }
 }

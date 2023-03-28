@@ -22,6 +22,19 @@ namespace _3_GUI_PresentationLayer.View
 
         }
 
-       
+        private void textBoxCustom6_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmNhanVien_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
