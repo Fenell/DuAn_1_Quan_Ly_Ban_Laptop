@@ -35,11 +35,6 @@ namespace _1_DAL_DataAccessLayer.Models
         public NhaCungCap? NhaCungCap { get; set; }
         public Cpu? Cpu { get; set; }
         public Vga? Vga { get; set; }
-        public Ram? Ram { get; set; }
-        public ManHinh? ManHinh { get; set; }
-        public MauSac? MauSac { get; set; }
-        public OCung? OCung { get; set; }
-        public SerialLaptop? SerialLaptop { get; set; }
         public KhuyenMai? KhuyenMai{ get; set; }
         public Ram? Ram { get; set; }
         public ManHinh? ManHinh { get; set; }
