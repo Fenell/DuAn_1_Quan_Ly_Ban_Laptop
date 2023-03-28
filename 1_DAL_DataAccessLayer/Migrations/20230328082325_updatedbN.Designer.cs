@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _1_DAL_DataAccessLayer.Context;
 
@@ -11,9 +12,10 @@ using _1_DAL_DataAccessLayer.Context;
 namespace _1_DAL_DataAccessLayer.Migrations
 {
     [DbContext(typeof(QlBanLaptopContext))]
-    partial class QlBanLaptopContextModelSnapshot : ModelSnapshot
+    [Migration("20230328082325_updatedbN")]
+    partial class updatedbN
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,7 +32,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.Property<decimal>("DonGia")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("decimal(18,0)")
+                        .HasColumnType("decimal(18,4)")
                         .HasDefaultValue(0m);
 
                     b.Property<Guid>("IdHoaDon")
@@ -42,10 +44,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Property<Guid?>("IdLinhKien")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Serial")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("SoLuong")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
@@ -53,7 +51,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.Property<decimal>("ThanhTien")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("decimal(18,0)")
+                        .HasColumnType("decimal(18,4)")
                         .HasDefaultValue(0m);
 
                     b.HasKey("Id");
@@ -61,6 +59,8 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.HasIndex("IdHoaDon");
 
                     b.HasIndex("IdLaptop");
+
+                    b.HasIndex("IdLinhKien");
 
                     b.ToTable("ChiTietHoaDon", (string)null);
                 });
@@ -133,6 +133,27 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.ToTable("HangLaptop", (string)null);
                 });
 
+            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.HangLinhKien", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Ma")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("Ten")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("HangLinhKien", (string)null);
+                });
+
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.HoaDon", b =>
                 {
                     b.Property<Guid>("Id")
@@ -144,12 +165,12 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("GhiChu")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("HinhThucTT")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("IdKhachHang")
                         .HasColumnType("uniqueidentifier");
@@ -170,7 +191,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.Property<decimal>("TongTien")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("decimal(18,0)")
+                        .HasColumnType("decimal(18,4)")
                         .HasDefaultValue(0m);
 
                     b.Property<int>("TrangThai")
@@ -226,7 +247,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("GiaTri")
-                        .HasColumnType("decimal(18,0)");
+                        .HasColumnType("decimal(18,4)");
 
                     b.Property<string>("LoaiKhuyenMai")
                         .IsRequired()
@@ -257,8 +278,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.Laptop", b =>
-<<<<<<< HEAD
-=======
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -403,216 +422,31 @@ namespace _1_DAL_DataAccessLayer.Migrations
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.LoaiLinhKien", b =>
->>>>>>> Update db lần thứ n+1
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("GiaBan")
-                        .HasColumnType("decimal(18,0)");
-
-                    b.Property<decimal>("GiaNhap")
-                        .HasColumnType("decimal(18,0)");
-
-                    b.Property<byte[]>("HinhAnh")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<Guid>("IdCpu")
+                    b.Property<Guid>("IdHangLinhKien")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("IdDongLaptop")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdHangLaptop")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdKhuyenMai")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdManHinh")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdMauSac")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdNhaCungCap")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdOCung")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdRam")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdVga")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Mota")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("NamBh")
-                        .HasColumnType("int");
+                    b.Property<string>("Ma")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("Ten")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<bool?>("TrangThai")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(true);
-
-                    b.Property<decimal>("TrongLuong")
-                        .HasColumnType("decimal(18,0)");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("IdCpu");
+                    b.HasIndex("IdHangLinhKien");
 
-                    b.HasIndex("IdDongLaptop");
-
-                    b.HasIndex("IdHangLaptop");
-
-                    b.HasIndex("IdKhuyenMai");
-
-                    b.HasIndex("IdManHinh");
-
-                    b.HasIndex("IdMauSac");
-
-                    b.HasIndex("IdNhaCungCap");
-
-                    b.HasIndex("IdOCung");
-
-                    b.HasIndex("IdRam");
-
-                    b.HasIndex("IdVga");
-
-                    b.ToTable("Laptop", (string)null);
+                    b.ToTable("LoaiLinhKien", (string)null);
                 });
 
-<<<<<<< HEAD
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.LoaiLinhKien", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<decimal>("GiaBan")
-                        .HasColumnType("decimal(18,0)");
-
-                    b.Property<decimal>("GiaNhap")
-                        .HasColumnType("decimal(18,0)");
-
-                    b.Property<byte[]>("HinhAnh")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<Guid>("IdCpu")
-                        .HasColumnType("uniqueidentifier");
-
-<<<<<<< HEAD
-                    b.Property<Guid>("IdDongLaptop")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdHangLaptop")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdKhuyenMai")
-                        .HasColumnType("uniqueidentifier");
-
-<<<<<<< HEAD
-                    b.Property<Guid>("IdManHinh")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdMauSac")
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> chien update form laptop + khuyenmai
-                    b.Property<Guid?>("IdKhuyenMai")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdLoaiLinhKien")
->>>>>>> Update db lần thứ n+1
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdNhaCungCap")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdOCung")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdRam")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdVga")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Mota")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("NamBh")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Ten")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-<<<<<<< HEAD
-=======
-
-                    b.Property<int>("TonKho")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasDefaultValue(0);
->>>>>>> Chien Commit
-
-                    b.Property<bool?>("TrangThai")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(true);
-
-                    b.Property<decimal>("TrongLuong")
-                        .HasColumnType("decimal(18,0)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IdCpu");
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    b.HasIndex("IdDongLaptop");
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> chien update form laptop + khuyenmai
-                    b.HasIndex("IdKhuyenMai");
-
-                    b.HasIndex("IdLoaiLinhKien");
->>>>>>> Update db lần thứ n+1
-
-                    b.HasIndex("IdHangLaptop");
-
-                    b.HasIndex("IdKhuyenMai");
-
-                    b.HasIndex("IdManHinh");
-
-                    b.HasIndex("IdMauSac");
-
-                    b.HasIndex("IdNhaCungCap");
-
-                    b.HasIndex("IdOCung");
-
-                    b.HasIndex("IdRam");
-
-                    b.HasIndex("IdVga");
-
-                    b.ToTable("Laptop", (string)null);
-                });
-
-=======
->>>>>>> Update FrmLaptop 99,99999%
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.ManHinh", b =>
                 {
                     b.Property<Guid>("Id")
@@ -812,44 +646,19 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.HasKey("Id");
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    b.HasIndex("IdSanPhamLaptop");
-=======
-                    b.HasIndex("IdLaptop");
->>>>>>> Update FrmLaptop 99,99999%
-=======
-                    b.HasIndex("IdLaptop");
-=======
                     b.HasIndex("IdLaptop")
                         .IsUnique();
->>>>>>> Update db lần thứ n+1
->>>>>>> Update db lần thứ n+1
 
                     b.ToTable("SerialLaptop", (string)null);
                 });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> update chức năng nhân viên (Thiếu tìm kiếm)
-=======
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.SerialLinhKien", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-<<<<<<< HEAD
-<<<<<<< HEAD
                     b.Property<Guid>("IdLinhKien")
-=======
-                    b.Property<Guid>("IdSanPhamLinhKien")
->>>>>>> update chức năng nhân viên (Thiếu tìm kiếm)
-=======
-                    b.Property<Guid>("IdLinhKien")
->>>>>>> Update db lần thứ n+1
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Serial")
@@ -862,28 +671,12 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.HasKey("Id");
 
-<<<<<<< HEAD
-<<<<<<< HEAD
                     b.HasIndex("IdLinhKien")
                         .IsUnique();
-=======
-                    b.HasIndex("IdSanPhamLinhKien");
->>>>>>> update chức năng nhân viên (Thiếu tìm kiếm)
-=======
-                    b.HasIndex("IdLinhKien")
-                        .IsUnique();
->>>>>>> Update db lần thứ n+1
 
                     b.ToTable("SerialLinhKien", (string)null);
                 });
 
-<<<<<<< HEAD
->>>>>>> ChienCommit db
-=======
->>>>>>> Update FrmLaptop 99,99999%
-=======
->>>>>>> update chức năng nhân viên (Thiếu tìm kiếm)
->>>>>>> update chức năng nhân viên (Thiếu tìm kiếm)
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.Vga", b =>
                 {
                     b.Property<Guid>("Id")
@@ -917,50 +710,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .WithMany("ChiTietHoaDons")
                         .HasForeignKey("IdLaptop");
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    b.HasOne("_1_DAL_DataAccessLayer.Models.SanPhamLinhKien", "LinhKien")
-                        .WithMany("ChiTietHoaDons")
-                        .HasForeignKey("IdLinhKien");
-
-                    b.Navigation("HoaDon");
-
-                    b.Navigation("Laptop");
-                });
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.ChiTietKhuyenMai", b =>
-                {
-                    b.HasOne("_1_DAL_DataAccessLayer.Models.KhuyenMai", "KhuyenMai")
-                        .WithMany("ChiTietKhuyenMais")
-                        .HasForeignKey("IdKhuyenMai")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("_1_DAL_DataAccessLayer.Models.SanPhamLaptop", "Laptop")
-                        .WithMany("ChiTietKhuyenMais")
-                        .HasForeignKey("IdLaptop");
-
-                    b.HasOne("_1_DAL_DataAccessLayer.Models.SanPhamLinhKien", "LinhKien")
-                        .WithMany("ChiTietKhuyenMais")
-                        .HasForeignKey("IdLinhKien");
-
-                    b.Navigation("KhuyenMai");
-
-                    b.Navigation("Laptop");
-
-                    b.Navigation("LinhKien");
-=======
-                    b.Navigation("HoaDon");
-
-                    b.Navigation("Laptop");
->>>>>>> Update FrmLaptop 99,99999%
-=======
-                    b.Navigation("HoaDon");
-
-                    b.Navigation("Laptop");
-=======
                     b.HasOne("_1_DAL_DataAccessLayer.Models.LinhKien", "LinhKien")
                         .WithMany("ChiTietHoaDons")
                         .HasForeignKey("IdLinhKien");
@@ -970,14 +719,8 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Navigation("Laptop");
 
                     b.Navigation("LinhKien");
->>>>>>> Update db lần thứ n+1
->>>>>>> Update db lần thứ n+1
                 });
 
-=======
->>>>>>> 59a63d0 (Update db lần thứ n+1)
-=======
->>>>>>> chien update form laptop + khuyenmai
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.DongLaptop", b =>
                 {
                     b.HasOne("_1_DAL_DataAccessLayer.Models.HangLaptop", "HangLaptop")
@@ -1008,25 +751,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Navigation("NhanVien");
                 });
 
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.LoaiLinhKien", b =>
-                {
-                    b.HasOne("_1_DAL_DataAccessLayer.Models.HangLinhKien", "HangLinhKien")
-                        .WithMany("LoaiLinhKiens")
-                        .HasForeignKey("IdHangLinhKien")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("HangLinhKien");
-                });
-
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.NhanVien", b =>
-                {
-                    b.HasOne("_1_DAL_DataAccessLayer.Models.NhanVien", null)
-                        .WithMany("NhanViens")
-                        .HasForeignKey("NhanVienId");
-                });
-
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.SanPhamLaptop", b =>
+            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.Laptop", b =>
                 {
                     b.HasOne("_1_DAL_DataAccessLayer.Models.Cpu", "Cpu")
                         .WithMany("Laptops")
@@ -1105,24 +830,8 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Navigation("Vga");
                 });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.SanPhamLinhKien", b =>
-                {
-<<<<<<< HEAD
-=======
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.NhanVien", b =>
-                {
->>>>>>> Update db lần thứ n+1
-                    b.HasOne("_1_DAL_DataAccessLayer.Models.NhanVien", null)
-                        .WithMany("NhanViens")
-                        .HasForeignKey("NhanVienId");
-=======
-<<<<<<< HEAD
-=======
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.LinhKien", b =>
                 {
->>>>>>> Update db lần thứ n+1
                     b.HasOne("_1_DAL_DataAccessLayer.Models.HangLinhKien", "HangLinhKien")
                         .WithMany("LinhKiens")
                         .HasForeignKey("IdHangLinhKien")
@@ -1152,7 +861,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Navigation("LoaiLinhKien");
 
                     b.Navigation("NhaCungCap");
->>>>>>> Update db lần thứ n+1
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.LoaiLinhKien", b =>
@@ -1166,11 +874,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Navigation("HangLinhKien");
                 });
 
-<<<<<<< HEAD
-=======
->>>>>>> Update FrmLaptop 99,99999%
-=======
->>>>>>> Update db lần thứ n+1
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.NhanVien", b =>
                 {
                     b.HasOne("_1_DAL_DataAccessLayer.Models.NhanVien", null)
@@ -1180,32 +883,13 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.SerialLaptop", b =>
                 {
-<<<<<<< HEAD
-                    b.HasOne("_1_DAL_DataAccessLayer.Models.SanPhamLaptop", "SanPhamLaptop")
-                        .WithMany("SerialLaptops")
-                        .HasForeignKey("IdSanPhamLaptop")
-=======
                     b.HasOne("_1_DAL_DataAccessLayer.Models.Laptop", "Laptop")
-<<<<<<< HEAD
-                        .WithMany("SerialLaptops")
-                        .HasForeignKey("IdLaptop")
-<<<<<<< HEAD
->>>>>>> Update FrmLaptop 99,99999%
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("SanPhamLaptop");
-=======
-=======
                         .WithOne("SerialLaptop")
                         .HasForeignKey("_1_DAL_DataAccessLayer.Models.SerialLaptop", "IdLaptop")
->>>>>>> Update db lần thứ n+1
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Laptop");
-<<<<<<< HEAD
-=======
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.SerialLinhKien", b =>
@@ -1217,24 +901,8 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .IsRequired();
 
                     b.Navigation("LinhKien");
->>>>>>> Update db lần thứ n+1
->>>>>>> Update db lần thứ n+1
                 });
 
-<<<<<<< HEAD
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.SerialLinhKien", b =>
-                {
-                    b.HasOne("_1_DAL_DataAccessLayer.Models.SanPhamLinhKien", "SanPhamLinhKien")
-                        .WithMany("SerialLinhKiens")
-                        .HasForeignKey("IdSanPhamLinhKien")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("SanPhamLinhKien");
-                });
-
-=======
->>>>>>> Update FrmLaptop 99,99999%
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.Cpu", b =>
                 {
                     b.Navigation("Laptops");
@@ -1252,6 +920,13 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Navigation("Laptops");
                 });
 
+            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.HangLinhKien", b =>
+                {
+                    b.Navigation("LinhKiens");
+
+                    b.Navigation("LoaiLinhKiens");
+                });
+
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.HoaDon", b =>
                 {
                     b.Navigation("ChiTietHoaDons");
@@ -1264,11 +939,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.KhuyenMai", b =>
                 {
-<<<<<<< HEAD
-=======
                     b.Navigation("Laptops");
-<<<<<<< HEAD
-=======
 
                     b.Navigation("LinhKiens");
                 });
@@ -1285,49 +956,11 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Navigation("ChiTietHoaDons");
 
                     b.Navigation("SerialLinhKien");
->>>>>>> Update db lần thứ n+1
                 });
 
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.Laptop", b =>
-                {
-                    b.Navigation("ChiTietHoaDons");
-
-<<<<<<< HEAD
-                    b.Navigation("SerialLaptop");
-                });
-
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.LinhKien", b =>
-                {
-                    b.Navigation("ChiTietHoaDons");
-
-                    b.Navigation("SerialLinhKien");
-                });
-
-<<<<<<< HEAD
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.Laptop", b =>
-                {
-                    b.Navigation("ChiTietHoaDons");
-
->>>>>>> Update db lần thứ n+1
-                    b.Navigation("ChiTietKhuyenMais");
-
-                    b.Navigation("SerialLinhKien")
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.Laptop", b =>
-                {
-                    b.Navigation("ChiTietHoaDons");
-
-                    b.Navigation("SerialLaptops");
-=======
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.LoaiLinhKien", b =>
                 {
                     b.Navigation("LinhKiens");
->>>>>>> chien update form laptop + khuyenmai
-=======
-                    b.Navigation("SerialLaptops");
->>>>>>> Update FrmLaptop 99,99999%
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.ManHinh", b =>
@@ -1343,6 +976,8 @@ namespace _1_DAL_DataAccessLayer.Migrations
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.NhaCungCap", b =>
                 {
                     b.Navigation("Laptops");
+
+                    b.Navigation("LinhKiens");
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.NhanVien", b =>

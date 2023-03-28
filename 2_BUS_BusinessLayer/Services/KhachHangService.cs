@@ -1,35 +1,51 @@
-﻿using System;
+﻿using _1_DAL_DataAccessLayer.Models;
+using _1_DAL_DataAccessLayer.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using _1_DAL_DataAccessLayer.IRepositories;
-using _1_DAL_DataAccessLayer.Repositories;
-using _2_BUS_BusinessLayer.IServices;
-using _2_BUS_BusinessLayer.ViewModel;
 
 namespace _2_BUS_BusinessLayer.Services
 {
-    public class KhachHangService:IKhachHangService
+    public class KhachhangService
     {
-        private IKhachHangRepository _khachHangRepository;
+        private KhachHangRepository _khachHangRepository;
 
-        public KhachHangService()
+        public KhachhangService()
         {
-            _khachHangRepository = new KhachHangRepository();
+            _khachHangRepository= new KhachHangRepository();
+
         }
-        public List<KhachHangView> GetLstKhachHang()
+
+        public string AddKhachHang(KhachHang khachHang)
         {
-            var lst = (from a in _khachHangRepository.GetAllKhachHang()
-                select new KhachHangView()
-                {
-                    Id = a.Id,
-                    Ma = a.Ma,
-                    Hoten = a.Hoten,
-                    DiaChi = a.DiaChi,
-                    GioiTinh = a.GioiTinh,
-                    SoDienThoai = a.SoDienThoai,
-                }).ToList();
+            if (_khachHangRepository.AddKhachHang(khachHang))
+            {
+                return "Thêm thành công";
+            }
+            return "Thêm thất bại";
+        }
+
+        public string UpdateKhachHang(KhachHang khachHang)
+        {
+            if (_khachHangRepository.UpdateKhachHang(khachHang))
+            {
+                return "Sửa thành công";
+            }
+            return "Sửa thất bại";
+        }
+
+        public List<KhachHang> GetAllKhachHangs()
+        {
+            return _khachHangRepository.GetAllKhachHang();
+        }
+
+        public List<KhachHang> GetByKhachHangs(string msg)
+        {
+            var lst = _khachHangRepository.GetAllKhachHang().
+                Where(c => c.SoDienThoai.ToLower().Contains(msg.ToLower()) ||
+                               c.Hoten.ToLower().Contains(msg.ToLower())).ToList();
             return lst;
         }
     }
