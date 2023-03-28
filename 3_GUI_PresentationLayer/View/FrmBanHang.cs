@@ -58,7 +58,7 @@ namespace _3_GUI_PresentationLayer.View
             LoadData();
         }
 
-        private void LoadData()
+        private void LoadSanPham()
         {
             _lstCtHoaDonViews = new List<ChiTietHoaDonView>();
             _hoaDon = new HoaDonView();
@@ -633,7 +633,18 @@ namespace _3_GUI_PresentationLayer.View
             cbbSdtKH.Text = "Chọn số điện thoại";
 
 
+            //var seriaWhenClick = dgvSanPham.Rows[e.RowIndex].Cells[2].ToString();
+            //var serial = _serialLaptopService.GetSerialLaptopList().FirstOrDefault(c => c.Serial == seriaWhenClick);
+        }
 
+        private void dgvSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            _serialSelected = Convert.ToString(dgvSanPham.Rows[rowIndex].Cells[3].Value);
+            if (_serialSelected == "")
+            {
+                MessageBox.Show("Bạn chưa chọn serial cho sản phẩm");
+                return;
 
         }
 
@@ -661,6 +672,16 @@ namespace _3_GUI_PresentationLayer.View
                 this.menuStrip.Show(dgvGioHang, e.Location);
                 menuStrip.Show(Cursor.Position);
             }
+
+            ChiTietHoaDonView ctHoaDon = new ChiTietHoaDonView()
+            {
+                Id = Guid.NewGuid(),
+                IdSanPham = _laptop.Id,
+                SoLuong = 1,
+                DonGia = _laptop.GiaBan,
+                TenSanPham = $"{_laptop.Ten}",
+            };
+            _lstCtHoaDonViews.Add(ctHoaDon);
         }
     }
 }
