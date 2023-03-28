@@ -48,7 +48,6 @@
             comboBoxCustom4 = new CustomControl.ComboBoxCustom();
             label3 = new Label();
             comboBoxCustom2 = new CustomControl.ComboBoxCustom();
-            comboBoxCustom3 = new CustomControl.ComboBoxCustom();
             dateTimePickerCustom2 = new CustomControl.DateTimePickerCustom();
             dateTimePickerCustom1 = new CustomControl.DateTimePickerCustom();
             label10 = new Label();
@@ -62,6 +61,11 @@
             label5 = new Label();
             label4 = new Label();
             panel3 = new Panel();
+            radioButtonCustom3 = new CustomControl.RadioButtonCustom();
+            label11 = new Label();
+            comboBoxCustom1 = new CustomControl.ComboBoxCustom();
+            radioButtonCustom4 = new CustomControl.RadioButtonCustom();
+            radioButtonCustom5 = new CustomControl.RadioButtonCustom();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -72,9 +76,10 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(radioButtonCustom5);
+            panel1.Controls.Add(radioButtonCustom4);
             panel1.Controls.Add(iconButton1);
             panel1.Controls.Add(textBoxCustom2_01);
-            panel1.Controls.Add(radioButtonCustom2);
             panel1.Controls.Add(radioButtonCustom1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
@@ -121,14 +126,14 @@
             // 
             radioButtonCustom2.AutoSize = true;
             radioButtonCustom2.CheckedColor = Color.MediumSlateBlue;
-            radioButtonCustom2.Location = new Point(526, 43);
+            radioButtonCustom2.Location = new Point(187, 261);
             radioButtonCustom2.MinimumSize = new Size(0, 21);
             radioButtonCustom2.Name = "radioButtonCustom2";
             radioButtonCustom2.Padding = new Padding(10, 0, 0, 0);
-            radioButtonCustom2.Size = new Size(128, 21);
+            radioButtonCustom2.Size = new Size(72, 21);
             radioButtonCustom2.TabIndex = 52;
             radioButtonCustom2.TabStop = true;
-            radioButtonCustom2.Text = "Đang khuyến mại";
+            radioButtonCustom2.Text = "Laptop";
             radioButtonCustom2.UnCheckedColor = Color.Gray;
             radioButtonCustom2.UseVisualStyleBackColor = true;
             // 
@@ -136,14 +141,14 @@
             // 
             radioButtonCustom1.AutoSize = true;
             radioButtonCustom1.CheckedColor = Color.MediumSlateBlue;
-            radioButtonCustom1.Location = new Point(702, 43);
+            radioButtonCustom1.Location = new Point(653, 40);
             radioButtonCustom1.MinimumSize = new Size(0, 21);
             radioButtonCustom1.Name = "radioButtonCustom1";
             radioButtonCustom1.Padding = new Padding(10, 0, 0, 0);
-            radioButtonCustom1.Size = new Size(119, 21);
+            radioButtonCustom1.Size = new Size(128, 21);
             radioButtonCustom1.TabIndex = 52;
             radioButtonCustom1.TabStop = true;
-            radioButtonCustom1.Text = "Sắp khuyến mại";
+            radioButtonCustom1.Text = "Đang khuyến mại";
             radioButtonCustom1.UnCheckedColor = Color.Gray;
             radioButtonCustom1.UseVisualStyleBackColor = true;
             // 
@@ -182,8 +187,11 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(comboBoxCustom1);
+            panel2.Controls.Add(radioButtonCustom3);
             panel2.Controls.Add(iconButton5);
             panel2.Controls.Add(buttonCustom2);
+            panel2.Controls.Add(radioButtonCustom2);
             panel2.Controls.Add(iconButton8);
             panel2.Controls.Add(textBoxCustom2_04);
             panel2.Controls.Add(buttonCustom1);
@@ -193,9 +201,9 @@
             panel2.Controls.Add(comboBoxCustom4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(comboBoxCustom2);
-            panel2.Controls.Add(comboBoxCustom3);
             panel2.Controls.Add(dateTimePickerCustom2);
             panel2.Controls.Add(dateTimePickerCustom1);
+            panel2.Controls.Add(label11);
             panel2.Controls.Add(label10);
             panel2.Controls.Add(textBoxCustom3);
             panel2.Controls.Add(textBoxCustom1);
@@ -347,7 +355,7 @@
             comboBoxCustom4.IconColor = Color.MediumSlateBlue;
             comboBoxCustom4.ListBackColor = Color.FromArgb(230, 228, 245);
             comboBoxCustom4.ListTextColor = Color.DimGray;
-            comboBoxCustom4.Location = new Point(183, 330);
+            comboBoxCustom4.Location = new Point(183, 295);
             comboBoxCustom4.MinimumSize = new Size(200, 30);
             comboBoxCustom4.Name = "comboBoxCustom4";
             comboBoxCustom4.Padding = new Padding(1);
@@ -386,34 +394,15 @@
             comboBoxCustom2.TabIndex = 5;
             comboBoxCustom2.Texts = "";
             // 
-            // comboBoxCustom3
-            // 
-            comboBoxCustom3.BackColor = Color.White;
-            comboBoxCustom3.BorderColor = Color.MediumSlateBlue;
-            comboBoxCustom3.BorderSize = 1;
-            comboBoxCustom3.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxCustom3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom3.ForeColor = Color.DimGray;
-            comboBoxCustom3.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom3.ListBackColor = Color.FromArgb(230, 228, 245);
-            comboBoxCustom3.ListTextColor = Color.DimGray;
-            comboBoxCustom3.Location = new Point(183, 289);
-            comboBoxCustom3.MinimumSize = new Size(200, 30);
-            comboBoxCustom3.Name = "comboBoxCustom3";
-            comboBoxCustom3.Padding = new Padding(1);
-            comboBoxCustom3.Size = new Size(280, 30);
-            comboBoxCustom3.TabIndex = 17;
-            comboBoxCustom3.Texts = "";
-            // 
             // dateTimePickerCustom2
             // 
             dateTimePickerCustom2.BorderColor = Color.PaleVioletRed;
             dateTimePickerCustom2.BorderSize = 0;
             dateTimePickerCustom2.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerCustom2.Location = new Point(183, 244);
+            dateTimePickerCustom2.Location = new Point(365, 199);
             dateTimePickerCustom2.MinimumSize = new Size(0, 35);
             dateTimePickerCustom2.Name = "dateTimePickerCustom2";
-            dateTimePickerCustom2.Size = new Size(280, 35);
+            dateTimePickerCustom2.Size = new Size(98, 35);
             dateTimePickerCustom2.SkinColor = Color.MediumSlateBlue;
             dateTimePickerCustom2.TabIndex = 16;
             dateTimePickerCustom2.TextColor = Color.White;
@@ -426,7 +415,7 @@
             dateTimePickerCustom1.Location = new Point(183, 199);
             dateTimePickerCustom1.MinimumSize = new Size(0, 35);
             dateTimePickerCustom1.Name = "dateTimePickerCustom1";
-            dateTimePickerCustom1.Size = new Size(280, 35);
+            dateTimePickerCustom1.Size = new Size(98, 35);
             dateTimePickerCustom1.SkinColor = Color.MediumSlateBlue;
             dateTimePickerCustom1.TabIndex = 15;
             dateTimePickerCustom1.TextColor = Color.White;
@@ -436,7 +425,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label10.ForeColor = SystemColors.Highlight;
-            label10.Location = new Point(104, 341);
+            label10.Location = new Point(104, 305);
             label10.Name = "label10";
             label10.Size = new Size(46, 20);
             label10.TabIndex = 14;
@@ -497,7 +486,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = SystemColors.Highlight;
-            label9.Location = new Point(40, 299);
+            label9.Location = new Point(46, 262);
             label9.Name = "label9";
             label9.Size = new Size(110, 20);
             label9.TabIndex = 11;
@@ -508,11 +497,11 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = SystemColors.Highlight;
-            label6.Location = new Point(75, 253);
+            label6.Location = new Point(311, 208);
             label6.Name = "label6";
-            label6.Size = new Size(75, 20);
+            label6.Size = new Size(37, 20);
             label6.TabIndex = 10;
-            label6.Text = "Đến ngày";
+            label6.Text = "Đến";
             // 
             // label7
             // 
@@ -567,6 +556,81 @@
             panel3.Size = new Size(963, 521);
             panel3.TabIndex = 6;
             // 
+            // radioButtonCustom3
+            // 
+            radioButtonCustom3.AutoSize = true;
+            radioButtonCustom3.CheckedColor = Color.MediumSlateBlue;
+            radioButtonCustom3.Location = new Point(343, 261);
+            radioButtonCustom3.MinimumSize = new Size(0, 21);
+            radioButtonCustom3.Name = "radioButtonCustom3";
+            radioButtonCustom3.Padding = new Padding(10, 0, 0, 0);
+            radioButtonCustom3.Size = new Size(83, 21);
+            radioButtonCustom3.TabIndex = 53;
+            radioButtonCustom3.TabStop = true;
+            radioButtonCustom3.Text = "Linh kiện";
+            radioButtonCustom3.UnCheckedColor = Color.Gray;
+            radioButtonCustom3.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.ForeColor = SystemColors.Highlight;
+            label11.Location = new Point(103, 340);
+            label11.Name = "label11";
+            label11.Size = new Size(47, 20);
+            label11.TabIndex = 14;
+            label11.Text = "Dòng";
+            // 
+            // comboBoxCustom1
+            // 
+            comboBoxCustom1.BackColor = Color.White;
+            comboBoxCustom1.BorderColor = Color.MediumSlateBlue;
+            comboBoxCustom1.BorderSize = 1;
+            comboBoxCustom1.DropDownStyle = ComboBoxStyle.DropDown;
+            comboBoxCustom1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxCustom1.ForeColor = Color.DimGray;
+            comboBoxCustom1.IconColor = Color.MediumSlateBlue;
+            comboBoxCustom1.ListBackColor = Color.FromArgb(230, 228, 245);
+            comboBoxCustom1.ListTextColor = Color.DimGray;
+            comboBoxCustom1.Location = new Point(183, 331);
+            comboBoxCustom1.MinimumSize = new Size(200, 30);
+            comboBoxCustom1.Name = "comboBoxCustom1";
+            comboBoxCustom1.Padding = new Padding(1);
+            comboBoxCustom1.Size = new Size(280, 30);
+            comboBoxCustom1.TabIndex = 54;
+            comboBoxCustom1.Texts = "";
+            // 
+            // radioButtonCustom4
+            // 
+            radioButtonCustom4.AutoSize = true;
+            radioButtonCustom4.CheckedColor = Color.MediumSlateBlue;
+            radioButtonCustom4.Location = new Point(512, 40);
+            radioButtonCustom4.MinimumSize = new Size(0, 21);
+            radioButtonCustom4.Name = "radioButtonCustom4";
+            radioButtonCustom4.Padding = new Padding(10, 0, 0, 0);
+            radioButtonCustom4.Size = new Size(119, 21);
+            radioButtonCustom4.TabIndex = 55;
+            radioButtonCustom4.TabStop = true;
+            radioButtonCustom4.Text = "Sắp khuyến mại";
+            radioButtonCustom4.UnCheckedColor = Color.Gray;
+            radioButtonCustom4.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonCustom5
+            // 
+            radioButtonCustom5.AutoSize = true;
+            radioButtonCustom5.CheckedColor = Color.MediumSlateBlue;
+            radioButtonCustom5.Location = new Point(801, 40);
+            radioButtonCustom5.MinimumSize = new Size(0, 21);
+            radioButtonCustom5.Name = "radioButtonCustom5";
+            radioButtonCustom5.Padding = new Padding(10, 0, 0, 0);
+            radioButtonCustom5.Size = new Size(95, 21);
+            radioButtonCustom5.TabIndex = 56;
+            radioButtonCustom5.TabStop = true;
+            radioButtonCustom5.Text = "Đã kết thúc";
+            radioButtonCustom5.UnCheckedColor = Color.Gray;
+            radioButtonCustom5.UseVisualStyleBackColor = true;
+            // 
             // FrmKhuyenMai
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -607,7 +671,6 @@
         private Label label4;
         private DataGridView dataGridView2;
         private CustomControl.ComboBoxCustom comboBoxCustom4;
-        private CustomControl.ComboBoxCustom comboBoxCustom3;
         private CustomControl.DateTimePickerCustom dateTimePickerCustom2;
         private CustomControl.DateTimePickerCustom dateTimePickerCustom1;
         private Label label10;
@@ -624,5 +687,10 @@
         private CustomControl.TextBoxCustom2_0 textBoxCustom2_01;
         private CustomControl.RadioButtonCustom radioButtonCustom2;
         private FontAwesome.Sharp.IconButton iconButton5;
+        private CustomControl.RadioButtonCustom radioButtonCustom5;
+        private CustomControl.RadioButtonCustom radioButtonCustom4;
+        private CustomControl.ComboBoxCustom comboBoxCustom1;
+        private CustomControl.RadioButtonCustom radioButtonCustom3;
+        private Label label11;
     }
 }

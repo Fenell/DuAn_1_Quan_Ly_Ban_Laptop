@@ -27,7 +27,6 @@ namespace _1_DAL_DataAccessLayer.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ChiTietHoaDonConfiguration());
-            modelBuilder.ApplyConfiguration(new ChiTietKhuyenMaiConfiguration());
             modelBuilder.ApplyConfiguration(new CpuConfiguration());
             modelBuilder.ApplyConfiguration(new DongLaptopConfiguration());
             modelBuilder.ApplyConfiguration(new HangLaptopConfiguration());
