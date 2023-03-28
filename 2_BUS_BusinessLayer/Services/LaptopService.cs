@@ -11,7 +11,7 @@ using _2_BUS_BusinessLayer.ViewModel;
 
 namespace _2_BUS_BusinessLayer.Services
 {
-    public class LaptopService: ILaptopService
+    public class LaptopService : ILaptopService
 
     {
         private IHangLapTopRepositories _hangLapTopRepositories;
@@ -24,7 +24,7 @@ namespace _2_BUS_BusinessLayer.Services
         private IMauSacRepository _mauSacRepository;
         private ISerialLaptopRepository _serialLaptopRepository;
         private INhaCungCapRepository _nhaCungCapRepository;
-        private ISanPhamLapTopRepository _sanPhamLapTopRepository;
+        private ILapTopRepository _sanPhamLapTopRepository;
 
         public LaptopService()
         {
@@ -38,7 +38,7 @@ namespace _2_BUS_BusinessLayer.Services
             _mauSacRepository = new MauSacRepositories();
             _serialLaptopRepository = new SerialLaptopRepository();
             _nhaCungCapRepository = new NhaCungCapRepository();
-            _sanPhamLapTopRepository = new SanPhamLapTopRepository();
+            _sanPhamLapTopRepository = new LapTopRepository();
         }
         public string AddLaptop(SanPhamLaptopView obj)
         {
@@ -59,7 +59,6 @@ namespace _2_BUS_BusinessLayer.Services
                 GiaNhap = obj.GiaNhap,
                 GiaBan = obj.GiaBan,
                 NamBh = obj.NamBh,
-                TonKho = obj.SoLuongTon,
                 TrangThai = obj.TrangThai,
                 HinhAnh = obj.Anh
             };
@@ -90,7 +89,6 @@ namespace _2_BUS_BusinessLayer.Services
             laptop.GiaBan = obj.GiaBan;
             laptop.GiaNhap = obj.GiaNhap;
             laptop.NamBh = obj.NamBh;
-            laptop.TonKho = obj.SoLuongTon;
             laptop.HinhAnh = obj.Anh;
 
             if (_sanPhamLapTopRepository.UpdateLapTop(laptop))
@@ -103,7 +101,7 @@ namespace _2_BUS_BusinessLayer.Services
 
         public string UpdateStatusLaptop(Guid id)
         {
-            
+
             if (_sanPhamLapTopRepository.UpdateStatusLaptop(id))
             {
                 return "Chuyển thành công";
@@ -117,53 +115,122 @@ namespace _2_BUS_BusinessLayer.Services
             throw new NotImplementedException();
         }
 
+        public List<Laptop> GetLaptopFromDb()
+        {
+            return _sanPhamLapTopRepository.GetAllLapTop();
+        }
+
         public List<SanPhamLaptopView> GetAllLaptop()
         {
-            var lst = (from a in _sanPhamLapTopRepository.GetAllLapTop()
-                join b in _hangLapTopRepositories.GetAllHangLaptops() on a.IdHangLaptop equals b.Id
-                join c in _dongLapTopRepositories.GetAllDongLaptop() on a.IdDongLaptop equals c.Id
-                join d in _cpuRepositories.GetAllCpu() on a.IdCpu equals d.Id
-                join e in _vgaRepositories.GetAllVga() on a.IdVga equals e.Id
-                join f in _ramRepository.GetAllRam() on a.IdRam equals f.Id
-                join g in _oCungReposittories.GetAllOCungs() on a.IdOCung equals g.Id
-                join h in _mauSacRepository.GetAllMauSac() on a.IdMauSac equals h.Id
-                join i in _manHinhRepositories.GetAllManHinh() on a.IdManHinh equals i.Id
-                join k in _nhaCungCapRepository.GetAllNhaCungCap() on a.IdNhaCungCap equals k.Id
-                join l in _serialLaptopRepository.GetLstSerialLaptopFromDb() on a.Id equals l.IdSanPhamLaptop
-                select new SanPhamLaptopView()
-                {
-                    Id = a.Id,
-                    IdHangLaptop = a.IdHangLaptop,
-                    IdDongLaptop = a.IdDongLaptop,
-                    IdCpu = a.IdCpu,
-                    IdVga = a.IdVga,
-                    IdRam = a.IdRam,
-                    IdOCung = a.IdOCung,
-                    IdMauSac = a.IdMauSac,
-                    IdManHinh = a.IdManHinh,
-                    IdNhaCungCap = a.IdNhaCungCap,
+            #region Demo1
+            //var lst = (from a in _sanPhamLapTopRepository.GetAllLapTop()
+            //           join b in _hangLapTopRepositories.GetAllHangLaptops() on a.IdHangLaptop equals b.Id
+            //           join c in _dongLapTopRepositories.GetAllDongLaptop() on a.IdDongLaptop equals c.Id
+            //           join d in _cpuRepositories.GetAllCpu() on a.IdCpu equals d.Id
+            //           join e in _vgaRepositories.GetAllVga() on a.IdVga equals e.Id
+            //           join f in _ramRepository.GetAllRam() on a.IdRam equals f.Id
+            //           join g in _oCungReposittories.GetAllOCungs() on a.IdOCung equals g.Id
+            //           join h in _mauSacRepository.GetAllMauSac() on a.IdMauSac equals h.Id
+            //           join i in _manHinhRepositories.GetAllManHinh() on a.IdManHinh equals i.Id
+            //           join k in _nhaCungCapRepository.GetAllNhaCungCap() on a.IdNhaCungCap equals k.Id
+            //           join l in _serialLaptopRepository.GetLstSerialLaptopFromDb() on a.Id equals l.IdLaptop
+            //           group a.Ten by new { a, b, c, d, e, f, g, h, i, k, l } into laptop
+            //           select new SanPhamLaptopView()
+            //           {
+            //               // Id = a.Id,
+            //               IdHangLaptop = laptop.Key.b.Id,
+            //               IdDongLaptop = laptop.Key.c.Id,
+            //               IdCpu = laptop.Key.d.Id,
+            //               IdVga = laptop.Key.e.Id,
+            //               IdRam = laptop.Key.f.Id,
+            //               IdOCung = laptop.Key.g.Id,
+            //               IdMauSac = laptop.Key.h.Id,
+            //               IdManHinh = laptop.Key.i.Id,
+            //               IdNhaCungCap = laptop.Key.k.Id,
 
-                    HangLaptop = b.Ten,
-                    DongLaptop = c.Ten,
-                    Ten = a.Ten,
-                    Cpu = d.Ten,
-                    Vga = e.Ten,
-                    Ram = f.Ten,
-                    OCung = g.Ten,
-                    MauSac = h.Ma,
-                    ManHinh = i.Ma,
-                    NhaCungCap = k.Ten,
-                    Mota = a.Mota,
-                    TrongLuong = a.TrongLuong,
-                    GiaBan = a.GiaBan,
-                    GiaNhap = a.GiaNhap,
-                    NamBh = a.NamBh,
-                    SoLuongTon = _serialLaptopRepository.GetLstSerialLaptopFromDb()
-                        .Count(y => y.IdSanPhamLaptop == a.Id),
-                    TrangThai = a.TrangThai,
-                    Anh = a.HinhAnh
-                }).ToList();
-            return lst;
+            //               HangLaptop = laptop.Key.b.Ten,
+            //               DongLaptop = laptop.Key.c.Ten,
+            //               Ten = laptop.Key.a.Ten,
+            //               Cpu = laptop.Key.d.Ten,
+            //               Vga = laptop.Key.e.Ten,
+            //               Ram = laptop.Key.f.Ten,
+            //               OCung = laptop.Key.g.Ten,
+            //               MauSac = laptop.Key.h.Ma,
+            //               ManHinh = laptop.Key.i.Ma,
+            //               NhaCungCap = laptop.Key.k.Ten,
+            //               Mota = laptop.Key.a.Mota,
+            //               TrongLuong = laptop.Key.a.TrongLuong,
+            //               GiaBan = laptop.Key.a.GiaBan,
+            //               GiaNhap = laptop.Key.a.GiaNhap,
+            //               NamBh = laptop.Key.a.NamBh,
+            //               SoLuongTon = laptop.Count(c => c == laptop.Key.),
+            //               //TrangThai = a.TrangThai,
+            //               Anh = laptop.Key.a.HinhAnh
+            //           }).ToList();
+            #endregion
+
+            #region Demo2
+
+            var result = (from sanPham in _sanPhamLapTopRepository.GetAllLapTop()
+              join hangLaptop in _hangLapTopRepositories.GetAllHangLaptops() on sanPham.IdHangLaptop equals hangLaptop.Id
+              join dongLaptop in _dongLapTopRepositories.GetAllDongLaptop() on sanPham.IdDongLaptop equals dongLaptop.Id
+              join cpu in _cpuRepositories.GetAllCpu() on sanPham.IdCpu equals cpu.Id
+              join vga in _vgaRepositories.GetAllVga() on sanPham.IdVga equals vga.Id
+              join ram in _ramRepository.GetAllRam() on sanPham.IdRam equals ram.Id
+              join oCung in _oCungReposittories.GetAllOCungs() on sanPham.IdOCung equals oCung.Id
+              join mauSac in _mauSacRepository.GetAllMauSac() on sanPham.IdMauSac equals mauSac.Id
+              join manHinh in _manHinhRepositories.GetAllManHinh() on sanPham.IdManHinh equals manHinh.Id
+              join nhaCungCap in _nhaCungCapRepository.GetAllNhaCungCap() on sanPham.IdNhaCungCap equals nhaCungCap.Id
+              join serialLaptop in _serialLaptopRepository.GetLstSerialLaptopFromDb() on sanPham.Id equals serialLaptop.IdLaptop
+              group sanPham by new 
+              {
+                  sanPham.Ten,
+                  hangLaptopTen = hangLaptop.Ten, 
+                  dongLaptopTen = dongLaptop.Ten, 
+                  cpuTen = cpu.Ten, 
+                  vgaTen = vga.Ten, 
+                  ramTen = ram.Ten, 
+                  oCungTen = oCung.Ten, 
+                  mauSacMa = mauSac.Ma, 
+                  manHinhMa = manHinh.Ma, 
+                  nhaCungCapTen = nhaCungCap.Ten,
+                  //lstSeri = serialLaptop.Serial
+              } into grp
+              select new SanPhamLaptopView
+              {
+                  IdHangLaptop = grp.First().IdHangLaptop,
+                  IdDongLaptop = grp.First().IdDongLaptop,
+                  IdCpu = grp.First().IdCpu,
+                  IdVga = grp.First().IdVga,
+                  IdRam = grp.First().IdRam,
+                  IdOCung = grp.First().IdOCung,
+                  IdMauSac = grp.First().IdMauSac,
+                  IdManHinh = grp.First().IdManHinh,
+                  IdNhaCungCap = grp.First().IdNhaCungCap,
+
+                  HangLaptop = grp.Key.hangLaptopTen,
+                  DongLaptop = grp.Key.dongLaptopTen,
+                  Ten = $"{grp.Key.dongLaptopTen} {grp.Key.hangLaptopTen} {grp.Key.Ten}",
+                  Cpu = grp.Key.cpuTen,
+                  Vga = grp.Key.vgaTen,
+                  Ram = grp.Key.ramTen,
+                  OCung = grp.Key.oCungTen,
+                  MauSac = grp.Key.mauSacMa,
+                  ManHinh = grp.Key.manHinhMa,
+                  NhaCungCap = grp.Key.nhaCungCapTen,
+                  Mota = grp.First().Mota,
+                  TrongLuong = grp.First().TrongLuong,
+                  GiaBan = grp.First().GiaBan,
+                  GiaNhap = grp.First().GiaNhap,
+                  NamBh = grp.First().NamBh,
+                  SoLuongTon = grp.Count(c=>c.SerialLaptop.TrangThai),
+                  Anh = grp.First().HinhAnh,
+                  
+              }).ToList();
+
+            #endregion
+
+            return result;
         }
     }
 }

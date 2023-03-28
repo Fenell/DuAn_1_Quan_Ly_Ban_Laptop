@@ -15,15 +15,15 @@ namespace _2_BUS_BusinessLayer.Services
     {
         private IHoaDonRepository _hoaDonRepository;
         private IChiTietHoaDonRepository _chiTietHoaDonRepository;
-        private ISanPhamLapTopRepository _lapTopRepository;
-        private ISanPhamLinhKienRepository _linhKienRepository;
+        private ILapTopRepository _lapTopRepository;
+        private ILinhKienRepository _linhKienRepository;
 
         public ChiTietHoaDonService()
         {
             _hoaDonRepository = new HoaDonRepository();
             _chiTietHoaDonRepository = new ChiTietHoaDonRepository();
-            _lapTopRepository = new SanPhamLapTopRepository();
-            _linhKienRepository = new SanPhamLinhKienRepository();
+            _lapTopRepository = new LapTopRepository();
+            _linhKienRepository = new LinhKienRepository();
         }
         public string AddChiTietHoaDon(ChiTietHoaDonView obj)
         {
