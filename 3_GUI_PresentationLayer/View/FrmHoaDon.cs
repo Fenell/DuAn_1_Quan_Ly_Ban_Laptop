@@ -90,17 +90,41 @@ namespace _3_GUI_PresentationLayer.View
 
         public void CheckTrangThai()
         {
-            if (radioButtonCustom1.Checked)
+            if (radioButtonCustom1.Checked )
             {
-                _lst_hoaDon = _Bus_hoaDon.GetAll().Where(o => o.TrangThai = true)
+                _lst_hoaDon = _Bus_hoaDon.GetAll().Where(o => o.TrangThai == 0)
                                        .ToList();
                 ShowHĐ();
             }
-             else  if ((radioButtonCustom2.Checked))
-             {
-                _lst_hoaDon = _Bus_hoaDon.GetAll().Where(o => o.TrangThai = false)
+            else if ((radioButtonCustom2.Checked ))
+            {
+                _lst_hoaDon = _Bus_hoaDon.GetAll().Where(o => o.TrangThai == 1)
                                        .ToList();
                 ShowHĐ();
+            }else if ((radioButtonCustom3.Checked))
+            {
+                _lst_hoaDon = _Bus_hoaDon.GetAll().Where(o => o.TrangThai == 2)
+                                       .ToList();
+                ShowHĐ();
+            }
+        }
+
+        private void bt_theongay_Click(object sender, EventArgs e)
+        {
+            var id = textBoxCustom2_04.Text;
+            dgv_hoaDon.Rows.Clear();
+            dgv_hoaDon.Rows.Clear();
+            var items = _Bus_hoaDon.GetAll().Where(x => x.Id = id);
+            if (items.Any())
+            {
+                foreach (var item in _Bus_hoaDon.GetAll())
+                {
+                    dgv_hoaDon.Rows.Add(item.Id, item.IdNhanVien, item.IdKhachHang, item.Ma, item.HinhThucTT, item.NgayTao, item.NgayThanhToan, item.DiaChiNhanHang, item.GhiChu, item.TongTien);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có hóa đơn nào có Mã hóa đơn tương ứng");
             }
         }
     }

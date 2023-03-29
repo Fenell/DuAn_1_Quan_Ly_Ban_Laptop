@@ -193,12 +193,13 @@
             // 
             // bt_theongay
             // 
-            this.bt_theongay.Location = new System.Drawing.Point(434, 59);
+            this.bt_theongay.Location = new System.Drawing.Point(11, 54);
             this.bt_theongay.Name = "bt_theongay";
             this.bt_theongay.Size = new System.Drawing.Size(75, 23);
             this.bt_theongay.TabIndex = 51;
             this.bt_theongay.Text = "Search";
             this.bt_theongay.UseVisualStyleBackColor = true;
+            this.bt_theongay.Click += new System.EventHandler(this.bt_theongay_Click);
             // 
             // radioButtonCustom3
             // 

@@ -682,8 +682,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.Property<string>("Serial")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TrangThai")
                         .HasColumnType("bit");
@@ -697,7 +696,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .IsUnique();
 >>>>>>> Update db lần thứ n+1
 
-                    b.ToTable("SerialLaptop", (string)null);
+                    b.ToTable("SerialLaptop");
                 });
 
 <<<<<<< HEAD
@@ -713,8 +712,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.Property<string>("Serial")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TrangThai")
                         .HasColumnType("bit");
@@ -724,7 +722,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.HasIndex("IdLinhKien")
                         .IsUnique();
 
-                    b.ToTable("SerialLinhKien", (string)null);
+                    b.ToTable("SerialLinhKien");
                 });
 
 >>>>>>> Update db lần thứ n+1
