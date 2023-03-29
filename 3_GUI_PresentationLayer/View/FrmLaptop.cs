@@ -171,7 +171,7 @@ namespace _3_GUI_PresentationLayer.View
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            SanPhamLaptopView laptop = new SanPhamLaptopView()
+            LaptopView laptop = new LaptopView()
             {
                 Id = Guid.Empty,
                 IdCpu = Guid.Parse(cbbCpu.SelectedValue.ToString()),
