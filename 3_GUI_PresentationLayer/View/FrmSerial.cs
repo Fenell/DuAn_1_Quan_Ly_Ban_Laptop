@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _3_GUI_PresentationLayer.View
 {
-    public partial class FrmLaptop : Form
+    public partial class FrmSerial : Form
     {
-        public FrmLaptop()
+        public FrmSerial()
         {
             InitializeComponent();
         }

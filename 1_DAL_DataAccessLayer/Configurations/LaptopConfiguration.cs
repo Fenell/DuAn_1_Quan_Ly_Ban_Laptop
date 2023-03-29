@@ -19,10 +19,9 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.Property(x => x.GiaBan).HasColumnType("decimal(18,4)").IsRequired();
             builder.Property(x => x.GiaNhap).HasColumnType("decimal(18,4)").IsRequired();
             builder.Property(x => x.NamBh).IsRequired();
-            builder.Property(x => x.TonKho).HasDefaultValue(0);
             builder.Property(x => x.TrangThai).HasDefaultValue(true);
             builder.Property(x => x.TrongLuong).HasColumnType("decimal(18,4)").IsRequired();
-            builder.Property(x => x.Imei).HasMaxLength(15).IsRequired();
+            builder.Property(x => x.Ten).HasMaxLength(50);
 
             //builder.Property(x => x.NhaCungCap).IsRequired();
             //builder.Property(x => x.DongLaptop).IsRequired();
@@ -44,6 +43,10 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.HasOne<MauSac>(x => x.MauSac).WithMany(a => a.Laptops).HasForeignKey(x => x.IdMauSac);
             builder.HasOne<OCung>(x => x.OCung).WithMany(a => a.Laptops).HasForeignKey(x => x.IdOCung);
 
+            builder.HasOne<SerialLaptop>(x => x.SerialLaptop).WithOne(a => a.Laptop)
+                .HasForeignKey<SerialLaptop>(a => a.IdLaptop);
+
+            builder.HasOne<KhuyenMai>(c => c.KhuyenMai).WithMany(a => a.Laptops).HasForeignKey(c => c.IdKhuyenMai);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace _1_DAL_DataAccessLayer.Models
         public string Ten { get; set; }
 
         public Guid IdHangLaptop { get; set; }
-        public HangLaptop HangLaptop { get; set; }
+        public HangLaptop? HangLaptop { get; set; }
 
         public ICollection<Laptop> Laptops { get; set; }
 

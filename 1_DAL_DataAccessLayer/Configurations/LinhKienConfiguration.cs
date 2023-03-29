@@ -16,12 +16,10 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.ToTable("LinhKien");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Ten).HasMaxLength(20).IsRequired();
-            builder.Property(x => x.TonKho).HasDefaultValue(0);
             builder.Property(x => x.GiaBan).HasColumnType("decimal(18,4)").IsRequired();
             builder.Property(x => x.GiaNhap).HasColumnType("decimal(18,4)").IsRequired();
             builder.Property(x=>x.NamBH).IsRequired();
             builder.Property(x => x.TrangThai).HasDefaultValue(true);
-            builder.Property(x => x.Seri).HasMaxLength(15).IsRequired();
 
             //builder.Property(x => x.IdHangLinhKien).IsRequired();
             //builder.Property(x => x.IdLoaiLinhKien).IsRequired();
@@ -33,6 +31,11 @@ namespace _1_DAL_DataAccessLayer.Configurations
                 .HasForeignKey(x => x.IdLoaiLinhKien).OnDelete(DeleteBehavior.Restrict);
             builder.HasOne<NhaCungCap>(x => x.NhaCungCap).WithMany(a => a.LinhKiens)
                 .HasForeignKey(x => x.IdNhaCungCap);
+
+            builder.HasOne<SerialLinhKien>(x => x.SerialLinhKien).WithOne(a => a.LinhKien)
+                .HasForeignKey<SerialLinhKien>(a => a.IdLinhKien);
+
+            builder.HasOne<KhuyenMai>(c => c.KhuyenMai).WithMany(a => a.LinhKiens).HasForeignKey(c => c.IdKhuyenMai);
         }
     }
 }

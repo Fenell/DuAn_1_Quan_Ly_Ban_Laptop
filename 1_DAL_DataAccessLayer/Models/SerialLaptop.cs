@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace _1_DAL_DataAccessLayer.Models
 {
-    public class Ram
+    public class SerialLaptop
     {
         public Guid Id { get; set; }
-        public string Ma { get; set; }
-        public string Ten { get; set; }
-        public int DungLuong { get; set; }
+        public Guid IdLaptop{ get; set; }
+        public string Serial { get; set; }
+        public bool TrangThai{ get; set; }
 
-        public ICollection<Laptop> Laptops { get; set; }
+        public Laptop? Laptop { get; set; }
     }
 }

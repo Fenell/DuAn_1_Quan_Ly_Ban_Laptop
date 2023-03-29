@@ -54,13 +54,12 @@ namespace _1_DAL_DataAccessLayer.Repositories
             {
                 ketqua.Ten = linhKien.Ten;
                 ketqua.MoTaChiTiet = linhKien.MoTaChiTiet;
-                ketqua.TonKho = linhKien.TonKho;
                 ketqua.GiaBan = linhKien.GiaBan;
                 ketqua.GiaNhap = linhKien.GiaNhap;
                 ketqua.TrangThai = linhKien.TrangThai;
                 ketqua.NamBH = linhKien.NamBH;
                 ketqua.HinhAnh = linhKien.HinhAnh;
-                ketqua.Seri = linhKien.Seri;
+               // ketqua.Seri = linhKien.Seri;
                 _lapTopContext.Update(ketqua);
                 _lapTopContext.SaveChanges();
                 return true;

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _3_GUI_PresentationLayer.Utilities
+namespace _2_BUS_BusinessLayer.Services
 {
-    internal class Class1
+    public class LaptopService
     {
     }
 }
