@@ -94,11 +94,13 @@ namespace _3_GUI_PresentationLayer.View
             {
                 _lst_hoaDon = _Bus_hoaDon.GetAll().Where(o => o.TrangThai = true)
                                        .ToList();
+                ShowHĐ();
             }
              else  if ((radioButtonCustom2.Checked))
-            {
+             {
                 _lst_hoaDon = _Bus_hoaDon.GetAll().Where(o => o.TrangThai = false)
                                        .ToList();
+                ShowHĐ();
             }
         }
     }
