@@ -114,7 +114,7 @@ namespace _3_GUI_PresentationLayer.View
             var id = textBoxCustom2_04.Text;
             dgv_hoaDon.Rows.Clear();
             dgv_hoaDon.Rows.Clear();
-            var items = _Bus_hoaDon.GetAll().Where(x => x.Id = id);
+            var items = _Bus_hoaDon.GetAll().Where(x => x.Ma == id);
             if (items.Any())
             {
                 foreach (var item in _Bus_hoaDon.GetAll())
