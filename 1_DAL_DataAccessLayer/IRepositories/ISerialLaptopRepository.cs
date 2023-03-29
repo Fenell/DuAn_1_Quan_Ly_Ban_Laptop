@@ -12,7 +12,7 @@ namespace _1_DAL_DataAccessLayer.IRepositories
     {
         public bool AddSerialLaptop(SerialLaptop obj);
         public bool AddLstSerialLaptop(List<SerialLaptop> lst);
-        public bool UpdateStatusSerial(Guid id);
+        public bool UpdateStatusSerial(string serial);
         public bool UpdateSerialLaptop(SerialLaptop obj);
         public bool DeleteSerialLaptop(Guid Id);
         public List<SerialLaptop> GetLstSerialLaptopFromDb();

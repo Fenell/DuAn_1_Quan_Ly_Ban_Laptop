@@ -55,7 +55,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
                 ketqua.HinhThucTT = hoaDon.HinhThucTT;
                 ketqua.NgayTao = hoaDon.NgayTao;
                 ketqua.NgayThanhToan = hoaDon.NgayThanhToan;
-                ketqua.TrangThai = hoaDon.TrangThai;
+                ketqua.TrangThaiGH = hoaDon.TrangThaiGH;
                 ketqua.DiaChiNhanHang = hoaDon.DiaChiNhanHang;
                 ketqua.GhiChu = hoaDon.GhiChu;
                 ketqua.TongTien = hoaDon.TongTien;

@@ -20,8 +20,10 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.Property(x => x.Ma).HasMaxLength(10);
             builder.Property(x=>x.NgayTao).IsRequired();
             builder.Property(x => x.TongTien).HasDefaultValue(0).HasColumnType("decimal(18,4)");
-            builder.Property(x => x.GhiChu).HasMaxLength(200);
+            builder.Property(x => x.GhiChu);
             builder.Property(x => x.DiaChiNhanHang).HasMaxLength(200);
+            builder.Property(x => x.HinhThucNhanHang).HasMaxLength(50);
+            builder.Property(c=>c.HinhThucTT).HasMaxLength(20);
 
             builder.HasOne<NhanVien>(x => x.NhanVien).WithMany(a => a.HoaDons).HasForeignKey(a => a.IdNhanVien);
             builder.HasOne<KhachHang>(x => x.KhachHang).WithMany(a => a.HoaDons).HasForeignKey(a => a.IdKhachHang);

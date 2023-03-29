@@ -52,20 +52,24 @@ namespace _1_DAL_DataAccessLayer.Repositories
             }
         }
 
-        public bool UpdateStatusSerial(Guid id)
+        public bool UpdateStatusSerial(string serial)
         {
             try
             {
-                var serial = _context.SerialLaptop.FirstOrDefault(x => x.Id == id);
-                if (serial != null)
+                var serialLaptop = _context.SerialLaptop.FirstOrDefault(x => x.Serial == serial);
+                if (serialLaptop != null)
                 {
-                    if (serial.TrangThai)
+                    if (serialLaptop.TrangThai)
                     {
-                        serial.TrangThai = false;
+                        serialLaptop.TrangThai = false;
+                        _context.SerialLaptop.Update(serialLaptop);
+                        _context.SaveChanges();
                         return true;
                     }
 
-                    serial.TrangThai = true;
+                    serialLaptop.TrangThai = true;
+                    _context.SerialLaptop.Update(serialLaptop);
+                    _context.SaveChanges();
                     return true;
                 }
 
@@ -83,7 +87,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
             {
                 var serial = _context.SerialLaptop.FirstOrDefault(c => c.Id == obj.Id);
                 serial.Serial = obj.Serial;
-                _context.Update(serial);
+                _context.SerialLaptop.Update(serial);
                 _context.SaveChanges();
                 return true;
             }
