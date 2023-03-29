@@ -48,6 +48,7 @@ namespace _2_BUS_BusinessLayer.Services
                 Id = obj.Id,
                 IdHangLaptop = obj.IdHangLaptop,
                 IdDongLaptop = obj.IdDongLaptop,
+                IdNhaCungCap = obj.IdNhaCungCap,
                 IdCpu = obj.IdCpu,
                 IdRam = obj.IdRam,
                 IdVga = obj.IdVga,

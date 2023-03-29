@@ -13,6 +13,7 @@ namespace _1_DAL_DataAccessLayer.IRepositories
         bool UpdateLapTop(Laptop lapTop);
         bool UpdateStatusLaptop(Guid id);
         Laptop GetLapTopById(Guid idLapTop);
+        bool UpdateStatusLaptop(Guid id);
         List<Laptop> GetAllLapTop();
     }
 }
