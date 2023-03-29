@@ -39,6 +39,7 @@ namespace _2_BUS_BusinessLayer.Services
             _serialLaptopRepository = new SerialLaptopRepository();
             _nhaCungCapRepository = new NhaCungCapRepository();
             _sanPhamLapTopRepository = new LapTopRepository();
+
         }
         public string AddLaptop(LaptopView obj)
         {
@@ -122,56 +123,9 @@ namespace _2_BUS_BusinessLayer.Services
 
         public List<LaptopView> GetAllLaptop()
         {
-            #region Demo1
-            //var lst = (from a in _sanPhamLapTopRepository.GetAllLapTop()
-            //           join b in _hangLapTopRepositories.GetAllHangLaptops() on a.IdHangLaptop equals b.Id
-            //           join c in _dongLapTopRepositories.GetAllDongLaptop() on a.IdDongLaptop equals c.Id
-            //           join d in _cpuRepositories.GetAllCpu() on a.IdCpu equals d.Id
-            //           join e in _vgaRepositories.GetAllVga() on a.IdVga equals e.Id
-            //           join f in _ramRepository.GetAllRam() on a.IdRam equals f.Id
-            //           join g in _oCungReposittories.GetAllOCungs() on a.IdOCung equals g.Id
-            //           join h in _mauSacRepository.GetAllMauSac() on a.IdMauSac equals h.Id
-            //           join i in _manHinhRepositories.GetAllManHinh() on a.IdManHinh equals i.Id
-            //           join k in _nhaCungCapRepository.GetAllNhaCungCap() on a.IdNhaCungCap equals k.Id
-            //           join l in _serialLaptopRepository.GetLstSerialLaptopFromDb() on a.Id equals l.IdLaptop
-            //           group a.Ten by new { a, b, c, d, e, f, g, h, i, k, l } into laptop
-            //           select new SanPhamLaptopView()
-            //           {
-            //               // Id = a.Id,
-            //               IdHangLaptop = laptop.Key.b.Id,
-            //               IdDongLaptop = laptop.Key.c.Id,
-            //               IdCpu = laptop.Key.d.Id,
-            //               IdVga = laptop.Key.e.Id,
-            //               IdRam = laptop.Key.f.Id,
-            //               IdOCung = laptop.Key.g.Id,
-            //               IdMauSac = laptop.Key.h.Id,
-            //               IdManHinh = laptop.Key.i.Id,
-            //               IdNhaCungCap = laptop.Key.k.Id,
-
-            //               HangLaptop = laptop.Key.b.Ten,
-            //               DongLaptop = laptop.Key.c.Ten,
-            //               Ten = laptop.Key.a.Ten,
-            //               Cpu = laptop.Key.d.Ten,
-            //               Vga = laptop.Key.e.Ten,
-            //               Ram = laptop.Key.f.Ten,
-            //               OCung = laptop.Key.g.Ten,
-            //               MauSac = laptop.Key.h.Ma,
-            //               ManHinh = laptop.Key.i.Ma,
-            //               NhaCungCap = laptop.Key.k.Ten,
-            //               Mota = laptop.Key.a.Mota,
-            //               TrongLuong = laptop.Key.a.TrongLuong,
-            //               GiaBan = laptop.Key.a.GiaBan,
-            //               GiaNhap = laptop.Key.a.GiaNhap,
-            //               NamBh = laptop.Key.a.NamBh,
-            //               SoLuongTon = laptop.Count(c => c == laptop.Key.),
-            //               //TrangThai = a.TrangThai,
-            //               Anh = laptop.Key.a.HinhAnh
-            //           }).ToList();
-            #endregion
-
             #region Demo2
-
-            var result = (from sanPham in _sanPhamLapTopRepository.GetAllLapTop()
+            List<LaptopView> list = new List<LaptopView>();
+            list = (from sanPham in _sanPhamLapTopRepository.GetAllLapTop()
                           join hangLaptop in _hangLapTopRepositories.GetAllHangLaptops() on sanPham.IdHangLaptop equals hangLaptop.Id
                           join dongLaptop in _dongLapTopRepositories.GetAllDongLaptop() on sanPham.IdDongLaptop equals dongLaptop.Id
                           join cpu in _cpuRepositories.GetAllCpu() on sanPham.IdCpu equals cpu.Id
@@ -181,8 +135,7 @@ namespace _2_BUS_BusinessLayer.Services
                           join mauSac in _mauSacRepository.GetAllMauSac() on sanPham.IdMauSac equals mauSac.Id
                           join manHinh in _manHinhRepositories.GetAllManHinh() on sanPham.IdManHinh equals manHinh.Id
                           join nhaCungCap in _nhaCungCapRepository.GetAllNhaCungCap() on sanPham.IdNhaCungCap equals nhaCungCap.Id
-                          join serialLaptop in _serialLaptopRepository.GetLstSerialLaptopFromDb() on sanPham.Id equals serialLaptop.IdLaptop
-                          where serialLaptop.TrangThai
+                          join serialLaptop in _serialLaptopRepository.GetLstSerialLaptopFromDb().Where(c=>c.TrangThai) on sanPham.Id equals serialLaptop.IdLaptop
                           group sanPham by new
                           {
                               sanPham.Ten,
@@ -231,7 +184,7 @@ namespace _2_BUS_BusinessLayer.Services
 
             #endregion
 
-            return result;
+            return list;
         }
     }
 }

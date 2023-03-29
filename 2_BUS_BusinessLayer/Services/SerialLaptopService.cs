@@ -18,6 +18,17 @@ namespace _2_BUS_BusinessLayer.Services
         {
             _serialLaptopRes = new SerialLaptopRepository();
         }
+
+        public string UpdateStatusSerial(string serial)
+        {
+            if (_serialLaptopRes.UpdateStatusSerial(serial))
+            {
+                return "Thanh cong";
+            }
+
+            return "Khong thanh cong";
+        }
+
         public List<SerialLaptop> GetSerialLaptopList()
         {
             return _serialLaptopRes.GetLstSerialLaptopFromDb();

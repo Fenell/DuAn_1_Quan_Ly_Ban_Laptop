@@ -22,7 +22,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
             {
                 if (hoaDon != null)
                 {
-                    hoaDon.Id = Guid.NewGuid();
+                    hoaDon.Id = Guid.Empty;
                     _lapTopContext.Add(hoaDon);
                     _lapTopContext.SaveChanges();
                     return true;
@@ -32,6 +32,35 @@ namespace _1_DAL_DataAccessLayer.Repositories
             catch (Exception)
             {
                 return false;
+            }
+        }
+
+        public bool AddHoaDonThenCtHoaDon(HoaDon hoaDon, List<ChiTietHoaDon> chiTietHDs)
+        {
+            using (var dbContextTransaction  = _lapTopContext.Database.BeginTransaction())
+            {
+                try
+                {
+                    hoaDon.Id = Guid.NewGuid();
+                    _lapTopContext.HoaDons.Add(hoaDon);
+                    _lapTopContext.SaveChanges();
+
+                    foreach (var a in chiTietHDs)
+                    {
+                        a.IdHoaDon = hoaDon.Id;
+                    }
+                    _lapTopContext.ChiTietHoaDons.AddRange(chiTietHDs);
+                    _lapTopContext.SaveChanges();
+
+                    dbContextTransaction.Commit();
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    dbContextTransaction.Rollback();
+                    return false;
+                    throw;
+                }
             }
         }
 
