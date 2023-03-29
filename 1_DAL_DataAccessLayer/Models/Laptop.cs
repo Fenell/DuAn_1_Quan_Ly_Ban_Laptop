@@ -21,6 +21,7 @@ namespace _1_DAL_DataAccessLayer.Models
         public Guid IdMauSac { get; set; }
         public Guid IdOCung { get; set; }
         public Guid? IdKhuyenMai { get; set; }
+        public Guid? IdSerial { get; set; }
         public string? Ten { get; set; }
         public decimal GiaNhap { get; set; }
         public decimal GiaBan { get; set; }
