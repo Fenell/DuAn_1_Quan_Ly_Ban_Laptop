@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace _3_GUI_PresentationLayer.CustomControl
 {
-
+    [DefaultEvent("_TextChanged")]
     public partial class TextBoxCustom2_0 : UserControl
     {
         //Fields
@@ -301,19 +301,19 @@ namespace _3_GUI_PresentationLayer.CustomControl
         }
         #endregion
 
-        [DefaultEvent("_TextChanged")]
-        public partial class RJTextBox : UserControl
-        {
-            //Default Event
-            public event EventHandler _TextChanged;
 
-            //TextBox-> TextChanged event
-            private void textBox1_TextChanged(object sender, EventArgs e)
-            {
-                if (_TextChanged != null)
-                    _TextChanged.Invoke(sender, e);
-            }
+
+        //Default Event
+        public event EventHandler _TextChanged;
+
+        //TextBox-> TextChanged event
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (_TextChanged != null)
+                _TextChanged.Invoke(sender, e);
         }
+
+
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
@@ -349,9 +349,5 @@ namespace _3_GUI_PresentationLayer.CustomControl
             this.OnKeyPress(e);
         }
 
-        internal void Clear()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
