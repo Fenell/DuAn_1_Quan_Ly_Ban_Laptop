@@ -280,12 +280,9 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Property<Guid>("IdHangLaptop")
                         .HasColumnType("uniqueidentifier");
 
-<<<<<<< HEAD
-=======
                     b.Property<Guid?>("IdKhuyenMai")
                         .HasColumnType("uniqueidentifier");
 
->>>>>>> 59a63d0 (Update db lần thứ n+1)
                     b.Property<Guid>("IdManHinh")
                         .HasColumnType("uniqueidentifier");
 
@@ -330,11 +327,8 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.HasIndex("IdHangLaptop");
 
-<<<<<<< HEAD
-=======
                     b.HasIndex("IdKhuyenMai");
 
->>>>>>> 59a63d0 (Update db lần thứ n+1)
                     b.HasIndex("IdManHinh");
 
                     b.HasIndex("IdMauSac");
@@ -378,6 +372,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Property<Guid?>("IdKhuyenMai")
                         .HasColumnType("uniqueidentifier");
 
+<<<<<<< HEAD
                     b.Property<Guid>("IdManHinh")
                         .HasColumnType("uniqueidentifier");
 
@@ -385,10 +380,11 @@ namespace _1_DAL_DataAccessLayer.Migrations
 =======
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> chien update form laptop + khuyenmai
                     b.Property<Guid?>("IdKhuyenMai")
                         .HasColumnType("uniqueidentifier");
 
->>>>>>> 59a63d0 (Update db lần thứ n+1)
                     b.Property<Guid>("IdLoaiLinhKien")
 >>>>>>> Update db lần thứ n+1
                         .HasColumnType("uniqueidentifier");
@@ -436,13 +432,15 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.HasIndex("IdCpu");
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                     b.HasIndex("IdDongLaptop");
 =======
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> chien update form laptop + khuyenmai
                     b.HasIndex("IdKhuyenMai");
 
->>>>>>> 59a63d0 (Update db lần thứ n+1)
                     b.HasIndex("IdLoaiLinhKien");
 >>>>>>> Update db lần thứ n+1
 
@@ -740,6 +738,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.ChiTietKhuyenMai", b =>
                 {
                     b.HasOne("_1_DAL_DataAccessLayer.Models.KhuyenMai", "KhuyenMai")
@@ -765,6 +764,8 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
 =======
 >>>>>>> 59a63d0 (Update db lần thứ n+1)
+=======
+>>>>>>> chien update form laptop + khuyenmai
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.DongLaptop", b =>
                 {
                     b.HasOne("_1_DAL_DataAccessLayer.Models.HangLaptop", "HangLaptop")
@@ -1021,6 +1022,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Navigation("SerialLinhKien");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.Laptop", b =>
                 {
                     b.Navigation("ChiTietHoaDons");
@@ -1037,6 +1039,11 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Navigation("ChiTietHoaDons");
 
                     b.Navigation("SerialLaptops");
+=======
+            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.LoaiLinhKien", b =>
+                {
+                    b.Navigation("LinhKiens");
+>>>>>>> chien update form laptop + khuyenmai
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.ManHinh", b =>

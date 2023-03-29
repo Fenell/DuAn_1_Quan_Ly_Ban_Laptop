@@ -1,6 +1,8 @@
 ﻿using _1_DAL_DataAccessLayer.Models;
 using _2_BUS_BusinessLayer.IServices;
 using _2_BUS_BusinessLayer.Services;
+using _2_BUS_BusinessLayer.ViewModel;
+using _3_GUI_PresentationLayer.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,11 +12,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Resources.ResXFileRef;
 
 namespace _3_GUI_PresentationLayer.View
 {
     public partial class FrmLaptop : Form
     {
+        ILaptopService _lapTopService;
         ICpuServices _cpuServices;
         IVgaServices _vgaServices;
         IMauSacServices _mauSacServices;
@@ -28,6 +32,7 @@ namespace _3_GUI_PresentationLayer.View
         public FrmLaptop()
         {
             InitializeComponent();
+            _lapTopService = new LaptopService();
             _cpuServices = new CpuServices();
             _vgaServices = new VgaServices();
             _mauSacServices = new MauSacServices();
@@ -39,6 +44,8 @@ namespace _3_GUI_PresentationLayer.View
             _dongLaptopServices = new DongLaptopServices();
             _lstCpu = new List<Cpu>();
             Loadcbb();
+            //pcbHinhAnh.BackgroundImage = new Bitmap(@"");
+            LoadDgv();
         }
 
         private void btnCpu_Click(object sender, EventArgs e)
@@ -145,6 +152,62 @@ namespace _3_GUI_PresentationLayer.View
             cbbDong.DisplayMember = "Ten";
             cbbDong.ValueMember = "Id";
             cbbDong.DataSource = _dongLaptopServices.GetAllDongLaptop();
+        }
+        private void LoadDgv()
+        {
+            dgvLaptop.ColumnCount = 6;
+            dgvLaptop.Columns[0].Visible = false;
+            dgvLaptop.Columns[1].Name = "Tên";
+            dgvLaptop.Columns[2].Name = "Số lượng";
+            dgvLaptop.Columns[3].Name = "Giá nhập";
+            dgvLaptop.Columns[4].Name = "Giá bán";
+            dgvLaptop.Columns[5].Name = "Năm bảo hành";
+            dgvLaptop.Rows.Clear();
+            foreach (var x in _lapTopService.GetAllLaptop())
+            {
+                dgvLaptop.Rows.Add(x.Id, $"{x.HangLaptop} {x.DongLaptop} {x.Ten}", x.SoLuongTon, x.GiaBan, x.GiaNhap, x.NamBh);
+            }
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            SanPhamLaptopView laptop = new SanPhamLaptopView()
+            {
+                Id = Guid.Empty,
+                IdCpu = Guid.Parse(cbbCpu.SelectedValue.ToString()),
+                IdVga = Guid.Parse(cbbVga.SelectedValue.ToString()),
+                IdMauSac = Guid.Parse(cbbMauSac.SelectedValue.ToString()),
+                IdOCung = Guid.Parse(cbbOCung.SelectedValue.ToString()),
+                IdRam = Guid.Parse(cbbRam.SelectedValue.ToString()),
+                IdManHinh = Guid.Parse(cbbManHinh.SelectedValue.ToString()),
+                IdNhaCungCap = Guid.Parse(cbbNhaCungCap.SelectedValue.ToString()),
+                IdHangLaptop = Guid.Parse(cbbHangSanXuat.SelectedValue.ToString()),
+                IdDongLaptop = Guid.Parse(cbbDong.SelectedValue.ToString()),
+                Ten = txtTen.Texts,
+                GiaNhap = decimal.Parse(txtGiaNhap.Texts),
+                GiaBan = decimal.Parse(txtGiaBan.Texts),
+                Mota = txtMoTa.Texts,
+                TrongLuong = decimal.Parse(txtTrongLuong.Texts),
+                NamBh = int.Parse(txtNamBh.Texts),
+                TrangThai = true,
+                Anh = Extension.ImageToArrBytes(pcbHinhAnh.Image)
+            };
+            if (MessageBox.Show("Bạn có chắc chắn", "Thêm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                MessageBox.Show(_lapTopService.AddLaptop(laptop));
+            }
+            LoadDgv();
+        }
+        string fileAnh;
+        private void pcbHinhAnh_DoubleClick(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.ShowDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                fileAnh = ofd.FileName;
+                pcbHinhAnh.Image = Image.FromFile(fileAnh);
+            }
         }
     }
 }
