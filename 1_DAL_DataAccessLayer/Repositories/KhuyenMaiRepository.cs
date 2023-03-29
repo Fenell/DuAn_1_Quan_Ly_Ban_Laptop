@@ -37,6 +37,27 @@ namespace _1_DAL_DataAccessLayer.Repositories
             }
         }
 
+        public bool ChuyenTrangThai(KhuyenMai khuyenMai)
+        {
+                var ketqua = _lapTopContext.KhuyenMais.FirstOrDefault(c => c.Id == khuyenMai.Id);
+                if (ketqua.TrangThai == 0 && ketqua.NgayKetThuc < DateTime.Now)
+                {
+                    ketqua.TrangThai = 2;
+                    _lapTopContext.Update(ketqua);
+                    _lapTopContext.SaveChanges();
+                    return true;
+                }
+
+                if (ketqua.TrangThai == 1 && ketqua.NgayBatDau == DateTime.Now)
+                {
+                    ketqua.TrangThai = 0;
+                    _lapTopContext.Update(ketqua);
+                    _lapTopContext.SaveChanges();
+                    return true;
+                }
+                return true;
+        }
+
         public List<KhuyenMai> GetAllKhuyenMai()
         {
             return _lapTopContext.KhuyenMais.ToList();

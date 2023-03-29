@@ -11,6 +11,7 @@ namespace _1_DAL_DataAccessLayer.IRepositories
     {
         bool AddKhuyenMai(KhuyenMai khuyenMai);
         bool UpdateKhuyenMai(KhuyenMai khuyenMai);
+        bool ChuyenTrangThai(KhuyenMai khuyenMai);
         KhuyenMai GetKhuyenMaiById(Guid idKhuyenMai);
         List<KhuyenMai> GetAllKhuyenMai();
     }
