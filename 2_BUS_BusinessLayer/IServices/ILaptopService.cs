@@ -13,8 +13,9 @@ namespace _2_BUS_BusinessLayer.IServices
     {
         public string AddLaptop( LaptopView obj);
         public string UpdateLaptop(LaptopView obj);
-        public string UpdateStatusLaptop(Guid id);
+        public string UpdateStatusLaptop(List<Laptop> lstLaptops);
         public string DeleteLaptop(Guid id);
+        public List<LaptopView> GetAllLaptopNoSerial();
         public List<Laptop> GetLaptopFromDb();
         public List<LaptopView> GetAllLaptop();
 
