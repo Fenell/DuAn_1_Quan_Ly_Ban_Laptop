@@ -11,19 +11,17 @@ using _2_BUS_BusinessLayer.ViewModel;
 
 namespace _2_BUS_BusinessLayer.Services
 {
-    public class ChiTietHoaDonService:IChiTietHoaDonService
+    public class ChiTietHoaDonService : IChiTietHoaDonService
     {
         private IHoaDonRepository _hoaDonRepository;
         private IChiTietHoaDonRepository _chiTietHoaDonRepository;
         private ILapTopRepository _lapTopRepository;
-        private ILinhKienRepository _linhKienRepository;
 
         public ChiTietHoaDonService()
         {
             _hoaDonRepository = new HoaDonRepository();
             _chiTietHoaDonRepository = new ChiTietHoaDonRepository();
             _lapTopRepository = new LapTopRepository();
-            _linhKienRepository = new LinhKienRepository();
         }
         public string AddChiTietHoaDon(ChiTietHoaDonView obj)
         {
@@ -59,7 +57,7 @@ namespace _2_BUS_BusinessLayer.Services
                 chiTietHoaDon.IdHoaDon = obj.IdHoaDon;
                 chiTietHoaDon.IdLaptop = obj.IdSanPham;
                 chiTietHoaDon.IdLinhKien = obj.IdSanPham;
-                chiTietHoaDon.SoLuong= obj.SoLuong;
+                chiTietHoaDon.SoLuong = obj.SoLuong;
                 chiTietHoaDon.DonGia = obj.DonGia;
                 chiTietHoaDon.ThanhTien = obj.ThanhTien;
 
@@ -82,21 +80,15 @@ namespace _2_BUS_BusinessLayer.Services
         public List<ChiTietHoaDonView> GetAllChiTietHoaDon()
         {
             var lst = (from a in _chiTietHoaDonRepository.GetAllChiTietHoaDon()
-                join b in _hoaDonRepository.GetAllHoaDon() on a.IdHoaDon equals b.Id
-                join c in _lapTopRepository.GetAllLapTop() on a.IdLaptop equals c.Id into ltJoin
-                from sanPhamLaptop in ltJoin.DefaultIfEmpty()
-                join d in _linhKienRepository.GetAllLinhKien() on a.IdLinhKien equals d.Id into lkJoin
-                from sanPhamLk in lkJoin.DefaultIfEmpty()
-                select new ChiTietHoaDonView()
-                {
-                    Id = a.Id,
-                    IdHoaDon = b.Id,
-                    IdSanPham = sanPhamLaptop.Id != null ? sanPhamLaptop.Id : sanPhamLk.Id,
-                    TenSanPham = sanPhamLaptop.Ten ?? sanPhamLk.Ten,
-                    SoLuong = a.SoLuong,
-                    DonGia = a.DonGia,
-                    ThanhTien = a.SoLuong * a.DonGia,
-                }).ToList();
+                       join b in _hoaDonRepository.GetAllHoaDon() on a.IdHoaDon equals b.Id
+                       join c in _lapTopRepository.GetAllLapTop() on a.IdLaptop equals c.Id
+                       select new ChiTietHoaDonView()
+                       {
+                           Id = a.Id,
+                           IdHoaDon = b.Id,
+                           SoLuong = a.SoLuong,
+                           DonGia = a.DonGia,
+                       }).ToList();
 
             return lst;
         }
