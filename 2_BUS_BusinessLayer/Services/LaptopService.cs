@@ -247,7 +247,6 @@ namespace _2_BUS_BusinessLayer.Services
                         NamBh = grp.First().NamBh,
                         SoLuongTon = grp.Count(),
                         Anh = grp.First().HinhAnh,
-                        //ListSerial = grp.Select(c=>c.SerialLaptop.Serial).ToList()
                     }).ToList();
 
             return list;
