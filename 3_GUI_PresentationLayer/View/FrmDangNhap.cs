@@ -63,11 +63,11 @@ namespace _3_GUI_PresentationLayer.View
         {
             Application.Exit();
         }
-       
+
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -77,10 +77,38 @@ namespace _3_GUI_PresentationLayer.View
             quenMatKhau.ShowDialog();
             this.Close();
         }
+        public void SaveInfor()
+        {
+            if (nhoMatKhau.Checked == true)
+            {
+                Properties.Settings.Default._user = txtEmail.Text;
+                Properties.Settings.Default._pass = txtMatKhau.Text;
+                Properties.Settings.Default._TKdaLogin = txtEmail.Text;
+                Properties.Settings.Default._MKdaLogin = txtMatKhau.Text;
+                Properties.Settings.Default.Save();
+
+            }
+            else
+            {
+                Properties.Settings.Default._user = "";
+                Properties.Settings.Default._pass = "";
+                Properties.Settings.Default._TKdaLogin = txtEmail.Text;
+                Properties.Settings.Default._MKdaLogin = txtMatKhau.Text;
+                Properties.Settings.Default.Save();
+            }
+        }
 
         private void FrmDangNhap_Load(object sender, EventArgs e)
         {
-
+            txtEmail.Text = Properties.Settings.Default._user;
+            txtMatKhau.Text = Properties.Settings.Default._pass;
+            if (Properties.Settings.Default._user != "")
+            {
+                nhoMatKhau.Checked = true;
+            }
         }
     }
+
+    
 }
+

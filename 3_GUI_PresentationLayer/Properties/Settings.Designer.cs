@@ -22,5 +22,53 @@ namespace _3_GUI_PresentationLayer.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string _user {
+            get {
+                return ((string)(this["_user"]));
+            }
+            set {
+                this["_user"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string _pass {
+            get {
+                return ((string)(this["_pass"]));
+            }
+            set {
+                this["_pass"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string _TKdaLogin {
+            get {
+                return ((string)(this["_TKdaLogin"]));
+            }
+            set {
+                this["_TKdaLogin"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string _MKdaLogin {
+            get {
+                return ((string)(this["_MKdaLogin"]));
+            }
+            set {
+                this["_MKdaLogin"] = value;
+            }
+        }
     }
 }
