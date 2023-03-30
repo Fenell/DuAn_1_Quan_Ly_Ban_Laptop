@@ -46,7 +46,7 @@ namespace _2_BUS_BusinessLayer.Services
             return "Them that bai";
         }
 
-       
+
 
         public string RemoveHoaDon(Guid id)
         {
@@ -97,15 +97,33 @@ namespace _2_BUS_BusinessLayer.Services
                            HTThanhToan = a.HinhThucTT,
                            NgayTao = a.NgayTao,
                            NgayThanhToan = a.NgayThanhToan,
-                           HinhThucNhanHang = a.HinhThucNhanHang,
-                           TrangThaiHD = a.TrangThaiHD,
-                           TrangThaiGH = a.TrangThaiGH,
                            DcNhanHang = a.DiaChiNhanHang,
                            GhiChu = a.GhiChu,
                            TongTien = a.TongTien
                        }).ToList();
 
             return lst;
+        }
+
+        public string AutoGenerateMa()
+        {
+            int numGenerate;
+            string maHD;
+            int countHD = _hoaDonRepository.GetAllHoaDon().Count;
+
+            for (numGenerate = 0; numGenerate <= countHD; numGenerate++)
+            {
+                numGenerate++;
+                maHD = $"HD{numGenerate.ToString().PadLeft(6, '0')}";
+                if (_hoaDonRepository.GetAllHoaDon().All(c => c.Ma != maHD))
+                {
+                    return maHD;
+                }
+            }
+
+            numGenerate = countHD + 1;
+            maHD = $"HD{numGenerate.ToString().PadLeft(6, '0')}";
+            return maHD;
         }
     }
 }

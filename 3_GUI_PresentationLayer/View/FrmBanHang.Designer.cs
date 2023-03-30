@@ -28,37 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
-            iconButton7 = new FontAwesome.Sharp.IconButton();
-            iconButton6 = new FontAwesome.Sharp.IconButton();
-            iconButton5 = new FontAwesome.Sharp.IconButton();
-            iconButton4 = new FontAwesome.Sharp.IconButton();
-            textBoxCustom2_03 = new CustomControl.TextBoxCustom2_0();
-            textBoxCustom2_02 = new CustomControl.TextBoxCustom2_0();
-            textBoxCustom2_01 = new CustomControl.TextBoxCustom2_0();
+            lblMaHD = new Label();
+            label10 = new Label();
+            groupBox3 = new GroupBox();
+            lblHoTen = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            iconButton3 = new FontAwesome.Sharp.IconButton();
+            lblTongTien = new Label();
+            btnHuyHD = new FontAwesome.Sharp.IconButton();
+            btnSuaHD = new FontAwesome.Sharp.IconButton();
+            btnLuuHD = new FontAwesome.Sharp.IconButton();
+            btnThanhToan = new FontAwesome.Sharp.IconButton();
+            txtKhachDua = new CustomControl.TextBoxCustom2_0();
+            txtGhiChu = new CustomControl.TextBoxCustom2_0();
             label13 = new Label();
             label9 = new Label();
             label12 = new Label();
             label8 = new Label();
-            radioButtonCustom3 = new CustomControl.RadioButtonCustom();
-            radioButtonCustom6 = new CustomControl.RadioButtonCustom();
+            rbtnCash = new CustomControl.RadioButtonCustom();
+            rbtnTransfer = new CustomControl.RadioButtonCustom();
             label3 = new Label();
-            label7 = new Label();
             label4 = new Label();
             label11 = new Label();
-            radioButtonCustom5 = new CustomControl.RadioButtonCustom();
-            radioButtonCustom7 = new CustomControl.RadioButtonCustom();
-            radioButtonCustom4 = new CustomControl.RadioButtonCustom();
-            label10 = new Label();
-            radioButtonCustom2 = new CustomControl.RadioButtonCustom();
-            radioButtonCustom1 = new CustomControl.RadioButtonCustom();
-            label5 = new Label();
-            comboBoxCustom1 = new CustomControl.ComboBoxCustom();
-            label6 = new Label();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
-            buttonCustom1 = new CustomControl.ButtonCustom();
-            pictureBox1 = new PictureBox();
+            cbbCamera = new ComboBox();
+            panel4 = new Panel();
+            ptbCamera = new PictureBox();
+            activeCamera = new CustomControl.ButtonCustom();
             comboBoxCustom3 = new CustomControl.ComboBoxCustom();
             iconButton8 = new FontAwesome.Sharp.IconButton();
             textBoxCustom2_04 = new CustomControl.TextBoxCustom2_0();
@@ -71,9 +70,13 @@
             groupBox2 = new GroupBox();
             dgvGioHang = new DataGridView();
             groupBox1 = new GroupBox();
+            tCamera = new System.Windows.Forms.Timer(components);
+            cbbSdtKH = new ComboBox();
             panel1.SuspendLayout();
+            groupBox3.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ptbCamera).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSanPham).BeginInit();
             groupBox2.SuspendLayout();
@@ -83,155 +86,228 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(iconButton7);
-            panel1.Controls.Add(iconButton6);
-            panel1.Controls.Add(iconButton5);
-            panel1.Controls.Add(iconButton4);
-            panel1.Controls.Add(textBoxCustom2_03);
-            panel1.Controls.Add(textBoxCustom2_02);
-            panel1.Controls.Add(textBoxCustom2_01);
+            panel1.Controls.Add(lblMaHD);
+            panel1.Controls.Add(label10);
+            panel1.Controls.Add(groupBox3);
+            panel1.Controls.Add(lblTongTien);
+            panel1.Controls.Add(btnHuyHD);
+            panel1.Controls.Add(btnSuaHD);
+            panel1.Controls.Add(btnLuuHD);
+            panel1.Controls.Add(btnThanhToan);
+            panel1.Controls.Add(txtKhachDua);
+            panel1.Controls.Add(txtGhiChu);
             panel1.Controls.Add(label13);
             panel1.Controls.Add(label9);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(label8);
-            panel1.Controls.Add(radioButtonCustom3);
-            panel1.Controls.Add(radioButtonCustom6);
+            panel1.Controls.Add(rbtnCash);
+            panel1.Controls.Add(rbtnTransfer);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(label7);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label11);
-            panel1.Controls.Add(radioButtonCustom5);
-            panel1.Controls.Add(radioButtonCustom7);
-            panel1.Controls.Add(radioButtonCustom4);
-            panel1.Controls.Add(label10);
-            panel1.Controls.Add(radioButtonCustom2);
-            panel1.Controls.Add(radioButtonCustom1);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(comboBoxCustom1);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(iconButton3);
-            panel1.Location = new Point(1016, 17);
+            panel1.Location = new Point(1011, 17);
             panel1.Name = "panel1";
-            panel1.Size = new Size(393, 655);
+            panel1.Size = new Size(405, 655);
             panel1.TabIndex = 19;
             // 
-            // iconButton7
+            // lblMaHD
             // 
-            iconButton7.FlatAppearance.BorderSize = 0;
-            iconButton7.FlatAppearance.MouseDownBackColor = Color.FromArgb(232, 225, 197);
-            iconButton7.FlatAppearance.MouseOverBackColor = Color.White;
-            iconButton7.FlatStyle = FlatStyle.Flat;
-            iconButton7.IconChar = FontAwesome.Sharp.IconChar.TimesRectangle;
-            iconButton7.IconColor = Color.FromArgb(148, 105, 215);
-            iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton7.IconSize = 38;
-            iconButton7.Location = new Point(289, 599);
-            iconButton7.Name = "iconButton7";
-            iconButton7.Size = new Size(66, 55);
-            iconButton7.TabIndex = 49;
-            iconButton7.UseVisualStyleBackColor = true;
+            lblMaHD.AutoSize = true;
+            lblMaHD.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblMaHD.ForeColor = SystemColors.HotTrack;
+            lblMaHD.Location = new Point(128, 162);
+            lblMaHD.Name = "lblMaHD";
+            lblMaHD.Size = new Size(63, 20);
+            lblMaHD.TabIndex = 17;
+            lblMaHD.Text = "111111";
             // 
-            // iconButton6
+            // label10
             // 
-            iconButton6.FlatAppearance.BorderSize = 0;
-            iconButton6.FlatAppearance.MouseDownBackColor = Color.FromArgb(232, 225, 197);
-            iconButton6.FlatAppearance.MouseOverBackColor = Color.White;
-            iconButton6.FlatStyle = FlatStyle.Flat;
-            iconButton6.IconChar = FontAwesome.Sharp.IconChar.PenClip;
-            iconButton6.IconColor = Color.FromArgb(148, 105, 215);
-            iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton6.IconSize = 38;
-            iconButton6.Location = new Point(208, 599);
-            iconButton6.Name = "iconButton6";
-            iconButton6.Size = new Size(66, 55);
-            iconButton6.TabIndex = 49;
-            iconButton6.UseVisualStyleBackColor = true;
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.ForeColor = SystemColors.HotTrack;
+            label10.Location = new Point(8, 162);
+            label10.Name = "label10";
+            label10.Size = new Size(92, 20);
+            label10.TabIndex = 17;
+            label10.Text = "Mã hóa đơn";
             // 
-            // iconButton5
+            // groupBox3
             // 
-            iconButton5.FlatAppearance.BorderSize = 0;
-            iconButton5.FlatAppearance.MouseDownBackColor = Color.FromArgb(232, 225, 197);
-            iconButton5.FlatAppearance.MouseOverBackColor = Color.White;
-            iconButton5.FlatStyle = FlatStyle.Flat;
-            iconButton5.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            iconButton5.IconColor = Color.FromArgb(148, 105, 215);
-            iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton5.IconSize = 38;
-            iconButton5.Location = new Point(127, 599);
-            iconButton5.Name = "iconButton5";
-            iconButton5.Size = new Size(66, 55);
-            iconButton5.TabIndex = 49;
-            iconButton5.UseVisualStyleBackColor = true;
+            groupBox3.Controls.Add(cbbSdtKH);
+            groupBox3.Controls.Add(lblHoTen);
+            groupBox3.Controls.Add(label5);
+            groupBox3.Controls.Add(label6);
+            groupBox3.Controls.Add(iconButton3);
+            groupBox3.Location = new Point(11, 9);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(391, 121);
+            groupBox3.TabIndex = 51;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Thông tin khách hàng";
             // 
-            // iconButton4
+            // lblHoTen
             // 
-            iconButton4.FlatAppearance.BorderSize = 0;
-            iconButton4.FlatAppearance.MouseDownBackColor = Color.FromArgb(232, 225, 197);
-            iconButton4.FlatAppearance.MouseOverBackColor = Color.White;
-            iconButton4.FlatStyle = FlatStyle.Flat;
-            iconButton4.IconChar = FontAwesome.Sharp.IconChar.HandHoldingUsd;
-            iconButton4.IconColor = Color.FromArgb(148, 105, 215);
-            iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton4.IconSize = 38;
-            iconButton4.Location = new Point(34, 599);
-            iconButton4.Name = "iconButton4";
-            iconButton4.Size = new Size(66, 55);
-            iconButton4.TabIndex = 49;
-            iconButton4.UseVisualStyleBackColor = true;
+            lblHoTen.AutoSize = true;
+            lblHoTen.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblHoTen.ForeColor = SystemColors.HotTrack;
+            lblHoTen.Location = new Point(127, 79);
+            lblHoTen.Name = "lblHoTen";
+            lblHoTen.Size = new Size(56, 20);
+            lblHoTen.TabIndex = 16;
+            lblHoTen.Text = "Họ tên";
             // 
-            // textBoxCustom2_03
+            // label5
             // 
-            textBoxCustom2_03.BorderColor = Color.MediumSlateBlue;
-            textBoxCustom2_03.BorderFocusColor = Color.HotPink;
-            textBoxCustom2_03.BorderRadius = 0;
-            textBoxCustom2_03.BorderSize = 2;
-            textBoxCustom2_03.Location = new Point(126, 471);
-            textBoxCustom2_03.Multiline = false;
-            textBoxCustom2_03.Name = "textBoxCustom2_03";
-            textBoxCustom2_03.Padding = new Padding(7);
-            textBoxCustom2_03.PasswordChar = false;
-            textBoxCustom2_03.PlaceholderColor = Color.DarkGray;
-            textBoxCustom2_03.PlaceholderText = "";
-            textBoxCustom2_03.Size = new Size(240, 30);
-            textBoxCustom2_03.TabIndex = 48;
-            textBoxCustom2_03.Texts = "";
-            textBoxCustom2_03.UnderlinedStyle = true;
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = SystemColors.HotTrack;
+            label5.Location = new Point(46, 79);
+            label5.Name = "label5";
+            label5.Size = new Size(56, 20);
+            label5.TabIndex = 15;
+            label5.Text = "Họ tên";
             // 
-            // textBoxCustom2_02
+            // label6
             // 
-            textBoxCustom2_02.BorderColor = Color.MediumSlateBlue;
-            textBoxCustom2_02.BorderFocusColor = Color.HotPink;
-            textBoxCustom2_02.BorderRadius = 10;
-            textBoxCustom2_02.BorderSize = 1;
-            textBoxCustom2_02.Location = new Point(125, 57);
-            textBoxCustom2_02.Multiline = true;
-            textBoxCustom2_02.Name = "textBoxCustom2_02";
-            textBoxCustom2_02.Padding = new Padding(7);
-            textBoxCustom2_02.PasswordChar = false;
-            textBoxCustom2_02.PlaceholderColor = Color.DarkGray;
-            textBoxCustom2_02.PlaceholderText = "";
-            textBoxCustom2_02.Size = new Size(241, 63);
-            textBoxCustom2_02.TabIndex = 47;
-            textBoxCustom2_02.Texts = "";
-            textBoxCustom2_02.UnderlinedStyle = false;
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = SystemColors.HotTrack;
+            label6.Location = new Point(3, 30);
+            label6.Name = "label6";
+            label6.Size = new Size(100, 20);
+            label6.TabIndex = 13;
+            label6.Text = "Số điện thoại";
             // 
-            // textBoxCustom2_01
+            // iconButton3
             // 
-            textBoxCustom2_01.BorderColor = Color.MediumSlateBlue;
-            textBoxCustom2_01.BorderFocusColor = Color.HotPink;
-            textBoxCustom2_01.BorderRadius = 10;
-            textBoxCustom2_01.BorderSize = 1;
-            textBoxCustom2_01.Location = new Point(125, 187);
-            textBoxCustom2_01.Multiline = true;
-            textBoxCustom2_01.Name = "textBoxCustom2_01";
-            textBoxCustom2_01.Padding = new Padding(7);
-            textBoxCustom2_01.PasswordChar = false;
-            textBoxCustom2_01.PlaceholderColor = Color.DarkGray;
-            textBoxCustom2_01.PlaceholderText = "";
-            textBoxCustom2_01.Size = new Size(241, 75);
-            textBoxCustom2_01.TabIndex = 47;
-            textBoxCustom2_01.Texts = "";
-            textBoxCustom2_01.UnderlinedStyle = false;
+            iconButton3.BackColor = Color.White;
+            iconButton3.FlatAppearance.BorderSize = 0;
+            iconButton3.FlatStyle = FlatStyle.Flat;
+            iconButton3.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
+            iconButton3.IconColor = Color.FromArgb(86, 122, 228);
+            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton3.IconSize = 35;
+            iconButton3.Location = new Point(331, 11);
+            iconButton3.Name = "iconButton3";
+            iconButton3.Size = new Size(46, 46);
+            iconButton3.TabIndex = 13;
+            iconButton3.UseVisualStyleBackColor = false;
+            // 
+            // lblTongTien
+            // 
+            lblTongTien.AutoSize = true;
+            lblTongTien.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTongTien.ForeColor = Color.Red;
+            lblTongTien.Location = new Point(125, 564);
+            lblTongTien.Name = "lblTongTien";
+            lblTongTien.Size = new Size(0, 25);
+            lblTongTien.TabIndex = 50;
+            lblTongTien.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // btnHuyHD
+            // 
+            btnHuyHD.FlatAppearance.BorderSize = 0;
+            btnHuyHD.FlatAppearance.MouseDownBackColor = Color.FromArgb(232, 225, 197);
+            btnHuyHD.FlatAppearance.MouseOverBackColor = Color.White;
+            btnHuyHD.FlatStyle = FlatStyle.Flat;
+            btnHuyHD.IconChar = FontAwesome.Sharp.IconChar.TimesRectangle;
+            btnHuyHD.IconColor = Color.FromArgb(148, 105, 215);
+            btnHuyHD.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnHuyHD.IconSize = 38;
+            btnHuyHD.Location = new Point(289, 599);
+            btnHuyHD.Name = "btnHuyHD";
+            btnHuyHD.Size = new Size(66, 55);
+            btnHuyHD.TabIndex = 49;
+            btnHuyHD.UseVisualStyleBackColor = true;
+            btnHuyHD.Click += btnHuyHD_Click;
+            // 
+            // btnSuaHD
+            // 
+            btnSuaHD.FlatAppearance.BorderSize = 0;
+            btnSuaHD.FlatAppearance.MouseDownBackColor = Color.FromArgb(232, 225, 197);
+            btnSuaHD.FlatAppearance.MouseOverBackColor = Color.White;
+            btnSuaHD.FlatStyle = FlatStyle.Flat;
+            btnSuaHD.IconChar = FontAwesome.Sharp.IconChar.PenClip;
+            btnSuaHD.IconColor = Color.FromArgb(148, 105, 215);
+            btnSuaHD.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSuaHD.IconSize = 38;
+            btnSuaHD.Location = new Point(208, 599);
+            btnSuaHD.Name = "btnSuaHD";
+            btnSuaHD.Size = new Size(66, 55);
+            btnSuaHD.TabIndex = 49;
+            btnSuaHD.UseVisualStyleBackColor = true;
+            btnSuaHD.Click += btnSuaHD_Click;
+            // 
+            // btnLuuHD
+            // 
+            btnLuuHD.FlatAppearance.BorderSize = 0;
+            btnLuuHD.FlatAppearance.MouseDownBackColor = Color.FromArgb(232, 225, 197);
+            btnLuuHD.FlatAppearance.MouseOverBackColor = Color.White;
+            btnLuuHD.FlatStyle = FlatStyle.Flat;
+            btnLuuHD.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            btnLuuHD.IconColor = Color.FromArgb(148, 105, 215);
+            btnLuuHD.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnLuuHD.IconSize = 38;
+            btnLuuHD.Location = new Point(127, 599);
+            btnLuuHD.Name = "btnLuuHD";
+            btnLuuHD.Size = new Size(66, 55);
+            btnLuuHD.TabIndex = 49;
+            btnLuuHD.UseVisualStyleBackColor = true;
+            btnLuuHD.Click += btnLuuHD_Click;
+            // 
+            // btnThanhToan
+            // 
+            btnThanhToan.FlatAppearance.BorderSize = 0;
+            btnThanhToan.FlatAppearance.MouseDownBackColor = Color.FromArgb(232, 225, 197);
+            btnThanhToan.FlatAppearance.MouseOverBackColor = Color.White;
+            btnThanhToan.FlatStyle = FlatStyle.Flat;
+            btnThanhToan.IconChar = FontAwesome.Sharp.IconChar.HandHoldingUsd;
+            btnThanhToan.IconColor = Color.FromArgb(148, 105, 215);
+            btnThanhToan.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnThanhToan.IconSize = 38;
+            btnThanhToan.Location = new Point(34, 599);
+            btnThanhToan.Name = "btnThanhToan";
+            btnThanhToan.Size = new Size(66, 55);
+            btnThanhToan.TabIndex = 49;
+            btnThanhToan.UseVisualStyleBackColor = true;
+            btnThanhToan.Click += btnThanhToan_Click;
+            // 
+            // txtKhachDua
+            // 
+            txtKhachDua.BorderColor = Color.MediumSlateBlue;
+            txtKhachDua.BorderFocusColor = Color.HotPink;
+            txtKhachDua.BorderRadius = 0;
+            txtKhachDua.BorderSize = 2;
+            txtKhachDua.Location = new Point(126, 471);
+            txtKhachDua.Multiline = false;
+            txtKhachDua.Name = "txtKhachDua";
+            txtKhachDua.Padding = new Padding(7);
+            txtKhachDua.PasswordChar = false;
+            txtKhachDua.PlaceholderColor = Color.DarkGray;
+            txtKhachDua.PlaceholderText = "";
+            txtKhachDua.Size = new Size(240, 30);
+            txtKhachDua.TabIndex = 48;
+            txtKhachDua.Texts = "";
+            txtKhachDua.UnderlinedStyle = true;
+            // 
+            // txtGhiChu
+            // 
+            txtGhiChu.BorderColor = Color.MediumSlateBlue;
+            txtGhiChu.BorderFocusColor = Color.HotPink;
+            txtGhiChu.BorderRadius = 10;
+            txtGhiChu.BorderSize = 1;
+            txtGhiChu.Location = new Point(125, 231);
+            txtGhiChu.Multiline = true;
+            txtGhiChu.Name = "txtGhiChu";
+            txtGhiChu.Padding = new Padding(7);
+            txtGhiChu.PasswordChar = false;
+            txtGhiChu.PlaceholderColor = Color.DarkGray;
+            txtGhiChu.PlaceholderText = "";
+            txtGhiChu.Size = new Size(241, 70);
+            txtGhiChu.TabIndex = 47;
+            txtGhiChu.Texts = "";
+            txtGhiChu.UnderlinedStyle = false;
             // 
             // label13
             // 
@@ -260,7 +336,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label12.ForeColor = SystemColors.HotTrack;
-            label12.Location = new Point(15, 418);
+            label12.Location = new Point(7, 420);
             label12.Name = "label12";
             label12.Size = new Size(95, 20);
             label12.TabIndex = 44;
@@ -277,39 +353,39 @@
             label8.TabIndex = 44;
             label8.Text = "Khách đưa";
             // 
-            // radioButtonCustom3
+            // rbtnCash
             // 
-            radioButtonCustom3.AutoSize = true;
-            radioButtonCustom3.BackColor = Color.White;
-            radioButtonCustom3.CheckedColor = Color.Blue;
-            radioButtonCustom3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButtonCustom3.Location = new Point(280, 363);
-            radioButtonCustom3.MinimumSize = new Size(0, 21);
-            radioButtonCustom3.Name = "radioButtonCustom3";
-            radioButtonCustom3.Padding = new Padding(10, 0, 0, 0);
-            radioButtonCustom3.Size = new Size(86, 21);
-            radioButtonCustom3.TabIndex = 43;
-            radioButtonCustom3.TabStop = true;
-            radioButtonCustom3.Text = "Tiền mặt";
-            radioButtonCustom3.UnCheckedColor = Color.Black;
-            radioButtonCustom3.UseVisualStyleBackColor = false;
+            rbtnCash.AutoSize = true;
+            rbtnCash.BackColor = Color.White;
+            rbtnCash.CheckedColor = Color.Blue;
+            rbtnCash.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            rbtnCash.Location = new Point(280, 363);
+            rbtnCash.MinimumSize = new Size(0, 21);
+            rbtnCash.Name = "rbtnCash";
+            rbtnCash.Padding = new Padding(10, 0, 0, 0);
+            rbtnCash.Size = new Size(86, 21);
+            rbtnCash.TabIndex = 43;
+            rbtnCash.TabStop = true;
+            rbtnCash.Text = "Tiền mặt";
+            rbtnCash.UnCheckedColor = Color.Black;
+            rbtnCash.UseVisualStyleBackColor = false;
             // 
-            // radioButtonCustom6
+            // rbtnTransfer
             // 
-            radioButtonCustom6.AutoSize = true;
-            radioButtonCustom6.BackColor = Color.White;
-            radioButtonCustom6.CheckedColor = Color.Blue;
-            radioButtonCustom6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButtonCustom6.Location = new Point(138, 363);
-            radioButtonCustom6.MinimumSize = new Size(0, 21);
-            radioButtonCustom6.Name = "radioButtonCustom6";
-            radioButtonCustom6.Padding = new Padding(10, 0, 0, 0);
-            radioButtonCustom6.Size = new Size(64, 21);
-            radioButtonCustom6.TabIndex = 42;
-            radioButtonCustom6.TabStop = true;
-            radioButtonCustom6.Text = "Card";
-            radioButtonCustom6.UnCheckedColor = Color.Black;
-            radioButtonCustom6.UseVisualStyleBackColor = false;
+            rbtnTransfer.AutoSize = true;
+            rbtnTransfer.BackColor = Color.White;
+            rbtnTransfer.CheckedColor = Color.Blue;
+            rbtnTransfer.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            rbtnTransfer.Location = new Point(138, 363);
+            rbtnTransfer.MinimumSize = new Size(0, 21);
+            rbtnTransfer.Name = "rbtnTransfer";
+            rbtnTransfer.Padding = new Padding(10, 0, 0, 0);
+            rbtnTransfer.Size = new Size(117, 21);
+            rbtnTransfer.TabIndex = 42;
+            rbtnTransfer.TabStop = true;
+            rbtnTransfer.Text = "Chuyển khoản";
+            rbtnTransfer.UnCheckedColor = Color.Black;
+            rbtnTransfer.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -322,23 +398,12 @@
             label3.TabIndex = 41;
             label3.Text = "HT thanh toán";
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = SystemColors.HotTrack;
-            label7.Location = new Point(29, 208);
-            label7.Name = "label7";
-            label7.Size = new Size(58, 20);
-            label7.TabIndex = 38;
-            label7.Text = "Địa Chỉ";
-            // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = SystemColors.HotTrack;
-            label4.Location = new Point(29, 81);
+            label4.Location = new Point(23, 258);
             label4.Name = "label4";
             label4.Size = new Size(62, 20);
             label4.TabIndex = 36;
@@ -351,168 +416,17 @@
             label11.ForeColor = Color.Red;
             label11.Location = new Point(11, 564);
             label11.Name = "label11";
-            label11.Size = new Size(190, 25);
+            label11.Size = new Size(112, 25);
             label11.TabIndex = 33;
-            label11.Text = "Tổng Tiền:     0 VNĐ";
+            label11.Text = "Tổng Tiền: ";
             label11.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // radioButtonCustom5
-            // 
-            radioButtonCustom5.AutoSize = true;
-            radioButtonCustom5.BackColor = Color.White;
-            radioButtonCustom5.CheckedColor = Color.Blue;
-            radioButtonCustom5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButtonCustom5.Location = new Point(165, 311);
-            radioButtonCustom5.MinimumSize = new Size(0, 21);
-            radioButtonCustom5.Name = "radioButtonCustom5";
-            radioButtonCustom5.Padding = new Padding(10, 0, 0, 0);
-            radioButtonCustom5.Size = new Size(132, 21);
-            radioButtonCustom5.TabIndex = 32;
-            radioButtonCustom5.TabStop = true;
-            radioButtonCustom5.Text = "Giao thành công";
-            radioButtonCustom5.UnCheckedColor = Color.Black;
-            radioButtonCustom5.UseVisualStyleBackColor = false;
-            // 
-            // radioButtonCustom7
-            // 
-            radioButtonCustom7.AutoSize = true;
-            radioButtonCustom7.BackColor = Color.White;
-            radioButtonCustom7.CheckedColor = Color.Blue;
-            radioButtonCustom7.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButtonCustom7.Location = new Point(125, 284);
-            radioButtonCustom7.MinimumSize = new Size(0, 21);
-            radioButtonCustom7.Name = "radioButtonCustom7";
-            radioButtonCustom7.Padding = new Padding(10, 0, 0, 0);
-            radioButtonCustom7.Size = new Size(97, 21);
-            radioButtonCustom7.TabIndex = 30;
-            radioButtonCustom7.TabStop = true;
-            radioButtonCustom7.Text = "Chưa Giao";
-            radioButtonCustom7.UnCheckedColor = Color.Black;
-            radioButtonCustom7.UseVisualStyleBackColor = false;
-            // 
-            // radioButtonCustom4
-            // 
-            radioButtonCustom4.AutoSize = true;
-            radioButtonCustom4.BackColor = Color.White;
-            radioButtonCustom4.CheckedColor = Color.Blue;
-            radioButtonCustom4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButtonCustom4.Location = new Point(241, 284);
-            radioButtonCustom4.MinimumSize = new Size(0, 21);
-            radioButtonCustom4.Name = "radioButtonCustom4";
-            radioButtonCustom4.Padding = new Padding(10, 0, 0, 0);
-            radioButtonCustom4.Size = new Size(97, 21);
-            radioButtonCustom4.TabIndex = 30;
-            radioButtonCustom4.TabStop = true;
-            radioButtonCustom4.Text = "Đang giao";
-            radioButtonCustom4.UnCheckedColor = Color.Black;
-            radioButtonCustom4.UseVisualStyleBackColor = false;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.ForeColor = SystemColors.HotTrack;
-            label10.Location = new Point(15, 285);
-            label10.Name = "label10";
-            label10.Size = new Size(80, 20);
-            label10.TabIndex = 29;
-            label10.Text = "Trạng thái";
-            // 
-            // radioButtonCustom2
-            // 
-            radioButtonCustom2.AutoSize = true;
-            radioButtonCustom2.BackColor = Color.White;
-            radioButtonCustom2.CheckedColor = Color.Blue;
-            radioButtonCustom2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButtonCustom2.Location = new Point(272, 145);
-            radioButtonCustom2.MinimumSize = new Size(0, 21);
-            radioButtonCustom2.Name = "radioButtonCustom2";
-            radioButtonCustom2.Padding = new Padding(10, 0, 0, 0);
-            radioButtonCustom2.Size = new Size(94, 21);
-            radioButtonCustom2.TabIndex = 24;
-            radioButtonCustom2.TabStop = true;
-            radioButtonCustom2.Text = "Ship hàng";
-            radioButtonCustom2.UnCheckedColor = Color.Black;
-            radioButtonCustom2.UseVisualStyleBackColor = false;
-            // 
-            // radioButtonCustom1
-            // 
-            radioButtonCustom1.AutoSize = true;
-            radioButtonCustom1.BackColor = Color.White;
-            radioButtonCustom1.CheckedColor = Color.Blue;
-            radioButtonCustom1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButtonCustom1.Location = new Point(125, 146);
-            radioButtonCustom1.MinimumSize = new Size(0, 21);
-            radioButtonCustom1.Name = "radioButtonCustom1";
-            radioButtonCustom1.Padding = new Padding(10, 0, 0, 0);
-            radioButtonCustom1.Size = new Size(111, 21);
-            radioButtonCustom1.TabIndex = 23;
-            radioButtonCustom1.TabStop = true;
-            radioButtonCustom1.Text = "Tại cửa hàng";
-            radioButtonCustom1.UnCheckedColor = Color.Black;
-            radioButtonCustom1.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = SystemColors.HotTrack;
-            label5.Location = new Point(6, 146);
-            label5.Name = "label5";
-            label5.Size = new Size(86, 20);
-            label5.TabIndex = 19;
-            label5.Text = "Nhận hàng";
-            // 
-            // comboBoxCustom1
-            // 
-            comboBoxCustom1.BackColor = Color.White;
-            comboBoxCustom1.BorderColor = Color.Black;
-            comboBoxCustom1.BorderSize = 1;
-            comboBoxCustom1.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxCustom1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom1.ForeColor = Color.DimGray;
-            comboBoxCustom1.IconColor = Color.Black;
-            comboBoxCustom1.ListBackColor = Color.FromArgb(230, 228, 245);
-            comboBoxCustom1.ListTextColor = Color.DimGray;
-            comboBoxCustom1.Location = new Point(125, 11);
-            comboBoxCustom1.MinimumSize = new Size(200, 30);
-            comboBoxCustom1.Name = "comboBoxCustom1";
-            comboBoxCustom1.Padding = new Padding(1);
-            comboBoxCustom1.Size = new Size(200, 30);
-            comboBoxCustom1.TabIndex = 14;
-            comboBoxCustom1.Texts = "";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.ForeColor = SystemColors.HotTrack;
-            label6.Location = new Point(11, 15);
-            label6.Name = "label6";
-            label6.Size = new Size(91, 20);
-            label6.TabIndex = 13;
-            label6.Text = "Khách hàng";
-            // 
-            // iconButton3
-            // 
-            iconButton3.BackColor = Color.White;
-            iconButton3.FlatAppearance.BorderSize = 0;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
-            iconButton3.IconColor = Color.FromArgb(86, 122, 228);
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.IconSize = 35;
-            iconButton3.Location = new Point(331, 3);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(46, 46);
-            iconButton3.TabIndex = 13;
-            iconButton3.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(buttonCustom1);
-            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(cbbCamera);
+            panel2.Controls.Add(panel4);
+            panel2.Controls.Add(activeCamera);
             panel2.Controls.Add(comboBoxCustom3);
             panel2.Controls.Add(iconButton8);
             panel2.Controls.Add(textBoxCustom2_04);
@@ -525,31 +439,49 @@
             panel2.Size = new Size(972, 140);
             panel2.TabIndex = 42;
             // 
-            // buttonCustom1
+            // cbbCamera
             // 
-            buttonCustom1.BackColor = Color.MediumSlateBlue;
-            buttonCustom1.BackgroundColor = Color.MediumSlateBlue;
-            buttonCustom1.BorderColor = Color.PaleVioletRed;
-            buttonCustom1.BorderRadius = 10;
-            buttonCustom1.BorderSize = 0;
-            buttonCustom1.FlatAppearance.BorderSize = 0;
-            buttonCustom1.FlatStyle = FlatStyle.Flat;
-            buttonCustom1.ForeColor = Color.White;
-            buttonCustom1.Location = new Point(663, 11);
-            buttonCustom1.Name = "buttonCustom1";
-            buttonCustom1.Size = new Size(105, 40);
-            buttonCustom1.TabIndex = 49;
-            buttonCustom1.Text = "Bật camera";
-            buttonCustom1.TextColor = Color.White;
-            buttonCustom1.UseVisualStyleBackColor = false;
+            cbbCamera.FormattingEnabled = true;
+            cbbCamera.Location = new Point(644, 11);
+            cbbCamera.Name = "cbbCamera";
+            cbbCamera.Size = new Size(102, 23);
+            cbbCamera.TabIndex = 50;
             // 
-            // pictureBox1
+            // panel4
             // 
-            pictureBox1.Location = new Point(774, 7);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(195, 126);
-            pictureBox1.TabIndex = 45;
-            pictureBox1.TabStop = false;
+            panel4.Controls.Add(ptbCamera);
+            panel4.Location = new Point(752, 3);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(217, 132);
+            panel4.TabIndex = 24;
+            // 
+            // ptbCamera
+            // 
+            ptbCamera.Location = new Point(3, 3);
+            ptbCamera.Name = "ptbCamera";
+            ptbCamera.Size = new Size(211, 126);
+            ptbCamera.SizeMode = PictureBoxSizeMode.StretchImage;
+            ptbCamera.TabIndex = 45;
+            ptbCamera.TabStop = false;
+            // 
+            // activeCamera
+            // 
+            activeCamera.BackColor = Color.MediumSlateBlue;
+            activeCamera.BackgroundColor = Color.MediumSlateBlue;
+            activeCamera.BorderColor = Color.PaleVioletRed;
+            activeCamera.BorderRadius = 10;
+            activeCamera.BorderSize = 0;
+            activeCamera.FlatAppearance.BorderSize = 0;
+            activeCamera.FlatStyle = FlatStyle.Flat;
+            activeCamera.ForeColor = Color.White;
+            activeCamera.Location = new Point(644, 45);
+            activeCamera.Name = "activeCamera";
+            activeCamera.Size = new Size(105, 40);
+            activeCamera.TabIndex = 49;
+            activeCamera.Text = "Bật camera";
+            activeCamera.TextColor = Color.White;
+            activeCamera.UseVisualStyleBackColor = false;
+            activeCamera.Click += activeCamera_Click;
             // 
             // comboBoxCustom3
             // 
@@ -689,6 +621,7 @@
             // 
             // dgvGioHang
             // 
+            dgvGioHang.AllowUserToAddRows = false;
             dgvGioHang.AllowUserToResizeColumns = false;
             dgvGioHang.AllowUserToResizeRows = false;
             dgvGioHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -697,19 +630,35 @@
             dgvGioHang.Location = new Point(3, 23);
             dgvGioHang.Name = "dgvGioHang";
             dgvGioHang.RowHeadersVisible = false;
+            dgvGioHang.RowHeadersWidth = 50;
             dgvGioHang.RowTemplate.Height = 25;
             dgvGioHang.Size = new Size(969, 212);
             dgvGioHang.TabIndex = 12;
+            dgvGioHang.CellContentClick += dgvGioHang_CellContentClick;
             // 
             // groupBox1
             // 
             groupBox1.BackColor = Color.White;
-            groupBox1.Location = new Point(1422, 11);
+            groupBox1.Location = new Point(1433, 11);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(87, 667);
+            groupBox1.Size = new Size(76, 664);
             groupBox1.TabIndex = 44;
             groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            groupBox1.Text = "Đơn hàng chờ";
+            // 
+            // tCamera
+            // 
+            tCamera.Interval = 500;
+            tCamera.Tick += tCamera_Tick;
+            // 
+            // cbbSdtKH
+            // 
+            cbbSdtKH.FormattingEnabled = true;
+            cbbSdtKH.Location = new Point(127, 24);
+            cbbSdtKH.Name = "cbbSdtKH";
+            cbbSdtKH.Size = new Size(198, 23);
+            cbbSdtKH.TabIndex = 51;
+            cbbSdtKH.TextChanged += cbbSdtKH_TextChanged;
             // 
             // FrmBanHang
             // 
@@ -727,9 +676,12 @@
             Text = "Bán hàng";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)ptbCamera).EndInit();
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvSanPham).EndInit();
             groupBox2.ResumeLayout(false);
@@ -739,22 +691,14 @@
 
         #endregion
         private Panel panel1;
-        private Label label7;
         private Label label4;
         private Label label11;
-        private CustomControl.RadioButtonCustom radioButtonCustom5;
-        private CustomControl.RadioButtonCustom radioButtonCustom4;
-        private Label label10;
-        private CustomControl.RadioButtonCustom radioButtonCustom2;
-        private CustomControl.RadioButtonCustom radioButtonCustom1;
-        private Label label5;
-        private CustomControl.ComboBoxCustom comboBoxCustom1;
         private Label label6;
         private FontAwesome.Sharp.IconButton iconButton3;
         private Label label9;
         private Label label8;
-        private CustomControl.RadioButtonCustom radioButtonCustom3;
-        private CustomControl.RadioButtonCustom radioButtonCustom6;
+        private CustomControl.RadioButtonCustom rbtnCash;
+        private CustomControl.RadioButtonCustom rbtnTransfer;
         private Label label3;
         private Panel panel2;
         private FontAwesome.Sharp.IconButton iconButton2;
@@ -763,23 +707,31 @@
         private GroupBox groupBox2;
         private DataGridView dgvGioHang;
         private DataGridView dgvSanPham;
-        private CustomControl.TextBoxCustom2_0 textBoxCustom2_03;
-        private CustomControl.TextBoxCustom2_0 textBoxCustom2_02;
-        private CustomControl.TextBoxCustom2_0 textBoxCustom2_01;
-        private CustomControl.RadioButtonCustom radioButtonCustom7;
+        private CustomControl.TextBoxCustom2_0 txtKhachDua;
+        private CustomControl.TextBoxCustom2_0 txtGhiChu;
         private GroupBox groupBox1;
-        private FontAwesome.Sharp.IconButton iconButton4;
+        private FontAwesome.Sharp.IconButton btnThanhToan;
         private Label label13;
         private Label label12;
-        private FontAwesome.Sharp.IconButton iconButton7;
-        private FontAwesome.Sharp.IconButton iconButton6;
-        private FontAwesome.Sharp.IconButton iconButton5;
+        private FontAwesome.Sharp.IconButton btnHuyHD;
+        private FontAwesome.Sharp.IconButton btnSuaHD;
+        private FontAwesome.Sharp.IconButton btnLuuHD;
         private FontAwesome.Sharp.IconButton iconButton8;
         private CustomControl.TextBoxCustom2_0 textBoxCustom2_04;
         private FontAwesome.Sharp.IconButton iconButton1;
         private CustomControl.ComboBoxCustom comboBoxCustom3;
         private Label label1;
-        private CustomControl.ButtonCustom buttonCustom1;
-        private PictureBox pictureBox1;
+        private CustomControl.ButtonCustom activeCamera;
+        private PictureBox ptbCamera;
+        private Label lblTongTien;
+        private Panel panel4;
+        private System.Windows.Forms.Timer tCamera;
+        private ComboBox cbbCamera;
+        private Label lblMaHD;
+        private Label label10;
+        private GroupBox groupBox3;
+        private Label lblHoTen;
+        private Label label5;
+        private ComboBox cbbSdtKH;
     }
 }

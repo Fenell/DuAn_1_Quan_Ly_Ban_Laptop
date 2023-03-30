@@ -14,5 +14,7 @@ namespace _2_BUS_BusinessLayer.IServices
         public string UpdateHoaDon(HoaDonView obj);
         public string UpdateStatusHoaDon(Guid id);
         public List<HoaDonView> GetAllHoaDonViews();
+        public string AutoGenerateMa();
+
     }
 }

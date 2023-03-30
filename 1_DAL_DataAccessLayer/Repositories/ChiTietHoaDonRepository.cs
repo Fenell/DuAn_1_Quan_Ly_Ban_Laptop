@@ -22,7 +22,6 @@ namespace _1_DAL_DataAccessLayer.Repositories
             {
                 if (chiTietHoaDon != null)
                 {
-                    chiTietHoaDon.Id = Guid.NewGuid();
                     _lapTopContext.Add(chiTietHoaDon);
                     _lapTopContext.SaveChanges();
                     return true;
