@@ -11,7 +11,7 @@ using _2_BUS_BusinessLayer.ViewModel;
 
 namespace _2_BUS_BusinessLayer.Services
 {
-    public class ChiTietHoaDonService:IChiTietHoaDonService
+    public class ChiTietHoaDonService : IChiTietHoaDonService
     {
         private IHoaDonRepository _hoaDonRepository;
         private IChiTietHoaDonRepository _chiTietHoaDonRepository;
@@ -64,7 +64,7 @@ namespace _2_BUS_BusinessLayer.Services
                 chiTietHoaDon.IdHoaDon = obj.IdHoaDon;
                 chiTietHoaDon.IdLaptop = obj.IdSanPham;
                 chiTietHoaDon.IdLinhKien = obj.IdSanPham;
-                chiTietHoaDon.SoLuong= obj.SoLuong;
+                chiTietHoaDon.SoLuong = obj.SoLuong;
                 chiTietHoaDon.DonGia = obj.DonGia;
                 chiTietHoaDon.ThanhTien = obj.ThanhTien;
 

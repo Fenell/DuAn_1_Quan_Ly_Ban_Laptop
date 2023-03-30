@@ -40,20 +40,24 @@ namespace _1_DAL_DataAccessLayer.Repositories
             return _lapTopContext.Laptops.ToList();
         }
 
-        public bool UpdateStatusLaptop(Guid id)
+        public bool UpdateStatusLaptop(List<Laptop> lstLaptops)
         {
-            var laptop = _lapTopContext.Laptops.FirstOrDefault(l => l.Id == id);
-            if (laptop != null)
+            foreach (var x in lstLaptops)
             {
-                if (laptop.TrangThai == true)
+                if (x.TrangThai == true)
                 {
-                    laptop.TrangThai = false;
-                    return true;
+                    x.TrangThai = false;
+                    _lapTopContext.Laptops.Update(x);
+                    _lapTopContext.SaveChanges();
                 }
-                laptop.TrangThai = true;
-                return true;
+                else
+                {
+                    x.TrangThai = true;
+                    _lapTopContext.Laptops.Update(x);
+                    _lapTopContext.SaveChanges();
+                }
             }
-            return false;
+            return true;
         }
 
         public Laptop GetLapTopById(Guid idLapTop)
@@ -91,6 +95,11 @@ namespace _1_DAL_DataAccessLayer.Repositories
                 return true;
             }
             return false;
+        }
+
+        public List<Laptop> GetAllLaptopNoSerial()
+        {
+            return _lapTopContext.Laptops.ToList();
         }
     }
 }

@@ -56,6 +56,7 @@ namespace _2_BUS_BusinessLayer.Services
                 IdMauSac = obj.IdMauSac,
                 IdManHinh = obj.IdManHinh,
 
+                Ten = obj.Ten,
                 Mota = obj.Mota,
                 TrongLuong = obj.TrongLuong,
                 GiaNhap = obj.GiaNhap,
@@ -74,7 +75,9 @@ namespace _2_BUS_BusinessLayer.Services
 
         public string UpdateLaptop(LaptopView obj)
         {
-            var laptop = _sanPhamLapTopRepository.GetAllLapTop().FirstOrDefault(c => c.Id == obj.Id);
+            var laptop = _sanPhamLapTopRepository.GetAllLapTop().FirstOrDefault(c => c.Ten == obj.Ten);
+
+            //laptop.Id = obj.Id;
             laptop.IdHangLaptop = obj.IdHangLaptop;
             laptop.IdDongLaptop = obj.IdDongLaptop;
             laptop.IdCpu = obj.IdCpu;
@@ -85,6 +88,7 @@ namespace _2_BUS_BusinessLayer.Services
             laptop.IdManHinh = obj.IdManHinh;
             laptop.IdNhaCungCap = obj.IdNhaCungCap;
 
+            laptop.Ten = obj.Ten;
             laptop.Mota = obj.Mota;
             laptop.TrangThai = obj.TrangThai;
             laptop.TrongLuong = obj.TrongLuong;
@@ -101,10 +105,10 @@ namespace _2_BUS_BusinessLayer.Services
             return "Sửa thất bại";
         }
 
-        public string UpdateStatusLaptop(Guid id)
+        public string UpdateStatusLaptop(List<Laptop> lstLaptops)
         {
 
-            if (_sanPhamLapTopRepository.UpdateStatusLaptop(id))
+            if (_sanPhamLapTopRepository.UpdateStatusLaptop(lstLaptops))
             {
                 return "Chuyển thành công";
             }
