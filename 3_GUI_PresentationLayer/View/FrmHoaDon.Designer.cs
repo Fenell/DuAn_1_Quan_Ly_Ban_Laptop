@@ -38,7 +38,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_CTHD = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bt_theongay = new System.Windows.Forms.Button();
+            this.bt_Search_Id = new System.Windows.Forms.Button();
             this.radioButtonCustom3 = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
             this.radioButtonCustom2 = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
             this.radioButtonCustom1 = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
@@ -173,7 +173,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.bt_theongay);
+            this.panel2.Controls.Add(this.bt_Search_Id);
             this.panel2.Controls.Add(this.radioButtonCustom3);
             this.panel2.Controls.Add(this.radioButtonCustom2);
             this.panel2.Controls.Add(this.radioButtonCustom1);
@@ -191,15 +191,16 @@
             this.panel2.Size = new System.Drawing.Size(1306, 87);
             this.panel2.TabIndex = 1;
             // 
-            // bt_theongay
+            // bt_Search_Id
             // 
-            this.bt_theongay.Location = new System.Drawing.Point(11, 54);
-            this.bt_theongay.Name = "bt_theongay";
-            this.bt_theongay.Size = new System.Drawing.Size(75, 23);
-            this.bt_theongay.TabIndex = 51;
-            this.bt_theongay.Text = "Search";
-            this.bt_theongay.UseVisualStyleBackColor = true;
-            this.bt_theongay.Click += new System.EventHandler(this.bt_theongay_Click);
+            this.bt_Search_Id.AccessibleDescription = "";
+            this.bt_Search_Id.Location = new System.Drawing.Point(11, 54);
+            this.bt_Search_Id.Name = "bt_Search_Id";
+            this.bt_Search_Id.Size = new System.Drawing.Size(75, 23);
+            this.bt_Search_Id.TabIndex = 51;
+            this.bt_Search_Id.Text = "Search";
+            this.bt_Search_Id.UseVisualStyleBackColor = true;
+            this.bt_Search_Id.Click += new System.EventHandler(this.bt_theongay_Click);
             // 
             // radioButtonCustom3
             // 
@@ -371,6 +372,6 @@
         private Label label1;
         private FontAwesome.Sharp.IconButton iconButton2;
         private PictureBox pictureBox1;
-        private Button bt_theongay;
+        private Button bt_Search_Id;
     }
 }

@@ -28,233 +28,239 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            textBoxCustom2_01 = new CustomControl.TextBoxCustom2_0();
-            textBoxCustom2_02 = new CustomControl.TextBoxCustom2_0();
-            textBoxCustom2_03 = new CustomControl.TextBoxCustom2_0();
-            textBoxCustom2_04 = new CustomControl.TextBoxCustom2_0();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            buttonCustom1 = new CustomControl.ButtonCustom();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_Email = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom2_0();
+            this.txt_OTP = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom2_0();
+            this.txt_MK_New = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom2_0();
+            this.txt_XacNhan_MK = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom2_0();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.buttonCustom1 = new _3_GUI_PresentationLayer.CustomControl.ButtonCustom();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(86, 104, 195);
-            label1.Location = new Point(143, 10);
-            label1.Name = "label1";
-            label1.Size = new Size(168, 30);
-            label1.TabIndex = 0;
-            label1.Text = "Lấy lại mật khẩu";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(104)))), ((int)(((byte)(195)))));
+            this.label1.Location = new System.Drawing.Point(143, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(168, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Lấy lại mật khẩu";
             // 
-            // textBoxCustom2_01
+            // txt_Email
             // 
-            textBoxCustom2_01.BackColor = Color.FromArgb(204, 204, 204);
-            textBoxCustom2_01.BorderColor = Color.MediumSlateBlue;
-            textBoxCustom2_01.BorderFocusColor = Color.HotPink;
-            textBoxCustom2_01.BorderRadius = 10;
-            textBoxCustom2_01.BorderSize = 1;
-            textBoxCustom2_01.Location = new Point(164, 85);
-            textBoxCustom2_01.Multiline = false;
-            textBoxCustom2_01.Name = "textBoxCustom2_01";
-            textBoxCustom2_01.Padding = new Padding(7);
-            textBoxCustom2_01.PasswordChar = false;
-            textBoxCustom2_01.PlaceholderColor = Color.DarkGray;
-            textBoxCustom2_01.PlaceholderText = "";
-            textBoxCustom2_01.Size = new Size(197, 30);
-            textBoxCustom2_01.TabIndex = 1;
-            textBoxCustom2_01.Texts = "";
-            textBoxCustom2_01.UnderlinedStyle = false;
+            this.txt_Email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txt_Email.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txt_Email.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txt_Email.BorderRadius = 10;
+            this.txt_Email.BorderSize = 1;
+            this.txt_Email.Location = new System.Drawing.Point(164, 85);
+            this.txt_Email.Multiline = false;
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Padding = new System.Windows.Forms.Padding(7);
+            this.txt_Email.PasswordChar = false;
+            this.txt_Email.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_Email.PlaceholderText = "";
+            this.txt_Email.Size = new System.Drawing.Size(197, 30);
+            this.txt_Email.TabIndex = 1;
+            this.txt_Email.Texts = "";
+            this.txt_Email.UnderlinedStyle = false;
             // 
-            // textBoxCustom2_02
+            // txt_OTP
             // 
-            textBoxCustom2_02.BackColor = Color.FromArgb(204, 204, 204);
-            textBoxCustom2_02.BorderColor = Color.MediumSlateBlue;
-            textBoxCustom2_02.BorderFocusColor = Color.HotPink;
-            textBoxCustom2_02.BorderRadius = 10;
-            textBoxCustom2_02.BorderSize = 1;
-            textBoxCustom2_02.Location = new Point(164, 157);
-            textBoxCustom2_02.Multiline = false;
-            textBoxCustom2_02.Name = "textBoxCustom2_02";
-            textBoxCustom2_02.Padding = new Padding(7);
-            textBoxCustom2_02.PasswordChar = false;
-            textBoxCustom2_02.PlaceholderColor = Color.DarkGray;
-            textBoxCustom2_02.PlaceholderText = "";
-            textBoxCustom2_02.Size = new Size(197, 30);
-            textBoxCustom2_02.TabIndex = 1;
-            textBoxCustom2_02.Texts = "";
-            textBoxCustom2_02.UnderlinedStyle = false;
+            this.txt_OTP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txt_OTP.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txt_OTP.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txt_OTP.BorderRadius = 10;
+            this.txt_OTP.BorderSize = 1;
+            this.txt_OTP.Location = new System.Drawing.Point(164, 157);
+            this.txt_OTP.Multiline = false;
+            this.txt_OTP.Name = "txt_OTP";
+            this.txt_OTP.Padding = new System.Windows.Forms.Padding(7);
+            this.txt_OTP.PasswordChar = false;
+            this.txt_OTP.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_OTP.PlaceholderText = "";
+            this.txt_OTP.Size = new System.Drawing.Size(197, 30);
+            this.txt_OTP.TabIndex = 1;
+            this.txt_OTP.Texts = "";
+            this.txt_OTP.UnderlinedStyle = false;
             // 
-            // textBoxCustom2_03
+            // txt_MK_New
             // 
-            textBoxCustom2_03.BackColor = Color.FromArgb(204, 204, 204);
-            textBoxCustom2_03.BorderColor = Color.MediumSlateBlue;
-            textBoxCustom2_03.BorderFocusColor = Color.HotPink;
-            textBoxCustom2_03.BorderRadius = 10;
-            textBoxCustom2_03.BorderSize = 1;
-            textBoxCustom2_03.Location = new Point(164, 227);
-            textBoxCustom2_03.Multiline = false;
-            textBoxCustom2_03.Name = "textBoxCustom2_03";
-            textBoxCustom2_03.Padding = new Padding(7);
-            textBoxCustom2_03.PasswordChar = false;
-            textBoxCustom2_03.PlaceholderColor = Color.DarkGray;
-            textBoxCustom2_03.PlaceholderText = "";
-            textBoxCustom2_03.Size = new Size(197, 30);
-            textBoxCustom2_03.TabIndex = 1;
-            textBoxCustom2_03.Texts = "";
-            textBoxCustom2_03.UnderlinedStyle = false;
+            this.txt_MK_New.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txt_MK_New.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txt_MK_New.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txt_MK_New.BorderRadius = 10;
+            this.txt_MK_New.BorderSize = 1;
+            this.txt_MK_New.Location = new System.Drawing.Point(164, 227);
+            this.txt_MK_New.Multiline = false;
+            this.txt_MK_New.Name = "txt_MK_New";
+            this.txt_MK_New.Padding = new System.Windows.Forms.Padding(7);
+            this.txt_MK_New.PasswordChar = false;
+            this.txt_MK_New.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_MK_New.PlaceholderText = "";
+            this.txt_MK_New.Size = new System.Drawing.Size(197, 30);
+            this.txt_MK_New.TabIndex = 1;
+            this.txt_MK_New.Texts = "";
+            this.txt_MK_New.UnderlinedStyle = false;
+            this.txt_MK_New.Visible = false;
+            this.txt_MK_New.Load += new System.EventHandler(this.textBoxCustom2_03_Load);
             // 
-            // textBoxCustom2_04
+            // txt_XacNhan_MK
             // 
-            textBoxCustom2_04.BackColor = Color.FromArgb(204, 204, 204);
-            textBoxCustom2_04.BorderColor = Color.MediumSlateBlue;
-            textBoxCustom2_04.BorderFocusColor = Color.HotPink;
-            textBoxCustom2_04.BorderRadius = 10;
-            textBoxCustom2_04.BorderSize = 1;
-            textBoxCustom2_04.Location = new Point(164, 302);
-            textBoxCustom2_04.Multiline = false;
-            textBoxCustom2_04.Name = "textBoxCustom2_04";
-            textBoxCustom2_04.Padding = new Padding(7);
-            textBoxCustom2_04.PasswordChar = false;
-            textBoxCustom2_04.PlaceholderColor = Color.DarkGray;
-            textBoxCustom2_04.PlaceholderText = "";
-            textBoxCustom2_04.Size = new Size(197, 30);
-            textBoxCustom2_04.TabIndex = 1;
-            textBoxCustom2_04.Texts = "";
-            textBoxCustom2_04.UnderlinedStyle = false;
+            this.txt_XacNhan_MK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txt_XacNhan_MK.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txt_XacNhan_MK.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txt_XacNhan_MK.BorderRadius = 10;
+            this.txt_XacNhan_MK.BorderSize = 1;
+            this.txt_XacNhan_MK.Location = new System.Drawing.Point(164, 302);
+            this.txt_XacNhan_MK.Multiline = false;
+            this.txt_XacNhan_MK.Name = "txt_XacNhan_MK";
+            this.txt_XacNhan_MK.Padding = new System.Windows.Forms.Padding(7);
+            this.txt_XacNhan_MK.PasswordChar = false;
+            this.txt_XacNhan_MK.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txt_XacNhan_MK.PlaceholderText = "";
+            this.txt_XacNhan_MK.Size = new System.Drawing.Size(197, 30);
+            this.txt_XacNhan_MK.TabIndex = 1;
+            this.txt_XacNhan_MK.Texts = "";
+            this.txt_XacNhan_MK.UnderlinedStyle = false;
+            this.txt_XacNhan_MK.Visible = false;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(86, 104, 195);
-            label2.Location = new Point(90, 94);
-            label2.Name = "label2";
-            label2.Size = new Size(48, 21);
-            label2.TabIndex = 0;
-            label2.Text = "Email";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(104)))), ((int)(((byte)(195)))));
+            this.label2.Location = new System.Drawing.Point(90, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 21);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Email";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.FromArgb(86, 104, 195);
-            label3.Location = new Point(38, 166);
-            label3.Name = "label3";
-            label3.Size = new Size(100, 21);
-            label3.TabIndex = 0;
-            label3.Text = "Mã xác nhận";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(104)))), ((int)(((byte)(195)))));
+            this.label3.Location = new System.Drawing.Point(38, 166);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 21);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Mã xác nhận";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.FromArgb(86, 104, 195);
-            label4.Location = new Point(29, 236);
-            label4.Name = "label4";
-            label4.Size = new Size(109, 21);
-            label4.TabIndex = 0;
-            label4.Text = "Mật khẩu mới";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(104)))), ((int)(((byte)(195)))));
+            this.label4.Location = new System.Drawing.Point(29, 236);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 21);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Mật khẩu mới";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.FromArgb(86, 104, 195);
-            label5.Location = new Point(-1, 311);
-            label5.Name = "label5";
-            label5.Size = new Size(139, 21);
-            label5.TabIndex = 0;
-            label5.Text = "Nhập lại mật khảu";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(104)))), ((int)(((byte)(195)))));
+            this.label5.Location = new System.Drawing.Point(-1, 311);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(139, 21);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Nhập lại mật khảu";
             // 
             // buttonCustom1
             // 
-            buttonCustom1.BackColor = Color.FromArgb(2, 135, 127);
-            buttonCustom1.BackgroundColor = Color.FromArgb(2, 135, 127);
-            buttonCustom1.BorderColor = Color.PaleVioletRed;
-            buttonCustom1.BorderRadius = 20;
-            buttonCustom1.BorderSize = 0;
-            buttonCustom1.FlatAppearance.BorderSize = 0;
-            buttonCustom1.FlatStyle = FlatStyle.Flat;
-            buttonCustom1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCustom1.ForeColor = Color.White;
-            buttonCustom1.Location = new Point(143, 371);
-            buttonCustom1.Name = "buttonCustom1";
-            buttonCustom1.Size = new Size(150, 40);
-            buttonCustom1.TabIndex = 2;
-            buttonCustom1.Text = "Xác nhận";
-            buttonCustom1.TextColor = Color.White;
-            buttonCustom1.UseVisualStyleBackColor = false;
+            this.buttonCustom1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(135)))), ((int)(((byte)(127)))));
+            this.buttonCustom1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(135)))), ((int)(((byte)(127)))));
+            this.buttonCustom1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonCustom1.BorderRadius = 20;
+            this.buttonCustom1.BorderSize = 0;
+            this.buttonCustom1.FlatAppearance.BorderSize = 0;
+            this.buttonCustom1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCustom1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCustom1.ForeColor = System.Drawing.Color.White;
+            this.buttonCustom1.Location = new System.Drawing.Point(143, 371);
+            this.buttonCustom1.Name = "buttonCustom1";
+            this.buttonCustom1.Size = new System.Drawing.Size(150, 40);
+            this.buttonCustom1.TabIndex = 2;
+            this.buttonCustom1.Text = "Xác nhận";
+            this.buttonCustom1.TextColor = System.Drawing.Color.White;
+            this.buttonCustom1.UseVisualStyleBackColor = false;
             // 
             // iconButton1
             // 
-            iconButton1.BackColor = Color.FromArgb(204, 204, 204);
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.PaperPlane;
-            iconButton1.IconColor = Color.FromArgb(86, 104, 195);
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 30;
-            iconButton1.Location = new Point(367, 82);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Padding = new Padding(0, 3, 0, 0);
-            iconButton1.Size = new Size(41, 38);
-            iconButton1.TabIndex = 3;
-            iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.PaperPlane;
+            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(104)))), ((int)(((byte)(195)))));
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 30;
+            this.iconButton1.Location = new System.Drawing.Point(367, 82);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.iconButton1.Size = new System.Drawing.Size(41, 38);
+            this.iconButton1.TabIndex = 3;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // iconButton2
             // 
-            iconButton2.BackColor = Color.FromArgb(204, 204, 204);
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            iconButton2.IconColor = Color.FromArgb(86, 104, 195);
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 30;
-            iconButton2.Location = new Point(367, 152);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Padding = new Padding(0, 3, 0, 0);
-            iconButton2.Size = new Size(41, 38);
-            iconButton2.TabIndex = 3;
-            iconButton2.UseVisualStyleBackColor = false;
+            this.iconButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(104)))), ((int)(((byte)(195)))));
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 30;
+            this.iconButton2.Location = new System.Drawing.Point(367, 152);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.iconButton2.Size = new System.Drawing.Size(41, 38);
+            this.iconButton2.TabIndex = 3;
+            this.iconButton2.UseVisualStyleBackColor = false;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // FrmQuenMatKhau
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(204, 204, 204);
-            ClientSize = new Size(407, 432);
-            Controls.Add(iconButton2);
-            Controls.Add(iconButton1);
-            Controls.Add(buttonCustom1);
-            Controls.Add(textBoxCustom2_04);
-            Controls.Add(textBoxCustom2_03);
-            Controls.Add(textBoxCustom2_02);
-            Controls.Add(textBoxCustom2_01);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Name = "FrmQuenMatKhau";
-            Text = "FrmQuenMatKhau";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.ClientSize = new System.Drawing.Size(407, 432);
+            this.Controls.Add(this.iconButton2);
+            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.buttonCustom1);
+            this.Controls.Add(this.txt_XacNhan_MK);
+            this.Controls.Add(this.txt_MK_New);
+            this.Controls.Add(this.txt_OTP);
+            this.Controls.Add(this.txt_Email);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Name = "FrmQuenMatKhau";
+            this.Text = "FrmQuenMatKhau";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
         private Label label1;
-        private CustomControl.TextBoxCustom2_0 textBoxCustom2_01;
-        private CustomControl.TextBoxCustom2_0 textBoxCustom2_02;
-        private CustomControl.TextBoxCustom2_0 textBoxCustom2_03;
-        private CustomControl.TextBoxCustom2_0 textBoxCustom2_04;
+        private CustomControl.TextBoxCustom2_0 txt_Email;
+        private CustomControl.TextBoxCustom2_0 txt_OTP;
+        private CustomControl.TextBoxCustom2_0 txt_MK_New;
+        private CustomControl.TextBoxCustom2_0 txt_XacNhan_MK;
         private Label label2;
         private Label label3;
         private Label label4;
