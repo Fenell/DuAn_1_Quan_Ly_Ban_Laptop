@@ -30,9 +30,10 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
-            lblMaHD = new Label();
+            txtMaHD = new CustomControl.TextBoxCustom2_0();
             label10 = new Label();
             groupBox3 = new GroupBox();
+            cbbSdtKH = new ComboBox();
             lblHoTen = new Label();
             label5 = new Label();
             label6 = new Label();
@@ -44,7 +45,7 @@
             btnThanhToan = new FontAwesome.Sharp.IconButton();
             txtKhachDua = new CustomControl.TextBoxCustom2_0();
             txtGhiChu = new CustomControl.TextBoxCustom2_0();
-            label13 = new Label();
+            lblTienThua = new Label();
             label9 = new Label();
             label12 = new Label();
             label8 = new Label();
@@ -58,20 +59,17 @@
             panel4 = new Panel();
             ptbCamera = new PictureBox();
             activeCamera = new CustomControl.ButtonCustom();
-            comboBoxCustom3 = new CustomControl.ComboBoxCustom();
             iconButton8 = new FontAwesome.Sharp.IconButton();
-            textBoxCustom2_04 = new CustomControl.TextBoxCustom2_0();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            label1 = new Label();
+            txtTimKiem = new CustomControl.TextBoxCustom2_0();
+            btnDesc = new FontAwesome.Sharp.IconButton();
+            btnAsc = new FontAwesome.Sharp.IconButton();
             label2 = new Label();
             panel3 = new Panel();
             dgvSanPham = new DataGridView();
             groupBox2 = new GroupBox();
             dgvGioHang = new DataGridView();
-            groupBox1 = new GroupBox();
+            grbCart = new GroupBox();
             tCamera = new System.Windows.Forms.Timer(components);
-            cbbSdtKH = new ComboBox();
             panel1.SuspendLayout();
             groupBox3.SuspendLayout();
             panel2.SuspendLayout();
@@ -86,7 +84,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(lblMaHD);
+            panel1.Controls.Add(txtMaHD);
             panel1.Controls.Add(label10);
             panel1.Controls.Add(groupBox3);
             panel1.Controls.Add(lblTongTien);
@@ -96,7 +94,7 @@
             panel1.Controls.Add(btnThanhToan);
             panel1.Controls.Add(txtKhachDua);
             panel1.Controls.Add(txtGhiChu);
-            panel1.Controls.Add(label13);
+            panel1.Controls.Add(lblTienThua);
             panel1.Controls.Add(label9);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(label8);
@@ -110,16 +108,23 @@
             panel1.Size = new Size(405, 655);
             panel1.TabIndex = 19;
             // 
-            // lblMaHD
+            // txtMaHD
             // 
-            lblMaHD.AutoSize = true;
-            lblMaHD.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblMaHD.ForeColor = SystemColors.HotTrack;
-            lblMaHD.Location = new Point(128, 162);
-            lblMaHD.Name = "lblMaHD";
-            lblMaHD.Size = new Size(63, 20);
-            lblMaHD.TabIndex = 17;
-            lblMaHD.Text = "111111";
+            txtMaHD.BorderColor = Color.MediumSlateBlue;
+            txtMaHD.BorderFocusColor = Color.HotPink;
+            txtMaHD.BorderRadius = 0;
+            txtMaHD.BorderSize = 2;
+            txtMaHD.Location = new Point(125, 152);
+            txtMaHD.Multiline = false;
+            txtMaHD.Name = "txtMaHD";
+            txtMaHD.Padding = new Padding(7);
+            txtMaHD.PasswordChar = false;
+            txtMaHD.PlaceholderColor = Color.DarkGray;
+            txtMaHD.PlaceholderText = "";
+            txtMaHD.Size = new Size(241, 30);
+            txtMaHD.TabIndex = 52;
+            txtMaHD.Texts = "";
+            txtMaHD.UnderlinedStyle = true;
             // 
             // label10
             // 
@@ -145,6 +150,16 @@
             groupBox3.TabIndex = 51;
             groupBox3.TabStop = false;
             groupBox3.Text = "Thông tin khách hàng";
+            // 
+            // cbbSdtKH
+            // 
+            cbbSdtKH.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cbbSdtKH.FormattingEnabled = true;
+            cbbSdtKH.Location = new Point(127, 24);
+            cbbSdtKH.Name = "cbbSdtKH";
+            cbbSdtKH.Size = new Size(198, 23);
+            cbbSdtKH.TabIndex = 51;
+            cbbSdtKH.TextChanged += cbbSdtKH_TextChanged;
             // 
             // lblHoTen
             // 
@@ -309,16 +324,16 @@
             txtGhiChu.Texts = "";
             txtGhiChu.UnderlinedStyle = false;
             // 
-            // label13
+            // lblTienThua
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.ForeColor = SystemColors.HotTrack;
-            label13.Location = new Point(138, 530);
-            label13.Name = "label13";
-            label13.Size = new Size(46, 20);
-            label13.TabIndex = 46;
-            label13.Text = "Label";
+            lblTienThua.AutoSize = true;
+            lblTienThua.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTienThua.ForeColor = SystemColors.HotTrack;
+            lblTienThua.Location = new Point(138, 530);
+            lblTienThua.Name = "lblTienThua";
+            lblTienThua.Size = new Size(46, 20);
+            lblTienThua.TabIndex = 46;
+            lblTienThua.Text = "Label";
             // 
             // label9
             // 
@@ -427,12 +442,10 @@
             panel2.Controls.Add(cbbCamera);
             panel2.Controls.Add(panel4);
             panel2.Controls.Add(activeCamera);
-            panel2.Controls.Add(comboBoxCustom3);
             panel2.Controls.Add(iconButton8);
-            panel2.Controls.Add(textBoxCustom2_04);
-            panel2.Controls.Add(iconButton2);
-            panel2.Controls.Add(iconButton1);
-            panel2.Controls.Add(label1);
+            panel2.Controls.Add(txtTimKiem);
+            panel2.Controls.Add(btnDesc);
+            panel2.Controls.Add(btnAsc);
             panel2.Controls.Add(label2);
             panel2.Location = new Point(18, 17);
             panel2.Name = "panel2";
@@ -483,25 +496,6 @@
             activeCamera.UseVisualStyleBackColor = false;
             activeCamera.Click += activeCamera_Click;
             // 
-            // comboBoxCustom3
-            // 
-            comboBoxCustom3.BackColor = Color.White;
-            comboBoxCustom3.BorderColor = Color.MediumSlateBlue;
-            comboBoxCustom3.BorderSize = 1;
-            comboBoxCustom3.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBoxCustom3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxCustom3.ForeColor = Color.DimGray;
-            comboBoxCustom3.IconColor = Color.MediumSlateBlue;
-            comboBoxCustom3.ListBackColor = Color.FromArgb(230, 228, 245);
-            comboBoxCustom3.ListTextColor = Color.DimGray;
-            comboBoxCustom3.Location = new Point(10, 88);
-            comboBoxCustom3.MinimumSize = new Size(150, 30);
-            comboBoxCustom3.Name = "comboBoxCustom3";
-            comboBoxCustom3.Padding = new Padding(1);
-            comboBoxCustom3.Size = new Size(244, 30);
-            comboBoxCustom3.TabIndex = 48;
-            comboBoxCustom3.Texts = "";
-            // 
             // iconButton8
             // 
             iconButton8.FlatAppearance.BorderSize = 0;
@@ -510,68 +504,57 @@
             iconButton8.IconColor = Color.Black;
             iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton8.IconSize = 23;
-            iconButton8.Location = new Point(10, 24);
+            iconButton8.Location = new Point(12, 37);
             iconButton8.Name = "iconButton8";
             iconButton8.Size = new Size(32, 25);
             iconButton8.TabIndex = 47;
             iconButton8.UseVisualStyleBackColor = true;
             // 
-            // textBoxCustom2_04
+            // txtTimKiem
             // 
-            textBoxCustom2_04.BorderColor = Color.MediumSlateBlue;
-            textBoxCustom2_04.BorderFocusColor = Color.HotPink;
-            textBoxCustom2_04.BorderRadius = 10;
-            textBoxCustom2_04.BorderSize = 1;
-            textBoxCustom2_04.Location = new Point(4, 20);
-            textBoxCustom2_04.Multiline = false;
-            textBoxCustom2_04.Name = "textBoxCustom2_04";
-            textBoxCustom2_04.Padding = new Padding(42, 7, 7, 7);
-            textBoxCustom2_04.PasswordChar = false;
-            textBoxCustom2_04.PlaceholderColor = Color.DarkGray;
-            textBoxCustom2_04.PlaceholderText = "Tìm kiếm";
-            textBoxCustom2_04.Size = new Size(250, 30);
-            textBoxCustom2_04.TabIndex = 46;
-            textBoxCustom2_04.Texts = "";
-            textBoxCustom2_04.UnderlinedStyle = false;
+            txtTimKiem.BorderColor = Color.MediumSlateBlue;
+            txtTimKiem.BorderFocusColor = Color.HotPink;
+            txtTimKiem.BorderRadius = 10;
+            txtTimKiem.BorderSize = 1;
+            txtTimKiem.Location = new Point(6, 33);
+            txtTimKiem.Multiline = false;
+            txtTimKiem.Name = "txtTimKiem";
+            txtTimKiem.Padding = new Padding(42, 7, 7, 7);
+            txtTimKiem.PasswordChar = false;
+            txtTimKiem.PlaceholderColor = Color.DarkGray;
+            txtTimKiem.PlaceholderText = "Tìm kiếm";
+            txtTimKiem.Size = new Size(250, 30);
+            txtTimKiem.TabIndex = 46;
+            txtTimKiem.Texts = "";
+            txtTimKiem.UnderlinedStyle = false;
             // 
-            // iconButton2
+            // btnDesc
             // 
-            iconButton2.BackColor = Color.White;
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.SortAmountDown;
-            iconButton2.IconColor = Color.FromArgb(187, 92, 119);
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.Location = new Point(471, 38);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(56, 46);
-            iconButton2.TabIndex = 45;
-            iconButton2.UseVisualStyleBackColor = false;
+            btnDesc.BackColor = Color.White;
+            btnDesc.FlatAppearance.BorderSize = 0;
+            btnDesc.FlatStyle = FlatStyle.Flat;
+            btnDesc.IconChar = FontAwesome.Sharp.IconChar.SortAmountDown;
+            btnDesc.IconColor = Color.FromArgb(187, 92, 119);
+            btnDesc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDesc.Location = new Point(471, 38);
+            btnDesc.Name = "btnDesc";
+            btnDesc.Size = new Size(56, 46);
+            btnDesc.TabIndex = 45;
+            btnDesc.UseVisualStyleBackColor = false;
             // 
-            // iconButton1
+            // btnAsc
             // 
-            iconButton1.BackColor = Color.White;
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowUpShortWide;
-            iconButton1.IconColor = Color.FromArgb(187, 92, 119);
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(406, 38);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(59, 47);
-            iconButton1.TabIndex = 44;
-            iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.Highlight;
-            label1.Location = new Point(10, 67);
-            label1.Name = "label1";
-            label1.Size = new Size(98, 17);
-            label1.TabIndex = 43;
-            label1.Text = "Loại sản phẩm";
+            btnAsc.BackColor = Color.White;
+            btnAsc.FlatAppearance.BorderSize = 0;
+            btnAsc.FlatStyle = FlatStyle.Flat;
+            btnAsc.IconChar = FontAwesome.Sharp.IconChar.ArrowUpShortWide;
+            btnAsc.IconColor = Color.FromArgb(187, 92, 119);
+            btnAsc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAsc.Location = new Point(406, 38);
+            btnAsc.Name = "btnAsc";
+            btnAsc.Size = new Size(59, 47);
+            btnAsc.TabIndex = 44;
+            btnAsc.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -636,29 +619,20 @@
             dgvGioHang.TabIndex = 12;
             dgvGioHang.CellContentClick += dgvGioHang_CellContentClick;
             // 
-            // groupBox1
+            // grbCart
             // 
-            groupBox1.BackColor = Color.White;
-            groupBox1.Location = new Point(1433, 11);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(76, 664);
-            groupBox1.TabIndex = 44;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Đơn hàng chờ";
+            grbCart.BackColor = Color.White;
+            grbCart.Location = new Point(1433, 11);
+            grbCart.Name = "grbCart";
+            grbCart.Size = new Size(76, 664);
+            grbCart.TabIndex = 44;
+            grbCart.TabStop = false;
+            grbCart.Text = "Đơn hàng chờ";
             // 
             // tCamera
             // 
             tCamera.Interval = 500;
             tCamera.Tick += tCamera_Tick;
-            // 
-            // cbbSdtKH
-            // 
-            cbbSdtKH.FormattingEnabled = true;
-            cbbSdtKH.Location = new Point(127, 24);
-            cbbSdtKH.Name = "cbbSdtKH";
-            cbbSdtKH.Size = new Size(198, 23);
-            cbbSdtKH.TabIndex = 51;
-            cbbSdtKH.TextChanged += cbbSdtKH_TextChanged;
             // 
             // FrmBanHang
             // 
@@ -667,7 +641,7 @@
             BackColor = Color.FromArgb(244, 245, 255);
             ClientSize = new Size(1521, 690);
             Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
+            Controls.Add(grbCart);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -701,7 +675,7 @@
         private CustomControl.RadioButtonCustom rbtnTransfer;
         private Label label3;
         private Panel panel2;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btnDesc;
         private Label label2;
         private Panel panel3;
         private GroupBox groupBox2;
@@ -709,29 +683,27 @@
         private DataGridView dgvSanPham;
         private CustomControl.TextBoxCustom2_0 txtKhachDua;
         private CustomControl.TextBoxCustom2_0 txtGhiChu;
-        private GroupBox groupBox1;
+        private GroupBox grbCart;
         private FontAwesome.Sharp.IconButton btnThanhToan;
-        private Label label13;
+        private Label lblTienThua;
         private Label label12;
         private FontAwesome.Sharp.IconButton btnHuyHD;
         private FontAwesome.Sharp.IconButton btnSuaHD;
         private FontAwesome.Sharp.IconButton btnLuuHD;
         private FontAwesome.Sharp.IconButton iconButton8;
-        private CustomControl.TextBoxCustom2_0 textBoxCustom2_04;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private CustomControl.ComboBoxCustom comboBoxCustom3;
-        private Label label1;
+        private CustomControl.TextBoxCustom2_0 txtTimKiem;
+        private FontAwesome.Sharp.IconButton btnAsc;
         private CustomControl.ButtonCustom activeCamera;
         private PictureBox ptbCamera;
         private Label lblTongTien;
         private Panel panel4;
         private System.Windows.Forms.Timer tCamera;
         private ComboBox cbbCamera;
-        private Label lblMaHD;
         private Label label10;
         private GroupBox groupBox3;
         private Label lblHoTen;
         private Label label5;
         private ComboBox cbbSdtKH;
+        private CustomControl.TextBoxCustom2_0 txtMaHD;
     }
 }

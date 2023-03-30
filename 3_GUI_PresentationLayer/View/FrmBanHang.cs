@@ -42,7 +42,6 @@ namespace _3_GUI_PresentationLayer.View
             InitializeComponent();
             _laptopService = new LaptopService();
             _serialLaptopService = new SerialLaptopService();
-            _lstCtHoaDonViews = new List<ChiTietHoaDonView>();
             _laptop = new Laptop();
             _lstLaptopViews = new List<LaptopView>();
             _khachHangService = new KhachHangService();
@@ -54,21 +53,28 @@ namespace _3_GUI_PresentationLayer.View
 
             _lstLaptopViews = _laptopService.GetAllLaptop();
             LoadData();
-            GetDeviceVideoCapture();
-            LoadSanPham();
         }
 
         private void LoadData()
         {
-            AutoCompleteStringCollection lstKhachHang = new AutoCompleteStringCollection();
-            var lst = _khachHangService.GetLstKhachHang();
-            lst.ForEach(c => lstKhachHang.Add(c.SoDienThoai));
-            cbbSdtKH.DisplayMember = "SoDienThoai";
-            cbbSdtKH.DataSource = lst;
-            cbbSdtKH.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            cbbSdtKH.AutoCompleteCustomSource = lstKhachHang;
+            _lstCtHoaDonViews = new List<ChiTietHoaDonView>();
 
-            lblMaHD.Text = _hoaDonSerevice.AutoGenerateMa();
+            var lst = _khachHangService.GetLstKhachHang();
+            AutoCompleteStringCollection lstKhachHang = new AutoCompleteStringCollection();
+            lst.ForEach(c => lstKhachHang.Add(c.SoDienThoai));
+            cbbSdtKH.AutoCompleteCustomSource = lstKhachHang;
+            cbbSdtKH.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            cbbSdtKH.DisplayMember = "SoDienThoai";
+            cbbSdtKH.Text = "Chọn số điện thoại";
+            lst.ForEach(c => cbbSdtKH.Items.Insert(0, c.SoDienThoai));
+            cbbSdtKH.DropDownStyle = ComboBoxStyle.DropDown;
+
+            txtMaHD.Texts = _hoaDonSerevice.AutoGenerateMa();
+
+            GetDeviceVideoCapture();
+            LoadSanPham();
+            ResetForm();
         }
 
         private void LoadSanPham()
@@ -148,7 +154,6 @@ namespace _3_GUI_PresentationLayer.View
                 cbb.Name = "cbbSerial";
                 cbb.DropDownStyle = ComboBoxStyle.DropDown;
                 cbb.AutoCompleteMode = AutoCompleteMode.Suggest;
-                cbb.Text = "Chọn serial";
             }
         }
 
@@ -165,7 +170,7 @@ namespace _3_GUI_PresentationLayer.View
         {
             int rowIndex = e.RowIndex;
             _serialSelected = Convert.ToString(dgvSanPham.Rows[rowIndex].Cells[3].Value);
-            if (_serialSelected == "Chọn serial")
+            if (_serialSelected == "")
             {
                 MessageBox.Show("Bạn chưa chọn serial cho sản phẩm");
                 return;
@@ -186,10 +191,12 @@ namespace _3_GUI_PresentationLayer.View
         private void AddGioHang(string serial)
         {
             var serialLaptop = _serialLaptopService.GetSerialLaptopList().Find(c => c.Serial == serial);
-            if (serialLaptop != null)
+            if (serialLaptop == null)
             {
-                _laptop = _laptopService.GetLaptopFromDb().Find(c => c.Id == serialLaptop.IdLaptop);
+                MessageBox.Show("Không tìm được sản phẩm", "Thông báo");
+                return;
             }
+            _laptop = _laptopService.GetLaptopFromDb().Find(c => c.Id == serialLaptop.IdLaptop);
 
             if (_laptop is Laptop)
             {
@@ -294,17 +301,24 @@ namespace _3_GUI_PresentationLayer.View
                 return;
             }
 
+            if (!rbtnTransfer.Checked && !rbtnCash.Checked)
+            {
+                MessageBox.Show("Bạn chưa chọn hình thức thanh toán");
+                return;
+            }
+
             HoaDonView hoaDon = new HoaDonView()
             {
                 Id = Guid.NewGuid(),
                 IdNhanVien = Guid.Parse("f20f9470-1da9-44a9-8ad0-8b5543d47dc1"),
                 IdKhachHang = khachHang.Id,
-                MaHd = lblMaHD.Text,
+                MaHd = txtMaHD.Text,
                 NgayTao = DateTime.Now,
                 NgayThanhToan = DateTime.Now,
                 GhiChu = txtGhiChu.Texts,
                 HTThanhToan = rbtnTransfer.Checked ? "Chuyển khoản" : "Tiền mặt",
                 TongTien = decimal.Parse(lblTongTien.Text),
+                TrangThaiHD = 0
             };
             _hoaDonSerevice.AddHoaDon(hoaDon);
 
@@ -313,12 +327,50 @@ namespace _3_GUI_PresentationLayer.View
                 a.IdHoaDon = hoaDon.Id;
                 _chiTietHoaDonService.AddChiTietHoaDon(a);
             }
-
+            _lstCtHoaDonViews.Clear();
+            LoadGioHang();
             MessageBox.Show("Thanh toan ok!");
+
 
         }
 
         private void btnLuuHD_Click(object sender, EventArgs e)
+        {
+            HoaDonView hoaDon = new HoaDonView()
+            {
+                Id = Guid.NewGuid(),
+                IdNhanVien = Guid.Parse("f20f9470-1da9-44a9-8ad0-8b5543d47dc1"),
+                MaHd = txtMaHD.Text,
+                NgayTao = DateTime.Now,
+                NgayThanhToan = DateTime.Now,
+                GhiChu = txtGhiChu.Texts,
+                HTThanhToan = rbtnTransfer.Checked ? "Chuyển khoản" : "Tiền mặt",
+                //TongTien = decimal.Parse(lblTongTien.Text),
+            };
+            PictureBox pictureBox = new PictureBox();
+            Label label = new Label();
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox.Size = new Size(35, 35);
+            Image img = Image.FromFile(@"D:\CODE\C#\DuAn_1_Quan_Ly_Ban_Laptop\3_GUI_PresentationLayer\Resources\order.png");
+            pictureBox.Image = img;
+            pictureBox.Tag = hoaDon;
+            pictureBox.Click += PictureBox_Click;
+
+            int x = 20;
+            int y = 40 + (label.Height + 10)* grbCart.Controls.OfType<Label>().Count() + pictureBox.Height * grbCart.Controls.OfType<PictureBox>().Count();
+
+            pictureBox.Location = new Point(x, y);
+            grbCart.Controls.Add(pictureBox);
+
+            label.AutoSize = true;
+            int yLabel = y - 10 - label.Height;
+            label.Location = new Point(10, y + pictureBox.Height + 1);
+            label.Text = txtMaHD.Texts;
+            grbCart.Controls.Add(label);
+
+        }
+
+        private void PictureBox_Click(object? sender, EventArgs e)
         {
 
         }
@@ -417,6 +469,17 @@ namespace _3_GUI_PresentationLayer.View
             {
                 lblHoTen.Text = khachHang.Hoten;
             }
+        }
+
+        private void ResetForm()
+        {
+            txtTimKiem.Texts = "";
+            txtGhiChu.Texts = "";
+            txtKhachDua.Texts = "";
+            lblTongTien.Text = "";
+            lblTienThua.Text = "";
+            rbtnTransfer.Checked = false;
+            rbtnCash.Checked = false;
         }
     }
 }

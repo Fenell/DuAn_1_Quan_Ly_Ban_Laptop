@@ -107,23 +107,32 @@ namespace _2_BUS_BusinessLayer.Services
 
         public string AutoGenerateMa()
         {
-            int numGenerate;
+            Random random = new Random();
+            int numGenerate =  random.Next(1000,9999);
             string maHD;
-            int countHD = _hoaDonRepository.GetAllHoaDon().Count;
-
-            for (numGenerate = 0; numGenerate <= countHD; numGenerate++)
+            maHD = $"HD{numGenerate}";
+            if (_hoaDonRepository.GetAllHoaDon().Any(c=>c.Ma == maHD))
             {
-                numGenerate++;
-                maHD = $"HD{numGenerate.ToString().PadLeft(6, '0')}";
-                if (_hoaDonRepository.GetAllHoaDon().All(c => c.Ma != maHD))
-                {
-                    return maHD;
-                }
+                AutoGenerateMa();
             }
 
-            numGenerate = countHD + 1;
-            maHD = $"HD{numGenerate.ToString().PadLeft(6, '0')}";
             return maHD;
+            //int countHD = _hoaDonRepository.GetAllHoaDon().Count;
+
+            //for (numGenerate = 0; numGenerate <= countHD; numGenerate++)
+            //{
+            //    numGenerate++;
+            //    maHD = $"HD{numGenerate.ToString().PadLeft(6, '0')}";
+            //    if (_hoaDonRepository.GetAllHoaDon().All(c => c.Ma != maHD))
+            //    {
+            //        return maHD;
+            //    }
+            //}
+
+            //numGenerate = countHD + 1;
+            //maHD = $"HD{numGenerate.ToString().PadLeft(6, '0')}";
+            //return maHD;
+
         }
     }
 }

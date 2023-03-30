@@ -18,8 +18,6 @@ namespace _2_BUS_BusinessLayer.ViewModel
         public string HTThanhToan { get; set; }
         public DateTime NgayTao { get; set; }
         public DateTime NgayThanhToan { get; set; }
-        public int TrangThaiGH { get; set; }
-        public string HinhThucNhanHang { get; set; }
         public int TrangThaiHD { get; set; }
         public string DcNhanHang { get; set; }
         public string GhiChu { get; set; }
