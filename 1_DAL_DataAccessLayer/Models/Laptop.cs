@@ -43,5 +43,6 @@ namespace _1_DAL_DataAccessLayer.Models
         public KhuyenMai? KhuyenMai{ get; set; }
 
         public ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
+        public ICollection<SerialLaptop> SerialLaptops { get; set; }
     }
 }

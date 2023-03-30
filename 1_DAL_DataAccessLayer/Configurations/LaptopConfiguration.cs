@@ -43,8 +43,7 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.HasOne<MauSac>(x => x.MauSac).WithMany(a => a.Laptops).HasForeignKey(x => x.IdMauSac);
             builder.HasOne<OCung>(x => x.OCung).WithMany(a => a.Laptops).HasForeignKey(x => x.IdOCung);
 
-            builder.HasOne<SerialLaptop>(x => x.SerialLaptop).WithOne(a => a.Laptop)
-                .HasForeignKey<SerialLaptop>(a => a.IdLaptop);
+            builder.HasMany<SerialLaptop>(c => c.SerialLaptops).WithOne(a => a.Laptop).HasForeignKey(a => a.IdLaptop);
 
             builder.HasOne<KhuyenMai>(c => c.KhuyenMai).WithMany(a => a.Laptops).HasForeignKey(c => c.IdKhuyenMai);
         }
