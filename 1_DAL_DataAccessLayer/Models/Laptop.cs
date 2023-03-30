@@ -21,7 +21,6 @@ namespace _1_DAL_DataAccessLayer.Models
         public Guid IdMauSac { get; set; }
         public Guid IdOCung { get; set; }
         public Guid? IdKhuyenMai { get; set; }
-        public Guid? IdSerial { get; set; }
         public string? Ten { get; set; }
         public decimal GiaNhap { get; set; }
         public decimal GiaBan { get; set; }
@@ -41,8 +40,8 @@ namespace _1_DAL_DataAccessLayer.Models
         public ManHinh? ManHinh { get; set; }
         public MauSac? MauSac { get; set; }
         public OCung? OCung { get; set; }
-        public SerialLaptop? SerialLaptop { get; set; }
 
         public ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
+        public ICollection<SerialLaptop> SerialLaptops { get; set; }
     }
 }
