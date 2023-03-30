@@ -449,7 +449,7 @@
             panel2.Controls.Add(label2);
             panel2.Location = new Point(18, 17);
             panel2.Name = "panel2";
-            panel2.Size = new Size(972, 140);
+            panel2.Size = new Size(1039, 140);
             panel2.TabIndex = 42;
             // 
             // cbbCamera
@@ -572,7 +572,7 @@
             panel3.Controls.Add(dgvSanPham);
             panel3.Location = new Point(18, 163);
             panel3.Name = "panel3";
-            panel3.Size = new Size(975, 268);
+            panel3.Size = new Size(1042, 268);
             panel3.TabIndex = 43;
             // 
             // dgvSanPham
@@ -595,9 +595,9 @@
             // 
             groupBox2.Controls.Add(dgvGioHang);
             groupBox2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox2.Location = new Point(18, 437);
+            groupBox2.Location = new Point(18, 452);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(975, 238);
+            groupBox2.Size = new Size(728, 223);
             groupBox2.TabIndex = 24;
             groupBox2.TabStop = false;
             groupBox2.Text = "Giỏ Hàng";
@@ -634,12 +634,23 @@
             tCamera.Interval = 500;
             tCamera.Tick += tCamera_Tick;
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(dataGridView3);
+            groupBox1.Location = new Point(764, 452);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(292, 219);
+            groupBox1.TabIndex = 44;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Đơn hàng chờ";
+            // 
             // FrmBanHang
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(244, 245, 255);
             ClientSize = new Size(1521, 690);
+            Controls.Add(groupBox1);
             Controls.Add(groupBox2);
             Controls.Add(grbCart);
             Controls.Add(panel3);
