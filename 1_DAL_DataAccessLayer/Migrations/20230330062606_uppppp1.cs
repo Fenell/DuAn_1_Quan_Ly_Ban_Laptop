@@ -5,11 +5,15 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace _1_DAL_DataAccessLayer.Migrations
 {
+<<<<<<< HEAD:1_DAL_DataAccessLayer/Migrations/20230328082325_updatedbN.cs
 <<<<<<< HEAD:1_DAL_DataAccessLayer/Migrations/20230327075200_tuanlong.cs
     public partial class tuanlong : Migration
 =======
     public partial class updatedbN : Migration
 >>>>>>> Update db lần thứ n+1:1_DAL_DataAccessLayer/Migrations/20230328082325_updatedbN.cs
+=======
+    public partial class uppppp1 : Migration
+>>>>>>> Update db lần n+2  xóa linh kiện:1_DAL_DataAccessLayer/Migrations/20230330062606_uppppp1.cs
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -37,19 +41,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_HangLaptop", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "HangLinhKien",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Ma = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    Ten = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_HangLinhKien", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -217,26 +208,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "LoaiLinhKien",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    IdHangLinhKien = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Ten = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Ma = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_LoaiLinhKien", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_LoaiLinhKien_HangLinhKien_IdHangLinhKien",
-                        column: x => x.IdHangLinhKien,
-                        principalTable: "HangLinhKien",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "HoaDon",
                 columns: table => new
                 {
@@ -286,7 +257,11 @@ namespace _1_DAL_DataAccessLayer.Migrations
 <<<<<<< HEAD:1_DAL_DataAccessLayer/Migrations/20230327075200_tuanlong.cs
 =======
                     IdKhuyenMai = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+<<<<<<< HEAD:1_DAL_DataAccessLayer/Migrations/20230328082325_updatedbN.cs
 >>>>>>> Update db lần thứ n+1:1_DAL_DataAccessLayer/Migrations/20230328082325_updatedbN.cs
+=======
+                    IdSerial = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+>>>>>>> Update db lần n+2  xóa linh kiện:1_DAL_DataAccessLayer/Migrations/20230330062606_uppppp1.cs
                     Ten = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     GiaNhap = table.Column<decimal>(type: "decimal(18,4)", nullable: false),
                     GiaBan = table.Column<decimal>(type: "decimal(18,4)", nullable: false),
@@ -360,6 +335,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                 });
 
             migrationBuilder.CreateTable(
+<<<<<<< HEAD:1_DAL_DataAccessLayer/Migrations/20230328082325_updatedbN.cs
                 name: "LinhKien",
                 columns: table => new
                 {
@@ -434,6 +410,8 @@ namespace _1_DAL_DataAccessLayer.Migrations
                 });
 
             migrationBuilder.CreateTable(
+=======
+>>>>>>> Update db lần n+2  xóa linh kiện:1_DAL_DataAccessLayer/Migrations/20230330062606_uppppp1.cs
                 name: "ChiTietHoaDon",
                 columns: table => new
                 {
@@ -459,14 +437,10 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         column: x => x.IdLaptop,
                         principalTable: "Laptop",
                         principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ChiTietHoaDon_LinhKien_IdLinhKien",
-                        column: x => x.IdLinhKien,
-                        principalTable: "LinhKien",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
+<<<<<<< HEAD:1_DAL_DataAccessLayer/Migrations/20230328082325_updatedbN.cs
 <<<<<<< HEAD:1_DAL_DataAccessLayer/Migrations/20230327075200_tuanlong.cs
                 name: "ChiTietKhuyenMai",
                 columns: table => new
@@ -509,13 +483,21 @@ namespace _1_DAL_DataAccessLayer.Migrations
 =======
                     IdLinhKien = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
 >>>>>>> Update db lần thứ n+1:1_DAL_DataAccessLayer/Migrations/20230328082325_updatedbN.cs
+=======
+                name: "SerialLaptop",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    IdLaptop = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+>>>>>>> Update db lần n+2  xóa linh kiện:1_DAL_DataAccessLayer/Migrations/20230330062606_uppppp1.cs
                     Serial = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     TrangThai = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SerialLinhKien", x => x.Id);
+                    table.PrimaryKey("PK_SerialLaptop", x => x.Id);
                     table.ForeignKey(
+<<<<<<< HEAD:1_DAL_DataAccessLayer/Migrations/20230328082325_updatedbN.cs
 <<<<<<< HEAD:1_DAL_DataAccessLayer/Migrations/20230327075200_tuanlong.cs
                         name: "FK_SerialLinhKien_LinhKien_IdSanPhamLinhKien",
                         column: x => x.IdSanPhamLinhKien,
@@ -524,6 +506,11 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         column: x => x.IdLinhKien,
 >>>>>>> Update db lần thứ n+1:1_DAL_DataAccessLayer/Migrations/20230328082325_updatedbN.cs
                         principalTable: "LinhKien",
+=======
+                        name: "FK_SerialLaptop_Laptop_IdLaptop",
+                        column: x => x.IdLaptop,
+                        principalTable: "Laptop",
+>>>>>>> Update db lần n+2  xóa linh kiện:1_DAL_DataAccessLayer/Migrations/20230330062606_uppppp1.cs
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -539,6 +526,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                 column: "IdLaptop");
 
             migrationBuilder.CreateIndex(
+<<<<<<< HEAD:1_DAL_DataAccessLayer/Migrations/20230328082325_updatedbN.cs
                 name: "IX_ChiTietHoaDon_IdLinhKien",
                 table: "ChiTietHoaDon",
                 column: "IdLinhKien");
@@ -562,6 +550,8 @@ namespace _1_DAL_DataAccessLayer.Migrations
             migrationBuilder.CreateIndex(
 =======
 >>>>>>> Update db lần thứ n+1:1_DAL_DataAccessLayer/Migrations/20230328082325_updatedbN.cs
+=======
+>>>>>>> Update db lần n+2  xóa linh kiện:1_DAL_DataAccessLayer/Migrations/20230330062606_uppppp1.cs
                 name: "IX_DongLaptop_IdHangLaptop",
                 table: "DongLaptop",
                 column: "IdHangLaptop");
@@ -627,31 +617,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
                 column: "IdVga");
 
             migrationBuilder.CreateIndex(
-                name: "IX_LinhKien_IdHangLinhKien",
-                table: "LinhKien",
-                column: "IdHangLinhKien");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_LinhKien_IdKhuyenMai",
-                table: "LinhKien",
-                column: "IdKhuyenMai");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_LinhKien_IdLoaiLinhKien",
-                table: "LinhKien",
-                column: "IdLoaiLinhKien");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_LinhKien_IdNhaCungCap",
-                table: "LinhKien",
-                column: "IdNhaCungCap");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_LoaiLinhKien_IdHangLinhKien",
-                table: "LoaiLinhKien",
-                column: "IdHangLinhKien");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_NhanVien_NhanVienId",
                 table: "NhanVien",
                 column: "NhanVienId");
@@ -671,6 +636,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                 table: "SerialLaptop",
                 column: "IdLaptop",
                 unique: true);
+<<<<<<< HEAD:1_DAL_DataAccessLayer/Migrations/20230328082325_updatedbN.cs
 
             migrationBuilder.CreateIndex(
                 name: "IX_SerialLinhKien_IdLinhKien",
@@ -678,6 +644,8 @@ namespace _1_DAL_DataAccessLayer.Migrations
                 column: "IdLinhKien",
                 unique: true);
 >>>>>>> Update db lần thứ n+1:1_DAL_DataAccessLayer/Migrations/20230328082325_updatedbN.cs
+=======
+>>>>>>> Update db lần n+2  xóa linh kiện:1_DAL_DataAccessLayer/Migrations/20230330062606_uppppp1.cs
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -689,6 +657,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                 name: "SerialLaptop");
 
             migrationBuilder.DropTable(
+<<<<<<< HEAD:1_DAL_DataAccessLayer/Migrations/20230328082325_updatedbN.cs
 <<<<<<< HEAD:1_DAL_DataAccessLayer/Migrations/20230327075200_tuanlong.cs
                 name: "SerialLaptop");
 
@@ -698,13 +667,12 @@ namespace _1_DAL_DataAccessLayer.Migrations
                 name: "SerialLinhKien");
 
             migrationBuilder.DropTable(
+=======
+>>>>>>> Update db lần n+2  xóa linh kiện:1_DAL_DataAccessLayer/Migrations/20230330062606_uppppp1.cs
                 name: "HoaDon");
 
             migrationBuilder.DropTable(
                 name: "Laptop");
-
-            migrationBuilder.DropTable(
-                name: "LinhKien");
 
             migrationBuilder.DropTable(
                 name: "KhachHang");
@@ -719,10 +687,16 @@ namespace _1_DAL_DataAccessLayer.Migrations
                 name: "DongLaptop");
 
             migrationBuilder.DropTable(
+                name: "KhuyenMai");
+
+            migrationBuilder.DropTable(
                 name: "ManHinh");
 
             migrationBuilder.DropTable(
                 name: "MauSac");
+
+            migrationBuilder.DropTable(
+                name: "NhaCungCap");
 
             migrationBuilder.DropTable(
                 name: "OCung");
@@ -734,19 +708,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                 name: "VGA");
 
             migrationBuilder.DropTable(
-                name: "KhuyenMai");
-
-            migrationBuilder.DropTable(
-                name: "LoaiLinhKien");
-
-            migrationBuilder.DropTable(
-                name: "NhaCungCap");
-
-            migrationBuilder.DropTable(
                 name: "HangLaptop");
-
-            migrationBuilder.DropTable(
-                name: "HangLinhKien");
         }
     }
 }

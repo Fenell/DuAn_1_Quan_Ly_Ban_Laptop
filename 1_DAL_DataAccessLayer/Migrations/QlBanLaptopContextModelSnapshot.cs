@@ -300,6 +300,9 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Property<Guid>("IdRam")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid?>("IdSerial")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid?>("IdVga")
                         .HasColumnType("uniqueidentifier");
 
