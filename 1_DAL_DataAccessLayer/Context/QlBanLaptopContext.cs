@@ -30,12 +30,9 @@ namespace _1_DAL_DataAccessLayer.Context
             modelBuilder.ApplyConfiguration(new CpuConfiguration());
             modelBuilder.ApplyConfiguration(new DongLaptopConfiguration());
             modelBuilder.ApplyConfiguration(new HangLaptopConfiguration());
-            modelBuilder.ApplyConfiguration(new HangLinhKienConfiguration());
             modelBuilder.ApplyConfiguration(new HoaDonConfiguration());
             modelBuilder.ApplyConfiguration(new KhachHangConfiguration());
             modelBuilder.ApplyConfiguration(new LaptopConfiguration());
-            modelBuilder.ApplyConfiguration(new LinhKienConfiguration());
-            modelBuilder.ApplyConfiguration(new LoaiLinhKienConfiguration());
             modelBuilder.ApplyConfiguration(new ManHinhConfiguration());
             modelBuilder.ApplyConfiguration(new MauSacConfiguration());
             modelBuilder.ApplyConfiguration(new NhaCungCapConfiguration());
@@ -45,7 +42,6 @@ namespace _1_DAL_DataAccessLayer.Context
             modelBuilder.ApplyConfiguration(new RamConfiguration());
             modelBuilder.ApplyConfiguration(new KhuyenMaiConfiguration());
             modelBuilder.ApplyConfiguration(new SerialLaptopConfiguration());
-            modelBuilder.ApplyConfiguration(new SerialLinhKienConfiguration());
 
         }
 
@@ -62,13 +58,10 @@ namespace _1_DAL_DataAccessLayer.Context
         public DbSet<Cpu> Cpus { get; set; }
         public DbSet<DongLaptop> DongLaptops { get; set; }
         public DbSet<HangLaptop> HangLaptops { get; set; }
-        public DbSet<HangLinhKien> HangLinhKiens { get; set; }
         public DbSet<HoaDon> HoaDons { get; set; }
         public DbSet<KhachHang> KhachHangs { get; set; }
         public DbSet<KhuyenMai> KhuyenMais { get; set; }
         public DbSet<Laptop> Laptops { get; set; }
-        public DbSet<LinhKien> LinhKiens { get; set; }
-        public DbSet<LoaiLinhKien> LoaiLinhKiens { get; set; }
         public DbSet<ManHinh> ManHinhs { get; set; }
         public DbSet<MauSac> MauSacs { get; set; }
         public DbSet<NhaCungCap> NhaCungCaps { get; set; }
@@ -77,7 +70,6 @@ namespace _1_DAL_DataAccessLayer.Context
         public DbSet<Ram> Rams { get; set; }
         public DbSet<Vga> Vgas { get; set; }
         public DbSet<SerialLaptop> SerialLaptop { get; set; }
-        public DbSet<SerialLinhKien> SerialLinhKien { get; set;}
 
     }
 }

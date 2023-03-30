@@ -13,7 +13,6 @@ namespace _1_DAL_DataAccessLayer.Models
         public string Ten { get; set; }
 
         public ICollection<Laptop> Laptops { get; set; }
-        public ICollection<LinhKien> LinhKiens { get; set; }
 
     }
 }
