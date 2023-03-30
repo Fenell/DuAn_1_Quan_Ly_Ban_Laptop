@@ -17,7 +17,7 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.HasKey(x => x.Id);
             builder.Property(x=>x.Ma).HasMaxLength(10).IsRequired();
             builder.Property(x=>x.Ten).HasMaxLength(50).IsRequired();
-            builder.Property(x => x.GiaTri).HasColumnType("decimal(18,4)").IsRequired();
+            builder.Property(x => x.GiaTri).HasColumnType("decimal(18,0)").IsRequired();
         }
     }
 }
