@@ -257,6 +257,99 @@ namespace _1_DAL_DataAccessLayer.Migrations
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.Laptop", b =>
+<<<<<<< HEAD
+=======
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("GiaBan")
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<decimal>("GiaNhap")
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<byte[]>("HinhAnh")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<Guid>("IdCpu")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("IdDongLaptop")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("IdHangLaptop")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("IdKhuyenMai")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("IdManHinh")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("IdMauSac")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("IdNhaCungCap")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("IdOCung")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("IdRam")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("IdSerial")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("IdVga")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Mota")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("NamBh")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Ten")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool?>("TrangThai")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<decimal>("TrongLuong")
+                        .HasColumnType("decimal(18,4)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdCpu");
+
+                    b.HasIndex("IdDongLaptop");
+
+                    b.HasIndex("IdHangLaptop");
+
+                    b.HasIndex("IdKhuyenMai");
+
+                    b.HasIndex("IdManHinh");
+
+                    b.HasIndex("IdMauSac");
+
+                    b.HasIndex("IdNhaCungCap");
+
+                    b.HasIndex("IdOCung");
+
+                    b.HasIndex("IdRam");
+
+                    b.HasIndex("IdVga");
+
+                    b.ToTable("Laptop", (string)null);
+                });
+
+            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.LinhKien", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
