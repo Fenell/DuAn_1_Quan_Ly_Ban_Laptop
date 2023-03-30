@@ -35,7 +35,6 @@ namespace _2_BUS_BusinessLayer.Services
                 TrangThai = obj.TrangThaiHD,
                 NgayTao = obj.NgayTao,
                 NgayThanhToan = obj.NgayThanhToan,
-               // TrangThai = obj.TrangThai,
                 DiaChiNhanHang = obj.DcNhanHang,
                 GhiChu = obj.GhiChu,
                 TongTien = obj.TongTien,
