@@ -22,7 +22,6 @@ namespace _1_DAL_DataAccessLayer.Repositories
             {
                 if (hoaDon != null)
                 {
-                    hoaDon.Id = Guid.Empty;
                     _lapTopContext.Add(hoaDon);
                     _lapTopContext.SaveChanges();
                     return true;
@@ -84,7 +83,6 @@ namespace _1_DAL_DataAccessLayer.Repositories
                 ketqua.HinhThucTT = hoaDon.HinhThucTT;
                 ketqua.NgayTao = hoaDon.NgayTao;
                 ketqua.NgayThanhToan = hoaDon.NgayThanhToan;
-                ketqua.TrangThaiGH = hoaDon.TrangThaiGH;
                 ketqua.DiaChiNhanHang = hoaDon.DiaChiNhanHang;
                 ketqua.GhiChu = hoaDon.GhiChu;
                 ketqua.TongTien = hoaDon.TongTien;

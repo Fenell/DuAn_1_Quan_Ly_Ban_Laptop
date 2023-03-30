@@ -16,8 +16,7 @@ namespace _1_DAL_DataAccessLayer.Models
         public string HinhThucTT { get; set; }
         public DateTime NgayTao { get; set; }
         public DateTime NgayThanhToan { get; set; }
-        public string HinhThucNhanHang { get; set; }
-        public int TrangThaiGH { get; set; }
+       
         public int TrangThaiHD { get; set; }
         public string? DiaChiNhanHang { get; set; }
         public string? GhiChu { get; set; }
