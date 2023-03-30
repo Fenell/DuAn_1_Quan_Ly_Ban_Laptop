@@ -32,9 +32,9 @@ namespace _2_BUS_BusinessLayer.Services
                 IdKhachHang = obj.IdKhachHang,
                 Ma = obj.Ma,
                 HinhThucTT = obj.HTThanhToan,
+                TrangThai = obj.TrangThaiHD,
                 NgayTao = obj.NgayTao,
                 NgayThanhToan = obj.NgayThanhToan,
-               // TrangThai = obj.TrangThai,
                 DiaChiNhanHang = obj.DcNhanHang,
                 GhiChu = obj.GhiChu,
                 TongTien = obj.TongTien,
@@ -82,24 +82,25 @@ namespace _2_BUS_BusinessLayer.Services
         public List<HoaDonView> GetAllHoaDonViews()
         {
             var lst = (from a in _hoaDonRepository.GetAllHoaDon()
-                join b in _nhanVienRepository.GetAllNhanVien() on a.IdNhanVien equals b.Id
-                join c in _khachHangRepository.GetAllKhachHang() on a.IdKhachHang equals c.Id
-                select new HoaDonView()
-                {
-                    Id = a.Id,
-                    IdNhanVien = b.Id,
-                    IdKhachHang = c.Id,
-                    TenNhanVien = b.Hoten,
-                    TenKhachHang = c.Hoten,
-                    Ma = a.Ma,
-                    HTThanhToan = a.HinhThucTT,
-                    NgayTao = a.NgayTao,
-                    NgayThanhToan = a.NgayThanhToan,
-                    //  TrangThai = a.TrangThai,
-                    DcNhanHang = a.DiaChiNhanHang,
-                    GhiChu = a.GhiChu,
-                    TongTien = a.TongTien
-                }).ToList();
+                       join b in _nhanVienRepository.GetAllNhanVien() on a.IdNhanVien equals b.Id
+                       join c in _khachHangRepository.GetAllKhachHang() on a.IdKhachHang equals c.Id
+                       select new HoaDonView()
+                       {
+                           Id = a.Id,
+                           IdNhanVien = b.Id,
+                           IdKhachHang = c.Id,
+                           TenNhanVien = b.Hoten,
+                           TenKhachHang = c.Hoten,
+                           SDT = c.SoDienThoai,
+                           MaHd = a.Ma,
+                           HTThanhToan = a.HinhThucTT,
+                           NgayTao = a.NgayTao,
+                           TrangThaiHD = a.TrangThai,
+                           NgayThanhToan = a.NgayThanhToan,
+                           DcNhanHang = a.DiaChiNhanHang,
+                           GhiChu = a.GhiChu,
+                           TongTien = a.TongTien
+                       }).ToList();
 
             return lst;
         }
