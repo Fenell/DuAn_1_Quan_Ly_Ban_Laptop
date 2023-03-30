@@ -16,11 +16,11 @@ namespace _1_DAL_DataAccessLayer.Configurations
         {
             builder.ToTable("Laptop");
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.GiaBan).HasColumnType("decimal(18,4)").IsRequired();
-            builder.Property(x => x.GiaNhap).HasColumnType("decimal(18,4)").IsRequired();
+            builder.Property(x => x.GiaBan).HasColumnType("decimal(18,0)").IsRequired();
+            builder.Property(x => x.GiaNhap).HasColumnType("decimal(18,0)").IsRequired();
             builder.Property(x => x.NamBh).IsRequired();
             builder.Property(x => x.TrangThai).HasDefaultValue(true);
-            builder.Property(x => x.TrongLuong).HasColumnType("decimal(18,4)").IsRequired();
+            builder.Property(x => x.TrongLuong).HasColumnType("decimal(18,0)").IsRequired();
             builder.Property(x => x.Ten).HasMaxLength(50);
 
             //builder.Property(x => x.NhaCungCap).IsRequired();
