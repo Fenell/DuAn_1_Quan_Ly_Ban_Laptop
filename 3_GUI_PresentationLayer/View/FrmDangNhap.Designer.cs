@@ -61,6 +61,7 @@
             this.txtEmail.TabIndex = 0;
             this.txtEmail.Texts = "";
             this.txtEmail.UnderlinedStyle = true;
+            this.txtEmail.Load += new System.EventHandler(this.txtEmail_Load);
             // 
             // txtMatKhau
             // 

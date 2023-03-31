@@ -29,34 +29,40 @@ namespace _3_GUI_PresentationLayer.View
                 Application.Exit();
             }
         }
-
+        private bool checkNhap()
+        {
+            if (txtEmail.Texts == "" || txtMatKhau.Texts == "") return true;
+            return false;
+        }
         private void buttonCustom1_Click(object sender, EventArgs e)
         {
-            if (txtEmail.Text == "" || txtMatKhau.Text == "")
+            if (checkNhap())
             {
                 MessageBox.Show("Không được bỏ trống tên đăng nhập hoặc mật khẩu");
                 return;
             }
-
-            foreach (var x in _nhanVienServices.GetAll())
+            else
             {
-                if (x.Email.ToLower() == txtEmail.Text.ToLower())
+                foreach (var x in _nhanVienServices.GetAll())
                 {
-                    if (x.MatKhau == txtMatKhau.Text)
+                    if (x.Email.ToLower() == txtEmail.Texts.ToLower())
                     {
-                        MessageBox.Show("Đăng nhập thành công");
-                        FrmHome home = new FrmHome();
-                        this.Hide();
-                        home.ShowDialog();
-                        this.Close();
-                        return;
+                        if (x.MatKhau == txtMatKhau.Texts)
+                        {
+                            MessageBox.Show("Đăng nhập thành công");
+                            FrmHome home = new FrmHome();
+                            this.Hide();
+                            home.ShowDialog();
+                            this.Close();
+                            return;
 
+                        }
+                        MessageBox.Show("Mật khẩu chưa chính xác");
+                        return;
                     }
-                    MessageBox.Show("Mật khẩu chưa chính xác");
-                    return;
                 }
+                MessageBox.Show("Tài khoản không chính xác");
             }
-            MessageBox.Show("Tài khoản không chính xác");
         }
 
         private void btnExit_Click_1(object sender, EventArgs e)
@@ -106,6 +112,11 @@ namespace _3_GUI_PresentationLayer.View
             {
                 nhoMatKhau.Checked = true;
             }
+        }
+
+        private void txtEmail_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

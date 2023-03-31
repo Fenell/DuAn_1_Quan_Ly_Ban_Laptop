@@ -1,4 +1,7 @@
-﻿using System;
+﻿using _1_DAL_DataAccessLayer.Models;
+using _2_BUS_BusinessLayer.IServices;
+using _2_BUS_BusinessLayer.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -10,71 +13,111 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.CompilerServices.RuntimeHelpers;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace _3_GUI_PresentationLayer.View
 {
     public partial class FrmQuenMatKhau : Form
     {
+        INhanVienServices _BUS_NhanViens;
+        List<NhanVien> _lst_NhanVienl;
         public FrmQuenMatKhau()
         {
+            _BUS_NhanViens = new NhanVienServies();
+            _lst_NhanVienl = new List<NhanVien>();
             InitializeComponent();
             txt_Email.Select();
         }
-        Random  random = new Random();
-        int otp;
+        Random random = new Random();
+        private int _randomCode;
+
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            try {
-                otp = random.Next(100000, 100000);
-                var emailAddress = new MailAddress("hieunguyen10122000@gmail.com");
-                var toEmail = new MailAddress(txt_Email.ToString());
-                const string frompass = "dfnclphnfgkdnkpc";
-                const string subject = "OTP code";
-
-                string body = otp.ToString();
-                var smtp = new SmtpClient()
-                {
-                    Host = "smtp.gmail.com",
-                    Port = 587,
-                    EnableSsl = true,
-                    DeliveryMethod = SmtpDeliveryMethod.Network,
-                    UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential(emailAddress.Address, frompass),
-                    Timeout = 200000,
-
-                };
-                using (var messen = new MailMessage(emailAddress, toEmail)
-                {
-                    Subject = subject,
-                    Body = body
-                }) {
-                    smtp.Send(messen);
-
-                }
-                MessageBox.Show("Vui lòng check email để nhận OTP");
-                }
+            try
+            {
+                _randomCode = new Random().Next(100000,999999);
+                MailMessage mail = new MailMessage();
+                mail.From = new MailAddress("maituandat087804@gmail.com");
+                mail.To.Add(txt_Email.Texts);
+                mail.Body = "Ma code cua ban la: " + _randomCode;
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                NetworkCredential nc = new NetworkCredential();
+                nc.UserName = "maituandat087804@gmail.com";
+                nc.Password = "ulvvprzhesofpbgy";
+                smtp.Credentials = nc;
+                smtp.EnableSsl = true;
+                smtp.Port = 587;
+                smtp.Send(mail);
+                MessageBox.Show("Gui thanh cong");
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Không thành công");
+
+                MessageBox.Show(ex.Message);
             }
-            }
+        }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            if(otp.ToString().Equals(txt_OTP.Text))
+            if (txt_OTP.Texts == _randomCode.ToString())
             {
                 txt_MK_New.Visible = true;
                 txt_XacNhan_MK.Visible = true;
+                MessageBox.Show("Ma chinh xac");
+                return;
             }
-            else
-            {
-                MessageBox.Show("OTP không chính xác");
-            }
+           
+
+            MessageBox.Show("Otp chưa sai");
+
         }
 
         private void textBoxCustom2_03_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonCustom1_Click(object sender, EventArgs e)
+        {
+            if (txt_MK_New.Texts == txt_XacNhan_MK.Texts)
+            {
+                var employee = _BUS_NhanViens.GetAll().Where(nv => nv.Email == txt_Email.Texts).FirstOrDefault();
+                employee.MatKhau = txt_MK_New.Texts;
+                _BUS_NhanViens.Sua(employee);
+                MessageBox.Show("Thay doi mat khau thanh cong, Ban se duoc dua tro lai trang dang nhap");
+                this.Hide();
+                FrmDangNhap frmdn = new FrmDangNhap();
+                frmdn.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Không thành công vui lòng kiểm tra lại mật khẩu mới đã nhập");
+            }
+        }
+
+        private void FrmQuenMatKhau_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void FrmQuenMatKhau_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           if( MessageBox.Show("Bạn đã nhớ ra mật khẩu chưa? Xác nhận để quay lại Đăng Nhập", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
+           {
+                this.Hide();
+                FrmDangNhap frmdn = new FrmDangNhap();
+                frmdn.ShowDialog();
+           }
+            else if( MessageBox.Show("Bạn đã nhớ ra mật khẩu chưa? Xác nhận để quay lại Đăng Nhập", "Warning", MessageBoxButtons.YesNo) == DialogResult.No)
+           {
+
+                this.Close();
+               
+           }
+           
+           
         }
     }
 }

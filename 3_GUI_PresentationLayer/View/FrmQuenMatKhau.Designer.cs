@@ -187,13 +187,14 @@
             this.buttonCustom1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCustom1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonCustom1.ForeColor = System.Drawing.Color.White;
-            this.buttonCustom1.Location = new System.Drawing.Point(143, 371);
+            this.buttonCustom1.Location = new System.Drawing.Point(164, 362);
             this.buttonCustom1.Name = "buttonCustom1";
-            this.buttonCustom1.Size = new System.Drawing.Size(150, 40);
+            this.buttonCustom1.Size = new System.Drawing.Size(197, 37);
             this.buttonCustom1.TabIndex = 2;
             this.buttonCustom1.Text = "Xác nhận";
             this.buttonCustom1.TextColor = System.Drawing.Color.White;
             this.buttonCustom1.UseVisualStyleBackColor = false;
+            this.buttonCustom1.Click += new System.EventHandler(this.buttonCustom1_Click);
             // 
             // iconButton1
             // 
@@ -249,6 +250,8 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmQuenMatKhau";
             this.Text = "FrmQuenMatKhau";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmQuenMatKhau_FormClosing);
+            this.Load += new System.EventHandler(this.FrmQuenMatKhau_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

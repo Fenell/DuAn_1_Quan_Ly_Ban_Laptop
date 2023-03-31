@@ -32,7 +32,10 @@ namespace _2_BUS_BusinessLayer.Services
 
         public bool Sua(NhanVien nv)
         {
-            throw new NotImplementedException();
+            var x = _DALNhanVien.GetAllNhanVien().FirstOrDefault(p => p.Id == nv.Id);
+            x.Id = nv.Id;
+            x.MatKhau = nv.MatKhau;
+            return true;
         }
 
         public bool Xoa(NhanVien nv)
