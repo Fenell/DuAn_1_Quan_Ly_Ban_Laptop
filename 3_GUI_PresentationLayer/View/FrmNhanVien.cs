@@ -314,6 +314,30 @@ namespace _3_GUI_PresentationLayer.View
             }
         }
 
-        
+        private void txtTimKiem__TextChanged(object sender, EventArgs e)
+        {
+            int i = 1;
+            dgv.Rows.Clear();
+            if (rbtDangLam.Checked == true)
+            {
+                foreach (var item in _nhanvienService.GetByNhanViens(txtTimKiem.Texts))
+                {
+                    if (item.TrangThai == true)
+                    {
+                        dgv.Rows.Add(item.Ma, item.Hoten, item.SoDienThoai, item.Email, item.CCCD, item.GioiTinh == false ? "Nam" : "Nữ", item.ChucVu, item.DiaChi, item.MatKhau, item.Id);
+                    }
+                }
+            }
+            else if (rbtDaNghiViec.Checked == true)
+            {
+                foreach (var item in _nhanvienService.GetByNhanViens(txtTimKiem.Texts))
+                {
+                    if (item.TrangThai == false)
+                    {
+                        dgv.Rows.Add(item.Ma, item.Hoten, item.SoDienThoai, item.Email, item.CCCD, item.GioiTinh == false ? "Nam" : "Nữ", item.ChucVu, item.DiaChi, item.MatKhau, item.Id);
+                    }
+                }
+            }
+        }
     }
 }
