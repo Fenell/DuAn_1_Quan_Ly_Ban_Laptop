@@ -46,6 +46,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
             return ketqua;
         }
 
+       
         public bool UpdateNhanVien(Guid idNhanVien, NhanVien nhanVien)
         {
             var ketqua = _lapTopContext.NhanViens.Find(idNhanVien);

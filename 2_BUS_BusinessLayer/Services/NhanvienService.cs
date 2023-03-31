@@ -40,5 +40,13 @@ namespace _2_BUS_BusinessLayer.Services
         {
             return _nhanVienRepository.GetAllNhanVien();
         }
+
+        public List<NhanVien> GetByNhanViens(string msg)
+        {
+            var lst = _nhanVienRepository.GetAllNhanVien().
+                Where(c => c.Ma.ToLower().Contains(msg.ToLower()) ||
+                               c.Hoten.ToLower().Contains(msg.ToLower())).ToList();
+            return lst;
+        }
     }
 }

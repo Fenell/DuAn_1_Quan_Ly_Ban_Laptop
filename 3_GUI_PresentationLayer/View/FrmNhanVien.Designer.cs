@@ -161,6 +161,7 @@
             this.txtTimKiem.TabIndex = 50;
             this.txtTimKiem.Texts = "";
             this.txtTimKiem.UnderlinedStyle = false;
+            this.txtTimKiem._TextChanged += new System.EventHandler(this.txtTimKiem__TextChanged);
             // 
             // label2
             // 
