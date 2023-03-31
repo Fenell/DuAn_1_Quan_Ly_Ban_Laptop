@@ -18,7 +18,7 @@ namespace _3_GUI_PresentationLayer.View
         ICpuServices _cpuServices;
         Guid _idCpu;
         private List<Cpu> _lstCpu;
-        public FrmCpu()
+        public FrmCpu(List<Cpu> _lstCpu)
         {
             InitializeComponent();
             _cpuServices = new CpuServices();
@@ -27,10 +27,10 @@ namespace _3_GUI_PresentationLayer.View
             LoadDgv();
             this.CenterToScreen();
         }
-        public FrmCpu(List<Cpu> lst):this()
-        {
-            _lstCpu = lst;
-        }
+        //public FrmCpu(List<Cpu> lst):this()
+        //{
+        //    _lstCpu = lst;
+        //}
         private void LoadDgv()
         {
             _lstCpu = _cpuServices.GetAllCpu();

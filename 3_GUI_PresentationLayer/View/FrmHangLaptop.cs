@@ -17,7 +17,7 @@ namespace _3_GUI_PresentationLayer.View
     {
         IHangLaptopServices _hangLaptopServices;
         Guid _idHangLapTop;
-        public FrmHangLaptop()
+        public FrmHangLaptop(List<HangLaptop> _lstHangLaptop)
         {
             InitializeComponent();
             _hangLaptopServices = new HangLaptopServices();

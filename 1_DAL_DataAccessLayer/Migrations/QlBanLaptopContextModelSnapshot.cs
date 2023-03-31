@@ -263,10 +263,10 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("GiaBan")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,0)");
 
                     b.Property<decimal>("GiaNhap")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,0)");
 
                     b.Property<byte[]>("HinhAnh")
                         .HasColumnType("varbinary(max)");
@@ -317,7 +317,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .HasDefaultValue(true);
 
                     b.Property<decimal>("TrongLuong")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,0)");
 
                     b.HasKey("Id");
 
@@ -344,6 +344,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.ToTable("Laptop", (string)null);
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.LoaiLinhKien", b =>
                 {
                     b.Property<Guid>("Id")
@@ -463,6 +464,8 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.ToTable("Laptop", (string)null);
                 });
 
+=======
+>>>>>>> Update FrmLaptop 99,99999%
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.ManHinh", b =>
                 {
                     b.Property<Guid>("Id")
@@ -662,11 +665,16 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.HasKey("Id");
 
+<<<<<<< HEAD
                     b.HasIndex("IdSanPhamLaptop");
+=======
+                    b.HasIndex("IdLaptop");
+>>>>>>> Update FrmLaptop 99,99999%
 
                     b.ToTable("SerialLaptop", (string)null);
                 });
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.SerialLinhKien", b =>
@@ -695,6 +703,8 @@ namespace _1_DAL_DataAccessLayer.Migrations
                 });
 
 >>>>>>> ChienCommit db
+=======
+>>>>>>> Update FrmLaptop 99,99999%
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.Vga", b =>
                 {
                     b.Property<Guid>("Id")
@@ -728,6 +738,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .WithMany("ChiTietHoaDons")
                         .HasForeignKey("IdLaptop");
 
+<<<<<<< HEAD
                     b.HasOne("_1_DAL_DataAccessLayer.Models.SanPhamLinhKien", "LinhKien")
                         .WithMany("ChiTietHoaDons")
                         .HasForeignKey("IdLinhKien");
@@ -760,6 +771,11 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Navigation("Laptop");
 
                     b.Navigation("LinhKien");
+=======
+                    b.Navigation("HoaDon");
+
+                    b.Navigation("Laptop");
+>>>>>>> Update FrmLaptop 99,99999%
                 });
 
 =======
@@ -893,6 +909,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Navigation("Vga");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.SanPhamLinhKien", b =>
                 {
 <<<<<<< HEAD
@@ -943,6 +960,8 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Navigation("HangLinhKien");
                 });
 
+=======
+>>>>>>> Update FrmLaptop 99,99999%
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.NhanVien", b =>
                 {
                     b.HasOne("_1_DAL_DataAccessLayer.Models.NhanVien", null)
@@ -952,15 +971,22 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.SerialLaptop", b =>
                 {
+<<<<<<< HEAD
                     b.HasOne("_1_DAL_DataAccessLayer.Models.SanPhamLaptop", "SanPhamLaptop")
                         .WithMany("SerialLaptops")
                         .HasForeignKey("IdSanPhamLaptop")
+=======
+                    b.HasOne("_1_DAL_DataAccessLayer.Models.Laptop", "Laptop")
+                        .WithMany("SerialLaptops")
+                        .HasForeignKey("IdLaptop")
+>>>>>>> Update FrmLaptop 99,99999%
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("SanPhamLaptop");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.SerialLinhKien", b =>
                 {
                     b.HasOne("_1_DAL_DataAccessLayer.Models.SanPhamLinhKien", "SanPhamLinhKien")
@@ -972,6 +998,8 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Navigation("SanPhamLinhKien");
                 });
 
+=======
+>>>>>>> Update FrmLaptop 99,99999%
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.Cpu", b =>
                 {
                     b.Navigation("Laptops");
@@ -1004,14 +1032,13 @@ namespace _1_DAL_DataAccessLayer.Migrations
 <<<<<<< HEAD
 =======
                     b.Navigation("Laptops");
-
-                    b.Navigation("LinhKiens");
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.Laptop", b =>
                 {
                     b.Navigation("ChiTietHoaDons");
 
+<<<<<<< HEAD
                     b.Navigation("SerialLaptop");
                 });
 
@@ -1044,6 +1071,9 @@ namespace _1_DAL_DataAccessLayer.Migrations
                 {
                     b.Navigation("LinhKiens");
 >>>>>>> chien update form laptop + khuyenmai
+=======
+                    b.Navigation("SerialLaptops");
+>>>>>>> Update FrmLaptop 99,99999%
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.ManHinh", b =>

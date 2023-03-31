@@ -33,8 +33,6 @@ namespace _3_GUI_PresentationLayer.View
         {
             panel1 = new Panel();
             txtTimKiem = new TextBox();
-            rdbKhongSeri = new CustomControl.RadioButtonCustom();
-            rdbCoSeri = new CustomControl.RadioButtonCustom();
             iconButton18 = new FontAwesome.Sharp.IconButton();
             iconButton17 = new FontAwesome.Sharp.IconButton();
             rdbtnNgungBan = new CustomControl.RadioButtonCustom();
@@ -64,7 +62,7 @@ namespace _3_GUI_PresentationLayer.View
             pcbHinhAnh = new PictureBox();
             panel4 = new Panel();
             radioButtonCustom1 = new CustomControl.RadioButtonCustom();
-            cbbImei = new ComboBox();
+            cbbSerial = new ComboBox();
             cbbMauSac = new ComboBox();
             cbbManHinh = new ComboBox();
             cbbOCung = new ComboBox();
@@ -74,7 +72,7 @@ namespace _3_GUI_PresentationLayer.View
             cbbNhaCungCap = new ComboBox();
             cbbDong = new ComboBox();
             cbbHangSanXuat = new ComboBox();
-            btnImei = new FontAwesome.Sharp.IconButton();
+            btnSerial = new FontAwesome.Sharp.IconButton();
             btnMauSac = new FontAwesome.Sharp.IconButton();
             btnManHinh = new FontAwesome.Sharp.IconButton();
             btnOCung = new FontAwesome.Sharp.IconButton();
@@ -111,8 +109,6 @@ namespace _3_GUI_PresentationLayer.View
             // 
             panel1.BackColor = Color.White;
             panel1.Controls.Add(txtTimKiem);
-            panel1.Controls.Add(rdbKhongSeri);
-            panel1.Controls.Add(rdbCoSeri);
             panel1.Controls.Add(iconButton18);
             panel1.Controls.Add(iconButton17);
             panel1.Controls.Add(rdbtnNgungBan);
@@ -131,40 +127,6 @@ namespace _3_GUI_PresentationLayer.View
             txtTimKiem.TabIndex = 24;
             txtTimKiem.Text = "Tìm kiếm .....";
             txtTimKiem.TextChanged += txtTimKiem_TextChanged;
-            // 
-            // rdbKhongSeri
-            // 
-            rdbKhongSeri.AutoSize = true;
-            rdbKhongSeri.CheckedColor = Color.MediumSlateBlue;
-            rdbKhongSeri.ForeColor = Color.FromArgb(3, 22, 73);
-            rdbKhongSeri.Location = new Point(669, 30);
-            rdbKhongSeri.MinimumSize = new Size(0, 21);
-            rdbKhongSeri.Name = "rdbKhongSeri";
-            rdbKhongSeri.Padding = new Padding(10, 0, 0, 0);
-            rdbKhongSeri.Size = new Size(92, 21);
-            rdbKhongSeri.TabIndex = 22;
-            rdbKhongSeri.TabStop = true;
-            rdbKhongSeri.Text = "Không Seri";
-            rdbKhongSeri.UnCheckedColor = Color.FromArgb(79, 175, 156);
-            rdbKhongSeri.UseVisualStyleBackColor = true;
-            rdbKhongSeri.Click += rdbKhongSeri_Click;
-            // 
-            // rdbCoSeri
-            // 
-            rdbCoSeri.AutoSize = true;
-            rdbCoSeri.CheckedColor = Color.MediumSlateBlue;
-            rdbCoSeri.ForeColor = Color.FromArgb(3, 22, 73);
-            rdbCoSeri.Location = new Point(559, 30);
-            rdbCoSeri.MinimumSize = new Size(0, 21);
-            rdbCoSeri.Name = "rdbCoSeri";
-            rdbCoSeri.Padding = new Padding(10, 0, 0, 0);
-            rdbCoSeri.Size = new Size(72, 21);
-            rdbCoSeri.TabIndex = 23;
-            rdbCoSeri.TabStop = true;
-            rdbCoSeri.Text = "Có Seri";
-            rdbCoSeri.UnCheckedColor = Color.FromArgb(79, 175, 156);
-            rdbCoSeri.UseVisualStyleBackColor = true;
-            rdbCoSeri.Click += rdbCoSeri_Click;
             // 
             // iconButton18
             // 
@@ -216,7 +178,7 @@ namespace _3_GUI_PresentationLayer.View
             rdbtnDangBan.AutoSize = true;
             rdbtnDangBan.CheckedColor = Color.MediumSlateBlue;
             rdbtnDangBan.ForeColor = Color.FromArgb(3, 22, 73);
-            rdbtnDangBan.Location = new Point(326, 29);
+            rdbtnDangBan.Location = new Point(314, 29);
             rdbtnDangBan.MinimumSize = new Size(0, 21);
             rdbtnDangBan.Name = "rdbtnDangBan";
             rdbtnDangBan.Padding = new Padding(10, 0, 0, 0);
@@ -569,7 +531,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             panel4.BackColor = Color.White;
             panel4.Controls.Add(radioButtonCustom1);
-            panel4.Controls.Add(cbbImei);
+            panel4.Controls.Add(cbbSerial);
             panel4.Controls.Add(cbbMauSac);
             panel4.Controls.Add(cbbManHinh);
             panel4.Controls.Add(cbbOCung);
@@ -579,7 +541,7 @@ namespace _3_GUI_PresentationLayer.View
             panel4.Controls.Add(cbbNhaCungCap);
             panel4.Controls.Add(cbbDong);
             panel4.Controls.Add(cbbHangSanXuat);
-            panel4.Controls.Add(btnImei);
+            panel4.Controls.Add(btnSerial);
             panel4.Controls.Add(btnMauSac);
             panel4.Controls.Add(btnManHinh);
             panel4.Controls.Add(btnOCung);
@@ -619,13 +581,13 @@ namespace _3_GUI_PresentationLayer.View
             radioButtonCustom1.UnCheckedColor = Color.Gray;
             radioButtonCustom1.UseVisualStyleBackColor = true;
             // 
-            // cbbImei
+            // cbbSerial
             // 
-            cbbImei.FormattingEnabled = true;
-            cbbImei.Location = new Point(915, 157);
-            cbbImei.Name = "cbbImei";
-            cbbImei.Size = new Size(150, 23);
-            cbbImei.TabIndex = 31;
+            cbbSerial.FormattingEnabled = true;
+            cbbSerial.Location = new Point(915, 157);
+            cbbSerial.Name = "cbbSerial";
+            cbbSerial.Size = new Size(150, 23);
+            cbbSerial.TabIndex = 31;
             // 
             // cbbMauSac
             // 
@@ -699,20 +661,21 @@ namespace _3_GUI_PresentationLayer.View
             cbbHangSanXuat.Size = new Size(150, 23);
             cbbHangSanXuat.TabIndex = 22;
             // 
-            // btnImei
+            // btnSerial
             // 
-            btnImei.BackColor = Color.FromArgb(86, 103, 204);
-            btnImei.FlatStyle = FlatStyle.Flat;
-            btnImei.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            btnImei.IconColor = Color.Black;
-            btnImei.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnImei.IconSize = 28;
-            btnImei.Location = new Point(915, 191);
-            btnImei.Name = "btnImei";
-            btnImei.Padding = new Padding(0, 4, 0, 0);
-            btnImei.Size = new Size(150, 36);
-            btnImei.TabIndex = 20;
-            btnImei.UseVisualStyleBackColor = false;
+            btnSerial.BackColor = Color.FromArgb(86, 103, 204);
+            btnSerial.FlatStyle = FlatStyle.Flat;
+            btnSerial.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            btnSerial.IconColor = Color.Black;
+            btnSerial.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSerial.IconSize = 28;
+            btnSerial.Location = new Point(915, 191);
+            btnSerial.Name = "btnSerial";
+            btnSerial.Padding = new Padding(0, 4, 0, 0);
+            btnSerial.Size = new Size(150, 36);
+            btnSerial.TabIndex = 20;
+            btnSerial.UseVisualStyleBackColor = false;
+            btnSerial.Click += btnSerial_Click;
             // 
             // btnMauSac
             // 
@@ -909,9 +872,9 @@ namespace _3_GUI_PresentationLayer.View
             label18.ForeColor = Color.FromArgb(3, 22, 73);
             label18.Location = new Point(915, 129);
             label18.Name = "label18";
-            label18.Size = new Size(38, 20);
+            label18.Size = new Size(47, 20);
             label18.TabIndex = 17;
-            label18.Text = "Imei";
+            label18.Text = "Serial";
             // 
             // label17
             // 
@@ -990,6 +953,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             // dgvLaptop
             // 
+            dgvLaptop.AllowUserToAddRows = false;
             dgvLaptop.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvLaptop.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvLaptop.Dock = DockStyle.Fill;
@@ -1055,7 +1019,7 @@ namespace _3_GUI_PresentationLayer.View
         private Label label10;
         private FontAwesome.Sharp.IconButton btnHangSanXuat;
         private Label label14;
-        private FontAwesome.Sharp.IconButton btnImei;
+        private FontAwesome.Sharp.IconButton btnSerial;
         private FontAwesome.Sharp.IconButton btnMauSac;
         private FontAwesome.Sharp.IconButton btnManHinh;
         private FontAwesome.Sharp.IconButton btnOCung;
@@ -1085,13 +1049,11 @@ namespace _3_GUI_PresentationLayer.View
         private ComboBox cbbHangSanXuat;
         private CustomControl.TextBoxCustom2_0 txtNamBh;
         private Label label1;
-        private ComboBox cbbImei;
+        private ComboBox cbbSerial;
         private CustomControl.TextBoxCustom2_0 txtTrongLuong;
         private Label label2;
         private Panel panel3;
         private DataGridView dgvLaptop;
-        private CustomControl.RadioButtonCustom rdbKhongSeri;
-        private CustomControl.RadioButtonCustom rdbCoSeri;
         private TextBox txtTimKiem;
         private CustomControl.RadioButtonCustom radioButtonCustom1;
     }

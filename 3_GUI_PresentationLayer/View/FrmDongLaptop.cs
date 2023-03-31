@@ -18,7 +18,7 @@ namespace _3_GUI_PresentationLayer.View
         IDongLaptopServices _dongLaptopServices;
         IHangLaptopServices _hangLaptopServices;
         Guid _idDong;
-        public FrmDongLaptop()
+        public FrmDongLaptop(List<DongLaptop> _lstDongLaptop)
         {
             InitializeComponent();
             _dongLaptopServices = new DongLaptopServices();
