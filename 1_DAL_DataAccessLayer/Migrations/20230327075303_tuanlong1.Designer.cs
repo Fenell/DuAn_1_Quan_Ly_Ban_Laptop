@@ -12,8 +12,8 @@ using _1_DAL_DataAccessLayer.Context;
 namespace _1_DAL_DataAccessLayer.Migrations
 {
     [DbContext(typeof(QlBanLaptopContext))]
-    [Migration("20230326111436_EditDb1")]
-    partial class EditDb1
+    [Migration("20230327075303_tuanlong1")]
+    partial class tuanlong1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -695,7 +695,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.HasIndex("IdSanPhamLinhKien");
 
-                    b.ToTable("SerialLinhKien");
+                    b.ToTable("SerialLinhKien", (string)null);
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.Vga", b =>

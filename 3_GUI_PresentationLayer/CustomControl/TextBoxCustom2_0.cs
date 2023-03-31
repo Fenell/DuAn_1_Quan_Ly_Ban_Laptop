@@ -348,5 +348,10 @@ namespace _3_GUI_PresentationLayer.CustomControl
         {
             this.OnKeyPress(e);
         }
+
+        internal void Clear()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

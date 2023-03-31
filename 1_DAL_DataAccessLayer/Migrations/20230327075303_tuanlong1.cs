@@ -4,7 +4,7 @@
 
 namespace _1_DAL_DataAccessLayer.Migrations
 {
-    public partial class update_Db1 : Migration
+    public partial class tuanlong1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
