@@ -18,7 +18,7 @@ namespace _3_GUI_PresentationLayer.View
     {
         IVgaServices _vgaServices;
         Guid _idVga;
-        public FrmVga()
+        public FrmVga(List<Vga> _lstVga)
         {
             InitializeComponent();
             _vgaServices = new VgaServices();

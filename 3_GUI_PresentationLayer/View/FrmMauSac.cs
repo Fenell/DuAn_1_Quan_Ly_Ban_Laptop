@@ -18,7 +18,7 @@ namespace _3_GUI_PresentationLayer.View
     {
         IMauSacServices _mauSacServices;
         Guid _idMauSac;
-        public FrmMauSac()
+        public FrmMauSac(List<MauSac> _lstMauSac)
         {
             InitializeComponent();
             _mauSacServices = new MauSacServices();

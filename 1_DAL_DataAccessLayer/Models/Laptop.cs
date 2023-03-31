@@ -39,7 +39,6 @@ namespace _1_DAL_DataAccessLayer.Models
         public ManHinh? ManHinh { get; set; }
         public MauSac? MauSac { get; set; }
         public OCung? OCung { get; set; }
-        public SerialLaptop? SerialLaptop { get; set; }
         public KhuyenMai? KhuyenMai{ get; set; }
 
         public ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }

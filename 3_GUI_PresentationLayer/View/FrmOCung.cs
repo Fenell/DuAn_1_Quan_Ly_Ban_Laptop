@@ -18,7 +18,7 @@ namespace _3_GUI_PresentationLayer.View
     {
         IOCungServices _oCungServices;
         Guid _idOCung;
-        public FrmOCung()
+        public FrmOCung(List<OCung> _lstOCung)
         {
             InitializeComponent();
             _oCungServices = new OCungServices();
@@ -93,6 +93,7 @@ namespace _3_GUI_PresentationLayer.View
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            txtFalse();
             if (checkNhap())
             {
                 MessageBox.Show("Không được để rỗng hoặc trùng dữ liệu");

@@ -30,7 +30,7 @@ namespace _2_BUS_BusinessLayer.Services
                 Id = obj.Id,
                 IdNhanVien = obj.IdNhanVien,
                 IdKhachHang = obj.IdKhachHang,
-                Ma = obj.Ma,
+                Ma = obj.MaHd,
                 HinhThucTT = obj.HTThanhToan,
                 TrangThai = obj.TrangThaiHD,
                 NgayTao = obj.NgayTao,
@@ -57,7 +57,7 @@ namespace _2_BUS_BusinessLayer.Services
             var hoaDon = _hoaDonRepository.GetHoaDonById(obj.Id);
             hoaDon.IdNhanVien = obj.IdNhanVien;
             hoaDon.IdKhachHang = obj.IdKhachHang;
-            hoaDon.Ma = obj.Ma;
+            hoaDon.Ma = obj.MaHd;
             hoaDon.HinhThucTT = obj.HTThanhToan;
             hoaDon.NgayTao = obj.NgayTao;
             hoaDon.NgayThanhToan = obj.NgayThanhToan;
