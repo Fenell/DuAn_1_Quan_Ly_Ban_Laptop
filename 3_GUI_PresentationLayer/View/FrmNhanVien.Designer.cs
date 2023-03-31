@@ -29,56 +29,68 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButtonCustom6 = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
-            this.radioButtonCustom5 = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
+            this.rbtDaNghiViec = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
+            this.rbtDangLam = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
-            this.textBoxCustom2_04 = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom2_0();
+            this.txtTimKiem = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom2_0();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBoxCustom2_01 = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom2_0();
-            this.pictrueBoxCustom1 = new _3_GUI_PresentationLayer.CustomControl.PictrueBoxCustom();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.radioButtonCustom2 = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.radioButtonCustom4 = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
-            this.radioButtonCustom3 = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
-            this.rd_Nam = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.rbtQuanLy = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
+            this.rbtNhanVien = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.rbtNam = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
+            this.rbtNu = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
+            this.txtDiaChi = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom2_0();
+            this.ptbAnh = new _3_GUI_PresentationLayer.CustomControl.PictrueBoxCustom();
+            this.iconButtonXoa = new FontAwesome.Sharp.IconButton();
+            this.iconButtonLoad = new FontAwesome.Sharp.IconButton();
+            this.iconButtonThem = new FontAwesome.Sharp.IconButton();
+            this.iconButtonSua = new FontAwesome.Sharp.IconButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_CCCD = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom();
+            this.txtSoCanCuoc = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBoxCustom3 = new _3_GUI_PresentationLayer.CustomControl.ComboBoxCustom();
-            this.txt_Email = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom();
+            this.txtEmail = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom();
             this.label10 = new System.Windows.Forms.Label();
-            this.txt_HoTen = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom();
+            this.txtHoTen = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom();
             this.label11 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txt_Pass = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom();
+            this.txtMatKhau = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txt_SDT = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom();
+            this.txtSoDienThoai = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_MSSV = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom();
+            this.txtMaNhanVien = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictrueBoxCustom1)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAnh)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.radioButtonCustom6);
-            this.panel1.Controls.Add(this.radioButtonCustom5);
+            this.panel1.Controls.Add(this.rbtDaNghiViec);
+            this.panel1.Controls.Add(this.rbtDangLam);
             this.panel1.Controls.Add(this.iconButton8);
-            this.panel1.Controls.Add(this.textBoxCustom2_04);
+            this.panel1.Controls.Add(this.txtTimKiem);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(15, 19);
@@ -86,35 +98,37 @@
             this.panel1.Size = new System.Drawing.Size(857, 78);
             this.panel1.TabIndex = 1;
             // 
-            // radioButtonCustom6
+            // rbtDaNghiViec
             // 
-            this.radioButtonCustom6.AutoSize = true;
-            this.radioButtonCustom6.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.radioButtonCustom6.Location = new System.Drawing.Point(573, 42);
-            this.radioButtonCustom6.MinimumSize = new System.Drawing.Size(0, 21);
-            this.radioButtonCustom6.Name = "radioButtonCustom6";
-            this.radioButtonCustom6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.radioButtonCustom6.Size = new System.Drawing.Size(100, 21);
-            this.radioButtonCustom6.TabIndex = 52;
-            this.radioButtonCustom6.TabStop = true;
-            this.radioButtonCustom6.Text = "Đã nghỉ việc";
-            this.radioButtonCustom6.UnCheckedColor = System.Drawing.Color.Gray;
-            this.radioButtonCustom6.UseVisualStyleBackColor = true;
+            this.rbtDaNghiViec.AutoSize = true;
+            this.rbtDaNghiViec.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbtDaNghiViec.Location = new System.Drawing.Point(573, 42);
+            this.rbtDaNghiViec.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbtDaNghiViec.Name = "rbtDaNghiViec";
+            this.rbtDaNghiViec.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbtDaNghiViec.Size = new System.Drawing.Size(100, 21);
+            this.rbtDaNghiViec.TabIndex = 52;
+            this.rbtDaNghiViec.TabStop = true;
+            this.rbtDaNghiViec.Text = "Đã nghỉ việc";
+            this.rbtDaNghiViec.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbtDaNghiViec.UseVisualStyleBackColor = true;
+            this.rbtDaNghiViec.Click += new System.EventHandler(this.rbtDaNghiViec_Click);
             // 
-            // radioButtonCustom5
+            // rbtDangLam
             // 
-            this.radioButtonCustom5.AutoSize = true;
-            this.radioButtonCustom5.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.radioButtonCustom5.Location = new System.Drawing.Point(457, 40);
-            this.radioButtonCustom5.MinimumSize = new System.Drawing.Size(0, 21);
-            this.radioButtonCustom5.Name = "radioButtonCustom5";
-            this.radioButtonCustom5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.radioButtonCustom5.Size = new System.Drawing.Size(86, 21);
-            this.radioButtonCustom5.TabIndex = 52;
-            this.radioButtonCustom5.TabStop = true;
-            this.radioButtonCustom5.Text = "Đang làm";
-            this.radioButtonCustom5.UnCheckedColor = System.Drawing.Color.Gray;
-            this.radioButtonCustom5.UseVisualStyleBackColor = true;
+            this.rbtDangLam.AutoSize = true;
+            this.rbtDangLam.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbtDangLam.Location = new System.Drawing.Point(457, 40);
+            this.rbtDangLam.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbtDangLam.Name = "rbtDangLam";
+            this.rbtDangLam.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbtDangLam.Size = new System.Drawing.Size(86, 21);
+            this.rbtDangLam.TabIndex = 52;
+            this.rbtDangLam.TabStop = true;
+            this.rbtDangLam.Text = "Đang làm";
+            this.rbtDangLam.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbtDangLam.UseVisualStyleBackColor = true;
+            this.rbtDangLam.Click += new System.EventHandler(this.rbtDangLam_Click);
             // 
             // iconButton8
             // 
@@ -130,23 +144,23 @@
             this.iconButton8.TabIndex = 51;
             this.iconButton8.UseVisualStyleBackColor = true;
             // 
-            // textBoxCustom2_04
+            // txtTimKiem
             // 
-            this.textBoxCustom2_04.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.textBoxCustom2_04.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textBoxCustom2_04.BorderRadius = 10;
-            this.textBoxCustom2_04.BorderSize = 1;
-            this.textBoxCustom2_04.Location = new System.Drawing.Point(24, 36);
-            this.textBoxCustom2_04.Multiline = false;
-            this.textBoxCustom2_04.Name = "textBoxCustom2_04";
-            this.textBoxCustom2_04.Padding = new System.Windows.Forms.Padding(42, 7, 7, 7);
-            this.textBoxCustom2_04.PasswordChar = false;
-            this.textBoxCustom2_04.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.textBoxCustom2_04.PlaceholderText = "Tìm kiếm";
-            this.textBoxCustom2_04.Size = new System.Drawing.Size(250, 30);
-            this.textBoxCustom2_04.TabIndex = 50;
-            this.textBoxCustom2_04.Texts = "";
-            this.textBoxCustom2_04.UnderlinedStyle = false;
+            this.txtTimKiem.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtTimKiem.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtTimKiem.BorderRadius = 10;
+            this.txtTimKiem.BorderSize = 1;
+            this.txtTimKiem.Location = new System.Drawing.Point(24, 36);
+            this.txtTimKiem.Multiline = false;
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Padding = new System.Windows.Forms.Padding(42, 7, 7, 7);
+            this.txtTimKiem.PasswordChar = false;
+            this.txtTimKiem.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtTimKiem.PlaceholderText = "Tìm kiếm";
+            this.txtTimKiem.Size = new System.Drawing.Size(250, 30);
+            this.txtTimKiem.TabIndex = 50;
+            this.txtTimKiem.Texts = "";
+            this.txtTimKiem.UnderlinedStyle = false;
             // 
             // label2
             // 
@@ -170,269 +184,334 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Tìm Kiếm";
             // 
-            // dataGridView1
+            // dgv
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(854, 477);
-            this.dataGridView1.TabIndex = 2;
+            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column11});
+            this.dgv.Location = new System.Drawing.Point(3, 3);
+            this.dgv.Name = "dgv";
+            this.dgv.RowTemplate.Height = 25;
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv.Size = new System.Drawing.Size(854, 477);
+            this.dgv.TabIndex = 2;
+            this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã nv";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Họ tên";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Sđt";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Email";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Số căn cước";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Giới tính";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Chức vụ";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Địa chỉ";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Mật khẩu";
+            this.Column9.Name = "Column9";
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Id";
+            this.Column11.Name = "Column11";
+            this.Column11.Visible = false;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.textBoxCustom2_01);
-            this.panel2.Controls.Add(this.pictrueBoxCustom1);
-            this.panel2.Controls.Add(this.iconButton4);
-            this.panel2.Controls.Add(this.radioButtonCustom2);
-            this.panel2.Controls.Add(this.iconButton5);
-            this.panel2.Controls.Add(this.iconButton2);
-            this.panel2.Controls.Add(this.iconButton3);
-            this.panel2.Controls.Add(this.radioButtonCustom4);
-            this.panel2.Controls.Add(this.radioButtonCustom3);
-            this.panel2.Controls.Add(this.rd_Nam);
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.txtDiaChi);
+            this.panel2.Controls.Add(this.ptbAnh);
+            this.panel2.Controls.Add(this.iconButtonXoa);
+            this.panel2.Controls.Add(this.iconButtonLoad);
+            this.panel2.Controls.Add(this.iconButtonThem);
+            this.panel2.Controls.Add(this.iconButtonSua);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.txt_CCCD);
+            this.panel2.Controls.Add(this.txtSoCanCuoc);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.comboBoxCustom3);
-            this.panel2.Controls.Add(this.txt_Email);
+            this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.txt_HoTen);
+            this.panel2.Controls.Add(this.txtHoTen);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.txt_Pass);
+            this.panel2.Controls.Add(this.txtMatKhau);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.txt_SDT);
+            this.panel2.Controls.Add(this.txtSoDienThoai);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txt_MSSV);
+            this.panel2.Controls.Add(this.txtMaNhanVien);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(889, 19);
+            this.panel2.Location = new System.Drawing.Point(904, 19);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(599, 582);
             this.panel2.TabIndex = 4;
             // 
-            // textBoxCustom2_01
+            // panel5
             // 
-            this.textBoxCustom2_01.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.textBoxCustom2_01.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textBoxCustom2_01.BorderRadius = 10;
-            this.textBoxCustom2_01.BorderSize = 1;
-            this.textBoxCustom2_01.Location = new System.Drawing.Point(347, 429);
-            this.textBoxCustom2_01.Multiline = true;
-            this.textBoxCustom2_01.Name = "textBoxCustom2_01";
-            this.textBoxCustom2_01.Padding = new System.Windows.Forms.Padding(7);
-            this.textBoxCustom2_01.PasswordChar = false;
-            this.textBoxCustom2_01.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.textBoxCustom2_01.PlaceholderText = "";
-            this.textBoxCustom2_01.Size = new System.Drawing.Size(232, 75);
-            this.textBoxCustom2_01.TabIndex = 30;
-            this.textBoxCustom2_01.Texts = "";
-            this.textBoxCustom2_01.UnderlinedStyle = false;
+            this.panel5.Controls.Add(this.rbtQuanLy);
+            this.panel5.Controls.Add(this.rbtNhanVien);
+            this.panel5.Location = new System.Drawing.Point(341, 382);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(232, 42);
+            this.panel5.TabIndex = 34;
             // 
-            // pictrueBoxCustom1
+            // rbtQuanLy
             // 
-            this.pictrueBoxCustom1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.pictrueBoxCustom1.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.pictrueBoxCustom1.BorderColor2 = System.Drawing.Color.HotPink;
-            this.pictrueBoxCustom1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pictrueBoxCustom1.BorderSize = 2;
-            this.pictrueBoxCustom1.GradientAngle = 50F;
-            this.pictrueBoxCustom1.Location = new System.Drawing.Point(18, 35);
-            this.pictrueBoxCustom1.Name = "pictrueBoxCustom1";
-            this.pictrueBoxCustom1.Size = new System.Drawing.Size(171, 171);
-            this.pictrueBoxCustom1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictrueBoxCustom1.TabIndex = 29;
-            this.pictrueBoxCustom1.TabStop = false;
+            this.rbtQuanLy.AutoSize = true;
+            this.rbtQuanLy.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbtQuanLy.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rbtQuanLy.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.rbtQuanLy.Location = new System.Drawing.Point(142, 12);
+            this.rbtQuanLy.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbtQuanLy.Name = "rbtQuanLy";
+            this.rbtQuanLy.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbtQuanLy.Size = new System.Drawing.Size(84, 21);
+            this.rbtQuanLy.TabIndex = 27;
+            this.rbtQuanLy.TabStop = true;
+            this.rbtQuanLy.Text = "Quản lý";
+            this.rbtQuanLy.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbtQuanLy.UseVisualStyleBackColor = true;
             // 
-            // iconButton4
+            // rbtNhanVien
             // 
-            this.iconButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.CircleMinus;
-            this.iconButton4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(82)))), ((int)(((byte)(31)))));
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.Location = new System.Drawing.Point(37, 371);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(83, 53);
-            this.iconButton4.TabIndex = 25;
-            this.iconButton4.UseVisualStyleBackColor = false;
+            this.rbtNhanVien.AutoSize = true;
+            this.rbtNhanVien.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbtNhanVien.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rbtNhanVien.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.rbtNhanVien.Location = new System.Drawing.Point(13, 12);
+            this.rbtNhanVien.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbtNhanVien.Name = "rbtNhanVien";
+            this.rbtNhanVien.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbtNhanVien.Size = new System.Drawing.Size(99, 21);
+            this.rbtNhanVien.TabIndex = 27;
+            this.rbtNhanVien.TabStop = true;
+            this.rbtNhanVien.Text = "Nhân viên";
+            this.rbtNhanVien.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbtNhanVien.UseVisualStyleBackColor = true;
             // 
-            // radioButtonCustom2
+            // panel4
             // 
-            this.radioButtonCustom2.AutoSize = true;
-            this.radioButtonCustom2.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.radioButtonCustom2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonCustom2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.radioButtonCustom2.Location = new System.Drawing.Point(482, 341);
-            this.radioButtonCustom2.MinimumSize = new System.Drawing.Size(0, 21);
-            this.radioButtonCustom2.Name = "radioButtonCustom2";
-            this.radioButtonCustom2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.radioButtonCustom2.Size = new System.Drawing.Size(55, 21);
-            this.radioButtonCustom2.TabIndex = 28;
-            this.radioButtonCustom2.TabStop = true;
-            this.radioButtonCustom2.Text = "Nữ";
-            this.radioButtonCustom2.UnCheckedColor = System.Drawing.Color.Gray;
-            this.radioButtonCustom2.UseVisualStyleBackColor = true;
+            this.panel4.Controls.Add(this.rbtNam);
+            this.panel4.Controls.Add(this.rbtNu);
+            this.panel4.Location = new System.Drawing.Point(341, 238);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(232, 42);
+            this.panel4.TabIndex = 33;
             // 
-            // iconButton5
+            // rbtNam
             // 
-            this.iconButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.RotateBackward;
-            this.iconButton5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(82)))), ((int)(((byte)(31)))));
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.Location = new System.Drawing.Point(37, 430);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(83, 53);
-            this.iconButton5.TabIndex = 24;
-            this.iconButton5.UseVisualStyleBackColor = false;
+            this.rbtNam.AutoSize = true;
+            this.rbtNam.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbtNam.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rbtNam.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.rbtNam.Location = new System.Drawing.Point(13, 11);
+            this.rbtNam.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbtNam.Name = "rbtNam";
+            this.rbtNam.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbtNam.Size = new System.Drawing.Size(65, 21);
+            this.rbtNam.TabIndex = 31;
+            this.rbtNam.TabStop = true;
+            this.rbtNam.Text = "Nam";
+            this.rbtNam.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbtNam.UseVisualStyleBackColor = true;
             // 
-            // iconButton2
+            // rbtNu
             // 
-            this.iconButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(82)))), ((int)(((byte)(31)))));
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.Location = new System.Drawing.Point(37, 253);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(83, 53);
-            this.iconButton2.TabIndex = 22;
-            this.iconButton2.UseVisualStyleBackColor = false;
+            this.rbtNu.AutoSize = true;
+            this.rbtNu.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rbtNu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rbtNu.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.rbtNu.Location = new System.Drawing.Point(142, 11);
+            this.rbtNu.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbtNu.Name = "rbtNu";
+            this.rbtNu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbtNu.Size = new System.Drawing.Size(55, 21);
+            this.rbtNu.TabIndex = 32;
+            this.rbtNu.TabStop = true;
+            this.rbtNu.Text = "Nữ";
+            this.rbtNu.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbtNu.UseVisualStyleBackColor = true;
             // 
-            // iconButton3
+            // txtDiaChi
             // 
-            this.iconButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.iconButton3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(82)))), ((int)(((byte)(31)))));
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.Location = new System.Drawing.Point(37, 312);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(83, 53);
-            this.iconButton3.TabIndex = 23;
-            this.iconButton3.UseVisualStyleBackColor = false;
+            this.txtDiaChi.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtDiaChi.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtDiaChi.BorderRadius = 10;
+            this.txtDiaChi.BorderSize = 1;
+            this.txtDiaChi.Location = new System.Drawing.Point(341, 441);
+            this.txtDiaChi.Multiline = true;
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Padding = new System.Windows.Forms.Padding(7);
+            this.txtDiaChi.PasswordChar = false;
+            this.txtDiaChi.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtDiaChi.PlaceholderText = "";
+            this.txtDiaChi.Size = new System.Drawing.Size(232, 119);
+            this.txtDiaChi.TabIndex = 30;
+            this.txtDiaChi.Texts = "";
+            this.txtDiaChi.UnderlinedStyle = false;
             // 
-            // radioButtonCustom4
+            // ptbAnh
             // 
-            this.radioButtonCustom4.AutoSize = true;
-            this.radioButtonCustom4.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.radioButtonCustom4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonCustom4.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.radioButtonCustom4.Location = new System.Drawing.Point(482, 391);
-            this.radioButtonCustom4.MinimumSize = new System.Drawing.Size(0, 21);
-            this.radioButtonCustom4.Name = "radioButtonCustom4";
-            this.radioButtonCustom4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.radioButtonCustom4.Size = new System.Drawing.Size(84, 21);
-            this.radioButtonCustom4.TabIndex = 27;
-            this.radioButtonCustom4.TabStop = true;
-            this.radioButtonCustom4.Text = "Quản lý";
-            this.radioButtonCustom4.UnCheckedColor = System.Drawing.Color.Gray;
-            this.radioButtonCustom4.UseVisualStyleBackColor = true;
+            this.ptbAnh.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.ptbAnh.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.ptbAnh.BorderColor2 = System.Drawing.Color.HotPink;
+            this.ptbAnh.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.ptbAnh.BorderSize = 2;
+            this.ptbAnh.GradientAngle = 50F;
+            this.ptbAnh.Location = new System.Drawing.Point(18, 35);
+            this.ptbAnh.Name = "ptbAnh";
+            this.ptbAnh.Size = new System.Drawing.Size(171, 171);
+            this.ptbAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbAnh.TabIndex = 29;
+            this.ptbAnh.TabStop = false;
+            this.ptbAnh.Click += new System.EventHandler(this.ptbAnh_Click);
             // 
-            // radioButtonCustom3
+            // iconButtonXoa
             // 
-            this.radioButtonCustom3.AutoSize = true;
-            this.radioButtonCustom3.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.radioButtonCustom3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonCustom3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.radioButtonCustom3.Location = new System.Drawing.Point(349, 391);
-            this.radioButtonCustom3.MinimumSize = new System.Drawing.Size(0, 21);
-            this.radioButtonCustom3.Name = "radioButtonCustom3";
-            this.radioButtonCustom3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.radioButtonCustom3.Size = new System.Drawing.Size(99, 21);
-            this.radioButtonCustom3.TabIndex = 27;
-            this.radioButtonCustom3.TabStop = true;
-            this.radioButtonCustom3.Text = "Nhân viên";
-            this.radioButtonCustom3.UnCheckedColor = System.Drawing.Color.Gray;
-            this.radioButtonCustom3.UseVisualStyleBackColor = true;
+            this.iconButtonXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.iconButtonXoa.IconChar = FontAwesome.Sharp.IconChar.CircleMinus;
+            this.iconButtonXoa.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(82)))), ((int)(((byte)(31)))));
+            this.iconButtonXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonXoa.Location = new System.Drawing.Point(37, 371);
+            this.iconButtonXoa.Name = "iconButtonXoa";
+            this.iconButtonXoa.Size = new System.Drawing.Size(83, 53);
+            this.iconButtonXoa.TabIndex = 25;
+            this.iconButtonXoa.UseVisualStyleBackColor = false;
+            this.iconButtonXoa.Click += new System.EventHandler(this.iconButtonXoa_Click);
             // 
-            // rd_Nam
+            // iconButtonLoad
             // 
-            this.rd_Nam.AutoSize = true;
-            this.rd_Nam.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.rd_Nam.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rd_Nam.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.rd_Nam.Location = new System.Drawing.Point(352, 341);
-            this.rd_Nam.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rd_Nam.Name = "rd_Nam";
-            this.rd_Nam.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rd_Nam.Size = new System.Drawing.Size(65, 21);
-            this.rd_Nam.TabIndex = 27;
-            this.rd_Nam.TabStop = true;
-            this.rd_Nam.Text = "Nam";
-            this.rd_Nam.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rd_Nam.UseVisualStyleBackColor = true;
+            this.iconButtonLoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.iconButtonLoad.IconChar = FontAwesome.Sharp.IconChar.RotateBackward;
+            this.iconButtonLoad.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(82)))), ((int)(((byte)(31)))));
+            this.iconButtonLoad.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonLoad.Location = new System.Drawing.Point(37, 430);
+            this.iconButtonLoad.Name = "iconButtonLoad";
+            this.iconButtonLoad.Size = new System.Drawing.Size(83, 53);
+            this.iconButtonLoad.TabIndex = 24;
+            this.iconButtonLoad.UseVisualStyleBackColor = false;
+            this.iconButtonLoad.Click += new System.EventHandler(this.iconButtonLoad_Click);
+            // 
+            // iconButtonThem
+            // 
+            this.iconButtonThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.iconButtonThem.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            this.iconButtonThem.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(82)))), ((int)(((byte)(31)))));
+            this.iconButtonThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonThem.Location = new System.Drawing.Point(37, 253);
+            this.iconButtonThem.Name = "iconButtonThem";
+            this.iconButtonThem.Size = new System.Drawing.Size(83, 53);
+            this.iconButtonThem.TabIndex = 22;
+            this.iconButtonThem.UseVisualStyleBackColor = false;
+            this.iconButtonThem.Click += new System.EventHandler(this.iconButtonThem_Click);
+            // 
+            // iconButtonSua
+            // 
+            this.iconButtonSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.iconButtonSua.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.iconButtonSua.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(82)))), ((int)(((byte)(31)))));
+            this.iconButtonSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSua.Location = new System.Drawing.Point(37, 312);
+            this.iconButtonSua.Name = "iconButtonSua";
+            this.iconButtonSua.Size = new System.Drawing.Size(83, 53);
+            this.iconButtonSua.TabIndex = 23;
+            this.iconButtonSua.UseVisualStyleBackColor = false;
+            this.iconButtonSua.Click += new System.EventHandler(this.iconButtonSua_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label5.Location = new System.Drawing.Point(231, 308);
+            this.label5.Location = new System.Drawing.Point(231, 299);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 17);
             this.label5.TabIndex = 9;
             this.label5.Text = "Số căn cước";
             // 
-            // txt_CCCD
+            // txtSoCanCuoc
             // 
-            this.txt_CCCD.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txt_CCCD.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txt_CCCD.BorderSize = 2;
-            this.txt_CCCD.Location = new System.Drawing.Point(341, 295);
-            this.txt_CCCD.Multiline = false;
-            this.txt_CCCD.Name = "txt_CCCD";
-            this.txt_CCCD.Padding = new System.Windows.Forms.Padding(7);
-            this.txt_CCCD.PasswordChar = false;
-            this.txt_CCCD.Size = new System.Drawing.Size(238, 30);
-            this.txt_CCCD.TabIndex = 8;
-            this.txt_CCCD.Texts = "";
-            this.txt_CCCD.UnderlinedStyle = true;
+            this.txtSoCanCuoc.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtSoCanCuoc.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtSoCanCuoc.BorderSize = 2;
+            this.txtSoCanCuoc.Location = new System.Drawing.Point(341, 286);
+            this.txtSoCanCuoc.Multiline = false;
+            this.txtSoCanCuoc.Name = "txtSoCanCuoc";
+            this.txtSoCanCuoc.Padding = new System.Windows.Forms.Padding(7);
+            this.txtSoCanCuoc.PasswordChar = false;
+            this.txtSoCanCuoc.Size = new System.Drawing.Size(232, 30);
+            this.txtSoCanCuoc.TabIndex = 8;
+            this.txtSoCanCuoc.Texts = "";
+            this.txtSoCanCuoc.UnderlinedStyle = true;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label12.Location = new System.Drawing.Point(247, 345);
+            this.label12.Location = new System.Drawing.Point(250, 253);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(62, 17);
             this.label12.TabIndex = 26;
             this.label12.Text = "Giới tính";
             // 
-            // comboBoxCustom3
+            // txtEmail
             // 
-            this.comboBoxCustom3.BackColor = System.Drawing.Color.White;
-            this.comboBoxCustom3.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.comboBoxCustom3.BorderSize = 1;
-            this.comboBoxCustom3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.comboBoxCustom3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBoxCustom3.ForeColor = System.Drawing.Color.DimGray;
-            this.comboBoxCustom3.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.comboBoxCustom3.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.comboBoxCustom3.ListTextColor = System.Drawing.Color.DimGray;
-            this.comboBoxCustom3.Location = new System.Drawing.Point(347, 526);
-            this.comboBoxCustom3.MinimumSize = new System.Drawing.Size(200, 30);
-            this.comboBoxCustom3.Name = "comboBoxCustom3";
-            this.comboBoxCustom3.Padding = new System.Windows.Forms.Padding(1);
-            this.comboBoxCustom3.Size = new System.Drawing.Size(226, 30);
-            this.comboBoxCustom3.TabIndex = 6;
-            this.comboBoxCustom3.Texts = "";
-            // 
-            // txt_Email
-            // 
-            this.txt_Email.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txt_Email.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txt_Email.BorderSize = 2;
-            this.txt_Email.Location = new System.Drawing.Point(341, 188);
-            this.txt_Email.Multiline = false;
-            this.txt_Email.Name = "txt_Email";
-            this.txt_Email.Padding = new System.Windows.Forms.Padding(7);
-            this.txt_Email.PasswordChar = false;
-            this.txt_Email.Size = new System.Drawing.Size(232, 30);
-            this.txt_Email.TabIndex = 20;
-            this.txt_Email.Texts = "";
-            this.txt_Email.UnderlinedStyle = true;
+            this.txtEmail.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtEmail.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtEmail.BorderSize = 2;
+            this.txtEmail.Location = new System.Drawing.Point(341, 188);
+            this.txtEmail.Multiline = false;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Padding = new System.Windows.Forms.Padding(7);
+            this.txtEmail.PasswordChar = false;
+            this.txtEmail.Size = new System.Drawing.Size(232, 30);
+            this.txtEmail.TabIndex = 20;
+            this.txtEmail.Texts = "";
+            this.txtEmail.UnderlinedStyle = true;
             // 
             // label10
             // 
@@ -445,20 +524,20 @@
             this.label10.TabIndex = 21;
             this.label10.Text = "Email";
             // 
-            // txt_HoTen
+            // txtHoTen
             // 
-            this.txt_HoTen.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txt_HoTen.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txt_HoTen.BorderSize = 2;
-            this.txt_HoTen.Location = new System.Drawing.Point(341, 74);
-            this.txt_HoTen.Multiline = false;
-            this.txt_HoTen.Name = "txt_HoTen";
-            this.txt_HoTen.Padding = new System.Windows.Forms.Padding(7);
-            this.txt_HoTen.PasswordChar = false;
-            this.txt_HoTen.Size = new System.Drawing.Size(232, 30);
-            this.txt_HoTen.TabIndex = 18;
-            this.txt_HoTen.Texts = "";
-            this.txt_HoTen.UnderlinedStyle = true;
+            this.txtHoTen.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtHoTen.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtHoTen.BorderSize = 2;
+            this.txtHoTen.Location = new System.Drawing.Point(341, 74);
+            this.txtHoTen.Multiline = false;
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Padding = new System.Windows.Forms.Padding(7);
+            this.txtHoTen.PasswordChar = false;
+            this.txtHoTen.Size = new System.Drawing.Size(232, 30);
+            this.txtHoTen.TabIndex = 18;
+            this.txtHoTen.Texts = "";
+            this.txtHoTen.UnderlinedStyle = true;
             // 
             // label11
             // 
@@ -471,17 +550,6 @@
             this.label11.TabIndex = 19;
             this.label11.Text = "Họ tên";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label9.Location = new System.Drawing.Point(210, 539);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(102, 17);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Người nhận BC";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -493,28 +561,27 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Vai trò";
             // 
-            // txt_Pass
+            // txtMatKhau
             // 
-            this.txt_Pass.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txt_Pass.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txt_Pass.BorderSize = 2;
-            this.txt_Pass.Location = new System.Drawing.Point(341, 240);
-            this.txt_Pass.Multiline = false;
-            this.txt_Pass.Name = "txt_Pass";
-            this.txt_Pass.Padding = new System.Windows.Forms.Padding(7);
-            this.txt_Pass.PasswordChar = false;
-            this.txt_Pass.Size = new System.Drawing.Size(232, 30);
-            this.txt_Pass.TabIndex = 12;
-            this.txt_Pass.Texts = "";
-            this.txt_Pass.UnderlinedStyle = true;
-            this.txt_Pass.Load += new System.EventHandler(this.textBoxCustom6_Load);
+            this.txtMatKhau.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtMatKhau.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtMatKhau.BorderSize = 2;
+            this.txtMatKhau.Location = new System.Drawing.Point(341, 335);
+            this.txtMatKhau.Multiline = false;
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.Padding = new System.Windows.Forms.Padding(7);
+            this.txtMatKhau.PasswordChar = false;
+            this.txtMatKhau.Size = new System.Drawing.Size(232, 30);
+            this.txtMatKhau.TabIndex = 12;
+            this.txtMatKhau.Texts = "";
+            this.txtMatKhau.UnderlinedStyle = true;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label7.Location = new System.Drawing.Point(245, 253);
+            this.label7.Location = new System.Drawing.Point(244, 349);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 17);
             this.label7.TabIndex = 13;
@@ -531,20 +598,20 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Địa Chỉ";
             // 
-            // txt_SDT
+            // txtSoDienThoai
             // 
-            this.txt_SDT.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txt_SDT.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txt_SDT.BorderSize = 2;
-            this.txt_SDT.Location = new System.Drawing.Point(341, 132);
-            this.txt_SDT.Multiline = false;
-            this.txt_SDT.Name = "txt_SDT";
-            this.txt_SDT.Padding = new System.Windows.Forms.Padding(7);
-            this.txt_SDT.PasswordChar = false;
-            this.txt_SDT.Size = new System.Drawing.Size(232, 30);
-            this.txt_SDT.TabIndex = 6;
-            this.txt_SDT.Texts = "";
-            this.txt_SDT.UnderlinedStyle = true;
+            this.txtSoDienThoai.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtSoDienThoai.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtSoDienThoai.BorderSize = 2;
+            this.txtSoDienThoai.Location = new System.Drawing.Point(341, 132);
+            this.txtSoDienThoai.Multiline = false;
+            this.txtSoDienThoai.Name = "txtSoDienThoai";
+            this.txtSoDienThoai.Padding = new System.Windows.Forms.Padding(7);
+            this.txtSoDienThoai.PasswordChar = false;
+            this.txtSoDienThoai.Size = new System.Drawing.Size(232, 30);
+            this.txtSoDienThoai.TabIndex = 6;
+            this.txtSoDienThoai.Texts = "";
+            this.txtSoDienThoai.UnderlinedStyle = true;
             // 
             // label4
             // 
@@ -557,20 +624,20 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Số điện thoại";
             // 
-            // txt_MSSV
+            // txtMaNhanVien
             // 
-            this.txt_MSSV.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txt_MSSV.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txt_MSSV.BorderSize = 2;
-            this.txt_MSSV.Location = new System.Drawing.Point(341, 18);
-            this.txt_MSSV.Multiline = false;
-            this.txt_MSSV.Name = "txt_MSSV";
-            this.txt_MSSV.Padding = new System.Windows.Forms.Padding(7);
-            this.txt_MSSV.PasswordChar = false;
-            this.txt_MSSV.Size = new System.Drawing.Size(232, 30);
-            this.txt_MSSV.TabIndex = 5;
-            this.txt_MSSV.Texts = "";
-            this.txt_MSSV.UnderlinedStyle = true;
+            this.txtMaNhanVien.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtMaNhanVien.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtMaNhanVien.BorderSize = 2;
+            this.txtMaNhanVien.Location = new System.Drawing.Point(341, 18);
+            this.txtMaNhanVien.Multiline = false;
+            this.txtMaNhanVien.Name = "txtMaNhanVien";
+            this.txtMaNhanVien.Padding = new System.Windows.Forms.Padding(7);
+            this.txtMaNhanVien.PasswordChar = false;
+            this.txtMaNhanVien.Size = new System.Drawing.Size(232, 30);
+            this.txtMaNhanVien.TabIndex = 5;
+            this.txtMaNhanVien.Texts = "";
+            this.txtMaNhanVien.UnderlinedStyle = true;
             // 
             // label3
             // 
@@ -586,19 +653,18 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.dgv);
             this.panel3.Location = new System.Drawing.Point(12, 118);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(860, 483);
             this.panel3.TabIndex = 5;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // FrmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1521, 690);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -608,10 +674,14 @@
             this.Load += new System.EventHandler(this.FrmNhanVien_Load_1);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictrueBoxCustom1)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAnh)).EndInit();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -621,39 +691,49 @@
         private Panel panel1;
         private Label label2;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dgv;
         private Panel panel2;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private CustomControl.ComboBoxCustom comboBoxCustom3;
-        private CustomControl.TextBoxCustom txt_Email;
+        private FontAwesome.Sharp.IconButton iconButtonSua;
+        private FontAwesome.Sharp.IconButton iconButtonThem;
+        private CustomControl.TextBoxCustom txtEmail;
         private Label label10;
-        private CustomControl.TextBoxCustom txt_HoTen;
+        private CustomControl.TextBoxCustom txtHoTen;
         private Label label11;
-        private Label label9;
         private Label label8;
-        private CustomControl.TextBoxCustom txt_Pass;
+        private CustomControl.TextBoxCustom txtMatKhau;
         private Label label7;
         private Label label6;
-        private CustomControl.TextBoxCustom txt_CCCD;
+        private CustomControl.TextBoxCustom txtSoCanCuoc;
         private Label label5;
-        private CustomControl.TextBoxCustom txt_SDT;
+        private CustomControl.TextBoxCustom txtSoDienThoai;
         private Label label4;
-        private CustomControl.TextBoxCustom txt_MSSV;
+        private CustomControl.TextBoxCustom txtMaNhanVien;
         private Label label3;
         private Label label12;
-        private CustomControl.RadioButtonCustom radioButtonCustom2;
-        private CustomControl.RadioButtonCustom rd_Nam;
-        private CustomControl.PictrueBoxCustom pictrueBoxCustom1;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private CustomControl.TextBoxCustom2_0 textBoxCustom2_01;
-        private CustomControl.RadioButtonCustom radioButtonCustom4;
-        private CustomControl.RadioButtonCustom radioButtonCustom3;
+        private CustomControl.PictrueBoxCustom ptbAnh;
+        private FontAwesome.Sharp.IconButton iconButtonLoad;
+        private FontAwesome.Sharp.IconButton iconButtonXoa;
+        private CustomControl.TextBoxCustom2_0 txtDiaChi;
+        private CustomControl.RadioButtonCustom rbtQuanLy;
+        private CustomControl.RadioButtonCustom rbtNhanVien;
         private FontAwesome.Sharp.IconButton iconButton8;
-        private CustomControl.TextBoxCustom2_0 textBoxCustom2_04;
+        private CustomControl.TextBoxCustom2_0 txtTimKiem;
         private Panel panel3;
-        private CustomControl.RadioButtonCustom radioButtonCustom6;
-        private CustomControl.RadioButtonCustom radioButtonCustom5;
+        private CustomControl.RadioButtonCustom rbtDaNghiViec;
+        private CustomControl.RadioButtonCustom rbtDangLam;
+        private CustomControl.RadioButtonCustom rbtNu;
+        private CustomControl.RadioButtonCustom rbtNam;
+        private Panel panel4;
+        private Panel panel5;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column9;
+        private DataGridViewTextBoxColumn Column11;
     }
 }
