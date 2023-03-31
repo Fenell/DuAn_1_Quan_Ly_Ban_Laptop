@@ -21,6 +21,8 @@ namespace _2_BUS_BusinessLayer.ViewModel
         public int TrangThaiHD { get; set; }
         public string DcNhanHang { get; set; }
         public string GhiChu { get; set; }
-        public decimal TongTien{ get; set; }
+        public decimal TongTien { get; set; }
+        public string SDT { get; set; }
+        public int TrangThaiHD { get; set; }
     }
 }

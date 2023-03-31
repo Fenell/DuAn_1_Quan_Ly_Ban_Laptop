@@ -17,7 +17,7 @@ namespace _3_GUI_PresentationLayer.View
     {
         IRamServices _ramServices;
         Guid _idRam;
-        public FrmRam()
+        public FrmRam(List<Ram> _lstRam)
         {
             InitializeComponent();
             _ramServices = new RamServices();

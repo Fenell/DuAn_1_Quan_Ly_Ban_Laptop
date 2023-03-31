@@ -12,7 +12,7 @@ namespace _2_BUS_BusinessLayer.ViewModel
     {
         public Guid Id { get; set; }
         public Guid IdHangLaptop { get; set; }
-        public string HangLaptop{ get; set; }
+        public string HangLaptop { get; set; }
         public Guid IdDongLaptop { get; set; }
         public string DongLaptop { get; set; }
         public Guid IdNhaCungCap { get; set; }
@@ -38,6 +38,7 @@ namespace _2_BUS_BusinessLayer.ViewModel
         public int SoLuongTon { get; set; }
         public bool? TrangThai { get; set; }
         public byte[]? Anh { get; set; }
+        public string Serial { get; set; }
         public List<string> ListSerial { get; set; }
 
     }

@@ -17,7 +17,7 @@ namespace _3_GUI_PresentationLayer.View
     {
         INhaCungCapServices _nhaCungCapServices;
         Guid _idNhaCungCap;
-        public FrmNhaCungCap()
+        public FrmNhaCungCap(List<NhaCungCap> _lstNhaCungCap)
         {
             InitializeComponent();
             _nhaCungCapServices = new NhaCungCapServices();

@@ -17,7 +17,7 @@ namespace _3_GUI_PresentationLayer.View
     {
         IManHinhServices _manHinhServices;
         Guid _idManHinh;
-        public FrmManHinh()
+        public FrmManHinh(List<ManHinh> _lstManHinh)
         {
             InitializeComponent();
             _manHinhServices = new ManHinhServices();

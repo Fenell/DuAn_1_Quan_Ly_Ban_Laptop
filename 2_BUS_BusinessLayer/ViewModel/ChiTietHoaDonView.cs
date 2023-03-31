@@ -17,6 +17,9 @@ namespace _2_BUS_BusinessLayer.ViewModel
         public string SerialSanPham{ get; set; }
         public int SoLuong { get; set; }
         public decimal DonGia { get; set; }
+        public string SerialSanPham { get; set; }
+        public string Hang { get; set; }
+        public string Dong { get; set; }
 
         public decimal ThanhTien => SoLuong * DonGia;
     }

@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 using static System.Resources.ResXFileRef;
 
 namespace _3_GUI_PresentationLayer.View
@@ -28,9 +29,19 @@ namespace _3_GUI_PresentationLayer.View
         INhaCungCapServices _nhaCungCapServices;
         IHangLaptopServices _hangLaptopServices;
         IDongLaptopServices _dongLaptopServices;
+        ISerialLaptopService _serialLaptopService;
         List<Cpu> _lstCpu;
+        List<Vga> _lstVga;
+        List<MauSac> _lstMauSac;
+        List<OCung> _lstOCung;
+        List<Ram> _lstRam;
+        List<ManHinh> _lstManHinh;
+        List<NhaCungCap> _lstNhaCungCap;
+        List<HangLaptop> _lstHangLaptop;
+        List<DongLaptop> _lstDongLaptop;
+        List<SerialLaptop> _lstserialLaptops;
         string fileAnh;
-        string _ten;
+        Guid _idLaptop;
         public FrmLaptop()
         {
             InitializeComponent();
@@ -44,64 +55,119 @@ namespace _3_GUI_PresentationLayer.View
             _nhaCungCapServices = new NhaCungCapServices();
             _hangLaptopServices = new HangLaptopServices();
             _dongLaptopServices = new DongLaptopServices();
+            _serialLaptopService = new SerialLaptopService();
             _lstCpu = new List<Cpu>();
+            _lstVga = new List<Vga>();
+            _lstMauSac = new List<MauSac>();
+            _lstOCung = new List<OCung>();
+            _lstRam = new List<Ram>();
+            _lstManHinh = new List<ManHinh>();
+            _lstNhaCungCap = new List<NhaCungCap>();
+            _lstHangLaptop = new List<HangLaptop>();
+            _lstDongLaptop = new List<DongLaptop>();
+            _lstserialLaptops = new List<SerialLaptop>();
             Loadcbb();
-            //LoadDgv();
+            LoadDgv();
+            txtFalse();
         }
-
+        #region ShowFormCon
+        //Cpu
+        public FrmLaptop(List<Cpu> cpus)
+        {
+            this._lstCpu = cpus;
+        }
         private void btnCpu_Click(object sender, EventArgs e)
         {
             FrmCpu newCpu = new FrmCpu(_lstCpu);
             //newCpu.Location = new Point(915, 67);
             newCpu.ShowDialog();
+            Loadcbb();
         }
-
+        //Vga
+        public FrmLaptop(List<Vga> vgas)
+        {
+            this._lstVga = vgas;
+        }
         private void btnVga_Click(object sender, EventArgs e)
         {
-            FrmVga frmVga = new FrmVga();
-            frmVga.ShowDialog();
-
+            FrmVga newVga = new FrmVga(_lstVga);
+            newVga.ShowDialog();
+            Loadcbb();
         }
-
+        //NhaCungCap
+        public FrmLaptop(List<NhaCungCap> nhaCungCaps)
+        {
+            this._lstNhaCungCap = nhaCungCaps;
+        }
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
-            FrmNhaCungCap frmNhaCungCap = new FrmNhaCungCap();
+            FrmNhaCungCap frmNhaCungCap = new FrmNhaCungCap(_lstNhaCungCap);
             frmNhaCungCap.ShowDialog();
+            Loadcbb();
         }
-
+        //DongLaptop
+        public FrmLaptop(List<DongLaptop> dongLaptops)
+        {
+            this._lstDongLaptop = dongLaptops;
+        }
         private void btnDongLaptop_Click(object sender, EventArgs e)
         {
-            FrmDongLaptop frmDongLaptop = new FrmDongLaptop();
+            FrmDongLaptop frmDongLaptop = new FrmDongLaptop(_lstDongLaptop);
             frmDongLaptop.ShowDialog();
+            Loadcbb();
         }
-
+        //Hang san xuat
+        public FrmLaptop(List<HangLaptop> hangLaptops)
+        {
+            this._lstHangLaptop = hangLaptops;
+        }
         private void btnHangSanXuat_Click(object sender, EventArgs e)
         {
-            FrmHangLaptop frmHangLaptop = new FrmHangLaptop();
+            FrmHangLaptop frmHangLaptop = new FrmHangLaptop(_lstHangLaptop);
             frmHangLaptop.ShowDialog();
+            Loadcbb();
         }
-
+        // Ram
+        public FrmLaptop(List<Ram> rams)
+        {
+            this._lstRam = rams;
+        }
         private void btnRam_Click(object sender, EventArgs e)
         {
-            FrmRam frmRam = new FrmRam();
+            FrmRam frmRam = new FrmRam(_lstRam);
             frmRam.ShowDialog();
+            Loadcbb();
         }
-
+        // Ổ cứng
+        public FrmLaptop(List<OCung> oCungs)
+        {
+            this._lstOCung = oCungs;
+        }
         private void btnOCung_Click(object sender, EventArgs e)
         {
-            FrmOCung frmOCung = new FrmOCung();
+            FrmOCung frmOCung = new FrmOCung(_lstOCung);
             frmOCung.ShowDialog();
+            Loadcbb();
         }
-
+        //Màn hình
+        public FrmLaptop(List<ManHinh> manHinhs)
+        {
+            this._lstManHinh = manHinhs;
+        }
         private void btnManHinh_Click(object sender, EventArgs e)
         {
-            FrmManHinh frmManHinh = new FrmManHinh();
+            FrmManHinh frmManHinh = new FrmManHinh(_lstManHinh);
             frmManHinh.ShowDialog();
+            Loadcbb();
         }
-
+        //Màu sắc
+        public FrmLaptop(List<MauSac> mauSacs)
+        {
+            this._lstMauSac = mauSacs;
+        }
         private void btnMauSac_Click(object sender, EventArgs e)
         {
-            FrmMauSac frmMauSac = new FrmMauSac();
+            FrmMauSac frmMauSac = new FrmMauSac(_lstMauSac);
             //frmMauSac.Show();
             // Lấy vị trí của nút thêm nhanh
             //Point buttonPosition = btnMauSac.PointToScreen(Point.Empty);
@@ -113,7 +179,22 @@ namespace _3_GUI_PresentationLayer.View
             //// Hiển thị form con
             //frmMauSac.Location = new Point(x, y);
             frmMauSac.ShowDialog();
+            Loadcbb();
         }
+        //Serial
+        public FrmLaptop(List<SerialLaptop> serialLaptops)
+        {
+            this._lstserialLaptops = serialLaptops;
+        }
+        private void btnSerial_Click(object sender, EventArgs e)
+        {
+            FrmSerial frmSerial = new FrmSerial(_lstserialLaptops);
+            frmSerial.ShowDialog();
+            Loadcbb();
+            LoadDgv();
+        }
+        #endregion
+        #region LoadForm
         private void Loadcbb()
         {
             // CPU
@@ -124,11 +205,13 @@ namespace _3_GUI_PresentationLayer.View
             // VGA
             cbbVga.DisplayMember = "Ten";
             cbbVga.ValueMember = "Id";
-            cbbVga.DataSource = _vgaServices.GetAllVga();
+            _lstVga = _vgaServices.GetAllVga();
+            cbbVga.DataSource = _lstVga;
             //Màu Sắc
             cbbMauSac.DisplayMember = "Ten";
             cbbMauSac.ValueMember = "Id";
-            cbbMauSac.DataSource = _mauSacServices.GetAllMauSac();
+            _lstMauSac = _mauSacServices.GetAllMauSac();
+            cbbMauSac.DataSource = _lstMauSac;
             //Ổ cứng
             cbbOCung.DisplayMember = "Ten";
             cbbOCung.ValueMember = "Id";
@@ -153,23 +236,29 @@ namespace _3_GUI_PresentationLayer.View
             cbbDong.DisplayMember = "Ten";
             cbbDong.ValueMember = "Id";
             cbbDong.DataSource = _dongLaptopServices.GetAllDongLaptop();
+            //Serial
+            cbbSerial.DisplayMember = "Serial";
+            cbbSerial.ValueMember = "Id";
+            cbbSerial.DataSource = _serialLaptopService.GetSerialLaptopList();
         }
         private void LoadDgv()
         {
             dgvLaptop.ColumnCount = 6;
-            dgvLaptop.Columns[0].Name = "Tên";
-            dgvLaptop.Columns[1].Name = "Số lượng";
-            dgvLaptop.Columns[2].Name = "Giá nhập";
-            dgvLaptop.Columns[3].Name = "Giá bán";
-            dgvLaptop.Columns[4].Name = "Năm bảo hành";
-            dgvLaptop.Columns[5].Visible = false;
+            dgvLaptop.Columns[0].Visible = false;
+            dgvLaptop.Columns[1].Name = "Tên";
+            dgvLaptop.Columns[2].Name = "Số lượng";
+            dgvLaptop.Columns[3].Name = "Giá nhập";
+            dgvLaptop.Columns[4].Name = "Giá bán";
+            dgvLaptop.Columns[5].Name = "Năm bảo hành";
             dgvLaptop.Rows.Clear();
             foreach (var x in _lapTopService.GetAllLaptop())
             {
-                dgvLaptop.Rows.Add($"{x.HangLaptop} {x.DongLaptop} {x.Ten}", x.SoLuongTon, x.GiaBan, x.GiaNhap, x.NamBh, x.Ten);
+                dgvLaptop.Rows.Add(x.Id, $"{x.HangLaptop} {x.DongLaptop} {x.Ten}", x.SoLuongTon, x.GiaNhap, x.GiaBan, x.NamBh);
             }
         }
+        #endregion
 
+        #region btnIcon
         private void btnThem_Click(object sender, EventArgs e)
         {
             LaptopView laptop = new LaptopView()
@@ -202,9 +291,10 @@ namespace _3_GUI_PresentationLayer.View
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            txtFalse();
             LaptopView laptop = new LaptopView()
             {
-                Ten = _ten,
+                Id = _idLaptop,
                 IdCpu = Guid.Parse(cbbCpu.SelectedValue.ToString()),
                 IdVga = Guid.Parse(cbbVga.SelectedValue.ToString()),
                 IdMauSac = Guid.Parse(cbbMauSac.SelectedValue.ToString()),
@@ -214,6 +304,7 @@ namespace _3_GUI_PresentationLayer.View
                 IdNhaCungCap = Guid.Parse(cbbNhaCungCap.SelectedValue.ToString()),
                 IdHangLaptop = Guid.Parse(cbbHangSanXuat.SelectedValue.ToString()),
                 IdDongLaptop = Guid.Parse(cbbDong.SelectedValue.ToString()),
+                Ten = txtTen.Texts,
                 GiaNhap = decimal.Parse(txtGiaNhap.Texts),
                 GiaBan = decimal.Parse(txtGiaBan.Texts),
                 Mota = txtMoTa.Texts,
@@ -226,8 +317,50 @@ namespace _3_GUI_PresentationLayer.View
             {
                 MessageBox.Show(_lapTopService.UpdateLaptop(laptop));
             }
+            btnThem.Enabled = false;
             LoadDgv();
         }
+
+        private void btnDoiTT_Click(object sender, EventArgs e)
+        {
+            txtFalse();
+            var lstLaptop = _lapTopService.GetLaptopFromDb().Where(c => c.Id == _idLaptop).ToList();
+            if (MessageBox.Show("Bạn có chắc chắn muốn chuyển trạng thái", "Chuyển trạng thái", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                MessageBox.Show(_lapTopService.UpdateStatusLaptop(lstLaptop));
+            }
+        }
+
+        private void btnClearForm_Click(object sender, EventArgs e)
+        {
+            txtFalse();
+            btnThem.Enabled = true;
+            txtTen.Texts = "";
+            txtTrongLuong.Texts = "";
+            txtNamBh.Texts = "";
+            txtGiaNhap.Texts = "";
+            txtGiaBan.Texts = "";
+            txtMoTa.Texts = "";
+            cbbCpu.Text = "";
+            cbbVga.Text = "";
+            cbbMauSac.Text = "";
+            cbbOCung.Text = "";
+            cbbRam.Text = "";
+            cbbManHinh.Text = "";
+            cbbNhaCungCap.Text = "";
+            cbbHangSanXuat.Text = "";
+            cbbDong.Text = "";
+            pcbHinhAnh.Image = null;
+            //Loadcbb();
+            LoadDgv();
+        }
+        private void txtFalse()
+        {
+            btnThem.Enabled = false;
+            btnSua.Enabled = false;
+            btnDoiTT.Enabled = false;
+        }
+        #endregion
 
         private void pcbHinhAnh_Click(object sender, EventArgs e)
         {
@@ -246,161 +379,97 @@ namespace _3_GUI_PresentationLayer.View
             {
                 return;
             }
-            if (rdbKhongSeri.Checked == true)
+            _idLaptop = Guid.Parse(dgvLaptop.Rows[rowindex].Cells[0].Value.ToString());
+            var lt = _lapTopService.GetAllLaptop().FirstOrDefault(c => c.Id == _idLaptop);
+            txtTen.Texts = lt.Ten;
+            txtTrongLuong.Texts = lt.TrongLuong.ToString();
+            txtNamBh.Texts = lt.NamBh.ToString();
+            txtGiaNhap.Texts = lt.GiaNhap.ToString();
+            txtGiaBan.Texts = lt.GiaBan.ToString();
+            txtMoTa.Texts = lt.Mota;
+            cbbCpu.Text = lt.Cpu;
+            cbbVga.Text = lt.Vga;
+            cbbMauSac.Text = lt.MauSac;
+            cbbOCung.Text = lt.OCung;
+            cbbRam.Text = lt.Ram;
+            cbbManHinh.Text = lt.ManHinh;
+            cbbNhaCungCap.Text = lt.NhaCungCap;
+            cbbHangSanXuat.Text = lt.HangLaptop;
+            cbbDong.Text = lt.DongLaptop;
+            
+            foreach(var x in _serialLaptopService.GetSerialLaptopList().Where(c=>c.IdLaptop == lt.Id))
             {
-                _ten = dgvLaptop.Rows[rowindex].Cells[4].Value.ToString();
-                var lt = _lapTopService.GetAllLaptopNoSerial().FirstOrDefault(c => c.Ten == _ten);
-                txtTen.Texts = lt.Ten;
-                txtTrongLuong.Texts = lt.TrongLuong.ToString();
-                txtNamBh.Texts = lt.NamBh.ToString();
-                txtGiaNhap.Texts = lt.GiaNhap.ToString();
-                txtGiaBan.Texts = lt.GiaBan.ToString();
-                txtMoTa.Texts = lt.Mota;
-                cbbCpu.Text = lt.Cpu;
-                cbbVga.Text = lt.Vga;
-                cbbMauSac.Text = lt.MauSac;
-                cbbOCung.Text = lt.OCung;
-                cbbRam.Text = lt.Ram;
-                cbbManHinh.Text = lt.ManHinh;
-                cbbNhaCungCap.Text = lt.NhaCungCap;
-                cbbHangSanXuat.Text = lt.HangLaptop;
-                cbbDong.Text = lt.DongLaptop;
-                // lấy dữ liệu ảnh từ cơ sở dữ liệu
-                byte[] imageData = (byte[])lt.Anh;
-                if (imageData != null)
-                {
-                    // chuyển đổi dữ liệu byte thành kiểu MemoryStream
-                    using (MemoryStream ms = new MemoryStream(imageData))
-                    {
-                        // chuyển đổi kiểu MemoryStream thành kiểu Image
-                        Image image = Image.FromStream(ms);
-                        // hiển thị ảnh lên PictureBox
-                        pcbHinhAnh.Image = image;
-                    }
-                }
-                else
-                {
-                    pcbHinhAnh.Image = null;
-                }
+                //cbbSerial.Items.Clear();
+                //cbbSerial.Items.Add(x);
+                cbbSerial.Text = x.Serial;
+            }
+            
+
+            
+            var img = Extension.ArrBytesToImage(lt.Anh);
+            if (img != null)
+            {
+                pcbHinhAnh.Image = img;
             }
             else
             {
-                _ten = dgvLaptop.Rows[rowindex].Cells[5].Value.ToString();
-                var lt = _lapTopService.GetAllLaptop().FirstOrDefault(c => c.Ten == _ten);
-                txtTen.Texts = lt.Ten;
-                txtTrongLuong.Texts = lt.TrongLuong.ToString();
-                txtNamBh.Texts = lt.NamBh.ToString();
-                txtGiaNhap.Texts = lt.GiaNhap.ToString();
-                txtGiaBan.Texts = lt.GiaBan.ToString();
-                txtMoTa.Texts = lt.Mota;
-                cbbCpu.Text = lt.Cpu;
-                cbbVga.Text = lt.Vga;
-                cbbMauSac.Text = lt.MauSac;
-                cbbOCung.Text = lt.OCung;
-                cbbRam.Text = lt.Ram;
-                cbbManHinh.Text = lt.ManHinh;
-                cbbNhaCungCap.Text = lt.NhaCungCap;
-                cbbHangSanXuat.Text = lt.HangLaptop;
-                cbbDong.Text = lt.DongLaptop;
-                // lấy dữ liệu ảnh từ cơ sở dữ liệu
-                byte[] imageData = (byte[])lt.Anh;
-                if (imageData != null)
-                {
-                    // chuyển đổi dữ liệu byte thành kiểu MemoryStream
-                    using (MemoryStream ms = new MemoryStream(imageData))
-                    {
-                        // chuyển đổi kiểu MemoryStream thành kiểu Image
-                        Image image = Image.FromStream(ms);
-                        // hiển thị ảnh lên PictureBox
-                        pcbHinhAnh.Image = image;
-                    }
-                }
-                else
-                {
-                    pcbHinhAnh.Image = null;
-                }
-
+                pcbHinhAnh.Image = null;
             }
+            // lấy dữ liệu ảnh từ cơ sở dữ liệu
+            //byte[] imageData = (byte[])lt.Anh;
+            //if (imageData != null)
+            //{
+            //    // chuyển đổi dữ liệu byte thành kiểu MemoryStream
+            //    using (MemoryStream ms = new MemoryStream(imageData))
+            //    {
+            //        // chuyển đổi kiểu MemoryStream thành kiểu Image
+            //        Image image = Image.FromStream(ms);
+            //        // hiển thị ảnh lên PictureBox
+            //        pcbHinhAnh.Image = image;
+            //    }
+            //}
+            //else
+            //    {
+            //        pcbHinhAnh.Image = null;
+            //    }
+            btnThem.Enabled = false;
+            btnSua.Enabled = true;
+            btnDoiTT.Enabled = true;
+
         }
 
-        private void btnDoiTT_Click(object sender, EventArgs e)
-        {
-            var lstLaptop = _lapTopService.GetLaptopFromDb().Where(c => c.Ten == _ten).ToList();
-            if (MessageBox.Show("Bạn có chắc chắn muốn chuyển trạng thái", "Chuyển trạng thái", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                MessageBox.Show(_lapTopService.UpdateStatusLaptop(lstLaptop));
-            }
-        }
 
-        private void btnClearForm_Click(object sender, EventArgs e)
-        {
-            txtTen.Texts = "";
-            txtTrongLuong.Texts = "";
-            txtNamBh.Texts = "";
-            txtGiaNhap.Texts = "";
-            txtGiaBan.Texts = "";
-            txtMoTa.Texts = "";
-            cbbCpu.Text = "";
-            cbbVga.Text = "";
-            cbbMauSac.Text = "";
-            cbbOCung.Text = "";
-            cbbRam.Text = "";
-            cbbManHinh.Text = "";
-            cbbNhaCungCap.Text = "";
-            cbbHangSanXuat.Text = "";
-            cbbDong.Text = "";
-        }
-
-        //rdb lọc seri
-        private void rdbCoSeri_Click(object sender, EventArgs e)
-        {
-            LoadDgv();
-        }
-
-        private void rdbKhongSeri_Click(object sender, EventArgs e)
-        {
-            dgvLaptop.Rows.Clear();
-            dgvLaptop.ColumnCount = 5;
-            dgvLaptop.Columns[0].Name = "Tên";
-            dgvLaptop.Columns[1].Name = "Giá nhập";
-            dgvLaptop.Columns[2].Name = "Giá bán";
-            dgvLaptop.Columns[3].Name = "Năm bảo hành";
-            dgvLaptop.Columns[4].Visible = false;
-            foreach (var x in _lapTopService.GetAllLaptopNoSerial())
-            {
-                dgvLaptop.Rows.Add($"{x.HangLaptop} {x.DongLaptop} {x.Ten}", x.GiaBan, x.GiaNhap, x.NamBh, x.Ten);
-            }
-        }
+        #region Lọc
 
         // rdbtn lọc trạng thái
         private void rdbtnDangBan_Click(object sender, EventArgs e)
         {
             dgvLaptop.Rows.Clear();
-            dgvLaptop.ColumnCount = 5;
-            dgvLaptop.Columns[0].Name = "Tên";
-            //dgvLaptop.Columns[1].Name = "Số lượng";
-            dgvLaptop.Columns[1].Name = "Giá nhập";
-            dgvLaptop.Columns[2].Name = "Giá bán";
-            dgvLaptop.Columns[3].Name = "Năm bảo hành";
-            dgvLaptop.Columns[4].Visible = false;
-            foreach (var x in _lapTopService.GetAllLaptopNoSerial().Where(c => c.TrangThai == true))
+            dgvLaptop.ColumnCount = 6;
+            dgvLaptop.Columns[0].Visible = false;
+            dgvLaptop.Columns[1].Name = "Tên";
+            dgvLaptop.Columns[2].Name = "Số lượng";
+            dgvLaptop.Columns[3].Name = "Giá nhập";
+            dgvLaptop.Columns[4].Name = "Giá bán";
+            dgvLaptop.Columns[5].Name = "Năm bảo hành";
+            foreach (var x in _lapTopService.GetAllLaptop().Where(c => c.TrangThai == true))
             {
-                dgvLaptop.Rows.Add($"{x.HangLaptop} {x.DongLaptop} {x.Ten}", x.GiaBan, x.GiaNhap, x.NamBh, x.Ten);
+                dgvLaptop.Rows.Add(x.Id, $"{x.HangLaptop} {x.DongLaptop} {x.Ten}", x.SoLuongTon, x.GiaNhap, x.GiaBan, x.NamBh);
             }
         }
         private void rdbtnNgungBan_Click(object sender, EventArgs e)
         {
             dgvLaptop.Rows.Clear();
-            dgvLaptop.ColumnCount = 5;
-            dgvLaptop.Columns[0].Name = "Tên";
-            //dgvLaptop.Columns[1].Name = "Số lượng";
-            dgvLaptop.Columns[1].Name = "Giá nhập";
-            dgvLaptop.Columns[2].Name = "Giá bán";
-            dgvLaptop.Columns[3].Name = "Năm bảo hành";
-            dgvLaptop.Columns[4].Visible = false;
-            foreach (var x in _lapTopService.GetAllLaptopNoSerial().Where(c => c.TrangThai == false))
+            dgvLaptop.ColumnCount = 6;
+            dgvLaptop.Columns[0].Visible = false;
+            dgvLaptop.Columns[1].Name = "Tên";
+            dgvLaptop.Columns[2].Name = "Số lượng";
+            dgvLaptop.Columns[3].Name = "Giá nhập";
+            dgvLaptop.Columns[4].Name = "Giá bán";
+            dgvLaptop.Columns[5].Name = "Năm bảo hành";
+            foreach (var x in _lapTopService.GetAllLaptop().Where(c => c.TrangThai == false))
             {
-                dgvLaptop.Rows.Add($"{x.HangLaptop} {x.DongLaptop} {x.Ten}", x.GiaBan, x.GiaNhap, x.NamBh, x.Ten);
+                dgvLaptop.Rows.Add(x.Id, $"{x.HangLaptop} {x.DongLaptop} {x.Ten}", x.SoLuongTon, x.GiaNhap, x.GiaBan, x.NamBh);
             }
 
         }
@@ -409,18 +478,21 @@ namespace _3_GUI_PresentationLayer.View
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             dgvLaptop.Rows.Clear();
-            dgvLaptop.ColumnCount = 5;
-            dgvLaptop.Columns[0].Name = "Tên";
-            //dgvLaptop.Columns[1].Name = "Số lượng";
-            dgvLaptop.Columns[1].Name = "Giá nhập";
-            dgvLaptop.Columns[2].Name = "Giá bán";
-            dgvLaptop.Columns[3].Name = "Năm bảo hành";
-            dgvLaptop.Columns[4].Visible = false;
-            foreach (var x in _lapTopService.GetAllLaptop().Where(c => c.Ten.ToLower().Contains(txtTimKiem.Text.ToLower())))
+            dgvLaptop.ColumnCount = 6;
+            dgvLaptop.Columns[0].Visible = false;
+            dgvLaptop.Columns[1].Name = "Tên";
+            dgvLaptop.Columns[2].Name = "Số lượng";
+            dgvLaptop.Columns[3].Name = "Giá nhập";
+            dgvLaptop.Columns[4].Name = "Giá bán";
+            dgvLaptop.Columns[5].Name = "Năm bảo hành";
+            foreach (var x in _lapTopService.GetAllLaptop().Where(c => String.Concat(c.HangLaptop, c.DongLaptop, c.Ten).ToLower().Contains(txtTimKiem.Text.ToLower())))
             {
-                dgvLaptop.Rows.Add($"{x.HangLaptop} {x.DongLaptop} {x.Ten}", x.GiaBan, x.GiaNhap, x.NamBh, x.Ten);
+                dgvLaptop.Rows.Add(x.Id, $"{x.HangLaptop} {x.DongLaptop} {x.Ten}", x.SoLuongTon, x.GiaNhap, x.GiaBan, x.NamBh);
             }
 
         }
+        #endregion
+
+
     }
 }

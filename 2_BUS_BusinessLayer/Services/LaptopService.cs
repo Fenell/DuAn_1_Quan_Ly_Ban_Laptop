@@ -75,9 +75,9 @@ namespace _2_BUS_BusinessLayer.Services
 
         public string UpdateLaptop(LaptopView obj)
         {
-            var laptop = _sanPhamLapTopRepository.GetAllLapTop().FirstOrDefault(c => c.Ten == obj.Ten);
+            var laptop = _sanPhamLapTopRepository.GetAllLapTop().FirstOrDefault(c => c.Id == obj.Id);
 
-            //laptop.Id = obj.Id;
+            laptop.Id = obj.Id;
             laptop.IdHangLaptop = obj.IdHangLaptop;
             laptop.IdDongLaptop = obj.IdDongLaptop;
             laptop.IdCpu = obj.IdCpu;
@@ -231,6 +231,7 @@ namespace _2_BUS_BusinessLayer.Services
                     GiaBan = sanPham.GiaBan,
                     GiaNhap = sanPham.GiaNhap,
                     NamBh = sanPham.NamBh,
+                    TrangThai = sanPham.TrangThai,
                     SoLuongTon =
                         _serialLaptopRepository.GetLstSerialLaptopFromDb().Count(c => c.IdLaptop == sanPham.Id && c.TrangThai),
                     Anh = sanPham.HinhAnh,

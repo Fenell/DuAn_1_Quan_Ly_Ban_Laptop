@@ -12,8 +12,8 @@ using _1_DAL_DataAccessLayer.Context;
 namespace _1_DAL_DataAccessLayer.Migrations
 {
     [DbContext(typeof(QlBanLaptopContext))]
-    [Migration("20230328084257_minhchien")]
-    partial class minhchien
+    [Migration("20230330162937_chienco1")]
+    partial class chienco1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,7 +32,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.Property<decimal>("DonGia")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("decimal(18,4)")
+                        .HasColumnType("decimal(18,0)")
                         .HasDefaultValue(0m);
 
                     b.Property<Guid>("IdHoaDon")
@@ -51,7 +51,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.Property<decimal>("ThanhTien")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("decimal(18,4)")
+                        .HasColumnType("decimal(18,0)")
                         .HasDefaultValue(0m);
 
                     b.HasKey("Id");
@@ -59,8 +59,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.HasIndex("IdHoaDon");
 
                     b.HasIndex("IdLaptop");
-
-                    b.HasIndex("IdLinhKien");
 
                     b.ToTable("ChiTietHoaDon", (string)null);
                 });
@@ -133,27 +131,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.ToTable("HangLaptop", (string)null);
                 });
 
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.HangLinhKien", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Ma")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<string>("Ten")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("HangLinhKien", (string)null);
-                });
-
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.HoaDon", b =>
                 {
                     b.Property<Guid>("Id")
@@ -165,8 +142,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("GhiChu")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HinhThucTT")
                         .IsRequired()
@@ -191,7 +167,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.Property<decimal>("TongTien")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("decimal(18,4)")
+                        .HasColumnType("decimal(18,0)")
                         .HasDefaultValue(0m);
 
                     b.Property<int>("TrangThai")
@@ -247,7 +223,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("GiaTri")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,0)");
 
                     b.Property<string>("LoaiKhuyenMai")
                         .IsRequired()
@@ -284,10 +260,10 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("GiaBan")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,0)");
 
                     b.Property<decimal>("GiaNhap")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,0)");
 
                     b.Property<byte[]>("HinhAnh")
                         .HasColumnType("varbinary(max)");
@@ -338,7 +314,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .HasDefaultValue(true);
 
                     b.Property<decimal>("TrongLuong")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,0)");
 
                     b.HasKey("Id");
 
@@ -363,88 +339,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.HasIndex("IdVga");
 
                     b.ToTable("Laptop", (string)null);
-                });
-
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.LinhKien", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<decimal>("GiaBan")
-                        .HasColumnType("decimal(18,4)");
-
-                    b.Property<decimal>("GiaNhap")
-                        .HasColumnType("decimal(18,4)");
-
-                    b.Property<byte[]>("HinhAnh")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<Guid>("IdHangLinhKien")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("IdKhuyenMai")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdLoaiLinhKien")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdNhaCungCap")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("MoTaChiTiet")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("NamBH")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Ten")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<bool?>("TrangThai")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(true);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IdHangLinhKien");
-
-                    b.HasIndex("IdKhuyenMai");
-
-                    b.HasIndex("IdLoaiLinhKien");
-
-                    b.HasIndex("IdNhaCungCap");
-
-                    b.ToTable("LinhKien", (string)null);
-                });
-
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.LoaiLinhKien", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdHangLinhKien")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Ma")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<string>("Ten")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IdHangLinhKien");
-
-                    b.ToTable("LoaiLinhKien", (string)null);
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.ManHinh", b =>
@@ -646,35 +540,9 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdLaptop")
-                        .IsUnique();
+                    b.HasIndex("IdLaptop");
 
                     b.ToTable("SerialLaptop", (string)null);
-                });
-
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.SerialLinhKien", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdLinhKien")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Serial")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<bool>("TrangThai")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IdLinhKien")
-                        .IsUnique();
-
-                    b.ToTable("SerialLinhKien", (string)null);
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.Vga", b =>
@@ -710,15 +578,9 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .WithMany("ChiTietHoaDons")
                         .HasForeignKey("IdLaptop");
 
-                    b.HasOne("_1_DAL_DataAccessLayer.Models.LinhKien", "LinhKien")
-                        .WithMany("ChiTietHoaDons")
-                        .HasForeignKey("IdLinhKien");
-
                     b.Navigation("HoaDon");
 
                     b.Navigation("Laptop");
-
-                    b.Navigation("LinhKien");
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.DongLaptop", b =>
@@ -830,50 +692,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Navigation("Vga");
                 });
 
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.LinhKien", b =>
-                {
-                    b.HasOne("_1_DAL_DataAccessLayer.Models.HangLinhKien", "HangLinhKien")
-                        .WithMany("LinhKiens")
-                        .HasForeignKey("IdHangLinhKien")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("_1_DAL_DataAccessLayer.Models.KhuyenMai", "KhuyenMai")
-                        .WithMany("LinhKiens")
-                        .HasForeignKey("IdKhuyenMai");
-
-                    b.HasOne("_1_DAL_DataAccessLayer.Models.LoaiLinhKien", "LoaiLinhKien")
-                        .WithMany("LinhKiens")
-                        .HasForeignKey("IdLoaiLinhKien")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("_1_DAL_DataAccessLayer.Models.NhaCungCap", "NhaCungCap")
-                        .WithMany("LinhKiens")
-                        .HasForeignKey("IdNhaCungCap")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("HangLinhKien");
-
-                    b.Navigation("KhuyenMai");
-
-                    b.Navigation("LoaiLinhKien");
-
-                    b.Navigation("NhaCungCap");
-                });
-
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.LoaiLinhKien", b =>
-                {
-                    b.HasOne("_1_DAL_DataAccessLayer.Models.HangLinhKien", "HangLinhKien")
-                        .WithMany("LoaiLinhKiens")
-                        .HasForeignKey("IdHangLinhKien")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("HangLinhKien");
-                });
-
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.NhanVien", b =>
                 {
                     b.HasOne("_1_DAL_DataAccessLayer.Models.NhanVien", null)
@@ -884,23 +702,12 @@ namespace _1_DAL_DataAccessLayer.Migrations
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.SerialLaptop", b =>
                 {
                     b.HasOne("_1_DAL_DataAccessLayer.Models.Laptop", "Laptop")
-                        .WithOne("SerialLaptop")
-                        .HasForeignKey("_1_DAL_DataAccessLayer.Models.SerialLaptop", "IdLaptop")
+                        .WithMany("SerialLaptops")
+                        .HasForeignKey("IdLaptop")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Laptop");
-                });
-
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.SerialLinhKien", b =>
-                {
-                    b.HasOne("_1_DAL_DataAccessLayer.Models.LinhKien", "LinhKien")
-                        .WithOne("SerialLinhKien")
-                        .HasForeignKey("_1_DAL_DataAccessLayer.Models.SerialLinhKien", "IdLinhKien")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("LinhKien");
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.Cpu", b =>
@@ -920,13 +727,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Navigation("Laptops");
                 });
 
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.HangLinhKien", b =>
-                {
-                    b.Navigation("LinhKiens");
-
-                    b.Navigation("LoaiLinhKiens");
-                });
-
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.HoaDon", b =>
                 {
                     b.Navigation("ChiTietHoaDons");
@@ -940,27 +740,13 @@ namespace _1_DAL_DataAccessLayer.Migrations
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.KhuyenMai", b =>
                 {
                     b.Navigation("Laptops");
-
-                    b.Navigation("LinhKiens");
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.Laptop", b =>
                 {
                     b.Navigation("ChiTietHoaDons");
 
-                    b.Navigation("SerialLaptop");
-                });
-
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.LinhKien", b =>
-                {
-                    b.Navigation("ChiTietHoaDons");
-
-                    b.Navigation("SerialLinhKien");
-                });
-
-            modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.LoaiLinhKien", b =>
-                {
-                    b.Navigation("LinhKiens");
+                    b.Navigation("SerialLaptops");
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.ManHinh", b =>
@@ -976,8 +762,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.NhaCungCap", b =>
                 {
                     b.Navigation("Laptops");
-
-                    b.Navigation("LinhKiens");
                 });
 
             modelBuilder.Entity("_1_DAL_DataAccessLayer.Models.NhanVien", b =>
