@@ -44,7 +44,7 @@ namespace _2_BUS_BusinessLayer.Services
         public List<NhanVien> GetByNhanViens(string msg)
         {
             var lst = _nhanVienRepository.GetAllNhanVien().
-                Where(c => c.Ma.ToLower().Contains(msg.ToLower()) ||
+                Where(c => c.SoDienThoai.ToLower().Contains(msg.ToLower()) ||
                                c.Hoten.ToLower().Contains(msg.ToLower())).ToList();
             return lst;
         }
