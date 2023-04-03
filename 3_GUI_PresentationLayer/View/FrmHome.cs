@@ -30,6 +30,6 @@ namespace _3_GUI_PresentationLayer.View
             lblClock.ForeColor = color;
         }
 
-        
+
     }
 }

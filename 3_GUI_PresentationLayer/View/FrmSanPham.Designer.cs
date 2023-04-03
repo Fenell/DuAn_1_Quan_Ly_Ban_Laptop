@@ -137,7 +137,7 @@
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmSanPham";
-            Text = "FrmSanPham";
+            Text = "Sản phẩm";
             Load += FrmSanPham_Load;
             panel2.ResumeLayout(false);
             ResumeLayout(false);

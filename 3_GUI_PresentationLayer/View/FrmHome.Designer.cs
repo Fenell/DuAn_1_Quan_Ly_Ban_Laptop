@@ -64,11 +64,11 @@
             label3.BackColor = Color.FromArgb(244, 245, 255);
             label3.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(89, 62, 103);
-            label3.Location = new Point(365, 21);
+            label3.Location = new Point(506, 21);
             label3.Name = "label3";
-            label3.Size = new Size(950, 86);
+            label3.Size = new Size(597, 86);
             label3.TabIndex = 3;
-            label3.Text = "Quản lý bán Laptop và Linh kiện";
+            label3.Text = "Quản lý bán Laptop";
             // 
             // timer1
             // 
