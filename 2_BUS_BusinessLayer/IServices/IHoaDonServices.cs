@@ -1,4 +1,5 @@
 ﻿using _1_DAL_DataAccessLayer.Models;
+using _2_BUS_BusinessLayer.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace _2_BUS_BusinessLayer.IServices
     {
         bool Add(HoaDon hoaDon);
         bool Sua(HoaDon hoaDon);
-        List<HoaDon> GetAll(); 
+        List<hoaDonView> GetAll(); 
         
 
 
