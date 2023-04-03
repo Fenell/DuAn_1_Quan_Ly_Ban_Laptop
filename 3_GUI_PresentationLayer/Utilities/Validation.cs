@@ -9,9 +9,14 @@ namespace _3_GUI_PresentationLayer.Utilities
 {
     public class Validation
     {
-        public static bool checkMaSV(string text)
+        public static bool checkMaNV(string text)
         {
-            return Regex.IsMatch(text, @"^(ph)[0-9]{1}$");
+            return Regex.IsMatch(text, @"^(ph)+(\d)");
+        }
+
+        public static bool checkMaKH(string text)
+        {
+            return Regex.IsMatch(text, @"^(kh)+(\d)");
         }
 
         public static bool checkSDT(string text)
