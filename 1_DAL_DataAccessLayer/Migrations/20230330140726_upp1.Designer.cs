@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _1_DAL_DataAccessLayer.Context;
 
@@ -11,9 +12,10 @@ using _1_DAL_DataAccessLayer.Context;
 namespace _1_DAL_DataAccessLayer.Migrations
 {
     [DbContext(typeof(QlBanLaptopContext))]
-    partial class QlBanLaptopContextModelSnapshot : ModelSnapshot
+    [Migration("20230330140726_upp1")]
+    partial class upp1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,7 +32,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.Property<decimal>("DonGia")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("decimal(18,0)")
+                        .HasColumnType("decimal(18,4)")
                         .HasDefaultValue(0m);
 
                     b.Property<Guid>("IdHoaDon")
@@ -42,10 +44,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Property<Guid?>("IdLinhKien")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Serial")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("SoLuong")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
@@ -53,7 +51,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.Property<decimal>("ThanhTien")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("decimal(18,0)")
+                        .HasColumnType("decimal(18,4)")
                         .HasDefaultValue(0m);
 
                     b.HasKey("Id");
@@ -170,7 +168,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.Property<decimal>("TongTien")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("decimal(18,0)")
+                        .HasColumnType("decimal(18,4)")
                         .HasDefaultValue(0m);
 
                     b.Property<int>("TrangThai")
@@ -226,7 +224,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("GiaTri")
-                        .HasColumnType("decimal(18,0)");
+                        .HasColumnType("decimal(18,4)");
 
                     b.Property<string>("LoaiKhuyenMai")
                         .IsRequired()
@@ -263,10 +261,10 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("GiaBan")
-                        .HasColumnType("decimal(18,0)");
+                        .HasColumnType("decimal(18,4)");
 
                     b.Property<decimal>("GiaNhap")
-                        .HasColumnType("decimal(18,0)");
+                        .HasColumnType("decimal(18,4)");
 
                     b.Property<byte[]>("HinhAnh")
                         .HasColumnType("varbinary(max)");
@@ -317,7 +315,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .HasDefaultValue(true);
 
                     b.Property<decimal>("TrongLuong")
-                        .HasColumnType("decimal(18,0)");
+                        .HasColumnType("decimal(18,4)");
 
                     b.HasKey("Id");
 
