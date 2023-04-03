@@ -95,7 +95,7 @@ namespace _3_GUI_PresentationLayer.View
                 return;
             }
 
-            if (!Validation.checkMaSV(txtMaNhanVien.Texts))
+            if (!Validation.checkMaNV(txtMaNhanVien.Texts))
             {
                 MessageBox.Show("Mã nhân viên phải theo đúng định dạng! VD: ph1 ", "Thông báo");
                 return;
@@ -168,7 +168,7 @@ namespace _3_GUI_PresentationLayer.View
                 return;
             }
 
-            if (!Validation.checkMaSV(txtMaNhanVien.Texts))
+            if (!Validation.checkMaNV(txtMaNhanVien.Texts))
             {
                 MessageBox.Show("Mã nhân viên phải theo đúng định dạng! VD: ph1 ", "Thông báo");
                 return;
@@ -189,6 +189,12 @@ namespace _3_GUI_PresentationLayer.View
                 return;
             }
 
+
+            if (_nhanvienService.GetAllNhanViens().Any(c=>c.Ma == txtMaNhanVien.Texts))
+            {
+                MessageBox.Show("Mã đã tồn tại!");
+                return;
+            }
             nv.Ma = txtMaNhanVien.Texts;
             nv.Hoten = txtHoTen.Texts;
             nv.SoDienThoai = txtSoDienThoai.Texts;
@@ -215,6 +221,7 @@ namespace _3_GUI_PresentationLayer.View
             {
                 nv.ChucVu = "Quản lý";
             }
+
             
 
             if (MessageBox.Show("Có muốn sửa hay ko ?", "Hỏi", MessageBoxButtons.YesNo) == DialogResult.Yes)

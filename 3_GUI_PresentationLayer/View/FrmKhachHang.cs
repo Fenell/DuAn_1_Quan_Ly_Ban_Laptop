@@ -1,4 +1,7 @@
-﻿using System;
+﻿using _1_DAL_DataAccessLayer.Models;
+using _2_BUS_BusinessLayer.Services;
+using _3_GUI_PresentationLayer.Utilities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +15,180 @@ namespace _3_GUI_PresentationLayer.View
 {
     public partial class FrmKhachHang : Form
     {
+        private KhachHang _khachHang;
+        private KhachhangService _khachhangService;
+        Guid _idKhachHang;
         public FrmKhachHang()
         {
             InitializeComponent();
+            _khachhangService= new KhachhangService();
+            loadata();
+        }
+
+        public void loadata()
+        {
+            int i = 1;
+            dgvKhachHang.Rows.Clear();
+            foreach (var item in _khachhangService.GetAllKhachHangs())
+            {
+                dgvKhachHang.Rows.Add(item.Ma, item.Hoten, item.SoDienThoai, item.GioiTinh == false ? "Nam" : "Nữ", item.DiaChi, item.Id);
+            }
+        }
+
+        private void iconButtonThem_Click(object sender, EventArgs e)
+        {
+            _khachHang = new KhachHang();
+            if (txtMa.Texts == null || txtHoTen.Texts == null || txtSoDienThoai.Texts == null
+                 || rbtNam.Checked == false && rbtNu.Checked == false || txtDiaChi.Texts == null)
+            {
+                MessageBox.Show("Xin vui lòng nhập đầy đủ các trường dữ liệu!");
+                return;
+            }
+
+            if (!Validation.checkMaKH(txtMa.Texts))
+            {
+                MessageBox.Show("Mã khách hàng phải theo đúng định dạng! VD: kh1 ", "Thông báo");
+                return;
+            }
+            if (!Validation.checkSDT(txtSoDienThoai.Texts))
+            {
+                MessageBox.Show("Mời bạn kiểm tra lại số điện thoại", "Thông báo");
+                return;
+            }
+            
+
+            _khachHang.Ma = txtMa.Texts;
+            _khachHang.Hoten = txtHoTen.Texts;
+            _khachHang.SoDienThoai = txtSoDienThoai.Texts;
+            
+            _khachHang.DiaChi = txtDiaChi.Texts;
+           
+
+            if (rbtNam.Checked == true)
+            {
+                _khachHang.GioiTinh = false;
+            }
+            else if (rbtNu.Checked == true)
+            {
+                _khachHang.GioiTinh = true;
+            }
+
+            
+            var nn = _khachhangService.GetAllKhachHangs().Any(c => c.Ma == txtMa.Texts);
+            if (nn == true)
+            {
+                MessageBox.Show("Khách hàng đã tồn tại!");
+                return;
+            }
+
+
+            if (MessageBox.Show("Có muốn thêm hay ko ?", "Hỏi", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                _khachhangService.AddKhachHang(_khachHang);
+                loadata();
+            }
+        }
+
+        private void iconButtonSua_Click(object sender, EventArgs e)
+        {
+            var kh = _khachhangService.GetAllKhachHangs().FirstOrDefault(c=>c.Id == _idKhachHang);
+            if (txtMa.Texts == null || txtHoTen.Texts == null || txtSoDienThoai.Texts == null
+                 || rbtNam.Checked == false && rbtNu.Checked == false || txtDiaChi.Texts == null)
+            {
+                MessageBox.Show("Xin vui lòng nhập đầy đủ các trường dữ liệu!");
+                return;
+            }
+
+            if (!Validation.checkMaKH(txtMa.Texts))
+            {
+                MessageBox.Show("Mã khách hàng phải theo đúng định dạng! VD: kh1 ", "Thông báo");
+                return;
+            }
+            if (!Validation.checkSDT(txtSoDienThoai.Texts))
+            {
+                MessageBox.Show("Mời bạn kiểm tra lại số điện thoại", "Thông báo");
+                return;
+            }
+
+            if (_khachhangService.GetAllKhachHangs().Any(c=>c.Ma == txtMa.Texts))
+            {
+                MessageBox.Show("Mã đã tồn tại!");
+                return;
+            }
+            kh.Ma = txtMa.Texts;
+            kh.Hoten = txtHoTen.Texts;
+            kh.SoDienThoai = txtSoDienThoai.Texts;
+
+            kh.DiaChi = txtDiaChi.Texts;
+
+
+            if (rbtNam.Checked == true)
+            {
+                kh.GioiTinh = false;
+            }
+            else if (rbtNu.Checked == true)
+            {
+                kh.GioiTinh = true;
+            }
+
+
+
+
+            if (MessageBox.Show("Có muốn sửa hay ko ?", "Hỏi", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                _khachhangService.UpdateKhachHang(kh);
+                loadata();
+            }
+        }
+
+        private void iconButtonClear_Click(object sender, EventArgs e)
+        {
+            txtMa.Texts = "";
+            txtHoTen.Texts = "";
+            txtSoDienThoai.Texts = "";
+            txtDiaChi.Texts = "";
+            txtTimKiem.Texts = "";
+            rbtNam.Checked = false;
+            rbtNu.Checked = false;
+        }
+
+        private void FrmKhachHang_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i;
+            i = dgvKhachHang.CurrentRow.Index;
+            if (i == -1 || i == _khachhangService.GetAllKhachHangs().Count) return;
+            txtMa.Texts = dgvKhachHang.Rows[i].Cells[0].Value.ToString();
+            txtHoTen.Texts = dgvKhachHang.Rows[i].Cells[1].Value.ToString();
+            txtSoDienThoai.Texts = dgvKhachHang.Rows[i].Cells[2].Value.ToString();
+
+            if (dgvKhachHang.Rows[i].Cells[3].Value.ToString() == "Nam")
+            {
+                rbtNam.Checked = true;
+                rbtNu.Checked = false;
+            }
+            else if (dgvKhachHang.Rows[i].Cells[3].Value.ToString() == "Nữ")
+            {
+                rbtNam.Checked = false;
+                rbtNu.Checked = true;
+            }
+
+            txtDiaChi.Texts = dgvKhachHang.Rows[i].Cells[4].Value.ToString();
+            _idKhachHang = Guid.Parse(dgvKhachHang.Rows[i].Cells[5].Value.ToString());
+        }
+
+        private void txtTimKiem__TextChanged(object sender, EventArgs e)
+        {
+            int i = 1;
+            dgvKhachHang.Rows.Clear();
+            foreach (var item in _khachhangService.GetByKhachHangs(txtTimKiem.Texts))
+            {
+                dgvKhachHang.Rows.Add(item.Ma, item.Hoten, item.SoDienThoai, item.GioiTinh == false ? "Nam" : "Nữ", item.DiaChi, item.Id);
+            }
         }
     }
 }
