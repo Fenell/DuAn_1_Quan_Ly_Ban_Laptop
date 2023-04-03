@@ -14,7 +14,7 @@ namespace _1_DAL_DataAccessLayer.Models
         public Guid? IdLaptop { get; set; }
         public Guid? IdLinhKien { get; set; }
         public Guid IdHoaDon { get; set; }
-
+        public string Serial{ get; set; }
         public int SoLuong { get; set; }
         public decimal DonGia { get; set; }
         public decimal ThanhTien { get; set; }
