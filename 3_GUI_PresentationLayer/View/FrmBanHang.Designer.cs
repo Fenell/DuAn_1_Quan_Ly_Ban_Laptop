@@ -30,11 +30,11 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
-            iconButton5 = new FontAwesome.Sharp.IconButton();
+            btnRefresh = new FontAwesome.Sharp.IconButton();
             txtDiaChi = new CustomControl.TextBoxCustom2_0();
             panel5 = new Panel();
-            radioButtonCustom2 = new CustomControl.RadioButtonCustom();
-            radioButtonCustom1 = new CustomControl.RadioButtonCustom();
+            rbtnShip = new CustomControl.RadioButtonCustom();
+            rbtnTrucTiep = new CustomControl.RadioButtonCustom();
             label1 = new Label();
             txtMaHD = new CustomControl.TextBoxCustom2_0();
             label10 = new Label();
@@ -49,11 +49,7 @@
             btnSuaHD = new FontAwesome.Sharp.IconButton();
             btnLuuHD = new FontAwesome.Sharp.IconButton();
             btnThanhToan = new FontAwesome.Sharp.IconButton();
-            txtKhachDua = new CustomControl.TextBoxCustom2_0();
             txtGhiChu = new CustomControl.TextBoxCustom2_0();
-            lblTienThua = new Label();
-            label9 = new Label();
-            label8 = new Label();
             rbtnCash = new CustomControl.RadioButtonCustom();
             rbtnTransfer = new CustomControl.RadioButtonCustom();
             label3 = new Label();
@@ -76,6 +72,8 @@
             tCamera = new System.Windows.Forms.Timer(components);
             groupBox1 = new GroupBox();
             dgcDHCho = new DataGridView();
+            menuStrip = new ContextMenuStrip(components);
+            toolStripMenuItem1 = new ToolStripMenuItem();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -88,12 +86,13 @@
             ((System.ComponentModel.ISupportInitialize)dgvGioHang).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgcDHCho).BeginInit();
+            menuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(iconButton5);
+            panel1.Controls.Add(btnRefresh);
             panel1.Controls.Add(txtDiaChi);
             panel1.Controls.Add(panel5);
             panel1.Controls.Add(label1);
@@ -105,11 +104,7 @@
             panel1.Controls.Add(btnSuaHD);
             panel1.Controls.Add(btnLuuHD);
             panel1.Controls.Add(btnThanhToan);
-            panel1.Controls.Add(txtKhachDua);
             panel1.Controls.Add(txtGhiChu);
-            panel1.Controls.Add(lblTienThua);
-            panel1.Controls.Add(label9);
-            panel1.Controls.Add(label8);
             panel1.Controls.Add(rbtnCash);
             panel1.Controls.Add(rbtnTransfer);
             panel1.Controls.Add(label3);
@@ -120,20 +115,21 @@
             panel1.Size = new Size(457, 661);
             panel1.TabIndex = 19;
             // 
-            // iconButton5
+            // btnRefresh
             // 
-            iconButton5.BackColor = Color.White;
-            iconButton5.FlatAppearance.BorderSize = 0;
-            iconButton5.FlatStyle = FlatStyle.Flat;
-            iconButton5.IconChar = FontAwesome.Sharp.IconChar.Rotate;
-            iconButton5.IconColor = Color.FromArgb(148, 105, 215);
-            iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton5.IconSize = 45;
-            iconButton5.Location = new Point(372, 608);
-            iconButton5.Name = "iconButton5";
-            iconButton5.Size = new Size(53, 37);
-            iconButton5.TabIndex = 56;
-            iconButton5.UseVisualStyleBackColor = false;
+            btnRefresh.BackColor = Color.White;
+            btnRefresh.FlatAppearance.BorderSize = 0;
+            btnRefresh.FlatStyle = FlatStyle.Flat;
+            btnRefresh.IconChar = FontAwesome.Sharp.IconChar.Rotate;
+            btnRefresh.IconColor = Color.FromArgb(148, 105, 215);
+            btnRefresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnRefresh.IconSize = 45;
+            btnRefresh.Location = new Point(372, 608);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(53, 37);
+            btnRefresh.TabIndex = 56;
+            btnRefresh.UseVisualStyleBackColor = false;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // txtDiaChi
             // 
@@ -141,63 +137,64 @@
             txtDiaChi.BorderFocusColor = Color.HotPink;
             txtDiaChi.BorderRadius = 10;
             txtDiaChi.BorderSize = 1;
-            txtDiaChi.Location = new Point(177, 227);
+            txtDiaChi.Location = new Point(177, 237);
             txtDiaChi.Multiline = true;
             txtDiaChi.Name = "txtDiaChi";
             txtDiaChi.Padding = new Padding(7);
             txtDiaChi.PasswordChar = false;
             txtDiaChi.PlaceholderColor = Color.DarkGray;
             txtDiaChi.PlaceholderText = "";
-            txtDiaChi.Size = new Size(241, 76);
+            txtDiaChi.Size = new Size(241, 86);
             txtDiaChi.TabIndex = 55;
             txtDiaChi.Texts = "";
             txtDiaChi.UnderlinedStyle = false;
             // 
             // panel5
             // 
-            panel5.Controls.Add(radioButtonCustom2);
-            panel5.Controls.Add(radioButtonCustom1);
-            panel5.Location = new Point(177, 167);
+            panel5.Controls.Add(rbtnShip);
+            panel5.Controls.Add(rbtnTrucTiep);
+            panel5.Location = new Point(177, 177);
             panel5.Name = "panel5";
             panel5.Size = new Size(240, 47);
             panel5.TabIndex = 54;
             // 
-            // radioButtonCustom2
+            // rbtnShip
             // 
-            radioButtonCustom2.AutoSize = true;
-            radioButtonCustom2.CheckedColor = Color.MediumSlateBlue;
-            radioButtonCustom2.Location = new Point(155, 18);
-            radioButtonCustom2.MinimumSize = new Size(0, 21);
-            radioButtonCustom2.Name = "radioButtonCustom2";
-            radioButtonCustom2.Padding = new Padding(10, 0, 0, 0);
-            radioButtonCustom2.Size = new Size(73, 21);
-            radioButtonCustom2.TabIndex = 1;
-            radioButtonCustom2.TabStop = true;
-            radioButtonCustom2.Text = "Tại nhà";
-            radioButtonCustom2.UnCheckedColor = Color.Gray;
-            radioButtonCustom2.UseVisualStyleBackColor = true;
+            rbtnShip.AutoSize = true;
+            rbtnShip.CheckedColor = Color.MediumSlateBlue;
+            rbtnShip.Location = new Point(155, 18);
+            rbtnShip.MinimumSize = new Size(0, 21);
+            rbtnShip.Name = "rbtnShip";
+            rbtnShip.Padding = new Padding(10, 0, 0, 0);
+            rbtnShip.Size = new Size(73, 21);
+            rbtnShip.TabIndex = 1;
+            rbtnShip.TabStop = true;
+            rbtnShip.Text = "Tại nhà";
+            rbtnShip.UnCheckedColor = Color.Gray;
+            rbtnShip.UseVisualStyleBackColor = true;
+            rbtnShip.CheckedChanged += rbtnShip_CheckedChanged;
             // 
-            // radioButtonCustom1
+            // rbtnTrucTiep
             // 
-            radioButtonCustom1.AutoSize = true;
-            radioButtonCustom1.CheckedColor = Color.MediumSlateBlue;
-            radioButtonCustom1.Location = new Point(13, 18);
-            radioButtonCustom1.MinimumSize = new Size(0, 21);
-            radioButtonCustom1.Name = "radioButtonCustom1";
-            radioButtonCustom1.Padding = new Padding(10, 0, 0, 0);
-            radioButtonCustom1.Size = new Size(102, 21);
-            radioButtonCustom1.TabIndex = 0;
-            radioButtonCustom1.TabStop = true;
-            radioButtonCustom1.Text = "Tại cửa hàng";
-            radioButtonCustom1.UnCheckedColor = Color.Gray;
-            radioButtonCustom1.UseVisualStyleBackColor = true;
+            rbtnTrucTiep.AutoSize = true;
+            rbtnTrucTiep.CheckedColor = Color.MediumSlateBlue;
+            rbtnTrucTiep.Location = new Point(13, 18);
+            rbtnTrucTiep.MinimumSize = new Size(0, 21);
+            rbtnTrucTiep.Name = "rbtnTrucTiep";
+            rbtnTrucTiep.Padding = new Padding(10, 0, 0, 0);
+            rbtnTrucTiep.Size = new Size(102, 21);
+            rbtnTrucTiep.TabIndex = 0;
+            rbtnTrucTiep.TabStop = true;
+            rbtnTrucTiep.Text = "Tại cửa hàng";
+            rbtnTrucTiep.UnCheckedColor = Color.Gray;
+            rbtnTrucTiep.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.HotTrack;
-            label1.Location = new Point(4, 194);
+            label1.Location = new Point(4, 204);
             label1.Name = "label1";
             label1.Size = new Size(138, 20);
             label1.TabIndex = 53;
@@ -209,7 +206,7 @@
             txtMaHD.BorderFocusColor = Color.HotPink;
             txtMaHD.BorderRadius = 0;
             txtMaHD.BorderSize = 2;
-            txtMaHD.Location = new Point(177, 117);
+            txtMaHD.Location = new Point(177, 126);
             txtMaHD.Multiline = false;
             txtMaHD.Name = "txtMaHD";
             txtMaHD.Padding = new Padding(7);
@@ -226,7 +223,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label10.ForeColor = SystemColors.HotTrack;
-            label10.Location = new Point(41, 127);
+            label10.Location = new Point(41, 136);
             label10.Name = "label10";
             label10.Size = new Size(92, 20);
             label10.TabIndex = 17;
@@ -309,7 +306,7 @@
             lblTongTien.AutoSize = true;
             lblTongTien.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             lblTongTien.ForeColor = Color.Red;
-            lblTongTien.Location = new Point(177, 571);
+            lblTongTien.Location = new Point(177, 518);
             lblTongTien.Name = "lblTongTien";
             lblTongTien.Size = new Size(0, 25);
             lblTongTien.TabIndex = 50;
@@ -383,75 +380,23 @@
             btnThanhToan.UseVisualStyleBackColor = true;
             btnThanhToan.Click += btnThanhToan_Click;
             // 
-            // txtKhachDua
-            // 
-            txtKhachDua.BorderColor = Color.MediumSlateBlue;
-            txtKhachDua.BorderFocusColor = Color.HotPink;
-            txtKhachDua.BorderRadius = 0;
-            txtKhachDua.BorderSize = 2;
-            txtKhachDua.Location = new Point(177, 471);
-            txtKhachDua.Multiline = false;
-            txtKhachDua.Name = "txtKhachDua";
-            txtKhachDua.Padding = new Padding(7);
-            txtKhachDua.PasswordChar = false;
-            txtKhachDua.PlaceholderColor = Color.DarkGray;
-            txtKhachDua.PlaceholderText = "";
-            txtKhachDua.Size = new Size(240, 30);
-            txtKhachDua.TabIndex = 48;
-            txtKhachDua.Texts = "";
-            txtKhachDua.UnderlinedStyle = true;
-            txtKhachDua._TextChanged += txtKhachDua__TextChanged;
-            // 
             // txtGhiChu
             // 
             txtGhiChu.BorderColor = Color.MediumSlateBlue;
             txtGhiChu.BorderFocusColor = Color.HotPink;
             txtGhiChu.BorderRadius = 10;
             txtGhiChu.BorderSize = 1;
-            txtGhiChu.Location = new Point(177, 366);
+            txtGhiChu.Location = new Point(178, 385);
             txtGhiChu.Multiline = true;
             txtGhiChu.Name = "txtGhiChu";
             txtGhiChu.Padding = new Padding(7);
             txtGhiChu.PasswordChar = false;
             txtGhiChu.PlaceholderColor = Color.DarkGray;
             txtGhiChu.PlaceholderText = "";
-            txtGhiChu.Size = new Size(241, 84);
+            txtGhiChu.Size = new Size(241, 97);
             txtGhiChu.TabIndex = 47;
             txtGhiChu.Texts = "";
             txtGhiChu.UnderlinedStyle = false;
-            // 
-            // lblTienThua
-            // 
-            lblTienThua.AutoSize = true;
-            lblTienThua.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTienThua.ForeColor = SystemColors.HotTrack;
-            lblTienThua.Location = new Point(177, 530);
-            lblTienThua.Name = "lblTienThua";
-            lblTienThua.Size = new Size(46, 20);
-            lblTienThua.TabIndex = 46;
-            lblTienThua.Text = "Label";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.ForeColor = SystemColors.HotTrack;
-            label9.Location = new Point(46, 530);
-            label9.Name = "label9";
-            label9.Size = new Size(79, 20);
-            label9.TabIndex = 46;
-            label9.Text = "Tiền Thừa";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.ForeColor = SystemColors.HotTrack;
-            label8.Location = new Point(42, 481);
-            label8.Name = "label8";
-            label8.Size = new Size(83, 20);
-            label8.TabIndex = 44;
-            label8.Text = "Khách đưa";
             // 
             // rbtnCash
             // 
@@ -459,7 +404,7 @@
             rbtnCash.BackColor = Color.White;
             rbtnCash.CheckedColor = Color.Blue;
             rbtnCash.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            rbtnCash.Location = new Point(319, 317);
+            rbtnCash.Location = new Point(319, 340);
             rbtnCash.MinimumSize = new Size(0, 21);
             rbtnCash.Name = "rbtnCash";
             rbtnCash.Padding = new Padding(10, 0, 0, 0);
@@ -476,7 +421,7 @@
             rbtnTransfer.BackColor = Color.White;
             rbtnTransfer.CheckedColor = Color.Blue;
             rbtnTransfer.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            rbtnTransfer.Location = new Point(177, 317);
+            rbtnTransfer.Location = new Point(177, 340);
             rbtnTransfer.MinimumSize = new Size(0, 21);
             rbtnTransfer.Name = "rbtnTransfer";
             rbtnTransfer.Padding = new Padding(10, 0, 0, 0);
@@ -492,7 +437,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.HotTrack;
-            label3.Location = new Point(23, 318);
+            label3.Location = new Point(23, 341);
             label3.Name = "label3";
             label3.Size = new Size(110, 20);
             label3.TabIndex = 41;
@@ -503,7 +448,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = SystemColors.HotTrack;
-            label4.Location = new Point(61, 394);
+            label4.Location = new Point(62, 394);
             label4.Name = "label4";
             label4.Size = new Size(62, 20);
             label4.TabIndex = 36;
@@ -514,7 +459,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label11.ForeColor = Color.Red;
-            label11.Location = new Point(30, 571);
+            label11.Location = new Point(30, 518);
             label11.Name = "label11";
             label11.Size = new Size(112, 25);
             label11.TabIndex = 33;
@@ -691,7 +636,6 @@
             // dgvGioHang
             // 
             dgvGioHang.AllowUserToAddRows = false;
-            dgvGioHang.AllowUserToResizeColumns = false;
             dgvGioHang.AllowUserToResizeRows = false;
             dgvGioHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvGioHang.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -702,9 +646,11 @@
             dgvGioHang.RowHeadersVisible = false;
             dgvGioHang.RowHeadersWidth = 50;
             dgvGioHang.RowTemplate.Height = 25;
+            dgvGioHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvGioHang.Size = new Size(696, 197);
             dgvGioHang.TabIndex = 12;
             dgvGioHang.CellContentClick += dgvGioHang_CellContentClick;
+            dgvGioHang.CellMouseUp += dgvGioHang_CellMouseUp;
             // 
             // tCamera
             // 
@@ -739,6 +685,18 @@
             dgcDHCho.TabIndex = 0;
             dgcDHCho.CellClick += dgcDHCho_CellClick;
             // 
+            // menuStrip
+            // 
+            menuStrip.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
+            menuStrip.Name = "menuStrip";
+            menuStrip.Size = new Size(173, 26);
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(172, 22);
+            toolStripMenuItem1.Text = "Chọn mã giảm giá";
+            // 
             // FrmBanHang
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -769,6 +727,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvGioHang).EndInit();
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgcDHCho).EndInit();
+            menuStrip.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -778,8 +737,6 @@
         private Label label11;
         private Label label6;
         private FontAwesome.Sharp.IconButton iconButton3;
-        private Label label9;
-        private Label label8;
         private CustomControl.RadioButtonCustom rbtnCash;
         private CustomControl.RadioButtonCustom rbtnTransfer;
         private Label label3;
@@ -790,10 +747,8 @@
         private GroupBox groupBox2;
         private DataGridView dgvGioHang;
         private DataGridView dgvSanPham;
-        private CustomControl.TextBoxCustom2_0 txtKhachDua;
         private CustomControl.TextBoxCustom2_0 txtGhiChu;
         private FontAwesome.Sharp.IconButton btnThanhToan;
-        private Label lblTienThua;
         private FontAwesome.Sharp.IconButton btnHuyHD;
         private FontAwesome.Sharp.IconButton btnSuaHD;
         private FontAwesome.Sharp.IconButton btnLuuHD;
@@ -817,8 +772,10 @@
         private DataGridView dgcDHCho;
         private CustomControl.TextBoxCustom2_0 txtDiaChi;
         private Panel panel5;
-        private CustomControl.RadioButtonCustom radioButtonCustom2;
-        private CustomControl.RadioButtonCustom radioButtonCustom1;
-        private FontAwesome.Sharp.IconButton iconButton5;
+        private CustomControl.RadioButtonCustom rbtnShip;
+        private CustomControl.RadioButtonCustom rbtnTrucTiep;
+        private FontAwesome.Sharp.IconButton btnRefresh;
+        private ContextMenuStrip menuStrip;
+        private ToolStripMenuItem toolStripMenuItem1;
     }
 }

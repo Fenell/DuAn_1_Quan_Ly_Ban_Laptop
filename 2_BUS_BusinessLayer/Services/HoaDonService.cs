@@ -63,7 +63,7 @@ namespace _2_BUS_BusinessLayer.Services
             hoaDon.HinhThucTT = obj.HTThanhToan;
             hoaDon.NgayTao = obj.NgayTao;
             hoaDon.NgayThanhToan = obj.NgayThanhToan;
-            // hoaDon.TrangThai = obj.TrangThai;
+            hoaDon.TrangThai = obj.TrangThaiHD;
             hoaDon.DiaChiNhanHang = obj.DcNhanHang;
             hoaDon.GhiChu = obj.GhiChu;
             hoaDon.TongTien = obj.TongTien;
