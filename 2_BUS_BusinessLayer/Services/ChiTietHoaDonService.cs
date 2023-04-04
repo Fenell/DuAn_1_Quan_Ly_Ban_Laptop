@@ -37,6 +37,7 @@ namespace _2_BUS_BusinessLayer.Services
                 IdHoaDon = obj.IdHoaDon,
                 IdLaptop = obj.IdSanPham,
                 IdLinhKien = obj.IdSanPham,
+                Serial = obj.SerialSanPham,
                 DonGia = obj.DonGia,
                 SoLuong = obj.SoLuong,
                 ThanhTien = (obj.DonGia * obj.SoLuong)
@@ -96,7 +97,7 @@ namespace _2_BUS_BusinessLayer.Services
                     IdHoaDon = b.Id,
                     IdSanPham = c.Id,
                     TenSanPham = c.Ten,
-                    SerialSanPham = _serialLaptopRepository.GetLstSerialLaptopFromDb().FirstOrDefault(x=>x.IdLaptop == c.Id).Serial,
+                    SerialSanPham = a.Serial,
                     Hang = e.Ten,
                     Dong = f.Ten,
                     SoLuong = a.SoLuong,
