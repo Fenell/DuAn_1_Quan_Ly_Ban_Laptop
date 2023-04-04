@@ -60,6 +60,11 @@ namespace _1_DAL_DataAccessLayer.Repositories
             return true;
         }
 
+        public bool UpdateStatusLaptop(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Laptop GetLapTopById(Guid idLapTop)
         {
             var ketqua = _lapTopContext.Laptops.Find(idLapTop);

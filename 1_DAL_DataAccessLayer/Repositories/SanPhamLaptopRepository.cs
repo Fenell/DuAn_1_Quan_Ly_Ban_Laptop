@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace _1_DAL_DataAccessLayer.Repositories
 {
-    public class SanPhamLaptopRepository : ISanPhamLaptopRepository
+    public class SanPhamLaptopRepository : ILapTopRepository
     {
         QlBanLaptopContext _lapTopContext;
         public SanPhamLaptopRepository()
@@ -33,6 +33,11 @@ namespace _1_DAL_DataAccessLayer.Repositories
             {
                 return false;
             }
+        }
+
+        public List<Laptop> GetAllLaptopNoSerial()
+        {
+            throw new NotImplementedException();
         }
 
         public List<Laptop> GetAllLapTop()
@@ -60,6 +65,11 @@ namespace _1_DAL_DataAccessLayer.Repositories
         {
             var ketqua = _lapTopContext.Laptops.Find(idLapTop);
             return ketqua;
+        }
+
+        public bool UpdateStatusLaptop(List<Laptop> lstLaptops)
+        {
+            throw new NotImplementedException();
         }
 
         public bool UpdateLapTop(Laptop lapTop)

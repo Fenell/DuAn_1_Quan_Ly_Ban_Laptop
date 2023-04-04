@@ -26,6 +26,11 @@ namespace _2_BUS_BusinessLayer.Services
             _dongLapTopRepositories = new DongLapTopReposittoies();
         }
 
+        public string UpdateStatusSerial(string seial)
+        {
+            throw new NotImplementedException();
+        }
+
         public string AddSerialLaptop(SerialLaptop obj)
         {
             SerialLaptop serialLaptop = new SerialLaptop()
