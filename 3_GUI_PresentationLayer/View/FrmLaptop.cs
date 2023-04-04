@@ -19,29 +19,32 @@ namespace _3_GUI_PresentationLayer.View
 {
     public partial class FrmLaptop : Form
     {
-        ILaptopService _lapTopService;
-        ICpuServices _cpuServices;
-        IVgaServices _vgaServices;
-        IMauSacServices _mauSacServices;
-        IOCungServices _oCungServices;
-        IRamServices _ramServices;
-        IManHinhServices _manHinhServices;
-        INhaCungCapServices _nhaCungCapServices;
-        IHangLaptopServices _hangLaptopServices;
-        IDongLaptopServices _dongLaptopServices;
-        ISerialLaptopService _serialLaptopService;
-        List<Cpu> _lstCpu;
-        List<Vga> _lstVga;
-        List<MauSac> _lstMauSac;
-        List<OCung> _lstOCung;
-        List<Ram> _lstRam;
-        List<ManHinh> _lstManHinh;
-        List<NhaCungCap> _lstNhaCungCap;
-        List<HangLaptop> _lstHangLaptop;
-        List<DongLaptop> _lstDongLaptop;
-        List<SerialLaptop> _lstserialLaptops;
-        string fileAnh;
-        Guid _idLaptop;
+        private ILaptopService _lapTopService;
+        private ICpuServices _cpuServices;
+        private IVgaServices _vgaServices;
+        private IMauSacServices _mauSacServices;
+        private IOCungServices _oCungServices;
+        private IRamServices _ramServices;
+        private IManHinhServices _manHinhServices;
+        private INhaCungCapServices _nhaCungCapServices;
+        private IHangLaptopServices _hangLaptopServices;
+        private IDongLaptopServices _dongLaptopServices;
+        private ISerialLaptopService _serialLaptopService;
+
+        private List<Cpu> _lstCpu;
+        private List<Vga> _lstVga;
+        private List<MauSac> _lstMauSac;
+        private List<OCung> _lstOCung;
+        private List<Ram> _lstRam;
+        private List<ManHinh> _lstManHinh;
+        private List<NhaCungCap> _lstNhaCungCap;
+        private List<HangLaptop> _lstHangLaptop;
+        private List<DongLaptop> _lstDongLaptop;
+        private List<SerialLaptop> _lstserialLaptops;
+
+        private string fileAnh;
+        private Guid _idLaptop;
+
         public FrmLaptop()
         {
             InitializeComponent();
@@ -56,6 +59,7 @@ namespace _3_GUI_PresentationLayer.View
             _hangLaptopServices = new HangLaptopServices();
             _dongLaptopServices = new DongLaptopServices();
             _serialLaptopService = new SerialLaptopService();
+
             _lstCpu = new List<Cpu>();
             _lstVga = new List<Vga>();
             _lstMauSac = new List<MauSac>();
@@ -66,10 +70,12 @@ namespace _3_GUI_PresentationLayer.View
             _lstHangLaptop = new List<HangLaptop>();
             _lstDongLaptop = new List<DongLaptop>();
             _lstserialLaptops = new List<SerialLaptop>();
+
             Loadcbb();
             LoadDgv();
             txtFalse();
         }
+
         #region ShowFormCon
         //Cpu
         public FrmLaptop(List<Cpu> cpus)
@@ -83,6 +89,7 @@ namespace _3_GUI_PresentationLayer.View
             newCpu.ShowDialog();
             Loadcbb();
         }
+
         //Vga
         public FrmLaptop(List<Vga> vgas)
         {
@@ -94,6 +101,7 @@ namespace _3_GUI_PresentationLayer.View
             newVga.ShowDialog();
             Loadcbb();
         }
+
         //NhaCungCap
         public FrmLaptop(List<NhaCungCap> nhaCungCaps)
         {
@@ -105,6 +113,7 @@ namespace _3_GUI_PresentationLayer.View
             frmNhaCungCap.ShowDialog();
             Loadcbb();
         }
+
         //DongLaptop
         public FrmLaptop(List<DongLaptop> dongLaptops)
         {
@@ -116,6 +125,7 @@ namespace _3_GUI_PresentationLayer.View
             frmDongLaptop.ShowDialog();
             Loadcbb();
         }
+
         //Hang san xuat
         public FrmLaptop(List<HangLaptop> hangLaptops)
         {
@@ -127,6 +137,7 @@ namespace _3_GUI_PresentationLayer.View
             frmHangLaptop.ShowDialog();
             Loadcbb();
         }
+
         // Ram
         public FrmLaptop(List<Ram> rams)
         {
@@ -138,6 +149,7 @@ namespace _3_GUI_PresentationLayer.View
             frmRam.ShowDialog();
             Loadcbb();
         }
+
         // Ổ cứng
         public FrmLaptop(List<OCung> oCungs)
         {
@@ -149,6 +161,7 @@ namespace _3_GUI_PresentationLayer.View
             frmOCung.ShowDialog();
             Loadcbb();
         }
+
         //Màn hình
         public FrmLaptop(List<ManHinh> manHinhs)
         {
@@ -160,6 +173,7 @@ namespace _3_GUI_PresentationLayer.View
             frmManHinh.ShowDialog();
             Loadcbb();
         }
+
         //Màu sắc
         public FrmLaptop(List<MauSac> mauSacs)
         {
@@ -181,6 +195,7 @@ namespace _3_GUI_PresentationLayer.View
             frmMauSac.ShowDialog();
             Loadcbb();
         }
+
         //Serial
         public FrmLaptop(List<SerialLaptop> serialLaptops)
         {
@@ -236,10 +251,7 @@ namespace _3_GUI_PresentationLayer.View
             cbbDong.DisplayMember = "Ten";
             cbbDong.ValueMember = "Id";
             cbbDong.DataSource = _dongLaptopServices.GetAllDongLaptop();
-            //Serial
-            cbbSerial.DisplayMember = "Serial";
-            cbbSerial.ValueMember = "Id";
-            cbbSerial.DataSource = _serialLaptopService.GetSerialLaptopList();
+
         }
         private void LoadDgv()
         {
@@ -379,6 +391,7 @@ namespace _3_GUI_PresentationLayer.View
             {
                 return;
             }
+
             _idLaptop = Guid.Parse(dgvLaptop.Rows[rowindex].Cells[0].Value.ToString());
             var lt = _lapTopService.GetAllLaptop().FirstOrDefault(c => c.Id == _idLaptop);
             txtTen.Texts = lt.Ten;
@@ -396,16 +409,14 @@ namespace _3_GUI_PresentationLayer.View
             cbbNhaCungCap.Text = lt.NhaCungCap;
             cbbHangSanXuat.Text = lt.HangLaptop;
             cbbDong.Text = lt.DongLaptop;
-            
-            foreach(var x in _serialLaptopService.GetSerialLaptopList().Where(c=>c.IdLaptop == lt.Id))
-            {
-                //cbbSerial.Items.Clear();
-                //cbbSerial.Items.Add(x);
-                cbbSerial.Text = x.Serial;
-            }
-            
 
-            
+            //Load Serial
+            cbbSerial.Items.Clear();
+            foreach (var x in _serialLaptopService.GetSerialLaptopList().Where(c => c.IdLaptop == lt.Id && c.TrangThai))
+            {
+                cbbSerial.Items.Insert(0, x.Serial);
+            }
+
             var img = Extension.ArrBytesToImage(lt.Anh);
             if (img != null)
             {
@@ -437,7 +448,6 @@ namespace _3_GUI_PresentationLayer.View
             btnDoiTT.Enabled = true;
 
         }
-
 
         #region Lọc
 

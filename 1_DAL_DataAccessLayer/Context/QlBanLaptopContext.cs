@@ -42,8 +42,6 @@ namespace _1_DAL_DataAccessLayer.Context
             modelBuilder.ApplyConfiguration(new RamConfiguration());
             modelBuilder.ApplyConfiguration(new KhuyenMaiConfiguration());
             modelBuilder.ApplyConfiguration(new SerialLaptopConfiguration());
-            modelBuilder.ApplyConfiguration(new SerialLinhKienConfiguration());
-
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

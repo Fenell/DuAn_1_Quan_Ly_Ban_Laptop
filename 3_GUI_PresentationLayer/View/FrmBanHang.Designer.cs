@@ -659,14 +659,15 @@
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.White;
             groupBox1.Controls.Add(dgcDHCho);
             groupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(728, 452);
+            groupBox1.Location = new Point(726, 452);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(290, 226);
+            groupBox1.Size = new Size(292, 220);
             groupBox1.TabIndex = 44;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Đơn hàng chờ";
+            groupBox1.Text = "groupBox1";
             // 
             // dgcDHCho
             // 
@@ -681,7 +682,7 @@
             dgcDHCho.RowHeadersVisible = false;
             dgcDHCho.RowTemplate.Height = 25;
             dgcDHCho.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgcDHCho.Size = new Size(284, 202);
+            dgcDHCho.Size = new Size(286, 196);
             dgcDHCho.TabIndex = 0;
             dgcDHCho.CellClick += dgcDHCho_CellClick;
             // 
@@ -696,16 +697,6 @@
             toolStripMenuItem1.Name = "toolStripMenuItem1";
             toolStripMenuItem1.Size = new Size(172, 22);
             toolStripMenuItem1.Text = "Chọn mã giảm giá";
-            // 
-            // groupBox1
-            // 
-            groupBox1.BackColor = Color.White;
-            groupBox1.Location = new Point(1422, 11);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(87, 667);
-            groupBox1.TabIndex = 44;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
             // 
             // FrmBanHang
             // 

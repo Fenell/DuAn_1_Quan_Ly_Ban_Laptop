@@ -12,8 +12,8 @@ using _1_DAL_DataAccessLayer.Context;
 namespace _1_DAL_DataAccessLayer.Migrations
 {
     [DbContext(typeof(QlBanLaptopContext))]
-    [Migration("20230330152035_upp3")]
-    partial class upp3
+    [Migration("20230404145144_uppp1")]
+    partial class uppp1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,6 +43,10 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.Property<Guid?>("IdLinhKien")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Serial")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SoLuong")
                         .ValueGeneratedOnAdd()

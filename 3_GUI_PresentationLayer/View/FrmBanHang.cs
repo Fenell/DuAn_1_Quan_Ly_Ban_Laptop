@@ -24,13 +24,13 @@ namespace _3_GUI_PresentationLayer.View
     {
         private ILaptopService _laptopService;
         private ISerialLaptopService _serialLaptopService;
-        private IKhachHangService _khachHangService;
         private IHoaDonSerevice _hoaDonSerevice;
         private IChiTietHoaDonService _chiTietHoaDonService;
 
         private IHangLapTopRepositories _hangLapTop;
         private IDongLapTopRepositories _dongLapTop;
 
+        private KhachhangService _khachHangService;
         private Laptop _laptop;
         private List<ChiTietHoaDonView> _lstCtHoaDonViews;
         private string _serialSelected;
@@ -46,7 +46,7 @@ namespace _3_GUI_PresentationLayer.View
             _serialLaptopService = new SerialLaptopService();
             _laptop = new Laptop();
             _lstLaptopViews = new List<LaptopView>();
-            _khachHangService = new KhachHangService();
+            _khachHangService = new KhachhangService();
             _hoaDonSerevice = new HoaDonService();
             _chiTietHoaDonService = new ChiTietHoaDonService();
 
@@ -58,7 +58,7 @@ namespace _3_GUI_PresentationLayer.View
             LoadData();
         }
 
-        private void LoadSanPham()
+        private void LoadData()
         {
             _lstCtHoaDonViews = new List<ChiTietHoaDonView>();
             _hoaDon = new HoaDonView();
@@ -160,7 +160,7 @@ namespace _3_GUI_PresentationLayer.View
 
         private void LoadKhachHang()
         {
-            var lst = _khachHangService.GetLstKhachHang();
+            var lst = _khachHangService.GetAllKhachHangs();
             AutoCompleteStringCollection lstKhachHang = new AutoCompleteStringCollection();
             lst.ForEach(c => lstKhachHang.Add(c.SoDienThoai));
             cbbSdtKH.AutoCompleteCustomSource = lstKhachHang;
@@ -378,7 +378,7 @@ namespace _3_GUI_PresentationLayer.View
                 return;
             }
 
-            var khachHang = _khachHangService.GetLstKhachHang().Find(c => c.SoDienThoai == cbbSdtKH.Text);
+            var khachHang = _khachHangService.GetAllKhachHangs().Find(c => c.SoDienThoai == cbbSdtKH.Text);
             if (khachHang == null)
             {
                 MessageBox.Show("Bạn chưa chọn thông tin khách mua hàng", "Thông báo");
@@ -445,7 +445,7 @@ namespace _3_GUI_PresentationLayer.View
                 return;
             }
 
-            var khachHang = _khachHangService.GetLstKhachHang().Find(c => c.SoDienThoai == cbbSdtKH.Text);
+            var khachHang = _khachHangService.GetAllKhachHangs().Find(c => c.SoDienThoai == cbbSdtKH.Text);
             if (khachHang == null)
             {
                 MessageBox.Show("Bạn chưa chọn thông tin khách mua hàng", "Thông báo");
@@ -607,7 +607,7 @@ namespace _3_GUI_PresentationLayer.View
 
         private void cbbSdtKH_TextChanged(object sender, EventArgs e)
         {
-            var khachHang = _khachHangService.GetLstKhachHang().Find(c => c.SoDienThoai == cbbSdtKH.Text);
+            var khachHang = _khachHangService.GetAllKhachHangs().Find(c => c.SoDienThoai == cbbSdtKH.Text);
             if (khachHang != null)
             {
                 lblHoTen.Text = khachHang.Hoten;
@@ -637,17 +637,6 @@ namespace _3_GUI_PresentationLayer.View
             //var serial = _serialLaptopService.GetSerialLaptopList().FirstOrDefault(c => c.Serial == seriaWhenClick);
         }
 
-        private void dgvSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int rowIndex = e.RowIndex;
-            _serialSelected = Convert.ToString(dgvSanPham.Rows[rowIndex].Cells[3].Value);
-            if (_serialSelected == "")
-            {
-                MessageBox.Show("Bạn chưa chọn serial cho sản phẩm");
-                return;
-
-        }
-
         private void rbtnShip_CheckedChanged(object sender, EventArgs e)
         {
             if (rbtnShip.Checked)
@@ -662,7 +651,7 @@ namespace _3_GUI_PresentationLayer.View
             }
         }
 
-        
+
 
         private void dgvGioHang_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {
