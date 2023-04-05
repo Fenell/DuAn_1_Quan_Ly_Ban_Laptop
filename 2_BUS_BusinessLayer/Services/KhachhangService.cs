@@ -1,5 +1,6 @@
 ﻿using _1_DAL_DataAccessLayer.Models;
 using _1_DAL_DataAccessLayer.Repositories;
+using _2_BUS_BusinessLayer.IServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace _2_BUS_BusinessLayer.Services
 {
-    public class KhachhangService
+    public class KhachhangService: IKhachHangService
     {
         private KhachHangRepository _khachHangRepository;
 
@@ -48,5 +49,11 @@ namespace _2_BUS_BusinessLayer.Services
                                c.Hoten.ToLower().Contains(msg.ToLower())).ToList();
             return lst;
         }
+
+        public KhachHang GetKhachHangById(Guid idKhachHang)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

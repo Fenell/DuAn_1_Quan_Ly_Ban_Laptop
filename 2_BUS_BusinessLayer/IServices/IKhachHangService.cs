@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _1_DAL_DataAccessLayer.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,8 +8,11 @@ using _2_BUS_BusinessLayer.ViewModel;
 
 namespace _2_BUS_BusinessLayer.IServices
 {
-    public interface IKhachHangService
+    public interface  IKhachHangService
     {
-        public List<KhachHangView> GetLstKhachHang();
+        public string  AddKhachHang(KhachHang khachHang);
+        public string UpdateKhachHang(KhachHang khachHang);
+        KhachHang GetKhachHangById(Guid idKhachHang);
+        List<KhachHang> GetAllKhachHangs();
     }
 }
