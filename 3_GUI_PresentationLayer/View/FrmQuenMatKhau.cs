@@ -83,13 +83,22 @@ namespace _3_GUI_PresentationLayer.View
         {
             if (txt_MK_New.Texts == txt_XacNhan_MK.Texts)
             {
-                var employee = _BUS_NhanViens.GetAll().Where(nv => nv.Email == txt_Email.Texts).FirstOrDefault();
-                employee.MatKhau = txt_MK_New.Texts;
-                _BUS_NhanViens.Sua(employee);
+                var a = _BUS_NhanViens.GetAll().FirstOrDefault(c => c.Email == txt_Email.Text).Id;
+                var d = _BUS_NhanViens.GetAll().FirstOrDefault(p => p.Id == a);
+                d.MatKhau = txt_XacNhan_MK.Text;
+                _BUS_NhanViens.Sua(d);
                 MessageBox.Show("Thay doi mat khau thanh cong, Ban se duoc dua tro lai trang dang nhap");
                 this.Hide();
                 FrmDangNhap frmdn = new FrmDangNhap();
                 frmdn.ShowDialog();
+
+                //var employee = _BUS_NhanViens.GetAll().Where(nv => nv.Email == txt_Email.Texts).FirstOrDefault();
+                //employee.MatKhau = txt_MK_New.Texts;
+                //_BUS_NhanViens.Sua(employee);
+                //MessageBox.Show("Thay doi mat khau thanh cong, Ban se duoc dua tro lai trang dang nhap");
+                //this.Hide();
+                //FrmDangNhap frmdn = new FrmDangNhap();
+                //frmdn.ShowDialog();
             }
             else
             {

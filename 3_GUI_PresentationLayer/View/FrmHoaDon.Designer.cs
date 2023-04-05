@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxCustom1 = new _3_GUI_PresentationLayer.CustomControl.ComboBoxCustom();
+            this.cbb_loaiSanPham = new _3_GUI_PresentationLayer.CustomControl.ComboBoxCustom();
             this.dateTimePickerCustom2 = new _3_GUI_PresentationLayer.CustomControl.DateTimePickerCustom();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePickerCustom1 = new _3_GUI_PresentationLayer.CustomControl.DateTimePickerCustom();
@@ -56,24 +56,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBoxCustom1
+            // cbb_loaiSanPham
             // 
-            this.comboBoxCustom1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.comboBoxCustom1.BorderColor = System.Drawing.Color.Black;
-            this.comboBoxCustom1.BorderSize = 1;
-            this.comboBoxCustom1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.comboBoxCustom1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBoxCustom1.ForeColor = System.Drawing.Color.DimGray;
-            this.comboBoxCustom1.IconColor = System.Drawing.Color.Black;
-            this.comboBoxCustom1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.comboBoxCustom1.ListTextColor = System.Drawing.Color.DimGray;
-            this.comboBoxCustom1.Location = new System.Drawing.Point(709, 23);
-            this.comboBoxCustom1.MinimumSize = new System.Drawing.Size(200, 30);
-            this.comboBoxCustom1.Name = "comboBoxCustom1";
-            this.comboBoxCustom1.Padding = new System.Windows.Forms.Padding(1);
-            this.comboBoxCustom1.Size = new System.Drawing.Size(200, 30);
-            this.comboBoxCustom1.TabIndex = 3;
-            this.comboBoxCustom1.Texts = "";
+            this.cbb_loaiSanPham.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbb_loaiSanPham.BorderColor = System.Drawing.Color.Black;
+            this.cbb_loaiSanPham.BorderSize = 1;
+            this.cbb_loaiSanPham.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbb_loaiSanPham.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbb_loaiSanPham.ForeColor = System.Drawing.Color.DimGray;
+            this.cbb_loaiSanPham.IconColor = System.Drawing.Color.Black;
+            this.cbb_loaiSanPham.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbb_loaiSanPham.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbb_loaiSanPham.Location = new System.Drawing.Point(709, 23);
+            this.cbb_loaiSanPham.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cbb_loaiSanPham.Name = "cbb_loaiSanPham";
+            this.cbb_loaiSanPham.Padding = new System.Windows.Forms.Padding(1);
+            this.cbb_loaiSanPham.Size = new System.Drawing.Size(200, 30);
+            this.cbb_loaiSanPham.TabIndex = 3;
+            this.cbb_loaiSanPham.Texts = "";
+            this.cbb_loaiSanPham.OnSelectedIndexChanged += new System.EventHandler(this.comboBoxCustom1_OnSelectedIndexChanged);
             // 
             // dateTimePickerCustom2
             // 
@@ -179,7 +180,7 @@
             this.panel2.Controls.Add(this.radioButtonCustom1);
             this.panel2.Controls.Add(this.iconButton8);
             this.panel2.Controls.Add(this.textBoxCustom2_04);
-            this.panel2.Controls.Add(this.comboBoxCustom1);
+            this.panel2.Controls.Add(this.cbb_loaiSanPham);
             this.panel2.Controls.Add(this.dateTimePickerCustom2);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.dateTimePickerCustom1);
@@ -353,7 +354,7 @@
         }
 
         #endregion
-        private CustomControl.ComboBoxCustom comboBoxCustom1;
+        private CustomControl.ComboBoxCustom cbb_loaiSanPham;
         private Label label4;
         private CustomControl.DateTimePickerCustom dateTimePickerCustom2;
         private Label label5;

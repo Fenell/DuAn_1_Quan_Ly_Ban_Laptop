@@ -16,9 +16,11 @@ namespace _2_BUS_BusinessLayer.Services
         private IKhachHangRepository _khachHangRepository;
         private INhanVienRepository _nhanVienRepository;
         private IHoaDonRepository _hoaDonRepository;
+        private ILapTopRepository _lapTopRepo;
 
         public HoaDonService()
         {
+            _lapTopRepo = new LapTopRepository();
             _khachHangRepository = new KhachHangRepository();
             _nhanVienRepository = new NhanVienRepository();
             _hoaDonRepository = new HoaDonRepository();
@@ -86,6 +88,7 @@ namespace _2_BUS_BusinessLayer.Services
             var lst = (from a in _hoaDonRepository.GetAllHoaDon()
                        join b in _nhanVienRepository.GetAllNhanVien() on a.IdNhanVien equals b.Id
                        join c in _khachHangRepository.GetAllKhachHang() on a.IdKhachHang equals c.Id
+                       join d in _lapTopRepo.GetAllLapTop() on a.I
                        select new HoaDonView()
                        {
                            Id = a.Id,

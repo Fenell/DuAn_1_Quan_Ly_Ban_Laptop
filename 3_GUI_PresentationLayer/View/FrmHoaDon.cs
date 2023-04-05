@@ -16,12 +16,14 @@ namespace _3_GUI_PresentationLayer.View
 {
     public partial class FrmHoaDon : Form
     {
+        ILaptopService _Bus_LapTop;
         IHoaDonSerevice _Bus_hoaDon;
         List<HoaDonView> _lst_hoaDon;
         IChiTietHoaDonService _bus_chiTietHoaDon;
         List<ChiTietHoaDon> _lst_CTHD;
         public FrmHoaDon()
         {
+            _Bus_LapTop = new LaptopService();
             _bus_chiTietHoaDon = new ChiTietHoaDonService ();
             _lst_CTHD = new List<ChiTietHoaDon>();
             _Bus_hoaDon = new HoaDonService();
@@ -127,6 +129,24 @@ namespace _3_GUI_PresentationLayer.View
             {
                 MessageBox.Show("Không có hóa đơn nào có Mã hóa đơn tương ứng");
             }
+        }
+        private void comboLoaiSanPham()
+        {
+            var load = (from x in _Bus_LapTop.GetAllLaptop() select x.HangLaptop);
+             
+        }
+
+        private void comboBoxCustom1_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedCategory = cbb_loaiSanPham.SelectedItem.ToString();
+
+            // Lấy danh sách các hóa đơn chứa sản phẩm thuộc loại sản phẩm được chọn
+            var filteredInvoices = (from x in _Bus_hoaDon.GetAllHoaDonViews()
+                                    join y in _Bus_LapTop.GetAllLaptop() on x.
+                                    .Where(i => i.Product.ProductCategory == selectedCategory).ToList();
+
+            // Hiển thị danh sách hóa đơn lên DataGridView
+            dataGridView1.DataSource = filteredInvoices;
         }
     }
 }

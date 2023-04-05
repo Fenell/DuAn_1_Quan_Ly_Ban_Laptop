@@ -32,7 +32,7 @@
             this.txtMatKhau = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom2_0();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.nhoMatKhau = new System.Windows.Forms.CheckBox();
+            this.cb_nhoMatKhau = new System.Windows.Forms.CheckBox();
             this.LbQuenMatKhau = new System.Windows.Forms.LinkLabel();
             this.buttonCustom1 = new _3_GUI_PresentationLayer.CustomControl.ButtonCustom();
             this.btnExit = new FontAwesome.Sharp.IconButton();
@@ -103,17 +103,17 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // nhoMatKhau
+            // cb_nhoMatKhau
             // 
-            this.nhoMatKhau.AutoSize = true;
-            this.nhoMatKhau.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nhoMatKhau.Location = new System.Drawing.Point(61, 325);
-            this.nhoMatKhau.Name = "nhoMatKhau";
-            this.nhoMatKhau.Size = new System.Drawing.Size(109, 21);
-            this.nhoMatKhau.TabIndex = 3;
-            this.nhoMatKhau.Text = "Nhớ mật khẩu";
-            this.nhoMatKhau.UseVisualStyleBackColor = true;
-            this.nhoMatKhau.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.cb_nhoMatKhau.AutoSize = true;
+            this.cb_nhoMatKhau.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cb_nhoMatKhau.Location = new System.Drawing.Point(61, 325);
+            this.cb_nhoMatKhau.Name = "cb_nhoMatKhau";
+            this.cb_nhoMatKhau.Size = new System.Drawing.Size(109, 21);
+            this.cb_nhoMatKhau.TabIndex = 3;
+            this.cb_nhoMatKhau.Text = "Nhớ mật khẩu";
+            this.cb_nhoMatKhau.UseVisualStyleBackColor = true;
+            this.cb_nhoMatKhau.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // LbQuenMatKhau
             // 
@@ -186,7 +186,7 @@
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.buttonCustom1);
             this.Controls.Add(this.LbQuenMatKhau);
-            this.Controls.Add(this.nhoMatKhau);
+            this.Controls.Add(this.cb_nhoMatKhau);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtMatKhau);
@@ -209,7 +209,7 @@
         private CustomControl.TextBoxCustom2_0 txtMatKhau;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private CheckBox nhoMatKhau;
+        private CheckBox cb_nhoMatKhau;
         private LinkLabel LbQuenMatKhau;
         private CustomControl.ButtonCustom buttonCustom1;
         private FontAwesome.Sharp.IconButton btnExit;
