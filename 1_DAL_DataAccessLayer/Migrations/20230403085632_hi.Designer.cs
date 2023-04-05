@@ -12,8 +12,8 @@ using _1_DAL_DataAccessLayer.Context;
 namespace _1_DAL_DataAccessLayer.Migrations
 {
     [DbContext(typeof(QlBanLaptopContext))]
-    [Migration("20230330134435_upppp2")]
-    partial class upppp2
+    [Migration("20230403085632_hi")]
+    partial class hi
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,7 +32,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.Property<decimal>("DonGia")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("decimal(18,4)")
+                        .HasColumnType("decimal(18,0)")
                         .HasDefaultValue(0m);
 
                     b.Property<Guid>("IdHoaDon")
@@ -44,6 +44,10 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Property<Guid?>("IdLinhKien")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Serial")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("SoLuong")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
@@ -51,7 +55,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.Property<decimal>("ThanhTien")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("decimal(18,4)")
+                        .HasColumnType("decimal(18,0)")
                         .HasDefaultValue(0m);
 
                     b.HasKey("Id");
@@ -168,7 +172,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
 
                     b.Property<decimal>("TongTien")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("decimal(18,4)")
+                        .HasColumnType("decimal(18,0)")
                         .HasDefaultValue(0m);
 
                     b.Property<int>("TrangThai")
@@ -224,7 +228,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("GiaTri")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,0)");
 
                     b.Property<string>("LoaiKhuyenMai")
                         .IsRequired()
@@ -261,10 +265,10 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("GiaBan")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,0)");
 
                     b.Property<decimal>("GiaNhap")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,0)");
 
                     b.Property<byte[]>("HinhAnh")
                         .HasColumnType("varbinary(max)");
@@ -305,9 +309,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Property<int>("NamBh")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("SerialLaptopId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Ten")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
@@ -318,7 +319,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .HasDefaultValue(true);
 
                     b.Property<decimal>("TrongLuong")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,0)");
 
                     b.HasKey("Id");
 
@@ -341,8 +342,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.HasIndex("IdRam");
 
                     b.HasIndex("IdVga");
-
-                    b.HasIndex("SerialLaptopId");
 
                     b.ToTable("Laptop", (string)null);
                 });
@@ -677,10 +676,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .WithMany("Laptops")
                         .HasForeignKey("IdVga");
 
-                    b.HasOne("_1_DAL_DataAccessLayer.Models.SerialLaptop", "SerialLaptop")
-                        .WithMany()
-                        .HasForeignKey("SerialLaptopId");
-
                     b.Navigation("Cpu");
 
                     b.Navigation("DongLaptop");
@@ -698,8 +693,6 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     b.Navigation("OCung");
 
                     b.Navigation("Ram");
-
-                    b.Navigation("SerialLaptop");
 
                     b.Navigation("Vga");
                 });

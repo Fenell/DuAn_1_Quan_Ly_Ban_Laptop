@@ -16,16 +16,16 @@ namespace _3_GUI_PresentationLayer.View
 {
     public partial class FrmHoaDon : Form
     {
-        IHoaDonServices _Bus_hoaDon;
-        List<hoaDonView> _lst_hoaDon;
-        IHoaDonChiTietServices _bus_chiTietHoaDon;
+        IHoaDonSerevice _Bus_hoaDon;
+        List<HoaDonView> _lst_hoaDon;
+        IChiTietHoaDonService _bus_chiTietHoaDon;
         List<ChiTietHoaDon> _lst_CTHD;
         public FrmHoaDon()
         {
-            _bus_chiTietHoaDon = new HoaDonChiTietServices();
+            _bus_chiTietHoaDon = new ChiTietHoaDonService ();
             _lst_CTHD = new List<ChiTietHoaDon>();
-            _Bus_hoaDon = new HoaDonServices();
-            _lst_hoaDon = new List<hoaDonView>();
+            _Bus_hoaDon = new HoaDonService();
+            _lst_hoaDon = new List<HoaDonView>();
             InitializeComponent();
             ShowHĐ();
             ShowCTHĐ();
@@ -41,13 +41,12 @@ namespace _3_GUI_PresentationLayer.View
             dgv_hoaDon.Columns[4].Name = " HinhThucTT";
             dgv_hoaDon.Columns[5].Name = " NgayTao";
             dgv_hoaDon.Columns[6].Name = " NgayThanhToan";
-            //dgv_hoaDon.Columns[7].Name = " DiaChiNhanHang";
-            dgv_hoaDon.Columns[8].Name = " Ghi chú";
-            dgv_hoaDon.Columns[9].Name = " TongTien";
+            dgv_hoaDon.Columns[7].Name = " Ghi chú";
+            dgv_hoaDon.Columns[8].Name = " TongTien";
             dgv_hoaDon.Rows.Clear();
-            foreach (var item in _Bus_hoaDon.GetAll())
+            foreach (var item in _Bus_hoaDon.GetAllHoaDonViews())
             {
-                dgv_hoaDon.Rows.Add(item.Id, item.TenNV, item.TenKH, item.Ma, item.HTTT, item.NgayTao, item.NgayThanhToan, item.GhiChu, item.TongTien);
+               dgv_hoaDon.Rows.Add(item.Id, item.TenNhanVien, item.TenKhachHang, item.MaHd, item.HTThanhToan, item.NgayTao, item.NgayThanhToan, item.GhiChu, item.TongTien);
             }
         }
         public void ShowCTHĐ()
@@ -57,16 +56,16 @@ namespace _3_GUI_PresentationLayer.View
             dgv_CTHD.ColumnCount = 7;
             dgv_CTHD.Columns[0].Name = " ID";
             dgv_CTHD.Columns[1].Name = " IdLaptop";
-            dgv_CTHD.Columns[2].Name = " IdLinhKien";
-            dgv_CTHD.Columns[3].Name = " IdHoaDon";
-            dgv_CTHD.Columns[4].Name = " SoLuong";
-            dgv_CTHD.Columns[5].Name = " DonGia";
-            dgv_CTHD.Columns[6].Name = " ThanhTien";
+           
+            dgv_CTHD.Columns[2].Name = " IdHoaDon";
+            dgv_CTHD.Columns[3].Name = " SoLuong";
+            dgv_CTHD.Columns[4].Name = " DonGia";
+            dgv_CTHD.Columns[5].Name = " ThanhTien";
 
             dgv_hoaDon.Rows.Clear();
-            foreach (var item in _bus_chiTietHoaDon.GetAll())
+            foreach (var item in _bus_chiTietHoaDon.GetAllChiTietHoaDon())
             {
-                dgv_CTHD.Rows.Add(item.Id, item.IdLaptop, item.IdLinhKien, item.IdHoaDon, item.SoLuong, item.DonGia, item.ThanhTien);
+                dgv_CTHD.Rows.Add(item.Id, item.TenSanPham,item.IdHoaDon, item.SoLuong, item.DonGia, item.ThanhTien);
             }
         }
 
@@ -78,7 +77,7 @@ namespace _3_GUI_PresentationLayer.View
                 DateTime startDate = dateTimePickerCustom1.Value;
                 DateTime endDate = dateTimePickerCustom2.Value;
 
-                _lst_hoaDon = _Bus_hoaDon.GetAll().Where(o => o.NgayTao >= startDate && o.NgayTao <= endDate)
+                _lst_hoaDon = _Bus_hoaDon.GetAllHoaDonViews().Where(o => o.NgayTao >= startDate && o.NgayTao <= endDate)
                                         .ToList();
                 ShowHĐ();
             }
@@ -93,18 +92,18 @@ namespace _3_GUI_PresentationLayer.View
         {
             if (radioButtonCustom1.Checked )
             {
-                _lst_hoaDon = _Bus_hoaDon.GetAll().Where(o => o.TrangThai == 0)
+                _lst_hoaDon = _Bus_hoaDon.GetAllHoaDonViews().Where(o => o.TrangThaiHD == 0)
                                        .ToList();
                 ShowHĐ();
             }
             else if ((radioButtonCustom2.Checked ))
             {
-                _lst_hoaDon = _Bus_hoaDon.GetAll().Where(o => o.TrangThai == 1)
+                _lst_hoaDon = _Bus_hoaDon.GetAllHoaDonViews().Where(o => o.TrangThaiHD == 1)
                                        .ToList();
                 ShowHĐ();
             }else if ((radioButtonCustom3.Checked))
             {
-                _lst_hoaDon = _Bus_hoaDon.GetAll().Where(o => o.TrangThai == 2)
+                _lst_hoaDon = _Bus_hoaDon.GetAllHoaDonViews().Where(o => o.TrangThaiHD == 2)
                                        .ToList();
                 ShowHĐ();
             }
@@ -115,12 +114,12 @@ namespace _3_GUI_PresentationLayer.View
             var id = textBoxCustom2_04.Text;
             dgv_hoaDon.Rows.Clear();
             dgv_hoaDon.Rows.Clear();
-            var items = _Bus_hoaDon.GetAll().Where(x => x.Ma == id);
+            var items = _Bus_hoaDon.GetAllHoaDonViews().Where(x => x.MaHd == id);
             if (items.Any())
             {
-                foreach (var item in _Bus_hoaDon.GetAll())
+                foreach (var item in _Bus_hoaDon.GetAllHoaDonViews())
                 {
-                    dgv_hoaDon.Rows.Add(item.Id, item.TenNV, item.TenKH, item.Ma, item.HTTT, item.NgayTao, item.NgayThanhToan,  item.GhiChu, item.TongTien);
+                    dgv_hoaDon.Rows.Add(item.Id, item.TenNhanVien, item.TenKhachHang, item.MaHd, item.HTThanhToan, item.NgayTao, item.NgayThanhToan,  item.GhiChu, item.TongTien);
                 }
             }
             else
