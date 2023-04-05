@@ -313,6 +313,10 @@ namespace _3_GUI_PresentationLayer.View
         private void dgvGioHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndex = e.RowIndex;
+            if (rowIndex < 0)
+            {
+                return;
+            }
             var idChiTietHD = Guid.Parse(dgvGioHang.Rows[rowIndex].Cells[0].Value.ToString());
             _serialSelected = Convert.ToString(dgvGioHang.Rows[rowIndex].Cells[2].Value);
 
