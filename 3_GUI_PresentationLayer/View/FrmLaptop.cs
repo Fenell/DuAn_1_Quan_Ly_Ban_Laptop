@@ -203,9 +203,13 @@ namespace _3_GUI_PresentationLayer.View
         }
         private void btnSerial_Click(object sender, EventArgs e)
         {
-            FrmSerial frmSerial = new FrmSerial(_lstserialLaptops);
+            if (_idLaptop == Guid.Empty)
+            {
+                MessageBox.Show("Bạn chưa chọn Laptop", "Thông báo");
+                return;
+            }
+            FrmSerial frmSerial = new FrmSerial(_idLaptop);
             frmSerial.ShowDialog();
-            Loadcbb();
             LoadDgv();
         }
         #endregion
@@ -228,9 +232,11 @@ namespace _3_GUI_PresentationLayer.View
             _lstMauSac = _mauSacServices.GetAllMauSac();
             cbbMauSac.DataSource = _lstMauSac;
             //Ổ cứng
-            cbbOCung.DisplayMember = "Ten";
+            // cbbOCung.DisplayMember = "Ten";
             cbbOCung.ValueMember = "Id";
-            cbbOCung.DataSource = _oCungServices.GetAllOCungs();
+            _lstOCung = _oCungServices.GetAllOCungs();
+            _lstOCung.ForEach(c => cbbOCung.Items.Add($"{c.Loai}-{c.DungLuong}GB"));
+            //cbbOCung.DataSource = _oCungServices.GetAllOCungs();
             //Ram
             cbbRam.DisplayMember = "Ten";
             cbbRam.ValueMember = "Id";
@@ -257,8 +263,8 @@ namespace _3_GUI_PresentationLayer.View
         {
             dgvLaptop.ColumnCount = 6;
             dgvLaptop.Columns[0].Visible = false;
-            dgvLaptop.Columns[1].Name = "Tên";
-            dgvLaptop.Columns[2].Name = "Số lượng";
+            dgvLaptop.Columns[1].Name = "Tên Laptop";
+            dgvLaptop.Columns[2].Name = "Tồn kho";
             dgvLaptop.Columns[3].Name = "Giá nhập";
             dgvLaptop.Columns[4].Name = "Giá bán";
             dgvLaptop.Columns[5].Name = "Năm bảo hành";
@@ -273,6 +279,7 @@ namespace _3_GUI_PresentationLayer.View
         #region btnIcon
         private void btnThem_Click(object sender, EventArgs e)
         {
+
             LaptopView laptop = new LaptopView()
             {
                 Id = Guid.Empty,
@@ -310,7 +317,7 @@ namespace _3_GUI_PresentationLayer.View
                 IdCpu = Guid.Parse(cbbCpu.SelectedValue.ToString()),
                 IdVga = Guid.Parse(cbbVga.SelectedValue.ToString()),
                 IdMauSac = Guid.Parse(cbbMauSac.SelectedValue.ToString()),
-                IdOCung = Guid.Parse(cbbOCung.SelectedValue.ToString()),
+                IdOCung = _oCungServices.GetAllOCungs()[cbbOCung.SelectedIndex].Id,
                 IdRam = Guid.Parse(cbbRam.SelectedValue.ToString()),
                 IdManHinh = Guid.Parse(cbbManHinh.SelectedValue.ToString()),
                 IdNhaCungCap = Guid.Parse(cbbNhaCungCap.SelectedValue.ToString()),
@@ -394,6 +401,7 @@ namespace _3_GUI_PresentationLayer.View
 
             _idLaptop = Guid.Parse(dgvLaptop.Rows[rowindex].Cells[0].Value.ToString());
             var lt = _lapTopService.GetAllLaptop().FirstOrDefault(c => c.Id == _idLaptop);
+            var oCung = _oCungServices.GetAllOCungs().Find(c => c.Id == lt.IdOCung);
             txtTen.Texts = lt.Ten;
             txtTrongLuong.Texts = lt.TrongLuong.ToString();
             txtNamBh.Texts = lt.NamBh.ToString();
@@ -403,7 +411,7 @@ namespace _3_GUI_PresentationLayer.View
             cbbCpu.Text = lt.Cpu;
             cbbVga.Text = lt.Vga;
             cbbMauSac.Text = lt.MauSac;
-            cbbOCung.Text = lt.OCung;
+            cbbOCung.Text = $"{oCung.Loai}-{oCung.DungLuong}GB";
             cbbRam.Text = lt.Ram;
             cbbManHinh.Text = lt.ManHinh;
             cbbNhaCungCap.Text = lt.NhaCungCap;
@@ -504,5 +512,8 @@ namespace _3_GUI_PresentationLayer.View
         #endregion
 
 
+        private void cbbOCung_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

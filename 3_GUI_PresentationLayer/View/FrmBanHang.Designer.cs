@@ -667,7 +667,7 @@
             groupBox1.Size = new Size(292, 220);
             groupBox1.TabIndex = 44;
             groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            groupBox1.Text = "Đơn hàng chờ";
             // 
             // dgcDHCho
             // 

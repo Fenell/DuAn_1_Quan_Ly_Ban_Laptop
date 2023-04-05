@@ -31,6 +31,16 @@ namespace _2_BUS_BusinessLayer.Services
             throw new NotImplementedException();
         }
 
+        public string AddListSerial(List<SerialLaptop> list)
+        {
+            if (_serialLaptopRes.AddLstSerialLaptop(list))
+            {
+                return "Thanh cong";
+            }
+
+            return "That bai";
+        }
+
         public string AddSerialLaptop(SerialLaptop obj)
         {
             SerialLaptop serialLaptop = new SerialLaptop()

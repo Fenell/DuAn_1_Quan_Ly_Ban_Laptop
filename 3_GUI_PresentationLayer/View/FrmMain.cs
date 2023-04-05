@@ -153,8 +153,13 @@ namespace _3_GUI_PresentationLayer.View
             {
                 WindowState = FormWindowState.Minimized;
             }
-            else 
+            else
                 WindowState = FormWindowState.Normal;
+        }
+
+        private void pictrueBoxCustom1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmHome());
         }
     }
 }

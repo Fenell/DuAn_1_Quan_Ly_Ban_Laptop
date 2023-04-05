@@ -271,6 +271,7 @@
             pictrueBoxCustom1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictrueBoxCustom1.TabIndex = 0;
             pictrueBoxCustom1.TabStop = false;
+            pictrueBoxCustom1.Click += pictrueBoxCustom1_Click;
             // 
             // panelTitleBar
             // 

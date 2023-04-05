@@ -612,6 +612,7 @@ namespace _3_GUI_PresentationLayer.View
             cbbOCung.Name = "cbbOCung";
             cbbOCung.Size = new Size(150, 23);
             cbbOCung.TabIndex = 28;
+            cbbOCung.TextChanged += cbbOCung_TextChanged;
             // 
             // cbbRam
             // 
@@ -954,6 +955,7 @@ namespace _3_GUI_PresentationLayer.View
             // dgvLaptop
             // 
             dgvLaptop.AllowUserToAddRows = false;
+            dgvLaptop.AllowUserToResizeRows = false;
             dgvLaptop.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvLaptop.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvLaptop.Dock = DockStyle.Fill;
@@ -961,6 +963,7 @@ namespace _3_GUI_PresentationLayer.View
             dgvLaptop.Name = "dgvLaptop";
             dgvLaptop.RowHeadersVisible = false;
             dgvLaptop.RowTemplate.Height = 25;
+            dgvLaptop.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvLaptop.Size = new Size(1078, 299);
             dgvLaptop.TabIndex = 0;
             dgvLaptop.CellClick += dgvLaptop_CellClick;
