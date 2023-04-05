@@ -56,7 +56,7 @@ namespace _3_GUI_PresentationLayer.View
             
             if (!Validation.checkSDT(txtSoDienThoai.Texts))
             {
-                MessageBox.Show("Mời bạn kiểm tra lại số điện thoại", "Thông báo");
+                MessageBox.Show("Số điện thoại phải đủ 10 chữ số và bắt đầu bằng số 0.Mời bạn kiểm tra lại số điện thoại!", "Thông báo");
                 return;
             }
             
@@ -80,6 +80,7 @@ namespace _3_GUI_PresentationLayer.View
             if (MessageBox.Show("Có muốn thêm hay ko ?", "Hỏi", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 _khachhangService.AddKhachHang(_khachHang);
+                MessageBox.Show("Thêm thành công");
                 loadata();
             }
         }
@@ -97,7 +98,7 @@ namespace _3_GUI_PresentationLayer.View
 
             if (!Validation.checkSDT(txtSoDienThoai.Texts))
             {
-                MessageBox.Show("Mời bạn kiểm tra lại số điện thoại", "Thông báo");
+                MessageBox.Show("Số điện thoại phải đủ 10 chữ số và bắt đầu bằng số 0.Mời bạn kiểm tra lại số điện thoại!", "Thông báo");
                 return;
             }
 
@@ -119,6 +120,7 @@ namespace _3_GUI_PresentationLayer.View
             if (MessageBox.Show("Có muốn sửa hay ko ?", "Hỏi", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 _khachhangService.UpdateKhachHang(kh);
+                MessageBox.Show("Sửa thành công");
                 loadata();
             }
         }
