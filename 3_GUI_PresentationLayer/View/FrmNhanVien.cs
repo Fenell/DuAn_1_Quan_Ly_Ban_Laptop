@@ -105,7 +105,7 @@ namespace _3_GUI_PresentationLayer.View
             }
             if (!Validation.checkSDT(txtSoDienThoai.Texts))
             {
-                MessageBox.Show("Mời bạn kiểm tra lại số điện thoại", "Thông báo");
+                MessageBox.Show("Số điện thoại phải đủ 10 chữ số và bắt đầu bằng số 0.Mời bạn kiểm tra lại số điện thoại!", "Thông báo");
                 return;
             }
             if (!Validation.checkEmail(txtEmail.Texts))
@@ -115,7 +115,7 @@ namespace _3_GUI_PresentationLayer.View
             }
             if (!Validation.checkCCCD(txtSoCanCuoc.Texts))
             {
-                MessageBox.Show("Mời bạn kiểm tra lại số căn cước", "Thông báo");
+                MessageBox.Show("Số căn cước phải đủ 12 chữ số và bắt đầu bằng số 0.Mời bạn kiểm tra lại số căn cước!", "Thông báo");
                 return;
             }
 
@@ -167,7 +167,7 @@ namespace _3_GUI_PresentationLayer.View
 
             if (!Validation.checkSDT(txtSoDienThoai.Texts))
             {
-                MessageBox.Show("Mời bạn kiểm tra lại số điện thoại", "Thông báo");
+                MessageBox.Show("Số điện thoại phải đủ 10 chữ số và bắt đầu bằng số 0.Mời bạn kiểm tra lại số điện thoại!", "Thông báo");
                 return;
             }
             if (!Validation.checkEmail(txtEmail.Texts))
@@ -177,7 +177,7 @@ namespace _3_GUI_PresentationLayer.View
             }
             if (!Validation.checkCCCD(txtSoCanCuoc.Texts))
             {
-                MessageBox.Show("Mời bạn kiểm tra lại số căn cước", "Thông báo");
+                MessageBox.Show("Số căn cước phải đủ 12 chữ số và bắt đầu bằng số 0.Mời bạn kiểm tra lại số căn cước!", "Thông báo");
                 return;
             }
             nv.Hoten = txtHoTen.Texts;
