@@ -30,6 +30,7 @@ namespace _3_GUI_PresentationLayer.View
             ShowHĐ();
             ShowCTHĐ();
         }
+
         public void ShowHĐ()
         {
 
