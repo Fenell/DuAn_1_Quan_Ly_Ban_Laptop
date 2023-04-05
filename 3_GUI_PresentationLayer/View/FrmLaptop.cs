@@ -261,15 +261,16 @@ namespace _3_GUI_PresentationLayer.View
         }
         private void LoadDgv()
         {
+            rdbtnDangBan.Checked = true;
+            dgvLaptop.Rows.Clear();
             dgvLaptop.ColumnCount = 6;
             dgvLaptop.Columns[0].Visible = false;
-            dgvLaptop.Columns[1].Name = "Tên Laptop";
-            dgvLaptop.Columns[2].Name = "Tồn kho";
+            dgvLaptop.Columns[1].Name = "Tên";
+            dgvLaptop.Columns[2].Name = "Số lượng";
             dgvLaptop.Columns[3].Name = "Giá nhập";
             dgvLaptop.Columns[4].Name = "Giá bán";
             dgvLaptop.Columns[5].Name = "Năm bảo hành";
-            dgvLaptop.Rows.Clear();
-            foreach (var x in _lapTopService.GetAllLaptop())
+            foreach (var x in _lapTopService.GetAllLaptop().Where(c => c.TrangThai == true))
             {
                 dgvLaptop.Rows.Add(x.Id, $"{x.HangLaptop} {x.DongLaptop} {x.Ten}", x.SoLuongTon, x.GiaNhap, x.GiaBan, x.NamBh);
             }
@@ -277,9 +278,18 @@ namespace _3_GUI_PresentationLayer.View
         #endregion
 
         #region btnIcon
+        private bool checkNhap()
+        {
+            if (_lapTopService.GetAllLaptop().Any(c => c.Ten == txtTen.Texts)) return true;
+            return false;
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
-
+            if (checkNhap())
+            {
+                MessageBox.Show("Bạn đã bị trùng tên, mời nhập lại !!!");
+                return;
+            }
             LaptopView laptop = new LaptopView()
             {
                 Id = Guid.Empty,
@@ -337,6 +347,7 @@ namespace _3_GUI_PresentationLayer.View
                 MessageBox.Show(_lapTopService.UpdateLaptop(laptop));
             }
             btnThem.Enabled = false;
+            ClearForm();
             LoadDgv();
         }
 
@@ -348,8 +359,45 @@ namespace _3_GUI_PresentationLayer.View
             {
                 MessageBox.Show(_lapTopService.UpdateStatusLaptop(lstLaptop));
             }
+            if (rdbtnDangBan.Checked)
+            {
+                LoadDgv();
+            }
+            if (rdbtnNgungBan.Checked)
+            {
+                dgvLaptop.Rows.Clear();
+                dgvLaptop.ColumnCount = 6;
+                dgvLaptop.Columns[0].Visible = false;
+                dgvLaptop.Columns[1].Name = "Tên";
+                dgvLaptop.Columns[2].Name = "Số lượng";
+                dgvLaptop.Columns[3].Name = "Giá nhập";
+                dgvLaptop.Columns[4].Name = "Giá bán";
+                dgvLaptop.Columns[5].Name = "Năm bảo hành";
+                foreach (var x in _lapTopService.GetAllLaptop().Where(c => c.TrangThai == false))
+                {
+                    dgvLaptop.Rows.Add(x.Id, $"{x.HangLaptop} {x.DongLaptop} {x.Ten}", x.SoLuongTon, x.GiaNhap, x.GiaBan, x.NamBh);
+                }
+            }
         }
-
+        private void ClearForm()
+        {
+            txtTen.Texts = "";
+            txtTrongLuong.Texts = "";
+            txtNamBh.Texts = "";
+            txtGiaNhap.Texts = "";
+            txtGiaBan.Texts = "";
+            txtMoTa.Texts = "";
+            cbbCpu.Text = "";
+            cbbVga.Text = "";
+            cbbMauSac.Text = "";
+            cbbOCung.Text = "";
+            cbbRam.Text = "";
+            cbbManHinh.Text = "";
+            cbbNhaCungCap.Text = "";
+            cbbHangSanXuat.Text = "";
+            cbbDong.Text = "";
+            pcbHinhAnh.Image = null;
+        }
         private void btnClearForm_Click(object sender, EventArgs e)
         {
             txtFalse();
@@ -462,6 +510,7 @@ namespace _3_GUI_PresentationLayer.View
         // rdbtn lọc trạng thái
         private void rdbtnDangBan_Click(object sender, EventArgs e)
         {
+
             dgvLaptop.Rows.Clear();
             dgvLaptop.ColumnCount = 6;
             dgvLaptop.Columns[0].Visible = false;
@@ -509,11 +558,43 @@ namespace _3_GUI_PresentationLayer.View
             }
 
         }
+        private void txtTimKiem_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            txtTimKiem.Text = "";
+        }
+        private void btnTang_Click(object sender, EventArgs e)
+        {
+            dgvLaptop.Rows.Clear();
+            dgvLaptop.ColumnCount = 6;
+            dgvLaptop.Columns[0].Visible = false;
+            dgvLaptop.Columns[1].Name = "Tên";
+            dgvLaptop.Columns[2].Name = "Số lượng";
+            dgvLaptop.Columns[3].Name = "Giá nhập";
+            dgvLaptop.Columns[4].Name = "Giá bán";
+            dgvLaptop.Columns[5].Name = "Năm bảo hành";
+            foreach (var x in _lapTopService.GetAllLaptop().Where(c => c.TrangThai == true).OrderBy(c => c.GiaBan))
+            {
+                dgvLaptop.Rows.Add(x.Id, $"{x.HangLaptop} {x.DongLaptop} {x.Ten}", x.SoLuongTon, x.GiaNhap, x.GiaBan, x.NamBh);
+            }
+        }
+
+        private void btnGiam_Click(object sender, EventArgs e)
+        {
+            dgvLaptop.Rows.Clear();
+            dgvLaptop.ColumnCount = 6;
+            dgvLaptop.Columns[0].Visible = false;
+            dgvLaptop.Columns[1].Name = "Tên";
+            dgvLaptop.Columns[2].Name = "Số lượng";
+            dgvLaptop.Columns[3].Name = "Giá nhập";
+            dgvLaptop.Columns[4].Name = "Giá bán";
+            dgvLaptop.Columns[5].Name = "Năm bảo hành";
+            foreach (var x in _lapTopService.GetAllLaptop().Where(c => c.TrangThai == true).OrderByDescending(c => c.GiaBan))
+            {
+                dgvLaptop.Rows.Add(x.Id, $"{x.HangLaptop} {x.DongLaptop} {x.Ten}", x.SoLuongTon, x.GiaNhap, x.GiaBan, x.NamBh);
+            }
+        }
         #endregion
 
 
-        private void cbbOCung_TextChanged(object sender, EventArgs e)
-        {
-        }
     }
 }

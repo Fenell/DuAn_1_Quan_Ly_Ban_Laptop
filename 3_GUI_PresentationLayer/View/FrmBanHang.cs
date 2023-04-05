@@ -115,7 +115,7 @@ namespace _3_GUI_PresentationLayer.View
             imageColumn.HeaderText = "Thao tac";
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Normal;
             imageColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            imageColumn.Image = Image.FromFile(@"D:\CODE\C#\DuAn_1_Quan_Ly_Ban_Laptop\3_GUI_PresentationLayer\Resources\add-to-cart.png");
+            imageColumn.Image = Image.FromFile(@"E:\KỲ 4\Dự Án 1\3_GUI_PresentationLayer\Resources\add-to-cart.png");
             dgvSanPham.Columns.Add(imageColumn);
         }
 
@@ -133,7 +133,7 @@ namespace _3_GUI_PresentationLayer.View
             img.HeaderText = "Thao tác";
             img.ImageLayout = DataGridViewImageCellLayout.Normal;
             img.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            img.Image = Image.FromFile(@"D:\CODE\C#\DuAn_1_Quan_Ly_Ban_Laptop\3_GUI_PresentationLayer\Resources\remove_to_cart.png");
+            img.Image = Image.FromFile(@"E:\KỲ 4\Dự Án 1\3_GUI_PresentationLayer\Resources\remove_to_cart.png");
             dgvGioHang.Columns.Add(img);
 
             dgvGioHang.Rows.Clear();

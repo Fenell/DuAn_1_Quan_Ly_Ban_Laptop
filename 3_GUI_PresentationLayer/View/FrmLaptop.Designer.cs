@@ -33,8 +33,8 @@ namespace _3_GUI_PresentationLayer.View
         {
             panel1 = new Panel();
             txtTimKiem = new TextBox();
-            iconButton18 = new FontAwesome.Sharp.IconButton();
-            iconButton17 = new FontAwesome.Sharp.IconButton();
+            btnGiam = new FontAwesome.Sharp.IconButton();
+            btnTang = new FontAwesome.Sharp.IconButton();
             rdbtnNgungBan = new CustomControl.RadioButtonCustom();
             rdbtnDangBan = new CustomControl.RadioButtonCustom();
             label19 = new Label();
@@ -109,8 +109,8 @@ namespace _3_GUI_PresentationLayer.View
             // 
             panel1.BackColor = Color.White;
             panel1.Controls.Add(txtTimKiem);
-            panel1.Controls.Add(iconButton18);
-            panel1.Controls.Add(iconButton17);
+            panel1.Controls.Add(btnGiam);
+            panel1.Controls.Add(btnTang);
             panel1.Controls.Add(rdbtnNgungBan);
             panel1.Controls.Add(rdbtnDangBan);
             panel1.Controls.Add(label19);
@@ -126,35 +126,38 @@ namespace _3_GUI_PresentationLayer.View
             txtTimKiem.Size = new Size(178, 23);
             txtTimKiem.TabIndex = 24;
             txtTimKiem.Text = "Tìm kiếm .....";
+            txtTimKiem.MouseClick += txtTimKiem_MouseClick;
             txtTimKiem.TextChanged += txtTimKiem_TextChanged;
             // 
-            // iconButton18
+            // btnGiam
             // 
-            iconButton18.FlatAppearance.BorderSize = 0;
-            iconButton18.FlatStyle = FlatStyle.Flat;
-            iconButton18.IconChar = FontAwesome.Sharp.IconChar.SortAmountDown;
-            iconButton18.IconColor = Color.FromArgb(255, 181, 174);
-            iconButton18.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton18.Location = new Point(998, 6);
-            iconButton18.Name = "iconButton18";
-            iconButton18.Padding = new Padding(0, 5, 0, 0);
-            iconButton18.Size = new Size(63, 55);
-            iconButton18.TabIndex = 21;
-            iconButton18.UseVisualStyleBackColor = true;
+            btnGiam.FlatAppearance.BorderSize = 0;
+            btnGiam.FlatStyle = FlatStyle.Flat;
+            btnGiam.IconChar = FontAwesome.Sharp.IconChar.SortAmountDown;
+            btnGiam.IconColor = Color.FromArgb(255, 181, 174);
+            btnGiam.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnGiam.Location = new Point(998, 6);
+            btnGiam.Name = "btnGiam";
+            btnGiam.Padding = new Padding(0, 5, 0, 0);
+            btnGiam.Size = new Size(63, 55);
+            btnGiam.TabIndex = 21;
+            btnGiam.UseVisualStyleBackColor = true;
+            btnGiam.Click += btnGiam_Click;
             // 
-            // iconButton17
+            // btnTang
             // 
-            iconButton17.FlatAppearance.BorderSize = 0;
-            iconButton17.FlatStyle = FlatStyle.Flat;
-            iconButton17.IconChar = FontAwesome.Sharp.IconChar.ArrowUpWideShort;
-            iconButton17.IconColor = Color.FromArgb(255, 181, 174);
-            iconButton17.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton17.Location = new Point(929, 7);
-            iconButton17.Name = "iconButton17";
-            iconButton17.Padding = new Padding(0, 5, 0, 0);
-            iconButton17.Size = new Size(63, 55);
-            iconButton17.TabIndex = 21;
-            iconButton17.UseVisualStyleBackColor = true;
+            btnTang.FlatAppearance.BorderSize = 0;
+            btnTang.FlatStyle = FlatStyle.Flat;
+            btnTang.IconChar = FontAwesome.Sharp.IconChar.ArrowUpWideShort;
+            btnTang.IconColor = Color.FromArgb(255, 181, 174);
+            btnTang.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnTang.Location = new Point(929, 7);
+            btnTang.Name = "btnTang";
+            btnTang.Padding = new Padding(0, 5, 0, 0);
+            btnTang.Size = new Size(63, 55);
+            btnTang.TabIndex = 21;
+            btnTang.UseVisualStyleBackColor = true;
+            btnTang.Click += btnTang_Click;
             // 
             // rdbtnNgungBan
             // 
@@ -612,7 +615,6 @@ namespace _3_GUI_PresentationLayer.View
             cbbOCung.Name = "cbbOCung";
             cbbOCung.Size = new Size(150, 23);
             cbbOCung.TabIndex = 28;
-            cbbOCung.TextChanged += cbbOCung_TextChanged;
             // 
             // cbbRam
             // 
@@ -1035,9 +1037,7 @@ namespace _3_GUI_PresentationLayer.View
         private Label label17;
         private Label label16;
         private Label label15;
-        private FontAwesome.Sharp.IconButton iconButton17;
         private Label label19;
-        private FontAwesome.Sharp.IconButton iconButton18;
         private CustomControl.TextBoxCustom2_0 txtTen;
         private CustomControl.TextBoxCustom2_0 txtMoTa;
         private FontAwesome.Sharp.IconButton btnClearForm;
@@ -1059,5 +1059,7 @@ namespace _3_GUI_PresentationLayer.View
         private DataGridView dgvLaptop;
         private TextBox txtTimKiem;
         private CustomControl.RadioButtonCustom radioButtonCustom1;
+        private FontAwesome.Sharp.IconButton btnGiam;
+        private FontAwesome.Sharp.IconButton btnTang;
     }
 }
