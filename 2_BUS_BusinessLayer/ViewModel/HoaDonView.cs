@@ -11,6 +11,7 @@ namespace _2_BUS_BusinessLayer.ViewModel
         public Guid Id { get; set; }
         public Guid IdKhachHang { get; set; }
         public Guid IdNhanVien { get; set; }
+        public Guid IdLapTop { get; set; }
         public string MaHd { get; set; }
         public string TenNhanVien { get; set; }
         public string TenKhachHang { get; set; }
