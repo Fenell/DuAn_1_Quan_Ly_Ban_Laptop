@@ -28,7 +28,12 @@ namespace _2_BUS_BusinessLayer.Services
 
         public string UpdateStatusSerial(string seial)
         {
-            throw new NotImplementedException();
+            if (_serialLaptopRes.UpdateStatusSerial(seial))
+            {
+                return "Thanh cong";
+            }
+
+            return "Khong thanh cong";
         }
 
         public string AddListSerial(List<SerialLaptop> list)
