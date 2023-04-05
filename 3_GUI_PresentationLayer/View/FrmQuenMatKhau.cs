@@ -65,6 +65,7 @@ namespace _3_GUI_PresentationLayer.View
             {
                 txt_MK_New.Visible = true;
                 txt_XacNhan_MK.Visible = true;
+                txt_Email.Enabled = false;
                 MessageBox.Show("Ma chinh xac");
                 return;
             }
@@ -113,20 +114,9 @@ namespace _3_GUI_PresentationLayer.View
 
         private void FrmQuenMatKhau_FormClosing(object sender, FormClosingEventArgs e)
         {
-           if( MessageBox.Show("Bạn đã nhớ ra mật khẩu chưa? Xác nhận để quay lại Đăng Nhập", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
-           {
                 this.Hide();
                 FrmDangNhap frmdn = new FrmDangNhap();
                 frmdn.ShowDialog();
-           }
-            else if( MessageBox.Show("Bạn đã nhớ ra mật khẩu chưa? Xác nhận để quay lại Đăng Nhập", "Warning", MessageBoxButtons.YesNo) == DialogResult.No)
-           {
-
-                this.Close();
-               
-           }
-           
-           
         }
     }
 }

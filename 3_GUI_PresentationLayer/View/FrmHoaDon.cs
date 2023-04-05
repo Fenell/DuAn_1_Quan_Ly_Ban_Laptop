@@ -1,4 +1,6 @@
-﻿using _1_DAL_DataAccessLayer.Models;
+﻿using _1_DAL_DataAccessLayer.IRepositories;
+using _1_DAL_DataAccessLayer.Models;
+using _1_DAL_DataAccessLayer.Repositories;
 using _2_BUS_BusinessLayer.IServices;
 using _2_BUS_BusinessLayer.Services;
 using _2_BUS_BusinessLayer.ViewModel;
@@ -16,6 +18,7 @@ namespace _3_GUI_PresentationLayer.View
 {
     public partial class FrmHoaDon : Form
     {
+        //IHangLapTopRepositories _Bus_hangLapTop;
         ILaptopService _Bus_LapTop;
         IHoaDonSerevice _Bus_hoaDon;
         List<HoaDonView> _lst_hoaDon;
@@ -23,6 +26,7 @@ namespace _3_GUI_PresentationLayer.View
         List<ChiTietHoaDon> _lst_CTHD;
         public FrmHoaDon()
         {
+            
             _Bus_LapTop = new LaptopService();
             _bus_chiTietHoaDon = new ChiTietHoaDonService ();
             _lst_CTHD = new List<ChiTietHoaDon>();
@@ -141,12 +145,13 @@ namespace _3_GUI_PresentationLayer.View
             string selectedCategory = cbb_loaiSanPham.SelectedItem.ToString();
 
             // Lấy danh sách các hóa đơn chứa sản phẩm thuộc loại sản phẩm được chọn
-            var filteredInvoices = (from x in _Bus_hoaDon.GetAllHoaDonViews()
-                                    join y in _Bus_LapTop.GetAllLaptop() on x.
-                                    .Where(i => i.Product.ProductCategory == selectedCategory).ToList();
+            //var filteredInvoices = (from x in _bus_chiTietHoaDon.GetAllChiTietHoaDon()
+            //                        join sanPham in _Bus_LapTop.GetAllLaptop() on x.
+                                     
 
-            // Hiển thị danh sách hóa đơn lên DataGridView
-            dataGridView1.DataSource = filteredInvoices;
+
+            //// Hiển thị danh sách hóa đơn lên DataGridView
+            //dgv_CTHD.DataSource = filteredInvoices;
         }
     }
 }
