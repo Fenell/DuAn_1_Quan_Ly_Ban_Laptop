@@ -12,8 +12,9 @@ namespace _2_BUS_BusinessLayer.IServices
     public interface ISerialLaptopService
     {
         public string UpdateStatusSerial(string seial);
+        public string AddListSerial(List<SerialLaptop> list);
         public string AddSerialLaptop(SerialLaptop obj);
         public List<SerialLaptop> GetSerialLaptopList();
-        public List<LaptopView>GetAllLaptopView();
+        public List<LaptopView> GetAllLaptopView();
     }
 }
