@@ -49,7 +49,7 @@ namespace _3_GUI_PresentationLayer.View
                 }
             }
             rbtDangLam.Checked= true;
-
+            txtMaNhanVien.Enabled = false;
         }
 
 
@@ -67,6 +67,7 @@ namespace _3_GUI_PresentationLayer.View
                     }
                 }
             }
+            txtMaNhanVien.Enabled = false;
         }
 
         private void rbtDaNghiViec_Click(object sender, EventArgs e)
@@ -82,22 +83,24 @@ namespace _3_GUI_PresentationLayer.View
                     }
                 }
             }
+            txtMaNhanVien.Enabled = false;
         }
 
+        private string RandomMa()
+        {
+            Random random = new Random();
+            int randomNumber = random.Next(10000, 100000); // Sinh ra một số nguyên ngẫu nhiên từ 10000 đến 99999
+            return randomNumber.ToString(); // Chuyển đổi giá trị số nguyên thành chuỗi và trả về chuỗi đó
+        }
         private void iconButtonThem_Click(object sender, EventArgs e)
         {
             
             _nhanVien = new NhanVien();
-            if (txtMaNhanVien.Texts == null || txtHoTen.Texts == null || txtSoDienThoai.Texts == null || txtEmail.Texts == null || txtSoCanCuoc.Texts == null 
+            txtMaNhanVien.Enabled= false;
+            if ( txtHoTen.Texts == null || txtSoDienThoai.Texts == null || txtEmail.Texts == null || txtSoCanCuoc.Texts == null 
                 || txtMatKhau.Texts == null || rbtNam.Checked == false && rbtNu.Checked == false || rbtNhanVien.Checked == false && rbtQuanLy.Checked == false || txtDiaChi.Texts == null)
             {
                 MessageBox.Show("Xin vui lòng nhập đầy đủ các trường dữ liệu!");
-                return;
-            }
-
-            if (!Validation.checkMaNV(txtMaNhanVien.Texts))
-            {
-                MessageBox.Show("Mã nhân viên phải theo đúng định dạng! VD: ph1 ", "Thông báo");
                 return;
             }
             if (!Validation.checkSDT(txtSoDienThoai.Texts))
@@ -116,7 +119,7 @@ namespace _3_GUI_PresentationLayer.View
                 return;
             }
 
-            _nhanVien.Ma = txtMaNhanVien.Texts;
+            _nhanVien.Ma = RandomMa();
             _nhanVien.Hoten = txtHoTen.Texts;
             _nhanVien.SoDienThoai = txtSoDienThoai.Texts;
             _nhanVien.Email = txtEmail.Texts;
@@ -143,14 +146,7 @@ namespace _3_GUI_PresentationLayer.View
             {
                 _nhanVien.ChucVu = "Quản lý";
             }
-            var nn = _nhanvienService.GetAllNhanViens().Any(c => c.Ma == txtMaNhanVien.Texts);
-            if (nn == true)
-            {
-                MessageBox.Show("Nhân viên đã tồn tại!");
-                return;
-            }
 
-            
             if (MessageBox.Show("Có muốn thêm hay ko ?", "Hỏi", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 _nhanvienService.AddNhanVien(_nhanVien);
@@ -161,18 +157,14 @@ namespace _3_GUI_PresentationLayer.View
         private void iconButtonSua_Click(object sender, EventArgs e)
         {
             var nv = _nhanvienService.GetAllNhanViens().FirstOrDefault(c => c.Id == _idNhanvien);
-            if (txtMaNhanVien.Texts == null || txtHoTen.Texts == null || txtSoDienThoai.Texts == null || txtEmail.Texts == null || txtSoCanCuoc.Texts == null
+            txtMaNhanVien.Enabled = false;
+            if ( txtHoTen.Texts == null || txtSoDienThoai.Texts == null || txtEmail.Texts == null || txtSoCanCuoc.Texts == null
                 || txtMatKhau.Texts == null || rbtNam.Checked == false && rbtNu.Checked == false || rbtNhanVien.Checked == false && rbtQuanLy.Checked == false || txtDiaChi.Texts == null)
             {
                 MessageBox.Show("Xin vui lòng nhập đầy đủ các trường dữ liệu!");
                 return;
             }
 
-            if (!Validation.checkMaNV(txtMaNhanVien.Texts))
-            {
-                MessageBox.Show("Mã nhân viên phải theo đúng định dạng! VD: ph1 ", "Thông báo");
-                return;
-            }
             if (!Validation.checkSDT(txtSoDienThoai.Texts))
             {
                 MessageBox.Show("Mời bạn kiểm tra lại số điện thoại", "Thông báo");
@@ -188,14 +180,6 @@ namespace _3_GUI_PresentationLayer.View
                 MessageBox.Show("Mời bạn kiểm tra lại số căn cước", "Thông báo");
                 return;
             }
-
-
-            if (_nhanvienService.GetAllNhanViens().Any(c=>c.Ma == txtMaNhanVien.Texts))
-            {
-                MessageBox.Show("Mã đã tồn tại!");
-                return;
-            }
-            nv.Ma = txtMaNhanVien.Texts;
             nv.Hoten = txtHoTen.Texts;
             nv.SoDienThoai = txtSoDienThoai.Texts;
             nv.Email = txtEmail.Texts;
@@ -259,6 +243,7 @@ namespace _3_GUI_PresentationLayer.View
             rbtNu.Checked = false;
             rbtNhanVien.Checked = false;
             rbtQuanLy.Checked = false;
+            txtMaNhanVien.Enabled = false;
             loaddata();
         }
 
