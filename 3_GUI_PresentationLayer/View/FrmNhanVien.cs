@@ -175,11 +175,11 @@ namespace _3_GUI_PresentationLayer.View
                 MessageBox.Show("Eamil phải theo đúng định dang! VD: long@gmail.com ", "Thông báo");
                 return;
             }
-            if (!Validation.checkCCCD(txtSoCanCuoc.Texts))
-            {
-                MessageBox.Show("Mời bạn kiểm tra lại số căn cước", "Thông báo");
-                return;
-            }
+            //if (!Validation.checkCCCD(txtSoCanCuoc.Texts))
+            //{
+            //    MessageBox.Show("Mời bạn kiểm tra lại số căn cước", "Thông báo");
+            //    return;
+            //}
             nv.Hoten = txtHoTen.Texts;
             nv.SoDienThoai = txtSoDienThoai.Texts;
             nv.Email = txtEmail.Texts;

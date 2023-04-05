@@ -77,7 +77,6 @@
             btnLinhKien.Name = "btnLinhKien";
             btnLinhKien.Size = new Size(92, 28);
             btnLinhKien.TabIndex = 1;
-            btnLinhKien.Text = "Linh kiện";
             btnLinhKien.TextColor = Color.DeepPink;
             btnLinhKien.UseVisualStyleBackColor = false;
             btnLinhKien.Click += btnLinhKien_Click;

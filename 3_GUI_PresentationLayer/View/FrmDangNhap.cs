@@ -50,7 +50,7 @@ namespace _3_GUI_PresentationLayer.View
                         if (x.MatKhau == txtMatKhau.Texts)
                         {
                             MessageBox.Show("Đăng nhập thành công");
-                            FrmHome home = new FrmHome();
+                            Form home = new FrmMain();
                             this.Hide();
                             home.ShowDialog();
                             this.Close();
