@@ -33,23 +33,27 @@ namespace _3_GUI_PresentationLayer.View
             {
                 dgvKhachHang.Rows.Add(item.Ma, item.Hoten, item.SoDienThoai, item.GioiTinh == false ? "Nam" : "Nữ", item.DiaChi, item.Id);
             }
+            txtMa.Enabled = false;
+        }
+
+        private string RandomMa()
+        {
+            Random random = new Random();
+            int randomNumber = random.Next(10000, 100000); // Sinh ra một số nguyên ngẫu nhiên từ 10000 đến 99999
+            return randomNumber.ToString(); // Chuyển đổi giá trị số nguyên thành chuỗi và trả về chuỗi đó
         }
 
         private void iconButtonThem_Click(object sender, EventArgs e)
         {
             _khachHang = new KhachHang();
-            if (txtMa.Texts == null || txtHoTen.Texts == null || txtSoDienThoai.Texts == null
+            if (txtHoTen.Texts == null || txtSoDienThoai.Texts == null
                  || rbtNam.Checked == false && rbtNu.Checked == false || txtDiaChi.Texts == null)
             {
                 MessageBox.Show("Xin vui lòng nhập đầy đủ các trường dữ liệu!");
                 return;
             }
 
-            if (!Validation.checkMaKH(txtMa.Texts))
-            {
-                MessageBox.Show("Mã khách hàng phải theo đúng định dạng! VD: kh1 ", "Thông báo");
-                return;
-            }
+            
             if (!Validation.checkSDT(txtSoDienThoai.Texts))
             {
                 MessageBox.Show("Mời bạn kiểm tra lại số điện thoại", "Thông báo");
@@ -57,12 +61,12 @@ namespace _3_GUI_PresentationLayer.View
             }
             
 
-            _khachHang.Ma = txtMa.Texts;
+            _khachHang.Ma = RandomMa();
             _khachHang.Hoten = txtHoTen.Texts;
             _khachHang.SoDienThoai = txtSoDienThoai.Texts;
-            
             _khachHang.DiaChi = txtDiaChi.Texts;
-           
+            txtMa.Enabled = false;
+
 
             if (rbtNam.Checked == true)
             {
@@ -73,15 +77,6 @@ namespace _3_GUI_PresentationLayer.View
                 _khachHang.GioiTinh = true;
             }
 
-            
-            var nn = _khachhangService.GetAllKhachHangs().Any(c => c.Ma == txtMa.Texts);
-            if (nn == true)
-            {
-                MessageBox.Show("Khách hàng đã tồn tại!");
-                return;
-            }
-
-
             if (MessageBox.Show("Có muốn thêm hay ko ?", "Hỏi", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 _khachhangService.AddKhachHang(_khachHang);
@@ -91,36 +86,25 @@ namespace _3_GUI_PresentationLayer.View
 
         private void iconButtonSua_Click(object sender, EventArgs e)
         {
+
             var kh = _khachhangService.GetAllKhachHangs().FirstOrDefault(c=>c.Id == _idKhachHang);
-            if (txtMa.Texts == null || txtHoTen.Texts == null || txtSoDienThoai.Texts == null
+            if (txtHoTen.Texts == null || txtSoDienThoai.Texts == null
                  || rbtNam.Checked == false && rbtNu.Checked == false || txtDiaChi.Texts == null)
             {
                 MessageBox.Show("Xin vui lòng nhập đầy đủ các trường dữ liệu!");
                 return;
             }
 
-            if (!Validation.checkMaKH(txtMa.Texts))
-            {
-                MessageBox.Show("Mã khách hàng phải theo đúng định dạng! VD: kh1 ", "Thông báo");
-                return;
-            }
             if (!Validation.checkSDT(txtSoDienThoai.Texts))
             {
                 MessageBox.Show("Mời bạn kiểm tra lại số điện thoại", "Thông báo");
                 return;
             }
 
-            if (_khachhangService.GetAllKhachHangs().Any(c=>c.Ma == txtMa.Texts))
-            {
-                MessageBox.Show("Mã đã tồn tại!");
-                return;
-            }
-            kh.Ma = txtMa.Texts;
             kh.Hoten = txtHoTen.Texts;
             kh.SoDienThoai = txtSoDienThoai.Texts;
-
             kh.DiaChi = txtDiaChi.Texts;
-
+            txtMa.Enabled = false;
 
             if (rbtNam.Checked == true)
             {
@@ -130,8 +114,6 @@ namespace _3_GUI_PresentationLayer.View
             {
                 kh.GioiTinh = true;
             }
-
-
 
 
             if (MessageBox.Show("Có muốn sửa hay ko ?", "Hỏi", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -150,6 +132,8 @@ namespace _3_GUI_PresentationLayer.View
             txtTimKiem.Texts = "";
             rbtNam.Checked = false;
             rbtNu.Checked = false;
+            txtMa.Enabled = false;
+            txtMa.Enabled = false;
         }
 
         private void FrmKhachHang_Load(object sender, EventArgs e)
