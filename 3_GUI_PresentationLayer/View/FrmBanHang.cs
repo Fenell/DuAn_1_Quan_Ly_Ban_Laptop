@@ -29,8 +29,8 @@ namespace _3_GUI_PresentationLayer.View
 
         private IHangLapTopRepositories _hangLapTop;
         private IDongLapTopRepositories _dongLapTop;
+        private IKhachHangService _khachHangService;
 
-        private KhachhangService _khachHangService;
         private Laptop _laptop;
         private List<ChiTietHoaDonView> _lstCtHoaDonViews;
         private string _serialSelected;
