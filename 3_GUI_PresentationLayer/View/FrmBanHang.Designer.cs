@@ -30,12 +30,9 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
-            btnRefresh = new FontAwesome.Sharp.IconButton();
-            txtDiaChi = new CustomControl.TextBoxCustom2_0();
-            panel5 = new Panel();
-            rbtnShip = new CustomControl.RadioButtonCustom();
-            rbtnTrucTiep = new CustomControl.RadioButtonCustom();
+            cbbGiamGia = new ComboBox();
             label1 = new Label();
+            btnRefresh = new FontAwesome.Sharp.IconButton();
             txtMaHD = new CustomControl.TextBoxCustom2_0();
             label10 = new Label();
             groupBox3 = new GroupBox();
@@ -70,12 +67,9 @@
             groupBox2 = new GroupBox();
             dgvGioHang = new DataGridView();
             tCamera = new System.Windows.Forms.Timer(components);
-            groupBox1 = new GroupBox();
-            dgcDHCho = new DataGridView();
             menuStrip = new ContextMenuStrip(components);
-            toolStripMenuItem1 = new ToolStripMenuItem();
+            strKhuyenMai = new ToolStripMenuItem();
             panel1.SuspendLayout();
-            panel5.SuspendLayout();
             groupBox3.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -84,18 +78,15 @@
             ((System.ComponentModel.ISupportInitialize)dgvSanPham).BeginInit();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvGioHang).BeginInit();
-            groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgcDHCho).BeginInit();
             menuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(btnRefresh);
-            panel1.Controls.Add(txtDiaChi);
-            panel1.Controls.Add(panel5);
+            panel1.Controls.Add(cbbGiamGia);
             panel1.Controls.Add(label1);
+            panel1.Controls.Add(btnRefresh);
             panel1.Controls.Add(txtMaHD);
             panel1.Controls.Add(label10);
             panel1.Controls.Add(groupBox3);
@@ -115,6 +106,26 @@
             panel1.Size = new Size(457, 661);
             panel1.TabIndex = 19;
             // 
+            // cbbGiamGia
+            // 
+            cbbGiamGia.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cbbGiamGia.FormattingEnabled = true;
+            cbbGiamGia.Location = new Point(168, 488);
+            cbbGiamGia.Name = "cbbGiamGia";
+            cbbGiamGia.Size = new Size(241, 23);
+            cbbGiamGia.TabIndex = 52;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.HotTrack;
+            label1.Location = new Point(60, 491);
+            label1.Name = "label1";
+            label1.Size = new Size(71, 20);
+            label1.TabIndex = 57;
+            label1.Text = "Giảm giá";
+            // 
             // btnRefresh
             // 
             btnRefresh.BackColor = Color.White;
@@ -131,82 +142,13 @@
             btnRefresh.UseVisualStyleBackColor = false;
             btnRefresh.Click += btnRefresh_Click;
             // 
-            // txtDiaChi
-            // 
-            txtDiaChi.BorderColor = Color.MediumSlateBlue;
-            txtDiaChi.BorderFocusColor = Color.HotPink;
-            txtDiaChi.BorderRadius = 10;
-            txtDiaChi.BorderSize = 1;
-            txtDiaChi.Location = new Point(177, 237);
-            txtDiaChi.Multiline = true;
-            txtDiaChi.Name = "txtDiaChi";
-            txtDiaChi.Padding = new Padding(7);
-            txtDiaChi.PasswordChar = false;
-            txtDiaChi.PlaceholderColor = Color.DarkGray;
-            txtDiaChi.PlaceholderText = "";
-            txtDiaChi.Size = new Size(241, 86);
-            txtDiaChi.TabIndex = 55;
-            txtDiaChi.Texts = "";
-            txtDiaChi.UnderlinedStyle = false;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(rbtnShip);
-            panel5.Controls.Add(rbtnTrucTiep);
-            panel5.Location = new Point(177, 177);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(240, 47);
-            panel5.TabIndex = 54;
-            // 
-            // rbtnShip
-            // 
-            rbtnShip.AutoSize = true;
-            rbtnShip.CheckedColor = Color.MediumSlateBlue;
-            rbtnShip.Location = new Point(155, 18);
-            rbtnShip.MinimumSize = new Size(0, 21);
-            rbtnShip.Name = "rbtnShip";
-            rbtnShip.Padding = new Padding(10, 0, 0, 0);
-            rbtnShip.Size = new Size(73, 21);
-            rbtnShip.TabIndex = 1;
-            rbtnShip.TabStop = true;
-            rbtnShip.Text = "Tại nhà";
-            rbtnShip.UnCheckedColor = Color.Gray;
-            rbtnShip.UseVisualStyleBackColor = true;
-            rbtnShip.CheckedChanged += rbtnShip_CheckedChanged;
-            // 
-            // rbtnTrucTiep
-            // 
-            rbtnTrucTiep.AutoSize = true;
-            rbtnTrucTiep.CheckedColor = Color.MediumSlateBlue;
-            rbtnTrucTiep.Location = new Point(13, 18);
-            rbtnTrucTiep.MinimumSize = new Size(0, 21);
-            rbtnTrucTiep.Name = "rbtnTrucTiep";
-            rbtnTrucTiep.Padding = new Padding(10, 0, 0, 0);
-            rbtnTrucTiep.Size = new Size(102, 21);
-            rbtnTrucTiep.TabIndex = 0;
-            rbtnTrucTiep.TabStop = true;
-            rbtnTrucTiep.Text = "Tại cửa hàng";
-            rbtnTrucTiep.UnCheckedColor = Color.Gray;
-            rbtnTrucTiep.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.HotTrack;
-            label1.Location = new Point(4, 204);
-            label1.Name = "label1";
-            label1.Size = new Size(138, 20);
-            label1.TabIndex = 53;
-            label1.Text = "Địa chỉ  nhận hàng";
-            // 
             // txtMaHD
             // 
             txtMaHD.BorderColor = Color.MediumSlateBlue;
             txtMaHD.BorderFocusColor = Color.HotPink;
             txtMaHD.BorderRadius = 0;
             txtMaHD.BorderSize = 2;
-            txtMaHD.Location = new Point(177, 126);
+            txtMaHD.Location = new Point(168, 175);
             txtMaHD.Multiline = false;
             txtMaHD.Name = "txtMaHD";
             txtMaHD.Padding = new Padding(7);
@@ -223,7 +165,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label10.ForeColor = SystemColors.HotTrack;
-            label10.Location = new Point(41, 136);
+            label10.Location = new Point(30, 185);
             label10.Name = "label10";
             label10.Size = new Size(92, 20);
             label10.TabIndex = 17;
@@ -238,7 +180,7 @@
             groupBox3.Controls.Add(iconButton3);
             groupBox3.Location = new Point(11, 9);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(420, 100);
+            groupBox3.Size = new Size(420, 142);
             groupBox3.TabIndex = 51;
             groupBox3.TabStop = false;
             groupBox3.Text = "Thông tin khách hàng";
@@ -306,7 +248,7 @@
             lblTongTien.AutoSize = true;
             lblTongTien.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             lblTongTien.ForeColor = Color.Red;
-            lblTongTien.Location = new Point(177, 518);
+            lblTongTien.Location = new Point(177, 553);
             lblTongTien.Name = "lblTongTien";
             lblTongTien.Size = new Size(0, 25);
             lblTongTien.TabIndex = 50;
@@ -386,7 +328,7 @@
             txtGhiChu.BorderFocusColor = Color.HotPink;
             txtGhiChu.BorderRadius = 10;
             txtGhiChu.BorderSize = 1;
-            txtGhiChu.Location = new Point(178, 385);
+            txtGhiChu.Location = new Point(168, 351);
             txtGhiChu.Multiline = true;
             txtGhiChu.Name = "txtGhiChu";
             txtGhiChu.Padding = new Padding(7);
@@ -404,7 +346,7 @@
             rbtnCash.BackColor = Color.White;
             rbtnCash.CheckedColor = Color.Blue;
             rbtnCash.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            rbtnCash.Location = new Point(319, 340);
+            rbtnCash.Location = new Point(332, 269);
             rbtnCash.MinimumSize = new Size(0, 21);
             rbtnCash.Name = "rbtnCash";
             rbtnCash.Padding = new Padding(10, 0, 0, 0);
@@ -421,7 +363,7 @@
             rbtnTransfer.BackColor = Color.White;
             rbtnTransfer.CheckedColor = Color.Blue;
             rbtnTransfer.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            rbtnTransfer.Location = new Point(177, 340);
+            rbtnTransfer.Location = new Point(168, 269);
             rbtnTransfer.MinimumSize = new Size(0, 21);
             rbtnTransfer.Name = "rbtnTransfer";
             rbtnTransfer.Padding = new Padding(10, 0, 0, 0);
@@ -437,7 +379,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.HotTrack;
-            label3.Location = new Point(23, 341);
+            label3.Location = new Point(23, 269);
             label3.Name = "label3";
             label3.Size = new Size(110, 20);
             label3.TabIndex = 41;
@@ -448,7 +390,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = SystemColors.HotTrack;
-            label4.Location = new Point(62, 394);
+            label4.Location = new Point(60, 361);
             label4.Name = "label4";
             label4.Size = new Size(62, 20);
             label4.TabIndex = 36;
@@ -459,7 +401,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label11.ForeColor = Color.Red;
-            label11.Location = new Point(30, 518);
+            label11.Location = new Point(30, 553);
             label11.Name = "label11";
             label11.Size = new Size(112, 25);
             label11.TabIndex = 33;
@@ -600,7 +542,7 @@
             // panel3
             // 
             panel3.Controls.Add(dgvSanPham);
-            panel3.Location = new Point(18, 163);
+            panel3.Location = new Point(18, 174);
             panel3.Name = "panel3";
             panel3.Size = new Size(1000, 268);
             panel3.TabIndex = 43;
@@ -628,7 +570,7 @@
             groupBox2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(18, 452);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(702, 223);
+            groupBox2.Size = new Size(1000, 223);
             groupBox2.TabIndex = 24;
             groupBox2.TabStop = false;
             groupBox2.Text = "Giỏ Hàng";
@@ -647,56 +589,29 @@
             dgvGioHang.RowHeadersWidth = 50;
             dgvGioHang.RowTemplate.Height = 25;
             dgvGioHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvGioHang.Size = new Size(696, 197);
+            dgvGioHang.Size = new Size(994, 197);
             dgvGioHang.TabIndex = 12;
+            dgvGioHang.CellClick += dgvGioHang_CellClick;
             dgvGioHang.CellContentClick += dgvGioHang_CellContentClick;
             dgvGioHang.CellMouseUp += dgvGioHang_CellMouseUp;
             // 
             // tCamera
             // 
-            tCamera.Interval = 500;
+            tCamera.Interval = 1000;
             tCamera.Tick += tCamera_Tick;
-            // 
-            // groupBox1
-            // 
-            groupBox1.BackColor = Color.White;
-            groupBox1.Controls.Add(dgcDHCho);
-            groupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(726, 452);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(292, 220);
-            groupBox1.TabIndex = 44;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Đơn hàng chờ";
-            // 
-            // dgcDHCho
-            // 
-            dgcDHCho.AllowUserToAddRows = false;
-            dgcDHCho.AllowUserToDeleteRows = false;
-            dgcDHCho.AllowUserToResizeRows = false;
-            dgcDHCho.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgcDHCho.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgcDHCho.Dock = DockStyle.Fill;
-            dgcDHCho.Location = new Point(3, 21);
-            dgcDHCho.Name = "dgcDHCho";
-            dgcDHCho.RowHeadersVisible = false;
-            dgcDHCho.RowTemplate.Height = 25;
-            dgcDHCho.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgcDHCho.Size = new Size(286, 196);
-            dgcDHCho.TabIndex = 0;
-            dgcDHCho.CellClick += dgcDHCho_CellClick;
             // 
             // menuStrip
             // 
-            menuStrip.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
+            menuStrip.Items.AddRange(new ToolStripItem[] { strKhuyenMai });
             menuStrip.Name = "menuStrip";
             menuStrip.Size = new Size(173, 26);
             // 
-            // toolStripMenuItem1
+            // strKhuyenMai
             // 
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(172, 22);
-            toolStripMenuItem1.Text = "Chọn mã giảm giá";
+            strKhuyenMai.Name = "strKhuyenMai";
+            strKhuyenMai.Size = new Size(172, 22);
+            strKhuyenMai.Text = "Chọn mã giảm giá";
+            strKhuyenMai.Click += strKhuyenMai_Click;
             // 
             // FrmBanHang
             // 
@@ -704,7 +619,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(244, 245, 255);
             ClientSize = new Size(1521, 690);
-            Controls.Add(groupBox1);
             Controls.Add(groupBox2);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -712,10 +626,9 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmBanHang";
             Text = "Bán hàng";
+            FormClosing += FrmBanHang_FormClosing;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             panel2.ResumeLayout(false);
@@ -726,8 +639,6 @@
             ((System.ComponentModel.ISupportInitialize)dgvSanPham).EndInit();
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvGioHang).EndInit();
-            groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgcDHCho).EndInit();
             menuStrip.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -768,15 +679,10 @@
         private Label label5;
         private ComboBox cbbSdtKH;
         private CustomControl.TextBoxCustom2_0 txtMaHD;
-        private Label label1;
-        private GroupBox groupBox1;
-        private DataGridView dgcDHCho;
-        private CustomControl.TextBoxCustom2_0 txtDiaChi;
-        private Panel panel5;
-        private CustomControl.RadioButtonCustom rbtnShip;
-        private CustomControl.RadioButtonCustom rbtnTrucTiep;
         private FontAwesome.Sharp.IconButton btnRefresh;
         private ContextMenuStrip menuStrip;
-        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem strKhuyenMai;
+        private ComboBox cbbGiamGia;
+        private Label label1;
     }
 }
