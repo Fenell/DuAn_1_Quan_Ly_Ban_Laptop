@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace _2_BUS_BusinessLayer.ViewModel
         public string SerialSanPham{ get; set; }
         public int SoLuong { get; set; }
         public decimal DonGia { get; set; }
-        public decimal ThanhTien => SoLuong * DonGia;
+        public decimal GiamGia { get; set; }
+        public decimal ThanhTien => SoLuong * DonGia - GiamGia;
     }
 }
