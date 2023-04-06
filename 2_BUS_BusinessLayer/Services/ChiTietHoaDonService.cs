@@ -40,7 +40,8 @@ namespace _2_BUS_BusinessLayer.Services
                 Serial = obj.SerialSanPham,
                 DonGia = obj.DonGia,
                 SoLuong = obj.SoLuong,
-                ThanhTien = (obj.DonGia * obj.SoLuong)
+                GiamGia = obj.GiamGia,
+                ThanhTien = obj.ThanhTien,
             };
 
             if (_chiTietHoaDonRepository.AddChiTietHoaDon(chiTietHoaDon))
@@ -102,6 +103,7 @@ namespace _2_BUS_BusinessLayer.Services
                     Dong = f.Ten,
                     SoLuong = a.SoLuong,
                     DonGia = a.DonGia,
+                    GiamGia = a.GiamGia,
                 }).ToList();
 
             return lst;
