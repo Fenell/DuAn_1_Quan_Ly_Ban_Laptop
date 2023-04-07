@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBanHang));
             panel1 = new Panel();
             cbbGiamGia = new ComboBox();
             label1 = new Label();
@@ -42,9 +43,6 @@
             label6 = new Label();
             iconButton3 = new FontAwesome.Sharp.IconButton();
             lblTongTien = new Label();
-            btnHuyHD = new FontAwesome.Sharp.IconButton();
-            btnSuaHD = new FontAwesome.Sharp.IconButton();
-            btnLuuHD = new FontAwesome.Sharp.IconButton();
             btnThanhToan = new FontAwesome.Sharp.IconButton();
             txtGhiChu = new CustomControl.TextBoxCustom2_0();
             rbtnCash = new CustomControl.RadioButtonCustom();
@@ -53,14 +51,17 @@
             label4 = new Label();
             label11 = new Label();
             panel2 = new Panel();
+            label8 = new Label();
+            label7 = new Label();
+            btnCheck = new FontAwesome.Sharp.IconButton();
+            txtGiaCuoi = new CustomControl.TextBoxCustom2_0();
+            txtGiaDau = new CustomControl.TextBoxCustom2_0();
             cbbCamera = new ComboBox();
             panel4 = new Panel();
             ptbCamera = new PictureBox();
             activeCamera = new CustomControl.ButtonCustom();
             iconButton8 = new FontAwesome.Sharp.IconButton();
             txtTimKiem = new CustomControl.TextBoxCustom2_0();
-            btnDesc = new FontAwesome.Sharp.IconButton();
-            btnAsc = new FontAwesome.Sharp.IconButton();
             label2 = new Label();
             panel3 = new Panel();
             dgvSanPham = new DataGridView();
@@ -69,6 +70,8 @@
             tCamera = new System.Windows.Forms.Timer(components);
             menuStrip = new ContextMenuStrip(components);
             strKhuyenMai = new ToolStripMenuItem();
+            printHD = new System.Drawing.Printing.PrintDocument();
+            printPerviewHD = new PrintPreviewDialog();
             panel1.SuspendLayout();
             groupBox3.SuspendLayout();
             panel2.SuspendLayout();
@@ -91,9 +94,6 @@
             panel1.Controls.Add(label10);
             panel1.Controls.Add(groupBox3);
             panel1.Controls.Add(lblTongTien);
-            panel1.Controls.Add(btnHuyHD);
-            panel1.Controls.Add(btnSuaHD);
-            panel1.Controls.Add(btnLuuHD);
             panel1.Controls.Add(btnThanhToan);
             panel1.Controls.Add(txtGhiChu);
             panel1.Controls.Add(rbtnCash);
@@ -110,7 +110,7 @@
             // 
             cbbGiamGia.AutoCompleteMode = AutoCompleteMode.Suggest;
             cbbGiamGia.FormattingEnabled = true;
-            cbbGiamGia.Location = new Point(168, 488);
+            cbbGiamGia.Location = new Point(168, 472);
             cbbGiamGia.Name = "cbbGiamGia";
             cbbGiamGia.Size = new Size(241, 23);
             cbbGiamGia.TabIndex = 52;
@@ -122,7 +122,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.HotTrack;
-            label1.Location = new Point(60, 491);
+            label1.Location = new Point(60, 475);
             label1.Name = "label1";
             label1.Size = new Size(71, 20);
             label1.TabIndex = 57;
@@ -130,17 +130,21 @@
             // 
             // btnRefresh
             // 
-            btnRefresh.BackColor = Color.White;
+            btnRefresh.BackColor = Color.FromArgb(146, 185, 229);
             btnRefresh.FlatAppearance.BorderSize = 0;
             btnRefresh.FlatStyle = FlatStyle.Flat;
+            btnRefresh.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRefresh.ForeColor = Color.FromArgb(148, 105, 215);
             btnRefresh.IconChar = FontAwesome.Sharp.IconChar.Rotate;
             btnRefresh.IconColor = Color.FromArgb(148, 105, 215);
             btnRefresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnRefresh.IconSize = 45;
-            btnRefresh.Location = new Point(372, 608);
+            btnRefresh.IconSize = 38;
+            btnRefresh.Location = new Point(235, 596);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(53, 37);
+            btnRefresh.Size = new Size(143, 55);
             btnRefresh.TabIndex = 56;
+            btnRefresh.Text = "Làm mới";
+            btnRefresh.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRefresh.UseVisualStyleBackColor = false;
             btnRefresh.Click += btnRefresh_Click;
             // 
@@ -202,7 +206,7 @@
             lblHoTen.AutoSize = true;
             lblHoTen.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             lblHoTen.ForeColor = SystemColors.HotTrack;
-            lblHoTen.Location = new Point(157, 63);
+            lblHoTen.Location = new Point(157, 87);
             lblHoTen.Name = "lblHoTen";
             lblHoTen.Size = new Size(56, 20);
             lblHoTen.TabIndex = 16;
@@ -213,7 +217,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = SystemColors.HotTrack;
-            label5.Location = new Point(75, 63);
+            label5.Location = new Point(75, 87);
             label5.Name = "label5";
             label5.Size = new Size(56, 20);
             label5.TabIndex = 15;
@@ -250,78 +254,32 @@
             lblTongTien.AutoSize = true;
             lblTongTien.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             lblTongTien.ForeColor = Color.Red;
-            lblTongTien.Location = new Point(177, 553);
+            lblTongTien.Location = new Point(177, 540);
             lblTongTien.Name = "lblTongTien";
             lblTongTien.Size = new Size(0, 25);
             lblTongTien.TabIndex = 50;
             lblTongTien.TextAlign = ContentAlignment.TopCenter;
             // 
-            // btnHuyHD
-            // 
-            btnHuyHD.FlatAppearance.BorderSize = 0;
-            btnHuyHD.FlatAppearance.MouseDownBackColor = Color.FromArgb(232, 225, 197);
-            btnHuyHD.FlatAppearance.MouseOverBackColor = Color.White;
-            btnHuyHD.FlatStyle = FlatStyle.Flat;
-            btnHuyHD.IconChar = FontAwesome.Sharp.IconChar.TimesRectangle;
-            btnHuyHD.IconColor = Color.FromArgb(148, 105, 215);
-            btnHuyHD.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnHuyHD.IconSize = 38;
-            btnHuyHD.Location = new Point(292, 599);
-            btnHuyHD.Name = "btnHuyHD";
-            btnHuyHD.Size = new Size(63, 55);
-            btnHuyHD.TabIndex = 49;
-            btnHuyHD.UseVisualStyleBackColor = true;
-            btnHuyHD.Click += btnHuyHD_Click;
-            // 
-            // btnSuaHD
-            // 
-            btnSuaHD.FlatAppearance.BorderSize = 0;
-            btnSuaHD.FlatAppearance.MouseDownBackColor = Color.FromArgb(232, 225, 197);
-            btnSuaHD.FlatAppearance.MouseOverBackColor = Color.White;
-            btnSuaHD.FlatStyle = FlatStyle.Flat;
-            btnSuaHD.IconChar = FontAwesome.Sharp.IconChar.PenClip;
-            btnSuaHD.IconColor = Color.FromArgb(148, 105, 215);
-            btnSuaHD.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnSuaHD.IconSize = 38;
-            btnSuaHD.Location = new Point(212, 599);
-            btnSuaHD.Name = "btnSuaHD";
-            btnSuaHD.Size = new Size(63, 55);
-            btnSuaHD.TabIndex = 49;
-            btnSuaHD.UseVisualStyleBackColor = true;
-            btnSuaHD.Click += btnSuaHD_Click;
-            // 
-            // btnLuuHD
-            // 
-            btnLuuHD.FlatAppearance.BorderSize = 0;
-            btnLuuHD.FlatAppearance.MouseDownBackColor = Color.FromArgb(232, 225, 197);
-            btnLuuHD.FlatAppearance.MouseOverBackColor = Color.White;
-            btnLuuHD.FlatStyle = FlatStyle.Flat;
-            btnLuuHD.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            btnLuuHD.IconColor = Color.FromArgb(148, 105, 215);
-            btnLuuHD.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnLuuHD.IconSize = 38;
-            btnLuuHD.Location = new Point(116, 599);
-            btnLuuHD.Name = "btnLuuHD";
-            btnLuuHD.Size = new Size(67, 55);
-            btnLuuHD.TabIndex = 49;
-            btnLuuHD.UseVisualStyleBackColor = true;
-            btnLuuHD.Click += btnLuuHD_Click;
-            // 
             // btnThanhToan
             // 
+            btnThanhToan.BackColor = Color.FromArgb(146, 185, 229);
             btnThanhToan.FlatAppearance.BorderSize = 0;
             btnThanhToan.FlatAppearance.MouseDownBackColor = Color.FromArgb(232, 225, 197);
             btnThanhToan.FlatAppearance.MouseOverBackColor = Color.White;
             btnThanhToan.FlatStyle = FlatStyle.Flat;
+            btnThanhToan.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnThanhToan.ForeColor = Color.FromArgb(148, 105, 215);
             btnThanhToan.IconChar = FontAwesome.Sharp.IconChar.HandHoldingUsd;
             btnThanhToan.IconColor = Color.FromArgb(148, 105, 215);
             btnThanhToan.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnThanhToan.IconSize = 38;
-            btnThanhToan.Location = new Point(42, 599);
+            btnThanhToan.Location = new Point(81, 596);
             btnThanhToan.Name = "btnThanhToan";
-            btnThanhToan.Size = new Size(68, 55);
+            btnThanhToan.Size = new Size(143, 55);
             btnThanhToan.TabIndex = 49;
-            btnThanhToan.UseVisualStyleBackColor = true;
+            btnThanhToan.Text = "Thanh toán";
+            btnThanhToan.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnThanhToan.UseVisualStyleBackColor = false;
             btnThanhToan.Click += btnThanhToan_Click;
             // 
             // txtGhiChu
@@ -330,7 +288,7 @@
             txtGhiChu.BorderFocusColor = Color.HotPink;
             txtGhiChu.BorderRadius = 10;
             txtGhiChu.BorderSize = 1;
-            txtGhiChu.Location = new Point(168, 351);
+            txtGhiChu.Location = new Point(168, 330);
             txtGhiChu.Multiline = true;
             txtGhiChu.Name = "txtGhiChu";
             txtGhiChu.Padding = new Padding(7);
@@ -348,7 +306,7 @@
             rbtnCash.BackColor = Color.White;
             rbtnCash.CheckedColor = Color.Blue;
             rbtnCash.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            rbtnCash.Location = new Point(332, 269);
+            rbtnCash.Location = new Point(332, 258);
             rbtnCash.MinimumSize = new Size(0, 21);
             rbtnCash.Name = "rbtnCash";
             rbtnCash.Padding = new Padding(10, 0, 0, 0);
@@ -365,7 +323,7 @@
             rbtnTransfer.BackColor = Color.White;
             rbtnTransfer.CheckedColor = Color.Blue;
             rbtnTransfer.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            rbtnTransfer.Location = new Point(168, 269);
+            rbtnTransfer.Location = new Point(168, 258);
             rbtnTransfer.MinimumSize = new Size(0, 21);
             rbtnTransfer.Name = "rbtnTransfer";
             rbtnTransfer.Padding = new Padding(10, 0, 0, 0);
@@ -381,7 +339,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.HotTrack;
-            label3.Location = new Point(23, 269);
+            label3.Location = new Point(23, 258);
             label3.Name = "label3";
             label3.Size = new Size(110, 20);
             label3.TabIndex = 41;
@@ -392,7 +350,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = SystemColors.HotTrack;
-            label4.Location = new Point(60, 361);
+            label4.Location = new Point(60, 340);
             label4.Name = "label4";
             label4.Size = new Size(62, 20);
             label4.TabIndex = 36;
@@ -403,7 +361,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label11.ForeColor = Color.Red;
-            label11.Location = new Point(30, 553);
+            label11.Location = new Point(30, 540);
             label11.Name = "label11";
             label11.Size = new Size(112, 25);
             label11.TabIndex = 33;
@@ -413,18 +371,95 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(label8);
+            panel2.Controls.Add(label7);
+            panel2.Controls.Add(btnCheck);
+            panel2.Controls.Add(txtGiaCuoi);
+            panel2.Controls.Add(txtGiaDau);
             panel2.Controls.Add(cbbCamera);
             panel2.Controls.Add(panel4);
             panel2.Controls.Add(activeCamera);
             panel2.Controls.Add(iconButton8);
             panel2.Controls.Add(txtTimKiem);
-            panel2.Controls.Add(btnDesc);
-            panel2.Controls.Add(btnAsc);
             panel2.Controls.Add(label2);
             panel2.Location = new Point(18, 17);
             panel2.Name = "panel2";
             panel2.Size = new Size(1000, 140);
             panel2.TabIndex = 42;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = SystemColors.Highlight;
+            label8.Location = new Point(270, 23);
+            label8.Name = "label8";
+            label8.Size = new Size(134, 17);
+            label8.TabIndex = 55;
+            label8.Text = "Lọc theo khoảng giá";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(380, 71);
+            label7.Name = "label7";
+            label7.Size = new Size(17, 15);
+            label7.TabIndex = 54;
+            label7.Text = "--";
+            // 
+            // btnCheck
+            // 
+            btnCheck.BackColor = Color.MediumSlateBlue;
+            btnCheck.FlatAppearance.BorderSize = 0;
+            btnCheck.FlatStyle = FlatStyle.Flat;
+            btnCheck.IconChar = FontAwesome.Sharp.IconChar.Check;
+            btnCheck.IconColor = Color.White;
+            btnCheck.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnCheck.IconSize = 25;
+            btnCheck.Location = new Point(518, 63);
+            btnCheck.Name = "btnCheck";
+            btnCheck.Size = new Size(40, 30);
+            btnCheck.TabIndex = 53;
+            btnCheck.UseVisualStyleBackColor = false;
+            btnCheck.Click += btnCheck_Click;
+            // 
+            // txtGiaCuoi
+            // 
+            txtGiaCuoi.BorderColor = Color.MediumSlateBlue;
+            txtGiaCuoi.BorderFocusColor = Color.HotPink;
+            txtGiaCuoi.BorderRadius = 0;
+            txtGiaCuoi.BorderSize = 2;
+            txtGiaCuoi.Location = new Point(402, 63);
+            txtGiaCuoi.Multiline = false;
+            txtGiaCuoi.Name = "txtGiaCuoi";
+            txtGiaCuoi.Padding = new Padding(7);
+            txtGiaCuoi.PasswordChar = false;
+            txtGiaCuoi.PlaceholderColor = Color.DarkGray;
+            txtGiaCuoi.PlaceholderText = "";
+            txtGiaCuoi.Size = new Size(100, 30);
+            txtGiaCuoi.TabIndex = 52;
+            txtGiaCuoi.Texts = "";
+            txtGiaCuoi.UnderlinedStyle = true;
+            txtGiaCuoi.KeyPress += txtGiaDau_KeyPress;
+            // 
+            // txtGiaDau
+            // 
+            txtGiaDau.BorderColor = Color.MediumSlateBlue;
+            txtGiaDau.BorderFocusColor = Color.HotPink;
+            txtGiaDau.BorderRadius = 0;
+            txtGiaDau.BorderSize = 2;
+            txtGiaDau.Location = new Point(270, 63);
+            txtGiaDau.Multiline = false;
+            txtGiaDau.Name = "txtGiaDau";
+            txtGiaDau.Padding = new Padding(7);
+            txtGiaDau.PasswordChar = false;
+            txtGiaDau.PlaceholderColor = Color.DarkGray;
+            txtGiaDau.PlaceholderText = "";
+            txtGiaDau.Size = new Size(100, 30);
+            txtGiaDau.TabIndex = 51;
+            txtGiaDau.Texts = "";
+            txtGiaDau.UnderlinedStyle = true;
+            txtGiaDau.KeyPress += txtGiaDau_KeyPress;
             // 
             // cbbCamera
             // 
@@ -478,7 +513,7 @@
             iconButton8.IconColor = Color.Black;
             iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton8.IconSize = 23;
-            iconButton8.Location = new Point(12, 37);
+            iconButton8.Location = new Point(12, 68);
             iconButton8.Name = "iconButton8";
             iconButton8.Size = new Size(32, 25);
             iconButton8.TabIndex = 47;
@@ -490,52 +525,25 @@
             txtTimKiem.BorderFocusColor = Color.HotPink;
             txtTimKiem.BorderRadius = 10;
             txtTimKiem.BorderSize = 1;
-            txtTimKiem.Location = new Point(6, 33);
+            txtTimKiem.Location = new Point(6, 64);
             txtTimKiem.Multiline = false;
             txtTimKiem.Name = "txtTimKiem";
             txtTimKiem.Padding = new Padding(42, 7, 7, 7);
             txtTimKiem.PasswordChar = false;
             txtTimKiem.PlaceholderColor = Color.DarkGray;
             txtTimKiem.PlaceholderText = "Tìm kiếm";
-            txtTimKiem.Size = new Size(250, 30);
+            txtTimKiem.Size = new Size(197, 30);
             txtTimKiem.TabIndex = 46;
             txtTimKiem.Texts = "";
             txtTimKiem.UnderlinedStyle = false;
-            // 
-            // btnDesc
-            // 
-            btnDesc.BackColor = Color.White;
-            btnDesc.FlatAppearance.BorderSize = 0;
-            btnDesc.FlatStyle = FlatStyle.Flat;
-            btnDesc.IconChar = FontAwesome.Sharp.IconChar.SortAmountDown;
-            btnDesc.IconColor = Color.FromArgb(187, 92, 119);
-            btnDesc.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnDesc.Location = new Point(471, 38);
-            btnDesc.Name = "btnDesc";
-            btnDesc.Size = new Size(56, 46);
-            btnDesc.TabIndex = 45;
-            btnDesc.UseVisualStyleBackColor = false;
-            // 
-            // btnAsc
-            // 
-            btnAsc.BackColor = Color.White;
-            btnAsc.FlatAppearance.BorderSize = 0;
-            btnAsc.FlatStyle = FlatStyle.Flat;
-            btnAsc.IconChar = FontAwesome.Sharp.IconChar.ArrowUpShortWide;
-            btnAsc.IconColor = Color.FromArgb(187, 92, 119);
-            btnAsc.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAsc.Location = new Point(406, 38);
-            btnAsc.Name = "btnAsc";
-            btnAsc.Size = new Size(59, 47);
-            btnAsc.TabIndex = 44;
-            btnAsc.UseVisualStyleBackColor = false;
+            txtTimKiem._TextChanged += txtTimKiem__TextChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.Highlight;
-            label2.Location = new Point(6, -2);
+            label2.Location = new Point(6, 23);
             label2.Name = "label2";
             label2.Size = new Size(67, 17);
             label2.TabIndex = 41;
@@ -616,6 +624,20 @@
             strKhuyenMai.Text = "Chọn mã giảm giá";
             strKhuyenMai.Click += strKhuyenMai_Click;
             // 
+            // printHD
+            // 
+            printHD.PrintPage += printHD_PrintPage;
+            // 
+            // printPerviewHD
+            // 
+            printPerviewHD.AutoScrollMargin = new Size(0, 0);
+            printPerviewHD.AutoScrollMinSize = new Size(0, 0);
+            printPerviewHD.ClientSize = new Size(400, 300);
+            printPerviewHD.Enabled = true;
+            printPerviewHD.Icon = (Icon)resources.GetObject("printPerviewHD.Icon");
+            printPerviewHD.Name = "printPerviewHD";
+            printPerviewHD.Visible = false;
+            // 
             // FrmBanHang
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -656,7 +678,6 @@
         private CustomControl.RadioButtonCustom rbtnTransfer;
         private Label label3;
         private Panel panel2;
-        private FontAwesome.Sharp.IconButton btnDesc;
         private Label label2;
         private Panel panel3;
         private GroupBox groupBox2;
@@ -664,12 +685,8 @@
         private DataGridView dgvSanPham;
         private CustomControl.TextBoxCustom2_0 txtGhiChu;
         private FontAwesome.Sharp.IconButton btnThanhToan;
-        private FontAwesome.Sharp.IconButton btnHuyHD;
-        private FontAwesome.Sharp.IconButton btnSuaHD;
-        private FontAwesome.Sharp.IconButton btnLuuHD;
         private FontAwesome.Sharp.IconButton iconButton8;
         private CustomControl.TextBoxCustom2_0 txtTimKiem;
-        private FontAwesome.Sharp.IconButton btnAsc;
         private CustomControl.ButtonCustom activeCamera;
         private PictureBox ptbCamera;
         private Label lblTongTien;
@@ -687,5 +704,12 @@
         private ToolStripMenuItem strKhuyenMai;
         private ComboBox cbbGiamGia;
         private Label label1;
+        private System.Drawing.Printing.PrintDocument printHD;
+        private PrintPreviewDialog printPerviewHD;
+        private FontAwesome.Sharp.IconButton btnCheck;
+        private CustomControl.TextBoxCustom2_0 txtGiaCuoi;
+        private CustomControl.TextBoxCustom2_0 txtGiaDau;
+        private Label label8;
+        private Label label7;
     }
 }
