@@ -41,9 +41,22 @@ namespace _3_GUI_PresentationLayer.View
         {
             _ID = id;
             dgv_CTHD.Rows.Clear();
-            foreach (var item in _bus_chiTietHoaDon.GetAllChiTietHoaDon(id))
+            dgv_CTHD.ColumnCount = 6;
+            dgv_CTHD.Columns[0].Visible = false;
+            dgv_CTHD.Columns[1].Name = "Tên laptop";
+            dgv_CTHD.Columns[2].Name = "Số lượng";
+            dgv_CTHD.Columns[3].Name = "Đơn giá";
+            dgv_CTHD.Columns[3].DefaultCellStyle.Format = "N0"; 
+            dgv_CTHD.Columns[4].Name = "Giảm giá";
+            dgv_CTHD.Columns[4].DefaultCellStyle.Format = "N0"; 
+            dgv_CTHD.Columns[5].Name = "Thành tiền";
+            dgv_CTHD.Columns[5].DefaultCellStyle.Format = "N0"; 
+
+
+            dgv_CTHD.Rows.Clear();
+            foreach (var item in _bus_chiTietHoaDon.GetAllCTHĐ(id))
             {
-                dgv_CTHD.Rows.Add( item.TenSanPham, item.SoLuong, item.DonGia,item.ThanhTien);
+                dgv_CTHD.Rows.Add( item.Id ,item.TenSanPham, item.SoLuong, item.DonGia, item.GiamGia, item.ThanhTien);
             }
         }
         public void ShowHĐ()
