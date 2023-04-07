@@ -114,6 +114,8 @@
             cbbGiamGia.Name = "cbbGiamGia";
             cbbGiamGia.Size = new Size(241, 23);
             cbbGiamGia.TabIndex = 52;
+            cbbGiamGia.SelectedIndexChanged += cbbGiamGia_SelectedIndexChanged;
+            cbbGiamGia.SelectedValueChanged += cbbGiamGia_SelectedValueChanged;
             // 
             // label1
             // 
@@ -542,6 +544,7 @@
             // panel3
             // 
             panel3.Controls.Add(dgvSanPham);
+            panel3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             panel3.Location = new Point(18, 174);
             panel3.Name = "panel3";
             panel3.Size = new Size(1000, 268);

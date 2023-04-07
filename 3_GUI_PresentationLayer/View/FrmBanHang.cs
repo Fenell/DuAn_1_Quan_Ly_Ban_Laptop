@@ -40,6 +40,7 @@ namespace _3_GUI_PresentationLayer.View
         private List<LaptopView> _lstLaptopViews;
         private HoaDonView _hoaDon;
         private Guid _idHoaDon;
+        private Guid _idChiTietHD;
         public FrmBanHang()
         {
             InitializeComponent();
@@ -79,10 +80,11 @@ namespace _3_GUI_PresentationLayer.View
         private void LoadSanPham()
         {
             dgvSanPham.ColumnCount = 4;
-            dgvSanPham.Columns[0].Name = "Ten";
-            dgvSanPham.Columns[1].Name = "Gia";
-            dgvSanPham.Columns[2].Name = "So luong";
-            dgvSanPham.Columns[3].Name = "Serial";
+            dgvSanPham.Columns[0].Name = "Tên laptop";
+            dgvSanPham.Columns[1].Name = "Giá bán";
+            dgvSanPham.Columns[1].DefaultCellStyle.Format = "N0";
+            dgvSanPham.Columns[2].Name = "Tồn kho";
+            dgvSanPham.Columns[3].Name = "Danh sách Serial";
 
             dgvSanPham.Rows.Clear();
             foreach (var a in _lstLaptopViews)
@@ -128,8 +130,12 @@ namespace _3_GUI_PresentationLayer.View
             dgvGioHang.Columns[3].Name = "Số serial";
             dgvGioHang.Columns[4].Name = "Số lượng";
             dgvGioHang.Columns[5].Name = "Giá tiền";
+            dgvGioHang.Columns[5].DefaultCellStyle.Format = "N0";
             dgvGioHang.Columns[6].Name = "Giảm giá";
+            dgvGioHang.Columns[6].DefaultCellStyle.Format = "N0";
             dgvGioHang.Columns[7].Name = "Thành tiền";
+            dgvGioHang.Columns[7].DefaultCellStyle.Format = "N0";
+
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.HeaderText = "Thao tác";
@@ -141,7 +147,7 @@ namespace _3_GUI_PresentationLayer.View
             dgvGioHang.Rows.Clear();
             foreach (var a in _lstCtHoaDonViews)
             {
-                dgvGioHang.Rows.Add(a.Id, a.IdSanPham, $"{a.Hang} {a.Dong} {a.TenSanPham}", a.SerialSanPham, a.DonGia, a.SoLuong, a.ThanhTien);
+                dgvGioHang.Rows.Add(a.Id, a.IdSanPham, $"{a.Hang} {a.Dong} {a.TenSanPham}", a.SerialSanPham, a.SoLuong, a.DonGia, a.GiamGia, a.ThanhTien);
             }
 
         }
@@ -164,14 +170,14 @@ namespace _3_GUI_PresentationLayer.View
         private void LoadKhuyenMai(Guid? idKhuyenMai)
         {
             var khuyenMai = _khuyenMaiServices.GetAllKhuyenMai().Where(c => c.TrangThai == 0 && c.Id == idKhuyenMai);
-            if (khuyenMai != null)
+            cbbGiamGia.Text = "";
+            cbbGiamGia.Items.Clear();
+            if (khuyenMai.Any())
             {
-                cbbGiamGia.DisplayMember = "Ten";
-                cbbGiamGia.ValueMember = "Id";
-                cbbGiamGia.Items.Clear();
                 foreach (var a in khuyenMai)
                 {
-                    cbbGiamGia.Items.Add(a);
+                    cbbGiamGia.Items.Add(a.Ten);
+                    cbbGiamGia.SelectedIndex = 0;
                 }
             }
         }
@@ -321,18 +327,18 @@ namespace _3_GUI_PresentationLayer.View
             {
                 return;
             }
-            var idChiTietHD = Guid.Parse(dgvGioHang.Rows[rowIndex].Cells[0].Value.ToString());
+            _idChiTietHD = Guid.Parse(dgvGioHang.Rows[rowIndex].Cells[0].Value.ToString());
             _serialSelected = Convert.ToString(dgvGioHang.Rows[rowIndex].Cells[3].Value);
 
 
-            if (e.ColumnIndex == 7)
+            if (e.ColumnIndex == 8)
             {
                 if (_serialSelected == "")
                 {
                     MessageBox.Show("Khong co so serial");
                     return;
                 }
-                RemoveGioHang(idChiTietHD);
+                RemoveGioHang(_idChiTietHD);
                 LoadGioHang();
                 _serialLaptopService.UpdateStatusSerial(_serialSelected);
                 TinhTien();
@@ -347,7 +353,7 @@ namespace _3_GUI_PresentationLayer.View
             {
                 return;
             }
-
+            _idChiTietHD = Guid.Parse(dgvGioHang.Rows[rowIndex].Cells[0].Value.ToString());
             var idLapttop = Guid.Parse(dgvGioHang.Rows[rowIndex].Cells[1].Value.ToString());
             var laptop = _laptopService.GetLaptopFromDb().FirstOrDefault(x => x.Id == idLapttop);
             if (laptop != null)
@@ -389,7 +395,7 @@ namespace _3_GUI_PresentationLayer.View
                 {
                     tongTien += a.ThanhTien;
                 }
-                lblTongTien.Text = tongTien.ToString();
+                lblTongTien.Text = tongTien.ToString("N0");
                 return;
             }
 
@@ -548,6 +554,13 @@ namespace _3_GUI_PresentationLayer.View
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            if (_lstCtHoaDonViews.Any())
+            {
+                foreach (var a in _lstCtHoaDonViews)
+                {
+                    _serialLaptopService.UpdateStatusSerial(a.SerialSanPham);
+                }
+            }
             LoadData();
         }
 
@@ -684,6 +697,30 @@ namespace _3_GUI_PresentationLayer.View
             MessageBox.Show("Bạn vừa click");
         }
 
+        private void cbbGiamGia_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+
+        }
+
+        private void cbbGiamGia_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string result = cbbGiamGia.Text;
+            if (result == "") return;
+
+            var khuyenMai = _khuyenMaiServices.GetAllKhuyenMai().Find(c => c.Ten == result);
+            var index = _lstCtHoaDonViews.FindIndex(c => c.Id == _idChiTietHD);
+            var chiTietHD = _lstCtHoaDonViews.ElementAt(index);
+            if (khuyenMai.LoaiKhuyenMai == "Giảm %")
+            {
+                chiTietHD.GiamGia = chiTietHD.DonGia * (khuyenMai.GiaTri / 100);
+            }
+            else
+            {
+                chiTietHD.GiamGia = khuyenMai.GiaTri;
+            }
+            LoadGioHang();
+            TinhTien();
+        }
     }
 }

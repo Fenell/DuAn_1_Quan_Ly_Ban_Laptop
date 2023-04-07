@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             SuspendLayout();
+           
             // 
             // FrmChonSerial
             // 
@@ -41,5 +42,6 @@
         }
 
         #endregion
+
     }
 }
