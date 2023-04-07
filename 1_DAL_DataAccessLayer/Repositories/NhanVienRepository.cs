@@ -35,6 +35,20 @@ namespace _1_DAL_DataAccessLayer.Repositories
             }
         }
 
+        public bool DoiTrangThai(List<NhanVien> lstNhanVien)
+        {
+            foreach (var item in lstNhanVien)
+            {
+                if (item.TrangThai == true)
+                {
+                    item.TrangThai = false;
+                    _lapTopContext.NhanViens.Update(item);
+                    _lapTopContext.SaveChanges();
+                }
+            }
+            return true;
+        }
+
         public List<NhanVien> GetAllNhanVien()
         {
             return _lapTopContext.NhanViens.ToList();

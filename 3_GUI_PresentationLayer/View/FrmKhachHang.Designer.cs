@@ -29,7 +29,14 @@
         private void InitializeComponent()
         {
             this.dgvKhachHang = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconButtonClear = new FontAwesome.Sharp.IconButton();
             this.txtDiaChi = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom2_0();
             this.iconButtonSua = new FontAwesome.Sharp.IconButton();
             this.iconButtonThem = new FontAwesome.Sharp.IconButton();
@@ -48,13 +55,6 @@
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
             this.txtTimKiem = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom2_0();
             this.label1 = new System.Windows.Forms.Label();
-            this.iconButtonClear = new FontAwesome.Sharp.IconButton();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -63,6 +63,7 @@
             // 
             // dgvKhachHang
             // 
+            this.dgvKhachHang.AllowUserToAddRows = false;
             this.dgvKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -76,9 +77,40 @@
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.RowTemplate.Height = 25;
             this.dgvKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKhachHang.Size = new System.Drawing.Size(992, 409);
+            this.dgvKhachHang.Size = new System.Drawing.Size(992, 494);
             this.dgvKhachHang.TabIndex = 8;
             this.dgvKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã khách hàng";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Họ tên";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Số điện thoại";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Giới tính";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Địa chỉ";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Id";
+            this.Column6.Name = "Column6";
+            this.Column6.Visible = false;
             // 
             // panel1
             // 
@@ -101,6 +133,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(421, 624);
             this.panel1.TabIndex = 9;
+            // 
+            // iconButtonClear
+            // 
+            this.iconButtonClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(220)))), ((int)(((byte)(204)))));
+            this.iconButtonClear.FlatAppearance.BorderSize = 0;
+            this.iconButtonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonClear.IconChar = FontAwesome.Sharp.IconChar.Rotate;
+            this.iconButtonClear.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
+            this.iconButtonClear.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonClear.IconSize = 45;
+            this.iconButtonClear.Location = new System.Drawing.Point(286, 533);
+            this.iconButtonClear.Name = "iconButtonClear";
+            this.iconButtonClear.Size = new System.Drawing.Size(97, 43);
+            this.iconButtonClear.TabIndex = 53;
+            this.iconButtonClear.UseVisualStyleBackColor = false;
+            this.iconButtonClear.Click += new System.EventHandler(this.iconButtonClear_Click);
             // 
             // txtDiaChi
             // 
@@ -349,53 +397,6 @@
             this.label1.Size = new System.Drawing.Size(81, 21);
             this.label1.TabIndex = 32;
             this.label1.Text = "Tìm kiếm";
-            // 
-            // iconButtonClear
-            // 
-            this.iconButtonClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(220)))), ((int)(((byte)(204)))));
-            this.iconButtonClear.FlatAppearance.BorderSize = 0;
-            this.iconButtonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonClear.IconChar = FontAwesome.Sharp.IconChar.Rotate;
-            this.iconButtonClear.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.iconButtonClear.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonClear.IconSize = 45;
-            this.iconButtonClear.Location = new System.Drawing.Point(286, 533);
-            this.iconButtonClear.Name = "iconButtonClear";
-            this.iconButtonClear.Size = new System.Drawing.Size(97, 43);
-            this.iconButtonClear.TabIndex = 53;
-            this.iconButtonClear.UseVisualStyleBackColor = false;
-            this.iconButtonClear.Click += new System.EventHandler(this.iconButtonClear_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã khách hàng";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Họ tên";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Số điện thoại";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Giới tính";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Địa chỉ";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Id";
-            this.Column6.Name = "Column6";
-            this.Column6.Visible = false;
             // 
             // FrmKhachHang
             // 

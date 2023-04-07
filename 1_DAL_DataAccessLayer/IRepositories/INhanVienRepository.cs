@@ -12,6 +12,7 @@ namespace _1_DAL_DataAccessLayer.IRepositories
         bool AddNhanVien(NhanVien nhanVien);
         bool UpdateNhanVien(Guid idNhanVien , NhanVien nhanVien);
         bool UpdateNV( NhanVien nhanVien);
+        bool DoiTrangThai(List<NhanVien> lstNhanVien);
         NhanVien GetNhanVienById(Guid idNhanVien);
         List<NhanVien> GetAllNhanVien();
     }
