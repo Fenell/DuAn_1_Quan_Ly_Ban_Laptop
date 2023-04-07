@@ -13,6 +13,7 @@ using _1_DAL_DataAccessLayer.Repositories;
 using _2_BUS_BusinessLayer.IServices;
 using _2_BUS_BusinessLayer.Services;
 using _2_BUS_BusinessLayer.ViewModel;
+using _3_GUI_PresentationLayer.CustomControl;
 using AForge.Video.DirectShow;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using ZXing;
@@ -26,19 +27,21 @@ namespace _3_GUI_PresentationLayer.View
         private ISerialLaptopService _serialLaptopService;
         private IHoaDonSerevice _hoaDonSerevice;
         private IChiTietHoaDonService _chiTietHoaDonService;
-
+        private IKhuyenMaiServices _khuyenMaiServices;
         private IHangLapTopRepositories _hangLapTop;
         private IDongLapTopRepositories _dongLapTop;
         private IKhachHangService _khachHangService;
+        private INhanVienService _nhanVienService;
 
-        private Laptop _laptop;
         private List<ChiTietHoaDonView> _lstCtHoaDonViews;
-        private string _serialSelected;
         private FilterInfoCollection _captureVideo;
         private VideoCaptureDevice _videoCaptureDevice;
         private List<LaptopView> _lstLaptopViews;
+        private Laptop _laptop;
         private HoaDonView _hoaDon;
         private Guid _idHoaDon;
+        private Guid _idChiTietHD;
+        private string _serialSelected;
         public FrmBanHang()
         {
             InitializeComponent();
@@ -49,9 +52,10 @@ namespace _3_GUI_PresentationLayer.View
             _khachHangService = new KhachhangService();
             _hoaDonSerevice = new HoaDonService();
             _chiTietHoaDonService = new ChiTietHoaDonService();
-
+            _khuyenMaiServices = new KhuyenMaiServices();
             _hangLapTop = new HangLaptopRepositories();
             _dongLapTop = new DongLapTopReposittoies();
+            _nhanVienService = new NhanvienService();
 
             _lstLaptopViews = _laptopService.GetAllLaptop();
             GetDeviceVideoCapture();
@@ -64,25 +68,24 @@ namespace _3_GUI_PresentationLayer.View
             _hoaDon = new HoaDonView();
             _idHoaDon = Guid.Empty;
 
-
-
             txtMaHD.Texts = _hoaDonSerevice.AutoGenerateMa();
 
             LoadSanPham();
             ResetForm();
-            LoadDonHang();
             LoadGioHang();
             LoadKhachHang();
 
         }
 
+        #region LoadSanPham
         private void LoadSanPham()
         {
             dgvSanPham.ColumnCount = 4;
-            dgvSanPham.Columns[0].Name = "Ten";
-            dgvSanPham.Columns[1].Name = "Gia";
-            dgvSanPham.Columns[2].Name = "So luong";
-            dgvSanPham.Columns[3].Name = "Serial";
+            dgvSanPham.Columns[0].Name = "Tên laptop";
+            dgvSanPham.Columns[1].Name = "Giá bán";
+            dgvSanPham.Columns[1].DefaultCellStyle.Format = "N0";
+            dgvSanPham.Columns[2].Name = "Tồn kho";
+            dgvSanPham.Columns[3].Name = "Danh sách Serial";
 
             dgvSanPham.Rows.Clear();
             foreach (var a in _lstLaptopViews)
@@ -94,13 +97,10 @@ namespace _3_GUI_PresentationLayer.View
                 row.Cells[2].Value = a.SoLuongTon;
 
                 var lstSerial = new List<string>();
-                var lstIdLaptop = _laptopService.GetLaptopFromDb().Where(c => c.Ten == a.Ten);
-
                 var serial = _serialLaptopService.GetSerialLaptopList().Where(c => c.TrangThai && c.IdLaptop == a.Id);
 
                 if (serial != null)
                     lstSerial = serial.Select(c => c.Serial).ToList();
-
 
                 var cbbCell = new DataGridViewComboBoxCell();
                 cbbCell.DisplayStyle = DataGridViewComboBoxDisplayStyle.ComboBox;
@@ -119,15 +119,105 @@ namespace _3_GUI_PresentationLayer.View
             dgvSanPham.Columns.Add(imageColumn);
         }
 
+        private void LoadSanPham(string value)
+        {
+            dgvSanPham.ColumnCount = 4;
+            dgvSanPham.Columns[0].Name = "Tên laptop";
+            dgvSanPham.Columns[1].Name = "Giá bán";
+            dgvSanPham.Columns[1].DefaultCellStyle.Format = "N0";
+            dgvSanPham.Columns[2].Name = "Tồn kho";
+            dgvSanPham.Columns[3].Name = "Danh sách Serial";
+
+            dgvSanPham.Rows.Clear();
+            foreach (var a in _lstLaptopViews.Where(c => c.HangLaptop.Contains(value) || c.DongLaptop.Contains(value) || c.Ten.Contains(value)))
+            {
+                var row = new DataGridViewRow();
+                row.CreateCells(dgvSanPham);
+                row.Cells[0].Value = $"{a.HangLaptop} {a.DongLaptop} {a.Ten}";
+                row.Cells[1].Value = a.GiaBan;
+                row.Cells[2].Value = a.SoLuongTon;
+
+                var lstSerial = new List<string>();
+                var serial = _serialLaptopService.GetSerialLaptopList().Where(c => c.TrangThai && c.IdLaptop == a.Id);
+
+                if (serial != null)
+                    lstSerial = serial.Select(c => c.Serial).ToList();
+
+                var cbbCell = new DataGridViewComboBoxCell();
+                cbbCell.DisplayStyle = DataGridViewComboBoxDisplayStyle.ComboBox;
+                cbbCell.AutoComplete = true;
+                cbbCell.Items.AddRange(lstSerial.ToArray());
+                row.Cells[3] = cbbCell;
+
+                dgvSanPham.Rows.Add(row);
+            }
+
+            DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
+            imageColumn.HeaderText = "Thao tac";
+            imageColumn.ImageLayout = DataGridViewImageCellLayout.Normal;
+            imageColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            imageColumn.Image = Image.FromFile(@"D:\CODE\C#\DuAn_1_Quan_Ly_Ban_Laptop\3_GUI_PresentationLayer\Resources\add-to-cart.png");
+            dgvSanPham.Columns.Add(imageColumn);
+        }
+
+        private void LoadSanPham(string value1, string value2)
+        {
+            dgvSanPham.ColumnCount = 4;
+            dgvSanPham.Columns[0].Name = "Tên laptop";
+            dgvSanPham.Columns[1].Name = "Giá bán";
+            dgvSanPham.Columns[1].DefaultCellStyle.Format = "N0";
+            dgvSanPham.Columns[2].Name = "Tồn kho";
+            dgvSanPham.Columns[3].Name = "Danh sách Serial";
+
+            dgvSanPham.Rows.Clear();
+            foreach (var a in _lstLaptopViews.Where(c => c.GiaBan >= decimal.Parse(value1) && c.GiaBan <= decimal.Parse(value2)))
+            {
+                var row = new DataGridViewRow();
+                row.CreateCells(dgvSanPham);
+                row.Cells[0].Value = $"{a.HangLaptop} {a.DongLaptop} {a.Ten}";
+                row.Cells[1].Value = a.GiaBan;
+                row.Cells[2].Value = a.SoLuongTon;
+
+                var lstSerial = new List<string>();
+                var serial = _serialLaptopService.GetSerialLaptopList().Where(c => c.TrangThai && c.IdLaptop == a.Id);
+
+                if (serial != null)
+                    lstSerial = serial.Select(c => c.Serial).ToList();
+
+                var cbbCell = new DataGridViewComboBoxCell();
+                cbbCell.DisplayStyle = DataGridViewComboBoxDisplayStyle.ComboBox;
+                cbbCell.AutoComplete = true;
+                cbbCell.Items.AddRange(lstSerial.ToArray());
+                row.Cells[3] = cbbCell;
+
+                dgvSanPham.Rows.Add(row);
+            }
+
+            DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
+            imageColumn.HeaderText = "Thao tac";
+            imageColumn.ImageLayout = DataGridViewImageCellLayout.Normal;
+            imageColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            imageColumn.Image = Image.FromFile(@"D:\CODE\C#\DuAn_1_Quan_Ly_Ban_Laptop\3_GUI_PresentationLayer\Resources\add-to-cart.png");
+            dgvSanPham.Columns.Add(imageColumn);
+        }
+        #endregion
+
+        #region LoadGioHang 
         private void LoadGioHang()
         {
-            dgvGioHang.ColumnCount = 6;
+            dgvGioHang.ColumnCount = 8;
             dgvGioHang.Columns[0].Visible = false;
-            dgvGioHang.Columns[1].Name = "Tên sản phẩm";
-            dgvGioHang.Columns[2].Name = "Số serial";
-            dgvGioHang.Columns[3].Name = "Giá tiền";
+            dgvGioHang.Columns[1].Visible = false;
+            dgvGioHang.Columns[2].Name = "Tên sản phẩm";
+            dgvGioHang.Columns[3].Name = "Số serial";
             dgvGioHang.Columns[4].Name = "Số lượng";
-            dgvGioHang.Columns[5].Name = "Thành tiền";
+            dgvGioHang.Columns[5].Name = "Giá tiền";
+            dgvGioHang.Columns[5].DefaultCellStyle.Format = "N0";
+            dgvGioHang.Columns[6].Name = "Giảm giá";
+            dgvGioHang.Columns[6].DefaultCellStyle.Format = "N0";
+            dgvGioHang.Columns[7].Name = "Thành tiền";
+            dgvGioHang.Columns[7].DefaultCellStyle.Format = "N0";
+
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.HeaderText = "Thao tác";
@@ -139,24 +229,11 @@ namespace _3_GUI_PresentationLayer.View
             dgvGioHang.Rows.Clear();
             foreach (var a in _lstCtHoaDonViews)
             {
-                dgvGioHang.Rows.Add(a.Id, $"{a.Hang} {a.Dong} {a.TenSanPham}", a.SerialSanPham, a.DonGia, a.SoLuong, a.ThanhTien);
+                dgvGioHang.Rows.Add(a.Id, a.IdSanPham, $"{a.Hang} {a.Dong} {a.TenSanPham}", a.SerialSanPham, a.SoLuong, a.DonGia, a.GiamGia, a.ThanhTien);
             }
 
-        }
-
-        private void LoadDonHang()
-        {
-            dgcDHCho.ColumnCount = 3;
-            dgcDHCho.Columns[0].Visible = false;
-            dgcDHCho.Columns[1].Name = "Tên khách hàng";
-            dgcDHCho.Columns[2].Name = "Số điện thoại";
-
-            dgcDHCho.Rows.Clear();
-            foreach (var a in _hoaDonSerevice.GetAllHoaDonViews().Where(c => c.TrangThaiHD == 1))
-            {
-                dgcDHCho.Rows.Add(a.Id, a.TenKhachHang, a.SDT);
-            }
-        }
+        } 
+        #endregion
 
         private void LoadKhachHang()
         {
@@ -171,6 +248,20 @@ namespace _3_GUI_PresentationLayer.View
             cbbSdtKH.Items.Clear();
             lst.ForEach(c => cbbSdtKH.Items.Add(c.SoDienThoai));
             cbbSdtKH.DropDownStyle = ComboBoxStyle.DropDown;
+        }
+
+        private void LoadKhuyenMai(Guid? idKhuyenMai)
+        {
+            var khuyenMai = _khuyenMaiServices.GetAllKhuyenMai().Where(c => c.TrangThai == 0 && c.Id == idKhuyenMai);
+            cbbGiamGia.Text = "";
+            cbbGiamGia.Items.Clear();
+            if (khuyenMai.Any())
+            {
+                foreach (var a in khuyenMai)
+                {
+                    cbbGiamGia.Items.Add(a.Ten);
+                }
+            }
         }
         private void dgvSanPham_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
@@ -190,22 +281,21 @@ namespace _3_GUI_PresentationLayer.View
             {
                 return;
             }
-
         }
 
         private void dgvSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndex = e.RowIndex;
             _serialSelected = Convert.ToString(dgvSanPham.Rows[rowIndex].Cells[3].Value);
-            if (_serialSelected == "")
-            {
-                MessageBox.Show("Bạn chưa chọn serial cho sản phẩm");
-                return;
 
-            }
-
-            if (e.ColumnIndex == 4 && string.IsNullOrEmpty(dgvSanPham.Rows[rowIndex].Cells[3].Value.ToString()) == false)
+            if (e.ColumnIndex == 4)
             {
+                if (_serialSelected == "")
+                {
+                    MessageBox.Show("Bạn chưa chọn serial cho sản phẩm", "Thông báo");
+                    return;
+                }
+
                 AddGioHang(_serialSelected);
                 _serialLaptopService.UpdateStatusSerial(_serialSelected);
                 LoadSanPham();
@@ -213,61 +303,6 @@ namespace _3_GUI_PresentationLayer.View
                 TinhTien();
             }
 
-        }
-
-        //Cell click Don hang cho
-        private void dgcDHCho_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            btnThanhToan.Enabled = true;
-            int rowIndex = e.RowIndex;
-            if (rowIndex < 0)
-            {
-                return;
-            }
-
-            if (_lstCtHoaDonViews.Any(c => c.IdHoaDon == Guid.Empty))
-            {
-                MessageBox.Show("Bạn chưa lưu thay đổi đơn hàng");
-                return;
-            }
-
-            _idHoaDon = Guid.Parse(dgcDHCho.Rows[rowIndex].Cells[0].Value.ToString());
-            var hoaDonView = _hoaDonSerevice.GetAllHoaDonViews().Find(c => c.Id == _idHoaDon);
-            if (hoaDonView != null)
-            {
-                cbbSdtKH.Text = hoaDonView.SDT;
-                txtMaHD.Texts = hoaDonView.MaHd;
-                txtGhiChu.Texts = hoaDonView.GhiChu;
-                lblTongTien.Text = hoaDonView.TongTien.ToString();
-                if (hoaDonView.HTThanhToan == "Chuyển khoản")
-                {
-                    rbtnTransfer.Checked = true;
-                }
-                else
-                {
-                    rbtnCash.Checked = true;
-                }
-
-                if (hoaDonView.DcNhanHang == "Tại cửa hàng")
-                {
-                    rbtnTrucTiep.Checked = true;
-                }
-                else
-                {
-                    rbtnShip.Checked = true;
-                    txtDiaChi.Texts = hoaDonView.DcNhanHang;
-                }
-
-            }
-            _lstCtHoaDonViews.Clear();
-            foreach (var a in _chiTietHoaDonService.GetAllChiTietHoaDon())
-            {
-                if (a.IdHoaDon == _idHoaDon)
-                {
-                    _lstCtHoaDonViews.Add(a);
-                }
-            }
-            LoadGioHang();
         }
 
         private void AddGioHang(string serial)
@@ -317,17 +352,18 @@ namespace _3_GUI_PresentationLayer.View
             {
                 return;
             }
-            var idChiTietHD = Guid.Parse(dgvGioHang.Rows[rowIndex].Cells[0].Value.ToString());
-            _serialSelected = Convert.ToString(dgvGioHang.Rows[rowIndex].Cells[2].Value);
+            _idChiTietHD = Guid.Parse(dgvGioHang.Rows[rowIndex].Cells[0].Value.ToString());
+            _serialSelected = Convert.ToString(dgvGioHang.Rows[rowIndex].Cells[3].Value);
 
-            if (e.ColumnIndex == 6)
+
+            if (e.ColumnIndex == 8)
             {
                 if (_serialSelected == "")
                 {
                     MessageBox.Show("Khong co so serial");
                     return;
                 }
-                RemoveGioHang(idChiTietHD);
+                RemoveGioHang(_idChiTietHD);
                 LoadGioHang();
                 _serialLaptopService.UpdateStatusSerial(_serialSelected);
                 TinhTien();
@@ -335,9 +371,27 @@ namespace _3_GUI_PresentationLayer.View
             }
         }
 
-        private void RemoveGioHang(Guid id)
+        private void dgvGioHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var chiTietHD = _lstCtHoaDonViews.Find(x => x.Id == id);
+            int rowIndex = e.RowIndex;
+            if (rowIndex < 0)
+            {
+                return;
+            }
+            _idChiTietHD = Guid.Parse(dgvGioHang.Rows[rowIndex].Cells[0].Value.ToString());
+            var idLapttop = Guid.Parse(dgvGioHang.Rows[rowIndex].Cells[1].Value.ToString());
+            var laptop = _laptopService.GetLaptopFromDb().FirstOrDefault(x => x.Id == idLapttop);
+            if (laptop != null)
+            {
+                LoadKhuyenMai(laptop.IdKhuyenMai);
+
+            }
+
+        }
+
+        private void RemoveGioHang(Guid idCtHoaDon)
+        {
+            var chiTietHD = _lstCtHoaDonViews.Find(x => x.Id == idCtHoaDon);
             _lstCtHoaDonViews.Remove(chiTietHD);
 
             var serial = _serialLaptopService.GetSerialLaptopList().Find(c => c.Serial == _serialSelected);
@@ -366,7 +420,7 @@ namespace _3_GUI_PresentationLayer.View
                 {
                     tongTien += a.ThanhTien;
                 }
-                lblTongTien.Text = tongTien.ToString();
+                lblTongTien.Text = tongTien.ToString("N0");
                 return;
             }
 
@@ -400,12 +454,16 @@ namespace _3_GUI_PresentationLayer.View
                 return;
             }
 
+            var nhanien = _nhanVienService.GetAllNhanViens()
+                .Find(c => c.Email == Properties.Settings.Default._TKdaLogin);
+            if (nhanien == null) return;
+
             if (_idHoaDon == Guid.Empty)
             {
                 _hoaDon = new HoaDonView()
                 {
                     Id = Guid.NewGuid(),
-                    IdNhanVien = Guid.Parse("f20f9470-1da9-44a9-8ad0-8b5543d47dc1"),
+                    IdNhanVien = nhanien.Id,
                     IdKhachHang = khachHang.Id,
                     MaHd = txtMaHD.Texts,
                     NgayTao = DateTime.Now,
@@ -422,9 +480,18 @@ namespace _3_GUI_PresentationLayer.View
                     a.IdHoaDon = _hoaDon.Id;
                     _chiTietHoaDonService.AddChiTietHoaDon(a);
                 }
+                MessageBox.Show("Thanh toán thành công", "Thông báo");
+                if (MessageBox.Show("Bạn có muốn in hóa đơn này không?", "Hỏi", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    printPerviewHD.Document = printHD;
+                    printPerviewHD.PrintPreviewControl.Zoom = 1;
+                    if (printPerviewHD.ShowDialog() == DialogResult.OK)
+                    {
+                        printHD.Print();
+                    }
+                }
                 LoadData();
                 LoadGioHang();
-                MessageBox.Show("Thanh toán thành công", "Thông báo");
             }
             else
             {
@@ -440,82 +507,6 @@ namespace _3_GUI_PresentationLayer.View
 
         }
 
-        //Luu hoa don
-        private void btnLuuHD_Click(object sender, EventArgs e)
-        {
-            if (!_lstCtHoaDonViews.Any())
-            {
-                MessageBox.Show("Không có sản phẩm trong giỏ hàng");
-                return;
-            }
-
-            var khachHang = _khachHangService.GetAllKhachHangs().Find(c => c.SoDienThoai == cbbSdtKH.Text);
-            if (khachHang == null)
-            {
-                MessageBox.Show("Bạn chưa chọn thông tin khách mua hàng", "Thông báo");
-                return;
-            }
-
-            if (!rbtnTransfer.Checked && !rbtnCash.Checked)
-            {
-                MessageBox.Show("Bạn chưa chọn hình thức thanh toán");
-                return;
-            }
-
-            if (_idHoaDon != Guid.Empty)
-            {
-                var hoaDon = _hoaDonSerevice.GetAllHoaDonViews().Find(c => c.Id == _idHoaDon);
-                hoaDon.Id = _idHoaDon;
-                hoaDon.IdNhanVien = Guid.Parse("f20f9470-1da9-44a9-8ad0-8b5543d47dc1");
-                hoaDon.IdKhachHang = khachHang.Id;
-                hoaDon.MaHd = txtMaHD.Texts;
-                hoaDon.GhiChu = txtGhiChu.Texts;
-                hoaDon.DcNhanHang = txtDiaChi.Texts;
-                hoaDon.HTThanhToan = rbtnTransfer.Checked ? "Chuyển khoản" : "Tiền mặt";
-                hoaDon.TrangThaiHD = 1;
-                hoaDon.TongTien = decimal.Parse(lblTongTien.Text);
-                _hoaDonSerevice.UpdateHoaDon(hoaDon);
-
-                foreach (var a in _lstCtHoaDonViews.Where(c => c.IdHoaDon == Guid.Empty))
-                {
-                    a.IdHoaDon = _idHoaDon;
-                    _chiTietHoaDonService.AddChiTietHoaDon(a);
-                }
-                LoadDonHang();
-                _lstCtHoaDonViews.Clear();
-                LoadGioHang();
-                LoadData();
-            }
-            else
-            {
-                _hoaDon = new HoaDonView()
-                {
-                    Id = Guid.NewGuid(),
-                    IdNhanVien = Guid.Parse("f20f9470-1da9-44a9-8ad0-8b5543d47dc1"),
-                    IdKhachHang = khachHang.Id,
-                    MaHd = txtMaHD.Texts,
-                    NgayTao = DateTime.Now,
-                    GhiChu = txtGhiChu.Texts,
-                    DcNhanHang = txtDiaChi.Texts,
-                    HTThanhToan = rbtnTransfer.Checked ? "Chuyển khoản" : "Tiền mặt",
-                    TrangThaiHD = 1,
-                    TongTien = decimal.Parse(lblTongTien.Text),
-                };
-                _hoaDonSerevice.AddHoaDon(_hoaDon);
-                foreach (var a in _lstCtHoaDonViews)
-                {
-                    a.IdHoaDon = _hoaDon.Id;
-                    _chiTietHoaDonService.AddChiTietHoaDon(a);
-                }
-
-                MessageBox.Show("Tạo đơn hàng thành công", "Thông báo");
-                LoadDonHang();
-                _lstCtHoaDonViews.Clear();
-                LoadGioHang();
-                LoadData();
-            }
-
-        }
 
         private void btnSuaHD_Click(object sender, EventArgs e)
         {
@@ -529,6 +520,13 @@ namespace _3_GUI_PresentationLayer.View
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            if (_lstCtHoaDonViews.Any())
+            {
+                foreach (var a in _lstCtHoaDonViews)
+                {
+                    _serialLaptopService.UpdateStatusSerial(a.SerialSanPham);
+                }
+            }
             LoadData();
         }
 
@@ -629,9 +627,6 @@ namespace _3_GUI_PresentationLayer.View
             lblTongTien.Text = "";
             rbtnTransfer.Checked = false;
             rbtnCash.Checked = false;
-            rbtnTrucTiep.Checked = true;
-            txtDiaChi.Enabled = false;
-            txtDiaChi.Texts = "Tại cửa hàng";
             btnThanhToan.Enabled = false;
 
             cbbSdtKH.Text = "Chọn số điện thoại";
@@ -640,22 +635,6 @@ namespace _3_GUI_PresentationLayer.View
             //var seriaWhenClick = dgvSanPham.Rows[e.RowIndex].Cells[2].ToString();
             //var serial = _serialLaptopService.GetSerialLaptopList().FirstOrDefault(c => c.Serial == seriaWhenClick);
         }
-
-        private void rbtnShip_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbtnShip.Checked)
-            {
-                txtDiaChi.Enabled = true;
-                txtDiaChi.Texts = "";
-            }
-            else
-            {
-                txtDiaChi.Enabled = false;
-                txtDiaChi.Texts = "Tại cửa hàng";
-            }
-        }
-
-
 
         private void dgvGioHang_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -666,15 +645,127 @@ namespace _3_GUI_PresentationLayer.View
                 menuStrip.Show(Cursor.Position);
             }
 
-            ChiTietHoaDonView ctHoaDon = new ChiTietHoaDonView()
+        }
+
+        private void FrmBanHang_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (_lstCtHoaDonViews.Any())
             {
-                Id = Guid.NewGuid(),
-                IdSanPham = _laptop.Id,
-                SoLuong = 1,
-                DonGia = _laptop.GiaBan,
-                TenSanPham = $"{_laptop.Ten}",
-            };
-            _lstCtHoaDonViews.Add(ctHoaDon);
+                foreach (var a in _lstCtHoaDonViews)
+                {
+                    _serialLaptopService.UpdateStatusSerial(a.SerialSanPham);
+                }
+            }
+        }
+
+        private void strKhuyenMai_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bạn vừa click");
+        }
+
+        private void cbbGiamGia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void cbbGiamGia_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string result = cbbGiamGia.Text;
+            if (result == "") return;
+
+            var khuyenMai = _khuyenMaiServices.GetAllKhuyenMai().Find(c => c.Ten == result);
+            var index = _lstCtHoaDonViews.FindIndex(c => c.Id == _idChiTietHD);
+            var chiTietHD = _lstCtHoaDonViews.ElementAt(index);
+            if (khuyenMai.LoaiKhuyenMai == "Giảm %")
+            {
+                chiTietHD.GiamGia = chiTietHD.DonGia * (khuyenMai.GiaTri / 100);
+            }
+            else
+            {
+                chiTietHD.GiamGia = khuyenMai.GiaTri;
+            }
+            LoadGioHang();
+            TinhTien();
+        }
+
+        private void printHD_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            var nhanVien = _nhanVienService.GetAllNhanViens()
+                .Find(c => c.Email == Properties.Settings.Default._TKdaLogin);
+            if (nhanVien == null) return;
+
+            var khachHang = _khachHangService.GetAllKhachHangs().Find(c => c.SoDienThoai == cbbSdtKH.Text);
+
+            e.Graphics.DrawString("CỬA HÀNG LAPTOP ĐỂ BÀN", new Font("Arial", 18, FontStyle.Bold), Brushes.Black, new Point(250, 100));
+            e.Graphics.DrawString("HÓA ĐƠN THANH TOÁN", new Font("Arial", 15, FontStyle.Bold), Brushes.Black, new Point(300, 150));
+            e.Graphics.DrawString("==========================================================================================", new Font("Arial", 10), Brushes.Black, new Point(50, 190));
+            e.Graphics.DrawString("Ngày tạo:", new Font("Arial", 10), Brushes.Black, new Point(530, 230));
+            e.Graphics.DrawString(_hoaDon.NgayTao.ToString("g"), new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(600, 230));
+            e.Graphics.DrawString("NV bán hàng: ", new Font("Arial", 10), Brushes.Black, new Point(530, 260));
+            e.Graphics.DrawString(nhanVien.Hoten, new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(620, 260));
+            e.Graphics.DrawString("Mã hóa đơn:", new Font("Arial", 10), Brushes.Black, new Point(180, 230));
+            e.Graphics.DrawString(_hoaDon.MaHd, new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(280, 230));
+            e.Graphics.DrawString("Khách hàng:", new Font("Arial", 10), Brushes.Black, new Point(180, 260));
+            e.Graphics.DrawString(khachHang.Hoten, new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(280, 260));
+            e.Graphics.DrawString("Số điện thoại:", new Font("Arial", 10), Brushes.Black, new Point(180, 290));
+            e.Graphics.DrawString(khachHang.SoDienThoai, new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(280, 290));
+
+            e.Graphics.DrawString("STT", new Font("Arial", 10), Brushes.Black, new Point(70, 350));
+            e.Graphics.DrawString("Sản phẩm", new Font("Arial", 10), Brushes.Black, new Point(110, 350));
+            e.Graphics.DrawString("Serial", new Font("Arial", 10), Brushes.Black, new Point(300, 350));
+            e.Graphics.DrawString("Số lượng", new Font("Arial", 10), Brushes.Black, new Point(440, 350));
+            e.Graphics.DrawString("Đơn giá", new Font("Arial", 10), Brushes.Black, new Point(530, 350));
+            e.Graphics.DrawString("Giảm giá", new Font("Arial", 10), Brushes.Black, new Point(630, 350));
+            e.Graphics.DrawString("Thành tiền", new Font("Arial", 10), Brushes.Black, new Point(730, 350));
+            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------------------------------------------------------------", new Font("Arial", 10), Brushes.Black, new Point(70, 360));
+            int a = 0;
+
+            foreach (var item in _lstCtHoaDonViews)
+            {
+                int x = 385;
+                int y = 386;
+                int y1 = 396;
+                e.Graphics.DrawString(a + 1.ToString(), new Font("Arial", 10), Brushes.Black, new Point(70, x + (a * 40)));
+                e.Graphics.DrawString($"{item.Hang} {item.Dong} {item.TenSanPham}", new Font("Arial", 10), Brushes.Black, new Point(110, y + (a * 40)));
+                e.Graphics.DrawString(item.SerialSanPham, new Font("Arial", 10), Brushes.Black, new Point(300, y + (a * 40)));
+                e.Graphics.DrawString(item.SoLuong.ToString(), new Font("Arial", 10), Brushes.Black, new Point(440, y + (a * 40)));
+                e.Graphics.DrawString(item.DonGia.ToString("N0"), new Font("Arial", 10), Brushes.Black, new Point(530, y + (a * 40)));
+                e.Graphics.DrawString(item.GiamGia.ToString("N0"), new Font("Arial", 10), Brushes.Black, new Point(630, y + (a * 40)));
+                e.Graphics.DrawString(item.ThanhTien.ToString("N0"), new Font("Arial", 10), Brushes.Black, new Point(730, y + (a * 40)));
+                e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------------------------------------------------------------", new Font("Arial", 10), Brushes.Black, new Point(70, y1 + (a * 40)));
+                a++;
+            }
+
+            int sl = _lstCtHoaDonViews.Count;
+            e.Graphics.DrawString("Tổng cộng", new Font("Arial", 15), Brushes.Black, new Point(70, 370 + ((sl + 1) * 45)));
+            e.Graphics.DrawString(_hoaDon.TongTien.ToString("N0") + " VND", new Font("Arial", 15, FontStyle.Bold), Brushes.Black, new Point(580, 370 + ((sl + 1) * 45)));
+            e.Graphics.DrawString("==========================================================================================", new Font("Arial", 10), Brushes.Black, new Point(50, 420 + ((sl + 1) * 45)));
+            e.Graphics.DrawString("XIN CẢM ƠN QUÝ KHÁCH", new Font("Arial", 15, FontStyle.Bold), Brushes.Black, new Point(300, 500 + ((sl + 1) * 45)));
+            e.Graphics.DrawString("HẸN GẶP LẠI!", new Font("Arial", 15, FontStyle.Bold), Brushes.Black, new Point(360, 540 + ((sl + 1) * 45)));
+        }
+
+        private void txtTimKiem__TextChanged(object sender, EventArgs e)
+        {
+            LoadSanPham(txtTimKiem.Texts);
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            if (decimal.Parse(txtGiaDau.Texts) > decimal.Parse(txtGiaCuoi.Texts))
+            {
+                MessageBox.Show("Khoảng giá bắt đầu phải lớn hơn cuối", "Thông báo");
+                return;
+            }
+            LoadSanPham(txtGiaDau.Texts,txtGiaCuoi.Texts);
+        }
+
+        private void txtGiaDau_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar!= '.')
+            {
+                e.Handled = true;
+            }
         }
     }
 }

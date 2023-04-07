@@ -51,6 +51,7 @@ namespace _3_GUI_PresentationLayer.View
                         if (x.MatKhau == txtMatKhau.Texts)
                         {
                             MessageBox.Show("Đăng nhập thành công");
+                            SaveInfor();
                             Form home = new FrmMain();
                             this.Hide();
                             home.ShowDialog();
@@ -102,10 +103,10 @@ namespace _3_GUI_PresentationLayer.View
         {
             if (cb_nhoMatKhau.Checked == true)
             {
-                Properties.Settings.Default._user = txtEmail.Text;
-                Properties.Settings.Default._pass = txtMatKhau.Text;
-                Properties.Settings.Default._TKdaLogin = txtEmail.Text;
-                Properties.Settings.Default._MKdaLogin = txtMatKhau.Text;
+                Properties.Settings.Default._user = txtEmail.Texts;
+                Properties.Settings.Default._pass = txtMatKhau.Texts;
+                Properties.Settings.Default._TKdaLogin = txtEmail.Texts;
+                Properties.Settings.Default._MKdaLogin = txtMatKhau.Texts;
                 Properties.Settings.Default.Save();
 
             }
@@ -113,16 +114,16 @@ namespace _3_GUI_PresentationLayer.View
             {
                 Properties.Settings.Default._user = "";
                 Properties.Settings.Default._pass = "";
-                Properties.Settings.Default._TKdaLogin = txtEmail.Text;
-                Properties.Settings.Default._MKdaLogin = txtMatKhau.Text;
+                Properties.Settings.Default._TKdaLogin = txtEmail.Texts;
+                Properties.Settings.Default._MKdaLogin = txtMatKhau.Texts;
                 Properties.Settings.Default.Save();
             }
         }
 
         private void FrmDangNhap_Load(object sender, EventArgs e)
         {
-            txtEmail.Text = Properties.Settings.Default._user;
-            txtMatKhau.Text = Properties.Settings.Default._pass;
+            txtEmail.Texts = Properties.Settings.Default._user;
+            txtMatKhau.Texts = Properties.Settings.Default._pass;
             if (Properties.Settings.Default._user != "")
             {
                 cb_nhoMatKhau.Checked = true;
@@ -135,6 +136,6 @@ namespace _3_GUI_PresentationLayer.View
         }
     }
 
-    
+
 }
 

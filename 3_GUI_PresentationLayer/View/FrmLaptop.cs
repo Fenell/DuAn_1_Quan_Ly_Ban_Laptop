@@ -286,7 +286,7 @@ namespace _3_GUI_PresentationLayer.View
                 IdCpu = Guid.Parse(cbbCpu.SelectedValue.ToString()),
                 IdVga = Guid.Parse(cbbVga.SelectedValue.ToString()),
                 IdMauSac = Guid.Parse(cbbMauSac.SelectedValue.ToString()),
-                IdOCung = Guid.Parse(cbbOCung.SelectedValue.ToString()),
+                IdOCung = _oCungServices.GetAllOCungs()[cbbOCung.SelectedIndex].Id,
                 IdRam = Guid.Parse(cbbRam.SelectedValue.ToString()),
                 IdManHinh = Guid.Parse(cbbManHinh.SelectedValue.ToString()),
                 IdNhaCungCap = Guid.Parse(cbbNhaCungCap.SelectedValue.ToString()),
