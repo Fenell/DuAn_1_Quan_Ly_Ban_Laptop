@@ -1,6 +1,8 @@
 ﻿using _1_DAL_DataAccessLayer.Models;
+using _2_BUS_BusinessLayer.IServices;
 using _2_BUS_BusinessLayer.Services;
 using _3_GUI_PresentationLayer.Utilities;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,8 +25,8 @@ namespace _3_GUI_PresentationLayer.View
         public FrmNhanVien()
         {
             InitializeComponent();
-            _nhanvienService= new NhanvienService();
-            
+            _nhanvienService = new NhanvienService();
+
             loaddata();
         }
 
@@ -48,8 +50,9 @@ namespace _3_GUI_PresentationLayer.View
                     dgv.Rows.Add(item.Ma, item.Hoten, item.SoDienThoai, item.Email, item.CCCD, item.GioiTinh == false ? "Nam" : "Nữ", item.ChucVu, item.DiaChi, item.MatKhau, item.Id);
                 }
             }
-            rbtDangLam.Checked= true;
+            rbtDangLam.Checked = true;
             txtMaNhanVien.Enabled = false;
+            
         }
 
 
@@ -94,10 +97,10 @@ namespace _3_GUI_PresentationLayer.View
         }
         private void iconButtonThem_Click(object sender, EventArgs e)
         {
-            
+
             _nhanVien = new NhanVien();
-            txtMaNhanVien.Enabled= false;
-            if ( txtHoTen.Texts == null || txtSoDienThoai.Texts == null || txtEmail.Texts == null || txtSoCanCuoc.Texts == null 
+            txtMaNhanVien.Enabled = false;
+            if (txtHoTen.Texts == null || txtSoDienThoai.Texts == null || txtEmail.Texts == null || txtSoCanCuoc.Texts == null
                 || txtMatKhau.Texts == null || rbtNam.Checked == false && rbtNu.Checked == false || rbtNhanVien.Checked == false && rbtQuanLy.Checked == false || txtDiaChi.Texts == null)
             {
                 MessageBox.Show("Xin vui lòng nhập đầy đủ các trường dữ liệu!");
@@ -133,7 +136,7 @@ namespace _3_GUI_PresentationLayer.View
             {
                 _nhanVien.GioiTinh = false;
             }
-            else if(rbtNu.Checked == true)
+            else if (rbtNu.Checked == true)
             {
                 _nhanVien.GioiTinh = true;
             }
@@ -142,7 +145,7 @@ namespace _3_GUI_PresentationLayer.View
             {
                 _nhanVien.ChucVu = "Nhân viên";
             }
-            else if(rbtQuanLy.Checked == true)
+            else if (rbtQuanLy.Checked == true)
             {
                 _nhanVien.ChucVu = "Quản lý";
             }
@@ -150,7 +153,9 @@ namespace _3_GUI_PresentationLayer.View
             if (MessageBox.Show("Có muốn thêm hay ko ?", "Hỏi", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 _nhanvienService.AddNhanVien(_nhanVien);
+                MessageBox.Show("Thêm thành công");
                 loaddata();
+                iconButtonThem.Enabled= false;
             }
         }
 
@@ -158,7 +163,7 @@ namespace _3_GUI_PresentationLayer.View
         {
             var nv = _nhanvienService.GetAllNhanViens().FirstOrDefault(c => c.Id == _idNhanvien);
             txtMaNhanVien.Enabled = false;
-            if ( txtHoTen.Texts == null || txtSoDienThoai.Texts == null || txtEmail.Texts == null || txtSoCanCuoc.Texts == null
+            if (txtHoTen.Texts == null || txtSoDienThoai.Texts == null || txtEmail.Texts == null || txtSoCanCuoc.Texts == null
                 || txtMatKhau.Texts == null || rbtNam.Checked == false && rbtNu.Checked == false || rbtNhanVien.Checked == false && rbtQuanLy.Checked == false || txtDiaChi.Texts == null)
             {
                 MessageBox.Show("Xin vui lòng nhập đầy đủ các trường dữ liệu!");
@@ -172,7 +177,7 @@ namespace _3_GUI_PresentationLayer.View
             }
             if (!Validation.checkEmail(txtEmail.Texts))
             {
-                MessageBox.Show("Eamil phải theo đúng định dang! VD: long@gmail.com ", "Thông báo");
+                MessageBox.Show("Email phải theo đúng định dạng! VD: long@gmail.com ", "Thông báo");
                 return;
             }
             if (!Validation.checkCCCD(txtSoCanCuoc.Texts))
@@ -197,20 +202,20 @@ namespace _3_GUI_PresentationLayer.View
                 nv.GioiTinh = true;
             }
 
-            if (rbtNhanVien.Checked == true )
+            if (rbtNhanVien.Checked == true)
             {
                 nv.ChucVu = "Nhân viên";
             }
-            else if(rbtQuanLy.Checked == true)
+            else if (rbtQuanLy.Checked == true)
             {
                 nv.ChucVu = "Quản lý";
             }
 
-            
+
 
             if (MessageBox.Show("Có muốn sửa hay ko ?", "Hỏi", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                _nhanvienService.UpdateNhanVien(_idNhanvien,nv);
+                _nhanvienService.UpdateNhanVien(_idNhanvien, nv);
                 MessageBox.Show("Sửa thành công");
                 loaddata();
             }
@@ -218,16 +223,16 @@ namespace _3_GUI_PresentationLayer.View
 
         private void iconButtonXoa_Click(object sender, EventArgs e)
         {
-            var nv = _nhanvienService.GetAllNhanViens().FirstOrDefault(c=>c.Id == _idNhanvien);
-            if (MessageBox.Show("Có xóa hay ko", "hỏi", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            var nv = _nhanvienService.GetAllNhanViens().Where(c => c.Id == _idNhanvien).ToList();
+            if (MessageBox.Show("Có muốn xóa hay ko ?", "Hỏi", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                nv.TrangThai = false;
-                rbtDangLam.Checked = false;
-                rbtDaNghiViec.Checked = true;
-                MessageBox.Show("Xóa thành công");
+                MessageBox.Show(_nhanvienService.DoiTrangThai(nv));
                 loaddata();
             }
+            
+
         }
+
 
         private void iconButtonLoad_Click(object sender, EventArgs e)
         {
@@ -237,20 +242,22 @@ namespace _3_GUI_PresentationLayer.View
             txtDiaChi.Texts = "";
             txtSoCanCuoc.Texts = "";
             txtSoDienThoai.Texts = "";
+            txtMatKhau.Texts = "";
             rbtDaNghiViec.Checked = false;
-            rbtDangLam.Checked=false;
+            rbtDangLam.Checked = false;
             rbtNam.Checked = false;
             rbtNu.Checked = false;
             rbtNhanVien.Checked = false;
             rbtQuanLy.Checked = false;
             txtMaNhanVien.Enabled = false;
             loaddata();
+            iconButtonThem.Enabled = true;
         }
 
         private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i;
-            i = dgv.CurrentRow.Index;
+            i = e.RowIndex;
             txtMaNhanVien.Texts = dgv.Rows[i].Cells[0].Value.ToString();
             txtHoTen.Texts = dgv.Rows[i].Cells[1].Value.ToString();
             txtSoDienThoai.Texts = dgv.Rows[i].Cells[2].Value.ToString();
@@ -259,7 +266,7 @@ namespace _3_GUI_PresentationLayer.View
 
             if (dgv.Rows[i].Cells[5].Value.ToString() == "Nam")
             {
-                rbtNam.Checked= true;
+                rbtNam.Checked = true;
                 rbtNu.Checked = false;
             }
             else if (dgv.Rows[i].Cells[5].Value.ToString() == "Nữ")
@@ -277,12 +284,12 @@ namespace _3_GUI_PresentationLayer.View
             {
                 rbtNhanVien.Checked = false;
                 rbtQuanLy.Checked = true;
-                
+
             }
             txtDiaChi.Texts = dgv.Rows[i].Cells[7].Value.ToString();
             txtMatKhau.Texts = dgv.Rows[i].Cells[8].Value.ToString();
             _idNhanvien = Guid.Parse(dgv.Rows[i].Cells[9].Value.ToString());
-            var la = _nhanvienService.GetAllNhanViens().FirstOrDefault(c=>c.Id == _idNhanvien);
+            var la = _nhanvienService.GetAllNhanViens().FirstOrDefault(c => c.Id == _idNhanvien);
             var img = Extension.ArrBytesToImage(la.HinhAnh);
             if (img != null)
             {
@@ -292,6 +299,7 @@ namespace _3_GUI_PresentationLayer.View
             {
                 ptbAnh.Image = null;
             }
+            iconButtonThem.Enabled = false;
         }
 
         private void ptbAnh_Click(object sender, EventArgs e)
@@ -331,5 +339,7 @@ namespace _3_GUI_PresentationLayer.View
                 }
             }
         }
+
+        
     }
 }

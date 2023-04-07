@@ -81,6 +81,7 @@ namespace _3_GUI_PresentationLayer.View
             {
                 _khachhangService.AddKhachHang(_khachHang);
                 MessageBox.Show("Thêm thành công");
+                iconButtonThem.Enabled = false;
                 loadata();
             }
         }
@@ -136,6 +137,7 @@ namespace _3_GUI_PresentationLayer.View
             rbtNu.Checked = false;
             txtMa.Enabled = false;
             txtMa.Enabled = false;
+            iconButtonThem.Enabled = true;
         }
 
         private void FrmKhachHang_Load(object sender, EventArgs e)
@@ -147,7 +149,6 @@ namespace _3_GUI_PresentationLayer.View
         {
             int i;
             i = dgvKhachHang.CurrentRow.Index;
-            if (i == -1 || i == _khachhangService.GetAllKhachHangs().Count) return;
             txtMa.Texts = dgvKhachHang.Rows[i].Cells[0].Value.ToString();
             txtHoTen.Texts = dgvKhachHang.Rows[i].Cells[1].Value.ToString();
             txtSoDienThoai.Texts = dgvKhachHang.Rows[i].Cells[2].Value.ToString();
@@ -165,6 +166,7 @@ namespace _3_GUI_PresentationLayer.View
 
             txtDiaChi.Texts = dgvKhachHang.Rows[i].Cells[4].Value.ToString();
             _idKhachHang = Guid.Parse(dgvKhachHang.Rows[i].Cells[5].Value.ToString());
+            iconButtonThem.Enabled = false;
         }
 
         private void txtTimKiem__TextChanged(object sender, EventArgs e)

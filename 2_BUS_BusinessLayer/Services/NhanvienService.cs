@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace _2_BUS_BusinessLayer.Services
 {
-    public class NhanvienService: INhanVienService
+    public class NhanvienService : INhanVienService
     {
         private NhanVienRepository _nhanVienRepository;
 
         public NhanvienService()
         {
-            _nhanVienRepository= new NhanVienRepository();
+            _nhanVienRepository = new NhanVienRepository();
 
         }
 
@@ -28,9 +28,9 @@ namespace _2_BUS_BusinessLayer.Services
             return "Thêm thất bại";
         }
 
-        public string UpdateNhanVien(Guid idNhanVien,NhanVien nhanVien)
+        public string UpdateNhanVien(Guid idNhanVien, NhanVien nhanVien)
         {
-            if (_nhanVienRepository.UpdateNhanVien(idNhanVien,nhanVien))
+            if (_nhanVienRepository.UpdateNhanVien(idNhanVien, nhanVien))
             {
                 return "Sửa thành công";
             }
@@ -69,6 +69,16 @@ namespace _2_BUS_BusinessLayer.Services
                 a.CCCD = nhanVien.CCCD;
             _nhanVienRepository.UpdateNV(a);
             return true;
+        }
+
+        public string DoiTrangThai(List<NhanVien> lstNhanVien)
+        {
+            if (_nhanVienRepository.DoiTrangThai(lstNhanVien))
+            {
+                return "Thành công";
+            }
+
+            return "Không thành công";
         }
     }
 }
