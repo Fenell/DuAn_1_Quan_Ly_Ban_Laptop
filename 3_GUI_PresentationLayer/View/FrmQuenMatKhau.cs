@@ -45,12 +45,13 @@ namespace _3_GUI_PresentationLayer.View
                 smtp.Host = "smtp.gmail.com";
                 NetworkCredential nc = new NetworkCredential();
                 nc.UserName = "maituandat087804@gmail.com";
-                nc.Password = "ulvvprzhesofpbgy";
+                nc.Password = "dyeeqsadlarqjync";
                 smtp.Credentials = nc;
                 smtp.EnableSsl = true;
                 smtp.Port = 587;
                 smtp.Send(mail);
                 MessageBox.Show("Gui thanh cong");
+                txt_Email.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -65,6 +66,7 @@ namespace _3_GUI_PresentationLayer.View
             {
                 txt_MK_New.Visible = true;
                 txt_XacNhan_MK.Visible = true;
+                
                 MessageBox.Show("Ma chinh xac");
                 return;
             }
@@ -83,13 +85,22 @@ namespace _3_GUI_PresentationLayer.View
         {
             if (txt_MK_New.Texts == txt_XacNhan_MK.Texts)
             {
-                var employee = _BUS_NhanViens.GetAll().Where(nv => nv.Email == txt_Email.Texts).FirstOrDefault();
-                employee.MatKhau = txt_MK_New.Texts;
-                _BUS_NhanViens.Sua(employee);
+                var a = _BUS_NhanViens.GetAll().FirstOrDefault(c => c.Email == txt_Email.Text).Id;
+                var d = _BUS_NhanViens.GetAll().FirstOrDefault(p => p.Id == a);
+                d.MatKhau = txt_XacNhan_MK.Text;
+                _BUS_NhanViens.Sua(d);
                 MessageBox.Show("Thay doi mat khau thanh cong, Ban se duoc dua tro lai trang dang nhap");
                 this.Hide();
                 FrmDangNhap frmdn = new FrmDangNhap();
                 frmdn.ShowDialog();
+
+                //var employee = _BUS_NhanViens.GetAll().Where(nv => nv.Email == txt_Email.Texts).FirstOrDefault();
+                //employee.MatKhau = txt_MK_New.Texts;
+                //_BUS_NhanViens.Sua(employee);
+                //MessageBox.Show("Thay doi mat khau thanh cong, Ban se duoc dua tro lai trang dang nhap");
+                //this.Hide();
+                //FrmDangNhap frmdn = new FrmDangNhap();
+                //frmdn.ShowDialog();
             }
             else
             {
@@ -104,20 +115,9 @@ namespace _3_GUI_PresentationLayer.View
 
         private void FrmQuenMatKhau_FormClosing(object sender, FormClosingEventArgs e)
         {
-           if( MessageBox.Show("Bạn đã nhớ ra mật khẩu chưa? Xác nhận để quay lại Đăng Nhập", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
-           {
                 this.Hide();
                 FrmDangNhap frmdn = new FrmDangNhap();
                 frmdn.ShowDialog();
-           }
-            else if( MessageBox.Show("Bạn đã nhớ ra mật khẩu chưa? Xác nhận để quay lại Đăng Nhập", "Warning", MessageBoxButtons.YesNo) == DialogResult.No)
-           {
-
-                this.Close();
-               
-           }
-           
-           
         }
     }
 }

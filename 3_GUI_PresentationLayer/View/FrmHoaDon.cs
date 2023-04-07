@@ -1,4 +1,6 @@
-﻿using _1_DAL_DataAccessLayer.Models;
+﻿using _1_DAL_DataAccessLayer.IRepositories;
+using _1_DAL_DataAccessLayer.Models;
+using _1_DAL_DataAccessLayer.Repositories;
 using _2_BUS_BusinessLayer.IServices;
 using _2_BUS_BusinessLayer.Services;
 using _2_BUS_BusinessLayer.ViewModel;
@@ -16,21 +18,34 @@ namespace _3_GUI_PresentationLayer.View
 {
     public partial class FrmHoaDon : Form
     {
+        //IHangLapTopRepositories _Bus_hangLapTop;
+        ILaptopService _Bus_LapTop;
         IHoaDonSerevice _Bus_hoaDon;
         List<HoaDonView> _lst_hoaDon;
         IChiTietHoaDonService _bus_chiTietHoaDon;
         List<ChiTietHoaDon> _lst_CTHD;
+        private Guid _ID;
         public FrmHoaDon()
         {
+            
+            _Bus_LapTop = new LaptopService();
             _bus_chiTietHoaDon = new ChiTietHoaDonService ();
             _lst_CTHD = new List<ChiTietHoaDon>();
             _Bus_hoaDon = new HoaDonService();
             _lst_hoaDon = new List<HoaDonView>();
             InitializeComponent();
             ShowHĐ();
-            ShowCTHĐ();
+           
         }
-
+        public void loadHDCT(Guid id)
+        {
+            _ID = id;
+            dgv_CTHD.Rows.Clear();
+            foreach (var item in _bus_chiTietHoaDon.GetAllChiTietHoaDon(id))
+            {
+                dgv_CTHD.Rows.Add( item.TenSanPham, item.SoLuong, item.DonGia,item.ThanhTien);
+            }
+        }
         public void ShowHĐ()
         {
 
@@ -50,25 +65,7 @@ namespace _3_GUI_PresentationLayer.View
                dgv_hoaDon.Rows.Add(item.Id, item.TenNhanVien, item.TenKhachHang, item.MaHd, item.HTThanhToan, item.NgayTao, item.NgayThanhToan, item.GhiChu, item.TongTien);
             }
         }
-        public void ShowCTHĐ()
-        {
-
-
-            dgv_CTHD.ColumnCount = 7;
-            dgv_CTHD.Columns[0].Name = " ID";
-            dgv_CTHD.Columns[1].Name = " IdLaptop";
-           
-            dgv_CTHD.Columns[2].Name = " IdHoaDon";
-            dgv_CTHD.Columns[3].Name = " SoLuong";
-            dgv_CTHD.Columns[4].Name = " DonGia";
-            dgv_CTHD.Columns[5].Name = " ThanhTien";
-
-            dgv_hoaDon.Rows.Clear();
-            foreach (var item in _bus_chiTietHoaDon.GetAllChiTietHoaDon())
-            {
-                dgv_CTHD.Rows.Add(item.Id, item.TenSanPham,item.IdHoaDon, item.SoLuong, item.DonGia, item.ThanhTien);
-            }
-        }
+       
 
         private void dateTimePickerCustom2_ValueChanged(object sender, EventArgs e)
         {
@@ -126,6 +123,26 @@ namespace _3_GUI_PresentationLayer.View
             else
             {
                 MessageBox.Show("Không có hóa đơn nào có Mã hóa đơn tương ứng");
+            }
+        }
+        private void comboLoaiSanPham()
+        {
+            var load = (from x in _Bus_LapTop.GetAllLaptop() select x.HangLaptop);
+             
+        }
+
+        private void comboBoxCustom1_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedCategory = cbb_loaiSanPham.SelectedItem.ToString();
+
+        }
+
+        private void dgv_hoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+               _ID  = Guid.Parse(dgv_hoaDon.Rows[e.RowIndex].Cells[0].Value.ToString());
+                loadHDCT(_ID);
             }
         }
     }

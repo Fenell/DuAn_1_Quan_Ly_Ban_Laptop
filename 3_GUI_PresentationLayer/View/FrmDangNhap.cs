@@ -20,6 +20,7 @@ namespace _3_GUI_PresentationLayer.View
             _nhanVienServices = new NhanVienServies();
             InitializeComponent();
             txtEmail.Select();
+            txtMatKhau.PasswordChar = true;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -73,7 +74,21 @@ namespace _3_GUI_PresentationLayer.View
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (txtEmail.Texts != "" && txtMatKhau.Texts != "")
+            {
+                if (cb_nhoMatKhau.Checked == true)
+                {
+                    string use = txtEmail.Texts;
+                    string pass = txtMatKhau.Text;
+                    Properties.Settings.Default._user = use;
+                    Properties.Settings.Default._pass = pass;
+                    Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    Properties.Settings.Default.Reset();
+                }
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -85,7 +100,7 @@ namespace _3_GUI_PresentationLayer.View
         }
         public void SaveInfor()
         {
-            if (nhoMatKhau.Checked == true)
+            if (cb_nhoMatKhau.Checked == true)
             {
                 Properties.Settings.Default._user = txtEmail.Text;
                 Properties.Settings.Default._pass = txtMatKhau.Text;
@@ -110,7 +125,7 @@ namespace _3_GUI_PresentationLayer.View
             txtMatKhau.Text = Properties.Settings.Default._pass;
             if (Properties.Settings.Default._user != "")
             {
-                nhoMatKhau.Checked = true;
+                cb_nhoMatKhau.Checked = true;
             }
         }
 

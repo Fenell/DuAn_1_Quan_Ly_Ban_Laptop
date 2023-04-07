@@ -16,9 +16,11 @@ namespace _2_BUS_BusinessLayer.Services
         private IKhachHangRepository _khachHangRepository;
         private INhanVienRepository _nhanVienRepository;
         private IHoaDonRepository _hoaDonRepository;
+        private ILapTopRepository _lapTopRepo;
 
         public HoaDonService()
         {
+            _lapTopRepo = new LapTopRepository();
             _khachHangRepository = new KhachHangRepository();
             _nhanVienRepository = new NhanVienRepository();
             _hoaDonRepository = new HoaDonRepository();
