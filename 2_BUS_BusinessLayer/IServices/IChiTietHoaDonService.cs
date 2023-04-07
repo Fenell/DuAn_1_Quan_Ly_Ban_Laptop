@@ -13,7 +13,8 @@ namespace _2_BUS_BusinessLayer.IServices
         public string RemoveChiTietHoaDon(Guid id);
         public string UpdateChiTietHoaDon(ChiTietHoaDonView obj);
         public string UpdateStatusChiTietHoaDon(Guid id);
-        public List<ChiTietHoaDonView> GetAllChiTietHoaDon(Guid id);
+        public List<ChiTietHoaDonView> GetAllChiTietHoaDon();
+        public List<ChiTietHoaDonView> GetAllCTHĐ(Guid id);
 
     }
 }
