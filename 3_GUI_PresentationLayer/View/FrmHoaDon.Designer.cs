@@ -148,6 +148,7 @@
             this.dgv_hoaDon.RowTemplate.Height = 25;
             this.dgv_hoaDon.Size = new System.Drawing.Size(1466, 272);
             this.dgv_hoaDon.TabIndex = 0;
+            this.dgv_hoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_hoaDon_CellClick);
             // 
             // groupBox2
             // 

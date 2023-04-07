@@ -45,12 +45,13 @@ namespace _3_GUI_PresentationLayer.View
                 smtp.Host = "smtp.gmail.com";
                 NetworkCredential nc = new NetworkCredential();
                 nc.UserName = "maituandat087804@gmail.com";
-                nc.Password = "ulvvprzhesofpbgy";
+                nc.Password = "dyeeqsadlarqjync";
                 smtp.Credentials = nc;
                 smtp.EnableSsl = true;
                 smtp.Port = 587;
                 smtp.Send(mail);
                 MessageBox.Show("Gui thanh cong");
+                txt_Email.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -65,7 +66,7 @@ namespace _3_GUI_PresentationLayer.View
             {
                 txt_MK_New.Visible = true;
                 txt_XacNhan_MK.Visible = true;
-                txt_Email.Enabled = false;
+                
                 MessageBox.Show("Ma chinh xac");
                 return;
             }

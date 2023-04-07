@@ -20,6 +20,7 @@ namespace _3_GUI_PresentationLayer.View
             _nhanVienServices = new NhanVienServies();
             InitializeComponent();
             txtEmail.Select();
+            txtMatKhau.PasswordChar = true;
         }
 
         private void btnExit_Click(object sender, EventArgs e)

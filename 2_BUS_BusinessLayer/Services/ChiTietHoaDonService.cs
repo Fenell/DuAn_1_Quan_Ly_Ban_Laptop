@@ -85,7 +85,31 @@ namespace _2_BUS_BusinessLayer.Services
             throw new NotImplementedException();
         }
 
-        public List<ChiTietHoaDonView> GetAllChiTietHoaDon()
+        public List<ChiTietHoaDonView> GetAllChiTietHoaDon(Guid id)
+        {
+            var lst = (from a in _chiTietHoaDonRepository.GetAllChiTietHoaDon()
+                join b in _hoaDonRepository.GetAllHoaDon() on a.IdHoaDon equals b.Id
+                join c in _lapTopRepository.GetAllLapTop() on a.IdLaptop equals c.Id
+                join e in _hangLaptopRepositories.GetAllHangLaptops() on c.IdHangLaptop equals e.Id
+                join f in _dongLapTopRepositories.GetAllDongLaptop() on c.IdDongLaptop equals f.Id 
+                where a.IdHoaDon == id
+                       select new ChiTietHoaDonView()
+                
+                {
+                    Id = a.Id,
+                    IdHoaDon = b.Id,
+                    IdSanPham = c.Id,
+                    TenSanPham = c.Ten,
+                    SerialSanPham = _serialLaptopRepository.GetLstSerialLaptopFromDb().FirstOrDefault(x=>x.IdLaptop == c.Id).Serial,
+                    Hang = e.Ten,
+                    Dong = f.Ten,
+                    SoLuong = a.SoLuong,
+                    DonGia = a.DonGia,
+                }).ToList();
+
+            return lst;
+        } 
+        public List<ChiTietHoaDonView> GetAllCTHĐ()
         {
             var lst = (from a in _chiTietHoaDonRepository.GetAllChiTietHoaDon()
                 join b in _hoaDonRepository.GetAllHoaDon() on a.IdHoaDon equals b.Id

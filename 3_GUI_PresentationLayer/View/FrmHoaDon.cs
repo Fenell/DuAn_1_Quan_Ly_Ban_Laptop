@@ -24,6 +24,7 @@ namespace _3_GUI_PresentationLayer.View
         List<HoaDonView> _lst_hoaDon;
         IChiTietHoaDonService _bus_chiTietHoaDon;
         List<ChiTietHoaDon> _lst_CTHD;
+        private Guid _ID;
         public FrmHoaDon()
         {
             
@@ -34,9 +35,17 @@ namespace _3_GUI_PresentationLayer.View
             _lst_hoaDon = new List<HoaDonView>();
             InitializeComponent();
             ShowHĐ();
-            ShowCTHĐ();
+           
         }
-
+        public void loadHDCT(Guid id)
+        {
+            _ID = id;
+            dgv_CTHD.Rows.Clear();
+            foreach (var item in _bus_chiTietHoaDon.GetAllChiTietHoaDon(id))
+            {
+                dgv_CTHD.Rows.Add( item.TenSanPham, item.SoLuong, item.DonGia,item.ThanhTien);
+            }
+        }
         public void ShowHĐ()
         {
 
@@ -56,25 +65,7 @@ namespace _3_GUI_PresentationLayer.View
                dgv_hoaDon.Rows.Add(item.Id, item.TenNhanVien, item.TenKhachHang, item.MaHd, item.HTThanhToan, item.NgayTao, item.NgayThanhToan, item.GhiChu, item.TongTien);
             }
         }
-        public void ShowCTHĐ()
-        {
-
-
-            dgv_CTHD.ColumnCount = 7;
-            dgv_CTHD.Columns[0].Name = " ID";
-            dgv_CTHD.Columns[1].Name = " IdLaptop";
-           
-            dgv_CTHD.Columns[2].Name = " IdHoaDon";
-            dgv_CTHD.Columns[3].Name = " SoLuong";
-            dgv_CTHD.Columns[4].Name = " DonGia";
-            dgv_CTHD.Columns[5].Name = " ThanhTien";
-
-            dgv_hoaDon.Rows.Clear();
-            foreach (var item in _bus_chiTietHoaDon.GetAllChiTietHoaDon())
-            {
-                dgv_CTHD.Rows.Add(item.Id, item.TenSanPham,item.IdHoaDon, item.SoLuong, item.DonGia, item.ThanhTien);
-            }
-        }
+       
 
         private void dateTimePickerCustom2_ValueChanged(object sender, EventArgs e)
         {
@@ -144,14 +135,15 @@ namespace _3_GUI_PresentationLayer.View
         {
             string selectedCategory = cbb_loaiSanPham.SelectedItem.ToString();
 
-            // Lấy danh sách các hóa đơn chứa sản phẩm thuộc loại sản phẩm được chọn
-            //var filteredInvoices = (from x in _bus_chiTietHoaDon.GetAllChiTietHoaDon()
-            //                        join sanPham in _Bus_LapTop.GetAllLaptop() on x.
-                                     
+        }
 
-
-            //// Hiển thị danh sách hóa đơn lên DataGridView
-            //dgv_CTHD.DataSource = filteredInvoices;
+        private void dgv_hoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+               _ID  = Guid.Parse(dgv_hoaDon.Rows[e.RowIndex].Cells[0].Value.ToString());
+                loadHDCT(_ID);
+            }
         }
     }
 }

@@ -102,9 +102,9 @@
             this.txt_MK_New.Multiline = false;
             this.txt_MK_New.Name = "txt_MK_New";
             this.txt_MK_New.Padding = new System.Windows.Forms.Padding(7);
-            this.txt_MK_New.PasswordChar = false;
+            this.txt_MK_New.PasswordChar = true;
             this.txt_MK_New.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txt_MK_New.PlaceholderText = "";
+            this.txt_MK_New.PlaceholderText = "*";
             this.txt_MK_New.Size = new System.Drawing.Size(197, 30);
             this.txt_MK_New.TabIndex = 1;
             this.txt_MK_New.Texts = "";
