@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            cbb_loaiSanPham = new CustomControl.ComboBoxCustom();
             dtpEndDate = new CustomControl.DateTimePickerCustom();
             label5 = new Label();
             dtpStartDate = new CustomControl.DateTimePickerCustom();
@@ -46,7 +45,6 @@
             iconButton8 = new FontAwesome.Sharp.IconButton();
             textBoxCustom2_04 = new CustomControl.TextBoxCustom2_0();
             label2 = new Label();
-            label1 = new Label();
             iconButton2 = new FontAwesome.Sharp.IconButton();
             pictureBox1 = new PictureBox();
             groupBox1.SuspendLayout();
@@ -57,33 +55,13 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // cbb_loaiSanPham
-            // 
-            cbb_loaiSanPham.BackColor = Color.WhiteSmoke;
-            cbb_loaiSanPham.BorderColor = Color.Black;
-            cbb_loaiSanPham.BorderSize = 1;
-            cbb_loaiSanPham.DropDownStyle = ComboBoxStyle.DropDown;
-            cbb_loaiSanPham.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cbb_loaiSanPham.ForeColor = Color.DimGray;
-            cbb_loaiSanPham.IconColor = Color.Black;
-            cbb_loaiSanPham.ListBackColor = Color.FromArgb(230, 228, 245);
-            cbb_loaiSanPham.ListTextColor = Color.DimGray;
-            cbb_loaiSanPham.Location = new Point(709, 23);
-            cbb_loaiSanPham.MinimumSize = new Size(200, 30);
-            cbb_loaiSanPham.Name = "cbb_loaiSanPham";
-            cbb_loaiSanPham.Padding = new Padding(1);
-            cbb_loaiSanPham.Size = new Size(200, 30);
-            cbb_loaiSanPham.TabIndex = 3;
-            cbb_loaiSanPham.Texts = "";
-            cbb_loaiSanPham.OnSelectedIndexChanged += comboBoxCustom1_OnSelectedIndexChanged;
-            // 
             // dtpEndDate
             // 
             dtpEndDate.BorderColor = Color.PaleVioletRed;
             dtpEndDate.BorderSize = 0;
             dtpEndDate.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             dtpEndDate.Format = DateTimePickerFormat.Short;
-            dtpEndDate.Location = new Point(497, 18);
+            dtpEndDate.Location = new Point(667, 14);
             dtpEndDate.MinimumSize = new Size(0, 35);
             dtpEndDate.Name = "dtpEndDate";
             dtpEndDate.Size = new Size(141, 35);
@@ -96,7 +74,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = SystemColors.MenuHighlight;
-            label5.Location = new Point(454, 27);
+            label5.Location = new Point(624, 23);
             label5.Name = "label5";
             label5.Size = new Size(37, 20);
             label5.TabIndex = 7;
@@ -108,7 +86,7 @@
             dtpStartDate.BorderSize = 0;
             dtpStartDate.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             dtpStartDate.Format = DateTimePickerFormat.Short;
-            dtpStartDate.Location = new Point(317, 17);
+            dtpStartDate.Location = new Point(487, 13);
             dtpStartDate.MinimumSize = new Size(0, 35);
             dtpStartDate.Name = "dtpStartDate";
             dtpStartDate.Size = new Size(131, 35);
@@ -121,7 +99,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = SystemColors.MenuHighlight;
-            label4.Location = new Point(285, 27);
+            label4.Location = new Point(455, 23);
             label4.Name = "label4";
             label4.Size = new Size(26, 20);
             label4.TabIndex = 6;
@@ -182,12 +160,10 @@
             panel2.Controls.Add(radioButtonCustom1);
             panel2.Controls.Add(iconButton8);
             panel2.Controls.Add(textBoxCustom2_04);
-            panel2.Controls.Add(cbb_loaiSanPham);
             panel2.Controls.Add(dtpEndDate);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(dtpStartDate);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(label1);
             panel2.Controls.Add(label4);
             panel2.Location = new Point(30, 26);
             panel2.Name = "panel2";
@@ -197,7 +173,7 @@
             // bt_TheoNgayTuyChinh
             // 
             bt_TheoNgayTuyChinh.AccessibleDescription = "";
-            bt_TheoNgayTuyChinh.Location = new Point(429, 61);
+            bt_TheoNgayTuyChinh.Location = new Point(599, 57);
             bt_TheoNgayTuyChinh.Name = "bt_TheoNgayTuyChinh";
             bt_TheoNgayTuyChinh.Size = new Size(75, 23);
             bt_TheoNgayTuyChinh.TabIndex = 52;
@@ -305,17 +281,6 @@
             label2.TabIndex = 6;
             label2.Text = "Trạng thái hóa đơn";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.MenuHighlight;
-            label1.Location = new Point(709, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(96, 17);
-            label1.TabIndex = 6;
-            label1.Text = "Loại sản phẩm";
-            // 
             // iconButton2
             // 
             iconButton2.BackColor = Color.FromArgb(2, 135, 127);
@@ -366,7 +331,6 @@
         }
 
         #endregion
-        private CustomControl.ComboBoxCustom cbb_loaiSanPham;
         private Label label4;
         private CustomControl.DateTimePickerCustom dtpEndDate;
         private Label label5;
@@ -382,7 +346,6 @@
         private FontAwesome.Sharp.IconButton iconButton8;
         private CustomControl.TextBoxCustom2_0 textBoxCustom2_04;
         private Label label2;
-        private Label label1;
         private FontAwesome.Sharp.IconButton iconButton2;
         private PictureBox pictureBox1;
         private Button bt_Search_SDT;
