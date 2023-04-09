@@ -94,9 +94,9 @@ namespace _3_GUI_PresentationLayer.View
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
+           // this.Hide();
             FrmQuenMatKhau quenMatKhau = new FrmQuenMatKhau();
-            quenMatKhau.Show();
+            quenMatKhau.ShowDialog();
             
         }
         public void SaveInfor()
