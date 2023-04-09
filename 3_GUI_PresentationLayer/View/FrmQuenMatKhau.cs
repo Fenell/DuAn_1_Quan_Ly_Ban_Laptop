@@ -86,21 +86,21 @@ namespace _3_GUI_PresentationLayer.View
 
         private void buttonCustom1_Click(object sender, EventArgs e)
         {
+            if (txt_MK_New.Texts == txt_XacNhan_MK.Texts)
+            {
+                var x = _BUS_NhanViens.GetAllNhanViens().FirstOrDefault(e => e.Email == txt_Email.Texts).Id;
+                var a = _BUS_NhanViens.GetAllNhanViens().FirstOrDefault(e => e.Id == x);
+                a.MatKhau = txt_MK_New.Text;
+                _BUS_NhanViens.UpdateNV(a);
+                MessageBox.Show("Đổi mật khẩu thành công!");
                 this.Close();
-            //if (txt_MK_New.Texts == txt_XacNhan_MK.Texts)
-            //{
-            //    var x = _BUS_NhanViens.GetAllNhanViens().FirstOrDefault(e => e.Email == txt_Email.Texts).Id;
-            //    var a = _BUS_NhanViens.GetAllNhanViens().FirstOrDefault(e => e.Id == x);
-            //    a.MatKhau = txt_MK_New.Text;
-            //    _BUS_NhanViens.UpdateNV(a);
-            //    MessageBox.Show("Đổi mật khẩu thành công!");
-            //    //FrmDangNhap frmdn = new FrmDangNhap();
-            //    //frmdn.Show();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Không thành công vui lòng kiểm tra lại mật khẩu mới đã nhập");
-            //}
+                //FrmDangNhap frmdn = new FrmDangNhap();
+                //frmdn.Show();
+            }
+            else
+            {
+                MessageBox.Show("Không thành công vui lòng kiểm tra lại mật khẩu mới đã nhập");
+            }
         }
 
         private void FrmQuenMatKhau_Load(object sender, EventArgs e)
@@ -111,8 +111,8 @@ namespace _3_GUI_PresentationLayer.View
         private void FrmQuenMatKhau_FormClosing(object sender, FormClosingEventArgs e)
         {
                // this.Close();
-                FrmDangNhap frmdn = new FrmDangNhap();
-                frmdn.Show();
+                //FrmDangNhap frmdn = new FrmDangNhap();
+                //frmdn.Show();
         }
     }
 }
