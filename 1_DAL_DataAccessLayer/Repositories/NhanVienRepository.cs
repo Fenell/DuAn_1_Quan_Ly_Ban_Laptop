@@ -66,5 +66,12 @@ namespace _1_DAL_DataAccessLayer.Repositories
             }
             return false;
         }
+        public bool UpdateNV( NhanVien nhanVien)
+        {
+            _lapTopContext.NhanViens.Update(nhanVien);
+            _lapTopContext.SaveChanges();            
+            return true;
+            
+        }
     }
 }

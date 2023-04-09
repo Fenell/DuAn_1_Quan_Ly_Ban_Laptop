@@ -12,8 +12,8 @@ using _1_DAL_DataAccessLayer.Context;
 namespace _1_DAL_DataAccessLayer.Migrations
 {
     [DbContext(typeof(QlBanLaptopContext))]
-    [Migration("20230407144452_hieuuu")]
-    partial class hieuuu
+    [Migration("20230409112707_hi")]
+    partial class hi
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
