@@ -35,6 +35,7 @@ namespace _3_GUI_PresentationLayer.View
             _lst_hoaDon = new List<HoaDonView>();
             InitializeComponent();
             ShowHĐ();
+            CheckTrangThai();
 
         }
         public void loadHDCT(Guid id)
@@ -63,7 +64,7 @@ namespace _3_GUI_PresentationLayer.View
         {
 
             dgv_hoaDon.ColumnCount = 10;
-            dgv_hoaDon.Columns[0].Visible = ;
+            dgv_hoaDon.Columns[0].Visible = false;
             dgv_hoaDon.Columns[1].Name = " Tên Nhân Viên";
             dgv_hoaDon.Columns[2].Name = " Tên Khách Hàng";
             dgv_hoaDon.Columns[3].Name = " Ma";
@@ -101,12 +102,7 @@ namespace _3_GUI_PresentationLayer.View
                                        .ToList();
                 ShowHĐ();
             }
-            else if ((radioButtonCustom3.Checked))
-            {
-                _lst_hoaDon = _Bus_hoaDon.GetAllHoaDonViews().Where(o => o.TrangThaiHD == 2)
-                                       .ToList();
-                ShowHĐ();
-            }
+           
         }
 
         private void bt_theongay_Click(object sender, EventArgs e)
@@ -114,31 +110,20 @@ namespace _3_GUI_PresentationLayer.View
             var id = textBoxCustom2_04.Text;
             dgv_hoaDon.Rows.Clear();
             dgv_hoaDon.Rows.Clear();
-            var items = _Bus_hoaDon.GetAllHoaDonViews().Where(x => x.MaHd == id);
+            var items = _Bus_hoaDon.GetAllHoaDonViews().Where(x => x.SDT == id);
             if (items.Any())
             {
-                foreach (var item in _Bus_hoaDon.GetAllHoaDonViews())
+                foreach (var a in items)
                 {
-                    dgv_hoaDon.Rows.Add(item.Id, item.TenNhanVien, item.TenKhachHang, item.MaHd, item.HTThanhToan, item.NgayTao, item.NgayThanhToan, item.GhiChu, item.TongTien);
+                    ShowHĐ();
                 }
             }
             else
             {
-                MessageBox.Show("Không có hóa đơn nào có Mã hóa đơn tương ứng");
+                MessageBox.Show("Không có");
             }
         }
-        private void comboLoaiSanPham()
-        {
-            var load = (from x in _Bus_LapTop.GetAllLaptop() select x.HangLaptop);
-
-        }
-
-        private void comboBoxCustom1_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedCategory = cbb_loaiSanPham.SelectedItem.ToString();
-
-        }
-
+              
         private void dgv_hoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -171,7 +156,7 @@ namespace _3_GUI_PresentationLayer.View
 
             foreach (var item in listHoaDon)
             {
-                dgv_hoaDon.Rows.Add(item.Id, item.TenNhanVien, item.TenKhachHang, item.MaHd, item.HTThanhToan, item.NgayTao, item.NgayThanhToan, item.GhiChu, item.TongTien);
+                ShowHĐ();
             }
         }
     }
