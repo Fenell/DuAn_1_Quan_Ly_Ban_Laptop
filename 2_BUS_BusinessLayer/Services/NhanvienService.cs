@@ -36,6 +36,7 @@ namespace _2_BUS_BusinessLayer.Services
             }
             return "Sửa thất bại";
         }
+        
 
         public List<NhanVien> GetAllNhanViens()
         {
@@ -53,6 +54,21 @@ namespace _2_BUS_BusinessLayer.Services
         public NhanVien GetNhanVienById(Guid idNhanVien)
         {
             throw new NotImplementedException();
+        }
+
+        public bool UpdateNV(NhanVien nhanVien)
+        {
+                var a = _nhanVienRepository.GetAllNhanVien().FirstOrDefault(c => c.Id == nhanVien.Id);
+                a.Hoten = nhanVien.Hoten;
+                a.Email = nhanVien.Email;
+                a.DiaChi = nhanVien.DiaChi;
+                a.SoDienThoai = nhanVien.SoDienThoai;
+                a.MatKhau = nhanVien.MatKhau;
+                a.ChucVu = nhanVien.ChucVu;
+                a.HinhAnh = nhanVien.HinhAnh;
+                a.CCCD = nhanVien.CCCD;
+            _nhanVienRepository.UpdateNV(a);
+            return true;
         }
     }
 }

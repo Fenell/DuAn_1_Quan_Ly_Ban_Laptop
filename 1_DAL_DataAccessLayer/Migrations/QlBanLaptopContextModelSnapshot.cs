@@ -33,6 +33,11 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .HasColumnType("decimal(18,0)")
                         .HasDefaultValue(0m);
 
+                    b.Property<decimal>("GiamGia")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("decimal(18,0)")
+                        .HasDefaultValue(0m);
+
                     b.Property<Guid>("IdHoaDon")
                         .HasColumnType("uniqueidentifier");
 

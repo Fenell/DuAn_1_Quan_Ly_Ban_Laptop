@@ -1,6 +1,7 @@
 ﻿using _1_DAL_DataAccessLayer.Models;
 using _2_BUS_BusinessLayer.IServices;
 using _2_BUS_BusinessLayer.Services;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,11 +21,12 @@ namespace _3_GUI_PresentationLayer.View
 {
     public partial class FrmQuenMatKhau : Form
     {
-        INhanVienServices _BUS_NhanViens;
+        INhanVienService _BUS_NhanViens;
         List<NhanVien> _lst_NhanVienl;
+      
         public FrmQuenMatKhau()
         {
-            _BUS_NhanViens = new NhanVienServies();
+            _BUS_NhanViens = new NhanvienService();
             _lst_NhanVienl = new List<NhanVien>();
             InitializeComponent();
             txt_Email.Select();
@@ -34,6 +36,7 @@ namespace _3_GUI_PresentationLayer.View
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+
             try
             {
                 _randomCode = new Random().Next(100000,999999);
@@ -72,7 +75,7 @@ namespace _3_GUI_PresentationLayer.View
             }
            
 
-            MessageBox.Show("Otp chưa sai");
+            MessageBox.Show("Otp sai");
 
         }
 
@@ -83,29 +86,21 @@ namespace _3_GUI_PresentationLayer.View
 
         private void buttonCustom1_Click(object sender, EventArgs e)
         {
-            if (txt_MK_New.Texts == txt_XacNhan_MK.Texts)
-            {
-                var a = _BUS_NhanViens.GetAll().FirstOrDefault(c => c.Email == txt_Email.Text).Id;
-                var d = _BUS_NhanViens.GetAll().FirstOrDefault(p => p.Id == a);
-                d.MatKhau = txt_XacNhan_MK.Text;
-                _BUS_NhanViens.Sua(d);
-                MessageBox.Show("Thay doi mat khau thanh cong, Ban se duoc dua tro lai trang dang nhap");
-                this.Hide();
-                FrmDangNhap frmdn = new FrmDangNhap();
-                frmdn.ShowDialog();
-
-                //var employee = _BUS_NhanViens.GetAll().Where(nv => nv.Email == txt_Email.Texts).FirstOrDefault();
-                //employee.MatKhau = txt_MK_New.Texts;
-                //_BUS_NhanViens.Sua(employee);
-                //MessageBox.Show("Thay doi mat khau thanh cong, Ban se duoc dua tro lai trang dang nhap");
-                //this.Hide();
-                //FrmDangNhap frmdn = new FrmDangNhap();
-                //frmdn.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Không thành công vui lòng kiểm tra lại mật khẩu mới đã nhập");
-            }
+                this.Close();
+            //if (txt_MK_New.Texts == txt_XacNhan_MK.Texts)
+            //{
+            //    var x = _BUS_NhanViens.GetAllNhanViens().FirstOrDefault(e => e.Email == txt_Email.Texts).Id;
+            //    var a = _BUS_NhanViens.GetAllNhanViens().FirstOrDefault(e => e.Id == x);
+            //    a.MatKhau = txt_MK_New.Text;
+            //    _BUS_NhanViens.UpdateNV(a);
+            //    MessageBox.Show("Đổi mật khẩu thành công!");
+            //    //FrmDangNhap frmdn = new FrmDangNhap();
+            //    //frmdn.Show();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Không thành công vui lòng kiểm tra lại mật khẩu mới đã nhập");
+            //}
         }
 
         private void FrmQuenMatKhau_Load(object sender, EventArgs e)
@@ -115,9 +110,9 @@ namespace _3_GUI_PresentationLayer.View
 
         private void FrmQuenMatKhau_FormClosing(object sender, FormClosingEventArgs e)
         {
-                this.Hide();
+               // this.Close();
                 FrmDangNhap frmdn = new FrmDangNhap();
-                frmdn.ShowDialog();
+                frmdn.Show();
         }
     }
 }

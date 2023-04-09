@@ -11,6 +11,7 @@ namespace _2_BUS_BusinessLayer.IServices
     {
         public string AddNhanVien(NhanVien nhanVien);
         public string UpdateNhanVien(Guid idNhanVien, NhanVien nhanVien);
+        public bool UpdateNV( NhanVien nhanVien);
         NhanVien GetNhanVienById(Guid idNhanVien);
         List<NhanVien> GetAllNhanViens();
 

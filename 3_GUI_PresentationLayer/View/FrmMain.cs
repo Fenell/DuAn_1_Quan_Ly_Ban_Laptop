@@ -143,7 +143,9 @@ namespace _3_GUI_PresentationLayer.View
         {
             if (MessageBox.Show("Bạn có muốn thoát chương trình không?", "Hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Application.Exit();
+                this.Close();
+                FrmDangNhap frmDangNhap = new FrmDangNhap();
+                frmDangNhap.Show();
             }
         }
 
