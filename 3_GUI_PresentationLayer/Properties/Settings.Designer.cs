@@ -70,5 +70,17 @@ namespace _3_GUI_PresentationLayer.Properties {
                 this["_MKdaLogin"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool _SaveInfo {
+            get {
+                return ((bool)(this["_SaveInfo"]));
+            }
+            set {
+                this["_SaveInfo"] = value;
+            }
+        }
     }
 }
