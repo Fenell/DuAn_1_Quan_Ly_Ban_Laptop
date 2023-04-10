@@ -11,7 +11,6 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.Net.WebSockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -37,15 +36,15 @@ namespace _3_GUI_PresentationLayer.View
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            var a = _BUS_NhanViens.GetAllNhanViens().FirstOrDefault(nv => nv.Email == txt_Email.Text);
-            if (a == null)
-            {
-                MessageBox.Show("Email không tồn tại trong hệ thống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else
-            {
+            //var employee = db.NhanVien.FirstOrDefault(nv => nv.Email == txt_Email.Text);
 
+            //if (employee == null)
+            //{
+            //    MessageBox.Show("Email không tồn tại trong hệ thống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+            try
+            {
                 _randomCode = new Random().Next(100000, 999999);
                 MailMessage mail = new MailMessage();
                 mail.From = new MailAddress("maituandat087804@gmail.com");
@@ -62,7 +61,14 @@ namespace _3_GUI_PresentationLayer.View
                 smtp.Send(mail);
                 MessageBox.Show("Gui thanh cong");
                 txt_Email.Enabled = false;
+
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("ko gui dc");
+            }
+               
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
