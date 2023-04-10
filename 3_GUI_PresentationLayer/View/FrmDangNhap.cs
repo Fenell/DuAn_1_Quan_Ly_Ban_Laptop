@@ -21,6 +21,7 @@ namespace _3_GUI_PresentationLayer.View
             InitializeComponent();
             txtEmail.Select();
             txtMatKhau.PasswordChar = true;
+            this.CenterToScreen();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -35,7 +36,7 @@ namespace _3_GUI_PresentationLayer.View
             if (txtEmail.Texts == "" || txtMatKhau.Texts == "") return true;
             return false;
         }
-        private void buttonCustom1_Click(object sender, EventArgs e)
+        private void btnDangNhap_Click(object sender, EventArgs e)
         {
             if (checkNhap())
             {
@@ -73,7 +74,7 @@ namespace _3_GUI_PresentationLayer.View
         }
 
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void cb_nhoMatKhau_CheckedChanged(object sender, EventArgs e)
         {
             if (txtEmail.Texts != "" && txtMatKhau.Texts != "")
             {
@@ -92,12 +93,12 @@ namespace _3_GUI_PresentationLayer.View
             }
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lbQuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-           // this.Hide();
+            // this.Hide();
             FrmQuenMatKhau quenMatKhau = new FrmQuenMatKhau();
             quenMatKhau.ShowDialog();
-            
+
         }
         public void SaveInfor()
         {
@@ -107,6 +108,7 @@ namespace _3_GUI_PresentationLayer.View
                 Properties.Settings.Default._pass = txtMatKhau.Texts;
                 Properties.Settings.Default._TKdaLogin = txtEmail.Texts;
                 Properties.Settings.Default._MKdaLogin = txtMatKhau.Texts;
+                Properties.Settings.Default._SaveInfo = true;
                 Properties.Settings.Default.Save();
 
             }
@@ -116,17 +118,25 @@ namespace _3_GUI_PresentationLayer.View
                 Properties.Settings.Default._pass = "";
                 Properties.Settings.Default._TKdaLogin = txtEmail.Texts;
                 Properties.Settings.Default._MKdaLogin = txtMatKhau.Texts;
+                Properties.Settings.Default._SaveInfo = false;
                 Properties.Settings.Default.Save();
+
             }
         }
 
         private void FrmDangNhap_Load(object sender, EventArgs e)
         {
-            txtEmail.Texts = Properties.Settings.Default._user;
-            txtMatKhau.Texts = Properties.Settings.Default._pass;
-            if (Properties.Settings.Default._user != "")
+            if (Properties.Settings.Default._SaveInfo == true)
             {
+                txtEmail.Texts = Properties.Settings.Default._user;
+                txtMatKhau.Texts = Properties.Settings.Default._pass;
                 cb_nhoMatKhau.Checked = true;
+
+            }
+            else
+            {
+                txtEmail.PlaceholderText = "Email";
+                txtMatKhau.PlaceholderText = "Mật khẩu";
             }
         }
 

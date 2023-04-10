@@ -37,9 +37,9 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            buttonCustom1 = new CustomControl.ButtonCustom();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
+            btnXacNhan = new CustomControl.ButtonCustom();
+            btnGuiEmail = new FontAwesome.Sharp.IconButton();
+            btnCheckMa = new FontAwesome.Sharp.IconButton();
             SuspendLayout();
             // 
             // label1
@@ -176,59 +176,59 @@
             label5.TabIndex = 0;
             label5.Text = "Nhập lại mật khảu";
             // 
-            // buttonCustom1
+            // btnXacNhan
             // 
-            buttonCustom1.BackColor = Color.FromArgb(2, 135, 127);
-            buttonCustom1.BackgroundColor = Color.FromArgb(2, 135, 127);
-            buttonCustom1.BorderColor = Color.PaleVioletRed;
-            buttonCustom1.BorderRadius = 20;
-            buttonCustom1.BorderSize = 0;
-            buttonCustom1.FlatAppearance.BorderSize = 0;
-            buttonCustom1.FlatStyle = FlatStyle.Flat;
-            buttonCustom1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCustom1.ForeColor = Color.White;
-            buttonCustom1.Location = new Point(164, 362);
-            buttonCustom1.Name = "buttonCustom1";
-            buttonCustom1.Size = new Size(197, 37);
-            buttonCustom1.TabIndex = 2;
-            buttonCustom1.Text = "Xác nhận";
-            buttonCustom1.TextColor = Color.White;
-            buttonCustom1.UseVisualStyleBackColor = false;
-            buttonCustom1.Click += buttonCustom1_Click;
+            btnXacNhan.BackColor = Color.FromArgb(2, 135, 127);
+            btnXacNhan.BackgroundColor = Color.FromArgb(2, 135, 127);
+            btnXacNhan.BorderColor = Color.PaleVioletRed;
+            btnXacNhan.BorderRadius = 20;
+            btnXacNhan.BorderSize = 0;
+            btnXacNhan.FlatAppearance.BorderSize = 0;
+            btnXacNhan.FlatStyle = FlatStyle.Flat;
+            btnXacNhan.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnXacNhan.ForeColor = Color.White;
+            btnXacNhan.Location = new Point(164, 362);
+            btnXacNhan.Name = "btnXacNhan";
+            btnXacNhan.Size = new Size(197, 37);
+            btnXacNhan.TabIndex = 2;
+            btnXacNhan.Text = "Xác nhận";
+            btnXacNhan.TextColor = Color.White;
+            btnXacNhan.UseVisualStyleBackColor = false;
+            btnXacNhan.Click += btnXacNhan_Click;
             // 
-            // iconButton1
+            // btnGuiEmail
             // 
-            iconButton1.BackColor = Color.FromArgb(204, 204, 204);
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.PaperPlane;
-            iconButton1.IconColor = Color.FromArgb(86, 104, 195);
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 30;
-            iconButton1.Location = new Point(367, 82);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Padding = new Padding(0, 3, 0, 0);
-            iconButton1.Size = new Size(41, 38);
-            iconButton1.TabIndex = 3;
-            iconButton1.UseVisualStyleBackColor = false;
-            iconButton1.Click += iconButton1_Click;
+            btnGuiEmail.BackColor = Color.FromArgb(204, 204, 204);
+            btnGuiEmail.FlatAppearance.BorderSize = 0;
+            btnGuiEmail.FlatStyle = FlatStyle.Flat;
+            btnGuiEmail.IconChar = FontAwesome.Sharp.IconChar.PaperPlane;
+            btnGuiEmail.IconColor = Color.FromArgb(86, 104, 195);
+            btnGuiEmail.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnGuiEmail.IconSize = 30;
+            btnGuiEmail.Location = new Point(367, 82);
+            btnGuiEmail.Name = "btnGuiEmail";
+            btnGuiEmail.Padding = new Padding(0, 3, 0, 0);
+            btnGuiEmail.Size = new Size(41, 38);
+            btnGuiEmail.TabIndex = 3;
+            btnGuiEmail.UseVisualStyleBackColor = false;
+            btnGuiEmail.Click += btnGuiEmail_Click;
             // 
-            // iconButton2
+            // btnCheckMa
             // 
-            iconButton2.BackColor = Color.FromArgb(204, 204, 204);
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            iconButton2.IconColor = Color.FromArgb(86, 104, 195);
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 30;
-            iconButton2.Location = new Point(367, 152);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Padding = new Padding(0, 3, 0, 0);
-            iconButton2.Size = new Size(41, 38);
-            iconButton2.TabIndex = 3;
-            iconButton2.UseVisualStyleBackColor = false;
-            iconButton2.Click += iconButton2_Click;
+            btnCheckMa.BackColor = Color.FromArgb(204, 204, 204);
+            btnCheckMa.FlatAppearance.BorderSize = 0;
+            btnCheckMa.FlatStyle = FlatStyle.Flat;
+            btnCheckMa.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            btnCheckMa.IconColor = Color.FromArgb(86, 104, 195);
+            btnCheckMa.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnCheckMa.IconSize = 30;
+            btnCheckMa.Location = new Point(367, 152);
+            btnCheckMa.Name = "btnCheckMa";
+            btnCheckMa.Padding = new Padding(0, 3, 0, 0);
+            btnCheckMa.Size = new Size(41, 38);
+            btnCheckMa.TabIndex = 3;
+            btnCheckMa.UseVisualStyleBackColor = false;
+            btnCheckMa.Click += btnCheckMa_Click;
             // 
             // FrmQuenMatKhau
             // 
@@ -236,9 +236,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(204, 204, 204);
             ClientSize = new Size(407, 432);
-            Controls.Add(iconButton2);
-            Controls.Add(iconButton1);
-            Controls.Add(buttonCustom1);
+            Controls.Add(btnCheckMa);
+            Controls.Add(btnGuiEmail);
+            Controls.Add(btnXacNhan);
             Controls.Add(txt_XacNhan_MK);
             Controls.Add(txt_MK_New);
             Controls.Add(txt_OTP);
@@ -267,8 +267,8 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private CustomControl.ButtonCustom buttonCustom1;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private CustomControl.ButtonCustom btnXacNhan;
+        private FontAwesome.Sharp.IconButton btnGuiEmail;
+        private FontAwesome.Sharp.IconButton btnCheckMa;
     }
 }

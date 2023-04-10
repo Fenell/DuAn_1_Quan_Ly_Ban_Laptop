@@ -81,8 +81,6 @@ namespace _3_GUI_PresentationLayer.View
         }
 
 
-
-
         private void radioButtonCustom1_CheckedChanged(object sender, EventArgs e)
         {
 
