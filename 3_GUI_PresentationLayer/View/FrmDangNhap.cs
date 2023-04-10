@@ -69,7 +69,7 @@ namespace _3_GUI_PresentationLayer.View
 
         private void btnExit_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
 
