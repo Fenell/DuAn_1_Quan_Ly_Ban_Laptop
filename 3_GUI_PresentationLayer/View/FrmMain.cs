@@ -136,16 +136,20 @@ namespace _3_GUI_PresentationLayer.View
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Bạn có muốn đăng xuất tài khoản không?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Hide();
+                FrmDangNhap frmDangNhap = new FrmDangNhap();
+                frmDangNhap.ShowDialog();
+                Close(); 
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn thoát chương trình không?", "Hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                this.Close();
-                FrmDangNhap frmDangNhap = new FrmDangNhap();
-                frmDangNhap.Show();
+                Application.Exit();
             }
         }
 

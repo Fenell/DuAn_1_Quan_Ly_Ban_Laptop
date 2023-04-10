@@ -15,6 +15,7 @@ namespace _3_GUI_PresentationLayer.View
     public partial class FrmDangNhap : Form
     {
         INhanVienService _nhanVienServices;
+
         public FrmDangNhap()
         {
             _nhanVienServices = new NhanvienService();
@@ -24,13 +25,6 @@ namespace _3_GUI_PresentationLayer.View
             this.CenterToScreen();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Bạn có muốn thoát chương trình không?", "Hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
         private bool checkNhap()
         {
             if (txtEmail.Texts == "" || txtMatKhau.Texts == "") return true;
@@ -52,11 +46,11 @@ namespace _3_GUI_PresentationLayer.View
                         if (x.MatKhau == txtMatKhau.Texts)
                         {
                             MessageBox.Show("Đăng nhập thành công");
+                            Hide();
                             SaveInfor();
                             Form home = new FrmMain();
-                            this.Hide();
                             home.ShowDialog();
-                            this.Close();
+                            Close();
                             return;
 
                         }
@@ -70,7 +64,10 @@ namespace _3_GUI_PresentationLayer.View
 
         private void btnExit_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Bạn có muốn thoát chương trình không?", "Hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
 
@@ -88,7 +85,7 @@ namespace _3_GUI_PresentationLayer.View
                 }
                 else
                 {
-                    Properties.Settings.Default.Reset();
+                    Properties.Settings.Default.Reset();                           
                 }
             }
         }
