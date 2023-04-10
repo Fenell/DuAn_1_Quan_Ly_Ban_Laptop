@@ -280,6 +280,10 @@ namespace _3_GUI_PresentationLayer.View
         {
             int i;
             i = e.RowIndex;
+            if (i == -1)
+            {
+                return;
+            }
             txtMaNhanVien.Texts = dgv.Rows[i].Cells[0].Value.ToString();
             txtHoTen.Texts = dgv.Rows[i].Cells[1].Value.ToString();
             txtSoDienThoai.Texts = dgv.Rows[i].Cells[2].Value.ToString();

@@ -107,17 +107,14 @@ namespace _3_GUI_PresentationLayer.View
                 return;
             }
 
-           
-            
             if (_khachhangService.GetAllKhachHangs().Any(c=>c.SoDienThoai == txtSoDienThoai.Texts && txtSoDienThoai.Texts != kh.SoDienThoai))
             {
                 MessageBox.Show("Số điện thoại bạn vừa sửa đã tồn tại!Vui lòng kiểm tra lại.");
                 return;
             }
-            kh.SoDienThoai = txtSoDienThoai.Texts;
 
+            kh.SoDienThoai = txtSoDienThoai.Texts;
             kh.Hoten = txtHoTen.Texts;
-            
             kh.DiaChi = txtDiaChi.Texts;
             txtMa.Enabled = false;
 
@@ -129,7 +126,6 @@ namespace _3_GUI_PresentationLayer.View
             {
                 kh.GioiTinh = true;
             }
-
 
             if (MessageBox.Show("Có muốn sửa hay ko ?", "Hỏi", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
