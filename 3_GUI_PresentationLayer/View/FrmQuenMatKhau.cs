@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Net.WebSockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,7 +24,7 @@ namespace _3_GUI_PresentationLayer.View
     {
         INhanVienService _BUS_NhanViens;
         List<NhanVien> _lst_NhanVienl;
-      
+
         public FrmQuenMatKhau()
         {
             _BUS_NhanViens = new NhanvienService();
@@ -36,10 +37,16 @@ namespace _3_GUI_PresentationLayer.View
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-
-            try
+            var a = _BUS_NhanViens.GetAllNhanViens().FirstOrDefault(nv => nv.Email == txt_Email.Text);
+            if (a == null)
             {
-                _randomCode = new Random().Next(100000,999999);
+                MessageBox.Show("Email không tồn tại trong hệ thống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+
+                _randomCode = new Random().Next(100000, 999999);
                 MailMessage mail = new MailMessage();
                 mail.From = new MailAddress("maituandat087804@gmail.com");
                 mail.To.Add(txt_Email.Texts);
@@ -56,11 +63,6 @@ namespace _3_GUI_PresentationLayer.View
                 MessageBox.Show("Gui thanh cong");
                 txt_Email.Enabled = false;
             }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
@@ -69,11 +71,11 @@ namespace _3_GUI_PresentationLayer.View
             {
                 txt_MK_New.Visible = true;
                 txt_XacNhan_MK.Visible = true;
-                
+
                 MessageBox.Show("Ma chinh xac");
                 return;
             }
-           
+
 
             MessageBox.Show("Otp sai");
 
@@ -93,9 +95,9 @@ namespace _3_GUI_PresentationLayer.View
                 a.MatKhau = txt_MK_New.Text;
                 _BUS_NhanViens.UpdateNV(a);
                 MessageBox.Show("Đổi mật khẩu thành công!");
-                this.Close();
-                //FrmDangNhap frmdn = new FrmDangNhap();
-                //frmdn.Show();
+                this.Hide();
+                FrmDangNhap frmdn = new FrmDangNhap();
+                frmdn.ShowDialog();
             }
             else
             {
@@ -105,14 +107,14 @@ namespace _3_GUI_PresentationLayer.View
 
         private void FrmQuenMatKhau_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private void FrmQuenMatKhau_FormClosing(object sender, FormClosingEventArgs e)
         {
-               // this.Close();
-                //FrmDangNhap frmdn = new FrmDangNhap();
-                //frmdn.Show();
+            this.Hide();
+            FrmDangNhap frmdn = new FrmDangNhap();
+            frmdn.ShowDialog();
         }
     }
 }
