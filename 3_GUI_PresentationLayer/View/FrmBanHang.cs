@@ -676,6 +676,7 @@ namespace _3_GUI_PresentationLayer.View
 
             var khuyenMai = _khuyenMaiServices.GetAllKhuyenMai().Find(c => c.Ten == result);
             var index = _lstCtHoaDonViews.FindIndex(c => c.Id == _idChiTietHD);
+            if(index  < 0) return;
             var chiTietHD = _lstCtHoaDonViews.ElementAt(index);
             if (khuyenMai.LoaiKhuyenMai == "Giảm %")
             {
