@@ -59,7 +59,11 @@ namespace _3_GUI_PresentationLayer.View
                 MessageBox.Show("Số điện thoại phải đủ 10 chữ số và bắt đầu bằng số 0.Mời bạn kiểm tra lại số điện thoại!", "Thông báo");
                 return;
             }
-            
+            if (_khachhangService.GetAllKhachHangs().Any(c => c.SoDienThoai == txtSoDienThoai.Texts))
+            {
+                MessageBox.Show("Số điện thoại đã bị tồn tai!Vui lòng kiểm tra lại số điện thoại!");
+                return;
+            } 
 
             _khachHang.Ma = RandomMa();
             _khachHang.Hoten = txtHoTen.Texts;
@@ -103,8 +107,17 @@ namespace _3_GUI_PresentationLayer.View
                 return;
             }
 
-            kh.Hoten = txtHoTen.Texts;
+           
+            
+            if (_khachhangService.GetAllKhachHangs().Any(c=>c.SoDienThoai == txtSoDienThoai.Texts && txtSoDienThoai.Texts != kh.SoDienThoai))
+            {
+                MessageBox.Show("Số điện thoại bạn vừa sửa đã tồn tại!Vui lòng kiểm tra lại.");
+                return;
+            }
             kh.SoDienThoai = txtSoDienThoai.Texts;
+
+            kh.Hoten = txtHoTen.Texts;
+            
             kh.DiaChi = txtDiaChi.Texts;
             txtMa.Enabled = false;
 

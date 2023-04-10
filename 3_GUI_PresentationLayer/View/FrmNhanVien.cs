@@ -132,6 +132,18 @@ namespace _3_GUI_PresentationLayer.View
             _nhanVien.TrangThai = true;
             _nhanVien.HinhAnh = Extension.ImageToArrBytes(ptbAnh.Image);
 
+            if (_nhanvienService.GetAllNhanViens().Any(c=>c.CCCD == txtSoCanCuoc.Texts))
+            {
+                MessageBox.Show("Số căn cước đã tồn tại. Xin vui lòng kiểm tra lại!");
+                return;
+            }
+
+            if (_nhanvienService.GetAllNhanViens().All(c=>c.SoDienThoai == txtSoDienThoai.Texts))
+            {
+                MessageBox.Show("Số điện thoại đã tồn tại. Xin vui lòng kiểm tra lại!");
+                return;
+            }
+
             if (rbtNam.Checked == true)
             {
                 _nhanVien.GioiTinh = false;
@@ -187,8 +199,18 @@ namespace _3_GUI_PresentationLayer.View
             }
             nv.Hoten = txtHoTen.Texts;
             nv.SoDienThoai = txtSoDienThoai.Texts;
+            if (_nhanvienService.GetAllNhanViens().Any(c => c.SoDienThoai == txtSoDienThoai.Texts && txtSoDienThoai.Texts != nv.SoDienThoai))
+            {
+                MessageBox.Show("Số điện thoại bạn vừa sửa đã tồn tại. Vui lòng kiểm tra lại!");
+                return;
+            }
             nv.Email = txtEmail.Texts;
             nv.CCCD = txtSoCanCuoc.Texts;
+            if (_nhanvienService.GetAllNhanViens().Any(c => c.CCCD == txtSoCanCuoc.Texts && txtSoCanCuoc.Texts != nv.CCCD))
+            {
+                MessageBox.Show("Số căn cước bạn vừa sửa đã tồn tại. Vui lòng kiểm tra lại!");
+                return;
+            }
             nv.MatKhau = txtMatKhau.Texts;
             nv.DiaChi = txtDiaChi.Texts;
             nv.HinhAnh = Extension.ImageToArrBytes(ptbAnh.Image);
