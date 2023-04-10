@@ -14,10 +14,10 @@ namespace _3_GUI_PresentationLayer.View
 {
     public partial class FrmDangNhap : Form
     {
-        INhanVienServices _nhanVienServices;
+        INhanVienService _nhanVienServices;
         public FrmDangNhap()
         {
-            _nhanVienServices = new NhanVienServies();
+            _nhanVienServices = new NhanvienService();
             InitializeComponent();
             txtEmail.Select();
             txtMatKhau.PasswordChar = true;
@@ -27,7 +27,7 @@ namespace _3_GUI_PresentationLayer.View
         {
             if (MessageBox.Show("Bạn có muốn thoát chương trình không?", "Hỏi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Application.Exit();
+                this.Close();
             }
         }
         private bool checkNhap()
@@ -44,7 +44,7 @@ namespace _3_GUI_PresentationLayer.View
             }
             else
             {
-                foreach (var x in _nhanVienServices.GetAll())
+                foreach (var x in _nhanVienServices.GetAllNhanViens())
                 {
                     if (x.Email.ToLower() == txtEmail.Texts.ToLower())
                     {
@@ -69,7 +69,7 @@ namespace _3_GUI_PresentationLayer.View
 
         private void btnExit_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
 
@@ -94,10 +94,10 @@ namespace _3_GUI_PresentationLayer.View
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+           // this.Hide();
             FrmQuenMatKhau quenMatKhau = new FrmQuenMatKhau();
-            this.Hide();
             quenMatKhau.ShowDialog();
-            this.Close();
+            
         }
         public void SaveInfor()
         {
