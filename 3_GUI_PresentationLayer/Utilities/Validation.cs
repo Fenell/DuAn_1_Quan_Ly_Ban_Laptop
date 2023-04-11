@@ -9,16 +9,6 @@ namespace _3_GUI_PresentationLayer.Utilities
 {
     public class Validation
     {
-        public static bool checkMaNV(string text)
-        {
-            return Regex.IsMatch(text, @"^(ph)+(\d)");
-        }
-
-        public static bool checkMaKH(string text)
-        {
-            return Regex.IsMatch(text, @"^(kh)+(\d)");
-        }
-
         public static bool checkSDT(string text)
         {
             return Regex.IsMatch(text, @"^(0)[0-9]{9}$");

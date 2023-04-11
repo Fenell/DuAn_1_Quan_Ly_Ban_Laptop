@@ -31,7 +31,7 @@ namespace _3_GUI_PresentationLayer.View
             dgvKhachHang.Rows.Clear();
             foreach (var item in _khachhangService.GetAllKhachHangs())
             {
-                dgvKhachHang.Rows.Add(item.Ma, item.Hoten, item.SoDienThoai, item.GioiTinh == false ? "Nam" : "Nữ", item.DiaChi, item.Id);
+                dgvKhachHang.Rows.Add(item.Ma, item.Hoten, item.SoDienThoai, item.Email, item.GioiTinh == false ? "Nam" : "Nữ", item.DiaChi, item.Id);
             }
             txtMa.Enabled = false;
         }
@@ -52,11 +52,15 @@ namespace _3_GUI_PresentationLayer.View
                 MessageBox.Show("Xin vui lòng nhập đầy đủ các trường dữ liệu!");
                 return;
             }
-
             
             if (!Validation.checkSDT(txtSoDienThoai.Texts))
             {
                 MessageBox.Show("Số điện thoại phải đủ 10 chữ số và bắt đầu bằng số 0.Mời bạn kiểm tra lại số điện thoại!", "Thông báo");
+                return;
+            }
+            if (!Validation.checkEmail(txtEmail.Texts))
+            {
+                MessageBox.Show("Eamil phải theo đúng định dang! VD: long@gmail.com ", "Thông báo");
                 return;
             }
             if (_khachhangService.GetAllKhachHangs().Any(c => c.SoDienThoai == txtSoDienThoai.Texts))
@@ -69,6 +73,7 @@ namespace _3_GUI_PresentationLayer.View
             _khachHang.Hoten = txtHoTen.Texts;
             _khachHang.SoDienThoai = txtSoDienThoai.Texts;
             _khachHang.DiaChi = txtDiaChi.Texts;
+            _khachHang.Email = txtEmail.Texts;
             txtMa.Enabled = false;
 
 
@@ -100,20 +105,24 @@ namespace _3_GUI_PresentationLayer.View
                 MessageBox.Show("Xin vui lòng nhập đầy đủ các trường dữ liệu!");
                 return;
             }
-
+            
             if (!Validation.checkSDT(txtSoDienThoai.Texts))
             {
                 MessageBox.Show("Số điện thoại phải đủ 10 chữ số và bắt đầu bằng số 0.Mời bạn kiểm tra lại số điện thoại!", "Thông báo");
                 return;
             }
-
+            if (!Validation.checkEmail(txtEmail.Texts))
+            {
+                MessageBox.Show("Eamil phải theo đúng định dang! VD: long@gmail.com ", "Thông báo");
+                return;
+            }
+            kh.SoDienThoai = txtSoDienThoai.Texts;
             if (_khachhangService.GetAllKhachHangs().Any(c=>c.SoDienThoai == txtSoDienThoai.Texts && txtSoDienThoai.Texts != kh.SoDienThoai))
             {
                 MessageBox.Show("Số điện thoại bạn vừa sửa đã tồn tại!Vui lòng kiểm tra lại.");
                 return;
             }
-
-            kh.SoDienThoai = txtSoDienThoai.Texts;
+            kh.Email = txtEmail.Texts;
             kh.Hoten = txtHoTen.Texts;
             kh.DiaChi = txtDiaChi.Texts;
             txtMa.Enabled = false;
@@ -140,11 +149,11 @@ namespace _3_GUI_PresentationLayer.View
             txtMa.Texts = "";
             txtHoTen.Texts = "";
             txtSoDienThoai.Texts = "";
+            txtEmail.Texts = "";
             txtDiaChi.Texts = "";
             txtTimKiem.Texts = "";
             rbtNam.Checked = false;
             rbtNu.Checked = false;
-            txtMa.Enabled = false;
             txtMa.Enabled = false;
             iconButtonThem.Enabled = true;
         }
@@ -161,20 +170,20 @@ namespace _3_GUI_PresentationLayer.View
             txtMa.Texts = dgvKhachHang.Rows[i].Cells[0].Value.ToString();
             txtHoTen.Texts = dgvKhachHang.Rows[i].Cells[1].Value.ToString();
             txtSoDienThoai.Texts = dgvKhachHang.Rows[i].Cells[2].Value.ToString();
-
-            if (dgvKhachHang.Rows[i].Cells[3].Value.ToString() == "Nam")
+            txtEmail.Texts = dgvKhachHang.Rows[i].Cells[3].Value.ToString();
+            if (dgvKhachHang.Rows[i].Cells[4].Value.ToString() == "Nam")
             {
                 rbtNam.Checked = true;
                 rbtNu.Checked = false;
             }
-            else if (dgvKhachHang.Rows[i].Cells[3].Value.ToString() == "Nữ")
+            else if (dgvKhachHang.Rows[i].Cells[4].Value.ToString() == "Nữ")
             {
                 rbtNam.Checked = false;
                 rbtNu.Checked = true;
             }
 
-            txtDiaChi.Texts = dgvKhachHang.Rows[i].Cells[4].Value.ToString();
-            _idKhachHang = Guid.Parse(dgvKhachHang.Rows[i].Cells[5].Value.ToString());
+            txtDiaChi.Texts = dgvKhachHang.Rows[i].Cells[5].Value.ToString();
+            _idKhachHang = Guid.Parse(dgvKhachHang.Rows[i].Cells[6].Value.ToString());
             iconButtonThem.Enabled = false;
         }
 
@@ -184,7 +193,7 @@ namespace _3_GUI_PresentationLayer.View
             dgvKhachHang.Rows.Clear();
             foreach (var item in _khachhangService.GetByKhachHangs(txtTimKiem.Texts))
             {
-                dgvKhachHang.Rows.Add(item.Ma, item.Hoten, item.SoDienThoai, item.GioiTinh == false ? "Nam" : "Nữ", item.DiaChi, item.Id);
+                dgvKhachHang.Rows.Add(item.Ma, item.Hoten, item.SoDienThoai,item.Email,item.GioiTinh == false ? "Nam" : "Nữ", item.DiaChi, item.Id);
             }
         }
     }

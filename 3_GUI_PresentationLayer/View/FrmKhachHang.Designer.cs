@@ -29,13 +29,9 @@
         private void InitializeComponent()
         {
             this.dgvKhachHang = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtEmail = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom();
+            this.label2 = new System.Windows.Forms.Label();
             this.iconButtonClear = new FontAwesome.Sharp.IconButton();
             this.txtDiaChi = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom2_0();
             this.iconButtonSua = new FontAwesome.Sharp.IconButton();
@@ -55,6 +51,13 @@
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
             this.txtTimKiem = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom2_0();
             this.label1 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -70,6 +73,7 @@
             this.Column1,
             this.Column2,
             this.Column3,
+            this.Column7,
             this.Column4,
             this.Column5,
             this.Column6});
@@ -81,40 +85,11 @@
             this.dgvKhachHang.TabIndex = 8;
             this.dgvKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellClick);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã khách hàng";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Họ tên";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Số điện thoại";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Giới tính";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Địa chỉ";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Id";
-            this.Column6.Name = "Column6";
-            this.Column6.Visible = false;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.txtEmail);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.iconButtonClear);
             this.panel1.Controls.Add(this.txtDiaChi);
             this.panel1.Controls.Add(this.iconButtonSua);
@@ -133,6 +108,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(421, 624);
             this.panel1.TabIndex = 9;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtEmail.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtEmail.BorderSize = 2;
+            this.txtEmail.Location = new System.Drawing.Point(154, 249);
+            this.txtEmail.Multiline = false;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Padding = new System.Windows.Forms.Padding(7);
+            this.txtEmail.PasswordChar = false;
+            this.txtEmail.Size = new System.Drawing.Size(229, 30);
+            this.txtEmail.TabIndex = 55;
+            this.txtEmail.Texts = "";
+            this.txtEmail.UnderlinedStyle = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label2.Location = new System.Drawing.Point(76, 258);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 21);
+            this.label2.TabIndex = 54;
+            this.label2.Text = "Email";
             // 
             // iconButtonClear
             // 
@@ -156,14 +158,14 @@
             this.txtDiaChi.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtDiaChi.BorderRadius = 10;
             this.txtDiaChi.BorderSize = 1;
-            this.txtDiaChi.Location = new System.Drawing.Point(154, 360);
+            this.txtDiaChi.Location = new System.Drawing.Point(154, 407);
             this.txtDiaChi.Multiline = true;
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Padding = new System.Windows.Forms.Padding(7);
             this.txtDiaChi.PasswordChar = false;
             this.txtDiaChi.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtDiaChi.PlaceholderText = "";
-            this.txtDiaChi.Size = new System.Drawing.Size(229, 132);
+            this.txtDiaChi.Size = new System.Drawing.Size(229, 85);
             this.txtDiaChi.TabIndex = 44;
             this.txtDiaChi.Texts = "";
             this.txtDiaChi.UnderlinedStyle = false;
@@ -205,7 +207,7 @@
             this.rbtNu.AutoSize = true;
             this.rbtNu.CheckedColor = System.Drawing.Color.MediumSlateBlue;
             this.rbtNu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rbtNu.Location = new System.Drawing.Point(303, 278);
+            this.rbtNu.Location = new System.Drawing.Point(308, 332);
             this.rbtNu.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbtNu.Name = "rbtNu";
             this.rbtNu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -237,7 +239,7 @@
             this.rbtNam.AutoSize = true;
             this.rbtNam.CheckedColor = System.Drawing.Color.MediumSlateBlue;
             this.rbtNam.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rbtNam.Location = new System.Drawing.Point(160, 278);
+            this.rbtNam.Location = new System.Drawing.Point(164, 332);
             this.rbtNam.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbtNam.Name = "rbtNam";
             this.rbtNam.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -253,7 +255,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label3.Location = new System.Drawing.Point(11, 34);
+            this.label3.Location = new System.Drawing.Point(3, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 21);
             this.label3.TabIndex = 30;
@@ -264,7 +266,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label12.Location = new System.Drawing.Point(53, 280);
+            this.label12.Location = new System.Drawing.Point(53, 334);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(76, 21);
             this.label12.TabIndex = 39;
@@ -302,7 +304,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label5.Location = new System.Drawing.Point(18, 191);
+            this.label5.Location = new System.Drawing.Point(18, 182);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 21);
             this.label5.TabIndex = 34;
@@ -314,7 +316,7 @@
             this.txtSoDienThoai.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.txtSoDienThoai.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtSoDienThoai.BorderSize = 2;
-            this.txtSoDienThoai.Location = new System.Drawing.Point(154, 182);
+            this.txtSoDienThoai.Location = new System.Drawing.Point(154, 173);
             this.txtSoDienThoai.Multiline = false;
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Padding = new System.Windows.Forms.Padding(7);
@@ -329,7 +331,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label6.Location = new System.Drawing.Point(64, 360);
+            this.label6.Location = new System.Drawing.Point(64, 407);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 21);
             this.label6.TabIndex = 36;
@@ -398,6 +400,42 @@
             this.label1.TabIndex = 32;
             this.label1.Text = "Tìm kiếm";
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã khách hàng";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Họ tên";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Số điện thoại";
+            this.Column3.Name = "Column3";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Email";
+            this.Column7.Name = "Column7";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Giới tính";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Địa chỉ";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Id";
+            this.Column6.Name = "Column6";
+            this.Column6.Visible = false;
+            // 
             // FrmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -442,9 +480,12 @@
         private FontAwesome.Sharp.IconButton iconButton8;
         private CustomControl.TextBoxCustom2_0 txtTimKiem;
         private FontAwesome.Sharp.IconButton iconButtonClear;
+        private CustomControl.TextBoxCustom txtEmail;
+        private Label label2;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
