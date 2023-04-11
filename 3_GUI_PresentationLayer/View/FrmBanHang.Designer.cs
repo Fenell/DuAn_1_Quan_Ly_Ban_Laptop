@@ -41,7 +41,7 @@
             lblHoTen = new Label();
             label5 = new Label();
             label6 = new Label();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
+            btnThemKH = new FontAwesome.Sharp.IconButton();
             lblTongTien = new Label();
             btnThanhToan = new FontAwesome.Sharp.IconButton();
             txtGhiChu = new CustomControl.TextBoxCustom2_0();
@@ -183,7 +183,7 @@
             groupBox3.Controls.Add(lblHoTen);
             groupBox3.Controls.Add(label5);
             groupBox3.Controls.Add(label6);
-            groupBox3.Controls.Add(iconButton3);
+            groupBox3.Controls.Add(btnThemKH);
             groupBox3.Location = new Point(11, 9);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(420, 142);
@@ -234,20 +234,21 @@
             label6.TabIndex = 13;
             label6.Text = "Số điện thoại";
             // 
-            // iconButton3
+            // btnThemKH
             // 
-            iconButton3.BackColor = Color.White;
-            iconButton3.FlatAppearance.BorderSize = 0;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
-            iconButton3.IconColor = Color.FromArgb(86, 122, 228);
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.IconSize = 35;
-            iconButton3.Location = new Point(361, 14);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(46, 46);
-            iconButton3.TabIndex = 13;
-            iconButton3.UseVisualStyleBackColor = false;
+            btnThemKH.BackColor = Color.White;
+            btnThemKH.FlatAppearance.BorderSize = 0;
+            btnThemKH.FlatStyle = FlatStyle.Flat;
+            btnThemKH.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
+            btnThemKH.IconColor = Color.FromArgb(86, 122, 228);
+            btnThemKH.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnThemKH.IconSize = 35;
+            btnThemKH.Location = new Point(361, 14);
+            btnThemKH.Name = "btnThemKH";
+            btnThemKH.Size = new Size(46, 46);
+            btnThemKH.TabIndex = 13;
+            btnThemKH.UseVisualStyleBackColor = false;
+            btnThemKH.Click += btnThemKH_Click;
             // 
             // lblTongTien
             // 
@@ -673,7 +674,7 @@
         private Label label4;
         private Label label11;
         private Label label6;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton btnThemKH;
         private CustomControl.RadioButtonCustom rbtnCash;
         private CustomControl.RadioButtonCustom rbtnTransfer;
         private Label label3;

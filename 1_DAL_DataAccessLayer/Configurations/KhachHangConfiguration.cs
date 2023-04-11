@@ -19,6 +19,7 @@ namespace _1_DAL_DataAccessLayer.Configurations
             builder.Property(x => x.Hoten).HasMaxLength(50);
             builder.Property(x=>x.SoDienThoai).HasMaxLength(11);
             builder.Property(x=>x.DiaChi).HasMaxLength(100);
+            builder.Property(x=>x.Email).HasMaxLength(100);
         }
     }
 }
