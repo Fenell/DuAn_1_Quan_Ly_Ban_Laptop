@@ -48,7 +48,7 @@
             btnAll = new CustomControl.ButtonCustom();
             iconbtnSua = new FontAwesome.Sharp.IconButton();
             btnThem = new FontAwesome.Sharp.IconButton();
-            dataGridView2 = new DataGridView();
+            dgvSanPham = new DataGridView();
             label3 = new Label();
             dtKetThuc = new CustomControl.DateTimePickerCustom();
             dtBatDau = new CustomControl.DateTimePickerCustom();
@@ -66,7 +66,7 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvKhuyenMai).BeginInit();
             btnSua.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSanPham).BeginInit();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
@@ -211,7 +211,7 @@
             btnSua.Controls.Add(btnAll);
             btnSua.Controls.Add(iconbtnSua);
             btnSua.Controls.Add(btnThem);
-            btnSua.Controls.Add(dataGridView2);
+            btnSua.Controls.Add(dgvSanPham);
             btnSua.Controls.Add(label3);
             btnSua.Controls.Add(dtKetThuc);
             btnSua.Controls.Add(dtBatDau);
@@ -287,6 +287,7 @@
             btnClear.Text = "Chọn lại";
             btnClear.TextColor = Color.White;
             btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
             // btnTimSp
             // 
@@ -339,6 +340,7 @@
             btnAll.Text = "Chọn tất cả";
             btnAll.TextColor = Color.White;
             btnAll.UseVisualStyleBackColor = false;
+            btnAll.Click += btnAll_Click;
             // 
             // iconbtnSua
             // 
@@ -372,14 +374,15 @@
             btnThem.UseVisualStyleBackColor = false;
             btnThem.Click += btnThem_Click;
             // 
-            // dataGridView2
+            // dgvSanPham
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(17, 423);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(454, 159);
-            dataGridView2.TabIndex = 20;
+            dgvSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvSanPham.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSanPham.Location = new Point(17, 423);
+            dgvSanPham.Name = "dgvSanPham";
+            dgvSanPham.RowTemplate.Height = 25;
+            dgvSanPham.Size = new Size(454, 159);
+            dgvSanPham.TabIndex = 20;
             // 
             // label3
             // 
@@ -571,7 +574,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvKhuyenMai).EndInit();
             btnSua.ResumeLayout(false);
             btnSua.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSanPham).EndInit();
             panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -592,7 +595,7 @@
         private Label label8;
         private Label label5;
         private Label label4;
-        private DataGridView dataGridView2;
+        private DataGridView dgvSanPham;
         private CustomControl.DateTimePickerCustom dtKetThuc;
         private CustomControl.DateTimePickerCustom dtBatDau;
         private Label label10;

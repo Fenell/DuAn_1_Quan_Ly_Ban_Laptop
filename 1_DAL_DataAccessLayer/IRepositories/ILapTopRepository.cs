@@ -11,7 +11,7 @@ namespace _1_DAL_DataAccessLayer.IRepositories
     {
         bool AddLapTop(Laptop lapTop);
         bool UpdateLapTop(Laptop lapTop);
-        bool UpdateStatusLaptop(Guid id);
+        bool UpdateKhuyenMaiLaptop(Guid idLaptop, Guid idKhuyenMai);
         Laptop GetLapTopById(Guid idLapTop);
         bool UpdateStatusLaptop(List<Laptop> lstLaptops);
         List<Laptop> GetAllLaptopNoSerial();

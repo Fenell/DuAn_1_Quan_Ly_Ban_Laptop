@@ -23,7 +23,6 @@ namespace _1_DAL_DataAccessLayer.Repositories
             {
                 if (khuyenMai != null)
                 {
-                    khuyenMai.Id = Guid.NewGuid();
                     _lapTopContext.Add(khuyenMai);
                     _lapTopContext.SaveChanges();
                     return true;

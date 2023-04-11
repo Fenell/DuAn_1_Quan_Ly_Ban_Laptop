@@ -60,9 +60,18 @@ namespace _1_DAL_DataAccessLayer.Repositories
             return true;
         }
 
-        public bool UpdateStatusLaptop(Guid id)
+        public bool UpdateKhuyenMaiLaptop(Guid idLaptop, Guid idKhuyenMai)
         {
-            throw new NotImplementedException();
+            var laptop = _lapTopContext.Laptops.FirstOrDefault(x => x.Id == idLaptop);
+            if (laptop != null)
+            {
+                laptop.IdKhuyenMai = idKhuyenMai;
+                _lapTopContext.Laptops.Update(laptop);
+                _lapTopContext.SaveChanges();
+                return true;
+            }
+
+            return false;
         }
 
         public Laptop GetLapTopById(Guid idLapTop)
@@ -85,7 +94,6 @@ namespace _1_DAL_DataAccessLayer.Repositories
                 ketqua.IdMauSac = lapTop.IdMauSac;
                 ketqua.IdManHinh = lapTop.IdManHinh;
                 ketqua.IdNhaCungCap = lapTop.IdNhaCungCap;
-
                 ketqua.ManHinh = lapTop.ManHinh;
                 ketqua.Mota = lapTop.Mota;
                 ketqua.MauSac = lapTop.MauSac;

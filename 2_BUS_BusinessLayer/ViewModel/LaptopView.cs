@@ -29,6 +29,7 @@ namespace _2_BUS_BusinessLayer.ViewModel
         public string MauSac { get; set; }
         public Guid IdOCung { get; set; }
         public string OCung { get; set; }
+        public Guid IdKhuyenMai { get; set; }
         public string Ten { get; set; }
         public string Mota { get; set; }
         public decimal TrongLuong { get; set; }

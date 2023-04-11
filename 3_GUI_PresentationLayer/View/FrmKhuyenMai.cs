@@ -17,32 +17,59 @@ namespace _3_GUI_PresentationLayer.View
     public partial class FrmKhuyenMai : Form
     {
         private IKhuyenMaiServices _khuyenMaiServices;
-        Guid _idKhuyenMai;
+        private ILaptopService _laptopService;
+        private Guid _idKhuyenMai;
         public FrmKhuyenMai()
         {
             InitializeComponent();
             _khuyenMaiServices = new KhuyenMaiServices();
+            _laptopService = new LaptopService();
             ChuyenTrangThai();
-            LoadDgv();
+            LoadData();
         }
-        private void LoadDgv()
+
+        private void LoadData()
         {
-            cbbLoaiKhuyenMai.DisplayMember = "LoaiKhuyenMai";
-            //cbbLoaiKhuyenMai.ValueMember = "Id";
-            cbbLoaiKhuyenMai.DataSource = _khuyenMaiServices.GetAllKhuyenMai();
+            cbbLoaiKhuyenMai.Items.Add("Giảm tiền");
+            cbbLoaiKhuyenMai.Items.Add("Giảm %");
+
             dgvKhuyenMai.ColumnCount = 6;
+            dgvKhuyenMai.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvKhuyenMai.ColumnHeadersDefaultCellStyle.Font =
+                new Font(dgvKhuyenMai.ColumnHeadersDefaultCellStyle.Font, FontStyle.Bold); 
             dgvKhuyenMai.Columns[0].Visible = false;
             dgvKhuyenMai.Columns[1].Name = "Tên";
             dgvKhuyenMai.Columns[2].Name = "Loại";
             dgvKhuyenMai.Columns[3].Name = "Giá trị";
             dgvKhuyenMai.Columns[4].Name = "Ngày bắt đầu";
             dgvKhuyenMai.Columns[5].Name = "Ngày kết thúc";
+
             dgvKhuyenMai.Rows.Clear();
             foreach (var x in _khuyenMaiServices.GetAllKhuyenMai())
             {
                 dgvKhuyenMai.Rows.Add(x.Id, x.Ten, x.LoaiKhuyenMai, x.GiaTri, x.NgayBatDau, x.NgayKetThuc);
             }
+
+            dgvSanPham.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvSanPham.ColumnHeadersDefaultCellStyle.Font =
+                new Font(dgvSanPham.ColumnHeadersDefaultCellStyle.Font, FontStyle.Bold);
+            dgvSanPham.ColumnCount = 2;
+            dgvSanPham.Columns[0].Visible = false;
+            dgvSanPham.Columns[1].Name = "Tên laptop";
+
+            DataGridViewCheckBoxColumn checkBox = new DataGridViewCheckBoxColumn();
+            checkBox.FillWeight = 20;
+            checkBox.HeaderText = "Chọn";
+            checkBox.Name = "cb";
+            dgvSanPham.Columns.Add(checkBox);
+
+            dgvSanPham.Rows.Clear();
+            foreach (var a in _laptopService.GetAllLaptop())
+            {
+                dgvSanPham.Rows.Add(a.Id, $"{a.HangLaptop} {a.DongLaptop} {a.Ten}");
+            }
         }
+
         private string RandomMa()
         {
             Random random = new Random();
@@ -52,9 +79,10 @@ namespace _3_GUI_PresentationLayer.View
 
         private bool checkDateTime()
         {
-            if (dtBatDau.Value > DateTime.Now && dtKetThuc.Value > dtBatDau.Value) return true;
+            if (dtBatDau.Value.Date >= DateTime.Now.Date && dtKetThuc.Value > dtBatDau.Value) return true;
             return false;
         }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (!checkDateTime())
@@ -65,6 +93,7 @@ namespace _3_GUI_PresentationLayer.View
             txtMa.Texts = RandomMa();
             KhuyenMai khuyenMai = new KhuyenMai()
             {
+                Id = Guid.NewGuid(),
                 Ten = txtTenCT.Texts,
                 Ma = txtMa.Texts,
                 LoaiKhuyenMai = cbbLoaiKhuyenMai.Text,
@@ -73,12 +102,25 @@ namespace _3_GUI_PresentationLayer.View
                 NgayKetThuc = dtKetThuc.Value,
                 TrangThai = dtBatDau.Value == DateTime.Now ? 0 : 1,
             };
+
+            foreach (DataGridViewRow row in dgvSanPham.Rows)
+            {
+                DataGridViewCheckBoxCell checkBoxCell = (DataGridViewCheckBoxCell)row.Cells["cb"];
+               // bool isChecked = (bool)checkBoxCell.Value;
+                if (Convert.ToBoolean(checkBoxCell.Value))
+                {
+                    Guid idLaptop = Guid.Parse(row.Cells[0].Value.ToString());
+                    _laptopService.UpdateKhuyeMaiLaptop(idLaptop, khuyenMai.Id);
+                }
+            }
+
             if (MessageBox.Show("Bạn có chắc chắn", "Thêm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 MessageBox.Show(_khuyenMaiServices.AddKhuyenMai(khuyenMai));
             }
-            LoadDgv();
+            LoadData();
         }
+
         private void ChuyenTrangThai()
         {
             foreach (var x in _khuyenMaiServices.GetAllKhuyenMai())
@@ -109,8 +151,9 @@ namespace _3_GUI_PresentationLayer.View
             {
                 MessageBox.Show(_khuyenMaiServices.UpdateKhuyenMai(khuyenMai));
             }
-            LoadDgv();
+            LoadData();
         }
+
         private void btnClearForm_Click(object sender, EventArgs e)
         {
             btnSua.Enabled = false;
@@ -122,6 +165,7 @@ namespace _3_GUI_PresentationLayer.View
             dtBatDau.Value = DateTime.Now;
             dtKetThuc.Value = DateTime.Now;
         }
+
         private void dgvKhuyenMai_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowindex = e.RowIndex;
@@ -152,6 +196,22 @@ namespace _3_GUI_PresentationLayer.View
             btnThem.Enabled = false;
         }
 
+        private void btnAll_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvSanPham.Rows)
+            {
+                DataGridViewCheckBoxCell checkBoxCellcell = (DataGridViewCheckBoxCell)row.Cells["cb"];
+                checkBoxCellcell.Value = checkBoxCellcell.TrueValue;
+            }
+        }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvSanPham.Rows)
+            {
+                DataGridViewCheckBoxCell checkBoxCellcell = (DataGridViewCheckBoxCell)row.Cells["cb"];
+                checkBoxCellcell.Value = checkBoxCellcell.FalseValue;
+            }
+        }
     }
 }
