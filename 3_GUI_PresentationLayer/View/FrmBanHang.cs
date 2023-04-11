@@ -389,24 +389,6 @@ namespace _3_GUI_PresentationLayer.View
 
         }
 
-        private void dgvGioHang_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int rowIndex = e.RowIndex;
-            if (rowIndex < 0)
-            {
-                return;
-            }
-            _idChiTietHD = Guid.Parse(dgvGioHang.Rows[rowIndex].Cells[0].Value.ToString());
-            var idLapttop = Guid.Parse(dgvGioHang.Rows[rowIndex].Cells[1].Value.ToString());
-            var laptop = _laptopService.GetLaptopFromDb().FirstOrDefault(x => x.Id == idLapttop);
-            if (laptop != null)
-            {
-                LoadKhuyenMai(laptop.IdKhuyenMai);
-
-            }
-
-        }
-
         private void RemoveGioHang(Guid idCtHoaDon)
         {
             var chiTietHD = _lstCtHoaDonViews.Find(x => x.Id == idCtHoaDon);
