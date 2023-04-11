@@ -197,7 +197,7 @@ namespace _3_GUI_PresentationLayer.View
             imageColumn.HeaderText = "Thao tac";
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Normal;
             imageColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            imageColumn.Image = Image.FromFile(@"E:\KỲ 4\Dự Án 1\3_GUI_PresentationLayer\Resources\add-to-cart.png");
+            imageColumn.Image = Image.FromFile(@"D:\CODE\C#\DuAn_1_Quan_Ly_Ban_Laptop\3_GUI_PresentationLayer\Resources\add-to-cart.png");
             dgvSanPham.Columns.Add(imageColumn);
         }
         #endregion
@@ -369,6 +369,24 @@ namespace _3_GUI_PresentationLayer.View
                 TinhTien();
                 LoadSanPham();
             }
+        }
+
+        private void dgvGioHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            if (rowIndex < 0)
+            {
+                return;
+            }
+            _idChiTietHD = Guid.Parse(dgvGioHang.Rows[rowIndex].Cells[0].Value.ToString());
+            var idLapttop = Guid.Parse(dgvGioHang.Rows[rowIndex].Cells[1].Value.ToString());
+            var laptop = _laptopService.GetLaptopFromDb().FirstOrDefault(x => x.Id == idLapttop);
+            if (laptop != null)
+            {
+                LoadKhuyenMai(laptop.IdKhuyenMai);
+
+            }
+
         }
 
         private void dgvGioHang_CellClick(object sender, DataGridViewCellEventArgs e)
