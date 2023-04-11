@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace _1_DAL_DataAccessLayer.Migrations
 {
-    public partial class hi : Migration
+    public partial class uppp1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -43,6 +43,7 @@ namespace _1_DAL_DataAccessLayer.Migrations
                     Ma = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     Hoten = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     SoDienThoai = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     DiaChi = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     GioiTinh = table.Column<bool>(type: "bit", nullable: false)
                 },

@@ -12,8 +12,8 @@ using _1_DAL_DataAccessLayer.Context;
 namespace _1_DAL_DataAccessLayer.Migrations
 {
     [DbContext(typeof(QlBanLaptopContext))]
-    [Migration("20230406142921_uppdateee")]
-    partial class uppdateee
+    [Migration("20230411154036_uppp1")]
+    partial class uppp1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -199,6 +199,11 @@ namespace _1_DAL_DataAccessLayer.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("DiaChi")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
