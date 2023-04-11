@@ -73,6 +73,7 @@ namespace _2_BUS_BusinessLayer.Services
                 hoaDonByDayList.Add(new KeyValuePair<DateTime, decimal>(a.Ngay, a.DoanhThu));
                 TongDoanhThu += a.DoanhThu;
             }
+            hoaDonByDayList = hoaDonByDayList.OrderByDescending(c=>c.Key).ToList();
 
             //Group by Hours
             if (_numberDay <= 1)
