@@ -232,7 +232,7 @@ namespace _3_GUI_PresentationLayer.View
                 dgvGioHang.Rows.Add(a.Id, a.IdSanPham, $"{a.Hang} {a.Dong} {a.TenSanPham}", a.SerialSanPham, a.SoLuong, a.DonGia, a.GiamGia, a.ThanhTien);
             }
 
-        } 
+        }
         #endregion
 
         private void LoadKhachHang()
@@ -676,7 +676,7 @@ namespace _3_GUI_PresentationLayer.View
 
             var khuyenMai = _khuyenMaiServices.GetAllKhuyenMai().Find(c => c.Ten == result);
             var index = _lstCtHoaDonViews.FindIndex(c => c.Id == _idChiTietHD);
-            if(index  < 0) return;
+            if (index < 0) return;
             var chiTietHD = _lstCtHoaDonViews.ElementAt(index);
             if (khuyenMai.LoaiKhuyenMai == "Giảm %")
             {
@@ -758,15 +758,23 @@ namespace _3_GUI_PresentationLayer.View
                 MessageBox.Show("Khoảng giá bắt đầu phải lớn hơn cuối", "Thông báo");
                 return;
             }
-            LoadSanPham(txtGiaDau.Texts,txtGiaCuoi.Texts);
+            LoadSanPham(txtGiaDau.Texts, txtGiaCuoi.Texts);
         }
 
         private void txtGiaDau_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar!= '.')
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.')
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnThemKH_Click(object sender, EventArgs e)
+        {
+            FrmThemNhanhKH f = new FrmThemNhanhKH();
+            f.StartPosition = FormStartPosition.Manual;
+            f.Location = new Point(Cursor.Position.X - f.Width, Cursor.Position.Y);
+            f.ShowDialog();
         }
     }
 }

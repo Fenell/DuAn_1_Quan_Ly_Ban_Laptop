@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _3_GUI_PresentationLayer.View
 {
-    public partial class FrmChonSerial : Form
+    public partial class FrmThemNhanhKH : Form
     {
-        public FrmChonSerial()
+        public FrmThemNhanhKH()
         {
             InitializeComponent();
         }
