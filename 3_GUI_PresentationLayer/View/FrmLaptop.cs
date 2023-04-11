@@ -286,7 +286,9 @@ namespace _3_GUI_PresentationLayer.View
         }
         private bool checkNhap1()
         {
-            if (txtTen.Texts == "" || txtTrongLuong.Texts == "" || txtNamBh.Texts == "" || txtGiaBan.Texts == "" || txtGiaNhap.Texts == "") return true;
+            if (txtTen.Texts == "" || txtTrongLuong.Texts == "" || txtNamBh.Texts == "" || txtGiaBan.Texts == "" || txtGiaNhap.Texts == "" ||
+                cbbHangSanXuat.Text == "" || cbbDong.Text == "" || cbbNhaCungCap.Text == "" || cbbCpu.Text == "" || cbbVga.Text == "" ||
+                cbbRam.Text == "" || cbbOCung.Text == "" || cbbManHinh.Text == "" || cbbMauSac.Text == "") return true;
             return false;
         }
         private void btnThem_Click(object sender, EventArgs e)
@@ -332,14 +334,18 @@ namespace _3_GUI_PresentationLayer.View
         private void btnSua_Click(object sender, EventArgs e)
         {
             txtFalse();
+            if (checkNhap1())
+            {
+                MessageBox.Show("Không được để trống");
+                return;
+            }
             var lt = _lapTopService.GetAllLaptop().FirstOrDefault(c => c.Id == _idLaptop);
-            lt.Ten = txtTen.Texts;
-            if (checkNhap() || txtTen.Texts != lt.Ten)
+            if(_lapTopService.GetAllLaptop().Any(c=>c.Ten == txtTen.Texts && txtTen.Texts != lt.Ten))
             {
                 MessageBox.Show("Bạn đã bị trùng tên, mời nhập lại !!!");
                 return;
             }
-
+            lt.Ten = txtTen.Texts;
             lt.Id = _idLaptop;
             lt.IdCpu = Guid.Parse(cbbCpu.SelectedValue.ToString());
             lt.IdVga = Guid.Parse(cbbVga.SelectedValue.ToString());
