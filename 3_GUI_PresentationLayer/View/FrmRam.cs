@@ -26,25 +26,28 @@ namespace _3_GUI_PresentationLayer.View
         }
         private void LoadDgv()
         {
-            dgvRam.ColumnCount = 3;
+            dgvRam.ColumnCount = 4;
             dgvRam.Columns[0].Visible = false;
             dgvRam.Columns[1].Name = "Mã";
             dgvRam.Columns[2].Name = "Tên";
+            dgvRam.Columns[3].Name = "Dung Lượng";
             dgvRam.Rows.Clear();
             foreach (var x in _ramServices.GetAllRam())
             {
-                dgvRam.Rows.Add(x.Id, x.Ma, x.Ten);
+                dgvRam.Rows.Add(x.Id, x.Ma, x.Ten, x.DungLuong);
             }
         }
         private void txtTrue()
         {
             txtTenRam.Enabled = true;
+            txtDungLuong.Enabled = true;
             lbMa.Enabled = true;
             btnSua.Enabled = true;
         }
         private void txtFalse()
         {
             txtTenRam.Enabled = false;
+            txtDungLuong.Enabled = false;
             lbMa.Enabled = false;
             btnSua.Enabled = false;
             btnThem.Enabled = false;
@@ -73,6 +76,7 @@ namespace _3_GUI_PresentationLayer.View
             {
                 Ma = lbMa.Text,
                 Ten = txtTenRam.Texts,
+                DungLuong = Convert.ToInt32(txtDungLuong.Texts)
             };
             if (MessageBox.Show("Bạn có chắc chắn", "Thêm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -94,9 +98,10 @@ namespace _3_GUI_PresentationLayer.View
                 Id = _idRam,
                 Ma = lbMa.Text,
                 Ten = txtTenRam.Texts,
+                DungLuong = Convert.ToInt32(txtDungLuong.Texts)
                 // dung lượng ram
             };
-            
+
             if (MessageBox.Show("Bạn có chắc chắn", "Sửa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 MessageBox.Show(_ramServices.UpdateRam(ram));
@@ -109,8 +114,10 @@ namespace _3_GUI_PresentationLayer.View
             txtFalse();
             btnThem.Enabled = true;
             txtTenRam.Enabled = true;
+            txtDungLuong.Enabled = true;
             txtTenRam.Texts = "";
             lbMa.Text = "";
+            txtDungLuong.Texts = "";
         }
 
         private void dgvRam_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -124,8 +131,17 @@ namespace _3_GUI_PresentationLayer.View
             var ram = _ramServices.GetAllRam().FirstOrDefault(c => c.Id == _idRam);
             txtTenRam.Texts = ram.Ten;
             lbMa.Text = ram.Ma;
+            txtDungLuong.Texts = ram.DungLuong.ToString();
             btnThem.Enabled = false;
             txtTrue();
+        }
+
+        private void txtDungLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
         }
     }
 }

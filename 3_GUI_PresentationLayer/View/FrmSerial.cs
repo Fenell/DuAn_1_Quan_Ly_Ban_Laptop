@@ -72,7 +72,7 @@ namespace _3_GUI_PresentationLayer.View
         {
             string serial = txtSerial.Texts;
 
-            if (serial.Length == 15) return true;
+            if (serial.Length >= 15) return true;
             return false;
         }
         private void btnThem_Click(object sender, EventArgs e)
@@ -84,7 +84,7 @@ namespace _3_GUI_PresentationLayer.View
             }
             if (!Validate())
             {
-                MessageBox.Show("Phải nhập đủ 15 ký tự");
+                MessageBox.Show("Phải lớn hơn 15 ký tự");
                 return;
             }
 
@@ -207,7 +207,7 @@ namespace _3_GUI_PresentationLayer.View
             string serial = dgvLaptop.Rows[e.RowIndex].Cells[0].Value.ToString();
             if (e.ColumnIndex == 1)
             {
-                _serialLaptopList.Remove(_serialLaptopList.Find(c=>c.Serial == serial));
+                _serialLaptopList.Remove(_serialLaptopList.Find(c => c.Serial == serial));
                 LoadDgv();
             }
         }

@@ -87,6 +87,7 @@
             txtDungLuong.TabIndex = 21;
             txtDungLuong.Texts = "";
             txtDungLuong.UnderlinedStyle = true;
+            txtDungLuong.KeyPress += txtDungLuong_KeyPress;
             // 
             // rbtnSdd
             // 

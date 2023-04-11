@@ -17,6 +17,8 @@ namespace _2_BUS_BusinessLayer.ViewModel
         public string DongLaptop { get; set; }
         public Guid IdNhaCungCap { get; set; }
         public string NhaCungCap { get; set; }
+        //public Guid IdKhuyenMai { get; set; }
+        //public string KhuyenMai { get; set; }
         public Guid IdCpu { get; set; }
         public string Cpu { get; set; }
         public Guid? IdVga { get; set; }

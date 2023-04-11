@@ -25,6 +25,7 @@ namespace _2_BUS_BusinessLayer.Services
         private ISerialLaptopRepository _serialLaptopRepository;
         private INhaCungCapRepository _nhaCungCapRepository;
         private ILapTopRepository _sanPhamLapTopRepository;
+        private IKhuyenMaiRepository _khuyenMaiRepository;
 
         public LaptopService()
         {
@@ -39,6 +40,7 @@ namespace _2_BUS_BusinessLayer.Services
             _serialLaptopRepository = new SerialLaptopRepository();
             _nhaCungCapRepository = new NhaCungCapRepository();
             _sanPhamLapTopRepository = new LapTopRepository();
+            _khuyenMaiRepository = new KhuyenMaiRepository();
 
         }
         public string AddLaptop(LaptopView obj)
@@ -203,6 +205,7 @@ namespace _2_BUS_BusinessLayer.Services
                 join mauSac in _mauSacRepository.GetAllMauSac() on sanPham.IdMauSac equals mauSac.Id
                 join manHinh in _manHinhRepositories.GetAllManHinh() on sanPham.IdManHinh equals manHinh.Id
                 join nhaCungCap in _nhaCungCapRepository.GetAllNhaCungCap() on sanPham.IdNhaCungCap equals nhaCungCap.Id
+                //join khuyenMai in _khuyenMaiRepository.GetAllKhuyenMai() on sanPham.IdKhuyenMai equals khuyenMai.Id
                 select new LaptopView
                 {
                     Id = sanPham.Id,
@@ -215,6 +218,7 @@ namespace _2_BUS_BusinessLayer.Services
                     IdMauSac = mauSac.Id,
                     IdManHinh = manHinh.Id,
                     IdNhaCungCap = nhaCungCap.Id,
+                    //IdKhuyenMai = khuyenMai.Id,
 
                     Ten = sanPham.Ten,
                     HangLaptop = hangLaptop.Ten,

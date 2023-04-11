@@ -66,6 +66,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
             {
                 ketqua.Ma = ram.Ma;
                 ketqua.Ten = ram.Ten;
+                ketqua.DungLuong = ram.DungLuong;
                 _lapTopContext.Update(ketqua);
                 _lapTopContext.SaveChanges();
                 return true;

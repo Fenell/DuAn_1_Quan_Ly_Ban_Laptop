@@ -238,9 +238,10 @@ namespace _3_GUI_PresentationLayer.View
             _lstOCung.ForEach(c => cbbOCung.Items.Add($"{c.Loai}-{c.DungLuong}GB"));
             //cbbOCung.DataSource = _oCungServices.GetAllOCungs();
             //Ram
-            cbbRam.DisplayMember = "Ten";
+            //cbbRam.DisplayMember = "Ten";
             cbbRam.ValueMember = "Id";
-            cbbRam.DataSource = _ramServices.GetAllRam();
+            _lstRam = _ramServices.GetAllRam();
+            _lstRam.ForEach(c => cbbRam.Items.Add($"{c.Ten}-{c.DungLuong}GB"));
             //Màn hình
             cbbManHinh.DisplayMember = "Ten";
             cbbManHinh.ValueMember = "Id";
@@ -283,11 +284,21 @@ namespace _3_GUI_PresentationLayer.View
             if (_lapTopService.GetAllLaptop().Any(c => c.Ten == txtTen.Texts)) return true;
             return false;
         }
+        private bool checkNhap1()
+        {
+            if (txtTen.Texts == "" || txtTrongLuong.Texts == "" || txtNamBh.Texts == "" || txtGiaBan.Texts == "" || txtGiaNhap.Texts == "") return true;
+            return false;
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (checkNhap())
             {
                 MessageBox.Show("Bạn đã bị trùng tên, mời nhập lại !!!");
+                return;
+            }
+            if (checkNhap1())
+            {
+                MessageBox.Show("Không được để trống");
                 return;
             }
             LaptopView laptop = new LaptopView()
@@ -296,8 +307,8 @@ namespace _3_GUI_PresentationLayer.View
                 IdCpu = Guid.Parse(cbbCpu.SelectedValue.ToString()),
                 IdVga = Guid.Parse(cbbVga.SelectedValue.ToString()),
                 IdMauSac = Guid.Parse(cbbMauSac.SelectedValue.ToString()),
-                IdOCung = Guid.Parse(cbbOCung.SelectedValue.ToString()),
-                IdRam = Guid.Parse(cbbRam.SelectedValue.ToString()),
+                IdOCung = _oCungServices.GetAllOCungs()[cbbOCung.SelectedIndex].Id,
+                IdRam = _ramServices.GetAllRam()[cbbRam.SelectedIndex].Id,
                 IdManHinh = Guid.Parse(cbbManHinh.SelectedValue.ToString()),
                 IdNhaCungCap = Guid.Parse(cbbNhaCungCap.SelectedValue.ToString()),
                 IdHangLaptop = Guid.Parse(cbbHangSanXuat.SelectedValue.ToString()),
@@ -321,30 +332,35 @@ namespace _3_GUI_PresentationLayer.View
         private void btnSua_Click(object sender, EventArgs e)
         {
             txtFalse();
-            LaptopView laptop = new LaptopView()
+            var lt = _lapTopService.GetAllLaptop().FirstOrDefault(c => c.Id == _idLaptop);
+            lt.Ten = txtTen.Texts;
+            if (checkNhap() || txtTen.Texts != lt.Ten)
             {
-                Id = _idLaptop,
-                IdCpu = Guid.Parse(cbbCpu.SelectedValue.ToString()),
-                IdVga = Guid.Parse(cbbVga.SelectedValue.ToString()),
-                IdMauSac = Guid.Parse(cbbMauSac.SelectedValue.ToString()),
-                IdOCung = _oCungServices.GetAllOCungs()[cbbOCung.SelectedIndex].Id,
-                IdRam = Guid.Parse(cbbRam.SelectedValue.ToString()),
-                IdManHinh = Guid.Parse(cbbManHinh.SelectedValue.ToString()),
-                IdNhaCungCap = Guid.Parse(cbbNhaCungCap.SelectedValue.ToString()),
-                IdHangLaptop = Guid.Parse(cbbHangSanXuat.SelectedValue.ToString()),
-                IdDongLaptop = Guid.Parse(cbbDong.SelectedValue.ToString()),
-                Ten = txtTen.Texts,
-                GiaNhap = decimal.Parse(txtGiaNhap.Texts),
-                GiaBan = decimal.Parse(txtGiaBan.Texts),
-                Mota = txtMoTa.Texts,
-                TrongLuong = decimal.Parse(txtTrongLuong.Texts),
-                NamBh = int.Parse(txtNamBh.Texts),
-                TrangThai = true,
-                Anh = Extension.ImageToArrBytes(pcbHinhAnh.Image)
-            };
+                MessageBox.Show("Bạn đã bị trùng tên, mời nhập lại !!!");
+                return;
+            }
+
+            lt.Id = _idLaptop;
+            lt.IdCpu = Guid.Parse(cbbCpu.SelectedValue.ToString());
+            lt.IdVga = Guid.Parse(cbbVga.SelectedValue.ToString());
+            lt.IdMauSac = Guid.Parse(cbbMauSac.SelectedValue.ToString());
+            lt.IdOCung = _oCungServices.GetAllOCungs()[cbbOCung.SelectedIndex].Id;
+            lt.IdRam = _ramServices.GetAllRam()[cbbRam.SelectedIndex].Id;
+            lt.IdManHinh = Guid.Parse(cbbManHinh.SelectedValue.ToString());
+            lt.IdNhaCungCap = Guid.Parse(cbbNhaCungCap.SelectedValue.ToString());
+            lt.IdHangLaptop = Guid.Parse(cbbHangSanXuat.SelectedValue.ToString());
+            lt.IdDongLaptop = Guid.Parse(cbbDong.SelectedValue.ToString());
+            lt.GiaNhap = decimal.Parse(txtGiaNhap.Texts);
+            lt.GiaBan = decimal.Parse(txtGiaBan.Texts);
+            lt.Mota = txtMoTa.Texts;
+            lt.TrongLuong = decimal.Parse(txtTrongLuong.Texts);
+            lt.NamBh = int.Parse(txtNamBh.Texts);
+            lt.TrangThai = true;
+            lt.Anh = Extension.ImageToArrBytes(pcbHinhAnh.Image);
+
             if (MessageBox.Show("Bạn có chắc chắn", "Thêm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show(_lapTopService.UpdateLaptop(laptop));
+                MessageBox.Show(_lapTopService.UpdateLaptop(lt));
             }
             btnThem.Enabled = false;
             ClearForm();
@@ -450,6 +466,7 @@ namespace _3_GUI_PresentationLayer.View
             _idLaptop = Guid.Parse(dgvLaptop.Rows[rowindex].Cells[0].Value.ToString());
             var lt = _lapTopService.GetAllLaptop().FirstOrDefault(c => c.Id == _idLaptop);
             var oCung = _oCungServices.GetAllOCungs().Find(c => c.Id == lt.IdOCung);
+            var ram = _ramServices.GetAllRam().Find(c => c.Id == lt.IdRam);
             txtTen.Texts = lt.Ten;
             txtTrongLuong.Texts = lt.TrongLuong.ToString();
             txtNamBh.Texts = lt.NamBh.ToString();
@@ -460,7 +477,7 @@ namespace _3_GUI_PresentationLayer.View
             cbbVga.Text = lt.Vga;
             cbbMauSac.Text = lt.MauSac;
             cbbOCung.Text = $"{oCung.Loai}-{oCung.DungLuong}GB";
-            cbbRam.Text = lt.Ram;
+            cbbRam.Text = $"{ram.Ten}-{ram.DungLuong}GB";
             cbbManHinh.Text = lt.ManHinh;
             cbbNhaCungCap.Text = lt.NhaCungCap;
             cbbHangSanXuat.Text = lt.HangLaptop;

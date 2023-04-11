@@ -152,5 +152,13 @@ namespace _3_GUI_PresentationLayer.View
             btnThem.Enabled = false;
             txtTrue();
         }
+
+        private void txtDungLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
