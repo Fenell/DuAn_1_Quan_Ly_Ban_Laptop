@@ -54,6 +54,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
                 ketqua.Hoten = khachHang.Hoten;
                 ketqua.Ma = khachHang.Ma;
                 ketqua.SoDienThoai = khachHang.SoDienThoai;
+                ketqua.Email = khachHang.Email;
                 ketqua.DiaChi = khachHang.DiaChi;
                 ketqua.GioiTinh = khachHang.GioiTinh;
                 _laptopContext.Update(ketqua);
