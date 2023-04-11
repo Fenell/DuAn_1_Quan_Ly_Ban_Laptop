@@ -340,7 +340,7 @@ namespace _3_GUI_PresentationLayer.View
                 return;
             }
             var lt = _lapTopService.GetAllLaptop().FirstOrDefault(c => c.Id == _idLaptop);
-            if(_lapTopService.GetAllLaptop().Any(c=>c.Ten == txtTen.Texts && txtTen.Texts != lt.Ten))
+            if (_lapTopService.GetAllLaptop().Any(c => c.Ten == txtTen.Texts && txtTen.Texts != lt.Ten))
             {
                 MessageBox.Show("Bạn đã bị trùng tên, mời nhập lại !!!");
                 return;
@@ -575,11 +575,10 @@ namespace _3_GUI_PresentationLayer.View
             dgvLaptop.Columns[3].Name = "Giá nhập";
             dgvLaptop.Columns[4].Name = "Giá bán";
             dgvLaptop.Columns[5].Name = "Năm bảo hành";
-            foreach (var x in _lapTopService.GetAllLaptop().Where(c => String.Concat(c.HangLaptop, c.DongLaptop, c.Ten).ToLower().Contains(txtTimKiem.Text.ToLower())))
+            foreach (var x in _lapTopService.GetAllLaptop().Where(c => String.Concat(c.HangLaptop, c.DongLaptop, c.Ten).ToLower().Contains(txtTimKiem.Text.ToLower()) && c.TrangThai == true))
             {
                 dgvLaptop.Rows.Add(x.Id, $"{x.HangLaptop} {x.DongLaptop} {x.Ten}", x.SoLuongTon, x.GiaNhap, x.GiaBan, x.NamBh);
             }
-
         }
         private void txtTimKiem_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
         {
