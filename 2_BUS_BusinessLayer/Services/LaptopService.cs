@@ -116,7 +116,7 @@ namespace _2_BUS_BusinessLayer.Services
             return "Chuyển thất bại";
         }
 
-        public string UpdateKhuyeMaiLaptop(Guid idLaptop, Guid idKhuyenMai)
+        public string UpdateKhuyeMaiLaptop(Guid idLaptop, Guid? idKhuyenMai)
         {
             if (_sanPhamLapTopRepository.UpdateKhuyenMaiLaptop(idLaptop, idKhuyenMai))
             {
@@ -220,7 +220,7 @@ namespace _2_BUS_BusinessLayer.Services
                     IdMauSac = mauSac.Id,
                     IdManHinh = manHinh.Id,
                     IdNhaCungCap = nhaCungCap.Id,
-
+                    IdKhuyenMai = sanPham.IdKhuyenMai,
                     Ten = sanPham.Ten,
                     HangLaptop = hangLaptop.Ten,
                     DongLaptop = dongLaptop.Ten,

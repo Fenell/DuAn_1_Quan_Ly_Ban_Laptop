@@ -60,7 +60,7 @@ namespace _1_DAL_DataAccessLayer.Repositories
             return true;
         }
 
-        public bool UpdateKhuyenMaiLaptop(Guid idLaptop, Guid idKhuyenMai)
+        public bool UpdateKhuyenMaiLaptop(Guid idLaptop, Guid? idKhuyenMai)
         {
             var laptop = _lapTopContext.Laptops.FirstOrDefault(x => x.Id == idLaptop);
             if (laptop != null)

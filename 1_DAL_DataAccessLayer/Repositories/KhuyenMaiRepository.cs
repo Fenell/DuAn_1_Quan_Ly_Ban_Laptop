@@ -38,23 +38,33 @@ namespace _1_DAL_DataAccessLayer.Repositories
 
         public bool ChuyenTrangThai(KhuyenMai khuyenMai)
         {
-                var ketqua = _lapTopContext.KhuyenMais.FirstOrDefault(c => c.Id == khuyenMai.Id);
-                if (ketqua.TrangThai == 0 && ketqua.NgayKetThuc < DateTime.Now)
-                {
-                    ketqua.TrangThai = 2;
-                    _lapTopContext.Update(ketqua);
-                    _lapTopContext.SaveChanges();
-                    return true;
-                }
+            var ketqua = _lapTopContext.KhuyenMais.FirstOrDefault(c => c.Id == khuyenMai.Id);
 
-                if (ketqua.TrangThai == 1 && ketqua.NgayBatDau == DateTime.Now)
+            if (ketqua.TrangThai == 0 && ketqua.NgayKetThuc.Date < DateTime.Now.Date)
+            {
+                var laptop = _lapTopContext.Laptops.Where(c => c.IdKhuyenMai == khuyenMai.Id);
+                ketqua.TrangThai = 2;
+                foreach (var a in laptop)
                 {
-                    ketqua.TrangThai = 0;
-                    _lapTopContext.Update(ketqua);
+                    a.IdKhuyenMai = null;
+                    _lapTopContext.Update(a);
                     _lapTopContext.SaveChanges();
-                    return true;
                 }
+                _lapTopContext.Update(ketqua);
+                _lapTopContext.SaveChanges();
                 return true;
+            }
+
+            if (ketqua.TrangThai == 1 && ketqua.NgayBatDau.Date == DateTime.Now.Date)
+            {
+                ketqua.TrangThai = 0;
+                _lapTopContext.Update(ketqua);
+                _lapTopContext.SaveChanges();
+                return true;
+            }
+            return true;
+
+
         }
 
         public List<KhuyenMai> GetAllKhuyenMai()
