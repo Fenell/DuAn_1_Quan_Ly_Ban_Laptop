@@ -235,12 +235,14 @@ namespace _3_GUI_PresentationLayer.View
             // cbbOCung.DisplayMember = "Ten";
             cbbOCung.ValueMember = "Id";
             _lstOCung = _oCungServices.GetAllOCungs();
+            cbbOCung.Items.Clear();
             _lstOCung.ForEach(c => cbbOCung.Items.Add($"{c.Loai}-{c.DungLuong}GB"));
             //cbbOCung.DataSource = _oCungServices.GetAllOCungs();
             //Ram
             //cbbRam.DisplayMember = "Ten";
             cbbRam.ValueMember = "Id";
             _lstRam = _ramServices.GetAllRam();
+            cbbRam.Items.Clear();
             _lstRam.ForEach(c => cbbRam.Items.Add($"{c.Ten}-{c.DungLuong}GB"));
             //Màn hình
             cbbManHinh.DisplayMember = "Ten";
@@ -263,14 +265,27 @@ namespace _3_GUI_PresentationLayer.View
         private void LoadDgv()
         {
             rdbtnDangBan.Checked = true;
-            dgvLaptop.Rows.Clear();
+            dgvLaptop.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvLaptop.ColumnHeadersDefaultCellStyle.Font =
+                new Font(dgvLaptop.ColumnHeadersDefaultCellStyle.Font, FontStyle.Bold);
+            dgvLaptop.ColumnHeadersHeight = 40;
+            dgvLaptop.RowTemplate.Height = 30;
+            dgvLaptop.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvLaptop.ColumnCount = 6;
             dgvLaptop.Columns[0].Visible = false;
-            dgvLaptop.Columns[1].Name = "Tên";
+            dgvLaptop.Columns[1].Name = "Tên laptop";
             dgvLaptop.Columns[2].Name = "Số lượng";
+            dgvLaptop.Columns[2].FillWeight = 50;
             dgvLaptop.Columns[3].Name = "Giá nhập";
+            dgvLaptop.Columns[3].DefaultCellStyle.Format = "N0";
+            dgvLaptop.Columns[3].FillWeight = 70;
             dgvLaptop.Columns[4].Name = "Giá bán";
+            dgvLaptop.Columns[4].DefaultCellStyle.Format = "N0";
+            dgvLaptop.Columns[4].FillWeight = 70;
             dgvLaptop.Columns[5].Name = "Năm bảo hành";
+            dgvLaptop.Columns[5].FillWeight = 50;
+
+            dgvLaptop.Rows.Clear();
             foreach (var x in _lapTopService.GetAllLaptop().Where(c => c.TrangThai == true))
             {
                 dgvLaptop.Rows.Add(x.Id, $"{x.HangLaptop} {x.DongLaptop} {x.Ten}", x.SoLuongTon, x.GiaNhap, x.GiaBan, x.NamBh);

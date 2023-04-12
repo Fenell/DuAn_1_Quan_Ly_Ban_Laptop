@@ -123,6 +123,16 @@ namespace _3_GUI_PresentationLayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HI {
+            get {
+                object obj = ResourceManager.GetObject("HI", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_microsoft_excel_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-microsoft-excel-80", resourceCulture);
@@ -136,6 +146,26 @@ namespace _3_GUI_PresentationLayer.Properties {
         internal static System.Drawing.Bitmap invoice {
             get {
                 object obj = ResourceManager.GetObject("invoice", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LOGO {
+            get {
+                object obj = ResourceManager.GetObject("LOGO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LOGO_LAP_TOP_DE_BAN {
+            get {
+                object obj = ResourceManager.GetObject("LOGO LAP TOP DE BAN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +206,26 @@ namespace _3_GUI_PresentationLayer.Properties {
         internal static System.Drawing.Bitmap revenue {
             get {
                 object obj = ResourceManager.GetObject("revenue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SSSSSS {
+            get {
+                object obj = ResourceManager.GetObject("SSSSSS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SSSSSSAAAAAA {
+            get {
+                object obj = ResourceManager.GetObject("SSSSSSAAAAAA", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

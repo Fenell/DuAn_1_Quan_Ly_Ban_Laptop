@@ -31,7 +31,6 @@
             components = new System.ComponentModel.Container();
             lblClock = new Label();
             pictureBox1 = new PictureBox();
-            label3 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -42,7 +41,7 @@
             lblClock.FlatStyle = FlatStyle.Flat;
             lblClock.Font = new Font("Adidas 2018 font . King sport (", 80.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblClock.ForeColor = Color.FromArgb(186, 197, 216);
-            lblClock.Location = new Point(605, 544);
+            lblClock.Location = new Point(588, 204);
             lblClock.Margin = new Padding(3, 0, 0, 0);
             lblClock.Name = "lblClock";
             lblClock.Size = new Size(77, 120);
@@ -51,24 +50,13 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(648, 110);
+            pictureBox1.Image = Properties.Resources.SSSSSS;
+            pictureBox1.Location = new Point(434, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(345, 351);
+            pictureBox1.Size = new Size(687, 705);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.FromArgb(244, 245, 255);
-            label3.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.FromArgb(89, 62, 103);
-            label3.Location = new Point(506, 21);
-            label3.Name = "label3";
-            label3.Size = new Size(597, 86);
-            label3.TabIndex = 3;
-            label3.Text = "Quản lý bán Laptop";
             // 
             // timer1
             // 
@@ -83,7 +71,6 @@
             BackColor = Color.FromArgb(244, 245, 255);
             ClientSize = new Size(1537, 729);
             Controls.Add(lblClock);
-            Controls.Add(label3);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmHome";
@@ -97,7 +84,6 @@
 
         private Label lblClock;
         private PictureBox pictureBox1;
-        private Label label3;
         private System.Windows.Forms.Timer timer1;
     }
 }

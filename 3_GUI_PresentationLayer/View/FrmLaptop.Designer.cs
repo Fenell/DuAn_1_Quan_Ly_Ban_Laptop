@@ -31,6 +31,8 @@ namespace _3_GUI_PresentationLayer.View
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             txtTimKiem = new TextBox();
             btnGiam = new FontAwesome.Sharp.IconButton();
@@ -949,6 +951,7 @@ namespace _3_GUI_PresentationLayer.View
             // 
             panel3.BackColor = Color.White;
             panel3.Controls.Add(dgvLaptop);
+            panel3.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             panel3.Location = new Point(12, 103);
             panel3.Name = "panel3";
             panel3.Size = new Size(1078, 299);
@@ -957,12 +960,35 @@ namespace _3_GUI_PresentationLayer.View
             // dgvLaptop
             // 
             dgvLaptop.AllowUserToAddRows = false;
+            dgvLaptop.AllowUserToDeleteRows = false;
             dgvLaptop.AllowUserToResizeRows = false;
             dgvLaptop.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvLaptop.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvLaptop.BackgroundColor = Color.FromArgb(214, 248, 248);
+            dgvLaptop.BorderStyle = BorderStyle.None;
+            dgvLaptop.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvLaptop.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(214, 248, 248);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(214, 248, 248);
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvLaptop.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(214, 248, 248);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(241, 122, 133);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvLaptop.DefaultCellStyle = dataGridViewCellStyle2;
             dgvLaptop.Dock = DockStyle.Fill;
+            dgvLaptop.EnableHeadersVisualStyles = false;
+            dgvLaptop.GridColor = Color.FromArgb(145, 158, 194);
             dgvLaptop.Location = new Point(0, 0);
             dgvLaptop.Name = "dgvLaptop";
+            dgvLaptop.ReadOnly = true;
             dgvLaptop.RowHeadersVisible = false;
             dgvLaptop.RowTemplate.Height = 25;
             dgvLaptop.SelectionMode = DataGridViewSelectionMode.FullRowSelect;

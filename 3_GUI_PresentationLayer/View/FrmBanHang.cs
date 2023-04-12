@@ -80,6 +80,8 @@ namespace _3_GUI_PresentationLayer.View
         #region LoadSanPham
         private void LoadSanPham()
         {
+            dgvSanPham.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvSanPham.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             dgvSanPham.ColumnCount = 4;
             dgvSanPham.Columns[0].Name = "Tên laptop";
             dgvSanPham.Columns[1].Name = "Giá bán";
@@ -115,7 +117,7 @@ namespace _3_GUI_PresentationLayer.View
             imageColumn.HeaderText = "Thao tac";
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Normal;
             imageColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            imageColumn.Image = Image.FromFile(@"D:\lập trình c#\Du_An_1\3_GUI_PresentationLayer\Resources\add-to-cart.png");
+            imageColumn.Image = Image.FromFile(@"D:\CODE\C#\DuAn_1_Quan_Ly_Ban_Laptop\3_GUI_PresentationLayer\Resources\add-to-cart.png");
             dgvSanPham.Columns.Add(imageColumn);
         }
 
@@ -145,6 +147,7 @@ namespace _3_GUI_PresentationLayer.View
 
                 var cbbCell = new DataGridViewComboBoxCell();
                 cbbCell.DisplayStyle = DataGridViewComboBoxDisplayStyle.ComboBox;
+                cbbCell.FlatStyle = FlatStyle.Flat;
                 cbbCell.AutoComplete = true;
                 cbbCell.Items.AddRange(lstSerial.ToArray());
                 row.Cells[3] = cbbCell;
@@ -156,7 +159,7 @@ namespace _3_GUI_PresentationLayer.View
             imageColumn.HeaderText = "Thao tac";
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Normal;
             imageColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            imageColumn.Image = Image.FromFile(@"D:\lập trình c#\Du_An_1\3_GUI_PresentationLayer\Resources\add-to-cart.png");
+            imageColumn.Image = Image.FromFile(@"D:\CODE\C#\DuAn_1_Quan_Ly_Ban_Laptop\3_GUI_PresentationLayer\Resources\add-to-cart.png");
             dgvSanPham.Columns.Add(imageColumn);
         }
 
@@ -197,7 +200,7 @@ namespace _3_GUI_PresentationLayer.View
             imageColumn.HeaderText = "Thao tac";
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Normal;
             imageColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            imageColumn.Image = Image.FromFile(@"D:\lập trình c#\Du_An_1\3_GUI_PresentationLayer\Resources\add-to-cart.png");
+            imageColumn.Image = Image.FromFile(@"D:\CODE\C#\DuAn_1_Quan_Ly_Ban_Laptop\3_GUI_PresentationLayer\Resources\add-to-cart.png");
             dgvSanPham.Columns.Add(imageColumn);
         }
         #endregion
@@ -753,6 +756,12 @@ namespace _3_GUI_PresentationLayer.View
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
+            if (txtGiaDau.Texts == "" || txtGiaCuoi.Texts == "")
+            {
+                MessageBox.Show("Cần nhập đủ giá đầu và giá cuối", "Thông báo");
+                return;
+            }
+
             if (decimal.Parse(txtGiaDau.Texts) > decimal.Parse(txtGiaCuoi.Texts))
             {
                 MessageBox.Show("Khoảng giá bắt đầu phải lớn hơn cuối", "Thông báo");

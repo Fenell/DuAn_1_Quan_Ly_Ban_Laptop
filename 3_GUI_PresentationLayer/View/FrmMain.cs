@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using _2_BUS_BusinessLayer.IServices;
+using _2_BUS_BusinessLayer.Services;
 using FontAwesome.Sharp;
 
 namespace _3_GUI_PresentationLayer.View
@@ -17,15 +19,19 @@ namespace _3_GUI_PresentationLayer.View
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+        private INhanVienService _nhanVienService;
         public FrmMain()
         {
             InitializeComponent();
+            _nhanVienService = new NhanvienService();
+
             this.CenterToScreen();
             currentBtn = new IconButton();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(10, 70);
             panelMenu.Controls.Add(leftBorderBtn);
 
+            LoadInfoNhanVien();
             OpenChildForm(new FrmHome());
         }
 
@@ -141,7 +147,7 @@ namespace _3_GUI_PresentationLayer.View
                 Hide();
                 FrmDangNhap frmDangNhap = new FrmDangNhap();
                 frmDangNhap.ShowDialog();
-                Close(); 
+                Close();
             }
         }
 
@@ -166,6 +172,17 @@ namespace _3_GUI_PresentationLayer.View
         private void pictrueBoxCustom1_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FrmHome());
+        }
+
+        private void LoadInfoNhanVien()
+        {
+            string email = Properties.Settings.Default._TKdaLogin;
+            var nhanVien = _nhanVienService.GetAllNhanViens().Find(c => c.Email == email);
+            if (nhanVien != null)
+            {
+                lblMa.Text = nhanVien.Ma;
+                lblTen.Text = nhanVien.Hoten;
+            }
         }
     }
 }

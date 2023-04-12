@@ -28,434 +28,427 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvKhachHang = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtEmail = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom();
-            this.label2 = new System.Windows.Forms.Label();
-            this.iconButtonClear = new FontAwesome.Sharp.IconButton();
-            this.txtDiaChi = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom2_0();
-            this.iconButtonSua = new FontAwesome.Sharp.IconButton();
-            this.iconButtonThem = new FontAwesome.Sharp.IconButton();
-            this.rbtNu = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
-            this.txtMa = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom();
-            this.rbtNam = new _3_GUI_PresentationLayer.CustomControl.RadioButtonCustom();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtHoTen = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtSoDienThoai = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.iconButton8 = new FontAwesome.Sharp.IconButton();
-            this.txtTimKiem = new _3_GUI_PresentationLayer.CustomControl.TextBoxCustom2_0();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.SuspendLayout();
+            dgvKhachHang = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            panel1 = new Panel();
+            txtEmail = new CustomControl.TextBoxCustom();
+            label2 = new Label();
+            iconButtonClear = new FontAwesome.Sharp.IconButton();
+            txtDiaChi = new CustomControl.TextBoxCustom2_0();
+            iconButtonSua = new FontAwesome.Sharp.IconButton();
+            iconButtonThem = new FontAwesome.Sharp.IconButton();
+            rbtNu = new CustomControl.RadioButtonCustom();
+            txtMa = new CustomControl.TextBoxCustom();
+            rbtNam = new CustomControl.RadioButtonCustom();
+            label3 = new Label();
+            label12 = new Label();
+            label4 = new Label();
+            txtHoTen = new CustomControl.TextBoxCustom();
+            label5 = new Label();
+            txtSoDienThoai = new CustomControl.TextBoxCustom();
+            label6 = new Label();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            iconButton8 = new FontAwesome.Sharp.IconButton();
+            txtTimKiem = new CustomControl.TextBoxCustom2_0();
+            label1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvKhachHang).BeginInit();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
+            SuspendLayout();
             // 
             // dgvKhachHang
             // 
-            this.dgvKhachHang.AllowUserToAddRows = false;
-            this.dgvKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column7,
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            this.dgvKhachHang.Location = new System.Drawing.Point(3, 3);
-            this.dgvKhachHang.Name = "dgvKhachHang";
-            this.dgvKhachHang.RowTemplate.Height = 25;
-            this.dgvKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKhachHang.Size = new System.Drawing.Size(992, 494);
-            this.dgvKhachHang.TabIndex = 8;
-            this.dgvKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellClick);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.txtEmail);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.iconButtonClear);
-            this.panel1.Controls.Add(this.txtDiaChi);
-            this.panel1.Controls.Add(this.iconButtonSua);
-            this.panel1.Controls.Add(this.iconButtonThem);
-            this.panel1.Controls.Add(this.rbtNu);
-            this.panel1.Controls.Add(this.txtMa);
-            this.panel1.Controls.Add(this.rbtNam);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txtHoTen);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txtSoDienThoai);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(1063, 22);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(421, 624);
-            this.panel1.TabIndex = 9;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.Color.White;
-            this.txtEmail.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtEmail.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtEmail.BorderSize = 2;
-            this.txtEmail.Location = new System.Drawing.Point(154, 249);
-            this.txtEmail.Multiline = false;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Padding = new System.Windows.Forms.Padding(7);
-            this.txtEmail.PasswordChar = false;
-            this.txtEmail.Size = new System.Drawing.Size(229, 30);
-            this.txtEmail.TabIndex = 55;
-            this.txtEmail.Texts = "";
-            this.txtEmail.UnderlinedStyle = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(76, 258);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 21);
-            this.label2.TabIndex = 54;
-            this.label2.Text = "Email";
-            // 
-            // iconButtonClear
-            // 
-            this.iconButtonClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(220)))), ((int)(((byte)(204)))));
-            this.iconButtonClear.FlatAppearance.BorderSize = 0;
-            this.iconButtonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonClear.IconChar = FontAwesome.Sharp.IconChar.Rotate;
-            this.iconButtonClear.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.iconButtonClear.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonClear.IconSize = 45;
-            this.iconButtonClear.Location = new System.Drawing.Point(286, 533);
-            this.iconButtonClear.Name = "iconButtonClear";
-            this.iconButtonClear.Size = new System.Drawing.Size(97, 43);
-            this.iconButtonClear.TabIndex = 53;
-            this.iconButtonClear.UseVisualStyleBackColor = false;
-            this.iconButtonClear.Click += new System.EventHandler(this.iconButtonClear_Click);
-            // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtDiaChi.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtDiaChi.BorderRadius = 10;
-            this.txtDiaChi.BorderSize = 1;
-            this.txtDiaChi.Location = new System.Drawing.Point(154, 407);
-            this.txtDiaChi.Multiline = true;
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Padding = new System.Windows.Forms.Padding(7);
-            this.txtDiaChi.PasswordChar = false;
-            this.txtDiaChi.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtDiaChi.PlaceholderText = "";
-            this.txtDiaChi.Size = new System.Drawing.Size(229, 85);
-            this.txtDiaChi.TabIndex = 44;
-            this.txtDiaChi.Texts = "";
-            this.txtDiaChi.UnderlinedStyle = false;
-            // 
-            // iconButtonSua
-            // 
-            this.iconButtonSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(220)))), ((int)(((byte)(204)))));
-            this.iconButtonSua.FlatAppearance.BorderSize = 0;
-            this.iconButtonSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonSua.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
-            this.iconButtonSua.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.iconButtonSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonSua.IconSize = 40;
-            this.iconButtonSua.Location = new System.Drawing.Point(154, 533);
-            this.iconButtonSua.Name = "iconButtonSua";
-            this.iconButtonSua.Size = new System.Drawing.Size(97, 43);
-            this.iconButtonSua.TabIndex = 43;
-            this.iconButtonSua.UseVisualStyleBackColor = false;
-            this.iconButtonSua.Click += new System.EventHandler(this.iconButtonSua_Click);
-            // 
-            // iconButtonThem
-            // 
-            this.iconButtonThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(220)))), ((int)(((byte)(204)))));
-            this.iconButtonThem.FlatAppearance.BorderSize = 0;
-            this.iconButtonThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonThem.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.iconButtonThem.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(107)))), ((int)(((byte)(124)))));
-            this.iconButtonThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonThem.IconSize = 40;
-            this.iconButtonThem.Location = new System.Drawing.Point(18, 533);
-            this.iconButtonThem.Name = "iconButtonThem";
-            this.iconButtonThem.Size = new System.Drawing.Size(97, 43);
-            this.iconButtonThem.TabIndex = 42;
-            this.iconButtonThem.UseVisualStyleBackColor = false;
-            this.iconButtonThem.Click += new System.EventHandler(this.iconButtonThem_Click);
-            // 
-            // rbtNu
-            // 
-            this.rbtNu.AutoSize = true;
-            this.rbtNu.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.rbtNu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rbtNu.Location = new System.Drawing.Point(308, 332);
-            this.rbtNu.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rbtNu.Name = "rbtNu";
-            this.rbtNu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbtNu.Size = new System.Drawing.Size(62, 25);
-            this.rbtNu.TabIndex = 41;
-            this.rbtNu.TabStop = true;
-            this.rbtNu.Text = "Nữ";
-            this.rbtNu.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rbtNu.UseVisualStyleBackColor = true;
-            // 
-            // txtMa
-            // 
-            this.txtMa.BackColor = System.Drawing.Color.White;
-            this.txtMa.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtMa.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtMa.BorderSize = 2;
-            this.txtMa.Location = new System.Drawing.Point(154, 25);
-            this.txtMa.Multiline = false;
-            this.txtMa.Name = "txtMa";
-            this.txtMa.Padding = new System.Windows.Forms.Padding(7);
-            this.txtMa.PasswordChar = false;
-            this.txtMa.Size = new System.Drawing.Size(229, 30);
-            this.txtMa.TabIndex = 29;
-            this.txtMa.Texts = "";
-            this.txtMa.UnderlinedStyle = true;
-            // 
-            // rbtNam
-            // 
-            this.rbtNam.AutoSize = true;
-            this.rbtNam.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.rbtNam.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rbtNam.Location = new System.Drawing.Point(164, 332);
-            this.rbtNam.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rbtNam.Name = "rbtNam";
-            this.rbtNam.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbtNam.Size = new System.Drawing.Size(75, 25);
-            this.rbtNam.TabIndex = 40;
-            this.rbtNam.TabStop = true;
-            this.rbtNam.Text = "Nam";
-            this.rbtNam.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rbtNam.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label3.Location = new System.Drawing.Point(3, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 21);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Mã khách hàng";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label12.Location = new System.Drawing.Point(53, 334);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(76, 21);
-            this.label12.TabIndex = 39;
-            this.label12.Text = "Giới tính";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label4.Location = new System.Drawing.Point(68, 108);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 21);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Họ tên";
-            // 
-            // txtHoTen
-            // 
-            this.txtHoTen.BackColor = System.Drawing.Color.White;
-            this.txtHoTen.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtHoTen.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtHoTen.BorderSize = 2;
-            this.txtHoTen.Location = new System.Drawing.Point(154, 99);
-            this.txtHoTen.Multiline = false;
-            this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Padding = new System.Windows.Forms.Padding(7);
-            this.txtHoTen.PasswordChar = false;
-            this.txtHoTen.Size = new System.Drawing.Size(229, 30);
-            this.txtHoTen.TabIndex = 31;
-            this.txtHoTen.Texts = "";
-            this.txtHoTen.UnderlinedStyle = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label5.Location = new System.Drawing.Point(18, 182);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 21);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Số điện thoại";
-            // 
-            // txtSoDienThoai
-            // 
-            this.txtSoDienThoai.BackColor = System.Drawing.Color.White;
-            this.txtSoDienThoai.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtSoDienThoai.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtSoDienThoai.BorderSize = 2;
-            this.txtSoDienThoai.Location = new System.Drawing.Point(154, 173);
-            this.txtSoDienThoai.Multiline = false;
-            this.txtSoDienThoai.Name = "txtSoDienThoai";
-            this.txtSoDienThoai.Padding = new System.Windows.Forms.Padding(7);
-            this.txtSoDienThoai.PasswordChar = false;
-            this.txtSoDienThoai.Size = new System.Drawing.Size(229, 30);
-            this.txtSoDienThoai.TabIndex = 33;
-            this.txtSoDienThoai.Texts = "";
-            this.txtSoDienThoai.UnderlinedStyle = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label6.Location = new System.Drawing.Point(64, 407);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 21);
-            this.label6.TabIndex = 36;
-            this.label6.Text = "Địa Chỉ";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.dgvKhachHang);
-            this.panel2.Location = new System.Drawing.Point(26, 146);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(998, 500);
-            this.panel2.TabIndex = 10;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.iconButton8);
-            this.panel3.Controls.Add(this.txtTimKiem);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(29, 34);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(287, 87);
-            this.panel3.TabIndex = 11;
-            // 
-            // iconButton8
-            // 
-            this.iconButton8.FlatAppearance.BorderSize = 0;
-            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.iconButton8.IconColor = System.Drawing.Color.Black;
-            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton8.IconSize = 23;
-            this.iconButton8.Location = new System.Drawing.Point(21, 44);
-            this.iconButton8.Name = "iconButton8";
-            this.iconButton8.Size = new System.Drawing.Size(32, 25);
-            this.iconButton8.TabIndex = 51;
-            this.iconButton8.UseVisualStyleBackColor = true;
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtTimKiem.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtTimKiem.BorderRadius = 10;
-            this.txtTimKiem.BorderSize = 1;
-            this.txtTimKiem.Location = new System.Drawing.Point(15, 40);
-            this.txtTimKiem.Multiline = false;
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Padding = new System.Windows.Forms.Padding(42, 7, 7, 7);
-            this.txtTimKiem.PasswordChar = false;
-            this.txtTimKiem.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtTimKiem.PlaceholderText = "Tìm kiếm";
-            this.txtTimKiem.Size = new System.Drawing.Size(250, 30);
-            this.txtTimKiem.TabIndex = 50;
-            this.txtTimKiem.Texts = "";
-            this.txtTimKiem.UnderlinedStyle = false;
-            this.txtTimKiem._TextChanged += new System.EventHandler(this.txtTimKiem__TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(3, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 21);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Tìm kiếm";
+            dgvKhachHang.AllowUserToAddRows = false;
+            dgvKhachHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvKhachHang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvKhachHang.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column7, Column4, Column5, Column6 });
+            dgvKhachHang.Location = new Point(3, 3);
+            dgvKhachHang.Name = "dgvKhachHang";
+            dgvKhachHang.RowTemplate.Height = 25;
+            dgvKhachHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvKhachHang.Size = new Size(992, 494);
+            dgvKhachHang.TabIndex = 8;
+            dgvKhachHang.CellClick += dgvKhachHang_CellClick;
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Mã khách hàng";
-            this.Column1.Name = "Column1";
+            Column1.HeaderText = "Mã khách hàng";
+            Column1.Name = "Column1";
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Họ tên";
-            this.Column2.Name = "Column2";
+            Column2.HeaderText = "Họ tên";
+            Column2.Name = "Column2";
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "Số điện thoại";
-            this.Column3.Name = "Column3";
+            Column3.HeaderText = "Số điện thoại";
+            Column3.Name = "Column3";
             // 
             // Column7
             // 
-            this.Column7.HeaderText = "Email";
-            this.Column7.Name = "Column7";
+            Column7.HeaderText = "Email";
+            Column7.Name = "Column7";
             // 
             // Column4
             // 
-            this.Column4.HeaderText = "Giới tính";
-            this.Column4.Name = "Column4";
+            Column4.HeaderText = "Giới tính";
+            Column4.Name = "Column4";
             // 
             // Column5
             // 
-            this.Column5.HeaderText = "Địa chỉ";
-            this.Column5.Name = "Column5";
+            Column5.HeaderText = "Địa chỉ";
+            Column5.Name = "Column5";
             // 
             // Column6
             // 
-            this.Column6.HeaderText = "Id";
-            this.Column6.Name = "Column6";
-            this.Column6.Visible = false;
+            Column6.HeaderText = "Id";
+            Column6.Name = "Column6";
+            Column6.Visible = false;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(txtEmail);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(iconButtonClear);
+            panel1.Controls.Add(txtDiaChi);
+            panel1.Controls.Add(iconButtonSua);
+            panel1.Controls.Add(iconButtonThem);
+            panel1.Controls.Add(rbtNu);
+            panel1.Controls.Add(txtMa);
+            panel1.Controls.Add(rbtNam);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label12);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(txtHoTen);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(txtSoDienThoai);
+            panel1.Controls.Add(label6);
+            panel1.Location = new Point(1063, 22);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(421, 624);
+            panel1.TabIndex = 9;
+            // 
+            // txtEmail
+            // 
+            txtEmail.BackColor = Color.White;
+            txtEmail.BorderColor = Color.MediumSlateBlue;
+            txtEmail.BorderFocusColor = Color.HotPink;
+            txtEmail.BorderSize = 2;
+            txtEmail.Location = new Point(154, 249);
+            txtEmail.Multiline = false;
+            txtEmail.Name = "txtEmail";
+            txtEmail.Padding = new Padding(7);
+            txtEmail.PasswordChar = false;
+            txtEmail.Size = new Size(229, 30);
+            txtEmail.TabIndex = 55;
+            txtEmail.Texts = "";
+            txtEmail.UnderlinedStyle = true;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.Highlight;
+            label2.Location = new Point(76, 258);
+            label2.Name = "label2";
+            label2.Size = new Size(53, 21);
+            label2.TabIndex = 54;
+            label2.Text = "Email";
+            // 
+            // iconButtonClear
+            // 
+            iconButtonClear.BackColor = Color.FromArgb(254, 220, 204);
+            iconButtonClear.FlatAppearance.BorderSize = 0;
+            iconButtonClear.FlatStyle = FlatStyle.Flat;
+            iconButtonClear.IconChar = FontAwesome.Sharp.IconChar.Rotate;
+            iconButtonClear.IconColor = Color.FromArgb(252, 107, 124);
+            iconButtonClear.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonClear.IconSize = 45;
+            iconButtonClear.Location = new Point(286, 533);
+            iconButtonClear.Name = "iconButtonClear";
+            iconButtonClear.Size = new Size(97, 43);
+            iconButtonClear.TabIndex = 53;
+            iconButtonClear.UseVisualStyleBackColor = false;
+            iconButtonClear.Click += iconButtonClear_Click;
+            // 
+            // txtDiaChi
+            // 
+            txtDiaChi.BorderColor = Color.MediumSlateBlue;
+            txtDiaChi.BorderFocusColor = Color.HotPink;
+            txtDiaChi.BorderRadius = 10;
+            txtDiaChi.BorderSize = 1;
+            txtDiaChi.Location = new Point(154, 407);
+            txtDiaChi.Multiline = true;
+            txtDiaChi.Name = "txtDiaChi";
+            txtDiaChi.Padding = new Padding(7);
+            txtDiaChi.PasswordChar = false;
+            txtDiaChi.PlaceholderColor = Color.DarkGray;
+            txtDiaChi.PlaceholderText = "";
+            txtDiaChi.Size = new Size(229, 85);
+            txtDiaChi.TabIndex = 44;
+            txtDiaChi.Texts = "";
+            txtDiaChi.UnderlinedStyle = false;
+            // 
+            // iconButtonSua
+            // 
+            iconButtonSua.BackColor = Color.FromArgb(254, 220, 204);
+            iconButtonSua.FlatAppearance.BorderSize = 0;
+            iconButtonSua.FlatStyle = FlatStyle.Flat;
+            iconButtonSua.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            iconButtonSua.IconColor = Color.FromArgb(252, 107, 124);
+            iconButtonSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonSua.IconSize = 40;
+            iconButtonSua.Location = new Point(154, 533);
+            iconButtonSua.Name = "iconButtonSua";
+            iconButtonSua.Size = new Size(97, 43);
+            iconButtonSua.TabIndex = 43;
+            iconButtonSua.UseVisualStyleBackColor = false;
+            iconButtonSua.Click += iconButtonSua_Click;
+            // 
+            // iconButtonThem
+            // 
+            iconButtonThem.BackColor = Color.FromArgb(254, 220, 204);
+            iconButtonThem.FlatAppearance.BorderSize = 0;
+            iconButtonThem.FlatStyle = FlatStyle.Flat;
+            iconButtonThem.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            iconButtonThem.IconColor = Color.FromArgb(252, 107, 124);
+            iconButtonThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonThem.IconSize = 40;
+            iconButtonThem.Location = new Point(18, 533);
+            iconButtonThem.Name = "iconButtonThem";
+            iconButtonThem.Size = new Size(97, 43);
+            iconButtonThem.TabIndex = 42;
+            iconButtonThem.UseVisualStyleBackColor = false;
+            iconButtonThem.Click += iconButtonThem_Click;
+            // 
+            // rbtNu
+            // 
+            rbtNu.AutoSize = true;
+            rbtNu.CheckedColor = Color.MediumSlateBlue;
+            rbtNu.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rbtNu.Location = new Point(308, 332);
+            rbtNu.MinimumSize = new Size(0, 21);
+            rbtNu.Name = "rbtNu";
+            rbtNu.Padding = new Padding(10, 0, 0, 0);
+            rbtNu.Size = new Size(62, 25);
+            rbtNu.TabIndex = 41;
+            rbtNu.TabStop = true;
+            rbtNu.Text = "Nữ";
+            rbtNu.UnCheckedColor = Color.Gray;
+            rbtNu.UseVisualStyleBackColor = true;
+            // 
+            // txtMa
+            // 
+            txtMa.BackColor = Color.White;
+            txtMa.BorderColor = Color.MediumSlateBlue;
+            txtMa.BorderFocusColor = Color.HotPink;
+            txtMa.BorderSize = 2;
+            txtMa.Location = new Point(154, 25);
+            txtMa.Multiline = false;
+            txtMa.Name = "txtMa";
+            txtMa.Padding = new Padding(7);
+            txtMa.PasswordChar = false;
+            txtMa.Size = new Size(229, 30);
+            txtMa.TabIndex = 29;
+            txtMa.Texts = "";
+            txtMa.UnderlinedStyle = true;
+            // 
+            // rbtNam
+            // 
+            rbtNam.AutoSize = true;
+            rbtNam.CheckedColor = Color.MediumSlateBlue;
+            rbtNam.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rbtNam.Location = new Point(164, 332);
+            rbtNam.MinimumSize = new Size(0, 21);
+            rbtNam.Name = "rbtNam";
+            rbtNam.Padding = new Padding(10, 0, 0, 0);
+            rbtNam.Size = new Size(75, 25);
+            rbtNam.TabIndex = 40;
+            rbtNam.TabStop = true;
+            rbtNam.Text = "Nam";
+            rbtNam.UnCheckedColor = Color.Gray;
+            rbtNam.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.Highlight;
+            label3.Location = new Point(3, 34);
+            label3.Name = "label3";
+            label3.Size = new Size(127, 21);
+            label3.TabIndex = 30;
+            label3.Text = "Mã khách hàng";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.ForeColor = SystemColors.Highlight;
+            label12.Location = new Point(53, 334);
+            label12.Name = "label12";
+            label12.Size = new Size(76, 21);
+            label12.TabIndex = 39;
+            label12.Text = "Giới tính";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = SystemColors.Highlight;
+            label4.Location = new Point(68, 108);
+            label4.Name = "label4";
+            label4.Size = new Size(61, 21);
+            label4.TabIndex = 32;
+            label4.Text = "Họ tên";
+            // 
+            // txtHoTen
+            // 
+            txtHoTen.BackColor = Color.White;
+            txtHoTen.BorderColor = Color.MediumSlateBlue;
+            txtHoTen.BorderFocusColor = Color.HotPink;
+            txtHoTen.BorderSize = 2;
+            txtHoTen.Location = new Point(154, 99);
+            txtHoTen.Multiline = false;
+            txtHoTen.Name = "txtHoTen";
+            txtHoTen.Padding = new Padding(7);
+            txtHoTen.PasswordChar = false;
+            txtHoTen.Size = new Size(229, 30);
+            txtHoTen.TabIndex = 31;
+            txtHoTen.Texts = "";
+            txtHoTen.UnderlinedStyle = true;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = SystemColors.Highlight;
+            label5.Location = new Point(18, 182);
+            label5.Name = "label5";
+            label5.Size = new Size(111, 21);
+            label5.TabIndex = 34;
+            label5.Text = "Số điện thoại";
+            // 
+            // txtSoDienThoai
+            // 
+            txtSoDienThoai.BackColor = Color.White;
+            txtSoDienThoai.BorderColor = Color.MediumSlateBlue;
+            txtSoDienThoai.BorderFocusColor = Color.HotPink;
+            txtSoDienThoai.BorderSize = 2;
+            txtSoDienThoai.Location = new Point(154, 173);
+            txtSoDienThoai.Multiline = false;
+            txtSoDienThoai.Name = "txtSoDienThoai";
+            txtSoDienThoai.Padding = new Padding(7);
+            txtSoDienThoai.PasswordChar = false;
+            txtSoDienThoai.Size = new Size(229, 30);
+            txtSoDienThoai.TabIndex = 33;
+            txtSoDienThoai.Texts = "";
+            txtSoDienThoai.UnderlinedStyle = true;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = SystemColors.Highlight;
+            label6.Location = new Point(64, 407);
+            label6.Name = "label6";
+            label6.Size = new Size(65, 21);
+            label6.TabIndex = 36;
+            label6.Text = "Địa Chỉ";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(dgvKhachHang);
+            panel2.Location = new Point(26, 146);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(998, 500);
+            panel2.TabIndex = 10;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(iconButton8);
+            panel3.Controls.Add(txtTimKiem);
+            panel3.Controls.Add(label1);
+            panel3.Location = new Point(29, 34);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(287, 87);
+            panel3.TabIndex = 11;
+            // 
+            // iconButton8
+            // 
+            iconButton8.FlatAppearance.BorderSize = 0;
+            iconButton8.FlatStyle = FlatStyle.Flat;
+            iconButton8.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iconButton8.IconColor = Color.Black;
+            iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton8.IconSize = 23;
+            iconButton8.Location = new Point(21, 44);
+            iconButton8.Name = "iconButton8";
+            iconButton8.Size = new Size(32, 25);
+            iconButton8.TabIndex = 51;
+            iconButton8.UseVisualStyleBackColor = true;
+            // 
+            // txtTimKiem
+            // 
+            txtTimKiem.BorderColor = Color.MediumSlateBlue;
+            txtTimKiem.BorderFocusColor = Color.HotPink;
+            txtTimKiem.BorderRadius = 10;
+            txtTimKiem.BorderSize = 1;
+            txtTimKiem.Location = new Point(15, 40);
+            txtTimKiem.Multiline = false;
+            txtTimKiem.Name = "txtTimKiem";
+            txtTimKiem.Padding = new Padding(42, 7, 7, 7);
+            txtTimKiem.PasswordChar = false;
+            txtTimKiem.PlaceholderColor = Color.DarkGray;
+            txtTimKiem.PlaceholderText = "Tìm kiếm";
+            txtTimKiem.Size = new Size(250, 30);
+            txtTimKiem.TabIndex = 50;
+            txtTimKiem.Texts = "";
+            txtTimKiem.UnderlinedStyle = false;
+            txtTimKiem._TextChanged += txtTimKiem__TextChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.Highlight;
+            label1.Location = new Point(3, 2);
+            label1.Name = "label1";
+            label1.Size = new Size(81, 21);
+            label1.TabIndex = 32;
+            label1.Text = "Tìm kiếm";
             // 
             // FrmKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1521, 690);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Name = "FrmKhachHang";
-            this.Text = "Khách hàng";
-            this.Load += new System.EventHandler(this.FrmKhachHang_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(244, 245, 255);
+            ClientSize = new Size(1521, 690);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "FrmKhachHang";
+            Text = "Khách hàng";
+            Load += FrmKhachHang_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvKhachHang).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

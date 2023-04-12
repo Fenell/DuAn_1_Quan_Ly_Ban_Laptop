@@ -8,6 +8,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +22,7 @@ namespace _3_GUI_PresentationLayer.View
         private ILaptopService _laptopService;
         private IHangLaptopServices _hangLaptopServices;
         private IDongLaptopServices _dongLaptopServices;
+        private IKhachHangService _khachHangService;
         private Guid _idKhuyenMai;
         public FrmKhuyenMai()
         {
@@ -28,6 +31,7 @@ namespace _3_GUI_PresentationLayer.View
             _laptopService = new LaptopService();
             _hangLaptopServices = new HangLaptopServices();
             _dongLaptopServices = new DongLaptopServices();
+            _khachHangService = new KhachhangService();
 
             ChuyenTrangThai();
             LoadData();
@@ -135,7 +139,7 @@ namespace _3_GUI_PresentationLayer.View
             }
 
 
-            txtMa.Texts = RandomMa();
+            //txtMa.Texts = RandomMa();
 
             if (MessageBox.Show("Bạn có chắc chắn muốn thêm khuyến mại này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -143,7 +147,7 @@ namespace _3_GUI_PresentationLayer.View
                 {
                     Id = Guid.NewGuid(),
                     Ten = txtTenCT.Texts,
-                    Ma = txtMa.Texts,
+                    Ma = RandomMa(),
                     LoaiKhuyenMai = cbbLoaiKhuyenMai.Text,
                     GiaTri = decimal.Parse(txtMucGia.Texts),
                     NgayBatDau = dtBatDau.Value,
@@ -160,6 +164,19 @@ namespace _3_GUI_PresentationLayer.View
                         Guid idLaptop = Guid.Parse(row.Cells[0].Value.ToString());
                         _laptopService.UpdateKhuyeMaiLaptop(idLaptop, khuyenMai.Id);
                     }
+                }
+
+                if (MessageBox.Show("Bạn có muốn gửi thông tin khuyến mại này cho các khách hàng không?", "Hỏi", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    var khachHangList = _khachHangService.GetAllKhachHangs().Where(c => c.Email != "").ToList();
+                    int khachHangCount = 0;
+                    foreach (var a in khachHangList)
+                    {
+                        SendEmailKhuyenMai(a.Hoten, a.Email, khuyenMai.Ten);
+                        khachHangCount++;
+                    }
+
+                    MessageBox.Show($"Đã gửi email đến cho: {khachHangCount} khách hàng", "Thông  báo");
                 }
                 LoadData();
             }
@@ -208,7 +225,6 @@ namespace _3_GUI_PresentationLayer.View
                 {
                     Id = _idKhuyenMai,
                     Ten = txtTenCT.Texts,
-                    //Ma = txtMa.Texts,
                     LoaiKhuyenMai = cbbLoaiKhuyenMai.Text,
                     GiaTri = decimal.Parse(txtMucGia.Texts),
                     NgayBatDau = dtBatDau.Value,
@@ -422,6 +438,26 @@ namespace _3_GUI_PresentationLayer.View
             {
                 e.Handled = true;
             }
+        }
+
+        private void SendEmailKhuyenMai(string ten, string email, string tenKM)
+        {
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress("maituandat087804@gmail.com");
+            mail.To.Add(email);
+            mail.Body = $"Xin chào anh/chị: <b>{ten}</b>\n." +
+                        $"Hiện tại cửa hàng bên em đang có chương trình khuyến mại: {tenKM} với nhiều giảm giá của các dòng Laptop.\n" +
+                        "Xin kính mời anh/chị qua bên cửa hàng để tham khảo cũng như trải nghiệm.";
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            NetworkCredential nc = new NetworkCredential();
+            nc.UserName = "maituandat087804@gmail.com";
+            nc.Password = "dyeeqsadlarqjync";
+            smtp.Credentials = nc;
+            smtp.EnableSsl = true;
+            smtp.Port = 587;
+            smtp.Send(mail);
+            //MessageBox.Show("Gửi thành công");
         }
 
     }

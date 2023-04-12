@@ -30,8 +30,6 @@ namespace _3_GUI_PresentationLayer.View
             LoadData();
         }
 
-
-
         private void LoadData()
         {
             var refreshData = _thongKeService.LoadData(dtpStartDate.Value, dtpEndDate.Value);

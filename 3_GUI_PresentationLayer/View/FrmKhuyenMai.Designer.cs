@@ -596,6 +596,7 @@
             Controls.Add(panel3);
             Controls.Add(panel);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmKhuyenMai";
             Text = "Khuyến mại";
             panel1.ResumeLayout(false);

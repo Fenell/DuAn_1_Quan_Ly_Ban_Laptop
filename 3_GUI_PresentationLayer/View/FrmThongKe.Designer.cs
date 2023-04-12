@@ -507,7 +507,7 @@
             // 
             // panel7
             // 
-            panel7.BackColor = Color.White;
+            panel7.BackColor = Color.FromArgb(214, 248, 248);
             panel7.Controls.Add(dgvUnderStock);
             panel7.Controls.Add(label12);
             panel7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -526,14 +526,13 @@
             dgvUnderStock.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvUnderStock.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(214, 248, 248);
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(214, 248, 248);
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvUnderStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvUnderStock.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(214, 248, 248);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -547,7 +546,7 @@
             dgvUnderStock.Location = new Point(17, 30);
             dgvUnderStock.Name = "dgvUnderStock";
             dgvUnderStock.RowHeadersVisible = false;
-            dgvUnderStock.RowTemplate.Height = 25;
+            dgvUnderStock.RowTemplate.Height = 35;
             dgvUnderStock.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvUnderStock.Size = new Size(737, 173);
             dgvUnderStock.TabIndex = 4;
@@ -577,15 +576,19 @@
             chartArea2.Name = "ChartArea1";
             chartTop5.ChartAreas.Add(chartArea2);
             chartTop5.Dock = DockStyle.Fill;
+            legend2.BorderColor = Color.White;
             legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            legend2.IsTextAutoFit = false;
             legend2.Name = "Legend1";
+            legend2.TitleFont = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             chartTop5.Legends.Add(legend2);
             chartTop5.Location = new Point(0, 0);
             chartTop5.Name = "chartTop5";
             series2.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
             series2.BackSecondaryColor = Color.FromArgb(255, 128, 255);
             series2.BorderColor = Color.White;
-            series2.BorderWidth = 8;
+            series2.BorderWidth = 5;
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
             series2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);

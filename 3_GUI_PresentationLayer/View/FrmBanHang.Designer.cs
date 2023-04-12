@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBanHang));
             panel1 = new Panel();
             cbbGiamGia = new ComboBox();
@@ -565,7 +566,16 @@
             dgvSanPham.AllowUserToResizeRows = false;
             dgvSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvSanPham.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvSanPham.BackgroundColor = Color.FromArgb(214, 248, 248);
             dgvSanPham.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(214, 248, 248);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dgvSanPham.DefaultCellStyle = dataGridViewCellStyle1;
             dgvSanPham.Location = new Point(1, 3);
             dgvSanPham.Name = "dgvSanPham";
             dgvSanPham.RowHeadersVisible = false;
@@ -609,7 +619,7 @@
             // 
             // tCamera
             // 
-            tCamera.Interval = 1000;
+            tCamera.Interval = 500;
             tCamera.Tick += tCamera_Tick;
             // 
             // menuStrip
