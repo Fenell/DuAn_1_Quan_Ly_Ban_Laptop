@@ -440,6 +440,42 @@ namespace _3_GUI_PresentationLayer.View
             }
         }
 
+        private void LoadFromSanPham()
+        {
+            dgvSanPham.ColumnCount = 2;
+            dgvSanPham.Columns[0].Visible = false;
+            dgvSanPham.Columns[1].Name = "Tên";
+            DataGridViewCheckBoxColumn cb = new DataGridViewCheckBoxColumn();
+            cb.HeaderText = "Chọn";
+            cb.Name = "checkBoxColumn";
+            dgvSanPham.Columns.Insert(2, cb);
+
+            int rowCount = _laptopService.GetAllLaptop().Count();
+            dgvSanPham.RowCount = rowCount;
+
+            for (int i = 0; i < rowCount; i++)
+            {
+                var x = _laptopService.GetAllLaptop()[i];
+                dgvSanPham.Rows[i].Cells[0].Value = x.Id;
+                dgvSanPham.Rows[i].Cells[1].Value = $"{x.HangLaptop}{x.DongLaptop}{x.Ten}";
+            }
+        }
+        private void LoadCbb()
+        {
+            cbbDong.DisplayMember = "Ten";
+            cbbDong.ValueMember = "Id";
+            cbbDong.DataSource = _khuyenMaiServices.GetAllKhuyenMai();
+
+            cbbDong.DisplayMember = "Ten";
+            cbbDong.ValueMember = "Id";
+            cbbDong.DataSource = _dongLaptopServices.GetAllDongLaptop();
+        }
+        private void dgvSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+        }
+
         private void SendEmailKhuyenMai(string ten, string email, string tenKM)
         {
             MailMessage mail = new MailMessage();
@@ -460,5 +496,12 @@ namespace _3_GUI_PresentationLayer.View
             //MessageBox.Show("Gửi thành công");
         }
 
+            for (int i = 0; i < rowCount; i++)
+            {
+                var x = _laptopService.GetAllLaptop()[i];
+                dgvSanPham.Rows[i].Cells[0].Value = x.Id;
+                dgvSanPham.Rows[i].Cells[1].Value = $"{x.HangLaptop}{x.DongLaptop}{x.Ten}";
+            }
+        }
     }
 }
