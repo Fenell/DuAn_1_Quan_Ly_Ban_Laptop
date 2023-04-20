@@ -184,5 +184,10 @@ namespace _3_GUI_PresentationLayer.View
                 lblTen.Text = nhanVien.Hoten;
             }
         }
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

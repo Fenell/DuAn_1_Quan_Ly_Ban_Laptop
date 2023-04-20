@@ -28,423 +28,414 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panelMenu = new Panel();
-            btnDangXuat = new FontAwesome.Sharp.IconButton();
-            btnThongKe = new FontAwesome.Sharp.IconButton();
-            btnKhuyenMai = new FontAwesome.Sharp.IconButton();
-            btnKhachHang = new FontAwesome.Sharp.IconButton();
-            btnNhanVien = new FontAwesome.Sharp.IconButton();
-            btnHoaDon = new FontAwesome.Sharp.IconButton();
-            btnBanHang = new FontAwesome.Sharp.IconButton();
-            btnSanPham = new FontAwesome.Sharp.IconButton();
-            panelLogo = new Panel();
-            panel1 = new Panel();
-            lblTen = new Label();
-            lblMa = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            panelTitleBar = new Panel();
-            btnMinimize = new FontAwesome.Sharp.IconButton();
-            btnExit = new FontAwesome.Sharp.IconButton();
-            lblTitleChildFrm = new Label();
-            iconCurrentChildFrm = new FontAwesome.Sharp.IconPictureBox();
-            panelShadow = new Panel();
-            panelDesktop = new Panel();
-            pictrueBoxCustom1 = new CustomControl.PictrueBoxCustom();
-            panelMenu.SuspendLayout();
-            panelLogo.SuspendLayout();
-            panel1.SuspendLayout();
-            panelTitleBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconCurrentChildFrm).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictrueBoxCustom1).BeginInit();
-            SuspendLayout();
+            this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnDangXuat = new FontAwesome.Sharp.IconButton();
+            this.btnThongKe = new FontAwesome.Sharp.IconButton();
+            this.btnKhuyenMai = new FontAwesome.Sharp.IconButton();
+            this.btnKhachHang = new FontAwesome.Sharp.IconButton();
+            this.btnNhanVien = new FontAwesome.Sharp.IconButton();
+            this.btnHoaDon = new FontAwesome.Sharp.IconButton();
+            this.btnBanHang = new FontAwesome.Sharp.IconButton();
+            this.btnSanPham = new FontAwesome.Sharp.IconButton();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTen = new System.Windows.Forms.Label();
+            this.lblMa = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictrueBoxCustom1 = new _3_GUI_PresentationLayer.CustomControl.PictrueBoxCustom();
+            this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.btnMinimize = new FontAwesome.Sharp.IconButton();
+            this.btnExit = new FontAwesome.Sharp.IconButton();
+            this.lblTitleChildFrm = new System.Windows.Forms.Label();
+            this.iconCurrentChildFrm = new FontAwesome.Sharp.IconPictureBox();
+            this.panelShadow = new System.Windows.Forms.Panel();
+            this.panelDesktop = new System.Windows.Forms.Panel();
+            this.panelMenu.SuspendLayout();
+            this.panelLogo.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictrueBoxCustom1)).BeginInit();
+            this.panelTitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildFrm)).BeginInit();
+            this.SuspendLayout();
             // 
             // panelMenu
             // 
-            panelMenu.BackColor = Color.FromArgb(31, 32, 69);
-            panelMenu.Controls.Add(btnDangXuat);
-            panelMenu.Controls.Add(btnThongKe);
-            panelMenu.Controls.Add(btnKhuyenMai);
-            panelMenu.Controls.Add(btnKhachHang);
-            panelMenu.Controls.Add(btnNhanVien);
-            panelMenu.Controls.Add(btnHoaDon);
-            panelMenu.Controls.Add(btnBanHang);
-            panelMenu.Controls.Add(btnSanPham);
-            panelMenu.Controls.Add(panelLogo);
-            panelMenu.Dock = DockStyle.Left;
-            panelMenu.Location = new Point(0, 0);
-            panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(247, 811);
-            panelMenu.TabIndex = 0;
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(69)))));
+            this.panelMenu.Controls.Add(this.btnDangXuat);
+            this.panelMenu.Controls.Add(this.btnThongKe);
+            this.panelMenu.Controls.Add(this.btnKhuyenMai);
+            this.panelMenu.Controls.Add(this.btnKhachHang);
+            this.panelMenu.Controls.Add(this.btnNhanVien);
+            this.panelMenu.Controls.Add(this.btnHoaDon);
+            this.panelMenu.Controls.Add(this.btnBanHang);
+            this.panelMenu.Controls.Add(this.btnSanPham);
+            this.panelMenu.Controls.Add(this.panelLogo);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(247, 811);
+            this.panelMenu.TabIndex = 0;
             // 
             // btnDangXuat
             // 
-            btnDangXuat.Dock = DockStyle.Top;
-            btnDangXuat.FlatAppearance.BorderSize = 0;
-            btnDangXuat.FlatStyle = FlatStyle.Flat;
-            btnDangXuat.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            btnDangXuat.ForeColor = Color.Gainsboro;
-            btnDangXuat.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            btnDangXuat.IconColor = Color.Gainsboro;
-            btnDangXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnDangXuat.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDangXuat.Location = new Point(0, 712);
-            btnDangXuat.Name = "btnDangXuat";
-            btnDangXuat.Padding = new Padding(22, 0, 0, 0);
-            btnDangXuat.Size = new Size(247, 70);
-            btnDangXuat.TabIndex = 8;
-            btnDangXuat.Text = "Đăng xuất";
-            btnDangXuat.TextAlign = ContentAlignment.MiddleLeft;
-            btnDangXuat.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnDangXuat.UseVisualStyleBackColor = true;
-            btnDangXuat.Click += btnDangXuat_Click;
+            this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDangXuat.FlatAppearance.BorderSize = 0;
+            this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDangXuat.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDangXuat.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btnDangXuat.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnDangXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 712);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnDangXuat.Size = new System.Drawing.Size(247, 70);
+            this.btnDangXuat.TabIndex = 8;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDangXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDangXuat.UseVisualStyleBackColor = true;
             // 
             // btnThongKe
             // 
-            btnThongKe.Dock = DockStyle.Top;
-            btnThongKe.FlatAppearance.BorderSize = 0;
-            btnThongKe.FlatStyle = FlatStyle.Flat;
-            btnThongKe.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            btnThongKe.ForeColor = Color.Gainsboro;
-            btnThongKe.IconChar = FontAwesome.Sharp.IconChar.LineChart;
-            btnThongKe.IconColor = Color.Gainsboro;
-            btnThongKe.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnThongKe.ImageAlign = ContentAlignment.MiddleLeft;
-            btnThongKe.Location = new Point(0, 642);
-            btnThongKe.Name = "btnThongKe";
-            btnThongKe.Padding = new Padding(22, 0, 0, 0);
-            btnThongKe.Size = new Size(247, 70);
-            btnThongKe.TabIndex = 7;
-            btnThongKe.Text = "Thống kê";
-            btnThongKe.TextAlign = ContentAlignment.MiddleLeft;
-            btnThongKe.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnThongKe.UseVisualStyleBackColor = true;
-            btnThongKe.Click += btnThongKe_Click;
+            this.btnThongKe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnThongKe.FlatAppearance.BorderSize = 0;
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKe.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnThongKe.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnThongKe.IconChar = FontAwesome.Sharp.IconChar.LineChart;
+            this.btnThongKe.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnThongKe.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThongKe.Location = new System.Drawing.Point(0, 642);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnThongKe.Size = new System.Drawing.Size(247, 70);
+            this.btnThongKe.TabIndex = 7;
+            this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThongKe.UseVisualStyleBackColor = true;
             // 
             // btnKhuyenMai
             // 
-            btnKhuyenMai.Dock = DockStyle.Top;
-            btnKhuyenMai.FlatAppearance.BorderSize = 0;
-            btnKhuyenMai.FlatStyle = FlatStyle.Flat;
-            btnKhuyenMai.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            btnKhuyenMai.ForeColor = Color.Gainsboro;
-            btnKhuyenMai.IconChar = FontAwesome.Sharp.IconChar.Salesforce;
-            btnKhuyenMai.IconColor = Color.Gainsboro;
-            btnKhuyenMai.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnKhuyenMai.ImageAlign = ContentAlignment.MiddleLeft;
-            btnKhuyenMai.Location = new Point(0, 572);
-            btnKhuyenMai.Name = "btnKhuyenMai";
-            btnKhuyenMai.Padding = new Padding(22, 0, 0, 0);
-            btnKhuyenMai.Size = new Size(247, 70);
-            btnKhuyenMai.TabIndex = 6;
-            btnKhuyenMai.Text = "Khuyến mại";
-            btnKhuyenMai.TextAlign = ContentAlignment.MiddleLeft;
-            btnKhuyenMai.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnKhuyenMai.UseVisualStyleBackColor = true;
-            btnKhuyenMai.Click += btnKhuyenMai_Click;
+            this.btnKhuyenMai.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnKhuyenMai.FlatAppearance.BorderSize = 0;
+            this.btnKhuyenMai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKhuyenMai.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnKhuyenMai.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnKhuyenMai.IconChar = FontAwesome.Sharp.IconChar.Salesforce;
+            this.btnKhuyenMai.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnKhuyenMai.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnKhuyenMai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKhuyenMai.Location = new System.Drawing.Point(0, 572);
+            this.btnKhuyenMai.Name = "btnKhuyenMai";
+            this.btnKhuyenMai.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnKhuyenMai.Size = new System.Drawing.Size(247, 70);
+            this.btnKhuyenMai.TabIndex = 6;
+            this.btnKhuyenMai.Text = "Khuyến mại";
+            this.btnKhuyenMai.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKhuyenMai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnKhuyenMai.UseVisualStyleBackColor = true;
             // 
             // btnKhachHang
             // 
-            btnKhachHang.Dock = DockStyle.Top;
-            btnKhachHang.FlatAppearance.BorderSize = 0;
-            btnKhachHang.FlatStyle = FlatStyle.Flat;
-            btnKhachHang.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            btnKhachHang.ForeColor = Color.Gainsboro;
-            btnKhachHang.IconChar = FontAwesome.Sharp.IconChar.AddressBook;
-            btnKhachHang.IconColor = Color.Gainsboro;
-            btnKhachHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnKhachHang.ImageAlign = ContentAlignment.MiddleLeft;
-            btnKhachHang.Location = new Point(0, 502);
-            btnKhachHang.Name = "btnKhachHang";
-            btnKhachHang.Padding = new Padding(22, 0, 0, 0);
-            btnKhachHang.Size = new Size(247, 70);
-            btnKhachHang.TabIndex = 5;
-            btnKhachHang.Text = "Khách hàng";
-            btnKhachHang.TextAlign = ContentAlignment.MiddleLeft;
-            btnKhachHang.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnKhachHang.UseVisualStyleBackColor = true;
-            btnKhachHang.Click += btnKhachHang_Click;
+            this.btnKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnKhachHang.FlatAppearance.BorderSize = 0;
+            this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKhachHang.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnKhachHang.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnKhachHang.IconChar = FontAwesome.Sharp.IconChar.AddressBook;
+            this.btnKhachHang.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnKhachHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKhachHang.Location = new System.Drawing.Point(0, 502);
+            this.btnKhachHang.Name = "btnKhachHang";
+            this.btnKhachHang.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnKhachHang.Size = new System.Drawing.Size(247, 70);
+            this.btnKhachHang.TabIndex = 5;
+            this.btnKhachHang.Text = "Khách hàng";
+            this.btnKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnKhachHang.UseVisualStyleBackColor = true;
             // 
             // btnNhanVien
             // 
-            btnNhanVien.Dock = DockStyle.Top;
-            btnNhanVien.FlatAppearance.BorderSize = 0;
-            btnNhanVien.FlatStyle = FlatStyle.Flat;
-            btnNhanVien.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            btnNhanVien.ForeColor = Color.Gainsboro;
-            btnNhanVien.IconChar = FontAwesome.Sharp.IconChar.Person;
-            btnNhanVien.IconColor = Color.Gainsboro;
-            btnNhanVien.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnNhanVien.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNhanVien.Location = new Point(0, 432);
-            btnNhanVien.Name = "btnNhanVien";
-            btnNhanVien.Padding = new Padding(22, 0, 0, 0);
-            btnNhanVien.Size = new Size(247, 70);
-            btnNhanVien.TabIndex = 4;
-            btnNhanVien.Text = "Nhân viên";
-            btnNhanVien.TextAlign = ContentAlignment.MiddleLeft;
-            btnNhanVien.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnNhanVien.UseVisualStyleBackColor = true;
-            btnNhanVien.Click += btnNhanVien_Click;
+            this.btnNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNhanVien.FlatAppearance.BorderSize = 0;
+            this.btnNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhanVien.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnNhanVien.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnNhanVien.IconChar = FontAwesome.Sharp.IconChar.Person;
+            this.btnNhanVien.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnNhanVien.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhanVien.Location = new System.Drawing.Point(0, 432);
+            this.btnNhanVien.Name = "btnNhanVien";
+            this.btnNhanVien.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnNhanVien.Size = new System.Drawing.Size(247, 70);
+            this.btnNhanVien.TabIndex = 4;
+            this.btnNhanVien.Text = "Nhân viên";
+            this.btnNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNhanVien.UseVisualStyleBackColor = true;
             // 
             // btnHoaDon
             // 
-            btnHoaDon.Dock = DockStyle.Top;
-            btnHoaDon.FlatAppearance.BorderSize = 0;
-            btnHoaDon.FlatStyle = FlatStyle.Flat;
-            btnHoaDon.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            btnHoaDon.ForeColor = Color.Gainsboro;
-            btnHoaDon.IconChar = FontAwesome.Sharp.IconChar.FileInvoice;
-            btnHoaDon.IconColor = Color.Gainsboro;
-            btnHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnHoaDon.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHoaDon.Location = new Point(0, 362);
-            btnHoaDon.Name = "btnHoaDon";
-            btnHoaDon.Padding = new Padding(22, 0, 0, 0);
-            btnHoaDon.Size = new Size(247, 70);
-            btnHoaDon.TabIndex = 3;
-            btnHoaDon.Text = "Hóa đơn";
-            btnHoaDon.TextAlign = ContentAlignment.MiddleLeft;
-            btnHoaDon.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnHoaDon.UseVisualStyleBackColor = true;
-            btnHoaDon.Click += btnHoaDon_Click;
+            this.btnHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHoaDon.FlatAppearance.BorderSize = 0;
+            this.btnHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHoaDon.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnHoaDon.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnHoaDon.IconChar = FontAwesome.Sharp.IconChar.FileInvoice;
+            this.btnHoaDon.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHoaDon.Location = new System.Drawing.Point(0, 362);
+            this.btnHoaDon.Name = "btnHoaDon";
+            this.btnHoaDon.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnHoaDon.Size = new System.Drawing.Size(247, 70);
+            this.btnHoaDon.TabIndex = 3;
+            this.btnHoaDon.Text = "Hóa đơn";
+            this.btnHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHoaDon.UseVisualStyleBackColor = true;
             // 
             // btnBanHang
             // 
-            btnBanHang.Dock = DockStyle.Top;
-            btnBanHang.FlatAppearance.BorderSize = 0;
-            btnBanHang.FlatStyle = FlatStyle.Flat;
-            btnBanHang.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBanHang.ForeColor = Color.Gainsboro;
-            btnBanHang.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
-            btnBanHang.IconColor = Color.Gainsboro;
-            btnBanHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnBanHang.ImageAlign = ContentAlignment.MiddleLeft;
-            btnBanHang.Location = new Point(0, 292);
-            btnBanHang.Name = "btnBanHang";
-            btnBanHang.Padding = new Padding(22, 0, 0, 0);
-            btnBanHang.Size = new Size(247, 70);
-            btnBanHang.TabIndex = 2;
-            btnBanHang.Text = "Bán hàng";
-            btnBanHang.TextAlign = ContentAlignment.MiddleLeft;
-            btnBanHang.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnBanHang.UseVisualStyleBackColor = true;
-            btnBanHang.Click += btnBanHang_Click;
+            this.btnBanHang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBanHang.FlatAppearance.BorderSize = 0;
+            this.btnBanHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBanHang.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBanHang.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnBanHang.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
+            this.btnBanHang.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnBanHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBanHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBanHang.Location = new System.Drawing.Point(0, 292);
+            this.btnBanHang.Name = "btnBanHang";
+            this.btnBanHang.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnBanHang.Size = new System.Drawing.Size(247, 70);
+            this.btnBanHang.TabIndex = 2;
+            this.btnBanHang.Text = "Bán hàng";
+            this.btnBanHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBanHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBanHang.UseVisualStyleBackColor = true;
             // 
             // btnSanPham
             // 
-            btnSanPham.Dock = DockStyle.Top;
-            btnSanPham.FlatAppearance.BorderSize = 0;
-            btnSanPham.FlatStyle = FlatStyle.Flat;
-            btnSanPham.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSanPham.ForeColor = Color.Gainsboro;
-            btnSanPham.IconChar = FontAwesome.Sharp.IconChar.Tag;
-            btnSanPham.IconColor = Color.Gainsboro;
-            btnSanPham.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnSanPham.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSanPham.Location = new Point(0, 222);
-            btnSanPham.Name = "btnSanPham";
-            btnSanPham.Padding = new Padding(22, 0, 0, 0);
-            btnSanPham.Size = new Size(247, 70);
-            btnSanPham.TabIndex = 1;
-            btnSanPham.Text = "Sản phẩm";
-            btnSanPham.TextAlign = ContentAlignment.MiddleLeft;
-            btnSanPham.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSanPham.UseVisualStyleBackColor = true;
-            btnSanPham.Click += btnSanPham_Click;
+            this.btnSanPham.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSanPham.FlatAppearance.BorderSize = 0;
+            this.btnSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSanPham.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSanPham.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSanPham.IconChar = FontAwesome.Sharp.IconChar.Tag;
+            this.btnSanPham.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnSanPham.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSanPham.Location = new System.Drawing.Point(0, 222);
+            this.btnSanPham.Name = "btnSanPham";
+            this.btnSanPham.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.btnSanPham.Size = new System.Drawing.Size(247, 70);
+            this.btnSanPham.TabIndex = 1;
+            this.btnSanPham.Text = "Sản phẩm";
+            this.btnSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSanPham.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSanPham.UseVisualStyleBackColor = true;
             // 
             // panelLogo
             // 
-            panelLogo.BackColor = Color.FromArgb(31, 32, 69);
-            panelLogo.Controls.Add(panel1);
-            panelLogo.Controls.Add(pictrueBoxCustom1);
-            panelLogo.Dock = DockStyle.Top;
-            panelLogo.Location = new Point(0, 0);
-            panelLogo.Name = "panelLogo";
-            panelLogo.Size = new Size(247, 222);
-            panelLogo.TabIndex = 0;
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(69)))));
+            this.panelLogo.Controls.Add(this.panel1);
+            this.panelLogo.Controls.Add(this.pictrueBoxCustom1);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(247, 222);
+            this.panelLogo.TabIndex = 0;
             // 
             // panel1
             // 
-            panel1.Controls.Add(lblTen);
-            panel1.Controls.Add(lblMa);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(0, 151);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(247, 71);
-            panel1.TabIndex = 1;
+            this.panel1.Controls.Add(this.lblTen);
+            this.panel1.Controls.Add(this.lblMa);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(0, 151);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(247, 71);
+            this.panel1.TabIndex = 1;
             // 
             // lblTen
             // 
-            lblTen.AutoSize = true;
-            lblTen.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTen.ForeColor = Color.Gainsboro;
-            lblTen.Location = new Point(105, 40);
-            lblTen.Name = "lblTen";
-            lblTen.Size = new Size(33, 20);
-            lblTen.TabIndex = 3;
-            lblTen.Text = "Tên";
+            this.lblTen.AutoSize = true;
+            this.lblTen.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTen.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTen.Location = new System.Drawing.Point(105, 40);
+            this.lblTen.Name = "lblTen";
+            this.lblTen.Size = new System.Drawing.Size(33, 20);
+            this.lblTen.TabIndex = 3;
+            this.lblTen.Text = "Tên";
             // 
             // lblMa
             // 
-            lblMa.AutoSize = true;
-            lblMa.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblMa.ForeColor = Color.Gainsboro;
-            lblMa.Location = new Point(105, 6);
-            lblMa.Name = "lblMa";
-            lblMa.Size = new Size(31, 20);
-            lblMa.TabIndex = 2;
-            lblMa.Text = "Mã";
+            this.lblMa.AutoSize = true;
+            this.lblMa.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblMa.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblMa.Location = new System.Drawing.Point(105, 6);
+            this.lblMa.Name = "lblMa";
+            this.lblMa.Size = new System.Drawing.Size(31, 20);
+            this.lblMa.TabIndex = 2;
+            this.lblMa.Text = "Mã";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.Gainsboro;
-            label2.Location = new Point(42, 42);
-            label2.Name = "label2";
-            label2.Size = new Size(50, 17);
-            label2.TabIndex = 1;
-            label2.Text = "Họ tên:";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label2.Location = new System.Drawing.Point(42, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Họ tên:";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.Gainsboro;
-            label1.Location = new Point(3, 6);
-            label1.Name = "label1";
-            label1.Size = new Size(89, 17);
-            label1.TabIndex = 0;
-            label1.Text = "Mã nhân viên:";
-            // 
-            // panelTitleBar
-            // 
-            panelTitleBar.BackColor = Color.FromArgb(26, 27, 61);
-            panelTitleBar.Controls.Add(btnMinimize);
-            panelTitleBar.Controls.Add(btnExit);
-            panelTitleBar.Controls.Add(lblTitleChildFrm);
-            panelTitleBar.Controls.Add(iconCurrentChildFrm);
-            panelTitleBar.Dock = DockStyle.Top;
-            panelTitleBar.Location = new Point(247, 0);
-            panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(1537, 73);
-            panelTitleBar.TabIndex = 1;
-            // 
-            // btnMinimize
-            // 
-            btnMinimize.BackColor = Color.FromArgb(26, 27, 61);
-            btnMinimize.FlatAppearance.BorderSize = 0;
-            btnMinimize.FlatStyle = FlatStyle.Flat;
-            btnMinimize.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            btnMinimize.IconColor = Color.FromArgb(0, 192, 192);
-            btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnMinimize.IconSize = 27;
-            btnMinimize.Location = new Point(1479, 3);
-            btnMinimize.Name = "btnMinimize";
-            btnMinimize.Size = new Size(31, 26);
-            btnMinimize.TabIndex = 2;
-            btnMinimize.UseVisualStyleBackColor = false;
-            btnMinimize.Click += btnMinimize_Click;
-            // 
-            // btnExit
-            // 
-            btnExit.BackColor = Color.FromArgb(26, 27, 61);
-            btnExit.FlatAppearance.BorderSize = 0;
-            btnExit.FlatStyle = FlatStyle.Flat;
-            btnExit.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            btnExit.IconColor = Color.FromArgb(0, 192, 192);
-            btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnExit.IconSize = 27;
-            btnExit.Location = new Point(1505, 3);
-            btnExit.Name = "btnExit";
-            btnExit.Size = new Size(31, 26);
-            btnExit.TabIndex = 2;
-            btnExit.UseVisualStyleBackColor = false;
-            btnExit.Click += btnExit_Click;
-            // 
-            // lblTitleChildFrm
-            // 
-            lblTitleChildFrm.AutoSize = true;
-            lblTitleChildFrm.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitleChildFrm.ForeColor = Color.Gainsboro;
-            lblTitleChildFrm.Location = new Point(122, 14);
-            lblTitleChildFrm.Name = "lblTitleChildFrm";
-            lblTitleChildFrm.Size = new Size(121, 50);
-            lblTitleChildFrm.TabIndex = 1;
-            lblTitleChildFrm.Text = "Home";
-            // 
-            // iconCurrentChildFrm
-            // 
-            iconCurrentChildFrm.BackColor = Color.FromArgb(26, 25, 62);
-            iconCurrentChildFrm.ForeColor = Color.MediumPurple;
-            iconCurrentChildFrm.IconChar = FontAwesome.Sharp.IconChar.House;
-            iconCurrentChildFrm.IconColor = Color.MediumPurple;
-            iconCurrentChildFrm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconCurrentChildFrm.IconSize = 52;
-            iconCurrentChildFrm.Location = new Point(40, 12);
-            iconCurrentChildFrm.Name = "iconCurrentChildFrm";
-            iconCurrentChildFrm.Size = new Size(60, 52);
-            iconCurrentChildFrm.TabIndex = 0;
-            iconCurrentChildFrm.TabStop = false;
-            // 
-            // panelShadow
-            // 
-            panelShadow.BackColor = Color.FromArgb(26, 24, 58);
-            panelShadow.Dock = DockStyle.Top;
-            panelShadow.Location = new Point(247, 73);
-            panelShadow.Name = "panelShadow";
-            panelShadow.Size = new Size(1537, 9);
-            panelShadow.TabIndex = 2;
-            // 
-            // panelDesktop
-            // 
-            panelDesktop.BackColor = Color.FromArgb(26, 29, 65);
-            panelDesktop.Dock = DockStyle.Fill;
-            panelDesktop.Location = new Point(247, 82);
-            panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(1537, 729);
-            panelDesktop.TabIndex = 3;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.Location = new System.Drawing.Point(3, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã nhân viên:";
             // 
             // pictrueBoxCustom1
             // 
-            pictrueBoxCustom1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            pictrueBoxCustom1.BorderColor = Color.RoyalBlue;
-            pictrueBoxCustom1.BorderColor2 = Color.HotPink;
-            pictrueBoxCustom1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            pictrueBoxCustom1.BorderSize = 2;
-            pictrueBoxCustom1.GradientAngle = 50F;
-            pictrueBoxCustom1.Image = Properties.Resources.SSSSSSAAAAAA;
-            pictrueBoxCustom1.Location = new Point(53, 10);
-            pictrueBoxCustom1.Name = "pictrueBoxCustom1";
-            pictrueBoxCustom1.Size = new Size(133, 133);
-            pictrueBoxCustom1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictrueBoxCustom1.TabIndex = 0;
-            pictrueBoxCustom1.TabStop = false;
-            pictrueBoxCustom1.Click += pictrueBoxCustom1_Click;
+            this.pictrueBoxCustom1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pictrueBoxCustom1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.pictrueBoxCustom1.BorderColor2 = System.Drawing.Color.HotPink;
+            this.pictrueBoxCustom1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictrueBoxCustom1.BorderSize = 2;
+            this.pictrueBoxCustom1.GradientAngle = 50F;
+            this.pictrueBoxCustom1.Image = global::_3_GUI_PresentationLayer.Properties.Resources.SSSSSSAAAAAA;
+            this.pictrueBoxCustom1.Location = new System.Drawing.Point(53, 10);
+            this.pictrueBoxCustom1.Name = "pictrueBoxCustom1";
+            this.pictrueBoxCustom1.Size = new System.Drawing.Size(133, 133);
+            this.pictrueBoxCustom1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictrueBoxCustom1.TabIndex = 0;
+            this.pictrueBoxCustom1.TabStop = false;
+            // 
+            // panelTitleBar
+            // 
+            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(61)))));
+            this.panelTitleBar.Controls.Add(this.btnMinimize);
+            this.panelTitleBar.Controls.Add(this.btnExit);
+            this.panelTitleBar.Controls.Add(this.lblTitleChildFrm);
+            this.panelTitleBar.Controls.Add(this.iconCurrentChildFrm);
+            this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitleBar.Location = new System.Drawing.Point(247, 0);
+            this.panelTitleBar.Name = "panelTitleBar";
+            this.panelTitleBar.Size = new System.Drawing.Size(1537, 73);
+            this.panelTitleBar.TabIndex = 1;
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(61)))));
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.btnMinimize.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimize.IconSize = 27;
+            this.btnMinimize.Location = new System.Drawing.Point(1479, 3);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(31, 26);
+            this.btnMinimize.TabIndex = 2;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(61)))));
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            this.btnExit.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExit.IconSize = 27;
+            this.btnExit.Location = new System.Drawing.Point(1505, 3);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(31, 26);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.UseVisualStyleBackColor = false;
+            // 
+            // lblTitleChildFrm
+            // 
+            this.lblTitleChildFrm.AutoSize = true;
+            this.lblTitleChildFrm.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitleChildFrm.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTitleChildFrm.Location = new System.Drawing.Point(122, 14);
+            this.lblTitleChildFrm.Name = "lblTitleChildFrm";
+            this.lblTitleChildFrm.Size = new System.Drawing.Size(121, 50);
+            this.lblTitleChildFrm.TabIndex = 1;
+            this.lblTitleChildFrm.Text = "Home";
+            // 
+            // iconCurrentChildFrm
+            // 
+            this.iconCurrentChildFrm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.iconCurrentChildFrm.ForeColor = System.Drawing.Color.MediumPurple;
+            this.iconCurrentChildFrm.IconChar = FontAwesome.Sharp.IconChar.House;
+            this.iconCurrentChildFrm.IconColor = System.Drawing.Color.MediumPurple;
+            this.iconCurrentChildFrm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconCurrentChildFrm.IconSize = 52;
+            this.iconCurrentChildFrm.Location = new System.Drawing.Point(40, 12);
+            this.iconCurrentChildFrm.Name = "iconCurrentChildFrm";
+            this.iconCurrentChildFrm.Size = new System.Drawing.Size(60, 52);
+            this.iconCurrentChildFrm.TabIndex = 0;
+            this.iconCurrentChildFrm.TabStop = false;
+            // 
+            // panelShadow
+            // 
+            this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelShadow.Location = new System.Drawing.Point(247, 73);
+            this.panelShadow.Name = "panelShadow";
+            this.panelShadow.Size = new System.Drawing.Size(1537, 9);
+            this.panelShadow.TabIndex = 2;
+            // 
+            // panelDesktop
+            // 
+            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(29)))), ((int)(((byte)(65)))));
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(247, 82);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(1537, 729);
+            this.panelDesktop.TabIndex = 3;
+            this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
             // FrmMain
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1784, 811);
-            Controls.Add(panelDesktop);
-            Controls.Add(panelShadow);
-            Controls.Add(panelTitleBar);
-            Controls.Add(panelMenu);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "FrmMain";
-            Text = "Form2";
-            panelMenu.ResumeLayout(false);
-            panelLogo.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panelTitleBar.ResumeLayout(false);
-            panelTitleBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconCurrentChildFrm).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictrueBoxCustom1).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1784, 811);
+            this.Controls.Add(this.panelDesktop);
+            this.Controls.Add(this.panelShadow);
+            this.Controls.Add(this.panelTitleBar);
+            this.Controls.Add(this.panelMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FrmMain";
+            this.Text = "Form2";
+            this.panelMenu.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictrueBoxCustom1)).EndInit();
+            this.panelTitleBar.ResumeLayout(false);
+            this.panelTitleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildFrm)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
