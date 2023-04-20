@@ -730,7 +730,7 @@ namespace _3_GUI_PresentationLayer.View
                 int x = 385;
                 int y = 386;
                 int y1 = 396;
-                e.Graphics.DrawString(a + 1.ToString(), new Font("Arial", 10), Brushes.Black, new Point(70, x + (a * 40)));
+                e.Graphics.DrawString((a + 1).ToString(), new Font("Arial", 10), Brushes.Black, new Point(70, x + (a * 40)));
                 e.Graphics.DrawString($"{item.Hang} {item.Dong} {item.TenSanPham}", new Font("Arial", 10), Brushes.Black, new Point(110, y + (a * 40)));
                 e.Graphics.DrawString(item.SerialSanPham, new Font("Arial", 10), Brushes.Black, new Point(300, y + (a * 40)));
                 e.Graphics.DrawString(item.SoLuong.ToString(), new Font("Arial", 10), Brushes.Black, new Point(440, y + (a * 40)));

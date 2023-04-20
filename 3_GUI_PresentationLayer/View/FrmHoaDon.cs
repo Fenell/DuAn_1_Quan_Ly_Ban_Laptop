@@ -210,7 +210,7 @@ namespace _3_GUI_PresentationLayer.View
                 decimal giamGia = decimal.Parse(row.Cells[5].Value.ToString());
                 decimal thanhTien = decimal.Parse(row.Cells[6].Value.ToString());
 
-                e.Graphics.DrawString(a + 1.ToString(), new Font("Arial", 10), Brushes.Black, new Point(70, x + (a * 40)));
+                e.Graphics.DrawString((a + 1).ToString(), new Font("Arial", 10), Brushes.Black, new Point(70, x + (a * 40)));
                 e.Graphics.DrawString(row.Cells[1].Value.ToString(), new Font("Arial", 10), Brushes.Black, new Point(110, y + (a * 40)));
                 e.Graphics.DrawString(row.Cells[2].Value.ToString(), new Font("Arial", 10), Brushes.Black, new Point(300, y + (a * 40)));
                 e.Graphics.DrawString(row.Cells[3].Value.ToString(), new Font("Arial", 10), Brushes.Black, new Point(440, y + (a * 40)));
