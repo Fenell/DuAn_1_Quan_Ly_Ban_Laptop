@@ -36,8 +36,8 @@ namespace _3_GUI_PresentationLayer.View
             _lstCpu = _cpuServices.GetAllCpu();
             dgvCpu.ColumnCount = 3;
             dgvCpu.Columns[0].Visible = false;
-            dgvCpu.Columns[1].Name = "Mã Vga";
-            dgvCpu.Columns[2].Name = "Tên Vga";
+            dgvCpu.Columns[1].Name = "Mã";
+            dgvCpu.Columns[2].Name = "Tên";
 
             dgvCpu.Rows.Clear();
             foreach (var x in _cpuServices.GetAllCpu())
